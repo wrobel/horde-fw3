@@ -1,0 +1,33 @@
+<div id="menu"><tag:menu /></div>
+<tag:notify />
+
+<h1 class="header"><gettext>Moderators</gettext></h1>
+<if:forums>
+<table class="striped">
+<tr>
+    <td class="control"><gettext>Forum</gettext></td>
+    <td class="control"><gettext>Forum name</gettext></td>
+    <td class="control"><gettext>Moderators</gettext></td>
+</tr>
+<loop:forums>
+<tr>
+    <td><tag:forums /></td>
+    <td><tag:forums.forum_name /></td>
+    <td>
+        <if:forums.moderators>
+            <loop:forums.moderators>
+                <tag:forums.moderators /><br />
+            </loop:forums.moderators>
+        </if:forums.moderators>
+    </td>
+</tr>
+</loop:forums>
+</table>
+<else:forums>
+ <p><em><gettext>No moderators have been created.</gettext></em></p>
+</else:forums>
+</if:forums>
+
+<br class="spacer">
+
+<tag:formbox />

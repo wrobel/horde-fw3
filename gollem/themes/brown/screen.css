@@ -1,0 +1,12 @@
+/**
+ * $Horde: gollem/themes/brown/screen.css,v 1.1.2.2 2008/10/09 20:55:01 jan Exp $
+ */
+
+#filelist caption {
+    color: #fff;
+}
+
+/* BC */
+input.button {
+    color: #fff;
+}

@@ -1,0 +1,50 @@
+<?php
+/**
+ * Release focus. Possible values:
+ * 0 - N/A
+ * 1 - Initial freshmeat announcement
+ * 2 - Documentation
+ * 3 - Code cleanup
+ * 4 - Minor feature enhancements
+ * 5 - Major feature enhancements
+ * 6 - Minor bugfixes
+ * 7 - Major bugfixes
+ * 8 - Minor security fixes
+ * 9 - Major security fixes
+ */
+$this->notes['fm']['focus'] = 6;
+
+/* Mailing list release notes. */
+$this->notes['ml']['changes'] = <<<ML
+The Horde Team is pleased to announce the second release candidate of the Passwd
+Horde password changing application version H3 (3.1).
+
+Passwd provides fairly complete support for changing passwords via Poppassd,
+LDAP, Unix expect scripts, the Unix smbpasswd command for SMB/CIFS passwords,
+Kolab, ADSI, Pine, Serv-U FTP, VMailMgr, vpopmail, and SQL passwords.
+
+The major changes compared to Passwd version H3 (3.1-RC1) are:
+    * Don't disclose the old password in LDAP error messages
+
+The major changes compared to Passwd version H3 (3.0) are:
+    * Added an HTTP web form driver
+    * Added expect support for sudo and for the PECL expect extension
+    * Added support for switching passwords from one encryption scheme
+      to another
+    * Better accessibility
+    * Added Turkish translation
+ML;
+
+/* Freshmeat release notes, not more than 600 characters. */
+$this->notes['fm']['changes'] = <<<FM
+This release includes a new HTTP web form driver, support for sudo and the PECL
+expect extension in the expect driver, allows switching passwords from one
+encryption scheme to another, has better accessibility, and includes a new
+Turkish translation. It also fixes a minor password disclosure in the LDAP
+driver that was introcued in RC1.
+FM;
+
+$this->notes['name'] = 'Passwd';
+$this->notes['list'] = 'sork';
+$this->notes['fm']['project'] = 'passwd';
+$this->notes['fm']['branch'] = 'Horde 3';

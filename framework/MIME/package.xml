@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.4.9" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+http://pear.php.net/dtd/tasks-1.0.xsd
+http://pear.php.net/dtd/package-2.0
+http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Horde_MIME</name>
+ <channel>pear.horde.org</channel>
+ <summary>Horde Mime Library</summary>
+ <description>The Horde_MIME:: class provides methods for dealing with MIME standards.
+ </description>
+ <lead>
+  <name>Chuck Hagenbuch</name>
+  <user>chuck</user>
+  <email>chuck@horde.org</email>
+  <active>yes</active>
+ </lead>
+ <lead>
+  <name>Michael Slusarz</name>
+  <user>slusarz</user>
+  <email>slusarz@curecanti.org</email>
+  <active>yes</active>
+ </lead>
+ <date>2006-05-08</date>
+ <time>22:29:48</time>
+ <version>
+  <release>0.0.2</release>
+  <api>0.0.2</api>
+ </version>
+ <stability>
+  <release>alpha</release>
+  <api>alpha</api>
+ </stability>
+ <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+ <notes>* Fixed issues relating to RFC 2047 encoding and long words.
+* Converted to package.xml 2.0 for pear.horde.org
+* Added MIME_Mail class to simplify creation and sending of MIME messages.</notes>
+ <contents>
+  <dir name="/" baseinstalldir="/Horde">
+   <dir name="MIME">
+    <dir name="Viewer">
+     <dir name="ooo">
+      <file name="common.xsl" role="php" />
+      <file name="global_document.xsl" role="php" />
+      <file name="main_html.xsl" role="php" />
+      <file name="palm.xsl" role="php" />
+      <file name="style_header.xsl" role="php" />
+      <file name="style_inlined.xsl" role="php" />
+      <file name="style_mapping.xsl" role="php" />
+      <file name="table.xsl" role="php" />
+      <file name="table_cells.xsl" role="php" />
+      <file name="table_columns.xsl" role="php" />
+      <file name="table_rows.xsl" role="php" />
+     </dir> <!-- //MIME/Viewer/ooo -->
+     <file name="audio.php" role="php" />
+     <file name="css.php" role="php" />
+     <file name="deb.php" role="php" />
+     <file name="default.php" role="php" />
+     <file name="enriched.php" role="php" />
+     <file name="enscript.php" role="php" />
+     <file name="html.php" role="php" />
+     <file name="images.php" role="php" />
+     <file name="msexcel.php" role="php" />
+     <file name="mspowerpoint.php" role="php" />
+     <file name="msword.php" role="php" />
+     <file name="ooo.php" role="php" />
+     <file name="pdf.php" role="php" />
+     <file name="php.php" role="php" />
+     <file name="plain.php" role="php" />
+     <file name="rar.php" role="php" />
+     <file name="report.php" role="php" />
+     <file name="rfc822.php" role="php" />
+     <file name="richtext.php" role="php" />
+     <file name="rpm.php" role="php" />
+     <file name="rtf.php" role="php" />
+     <file name="security.php" role="php" />
+     <file name="simple.php" role="php" />
+     <file name="smil.php" role="php" />
+     <file name="source.php" role="php" />
+     <file name="srchighlite.php" role="php" />
+     <file name="tgz.php" role="php" />
+     <file name="tnef.php" role="php" />
+     <file name="vcard.php" role="php" />
+     <file name="webcpp.php" role="php" />
+     <file name="wordperfect.php" role="php" />
+     <file name="zip.php" role="php" />
+    </dir> <!-- //MIME/Viewer -->
+    <file name="Contents.php" role="php" />
+    <file name="Headers.php" role="php" />
+    <file name="Magic.php" role="php" />
+    <file name="Mail.php" role="php" />
+    <file name="MDN.php" role="php" />
+    <file name="Message.php" role="php" />
+    <file name="mime.magic.php" role="php" />
+    <file name="mime.mapping.php" role="php" />
+    <file name="Part.php" role="php" />
+    <file name="Structure.php" role="php" />
+    <file name="Viewer.php" role="php" />
+   </dir> <!-- //MIME -->
+   <dir name="tests">
+    <file name="bug_325.phpt" role="test" />
+    <file name="mail_001.phpt" role="test" />
+    <file name="mail_002.phpt" role="test" />
+    <file name="mail_003.phpt" role="test" />
+    <file name="mail_004.phpt" role="test" />
+    <file name="mail_005.phpt" role="test" />
+    <file name="mail_dummy.inc" role="test" />
+   </dir> <!-- //MIME/tests -->
+   <file name="MIME.php" role="php" />
+  </dir> <!-- / -->
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>4.3.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0b1</min>
+   </pearinstaller>
+   <package>
+    <name>Mail_mimeDecode</name>
+    <channel>pear.php.net</channel>
+   </package>
+   <package>
+    <name>Util</name>
+    <channel>pear.horde.org</channel>
+   </package>
+  </required>
+  <optional>
+   <package>
+    <name>Auth</name>
+    <channel>pear.horde.org</channel>
+   </package>
+   <package>
+    <name>Horde_Compress</name>
+    <channel>pear.horde.org</channel>
+   </package>
+   <package>
+    <name>Horde_Framework</name>
+    <channel>pear.horde.org</channel>
+   </package>
+   <package>
+    <name>iCalendar</name>
+    <channel>pear.horde.org</channel>
+   </package>
+   <package>
+    <name>Horde_Prefs</name>
+    <channel>pear.horde.org</channel>
+   </package>
+   <package>
+    <name>Horde_SessionObjects</name>
+    <channel>pear.horde.org</channel>
+   </package>
+   <package>
+    <name>Horde_Text_Filter</name>
+    <channel>pear.horde.org</channel>
+   </package>
+   <extension>
+    <name>gettext</name>
+   </extension>
+   <extension>
+    <name>imap</name>
+   </extension>
+  </optional>
+ </dependencies>
+ <phprelease />
+ <changelog>
+  <release>
+   <version>
+    <release>0.0.1</release>
+    <api>0.0.1</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2003-07-05</date>
+   <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+   <notes>Initial release as a PEAR package
+   </notes>
+  </release>
+ </changelog>
+</package>

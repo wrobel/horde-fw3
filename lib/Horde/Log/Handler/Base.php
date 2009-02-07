@@ -1,0 +1,1 @@
+../../../../framework/Log/lib/Horde/Log/Handler/Base.php

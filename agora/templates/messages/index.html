@@ -1,0 +1,25 @@
+<div id="menu"><tag:menu /></div>
+<tag:notify />
+
+<div class="header">
+ <if:actions>
+  <span class="smallheader rightFloat">
+    <loop:actions><divider:actions> | </divider:actions><tag:actions /></loop:actions></span>
+ </if:actions>
+ <gettext>Thread List</gettext>
+</div>
+
+<if:pager_link>
+ <tag:pager_link />
+</if:pager_link>
+
+<div class="item">
+ <tag:threads />
+</div>
+
+<if:pager_link>
+ <tag:pager_link />
+</if:pager_link>
+
+<br class="spacer" />
+<tag:form />

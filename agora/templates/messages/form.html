@@ -1,0 +1,24 @@
+<div id="menu"><tag:menu /></div>
+<tag:notify />
+
+<tag:formbox />
+
+<br class="spacer" />
+<h1 class="header">
+ <tag:message_subject />
+</h1>
+
+<table style="padding: 2px; width: 100%" class="item">
+ <tr>
+  <td style="width: 10%" valign="top">
+   <if:message_author_avatar>
+    <img src="<tag:message_author_avatar />" alt="<tag:message_author />" />
+    <br />
+   </if:message_author_avatar>
+   <tag:message_author />
+  </td>
+  <td style="width: 90%" valign="top" class="box">
+   <tag:message_body />
+  </td>
+ </tr>
+</table>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.4.9" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+http://pear.php.net/dtd/tasks-1.0.xsd
+http://pear.php.net/dtd/package-2.0
+http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Horde_Text_Filter</name>
+ <channel>pear.horde.org</channel>
+ <summary>Horde Text Filter API</summary>
+ <description>The Text_Filter:: class provides common methods for fitering and
+converting text.
+ </description>
+ <lead>
+  <name>Chuck Hagenbuch</name>
+  <user>chuck</user>
+  <email>chuck@horde.org</email>
+  <active>yes</active>
+ </lead>
+ <lead>
+  <name>Jan Schneider</name>
+  <user>jan</user>
+  <email>jan@horde.org</email>
+  <active>yes</active>
+ </lead>
+ <developer>
+  <name>Michael Slusarz</name>
+  <user>slusarz</user>
+  <email>slusarz@horde.org</email>
+  <active>yes</active>
+ </developer>
+ <date>2006-05-08</date>
+ <time>23:39:08</time>
+ <version>
+  <release>0.0.2</release>
+  <api>0.0.2</api>
+ </version>
+ <stability>
+  <release>alpha</release>
+  <api>alpha</api>
+ </stability>
+ <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+ <notes>* Removed dependency on external javascript file when toggling quoted lines.
+* Converted to package.xml 2.0 for pear.horde.org
+* Allow the bad words filter to leave the first character of a matching word and replace the rest with '*' (duck@obala.net).
+* Improved efficiency of the linkurls filter when searching long lines
+ </notes>
+ <contents>
+  <dir name="/">
+   <dir name="Filter">
+    <file baseinstalldir="/Horde/Text" name="bbcode.php" role="php" />
+    <file baseinstalldir="/Horde/Text" name="cleanascii.php" role="php" />
+    <file baseinstalldir="/Horde/Text" name="dimsignature.php" role="php" />
+    <file baseinstalldir="/Horde/Text" name="emails.php" role="php" />
+    <file baseinstalldir="/Horde/Text" name="emoticons.php" role="php" />
+    <file baseinstalldir="/Horde/Text" name="environment.php" role="php" />
+    <file baseinstalldir="/Horde/Text" name="highlightquotes.php" role="php" />
+    <file baseinstalldir="/Horde/Text" name="html2text.php" role="php" />
+    <file baseinstalldir="/Horde/Text" name="linkurls.php" role="php" />
+    <file baseinstalldir="/Horde/Text" name="simplemarkup.php" role="php" />
+    <file baseinstalldir="/Horde/Text" name="space2html.php" role="php" />
+    <file baseinstalldir="/Horde/Text" name="tabs2spaces.php" role="php" />
+    <file baseinstalldir="/Horde/Text" name="text2html.php" role="php" />
+    <file baseinstalldir="/Horde/Text" name="words.php" role="php" />
+    <file baseinstalldir="/Horde/Text" name="xss.php" role="php" />
+   </dir> <!-- /Filter -->
+   <dir name="tests">
+    <dir name="fixtures">
+     <file baseinstalldir="/Horde/Text" name="html2text.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="text2html.txt" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss01.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss02.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss03.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss04.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss05.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss06.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss07.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss08.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss09.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss10.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss11.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss12.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss13.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss14.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss15.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss16.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss17.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss18.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss19.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss20.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss21.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss22.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss23.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss24.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss25.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss26.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss27.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss28.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss29.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss30.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss31.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss32.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss33.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss34.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss35.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss36.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss37.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss38.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss39.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss40.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss41.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss42.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss43.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss44.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss45.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss46.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss47.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss48.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss49.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss50.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss51.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss52.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss53.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss54.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss55.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss56.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss57.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss58.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss59.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss60.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss61.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss62.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss63.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss64.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss65.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss66.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss67.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss68.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss69.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss70.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss71.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss72.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss73.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss74.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss75.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss76.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss77.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss78.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss79.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss80.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss81.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss82.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss83.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss84.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss85.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss97.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss98.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss99.html" role="test" />
+     <file baseinstalldir="/Horde/Text" name="xss100.html" role="test" />
+    </dir> <!-- /fixtures -->
+    <file baseinstalldir="/Horde/Text" name="emails.phpt" role="test" />
+    <file baseinstalldir="/Horde/Text" name="environment.phpt" role="test" />
+    <file baseinstalldir="/Horde/Text" name="html2text.phpt" role="test" />
+    <file baseinstalldir="/Horde/Text" name="html2text2.phpt" role="test" />
+    <file baseinstalldir="/Horde/Text" name="space2html.phpt" role="test" />
+    <file baseinstalldir="/Horde/Text" name="text2html.phpt" role="test" />
+    <file baseinstalldir="/Horde/Text" name="xss.phpt" role="test" />
+   </dir> <!-- /tests -->
+   <file baseinstalldir="/Horde/Text" name="Filter.php" role="php" />
+  </dir> <!-- / -->
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>4.0.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0b1</min>
+   </pearinstaller>
+   <package>
+    <name>Util</name>
+    <channel>pear.horde.org</channel>
+   </package>
+  </required>
+  <optional>
+   <extension>
+    <name>gettext</name>
+   </extension>
+  </optional>
+ </dependencies>
+ <phprelease />
+ <changelog>
+  <release>
+   <version>
+    <release>0.0.1</release>
+    <api>0.0.1</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2004-10-12</date>
+   <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+   <notes>Initial release as a PEAR package
+   </notes>
+  </release>
+ </changelog>
+</package>

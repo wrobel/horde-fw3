@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.4.9" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+http://pear.php.net/dtd/tasks-1.0.xsd
+http://pear.php.net/dtd/package-2.0
+http://pear.php.net/dtd/package-2.0.xsd">
+ <name>admintools</name>
+ <channel>pear.horde.org</channel>
+ <summary>Horde Administrator Tools</summary>
+ <description>This package contains scripts useful to people administering Horde installations.
+ </description>
+ <lead>
+  <name>Chuck Hagenbuch</name>
+  <user>chuck</user>
+  <email>chuck@horde.org</email>
+  <active>yes</active>
+ </lead>
+ <lead>
+  <name>Jan Schneider</name>
+  <user>jan</user>
+  <email>jan@horde.org</email>
+  <active>yes</active>
+ </lead>
+ <date>2008-06-24</date>
+ <time>00:00:00</time>
+ <version>
+  <release>0.2.0</release>
+  <api>0.2.0</api>
+ </version>
+ <stability>
+  <release>beta</release>
+  <api>beta</api>
+ </stability>
+ <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+ <notes>- Add a script for creating PEAR::DB sequences.
+- Add scripts for dumping and updating the Horde database from MDB2_Schema XML files.
+- Add a script for running a series of SQL statements from STDIN on the Horde database
+ </notes>
+ <contents>
+  <dir name="/">
+   <file name="horde-create-sequence.php" role="script">
+    <tasks:replace from="@php_bin@" to="php_bin" type="pear-config"/>
+   </file>
+   <file name="horde-db-dumpschema.php" role="script">
+    <tasks:replace from="@php_bin@" to="php_bin" type="pear-config"/>
+   </file>
+   <file name="horde-db-updateschema.php" role="script">
+    <tasks:replace from="@php_bin@" to="php_bin" type="pear-config"/>
+   </file>
+   <file name="horde-remove-pref.php" role="script">
+    <tasks:replace from="@php_bin@" to="php_bin" type="pear-config"/>
+   </file>
+   <file name="horde-sql-shell.php" role="script">
+    <tasks:replace from="@php_bin@" to="php_bin" type="pear-config"/>
+   </file>
+   <file name="horde-update.sh" role="script" />
+  </dir> <!-- / -->
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>4.3.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0b1</min>
+   </pearinstaller>
+  </required>
+ </dependencies>
+ <phprelease />
+</package>

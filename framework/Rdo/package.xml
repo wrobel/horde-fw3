@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.4.9" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+http://pear.php.net/dtd/tasks-1.0.xsd
+http://pear.php.net/dtd/package-2.0
+http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Rdo</name>
+ <channel>pear.horde.org</channel>
+ <summary>Rampage Data Objects</summary>
+ <description>Lightweight ORM layer
+ </description>
+ <lead>
+  <name>Chuck Hagenbuch</name>
+  <user>chuck</user>
+  <email>chuck@horde.org</email>
+  <active>yes</active>
+ </lead>
+ <date>2008-03-15</date>
+ <time>16:46:00</time>
+ <version>
+  <release>0.3.0</release>
+  <api>0.3.0</api>
+ </version>
+ <stability>
+  <release>beta</release>
+  <api>beta</api>
+ </stability>
+ <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+ <notes>Major improvements including inflection, eager or lazy loading of relationships and fields, and more.
+ </notes>
+ <contents>
+  <dir name="/">
+   <dir name="lib">
+    <dir name="Horde">
+     <dir name="Rdo">
+      <dir name="Adapter">
+       <dir name="Mysqli">
+        <file name="Cursor.php" role="php" />
+       </dir> <!-- /lib/Horde/Rdo/Adapter/Mysqli -->
+       <dir name="Pdo">
+        <file name="Cursor.php" role="php" />
+        <file name="Mssql.php" role="php" />
+        <file name="Mysql.php" role="php" />
+        <file name="Oci.php" role="php" />
+        <file name="Pgsql.php" role="php" />
+        <file name="Sqlite.php" role="php" />
+       </dir> <!-- /lib/Horde/Rdo/Adapter/Pdo -->
+       <file name="Mysqli.php" role="php" />
+       <file name="Oci8.php" role="php" />
+       <file name="Pdo.php" role="php" />
+      </dir> <!-- /lib/Horde/Rdo/Adapter -->
+      <dir name="Query">
+       <dir name="Builder">
+        <file name="Mssql.php" role="php" />
+        <file name="Mysql.php" role="php" />
+        <file name="Oracle.php" role="php" />
+        <file name="Pgsql.php" role="php" />
+        <file name="Sqlite.php" role="php" />
+       </dir> <!-- /lib/Horde/Rdo/Query/Builder -->
+       <file name="Builder.php" role="php" />
+       <file name="Literal.php" role="php" />
+      </dir> <!-- /lib/Horde/Rdo/Query -->
+      <file name="Adapter.php" role="php" />
+      <file name="Base.php" role="php" />
+      <file name="Exception.php" role="php" />
+      <file name="Inflector.php" role="php" />
+      <file name="Iterator.php" role="php" />
+      <file name="List.php" role="php" />
+      <file name="Mapper.php" role="php" />
+      <file name="Model.php" role="php" />
+      <file name="Query.php" role="php" />
+     </dir> <!-- /lib/Horde/Rdo -->
+     <file name="Rdo.php" role="php" />
+    </dir> <!-- /lib/Horde -->
+   </dir> <!-- /lib -->
+  </dir> <!-- / -->
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.2.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.5.0</min>
+   </pearinstaller>
+  </required>
+ </dependencies>
+ <phprelease>
+  <filelist>
+   <install name="lib/Horde/Rdo/Adapter/Mysqli/Cursor.php" as="Horde/Rdo/Adapter/Mysqli/Cursor.php" />
+   <install name="lib/Horde/Rdo/Adapter/Pdo/Cursor.php" as="Horde/Rdo/Adapter/Pdo/Cursor.php" />
+   <install name="lib/Horde/Rdo/Adapter/Pdo/Mssql.php" as="Horde/Rdo/Adapter/Pdo/Mssql.php" />
+   <install name="lib/Horde/Rdo/Adapter/Pdo/Mysql.php" as="Horde/Rdo/Adapter/Pdo/Mysql.php" />
+   <install name="lib/Horde/Rdo/Adapter/Pdo/Oci.php" as="Horde/Rdo/Adapter/Pdo/Oci.php" />
+   <install name="lib/Horde/Rdo/Adapter/Pdo/Pgsql.php" as="Horde/Rdo/Adapter/Pdo/Pgsql.php" />
+   <install name="lib/Horde/Rdo/Adapter/Pdo/Sqlite.php" as="Horde/Rdo/Adapter/Pdo/Sqlite.php" />
+   <install name="lib/Horde/Rdo/Adapter/Mysqli.php" as="Horde/Rdo/Adapter/Mysqli.php" />
+   <install name="lib/Horde/Rdo/Adapter/Oci8.php" as="Horde/Rdo/Adapter/Oci8.php" />
+   <install name="lib/Horde/Rdo/Adapter/Pdo.php" as="Horde/Rdo/Adapter/Pdo.php" />
+   <install name="lib/Horde/Rdo/Query/Builder/Mssql.php" as="Horde/Rdo/Query/Builder/Mssql.php" />
+   <install name="lib/Horde/Rdo/Query/Builder/Mysql.php" as="Horde/Rdo/Query/Builder/Mysql.php" />
+   <install name="lib/Horde/Rdo/Query/Builder/Oracle.php" as="Horde/Rdo/Query/Builder/Oracle.php" />
+   <install name="lib/Horde/Rdo/Query/Builder/Pgsql.php" as="Horde/Rdo/Query/Builder/Pgsql.php" />
+   <install name="lib/Horde/Rdo/Query/Builder/Sqlite.php" as="Horde/Rdo/Query/Builder/Sqlite.php" />
+   <install name="lib/Horde/Rdo/Query/Builder.php" as="Horde/Rdo/Query/Builder.php" />
+   <install name="lib/Horde/Rdo/Query/Literal.php" as="Horde/Rdo/Query/Literal.php" />
+   <install name="lib/Horde/Rdo/Adapter.php" as="Horde/Rdo/Adapter.php" />
+   <install name="lib/Horde/Rdo/Base.php" as="Horde/Rdo/Base.php" />
+   <install name="lib/Horde/Rdo/Exception.php" as="Horde/Rdo/Exception.php" />
+   <install name="lib/Horde/Rdo/Inflector.php" as="Horde/Rdo/Inflector.php" />
+   <install name="lib/Horde/Rdo/Iterator.php" as="Horde/Rdo/Iterator.php" />
+   <install name="lib/Horde/Rdo/List.php" as="Horde/Rdo/List.php" />
+   <install name="lib/Horde/Rdo/Mapper.php" as="Horde/Rdo/Mapper.php" />
+   <install name="lib/Horde/Rdo/Model.php" as="Horde/Rdo/Model.php" />
+   <install name="lib/Horde/Rdo/Query.php" as="Horde/Rdo/Query.php" />
+   <install name="lib/Horde/Rdo.php" as="Horde/Rdo.php" />
+  </filelist>
+ </phprelease>
+</package>

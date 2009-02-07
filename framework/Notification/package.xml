@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.4.9" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+http://pear.php.net/dtd/tasks-1.0.xsd
+http://pear.php.net/dtd/package-2.0
+http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Horde_Notification</name>
+ <channel>pear.horde.org</channel>
+ <summary>Horde Notification System</summary>
+ <description>The Notification:: class provides a subject-observer pattern for raising and showing messages of different types and to different listeners.
+ </description>
+ <lead>
+  <name>Jan Schneider</name>
+  <user>jan</user>
+  <email>jan@horde.org</email>
+  <active>yes</active>
+ </lead>
+ <date>2006-05-08</date>
+ <time>22:52:05</time>
+ <version>
+  <release>0.0.2</release>
+  <api>0.0.2</api>
+ </version>
+ <stability>
+  <release>alpha</release>
+  <api>alpha</api>
+ </stability>
+ <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+ <notes>Converted to package.xml 2.0 for pear.horde.org
+ </notes>
+ <contents>
+  <dir name="/">
+   <dir name="Notification">
+    <dir name="Listener">
+     <file baseinstalldir="/Horde" name="audio.php" role="php" />
+     <file baseinstalldir="/Horde" name="javascript.php" role="php" />
+     <file baseinstalldir="/Horde" name="mobile.php" role="php" />
+     <file baseinstalldir="/Horde" name="status.php" role="php" />
+    </dir> <!-- //Notification/Listener -->
+    <file baseinstalldir="/Horde" name="Event.php" role="php" />
+    <file baseinstalldir="/Horde" name="Listener.php" role="php" />
+   </dir> <!-- //Notification -->
+   <file baseinstalldir="/Horde" name="Notification.php" role="php" />
+  </dir> <!-- / -->
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>4.0.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0b1</min>
+   </pearinstaller>
+   <package>
+    <name>Horde_Framework</name>
+    <channel>pear.horde.org</channel>
+   </package>
+   <extension>
+    <name>gettext</name>
+   </extension>
+  </required>
+ </dependencies>
+ <phprelease />
+ <changelog>
+  <release>
+   <version>
+    <release>0.0.1</release>
+    <api>0.0.1</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2003-07-05</date>
+   <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+   <notes>Initial release as a PEAR package
+   </notes>
+  </release>
+ </changelog>
+</package>

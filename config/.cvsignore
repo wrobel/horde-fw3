@@ -1,0 +1,8 @@
+conf.php
+conf.bak.php
+hooks.php
+mime_drivers.php
+motd.php
+nls.php
+registry.php
+prefs.php

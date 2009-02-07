@@ -1,0 +1,44 @@
+<?php
+/**
+ * Release focus. Possible values:
+ * 0 - N/A
+ * 1 - Initial freshmeat announcement
+ * 2 - Documentation
+ * 3 - Code cleanup
+ * 4 - Minor feature enhancements
+ * 5 - Major feature enhancements
+ * 6 - Minor bugfixes
+ * 7 - Major bugfixes
+ * 8 - Minor security fixes
+ * 9 - Major security fixes
+ */
+$this->notes['fm']['focus'] = 8;
+
+/* Mailing list release notes. */
+$this->notes['ml']['changes'] = <<<ML
+The Horde Team is pleased to announce the final release of the Internet
+Messaging Program (IMP) version H3 (4.3.3).
+
+This is a minor security release that fixes unescaped output in several
+scripts. All users are encouraged to upgrade to this release. Thanks to Gunnar
+Wrobel for finding these issues in a code audit.
+
+IMP, the Internet Messaging Program, is one of the most popular webmail
+applications available.  It allows universal, web-based access to IMAP and
+POP3 mail servers and provides a full range of features normally found only in
+desktop email clients.
+
+The major changes compared to IMP version H3 (4.3.2) are:
+    * SECURITY: Escape output in message.php, pgp.php and smime.php
+    * Several bugfixes and minor improvements
+ML;
+
+/* Freshmeat release notes, not more than 600 characters. */
+$this->notes['fm']['changes'] = <<<FM
+This release fixes unescaped output in several scripts. In addition, it includes
+several minor bugfixes and improvements.
+FM;
+
+$this->notes['name'] = 'IMP';
+$this->notes['fm']['project'] = 'imp';
+$this->notes['fm']['branch'] = 'Horde 3';

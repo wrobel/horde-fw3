@@ -1,0 +1,41 @@
+<table style="width:100%; border-collapse:collapse;" class="item linedRow">
+ <tr class="item">
+  <th style="width:60%" class="leftAlign">
+   <tag:col_headers.message_thread />
+  </th>
+  <th style="width:20%" class="leftAlign">
+   <tag:col_headers.message_author />
+  </th>
+  <th style="width:19%" class="leftAlign">
+   <tag:col_headers.message_timestamp />
+  </th>
+ </tr>
+
+ <loop:threads_list>
+ <tr class="<tag:threads_list.class />" valign="top" height="20" <if:thread_view_bodies> style="border-bottom:0;" </if:thread_view_bodies>>
+  <td>
+    <strong><tag:threads_list.link /><tag:threads_list.message_subject /></a></strong>
+    <small>
+     [<tag:threads_list.reply /><loop:threads_list.actions>, <tag:threads_list.actions /></loop:threads_list.actions>]
+    </small>
+  </td>
+  <td>
+   <tag:threads_list.message_author />
+  </td>
+  <td>
+   <tag:threads_list.message_date />
+  </td>
+ </tr>
+ <if:thread_view_bodies>
+ <tr class="<tag:threads_list.class />" valign="top">
+  <td colspan="3" style="padding:7px" wrap="virtual">
+    <tag:threads_list.body />
+    <br />
+    <tag:threads_list.message_attachment />
+    <br />
+  </td>
+ </tr>
+ </if:thread_view_bodies>
+ </loop:threads_list>
+
+</table>

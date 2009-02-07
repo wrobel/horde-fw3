@@ -1,0 +1,49 @@
+<table class="linedRow" cellspacing="0" style="width:100%">
+<thead>
+ <tr class="item nowrap">
+  <th<tag:col_headers.forum_name_class />>
+   <tag:col_headers.forum_name />
+  </th>
+  <th<tag:col_headers.message_count_class />>
+   <tag:col_headers.message_count />
+  </th>
+  <th<tag:col_headers.message_subject_class />>
+   <tag:col_headers.message_subject />
+  </th>
+  <th<tag:col_headers.message_author_class />>
+   <tag:col_headers.message_author />
+  </th>
+  <th<tag:col_headers.message_timestamp_class />>
+   <tag:col_headers.message_timestamp />
+  </th>
+ </tr>
+</thead>
+<tbody>
+<loop:forums_list>
+ <tr>
+  <td>
+   <tag:forums_list.indent /><if:forums_list.url><a href="<tag:forums_list.url />"></if:forums_list.url><tag:forums_list.forum_name /><if:forums_list.url></a></if:forums_list.url>
+   <if:forums_list.actions>
+    <small>
+     [<loop:forums_list.actions><tag:forums_list.actions /><divider:forums_list.actions>, </divider:forums_list.actions></loop:forums_list.actions>]
+    </small>
+   </if:forums_list.actions>
+  </td>
+  <td>
+   <tag:forums_list.message_count />
+  </td>
+  <td>
+   <if:forums_list.message_url>
+   <a href="<tag:forums_list.message_url />"><tag:forums_list.message_subject /></a>
+   </if:forums_list.message_url>
+  </td>
+  <td>
+   <tag:forums_list.message_author />
+  </td>
+  <td>
+   <tag:forums_list.message_date />
+  </td>
+ </tr>
+</loop:forums_list>
+</tbody>
+</table>

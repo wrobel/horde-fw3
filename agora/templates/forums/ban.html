@@ -1,0 +1,19 @@
+<div id="menu"><tag:menu /></div>
+<tag:notify />
+
+<h1 class="header"><tag:forum.forum_name /></h1>
+<div class="box"><tag:forum.forum_description /></div>
+
+<br class="spacer">
+
+<if:banned>
+<h1 class="header"><gettext>Banned</gettext></h1>
+<ul>
+<loop:banned>
+    <li><tag:banned /></li>
+</loop:banned>
+</ul>
+<br class="spacer">
+</if:banned>
+
+<tag:formbox />

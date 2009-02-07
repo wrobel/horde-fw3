@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.4.9" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+http://pear.php.net/dtd/tasks-1.0.xsd
+http://pear.php.net/dtd/package-2.0
+http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Horde_Loader</name>
+ <channel>pear.horde.org</channel>
+ <summary>Horde Class Loader</summary>
+ <description>Autoload implementation and class loading manager for Horde
+ </description>
+ <lead>
+  <name>Chuck Hagenbuch</name>
+  <user>chuck</user>
+  <email>chuck@horde.org</email>
+  <active>yes</active>
+ </lead>
+ <date>2007-07-10</date>
+ <time>14:00:00</time>
+ <version>
+  <release>0.1.0</release>
+  <api>0.1.0</api>
+ </version>
+ <stability>
+  <release>alpha</release>
+  <api>alpha</api>
+ </stability>
+ <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+ <notes>Initial release of independent loader component.
+ </notes>
+ <contents>
+  <dir name="/" baseinstalldir="/Horde">
+   <file name="Loader.php" role="php" />
+  </dir> <!-- /Horde -->
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.2</min>
+   </php>
+   <pearinstaller>
+    <min>1.5</min>
+   </pearinstaller>
+  </required>
+ </dependencies>
+ <phprelease/>
+ <changelog/>
+</package>

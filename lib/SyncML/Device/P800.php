@@ -1,0 +1,1 @@
+../../../framework/SyncML/SyncML/Device/P800.php

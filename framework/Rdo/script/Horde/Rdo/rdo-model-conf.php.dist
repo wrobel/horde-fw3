@@ -1,0 +1,9 @@
+<?php
+/**
+ * Configuration for rdo-model script.
+ */
+
+$conf['phptype'] = '';
+$conf['username'] = '';
+$conf['password'] = '';
+$conf['database'] = 'horde';

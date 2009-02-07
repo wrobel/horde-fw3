@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.4.9" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+http://pear.php.net/dtd/tasks-1.0.xsd
+http://pear.php.net/dtd/package-2.0
+http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Date</name>
+ <channel>pear.horde.org</channel>
+ <summary>Horde Date package</summary>
+ <description>Package for creating and manipulating dates.
+ </description>
+ <lead>
+  <name>Chuck Hagenbuch</name>
+  <user>chuck</user>
+  <email>chuck@horde.org</email>
+  <active>yes</active>
+ </lead>
+ <lead>
+  <name>Jan Schneider</name>
+  <user>jan</user>
+  <email>jan@horde.org</email>
+  <active>yes</active>
+ </lead>
+ <date>2008-09-16</date>
+ <version>
+  <release>0.1.0</release>
+  <api>0.1.0</api>
+ </version>
+ <stability>
+  <release>beta</release>
+  <api>beta</api>
+ </stability>
+ <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+ <notes>* Added Horde_Date_Recurrence class.
+* Add PHP 4 fallback for mktime and dates outside of 1970-2038.
+* Correctly match dates with T/Z splitters (Request #4267).
+* Added weekOfMonth() (Request #5229).
+* Fixed broken time format generators.
+</notes>
+ <contents>
+  <dir name="/" baseinstalldir="/Horde">
+   <dir name="Date">
+    <file name="Recurrence.php" role="php" />
+   </dir> <!-- //Date -->
+   <dir name="tests">
+    <dir name="fixtures">
+     <file name="bug2813.ics" role="test" />
+    </dir> <!-- //fixtures -->
+    <file name="bug2813.phpt" role="test" />
+    <file name="bug4626.phpt" role="test" />
+    <file name="recurrence.phpt" role="test" />
+    <file name="setNthWeekday.phpt" role="test" />
+    <file name="strftime_de.phpt" role="test" />
+    <file name="strftime.phpt" role="test" />
+    <file name="timestamp.phpt" role="test" />
+   </dir> <!-- //tests -->
+   <file name="Date.php" role="php" />
+  </dir> <!-- / -->
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>4.3.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.5.4</min>
+   </pearinstaller>
+   <package>
+    <name>Date</name>
+    <channel>pear.php.net</channel>
+   </package>
+  </required>
+ </dependencies>
+ <phprelease />
+ <changelog>
+  <release>
+   <version>
+    <release>0.0.2</release>
+    <api>0.0.2</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2006-05-08</date>
+   <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+   <notes>Converted to package.xml 2.0 for pear.horde.org
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.0.1</release>
+    <api>0.0.1</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2004-08-01</date>
+   <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+   <notes>Initial separation from Kronolith.
+   </notes>
+  </release>
+ </changelog>
+</package>

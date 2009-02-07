@@ -1,0 +1,290 @@
+# PASSWD ESTONIAN TRANSLATION
+#
+# Toomas Aas, 2004 - 2006
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Passwd 3.0.1-cvs\n"
+"Report-Msgid-Bugs-To: dev@lists.horde.org\n"
+"POT-Creation-Date: 2008-05-29 15:49+0300\n"
+"PO-Revision-Date: 2008-06-12 11:34+0200\n"
+"Last-Translator: Alar SIng <alar.sing@err.ee>\n"
+"Language-Team: Estonian <i18n@lists.horde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-13\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: lib/Driver/expect.php:34
+#, php-format
+msgid "%s does not exist or is not executable."
+msgstr "%s puudub või pole käivitatav."
+
+#: lib/Driver/composite.php:63
+#, php-format
+msgid "%s: unable to load driver: %s"
+msgstr "%s: ei õnnestu laadida draiverit: %s"
+
+#: lib/Driver/adsi.php:61
+#, php-format
+msgid "ADSI error %s."
+msgstr "ADSI viga %s."
+
+#: lib/Driver/adsi.php:64 lib/Driver/pspasswd.php:105
+msgid "Access Denied."
+msgstr "Juurdepääs keelatud."
+
+#: lib/Driver.php:89
+msgid "Backend not correctly implemented."
+msgstr "Alusrakendus ei ole korralikult paigaldatud."
+
+#: lib/Driver/poppassd.php:90
+msgid "Cannot send command to server."
+msgstr "Ei saa juhtida serverit."
+
+#: main.php:255 templates/main/main.inc:142
+msgid "Change Password"
+msgstr "Vaheta salasõna"
+
+#: templates/main/main.inc:127
+msgid "Change password on:"
+msgstr "Vaheta salasõna süsteemis:"
+
+#: templates/main/main.inc:62
+msgid "Change your password"
+msgstr "Muuda oma salasõna"
+
+#: templates/main/main.inc:69
+#, php-format
+msgid "Changing password on %s"
+msgstr "Salasõna muutmine süsteemis: %s"
+
+#: templates/main/main.inc:114
+msgid "Confirm new password:"
+msgstr "Korda uut salasõna:"
+
+#: lib/Driver/kolab.php:60 lib/Driver/ldap.php:95 lib/Driver/ldap.php:263
+msgid "Could not bind to LDAP server"
+msgstr "Ei saanud sisse LDAP serverisse"
+
+#: lib/Driver/kolab.php:46 lib/Driver/ldap.php:70
+msgid "Could not connect to LDAP server"
+msgstr "Ei saanud ühendust LDAP serveriga"
+
+#: lib/Driver/smbpasswd.php:57
+msgid "Could not open pipe to smbpasswd."
+msgstr "Ei õnnestunud avada toru smbpasswd-ga."
+
+#: lib/Driver/ldap.php:76
+msgid "Could not start TLS connection to LDAP server"
+msgstr "Ei saanud alustada TLS ühedust LDAP serveriga"
+
+#: lib/Driver/smbpasswd.php:79
+msgid "Error sending data to smbpasswd."
+msgstr "Viga andmete saatmisel smbpasswd-le."
+
+#: lib/Driver/pspasswd.php:93
+msgid "Failed to verify old password."
+msgstr "Vana salasõna kontroll nurjus."
+
+#: main.php:211 lib/Driver/composite.php:97
+#, php-format
+msgid "Failure in changing password on %s: %s"
+msgstr "Salasõna muutmine %s süsteemis nurjus: %s"
+
+#: lib/Driver.php:60 lib/Driver/vmailmgr.php:42 lib/Driver/kolab.php:84
+#: lib/Driver/poppassd.php:120 lib/Driver/ldap.php:264
+msgid "Incorrect Password"
+msgstr "Vale salasõna"
+
+#: lib/Driver/ldap.php:255
+msgid "Minimum password age has not yet expired"
+msgstr "Salasõna vähim kehtivusaeg pole veel täis"
+
+#: templates/main/main.inc:102
+msgid "New password:"
+msgstr "Uus salasõna:"
+
+#: lib/Driver/poppassd.php:67
+msgid "No prompt returned from server."
+msgstr "Viipa ei tagastaud serverist."
+
+#: lib/Driver.php:116
+#, php-format
+msgid "No such backend \"%s\" found."
+msgstr "Alusrakendust \"%s\" ei leitud."
+
+#: templates/main/main.inc:90
+msgid "Old password:"
+msgstr "Vana salasõna:"
+
+#: lib/Driver/smbpasswd.php:47
+msgid "Passwd is not properly configured."
+msgstr "Passwd moodul ei ole korralikult häälestatud."
+
+#: main.php:203
+#, php-format
+msgid "Password changed on %s."
+msgstr "Salasõna süsteemis %s muudetud!"
+
+#: lib/Driver/sql.php:127
+#, php-format
+msgid "Password column \"%s\" not found in password table."
+msgstr "Salasõnade tabelis ei leitud salasõna veergu \"%s\"."
+
+#: lib/Driver/pspasswd.php:75
+msgid "Password module can't find the supplied bin."
+msgstr "Salasõna moodul ei leia etteantud programmi."
+
+#: lib/Driver/pspasswd.php:73
+msgid "Password module is missing required parameters."
+msgstr "Salasõna moodulil puuduvad vajalikud parameetrid."
+
+#: lib/Driver/adsi.php:51
+msgid "Password module is missing target parameter."
+msgstr "Salasõna moodulil puudub target parameeter."
+
+#: main.php:178 lib/Driver/servuftp.php:71
+msgid "Password module is not properly configured"
+msgstr "Salasõna moodul ei ole korralikult häälestatud"
+
+#: lib/Driver/servuftp.php:98
+msgid "Password module is not properly configured."
+msgstr "Salasõna moodul ei ole korralikult häälestatud"
+
+#: templates/main/main.inc:11
+msgid "Please provide a new password"
+msgstr "Sa pead sisestama uue salasõna"
+
+#: templates/main/main.inc:7
+msgid "Please provide your current password"
+msgstr "Sa pead sisestama kehtiva salasõna"
+
+#: templates/main/main.inc:15
+msgid "Please verify your new password"
+msgstr "Uus salasõna tuleb sisestada kaks korda"
+
+#: lib/Driver/composite.php:41
+msgid "Required 'drivers' is misconfigured in Composite configuration."
+msgstr ""
+"Kohustuslik parameeter 'drivers' on Composite seadistuses valesti määratud."
+
+#: lib/Driver/sql.php:46
+msgid "Required 'phptype' not specified in Passwd SQL configuration."
+msgstr "SQL häälestuses puudub vajalik 'phptype'."
+
+#: lib/Driver/vpopmail.php:49
+msgid "Required 'phptype' not specified in SQL configuration."
+msgstr "SQL häälestuses puudub vajalik 'phptype'."
+
+#: templates/main/main.inc:143
+msgid "Reset"
+msgstr "Tühjenda vorm"
+
+#: lib/Driver/vpopmail.php:83 lib/Driver/sql.php:75
+msgid "Unable to connect to SQL server."
+msgstr "Ei saa ühendust SQL serveriga."
+
+#: lib/Driver/vpopmail.php:150 lib/Driver/sql.php:135
+#: lib/Driver/poppassd.php:114
+msgid "User not found"
+msgstr "Kasutajat ei leitud"
+
+#: lib/Driver/kolab.php:76 lib/Driver/ldap.php:131 lib/Driver/pine.php:231
+msgid "User not found."
+msgstr "Kasutajat ei leitud."
+
+#: templates/main/main.inc:77
+msgid "Username:"
+msgstr "Kasutajanimi:"
+
+#: main.php:47
+#, php-format
+msgid "You can't change password for user %s"
+msgstr "Sa ei saa muuta kasutaja %s salasõna"
+
+#: main.php:55
+msgid "You must give your current password"
+msgstr "Sa pead sisestama oma kehtiva salasõna"
+
+#: main.php:64
+msgid "You must give your new password"
+msgstr "Sa pead sisestama oma uue salasõna"
+
+#: main.php:68
+msgid "You must verify your new password"
+msgstr "Uus salasõna tuleb sisestada kaks korda"
+
+#: main.php:88
+#, php-format
+msgid ""
+"Your new password is too long; passwords may not be more than %d characters "
+"long!"
+msgstr "Uus salasõna on liiga pikk; salasõna ei tohi olla pikem kui %d märki!"
+
+#: main.php:167
+msgid "Your new password is too simple to guess!  Not changed!"
+msgstr "Uut salasõna on liiga lihtne ära arvata! Salasõna ei muudetud!"
+
+#: main.php:158
+msgid "Your new password is too simple to guess. Not changed!"
+msgstr "Uut salasõna on liiga lihtne ära arvata. Salasõna ei muudetud!"
+
+#: main.php:83
+#, php-format
+msgid "Your new password must be at least %d characters long!"
+msgstr "Uus salasõna peab olema vähemalt %d märki pikk!"
+
+#: main.php:76
+msgid "Your new password must be different from your current password"
+msgstr "Uus salasõna peab erinema praegusest salasõnast"
+
+#: main.php:128
+#, php-format
+msgid "Your new password must contain at least %d alphabetic characters."
+msgstr "Uus salasõna peab sisaldama vähemalt %d tähte."
+
+#: main.php:133
+#, php-format
+msgid "Your new password must contain at least %d alphanumeric characters."
+msgstr "Uus salasõna peab sisaldama vähemalt %d tähte või numbrit."
+
+#: main.php:138
+#, php-format
+msgid ""
+"Your new password must contain at least %d different types of characters. "
+"The types are: lower, upper, numeric, and symbols."
+msgstr ""
+"Uus salasõna peab sisaldama vähemalt %d eri tüüpi märki. Tüübid on: "
+"väiketäht, suurtäht, number ja muu märk."
+
+#: main.php:118
+#, php-format
+msgid "Your new password must contain at least %d lowercase characters."
+msgstr "Uus salasõna peab sisaldama vähemalt %d väiketähte."
+
+#: main.php:123
+#, php-format
+msgid "Your new password must contain at least %d numeric characters."
+msgstr "Uus salasõna peab sisaldama vähemalt %d numbrit."
+
+#: main.php:113
+#, php-format
+msgid "Your new password must contain at least %d uppercase characters."
+msgstr "Uus salasõna peab sisaldama vähemalt %d suurtähte."
+
+#: main.php:144
+#, php-format
+msgid "Your new password must contain less than %d whitespace characters."
+msgstr "Uus salasõna peab sisaldama vähem kui %d tühikut."
+
+#: main.php:146
+msgid "Your new password must not contain whitespace characters."
+msgstr "Uus salasõna ei tohi sisaldada tühikuid."
+
+#: main.php:72
+msgid "Your new passwords didn't match"
+msgstr "Sisestatud salasõnad ei klapi"
+
+#: templates/main/main.inc:19
+msgid "Your passwords do not match"
+msgstr "Salasõnad ei klapi"
