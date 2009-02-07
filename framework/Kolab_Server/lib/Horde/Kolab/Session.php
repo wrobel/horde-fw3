@@ -3,7 +3,7 @@
  * The Horde_Kolab_Session class holds additional user details for the current
  * session.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Session.php,v 1.1.2.10 2009/01/08 21:07:31 wrobel Exp $
+ * $Horde$
  *
  * PHP version 4
  *
@@ -27,7 +27,7 @@ require_once 'Horde/Auth.php';
  * relevant for the user session should be accessed via the Horde_Kolab_Session
  * class.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Session.php,v 1.1.2.10 2009/01/08 21:07:31 wrobel Exp $
+ * $Horde$
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -270,6 +270,8 @@ class Horde_Kolab_Session {
             $params['user'] = $user;
             if (isset($credentials['password'])) {
                 $params['pass'] = $credentials['password'];
+            } else {
+                $params['pass'] = Auth::getCredential('password');
             }
         }
         return Horde_Kolab_Server::singleton($params);

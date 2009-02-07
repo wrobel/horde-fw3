@@ -49,6 +49,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
     use the webclient)
   * Added fullname attribute as support for kolab/issue2546 (Horde
     should use name and email from ldap as defaults)
+  * Fixed initialization of parameters retrieved from LDAP.
  </notes>
  <contents>
   <dir name="/">
