@@ -2,6 +2,8 @@ CONFIGS=ansel agora dimp gollem hermes jonah ingo imp kronolith mimp mnemo nag p
 UPDATE=$(CONFIGS) framework
 FRAMEWORK=File Horde Net SyncML Text VFS XML bin data doc
 
+SYMLINK = ../horde-cvs/framework/devtools/horde-fw-symlinks.php
+
 TEST_PKGS = Auth Kolab_Format Kolab_Server Kolab_Storage Kolab_FreeBusy Kolab_Filter Date Share iCalendar VFS
 TEST_APPS = turba kronolith
 
@@ -16,7 +18,7 @@ update:
 	  do                         \
 	  rm -rf lib/$$BIT*;         \
 	done
-	php ../horde-cvs/framework/devtools/horde-fw-symlinks.php --src framework --dest lib
+	@php -c php.ini -q $(SYMLINK) --src framework --dest lib > /dev/null
 	cd config; for fl in *.dist;do cp $$fl $${fl/.dist};done;cd ..;\
 	for PKG in $(CONFIGS); \
 	  do                         \
@@ -36,11 +38,11 @@ refresh: select
 	done
 
 .PHONY: test
-test: test-log-remove $(TEST_PKGS:%=test-%) $(TEST_APPS:%=test-%)
+test: clean-test $(TEST_PKGS:%=test-%) $(TEST_APPS:%=test-%)
 
-.PHONY: test-log-remove
-test-log-remove:
-	rm -f logs/test*.log
+.PHONY: clean-test
+clean-test:
+	rm -f log/test*.log
 
 .PHONY: $(TEST_PKGS:%=test-%)
 $(TEST_PKGS:%=test-%):
@@ -48,12 +50,12 @@ $(TEST_PKGS:%=test-%):
 	@echo "TESTING framework/$(@:test-%=%)"
 	@echo "===================================="
 	@echo
-	@cd framework && php -q -d include_path=/home/wrobel/usr/tmp/php/pear/php devtools/horde-fw-symlinks.php --copy --src ./ --dest /home/wrobel/usr/tmp/php/pear/php/ --pkg $(@:test-%=%) > /dev/null
+	@php -c php.ini -q $(SYMLINK) --src framework --dest lib --pkg framework/$(@:test-%=%) 
 	@PHP_FILES=`find framework/$(@:test-%=%)/ -name '*.php'`; \
 	if [ -n "$$PHP_FILES" ]; then \
-	  rm -f logs/$@-syntax.log; \
+	  rm -f log/$@-syntax.log; \
 	  for TEST in $$PHP_FILES; do \
-	    php -l -f $$TEST | tee -a logs/$@-syntax.log | grep "^No syntax errors detected in" > /dev/null || SYNTAX="$$SYNTAX $$TEST"; \
+	    php -l -f $$TEST | tee -a log/$@-syntax.log | grep "^No syntax errors detected in" > /dev/null || SYNTAX="$$SYNTAX $$TEST"; \
 	  done; \
 	  if [ -n "$$SYNTAX" ]; then \
 	    echo "FAIL: Syntax errors in files: $$SYNTAX"; \
@@ -63,17 +65,17 @@ $(TEST_PKGS:%=test-%):
 	fi
 	@SIMPLE_TESTS=`find framework/$(@:test-%=%)/ -name '*.phpt' | xargs -L 1 -r dirname | sort | uniq`; \
 	if [ -n "$$SIMPLE_TESTS" ]; then \
-	  rm -f logs/$@-simple.log; \
+	  rm -f log/$@-simple.log; \
 	  for TEST in $$SIMPLE_TESTS; do \
-	    pear -c lib/.pearrc run-tests $$TEST/*.phpt | tee -a logs/$@-simple.log | grep "^FAIL " | sed -e 's/FAIL.*\(\[.*\]\)/FAIL: \1/'; \
+	    pear -c lib/.pearrc run-tests $$TEST/*.phpt | tee -a log/$@-simple.log | grep "^FAIL " | sed -e 's/FAIL.*\(\[.*\]\)/FAIL: \1/'; \
 	  done; \
 	fi
 	@ALL_TESTS=`find framework/$(@:test-%=%)/ -name AllTests.php | xargs -L 1 -r dirname | sort | uniq`; \
 	if [ -n "$$ALL_TESTS" ]; then \
 	  CWD=`pwd`; \
-	  rm -f logs/$@-phpunit.log; \
+	  rm -f log/$@-phpunit.log; \
 	  for TEST in $$ALL_TESTS; do \
-	    cd $$TEST && phpunit -d include_path=".:$$CWD/lib:/usr/share/php5:/usr/share/php" -d log_errors=1 -d error_log="$$CWD/logs/php-errors.log" AllTests.php | tee -a $$CWD/logs/$@-phpunit.log | grep "^OK" > /dev/null || PHPUNIT="FAIL"; \
+	    cd $$TEST && phpunit -d include_path=".:$$CWD/lib:$$CWD/../horde-release/horde-webmail/pear:/usr/share/php5:/usr/share/php" -d log_errors=1 -d error_log="$$CWD/log/php-errors.log" AllTests.php | tee -a $$CWD/log/$@-phpunit.log | grep "^OK" > /dev/null || PHPUNIT="FAIL"; \
 	    cd $$CWD; \
 	  done; \
 	  if [ -n "$$PHPUNIT" ]; then \
@@ -92,7 +94,7 @@ $(TEST_APPS:%=test-%):
 	@SIMPLE_TESTS=`find $(@:test-%=%)/ -name *.phpt | xargs -L 1 -r dirname | sort | uniq`; \
 	if [ -n "$$SIMPLE_TESTS" ]; then \
 	  for TEST in $$SIMPLE_TESTS; do \
-	    pear -c lib/.pearrc run-tests $$TEST/*.phpt | tee -a logs/$@-simple.log | grep "^FAIL " | sed -e 's/FAIL.*\(\[.*\]\)/FAIL: \1/'; \
+	    pear -c lib/.pearrc run-tests $$TEST/*.phpt | tee -a log/$@-simple.log | grep "^FAIL " | sed -e 's/FAIL.*\(\[.*\]\)/FAIL: \1/'; \
 	  done; \
 	fi
 	@ALL_TESTS=`find $(@:test-%=%)/ -name AllTests.php | xargs -L 1 -r dirname | sort | uniq`; \
@@ -127,9 +129,9 @@ $(TEST_PKGS:%=reltest-%):
 	sed -i -e "s#-d include_path.*\$$#-c `pwd`/php.reltest.ini#" tmp/pear/pear/phpunit
 	@PHP_FILES=`find tmp/pear/pear/php/Horde/ -name '*.php'`; \
 	if [ -n "$$PHP_FILES" ]; then \
-	  rm -f logs/$@-syntax.log; \
+	  rm -f log/$@-syntax.log; \
 	  for TEST in $$PHP_FILES; do \
-	    php -l -f $$TEST | tee -a logs/$@-syntax.log | grep "^No syntax errors detected in" > /dev/null || SYNTAX="$$SYNTAX $$TEST"; \
+	    php -l -f $$TEST | tee -a log/$@-syntax.log | grep "^No syntax errors detected in" > /dev/null || SYNTAX="$$SYNTAX $$TEST"; \
 	  done; \
 	  if [ -n "$$SYNTAX" ]; then \
 	    echo "FAIL: Syntax errors in files: $$SYNTAX"; \
@@ -139,17 +141,17 @@ $(TEST_PKGS:%=reltest-%):
 	fi
 	@SIMPLE_TESTS=`find tmp/pear/pear/tests/$(@:reltest-%=%) -name '*.phpt' | xargs -L 1 -r dirname | sort | uniq`; \
 	if [ -n "$$SIMPLE_TESTS" ]; then \
-	  rm -f logs/$@-simple.log; \
+	  rm -f log/$@-simple.log; \
 	  for TEST in $$SIMPLE_TESTS; do \
-	    tmp/pear/pear/pear -c tmp/pear/.pearrc run-tests $$TEST/*.phpt | tee -a logs/$@-simple.log | grep "^FAIL " | sed -e 's/FAIL.*\(\[.*\]\)/FAIL: \1/'; \
+	    tmp/pear/pear/pear -c tmp/pear/.pearrc run-tests $$TEST/*.phpt | tee -a log/$@-simple.log | grep "^FAIL " | sed -e 's/FAIL.*\(\[.*\]\)/FAIL: \1/'; \
 	  done; \
 	fi
 	@ALL_TESTS=`find tmp/pear/pear/tests/$(@:reltest-%=%) -name AllTests.php | xargs -L 1 -r dirname | sort | uniq`; \
 	if [ -n "$$ALL_TESTS" ]; then \
 	  CWD=`pwd`; \
-	  rm -f logs/$@-phpunit.log; \
+	  rm -f log/$@-phpunit.log; \
 	  for TEST in $$ALL_TESTS; do \
-	    cd $$TEST && /usr/bin/php -c $$CWD/php.reltest.ini $$CWD/tmp/pear/pear/phpunit -d include_path=".:$$CWD/tmp/pear/pear/php" -d log_errors=1 -d error_log="$$CWD/logs/php-errors.log" AllTests.php | tee -a $$CWD/logs/$@-phpunit.log | grep "^OK" > /dev/null || PHPUNIT="FAIL"; \
+	    cd $$TEST && /usr/bin/php -c $$CWD/php.reltest.ini $$CWD/tmp/pear/pear/phpunit -d include_path=".:$$CWD/tmp/pear/pear/php" -d log_errors=1 -d error_log="$$CWD/log/php-errors.log" AllTests.php | tee -a $$CWD/log/$@-phpunit.log | grep "^OK" > /dev/null || PHPUNIT="FAIL"; \
 	    cd $$CWD; \
 	  done; \
 	  if [ -n "$$PHPUNIT" ]; then \
