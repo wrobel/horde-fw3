@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/smime.php,v 2.48.4.15 2009/02/05 21:13:10 slusarz Exp $
+ * $Horde: imp/smime.php,v 2.48.4.16 2009/02/10 18:47:40 slusarz Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -21,7 +21,7 @@ function _importKeyDialog($target)
     $t->setOption('gettext', true);
     $t->set('selfurl', Horde::applicationUrl('smime.php'));
     $t->set('broken_mp_form', $GLOBALS['browser']->hasQuirk('broken_multipart_form'));
-    $t->set('reload', htmlspecialchars(html_entity_decode(Util::getFormData('reload'))));
+    $t->set('reload', htmlspecialchars(Util::getFormData('reload')));
     $t->set('target', $target);
     $t->set('forminput', Util::formInput());
     $t->set('import_public_key', $target == 'process_import_public_key');
@@ -62,7 +62,7 @@ function _outputPassphraseDialog($secure_check)
     $t = new IMP_Template();
     $t->setOption('gettext', true);
     $t->set('submit_url', Util::addParameter(Horde::applicationUrl('smime.php'), 'actionID', 'process_passphrase_dialog'));
-    $t->set('reload', htmlspecialchars(html_entity_decode(Util::getFormData('reload'))));
+    $t->set('reload', htmlspecialchars(Util::getFormData('reload')));
     $t->set('action', htmlspecialchars(Util::getFormData('passphrase_action')));
     $t->set('locked_img', Horde::img('locked.png', _("S/MIME"), null, $GLOBALS['registry']->getImageDir('horde')));
     echo $t->fetch(IMP_TEMPLATES . '/smime/passphrase.html');
@@ -79,7 +79,12 @@ function _actionWindow()
 
 function _reloadWindow()
 {
-    Util::closeWindowJS('opener.focus();opener.location.href="' . htmlspecialchars(html_entity_decode(Util::getFormData('reload'))) . '";');
+    require_once 'Horde/SessionObjects.php';
+    $cacheSess = &Horde_SessionObjects::singleton();
+    $reload = Util::getFormData('reload');
+    $url = $cacheSess->query($reload);
+    $cacheSess->setPruneFlag($reload, true);
+    Util::closeWindowJS('opener.focus();opener.location.href="' . $url . '";');
 }
 
 function _textWindowOutput($filename, $msg, $html = false)
@@ -323,7 +328,9 @@ if (!is_a($openssl_check, 'PEAR_Error') && $prefs->getValue('use_smime')) {
     if (!$t->get('no_file_upload')) {
         $t->set('no_source', !$GLOBALS['prefs']->getValue('add_source'));
         if (!$t->get('no_source')) {
-            $t->set('public_import_url', Util::addParameter(Util::addParameter($selfURL, 'actionID', 'import_public_key'), 'reload', $selfURL));
+            require_once 'Horde/SessionObjects.php';
+            $cacheSess = &Horde_SessionObjects::singleton();
+            $t->set('public_import_url', Util::addParameter(Util::addParameter($selfURL, 'actionID', 'import_public_key'), 'reload', $cacheSess->storeOid($selfURL, false)));
             $t->set('import_pubkey-help', Help::link('imp', 'smime-import-pubkey'));
         }
     }

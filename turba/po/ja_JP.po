@@ -1,14 +1,14 @@
 # Japanese translation for Turba.
-# Copyright 2004-2009 The Horde Project
+# Copyright 2004-2009 Horde Project
 # This file is distributed under the same license as the Turba package.
 # Hiromi Kimura <hiromi@tac.tsukuba.ac.jp>
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Turba 2.3-RC1\n"
+"Project-Id-Version: Turba 2.3.1\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2008-09-11 16:59+0200\n"
-"PO-Revision-Date: 2008-09-24 20:41+0900\n"
+"POT-Creation-Date: 2009-01-30 14:23+0900\n"
+"PO-Revision-Date: 2009-02-10 20:36+0900\n"
 "Last-Translator: Hiromi Kimura <hiromi@tac.tsukuba.ac.jp>\n"
 "Language-Team: i18n@lists.horde.org\n"
 "MIME-Version: 1.0\n"
@@ -57,12 +57,12 @@ msgstr "\"姓 名\",\"Firstname Lastname\""
 msgid "\"Lastname, Firstname\" (ie. Doe, John)"
 msgstr "\"名, 姓\",\"Lastname, Firstname\""
 
-#: lib/Driver.php:607
+#: lib/Driver.php:620
 #, php-format
 msgid "%d. %s of %s"
-msgstr ""
+msgstr "%d. %s of %s"
 
-#: lib/Forms/AddContact.php:88
+#: lib/Forms/AddContact.php:91
 #, php-format
 msgid "%s added."
 msgstr "%s を追加しました。"
@@ -111,7 +111,7 @@ msgstr "ファイルの追加"
 msgid "Add to"
 msgstr "ここに追加"
 
-#: lib/Driver.php:2100 lib/Driver/null.php:57
+#: lib/Driver.php:2115 lib/Driver/null.php:57
 msgid "Adding contacts is not available."
 msgstr "連絡先の追加はできません。"
 
@@ -173,7 +173,7 @@ msgstr "本当に %s を削除してもいいですか？"
 msgid "Are you sure that you want to delete the selected contacts?"
 msgstr "選択された連絡先を本当に削除しますか？"
 
-#: config/attributes.php.dist:424
+#: config/attributes.php.dist:430
 msgid "Assistant"
 msgstr "助手"
 
@@ -293,52 +293,43 @@ msgstr "コンマ区切り形式"
 msgid "Comma separated values (Microsoft Outlook)"
 msgstr "コンマ区切り形式 (Microsoft Outlook)"
 
-#: config/attributes.php.dist:522
-#, fuzzy
+#: config/attributes.php.dist:528
 msgid "Common Address Extended"
-msgstr "住所"
-
-#: config/attributes.php.dist:540
-#, fuzzy
-msgid "Common City"
-msgstr "市"
-
-#: config/attributes.php.dist:558
-#, fuzzy
-msgid "Common Country"
-msgstr "国"
-
-#: config/attributes.php.dist:466
-#, fuzzy
-msgid "Common Phone"
-msgstr "電話番号"
-
-#: config/attributes.php.dist:534
-#, fuzzy
-msgid "Common Post Office Box"
-msgstr "私書箱"
-
-#: config/attributes.php.dist:552
-#, fuzzy
-msgid "Common Postal Code"
-msgstr "郵便番号"
+msgstr "共通の住所（続き）"
 
 #: config/attributes.php.dist:546
-#, fuzzy
+msgid "Common City"
+msgstr "共通の市"
+
+#: config/attributes.php.dist:564
+msgid "Common Country"
+msgstr "共通の国"
+
+#: config/attributes.php.dist:472
+msgid "Common Phone"
+msgstr "共通の電話番号"
+
+#: config/attributes.php.dist:540
+msgid "Common Post Office Box"
+msgstr "共通の私書箱"
+
+#: config/attributes.php.dist:558
+msgid "Common Postal Code"
+msgstr "共通の郵便番号"
+
+#: config/attributes.php.dist:552
 msgid "Common State/Province"
-msgstr "州／県"
+msgstr "共通の州または県"
 
-#: config/attributes.php.dist:528
-#, fuzzy
+#: config/attributes.php.dist:534
 msgid "Common Street"
-msgstr "番地"
+msgstr "共通の住所番地"
 
-#: config/attributes.php.dist:491
-#, fuzzy
+#: config/attributes.php.dist:497
 msgid "Common Video Call"
-msgstr "ビデオ通話"
+msgstr "共通のビデオ通話"
 
-#: config/sources.php.dist:256 config/sources.php.dist:948
+#: config/sources.php.dist:256 config/sources.php.dist:952
 msgid "Communications"
 msgstr "通信"
 
@@ -350,11 +341,12 @@ msgstr "勤務先"
 msgid "Company Address"
 msgstr "勤務先住所"
 
-#: scripts/import_squirrelmail_abook.php:112 lib/api.php:546 lib/api.php:600
-#: lib/api.php:653 lib/api.php:701 lib/api.php:756 lib/api.php:815
-#: lib/api.php:866 lib/api.php:1004 lib/api.php:1066 lib/api.php:1137
-#: lib/api.php:1204 lib/api.php:1324 lib/api.php:1563 lib/api.php:1640
-#: lib/api.php:1791
+#: scripts/import_squirrelmail_sql_abook.php:125
+#: scripts/import_squirrelmail_file_abook.php:114 lib/api.php:546
+#: lib/api.php:600 lib/api.php:653 lib/api.php:701 lib/api.php:756
+#: lib/api.php:815 lib/api.php:866 lib/api.php:1004 lib/api.php:1066
+#: lib/api.php:1137 lib/api.php:1204 lib/api.php:1324 lib/api.php:1563
+#: lib/api.php:1640 lib/api.php:1791
 #, php-format
 msgid "Connection failed: %s"
 msgstr "接続に失敗しました: %s"
@@ -367,7 +359,7 @@ msgstr "接続に失敗しました"
 msgid "Contact Search"
 msgstr "連絡先の検索"
 
-#: config/sources.php.dist:866
+#: config/sources.php.dist:868
 msgid "Contacts"
 msgstr "連絡先"
 
@@ -428,7 +420,7 @@ msgstr "削除は拒否されました。"
 msgid "Delete failed: (%s) %s"
 msgstr "削除できませんでした: (%s) %s"
 
-#: lib/Driver.php:2108 lib/Driver/null.php:62
+#: lib/Driver.php:2123 lib/Driver/null.php:62
 msgid "Deleting contacts is not available."
 msgstr "連絡先の削除はできません。"
 
@@ -457,7 +449,7 @@ msgstr "表示"
 msgid "Display Options"
 msgstr "表示オプション"
 
-#: lib/Object.php:354
+#: lib/Object.php:357
 msgid "Download"
 msgstr "ダウンロード"
 
@@ -612,7 +604,7 @@ msgstr "予定情報 URL"
 msgid "From"
 msgstr "From"
 
-#: config/attributes.php.dist:430
+#: config/attributes.php.dist:436
 msgid "Gender"
 msgstr "性別"
 
@@ -628,10 +620,9 @@ msgstr "グループ"
 msgid "Home Address"
 msgstr "自宅の住所"
 
-#: config/attributes.php.dist:592
-#, fuzzy
+#: config/attributes.php.dist:598
 msgid "Home Address Extended"
-msgstr "自宅の住所"
+msgstr "自宅の住所（続き）"
 
 #: config/attributes.php.dist:153
 msgid "Home City"
@@ -641,23 +632,23 @@ msgstr "自宅の市"
 msgid "Home Country"
 msgstr "自宅の国"
 
-#: config/attributes.php.dist:460
+#: config/attributes.php.dist:466
 msgid "Home Email"
 msgstr "自宅メールアドレス"
 
-#: config/attributes.php.dist:476
+#: config/attributes.php.dist:482
 msgid "Home Fax"
 msgstr "自宅の FAX"
 
-#: config/attributes.php.dist:598
+#: config/attributes.php.dist:604
 msgid "Home Latitude"
 msgstr "自宅の緯度"
 
-#: config/attributes.php.dist:603
+#: config/attributes.php.dist:609
 msgid "Home Longitude"
 msgstr "自宅の経度"
 
-#: config/attributes.php.dist:486
+#: config/attributes.php.dist:492
 msgid "Home Mobile Phone"
 msgstr "自宅の携帯電話"
 
@@ -681,11 +672,11 @@ msgstr "自宅の州／県"
 msgid "Home Street Address"
 msgstr "自宅の番地"
 
-#: config/attributes.php.dist:501
+#: config/attributes.php.dist:507
 msgid "Home Video Call"
 msgstr "自宅のビデオ通話"
 
-#: config/attributes.php.dist:586
+#: config/attributes.php.dist:592
 msgid "Home Website URL"
 msgstr "自宅の Web URL"
 
@@ -702,11 +693,11 @@ msgstr "アドレス帳のインポート、ステップ %d"
 msgid "Import/Export Address Books"
 msgstr "アドレス帳のインポート／エクスポート"
 
-#: config/attributes.php.dist:406
+#: config/attributes.php.dist:412
 msgid "Initials"
 msgstr "イニシャル"
 
-#: config/attributes.php.dist:412
+#: config/attributes.php.dist:418
 msgid "Instant Messenger"
 msgstr "インスタント・メッセンジャー"
 
@@ -714,9 +705,10 @@ msgstr "インスタント・メッセンジャー"
 msgid "Invalid ID"
 msgstr "無効な ID です"
 
-#: scripts/import_squirrelmail_abook.php:105 lib/api.php:368 lib/api.php:696
-#: lib/api.php:751 lib/api.php:810 lib/api.php:859 lib/api.php:995
-#: lib/api.php:1128 lib/api.php:1194 lib/api.php:1774
+#: scripts/import_squirrelmail_sql_abook.php:118
+#: scripts/import_squirrelmail_file_abook.php:107 lib/api.php:368
+#: lib/api.php:696 lib/api.php:751 lib/api.php:810 lib/api.php:859
+#: lib/api.php:995 lib/api.php:1128 lib/api.php:1194 lib/api.php:1774
 #, php-format
 msgid "Invalid address book: %s"
 msgstr "無効なアドレス帳です：%s"
@@ -745,10 +737,19 @@ msgstr "無効な名前です"
 msgid "Job Title"
 msgstr "肩書"
 
-#: lib/Driver/kolab.php:1129 lib/Driver/kolab.php:1195
+#: lib/Driver/kolab.php:1119
+#, php-format
+msgid "Key for saving must be \\'uid\\' not %s!"
+msgstr "保存のキイは \\'uid\\' であって、%s でないこと！"
+
+#: lib/Driver/kolab.php:1203
 #, php-format
 msgid "Key for saving must be a UID not %s!"
 msgstr "保存のキイは UID であって、%s でないこと！"
+
+#: config/attributes.php.dist:406
+msgid "Kolab Home Server"
+msgstr "Kolab ホームサーバ"
 
 #: lib/Driver/ldap.php:64
 msgid ""
@@ -760,7 +761,7 @@ msgstr ""
 msgid "LDIF Address Book"
 msgstr "LDIFアドレス帳"
 
-#: config/attributes.php.dist:436
+#: config/attributes.php.dist:442
 msgid "Language"
 msgstr "言語"
 
@@ -772,7 +773,7 @@ msgstr "最終変更"
 msgid "Last Name"
 msgstr "姓(Last Name)"
 
-#: config/attributes.php.dist:442
+#: config/attributes.php.dist:448
 msgid "Latitude"
 msgstr "緯度"
 
@@ -780,7 +781,7 @@ msgstr "緯度"
 msgid "List"
 msgstr "リスト"
 
-#: config/sources.php.dist:251 config/sources.php.dist:944
+#: config/sources.php.dist:251 config/sources.php.dist:948
 msgid "Location"
 msgstr "場所"
 
@@ -792,7 +793,7 @@ msgstr "ロゴ"
 msgid "Logo MIME Type"
 msgstr "ロゴのMIMEタイプ"
 
-#: config/attributes.php.dist:447
+#: config/attributes.php.dist:453
 msgid "Longitude"
 msgstr "経度"
 
@@ -804,7 +805,7 @@ msgstr "不正な要求"
 msgid "Manage Address Books"
 msgstr "アドレス帳の管理"
 
-#: config/attributes.php.dist:418
+#: config/attributes.php.dist:424
 msgid "Manager"
 msgstr "管理者"
 
@@ -977,7 +978,7 @@ msgstr "1ページの項目数"
 msgid "Object not found"
 msgstr "オブジェクトが見付かりません"
 
-#: lib/Driver/kolab.php:1199
+#: lib/Driver/kolab.php:1207
 #, php-format
 msgid "Object with UID %s does not exist!"
 msgstr "UID %s のオブジェクトは存在しません！"
@@ -1003,11 +1004,11 @@ msgstr ""
 msgid "Only one vcard supported."
 msgstr "１つの vcard だけをサポートします。"
 
-#: config/sources.php.dist:258 config/sources.php.dist:950
+#: config/sources.php.dist:258 config/sources.php.dist:954
 msgid "Organization"
 msgstr "組織"
 
-#: config/sources.php.dist:259 config/sources.php.dist:952
+#: config/sources.php.dist:259 config/sources.php.dist:956
 msgid "Other"
 msgstr "その他"
 
@@ -1015,7 +1016,7 @@ msgstr "その他"
 msgid "PGP Public Key"
 msgstr "PGP 公開鍵"
 
-#: config/attributes.php.dist:517
+#: config/attributes.php.dist:523
 msgid "PTT"
 msgstr "PTT"
 
@@ -1027,12 +1028,12 @@ msgstr "ポケベル"
 msgid "Permanently delete this contact?"
 msgstr "この連絡先を本当に削除しますか？"
 
-#: deletefile.php:36 lib/Driver.php:791 lib/api.php:870 lib/api.php:1795
+#: deletefile.php:36 lib/Driver.php:805 lib/api.php:870 lib/api.php:1795
 #: lib/Driver/sql.php:515
 msgid "Permission denied"
 msgstr "アクセスが拒否されました"
 
-#: config/sources.php.dist:248 config/sources.php.dist:940
+#: config/sources.php.dist:248 config/sources.php.dist:944
 msgid "Personal"
 msgstr "個人"
 
@@ -1067,7 +1068,7 @@ msgstr "問い合わせ失敗: (%s) %s"
 msgid "Read failed: (%s) %s"
 msgstr "読込み失敗: (%s) %s"
 
-#: lib/Driver.php:2092 lib/Driver/null.php:52
+#: lib/Driver.php:2107 lib/Driver/null.php:52
 msgid "Reading contacts is not available."
 msgstr "連絡先の読み出しはできません。"
 
@@ -1088,7 +1089,7 @@ msgstr "アドレス帳を削除"
 msgid "Remove from this list"
 msgstr "リストから外す"
 
-#: lib/Driver.php:2130
+#: lib/Driver.php:2145
 msgid ""
 "Removing user data is not supported in the current address book storage "
 "driver."
@@ -1104,7 +1105,7 @@ msgstr ""
 "インポートで既存のアドレス帳を置き換えますか？ <strong>警告：そうすると現在の"
 "アドレス帳の内容は全て失われます。</strong>"
 
-#: lib/Driver.php:685
+#: lib/Driver.php:699
 msgid "Requested object not found."
 msgstr "要求されたオブジェクトは見付かりませんでした。"
 
@@ -1116,7 +1117,7 @@ msgstr "デフォルトに戻す"
 msgid "S/MIME Public Certificate"
 msgstr "S/MIME 公開証明書"
 
-#: config/attributes.php.dist:511
+#: config/attributes.php.dist:517
 msgid "SIP"
 msgstr "SIP"
 
@@ -1133,7 +1134,7 @@ msgstr "保存"
 msgid "Save search as a virtual address book?"
 msgstr "検索結果を仮想アドレス帳に保存しますか？"
 
-#: lib/Driver.php:2118 lib/Driver/null.php:67
+#: lib/Driver.php:2133 lib/Driver/null.php:67
 msgid "Saving contacts is not available."
 msgstr "連絡先の保存はできません。"
 
@@ -1156,7 +1157,7 @@ msgstr "検索失敗: %s"
 msgid "Search for: "
 msgstr "検索："
 
-#: lib/Driver.php:2077 lib/Driver/null.php:47
+#: lib/Driver.php:2092 lib/Driver/null.php:47
 msgid "Searching is not available."
 msgstr "検索は使用できません。"
 
@@ -1318,7 +1319,7 @@ msgstr "ファイル %s には連絡先が含まれていません。"
 msgid "The VFS backend needs to be configured to enable attachment uploads."
 msgstr "VFS バックエンドは添付のアップロードが許可されていることが必要です。"
 
-#: lib/Driver.php:2048
+#: lib/Driver.php:2063
 #, php-format
 msgid "The address book \"%s\" does not exist."
 msgstr "アドレス帳 \"%s\" は存在しません。"
@@ -1395,7 +1396,7 @@ msgstr[0] "中には %d 件の連絡先がありますが、あなたは閲覧できません"
 msgid "There was a problem creating the virtual address book: %s"
 msgstr "仮想アドレス帳の作成中に問題が起きました: %s"
 
-#: lib/Forms/AddContact.php:95
+#: lib/Forms/AddContact.php:100
 msgid ""
 "There was an error adding the new contact. Contact your system administrator "
 "for further help."
@@ -1482,7 +1483,7 @@ msgstr "タイムゾーン"
 msgid "Unable to find contact owner."
 msgstr "連絡先の所有者が見つかりません。"
 
-#: lib/Driver.php:1968 lib/Turba.php:659
+#: lib/Driver.php:1983 lib/Turba.php:662
 #, php-format
 msgid "Unable to load the definition of %s."
 msgstr "%s の定義をロードできません。"
@@ -1518,7 +1519,7 @@ msgstr "連絡先を表示"
 msgid "View to display by default:"
 msgstr "デフォルトの表示画面:"
 
-#: config/attributes.php.dist:506
+#: config/attributes.php.dist:512
 msgid "VoIP"
 msgstr "VoIP"
 
@@ -1530,7 +1531,7 @@ msgstr "Web の URL"
 msgid "Work Address"
 msgstr "勤務先の住所"
 
-#: config/attributes.php.dist:570
+#: config/attributes.php.dist:576
 msgid "Work Address Extended"
 msgstr "勤務先の住所"
 
@@ -1542,23 +1543,23 @@ msgstr "勤務先の市"
 msgid "Work Country"
 msgstr "勤務先の国"
 
-#: config/attributes.php.dist:454
+#: config/attributes.php.dist:460
 msgid "Work Email"
 msgstr "勤務先メールアドレス"
 
-#: config/attributes.php.dist:471
+#: config/attributes.php.dist:477
 msgid "Work Fax"
 msgstr "勤務先の FAX"
 
-#: config/attributes.php.dist:576
+#: config/attributes.php.dist:582
 msgid "Work Latitude"
 msgstr "勤務先の緯度"
 
-#: config/attributes.php.dist:581
+#: config/attributes.php.dist:587
 msgid "Work Longitude"
 msgstr "勤務先の経度"
 
-#: config/attributes.php.dist:481
+#: config/attributes.php.dist:487
 msgid "Work Mobile Phone"
 msgstr "勤務先の携帯電話"
 
@@ -1582,11 +1583,11 @@ msgstr "勤務先の州／県"
 msgid "Work Street Address"
 msgstr "勤務先の番地"
 
-#: config/attributes.php.dist:496
+#: config/attributes.php.dist:502
 msgid "Work Video Call"
 msgstr "勤務先のビデオ通話"
 
-#: config/attributes.php.dist:564
+#: config/attributes.php.dist:570
 msgid "Work Website URL"
 msgstr "勤務先の Web URL"
 
@@ -1691,7 +1692,7 @@ msgstr "アドレス帳にあなた自身の連絡先がありません。"
 msgid "[no value]"
 msgstr "[値なし]"
 
-#: lib/Turba.php:601
+#: lib/Turba.php:604
 msgid "_Browse"
 msgstr "_B閲覧"
 
@@ -1707,7 +1708,7 @@ msgstr "_D削除"
 msgid "_Edit"
 msgstr "_E編集"
 
-#: lib/Turba.php:610
+#: lib/Turba.php:613
 msgid "_Import/Export"
 msgstr "_Iイン/アウト"
 
@@ -1715,15 +1716,15 @@ msgstr "_Iイン/アウト"
 msgid "_Lists"
 msgstr "_Lリスト"
 
-#: lib/Turba.php:598
+#: lib/Turba.php:601
 msgid "_My Address Books"
 msgstr "_M私のアドレス帳"
 
-#: lib/Turba.php:604
+#: lib/Turba.php:607
 msgid "_New Contact"
 msgstr "_N新規連絡先"
 
-#: lib/Turba.php:615
+#: lib/Turba.php:618
 msgid "_Print"
 msgstr "_P印刷"
 
@@ -1731,7 +1732,7 @@ msgstr "_P印刷"
 msgid "_Remove from this list"
 msgstr "_Rリストから削除"
 
-#: lib/Turba.php:606
+#: lib/Turba.php:609
 msgid "_Search"
 msgstr "_S検索"
 
@@ -1746,11 +1747,11 @@ msgstr "昇順"
 #: lib/Views/Contact.php:76 lib/Views/Contact.php:87
 #, php-format
 msgid "by %s"
-msgstr ""
+msgstr "%s 作"
 
 #: lib/Views/Contact.php:78 lib/Views/Contact.php:89
 msgid "by me"
-msgstr ""
+msgstr "自作"
 
 #: vcard.php:45
 msgid "contact"
@@ -1776,16 +1777,16 @@ msgstr "contacts.vcf"
 msgid "descending"
 msgstr "降順"
 
-#: config/attributes.php.dist:433
+#: config/attributes.php.dist:439
 msgid "female"
 msgstr "女性"
 
 #: lib/Block/tree_menu.php:38
 #, php-format
 msgid "in %s"
-msgstr ""
+msgstr "in %s"
 
-#: config/attributes.php.dist:433
+#: config/attributes.php.dist:439
 msgid "male"
 msgstr "男性"
 

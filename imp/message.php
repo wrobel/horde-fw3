@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/message.php,v 2.560.4.60 2009/02/06 07:43:46 slusarz Exp $
+ * $Horde: imp/message.php,v 2.560.4.61 2009/02/17 07:32:12 slusarz Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -679,9 +679,8 @@ if ($show_parts || ($downloadall_link && !$printer_friendly)) {
     if ($downloadall_link && !$printer_friendly) {
         $val .= Horde::link($downloadall_link, _("Download All Attachments (in .zip file)")) . _("Download All Attachments (in .zip file)") . ' ' . Horde::img('compressed.png', _("Download All Attachments (in .zip file)"), '', $registry->getImageDir('horde') . '/mime') . '</a>';
         if ($prefs->getValue('strip_attachments')) {
-            $url = Horde::selfUrl(true);
-            $url = Util::removeParameter($url, array('actionID'));
-            $url = Util::addParameter($url, array('actionID' => 'strip_all', 'message_token' => $message_token));
+            $url = Util::removeParameter(Horde::selfUrl(true), array('actionID'));
+            $url = html_entity_decode(Util::addParameter($url, array('actionID' => 'strip_all', 'message_token' => $message_token)));
             $val .= '<br />' . Horde::link(htmlspecialchars($url), _("Strip All Attachments"), null, null, "return window.confirm('" . addslashes(_("Are you sure you wish to PERMANENTLY delete all attachments?")) . "');") . _("Strip All Attachments") . ' ' . Horde::img('delete.png', _("Strip Attachments"), null, $registry->getImageDir('horde')) . '</a>';
         }
     }

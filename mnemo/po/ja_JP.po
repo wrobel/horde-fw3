@@ -1,5 +1,5 @@
 # Japanese translation for Mnemo.
-# Copyright 2004-2009 The Horde Project
+# Copyright 2004-2009 Horde Project
 # This file is distributed under the same license as the Mnemo package.
 # Hiromi Kimura <hiromi@tac.tsukuba.ac.jp>
 #
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Mnemo 2.2.1\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
 "POT-Creation-Date: 2008-09-06 11:11+0200\n"
-"PO-Revision-Date: 2008-09-20 11:43+0900\n"
+"PO-Revision-Date: 2009-02-10 20:46+0900\n"
 "Last-Translator: Hiromi Kimura <hiromi@tac.tsukuba.ac.jp>\n"
 "Language-Team: i18n@lists.horde.org\n"
 "MIME-Version: 1.0\n"
@@ -637,16 +637,16 @@ msgstr "_TëËñº"
 #: view.php:74 view.php:83
 #, php-format
 msgid "by %s"
-msgstr ""
+msgstr "%s çÏ"
 
 #: view.php:76 view.php:85
 msgid "by me"
-msgstr ""
+msgstr "é©çÏ"
 
 #: lib/Block/tree_menu.php:33
 #, php-format
 msgid "in %s"
-msgstr ""
+msgstr "in %s"
 
 #: data.php:90 templates/data/export.inc:4
 msgid "notes.csv"

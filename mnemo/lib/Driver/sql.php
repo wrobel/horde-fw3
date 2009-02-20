@@ -23,7 +23,7 @@
  *
  * The table structure is defined in scripts/drivers/mnemo_memos.sql.
  *
- * $Horde: mnemo/lib/Driver/sql.php,v 1.28.2.19 2009/01/06 15:24:59 jan Exp $
+ * $Horde: mnemo/lib/Driver/sql.php,v 1.28.2.20 2009/02/17 18:42:26 chuck Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *
@@ -97,7 +97,8 @@ class Mnemo_Driver_sql extends Mnemo_Driver {
         /* Connect to the SQL server using the supplied parameters. */
         require_once 'DB.php';
         $this->_write_db = &DB::connect($this->_params,
-                                        array('persistent' => !empty($this->_params['persistent'])));
+                                        array('persistent' => !empty($this->_params['persistent']),
+                                              'ssl' => !empty($this->_params['ssl'])));
         if (is_a($this->_write_db, 'PEAR_Error')) {
             Horde::fatal($this->_write_db, __FILE__, __LINE__);
         }
@@ -116,7 +117,8 @@ class Mnemo_Driver_sql extends Mnemo_Driver {
         if (!empty($this->_params['splitread'])) {
             $params = array_merge($this->_params, $this->_params['read']);
             $this->_db = &DB::connect($params,
-                                      array('persistent' => !empty($params['persistent'])));
+                                      array('persistent' => !empty($params['persistent']),
+                                            'ssl' => !empty($params['ssl'])));
             if (is_a($this->_db, 'PEAR_Error')) {
                 Horde::fatal($this->_db, __FILE__, __LINE__);
             }

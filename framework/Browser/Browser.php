@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Browser/Browser.php,v 1.153.2.66 2009/01/07 19:53:45 slusarz Exp $
+ * $Horde: framework/Browser/Browser.php,v 1.153.2.67 2009/02/14 20:32:31 chuck Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -987,6 +987,10 @@ class Browser {
                 $filesize = intval(floatval($filesize) * 1024 * 1024);
                 break;
 
+            case 'g':
+                $filesize = intval(floatval($filesize) * 1024 * 1024 * 1024);
+                break;
+
             default:
                 $filesize = intval($filesize);
                 break;
@@ -999,6 +1003,10 @@ class Browser {
 
             case 'm':
                 $postsize = intval(floatval($postsize) * 1024 * 1024);
+                break;
+
+            case 'g':
+                $postsize = intval(floatval($postsize) * 1024 * 1024 * 1024);
                 break;
 
             default:

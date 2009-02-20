@@ -1,4 +1,4 @@
--- $Horde: horde/scripts/sql/create.mysql.sql,v 1.4.6.22 2008/08/13 20:18:03 chuck Exp $
+-- $Horde: horde/scripts/sql/create.mysql.sql,v 1.4.6.23 2009/02/14 04:43:47 chuck Exp $
 --
 -- If you are installing Horde for the first time, you can simply
 -- direct this file to mysql as STDIN:
@@ -183,6 +183,9 @@ CREATE TABLE horde_sessionhandler (
 
     PRIMARY KEY (session_id)
 ) ENGINE = InnoDB;
+
+CREATE INDEX session_lastmodified_idx ON horde_sessionhandler (session_lastmodified);
+
 
 CREATE TABLE horde_syncml_map (
     syncml_syncpartner VARCHAR(255) NOT NULL,

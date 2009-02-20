@@ -1,5 +1,5 @@
 /**
- * $Horde: ansel/themes/screen.css,v 1.60.2.7 2008/11/10 22:49:19 jan Exp $
+ * $Horde: ansel/themes/screen.css,v 1.60.2.8 2009/02/12 16:50:35 mrubinsk Exp $
  */
 
 /* Table CSS. */
@@ -204,17 +204,24 @@ a.latest:link, a.latest:visited, a.latest:hover, a.latest:active {
 .face-div {
     position:absolute;
 }
+.face-div-name {
+	text-align: center;
+	background: grey;
+	color: white;
+}
+.shown {
+	border: medium solid white;
+}
+
 .similarity-high {
     color: red;
 }
-
 .similarity-medium {
     color: green;
 }
 .similarity-low {
     color: #ffcc00;
 }
-
 .similarity-lower {
     color: #cccccc;
 }

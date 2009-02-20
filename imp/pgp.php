@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/pgp.php,v 2.79.6.20 2009/02/05 21:13:10 slusarz Exp $
+ * $Horde: imp/pgp.php,v 2.79.6.21 2009/02/10 18:47:40 slusarz Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -39,7 +39,7 @@ function _outputPassphraseDialog($secure_check, $symmetric = false)
     $t->setOption('gettext', true);
     $t->set('symmetric', $symmetric);
     $t->set('submit_url', Util::addParameter(Horde::applicationUrl('pgp.php'), 'actionID', $symmetric ? 'process_symmetric_passphrase_dialog' : 'process_passphrase_dialog'));
-    $t->set('reload', htmlspecialchars(html_entity_decode(Util::getFormData('reload'))));
+    $t->set('reload', htmlspecialchars(Util::getFormData('reload')));
     $t->set('action', htmlspecialchars(Util::getFormData('passphrase_action')));
     $t->set('locked_img', Horde::img('locked.png', _("PGP"), null, $GLOBALS['registry']->getImageDir('horde')));
     echo $t->fetch(IMP_TEMPLATES . '/pgp/passphrase.html');
@@ -55,7 +55,7 @@ function _importKeyDialog($target)
     $t->setOption('gettext', true);
     $t->set('selfurl', Horde::applicationUrl('pgp.php'));
     $t->set('broken_mp_form', $GLOBALS['browser']->hasQuirk('broken_multipart_form'));
-    $t->set('reload', htmlspecialchars(html_entity_decode(Util::getFormData('reload'))));
+    $t->set('reload', htmlspecialchars(Util::getFormData('reload')));
     $t->set('target', $target);
     $t->set('forminput', Util::formInput());
     $t->set('import_public_key', $target == 'process_import_public_key');
@@ -66,7 +66,12 @@ function _importKeyDialog($target)
 
 function _reloadWindow()
 {
-    Util::closeWindowJS('opener.focus();opener.location.href="' . htmlspecialchars(html_entity_decode(Util::getFormData('reload'))) . '";');
+    require_once 'Horde/SessionObjects.php';
+    $cacheSess = &Horde_SessionObjects::singleton();
+    $reload = Util::getFormData('reload');
+    $url = $cacheSess->query($reload);
+    $cacheSess->setPruneFlag($reload, true);
+    Util::closeWindowJS('opener.focus();opener.location.href="' . $url . '";');
 }
 
 function _getImportKey()
@@ -422,7 +427,9 @@ if ($prefs->getValue('use_pgp')) {
     if (!$t->get('no_file_upload')) {
         $t->set('no_source', !$GLOBALS['prefs']->getValue('add_source'));
         if (!$t->get('no_source')) {
-            $t->set('public_import_url', Util::addParameter(Util::addParameter($selfURL, 'actionID', 'import_public_key'), 'reload', $selfURL));
+            require_once 'Horde/SessionObjects.php';
+            $cacheSess = &Horde_SessionObjects::singleton();
+            $t->set('public_import_url', Util::addParameter(Util::addParameter($selfURL, 'actionID', 'import_public_key'), 'reload', $cacheSess->storeOid($selfURL, false)));
             $t->set('import_pubkey-help', Help::link('imp', 'pgp-import-pubkey'));
         }
     }

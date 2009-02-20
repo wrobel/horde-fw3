@@ -4,7 +4,7 @@ set sqlblanklines on;
 /**
  * Oracle Table Creation Scripts.
  * 
- * $Horde: horde/scripts/sql/create.oci8.sql,v 1.4.8.21 2008/08/13 20:18:03 chuck Exp $
+ * $Horde: horde/scripts/sql/create.oci8.sql,v 1.4.8.22 2009/02/14 04:43:47 chuck Exp $
  * 
  * @author Miguel Ward <mward@aluar.com.ar>
  * 
@@ -206,6 +206,8 @@ CREATE TABLE horde_sessionhandler (
 
     PRIMARY KEY (session_id)
 );
+
+CREATE INDEX session_lastmodified_idx ON horde_sessionhandler (session_lastmodified);
 
 
 CREATE TABLE horde_syncml_map (

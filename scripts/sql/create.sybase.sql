@@ -1,4 +1,4 @@
--- $Horde: horde/scripts/sql/create.sybase.sql,v 1.1.10.16 2008/08/13 20:18:03 chuck Exp $
+-- $Horde: horde/scripts/sql/create.sybase.sql,v 1.1.10.17 2009/02/14 04:43:47 chuck Exp $
 --
 -- horde tables definitions : sql script
 -- 01/22/2003 - F. Helly <francois.helly@wanadoo.fr>
@@ -279,6 +279,9 @@ CREATE INDEX alarm_snooze_idx ON horde_alarms (alarm_snooze)
 go
 
 CREATE INDEX alarm_dismissed_idx ON horde_alarms (alarm_dismissed)
+go
+
+CREATE INDEX session_lastmodified_idx ON horde_sessionhandler (session_lastmodified)
 go
 
 -- CREATE INDEX vfs_path_idx ON horde_vfs (vfs_path)

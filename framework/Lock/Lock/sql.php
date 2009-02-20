@@ -47,7 +47,7 @@
  * See the enclosed file COPYING for license information (LGPL). If you did
  * not receive this file, see http://opensource.org/licenses/lgpl-license.php.
  *
- *  $Horde: framework/Lock/Lock/sql.php,v 1.8.2.6 2009/01/06 15:23:20 jan Exp $
+ *  $Horde: framework/Lock/Lock/sql.php,v 1.8.2.7 2009/02/13 05:45:18 chuck Exp $
  *
  * @author  Ben Klang <ben@alkaloid.net>
  * @since   Horde 3.2
@@ -381,7 +381,8 @@ class Horde_Lock_sql extends Horde_Lock
         require_once 'DB.php';
         $this->_write_db = &DB::connect(
             $this->_params,
-            array('persistent' => !empty($this->_params['persistent']))
+            array('persistent' => !empty($this->_params['persistent']),
+                  'ssl' => !empty($this->_params['ssl']))
         );
         if (is_a($this->_write_db, 'PEAR_Error')) {
             Horde::logMessage($result, __FILE__, __LINE__, PEAR_LOG_ERR);
@@ -401,7 +402,8 @@ class Horde_Lock_sql extends Horde_Lock
             $params = array_merge($this->_params, $this->_params['read']);
             $this->_db = &DB::connect(
                 $params,
-                array('persistent' => !empty($params['persistent']))
+                array('persistent' => !empty($params['persistent']),
+                      'ssl' => !empty($this->_params['ssl']))
             );
             if (is_a($this->_db, 'PEAR_Error')) {
                 Horde::logMessage($result, __FILE__, __LINE__, PEAR_LOG_ERR);

@@ -2,7 +2,7 @@
 /**
  * @package IMP
  *
- * $Horde: imp/lib/Crypt/PGP.php,v 1.90.2.23 2009/01/06 15:24:05 jan Exp $
+ * $Horde: imp/lib/Crypt/PGP.php,v 1.90.2.24 2009/02/10 18:47:41 slusarz Exp $
  */
 
 /** Horde_Crypt_pgp */
@@ -666,11 +666,12 @@ class IMP_PGP extends Horde_Crypt_pgp {
     {
         $params['actionID'] = $actionid;
         if (!empty($reload)) {
+            require_once 'Horde/SessionObjects.php';
+            $cacheSess = &Horde_SessionObjects::singleton();
+
             if (is_bool($reload)) {
-                $params['reload'] = html_entity_decode(Util::removeParameter(Horde::selfUrl(true), array('actionID')));
+                $params['reload'] = $cacheSess->storeOid(html_entity_decode(Util::removeParameter(Horde::selfUrl(true), array('actionID'))), false);
             } else {
-                require_once 'Horde/SessionObjects.php';
-                $cacheSess = &Horde_SessionObjects::singleton();
                 $params['passphrase_action'] = $cacheSess->storeOid($reload, false);
             }
         }

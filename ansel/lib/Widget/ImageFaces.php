@@ -3,7 +3,7 @@
  * Horde_Widget_ImageFaces:: class to display a widget containing mini
  * thumbnails of faces in the image.
  *
- * $Horde: ansel/lib/Widget/ImageFaces.php,v 1.21.2.4 2009/01/18 21:28:44 mrubinsk Exp $
+ * $Horde: ansel/lib/Widget/ImageFaces.php,v 1.21.2.5 2009/02/10 01:05:49 mrubinsk Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -40,8 +40,13 @@ class Ansel_Widget_ImageFaces extends Ansel_Widget {
      */
     function html()
     {
-        $html = $this->_getFaceNames();
-        return $this->_htmlBegin() . $html . $this->_htmlEnd();
+
+        if ($GLOBALS['conf']['faces']['driver']) {
+            $html = $this->_getFaceNames();
+            return $this->_htmlBegin() . $html . $this->_htmlEnd();
+        } else {
+            return '';
+        }
     }
 
     /**

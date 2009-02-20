@@ -2,7 +2,7 @@
 /**
  * The Group:: class provides the Horde groups system.
  *
- * $Horde: framework/Group/Group/sql.php,v 1.1.2.10 2009/01/06 15:23:08 jan Exp $
+ * $Horde: framework/Group/Group/sql.php,v 1.1.2.11 2009/02/13 05:45:18 chuck Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -718,7 +718,8 @@ class Group_sql extends Group {
         /* Connect to the sql server using the supplied parameters. */
         require_once 'DB.php';
         $this->_write_db = DB::connect($this->_params,
-                                       array('persistent' => !empty($this->_params['persistent'])));
+                                       array('persistent' => !empty($this->_params['persistent']),
+                                             'ssl' => !empty($this->_params['ssl'])));
         if (is_a($this->_write_db, 'PEAR_Error')) {
             Horde::fatal($this->_write_db, __FILE__, __LINE__);
         }
@@ -736,7 +737,8 @@ class Group_sql extends Group {
         if (!empty($this->_params['splitread'])) {
             $params = array_merge($this->_params, $this->_params['read']);
             $this->_db = DB::connect($params,
-                                     array('persistent' => !empty($params['persistent'])));
+                                     array('persistent' => !empty($params['persistent']),
+                                           'ssl' => !empty($this->_params['ssl'])));
             if (is_a($this->_db, 'PEAR_Error')) {
                 Horde::fatal($this->_db, __FILE__, __LINE__);
             }

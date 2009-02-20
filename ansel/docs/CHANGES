@@ -2,6 +2,9 @@
 v1.0-cvs
 --------
 
+[mjr] Add a widget to the gallery view for showing faces that the gallery owner
+      has tagged.
+[mjr] Allow embedding screen size images in external sites as well.
 [mjr] Add configuration parameter to require a minimum number of
       images to be present in a gallery before it's displayed in a
       gallery list. (Duck <duck@obala.net>, Request # 7949)

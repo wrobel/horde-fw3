@@ -5,7 +5,7 @@
  * This file sets up any necessary include path variables and includes
  * the minimum required Horde libraries.
  *
- * $Horde: horde/lib/core.php,v 1.26.6.14 2009/01/06 15:24:51 jan Exp $
+ * $Horde: horde/lib/core.php,v 1.26.6.17 2009/02/18 16:23:50 chuck Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -17,6 +17,7 @@
 ini_set('magic_quotes_sybase', 0);
 ini_set('magic_quotes_runtime', 0);
 ini_set('zend.ze1_compatibility_mode', 0);
+ini_set('allow_url_include', 0);
 
 /* Unset all variables populated through register_globals. */
 if (ini_get('register_globals')) {

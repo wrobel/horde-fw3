@@ -28,7 +28,7 @@
  * ),
  * </code>
  *
- * $Horde: imp/lib/Quota/sql.php,v 1.6.2.4 2009/01/06 15:24:11 jan Exp $
+ * $Horde: imp/lib/Quota/sql.php,v 1.6.2.5 2009/02/17 17:13:51 chuck Exp $
  *
  * Copyright 2006-2007 Tomas Simonaitis <haden@homelan.lt>
  * Copyright 2006-2009 The Horde Project (http://www.horde.org/)
@@ -66,7 +66,9 @@ class IMP_Quota_sql extends IMP_Quota {
     {
         if (!$this->_connected) {
             require_once 'DB.php';
-            $this->_db = &DB::connect($this->_params);
+            $this->_db = &DB::connect($this->_params,
+                                      array('persistent' => !empty($this->_params['persistent']),
+                                            'ssl' => !empty($this->_params['ssl'])));
             if (is_a($this->_db, 'PEAR_Error')) {
                 return PEAR::raiseError(_("Unable to connect to SQL server."));
             }
@@ -80,7 +82,7 @@ class IMP_Quota_sql extends IMP_Quota {
     /**
      * Returns quota information.
      *
-     * @return mixed  An associative array: 
+     * @return mixed  An associative array:
      *		  'limit' => Maximum quota allowed (in bytes),
      *		  'usage' => Currently used space (in bytes).
      *		  PEAR_Error on failure.

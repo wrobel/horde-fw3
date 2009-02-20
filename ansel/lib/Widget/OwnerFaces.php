@@ -1,16 +1,16 @@
 <?php
 /**
- * Horde_Widget_ImageFaces:: class to display a widget containing mini
- * thumbnails of faces in the image.
+ * Ansel_Widget_OwnerFaces:: class to display a widget containing mini
+ * thumbnails of faces that have been tagged by the gallery owner.
  *
  * @author Duck <duck@obala.net>
  * @package Ansel
  */
 class Ansel_Widget_OwnerFaces extends Ansel_Widget {
 
-    var $_owner;
     var $_faces;
     var $_count;
+    var $_owner;
 
     /**
      * Constructor
@@ -20,33 +20,10 @@ class Ansel_Widget_OwnerFaces extends Ansel_Widget {
      */
     function Ansel_Widget_OwnerFaces($params)
     {
-        $this->_owner = Util::getFormData('owner', null);
+        parent::Ansel_Widget($params);
 
         require_once ANSEL_BASE . '/lib/Faces.php';
         $this->_faces = Ansel_Faces::factory();
-
-        $this->_count = $this->_faces->countOwnerFaces($this->_owner);
-        if (is_a($this->_count, 'PEAR_error')) {
-            $this->_count = 0;
-        }
-
-        $this->_title = '<a href="' . Util::addParameter(Horde::applicationUrl('faces/search/owner.php'), 'owner', $this->_owner) . '">'
-            . sprintf(_("People in galleries of %s (%d of %d)"),
-                      $this->_owner, min(12, $this->_count), number_format($this->_count))
-            . '</a>';
-    }
-
-    /**
-     * Attach this widget to the passed in view. Normally called
-     * by the Ansel_View once this widget is added.
-     *
-     * @param Ansel_View $view  The view to attach to
-     */
-    function attach($view)
-    {
-        $this->_view = $view;
-
-        $this->_style = Ansel::getStyleDefinition($GLOBALS['prefs']->getValue('default_gallerystyle'));
     }
 
     /**
@@ -56,6 +33,20 @@ class Ansel_Widget_OwnerFaces extends Ansel_Widget {
      */
     function html()
     {
+        if (!$GLOBALS['conf']['faces']['driver']) {
+            return '';
+        }
+
+        $this->_owner = $this->_view->gallery->get('owner');
+        $this->_count = $this->_faces->countOwnerFaces($this->_owner);
+        if (is_a($this->_count, 'PEAR_error')) {
+            $this->_count = 0;
+        }
+
+        $this->_title = '<a href="' . Util::addParameter(Horde::applicationUrl('faces/search/owner.php'), 'owner', $this->_owner) . '">'
+            . sprintf(_("People in galleries of %s (%d of %d)"),
+                      $this->_owner, min(12, $this->_count), number_format($this->_count))
+            . '</a>';
         $html = $this->_htmlBegin();
 
         if (empty($this->_count)) {

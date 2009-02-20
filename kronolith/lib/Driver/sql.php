@@ -3,7 +3,7 @@
  * The Kronolith_Driver_sql:: class implements the Kronolith_Driver
  * API for a SQL backend.
  *
- * $Horde: kronolith/lib/Driver/sql.php,v 1.136.2.42 2008/09/03 20:29:54 mrubinsk Exp $
+ * $Horde: kronolith/lib/Driver/sql.php,v 1.136.2.43 2009/02/17 18:52:00 chuck Exp $
  *
  * @author  Luc Saillard <luc.saillard@fr.alcove.com>
  * @author  Chuck Hagenbuch <chuck@horde.org>
@@ -736,7 +736,8 @@ class Kronolith_Driver_sql extends Kronolith_Driver {
         /* Connect to the SQL server using the supplied parameters. */
         require_once 'DB.php';
         $this->_write_db = &DB::connect($this->_params,
-                                        array('persistent' => !empty($this->_params['persistent'])));
+                                        array('persistent' => !empty($this->_params['persistent']),
+                                              'ssl' => !empty($this->_params['ssl'])));
         if (is_a($this->_write_db, 'PEAR_Error')) {
             return $this->_write_db;
         }
@@ -747,7 +748,8 @@ class Kronolith_Driver_sql extends Kronolith_Driver {
         if (!empty($this->_params['splitread'])) {
             $params = array_merge($this->_params, $this->_params['read']);
             $this->_db = &DB::connect($params,
-                                      array('persistent' => !empty($params['persistent'])));
+                                      array('persistent' => !empty($params['persistent']),
+                                            'ssl' => !empty($params['ssl'])));
             if (is_a($this->_db, 'PEAR_Error')) {
                 return $this->_db;
             }

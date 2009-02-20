@@ -10,7 +10,7 @@
  * The original script was freely distributable under the terms of an
  * MIT-style license.
  *
- * $Horde: dimp/js/src/autocomplete.js,v 1.1.2.2 2009/01/06 15:22:37 jan Exp $
+ * $Horde: dimp/js/src/autocomplete.js,v 1.1.2.3 2009/02/20 05:20:22 slusarz Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *
@@ -72,8 +72,8 @@ Autocompleter.Base = Class.create({
         if (Prototype.Browser.IE &&
             !this.iefix &&
             this.update.getStyle('position') == 'absolute') {
-            this.iefix = new Element('IFRAME', { src: 'javascript:false;', frameborder: 0, scrolling: 'no' }).setStyle({ position: 'absolute', filter: 'progid:DXImageTransform.Microsoft.Alpha(opactiy=0)' }).hide();
-            this.update.insert({ after: this.iefix });
+            this.iefix = new Element('IFRAME', { src: 'javascript:false;', frameborder: 0, scrolling: 'no' }).setStyle({ position: 'absolute', filter: 'progid:DXImageTransform.Microsoft.Alpha(opactiy=0)', zIndex: 1 }).hide();
+            this.update.setStyle({ zIndex: 2 }).insert({ after: this.iefix });
         }
 
         if (this.iefix) {
@@ -83,10 +83,7 @@ Autocompleter.Base = Class.create({
 
     _fixIEOverlapping: function()
     {
-        this.iefix.clonePosition(this.update, {
-            setTop: !this.update.getStyle('height')
-        }).setStyle({ zIndex: 1 }).show();
-        this.update.setStyle({ zIndex: 2 });
+        this.iefix.clonePosition(this.update).show();
     },
 
     hide: function()

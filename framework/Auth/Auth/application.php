@@ -8,7 +8,7 @@
  *   'app'  The application which is providing authentication.</pre>
  *
  *
- * $Horde: framework/Auth/Auth/application.php,v 1.27.10.17 2009/01/06 15:22:49 jan Exp $
+ * $Horde: framework/Auth/Auth/application.php,v 1.27.10.18 2009/02/13 05:45:36 chuck Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -31,6 +31,7 @@ class Auth_application extends Auth {
                               'update'        => false,
                               'resetpassword' => false,
                               'remove'        => false,
+                              'exists'        => false,
                               'list'          => false,
                               'transparent'   => false);
 
@@ -57,6 +58,7 @@ class Auth_application extends Auth {
         static $loaded = array();
 
         $methods = array('list' => 'userList',
+                         'exists' => 'userExists',
                          'add' => 'addUser',
                          'update' => 'updateUser',
                          'remove' => 'removeUser');
@@ -151,6 +153,22 @@ class Auth_application extends Auth {
             return $GLOBALS['registry']->callByPackage($this->_params['app'], 'userList');
         } else {
             return PEAR::raiseError('unsupported');
+        }
+    }
+
+    /**
+     * Checks if $userId exists in the system.
+     *
+     * @param string $userId User ID for which to check
+     *
+     * @return boolean  Whether or not $userId already exists.
+     */
+    function exists($userId)
+    {
+        if ($this->hasCapability('exists')) {
+            return $GLOBALS['registry']->callByPackage($this->_params['app'], 'userExists', array($userId));
+        } else {
+            return parent::exists($userId);
         }
     }
 

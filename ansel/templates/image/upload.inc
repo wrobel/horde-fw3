@@ -7,14 +7,11 @@ if ($browser->getPlatform() == 'win' && Horde::showService('help')) {
     echo '<div class="box" style="margin:8px; padding:8px"><h3>' . Help::link('ansel', 'xppublish') . ' ' . _("Learn how to publish photos directly from Windows.") . '</h3></div>';
 }
 
-if (!($gallery->countImages() &&
-    $browser->hasFeature('javascript'))) {
-    return;
+if (!empty($haveImages)) {
+    Horde::addScriptFile('prototype.js', 'horde', true);
+    Horde::addScriptFile('effects.js', 'horde', true);
+    Horde::addScriptFile('carousel.js', 'ansel', true);
 }
-
-Horde::addScriptFile('prototype.js', 'horde', true);
-Horde::addScriptFile('effects.js', 'horde', true);
-Horde::addScriptFile('carousel.js', 'ansel', true);
 ?>
 </td>
 <td style="vertical-align:top;width:40%;padding:0;">
@@ -38,6 +35,7 @@ Horde::addScriptFile('carousel.js', 'ansel', true);
 <script type="text/javascript">
 // <![CDATA[
 // Delay response
+<?php if (!empty($haveImages)):?>
 Ajax.Request.prototype.originalInitialize = Ajax.Request.prototype.initialize;
 Ajax.Request.prototype.initialize = function(url, options) {
     options.onSuccess = options.onSuccess.wrap(function(proceed, request, json) {
@@ -176,3 +174,4 @@ Event.observe(window, "resize", resized);
 }
 
 </style>
+<?php endif;?>

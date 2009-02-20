@@ -45,7 +45,7 @@ require_once 'Horde/String.php';
  * The table structure for the Prefs system is in
  * scripts/sql/horde_prefs.sql.
  *
- * $Horde: framework/Prefs/Prefs/sql.php,v 1.91.10.24 2009/01/06 15:23:31 jan Exp $
+ * $Horde: framework/Prefs/Prefs/sql.php,v 1.91.10.25 2009/02/13 05:45:19 chuck Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -359,7 +359,8 @@ class Prefs_sql extends Prefs {
 
         // Connect to the SQL server using the supplied parameters.
         $this->_write_db = &DB::connect($this->_params,
-                                        array('persistent' => !empty($this->_params['persistent'])));
+                                        array('persistent' => !empty($this->_params['persistent']),
+                                              'ssl' => !empty($this->_params['ssl'])));
         if (is_a($this->_write_db, 'PEAR_Error')) {
             return $this->_write_db;
         }
@@ -378,7 +379,8 @@ class Prefs_sql extends Prefs {
         if (!empty($this->_params['splitread'])) {
             $params = array_merge($this->_params, $this->_params['read']);
             $this->_db = &DB::connect($params,
-                                      array('persistent' => !empty($params['persistent'])));
+                                      array('persistent' => !empty($params['persistent']),
+                                            'ssl' => !empty($this->_params['ssl'])));
             if (is_a($this->_db, 'PEAR_Error')) {
                 return $this->_db;
             }

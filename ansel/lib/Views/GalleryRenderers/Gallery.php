@@ -3,7 +3,7 @@
  * Ansel_View_GalleryRenderer_Gallery:: Class wraps display of the traditional
  * Gallery View.
  *
- * $Horde: ansel/lib/Views/GalleryRenderers/Gallery.php,v 1.17.2.8 2009/01/19 15:55:01 mrubinsk Exp $
+ * $Horde: ansel/lib/Views/GalleryRenderers/Gallery.php,v 1.17.2.9 2009/02/10 15:12:02 mrubinsk Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -23,12 +23,6 @@ class Ansel_View_GalleryRenderer_Gallery extends Ansel_View_GalleryRenderer {
      */
     function _init()
     {
-        if (empty($this->view->_params['api'])) {
-            Horde::addScriptFile('prototype.js', 'horde', true);
-            Horde::addScriptFile('redbox.js', 'horde', true);
-            Horde::addScriptFile('open_calendar.js', 'horde');
-        }
-
     }
 
     /**

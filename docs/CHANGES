@@ -2,6 +2,13 @@
 v3.3.4-cvs
 ----------
 
+[cjh] Proactively disable allow_url_include in core.php.
+[cjh] Add an index on session_lastmodified to the Horde sessionhandler tables.
+[mjr] Force the use of REQUEST_URI instead of PATH_INFO in Util::getPathInfo()
+      when being served by lighttpd due to issues with case insensitive
+      file systems.
+[cjh] Add support for SSL connections to MySQL databases
+      (BryanRJ@gmail.com, Request #7972).
 [cjh] Fix storing of unlocked preferences set by hooks
       (manuel@mausz.at, Bug #6822).
 [jan] Highlight color input fields with the color from the picker.

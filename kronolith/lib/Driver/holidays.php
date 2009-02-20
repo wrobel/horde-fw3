@@ -68,7 +68,7 @@ class Kronolith_Driver_holidays extends Kronolith_Driver {
         for ($date = new Horde_Date($startDate);
              $date->compareDate($endDate) <= 0;
              $date->mday++, $date->correct()) {
-            $holidays = $dh->getHolidayForDate($date->timestamp(), null, true);
+            $holidays = $dh->getHolidayForDate((int)$date->timestamp(), null, true);
             if (Date_Holidays::isError($holidays)) {
                 Horde::logMessage(sprintf('Unable to retrieve list of holidays from %s to %s',
                                           $startDate->cTime(), $endDate->cTime()), __FILE__, __LINE__);

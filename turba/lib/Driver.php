@@ -4,7 +4,7 @@
  * various directory search drivers.  It includes functions for searching,
  * adding, removing, and modifying directory entries.
  *
- * $Horde: turba/lib/Driver.php,v 1.57.2.83 2008/10/28 23:40:38 jan Exp $
+ * $Horde: turba/lib/Driver.php,v 1.57.2.84 2009/02/16 02:22:48 chuck Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Jon Parise <jon@csh.rit.edu>
@@ -381,7 +381,7 @@ class Turba_Driver {
         }
 
         if (count($strict_search) && count($search)) {
-            return array('AND' => array($strict_search,
+            return array('AND' => array($search_type => $strict_search,
                                         array($search_type => $search)));
         } elseif (count($strict_search)) {
             return array('AND' => $strict_search);

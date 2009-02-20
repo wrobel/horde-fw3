@@ -7,7 +7,7 @@
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.
  *
- * $Horde: framework/Alarm/Alarm/sql.php,v 1.11.2.4 2009/01/06 15:22:48 jan Exp $
+ * $Horde: framework/Alarm/Alarm/sql.php,v 1.11.2.5 2009/02/13 05:45:16 chuck Exp $
  */
 
 /**
@@ -355,7 +355,8 @@ class Horde_Alarm_sql extends Horde_Alarm {
         /* Connect to the SQL server using the supplied parameters. */
         require_once 'DB.php';
         $this->_write_db = &DB::connect($this->_params,
-                                        array('persistent' => !empty($this->_params['persistent'])));
+                                        array('persistent' => !empty($this->_params['persistent']),
+                                              'ssl' => !empty($this->_params['ssl'])));
         if (is_a($this->_write_db, 'PEAR_Error')) {
             return $this->_write_db;
         }
@@ -365,7 +366,8 @@ class Horde_Alarm_sql extends Horde_Alarm {
         if (!empty($this->_params['splitread'])) {
             $params = array_merge($this->_params, $this->_params['read']);
             $this->_db = &DB::connect($params,
-                                      array('persistent' => !empty($params['persistent'])));
+                                      array('persistent' => !empty($params['persistent']),
+                                            'ssl' => !empty($this->_params['ssl'])));
             if (is_a($this->_db, 'PEAR_Error')) {
                 return $this->_db;
             }

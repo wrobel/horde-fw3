@@ -500,6 +500,13 @@
     </field>
    </index>
 
+   <index>
+    <name>session_lastmodified</name>
+    <field>
+     <name>session_lastmodified</name>
+    </field>
+   </index>
+
   </declaration>
 
  </table>

@@ -3,7 +3,7 @@
  * Turba directory driver implementation for PHP's PEAR database abstraction
  * layer.
  *
- * $Horde: turba/lib/Driver/sql.php,v 1.59.10.29 2008/08/12 09:24:50 jan Exp $
+ * $Horde: turba/lib/Driver/sql.php,v 1.59.10.30 2009/02/17 18:52:56 chuck Exp $
  *
  * @author  Jon Parise <jon@csh.rit.edu>
  * @package Turba
@@ -39,7 +39,8 @@ class Turba_Driver_sql extends Turba_Driver {
     {
         include_once 'DB.php';
         $this->_write_db = &DB::connect($this->_params,
-                                        array('persistent' => !empty($this->_params['persistent'])));
+                                        array('persistent' => !empty($this->_params['persistent']),
+                                              'ssl' => !empty($this->_params['ssl'])));
         if (is_a($this->_write_db, 'PEAR_Error')) {
             return $this->_write_db;
         }
@@ -62,7 +63,8 @@ class Turba_Driver_sql extends Turba_Driver {
         if (!empty($this->_params['splitread'])) {
             $params = array_merge($this->_params, $this->_params['read']);
             $this->_db = &DB::connect($params,
-                                      array('persistent' => !empty($params['persistent'])));
+                                      array('persistent' => !empty($params['persistent']),
+                                            'ssl' => !empty($params['ssl'])));
             if (is_a($this->_db, 'PEAR_Error')) {
                 return $this->_db;
             }

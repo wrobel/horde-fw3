@@ -2,7 +2,8 @@
 v1.0.1-cvs
 ----------
 
-
+[jan] Fix client list in search form if client source has numeric IDs
+      (manilal@ejyothi.com, Bug #7966).
 
 
 ----

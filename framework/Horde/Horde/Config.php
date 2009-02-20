@@ -23,7 +23,7 @@ include_once 'Horde/Form/Renderer.php';
  * configuration of Horde applications, writing conf.php files from
  * conf.xml source files, generating user interfaces, etc.
  *
- * $Horde: framework/Horde/Horde/Config.php,v 1.80.2.38 2009/01/06 15:23:10 jan Exp $
+ * $Horde: framework/Horde/Horde/Config.php,v 1.80.2.39 2009/02/13 05:45:18 chuck Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -648,6 +648,16 @@ class Horde_Config {
             'required' => true,
             'desc' => 'Internally used charset',
             'default' => $this->_default($ctx . '|charset', 'utf-8'));
+        $ssl = array(
+            '_type' => 'boolean',
+            'required' => false,
+            'desc' => 'Use SSL to connect to the server?',
+            'default' => $this->_default($ctx . '|ssl', false));
+        $ca = array(
+            '_type' => 'text',
+            'required' => false,
+            'desc' => 'Certification Authority to use for SSL connections',
+            'default' => $this->_default($ctx . '|ca', ''));
 
         $oci8_fields = array(
             'persistent' => $persistent,
@@ -801,6 +811,8 @@ class Horde_Config {
                         'protocol' => $mysql_protocol,
                         'database' => $database,
                         'charset' => $charset,
+                        'ssl' => $ssl,
+                        'ca' => $ca,
                         'splitread' => $splitread)),
                 'mysqli' => array(
                     'desc' => 'MySQL (mysqli)',
@@ -810,7 +822,10 @@ class Horde_Config {
                         'protocol' => $mysql_protocol,
                         'database' => $database,
                         'charset' => $charset,
-                        'splitread' => $splitread)),
+                        'splitread' => $splitread,
+                        'ssl' => $ssl,
+                        'ca' => $ca
+            )),
                 'oci8' => array(
                     'desc' => 'Oracle',
                     'fields' => $oci8_fields),

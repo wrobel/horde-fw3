@@ -1,33 +1,33 @@
 # Japanese translation for IMP.
-# Copyright 2004-2009 The Horde Project
+# Copyright 2004-2009 Horde Project
 # This file is distributed under the same license as the IMP package.
 # Hiromi Kimura <hiromi@tac.tsukuba.ac.jp>
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: IMP 4.3-RC2\n"
+"Project-Id-Version: IMP 4.3.3\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2008-09-06 11:10+0200\n"
-"PO-Revision-Date: 2008-09-25 11:10+0900\n"
+"POT-Creation-Date: 2009-01-30 14:23+0900\n"
+"PO-Revision-Date: 2009-01-30 22:06+0900\n"
 "Last-Translator: Hiromi Kimura <hiromi@tac.tsukuba.ac.jp>\n"
 "Language-Team: i18n@lists.horde.org\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=SHIFT_JIS\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: lib/Compose.php:1977
+#: lib/Compose.php:1980
 msgid "      Cc: "
 msgstr "      Cc: "
 
-#: lib/Compose.php:1974
+#: lib/Compose.php:1977
 msgid "      To: "
 msgstr "  宛先："
 
-#: lib/Compose.php:1962
+#: lib/Compose.php:1965
 msgid "    Date: "
 msgstr "  日付："
 
-#: lib/Compose.php:1965
+#: lib/Compose.php:1968
 msgid "    From: "
 msgstr "差出人："
 
@@ -36,7 +36,7 @@ msgstr "差出人："
 msgid " (Accesskey %s)"
 msgstr "(アクセスキイ %s)"
 
-#: lib/Compose.php:1971
+#: lib/Compose.php:1974
 msgid " Subject: "
 msgstr "  件名："
 
@@ -54,7 +54,7 @@ msgstr "%.0f MB"
 msgid "%.0f%% of %.0f MB"
 msgstr "%.0f%% ／ %.0f MB"
 
-#: folders.php:300 folders.php:311 lib/Message.php:864
+#: folders.php:300 folders.php:311 lib/Message.php:863
 #, php-format
 msgid "%.2fMB"
 msgstr "%.2fMB"
@@ -115,7 +115,7 @@ msgstr "%s はすでに存在します。%s フォルダの名前は変更されませんでした。"
 msgid "%s folder being renamed at the start of the month."
 msgstr "フォルダ %s の名前は、毎月の初めに変更されます。"
 
-#: lib/api.php:180 lib/api.php:183 lib/api.php:188
+#: lib/api.php:188 lib/api.php:191 lib/api.php:196
 #, php-format
 msgid "%s for %s"
 msgstr "%2$s 用 %1$s"
@@ -125,12 +125,12 @@ msgstr "%2$s 用 %1$s"
 msgid "%s has accepted."
 msgstr "%s は受理されました。"
 
-#: lib/MIME/Viewer/itip.php:692
+#: lib/MIME/Viewer/itip.php:744
 #, php-format
 msgid "%s has cancelled \"%s\"."
 msgstr "%s さんは \"%s\" をキャンセルしました。"
 
-#: lib/MIME/Viewer/itip.php:697
+#: lib/MIME/Viewer/itip.php:749
 #, php-format
 msgid "%s has cancelled an instance of the recurring \"%s\"."
 msgstr "%s さんは、繰り返し \"%s\" の１つをキャンセルしました。"
@@ -140,17 +140,17 @@ msgstr "%s さんは、繰り返し \"%s\" の１つをキャンセルしました。"
 msgid "%s has declined."
 msgstr "%s さんは辞退しました。"
 
-#: lib/MIME/Viewer/itip.php:532
+#: lib/MIME/Viewer/itip.php:584
 #, php-format
 msgid "%s has replied to a free/busy request."
 msgstr "%s さんが予定情報の要求に返答しました。"
 
-#: lib/MIME/Viewer/itip.php:683
+#: lib/MIME/Viewer/itip.php:735
 #, php-format
 msgid "%s has replied to the invitation to \"%s\"."
 msgstr "%s さんが \"%s\" への招待に返信しました。"
 
-#: lib/MIME/Viewer/itip.php:523
+#: lib/MIME/Viewer/itip.php:575
 #, php-format
 msgid "%s has sent you free/busy information."
 msgstr "%s さんが予定情報を送ってきました。"
@@ -165,17 +165,17 @@ msgstr "%s さんが仮受諾しました。"
 msgid "%s report from %s"
 msgstr "%2$s さんから %1$s の報告"
 
-#: lib/MIME/Viewer/itip.php:528
+#: lib/MIME/Viewer/itip.php:580
 #, php-format
 msgid "%s requests your free/busy information."
 msgstr "%s さんがあなたの予定情報を要求しています。"
 
-#: lib/MIME/Viewer/itip.php:654
+#: lib/MIME/Viewer/itip.php:706
 #, php-format
 msgid "%s requests your presence at \"%s\"."
 msgstr "%s さんはあなたが \"%s\" に出席することを要求しています。"
 
-#: lib/MIME/Viewer/itip.php:634
+#: lib/MIME/Viewer/itip.php:686
 #, php-format
 msgid "%s wants to notify you about changes of \"%s\"."
 msgstr "%s さんはあなたが \"%s\" の変更を通知することを希望しています。"
@@ -185,23 +185,23 @@ msgstr "%s さんはあなたが \"%s\" の変更を通知することを希望しています。"
 msgid "%s was successfully added to \"%s\"."
 msgstr "%s は \"%s\" に追加されました。"
 
-#: lib/MIME/Viewer/itip.php:671
+#: lib/MIME/Viewer/itip.php:723
 #, php-format
 msgid "%s wishes to ammend \"%s\"."
 msgstr "%s さんが \"%s\" の改定を希望しています。"
 
-#: lib/MIME/Viewer/itip.php:623 lib/MIME/Viewer/itip.php:655
-#: lib/MIME/Viewer/itip.php:842
+#: lib/MIME/Viewer/itip.php:675 lib/MIME/Viewer/itip.php:707
+#: lib/MIME/Viewer/itip.php:894
 #, php-format
 msgid "%s wishes to make you aware of \"%s\"."
 msgstr "%s さんはあなたが \"%s\" を承知することを希望しています。"
 
-#: lib/MIME/Viewer/itip.php:678
+#: lib/MIME/Viewer/itip.php:730
 #, php-format
 msgid "%s wishes to receive the latest information about \"%s\"."
 msgstr "%s さんが \"%s\" についての最新情報を希望しています。"
 
-#: compose.php:1231
+#: compose.php:1229
 #, php-format
 msgid "%s%% of allowed size"
 msgstr "許容サイズの %s%%"
@@ -216,7 +216,7 @@ msgstr "%s: %s"
 msgid "%s: %s (%d&nbsp;of&nbsp;%d)"
 msgstr "%s: %s (%d&nbsp;/&nbsp;%d)"
 
-#: lib/Compose.php:1906
+#: lib/Compose.php:1909
 #, php-format
 msgid "%u Forwarded Messages"
 msgstr "%u 通の転送されたメール"
@@ -290,19 +290,19 @@ msgstr "このエディターについて"
 msgid "Above the message text"
 msgstr "本文の上"
 
-#: lib/MIME/Viewer/itip.php:661
+#: lib/MIME/Viewer/itip.php:713
 msgid "Accept and add to my calendar"
 msgstr "要求を受諾し私の予定表に追加する"
 
-#: lib/MIME/Viewer/itip.php:658
+#: lib/MIME/Viewer/itip.php:710
 msgid "Accept and update in my calendar"
 msgstr "受諾し私の予定表を更新する"
 
-#: lib/MIME/Viewer/itip.php:664
+#: lib/MIME/Viewer/itip.php:716
 msgid "Accept request"
 msgstr "要求を受諾する"
 
-#: lib/MIME/Viewer/itip.php:957
+#: lib/MIME/Viewer/itip.php:1009
 msgid "Accepted"
 msgstr "受諾済み"
 
@@ -314,8 +314,8 @@ msgstr "受諾済み："
 msgid "Account's name:"
 msgstr "アカウント名："
 
-#: lib/MIME/Viewer/itip.php:566 lib/MIME/Viewer/itip.php:804
-#: lib/MIME/Viewer/itip.php:805 lib/MIME/Viewer/itip.php:936
+#: lib/MIME/Viewer/itip.php:618 lib/MIME/Viewer/itip.php:856
+#: lib/MIME/Viewer/itip.php:857 lib/MIME/Viewer/itip.php:988
 msgid "Actions"
 msgstr "処置"
 
@@ -329,19 +329,19 @@ msgstr "%s を私のアドレス帳に追加する"
 msgid "Add source"
 msgstr "ソースを追加"
 
-#: lib/MIME/Viewer/itip.php:625
+#: lib/MIME/Viewer/itip.php:677
 msgid "Add this to my calendar"
 msgstr "私の予定表に追加する"
 
-#: lib/MIME/Viewer/itip.php:844
+#: lib/MIME/Viewer/itip.php:896
 msgid "Add this to my tasklist"
 msgstr "私のタスクリストに追加する"
 
-#: lib/MIME/Viewer/itip.php:662
+#: lib/MIME/Viewer/itip.php:714
 msgid "Add to my calendar"
 msgstr "私の予定表に追加する"
 
-#: lib/Compose.php:2951
+#: lib/Compose.php:2954
 #, php-format
 msgid "Added \"%s\" as an attachment."
 msgstr "\"%s\" を添付しました。"
@@ -379,7 +379,7 @@ msgstr "エラーメッセージの詳細"
 msgid "Additional message error details can be viewed %s."
 msgstr "エラーメッセージの詳細は %s で表示できます。"
 
-#: compose.php:827 compose.php:1073 contacts.php:120
+#: compose.php:825 compose.php:1071 contacts.php:120
 #: templates/contacts/contacts.html:8
 msgid "Address Book"
 msgstr "アドレス帳"
@@ -474,7 +474,7 @@ msgstr "常に"
 msgid "Always save attachments"
 msgstr "添付は常に保存する"
 
-#: lib/Message.php:582
+#: lib/Message.php:581
 msgid ""
 "An error occured while attempting to strip the attachment. The IMAP server "
 "said: "
@@ -493,7 +493,7 @@ msgstr "新規ノート作成中に原因不明のエラーが発生しました。"
 msgid "An unknown error occured while creating the new task."
 msgstr "新規タスク作成中に原因不明のエラーが発生しました。"
 
-#: lib/MIME/Viewer/itip.php:830
+#: lib/MIME/Viewer/itip.php:882
 msgid "An unknown person"
 msgstr "不明な人物"
 
@@ -502,7 +502,7 @@ msgstr "不明な人物"
 msgid "Answered"
 msgstr "返信済み"
 
-#: lib/Search.php:792
+#: lib/Search.php:797
 msgid "Answered messages"
 msgstr "返信済みメッセージ"
 
@@ -564,11 +564,11 @@ msgstr "本当にこれらの添付を完全に削除していいですか？"
 msgid "Are you sure you wish to delete all mail in this folder?"
 msgstr "本当にこのフォルダ内のメールを全て削除していいですか？"
 
-#: lib/IMP.php:856
+#: lib/IMP.php:859
 msgid "Are you sure you wish to empty your spam folder?"
 msgstr "本当に SPAM フォルダーを空にしていいですか？"
 
-#: lib/IMP.php:848
+#: lib/IMP.php:851
 msgid "Are you sure you wish to empty your trash folder?"
 msgstr "本当にゴミ箱を空にしていいですか？"
 
@@ -596,15 +596,15 @@ msgstr "昇順"
 msgid "Ask"
 msgstr "尋ねる"
 
-#: compose.php:1169
+#: compose.php:1167
 msgid "Attach Files"
 msgstr "添付ファイル"
 
-#: compose.php:1158
+#: compose.php:1156
 msgid "Attach a copy of your PGP public key to the message?"
 msgstr "あなたの PGP 公開鍵を添付しますか？"
 
-#: compose.php:1163
+#: compose.php:1161
 msgid "Attach your contact information to the message?"
 msgstr "あなたの連絡先を添付しますか？"
 
@@ -612,13 +612,13 @@ msgstr "あなたの連絡先を添付しますか？"
 msgid "Attached File:"
 msgstr "添付ファイル："
 
-#: lib/Compose.php:2010 lib/Compose.php:2116
+#: lib/Compose.php:2013 lib/Compose.php:2119
 #, php-format
 msgid ""
 "Attached file \"%s\" exceeds the attachment size limits. File NOT attached."
 msgstr "添付ファイル \"%s\" のサイズが大きすぎます。添付されません。"
 
-#: lib/MIME/Viewer/itip.php:408
+#: lib/MIME/Viewer/itip.php:411
 msgid "Attached is a reply to a calendar request you sent."
 msgstr "添付ファイルはあなたが送った予定表要求への返信です。"
 
@@ -627,24 +627,24 @@ msgstr "添付ファイルはあなたが送った予定表要求への返信です。"
 msgid "Attachment"
 msgstr "添付"
 
-#: attachment.php:72
+#: attachment.php:73
 #, php-format
 msgid "Attachment %s deleted."
 msgstr "添付 %s は削除されました。"
 
-#: lib/Compose.php:2639
+#: lib/Compose.php:2642
 msgid "Attachment Information"
 msgstr "添付の情報"
 
-#: lib/Compose.php:817
+#: lib/Compose.php:816
 msgid "Attachment stripped: Original attachment type"
 msgstr "添付を取り除きました: 添付の型"
 
-#: compose.php:1107 lib/Compose.php:2606 templates/compose/compose.html:252
+#: compose.php:1105 lib/Compose.php:2609 templates/compose/compose.html:252
 msgid "Attachments"
 msgstr "添付"
 
-#: lib/MIME/Viewer/itip.php:756 lib/MIME/Viewer/itip.php:885
+#: lib/MIME/Viewer/itip.php:808 lib/MIME/Viewer/itip.php:937
 msgid "Attendees"
 msgstr "参加者"
 
@@ -671,7 +671,7 @@ msgstr ""
 msgid "Available Address books:"
 msgstr "使用可能なアドレス帳："
 
-#: lib/MIME/Viewer/itip.php:789 lib/MIME/Viewer/itip.php:921
+#: lib/MIME/Viewer/itip.php:841 lib/MIME/Viewer/itip.php:973
 msgid "Awaiting Response"
 msgstr "応答待ち"
 
@@ -712,7 +712,7 @@ msgstr "不良または不正な要求です。サーバーの応答：%s"
 msgid "Bad request: %s"
 msgstr "不正な要求：%s"
 
-#: lib/Search.php:721 lib/UI/Message.php:28
+#: lib/Search.php:726 lib/UI/Message.php:28
 #: templates/contacts/contacts.html:43 templates/login/recompose.html:32
 msgid "Bcc"
 msgstr "Bcc"
@@ -737,7 +737,7 @@ msgstr "ブラックリスト"
 msgid "Block images in HTML messages unless they are specifically requested?"
 msgstr "HTMLメール中の画像は指示するまで表示しないようにしますか？"
 
-#: lib/Search.php:731
+#: lib/Search.php:736
 msgid "Body"
 msgstr "本文"
 
@@ -770,11 +770,11 @@ msgid ""
 "CRAM-MD5 or DIGEST-MD5 requires PEAR's Auth_SASL package to be installed."
 msgstr "CRAM-MD5 や DIGEST-MD5 には PEAR の Auth_SASL パッケージが必要です。"
 
-#: compose.php:1027
+#: compose.php:1025
 msgid "C_harset"
 msgstr "_H文字セット"
 
-#: search.php:278 config/hooks.php.dist:455
+#: search.php:279 config/hooks.php.dist:455
 msgid "Calendar"
 msgstr "予定表"
 
@@ -786,7 +786,7 @@ msgstr "予定表"
 msgid "Cancel"
 msgstr "キャンセル"
 
-#: templates/compose/redirect.html:83 templates/compose/compose.html:21
+#: templates/compose/redirect.html:84 templates/compose/compose.html:21
 #: templates/compose/compose.html:208
 msgid "Cancel Message"
 msgstr "メッセージをキャンセル"
@@ -803,7 +803,7 @@ msgstr "リモートのメールサーバに接続できません。"
 msgid "Cannot connect to the remote mail server: "
 msgstr "リモートのメールサーバに接続できません： "
 
-#: lib/IMAP/Tree.php:2013
+#: lib/IMAP/Tree.php:2047
 msgid "Cannot directly create mailbox in this folder."
 msgstr "このフォルダーにはメールボックスは作成できません。"
 
@@ -822,7 +822,7 @@ msgstr "ゴミ箱に移動できません - ゴミ箱が設定されていません。"
 msgid "Cannot retrieve public key from cache."
 msgstr "キャッシュから公開鍵を取得できません。"
 
-#: lib/Search.php:716 lib/UI/Message.php:27
+#: lib/Search.php:721 lib/UI/Message.php:27
 #: templates/contacts/contacts.html:42 templates/login/recompose.html:23
 msgid "Cc"
 msgstr "Cc"
@@ -835,7 +835,7 @@ msgstr ""
 "証明書にインポートはできません。このサーバーはファイルのアップロードを許可し"
 "ていません。"
 
-#: lib/MIME/Viewer/itip.php:771 lib/MIME/Viewer/itip.php:903
+#: lib/MIME/Viewer/itip.php:823 lib/MIME/Viewer/itip.php:955
 msgid "Chair Person"
 msgstr "議長"
 
@@ -981,7 +981,7 @@ msgstr "閉じる"
 msgid "Close this window"
 msgstr "このウインドを閉じる"
 
-#: lib/IMAP/Tree.php:1958
+#: lib/IMAP/Tree.php:1992
 msgid "Closed Folder"
 msgstr "閉じているフォルダ"
 
@@ -1013,7 +1013,7 @@ msgstr "全ての名前空間を合体"
 msgid "Comment:"
 msgstr "コメント："
 
-#: lib/MIME/Viewer/itip.php:973
+#: lib/MIME/Viewer/itip.php:1025
 msgid "Completed"
 msgstr "完了"
 
@@ -1075,7 +1075,7 @@ msgstr "選択範囲をコピー"
 msgid "Copy to folder"
 msgstr "フォルダーにコピー"
 
-#: lib/Compose.php:2091
+#: lib/Compose.php:2094
 #, php-format
 msgid "Could not attach %s to the message."
 msgstr "%s をメッセージに添付できません。"
@@ -1085,12 +1085,12 @@ msgstr "%s をメッセージに添付できません。"
 msgid "Could not complete request. Reason Given: %s"
 msgstr "要求は完了できません。理由：%s"
 
-#: attachment.php:50
+#: attachment.php:51
 #, php-format
 msgid "Could not create the VFS backend: %s"
 msgstr "VFS バックエンドが作成できません：%s"
 
-#: lib/Message.php:791
+#: lib/Message.php:790
 #, php-format
 msgid "Could not delete messages from %s. The server said: %s"
 msgstr "%s のメッセージは削除できません。サーバからの応答： %s"
@@ -1127,7 +1127,7 @@ msgstr "IMAP サーバから名前空間の情報が取得できません。"
 msgid "Could not retrieve the message from the mail server."
 msgstr "メールサーバからメッセージが取得できません。"
 
-#: lib/Compose.php:1096
+#: lib/Compose.php:1099
 #, php-format
 msgid "Could not save recipients: %s"
 msgstr "宛先が保存できません：%s"
@@ -1190,10 +1190,6 @@ msgstr ""
 msgid "Create new stationery"
 msgstr "定型句を新規作成"
 
-#: config/prefs.php.dist:555
-msgid "Create stationery and form responses."
-msgstr "定型句を作成・変更します。"
-
 #: templates/compose/compose.html:317
 msgid "Current Attachments"
 msgstr "現在の添付"
@@ -1244,15 +1240,15 @@ msgstr "_E日付"
 msgid "Date"
 msgstr "日付"
 
-#: lib/Search.php:746
+#: lib/Search.php:751
 msgid "Date <"
 msgstr "日付 <"
 
-#: lib/Search.php:741
+#: lib/Search.php:746
 msgid "Date ="
 msgstr "日付 ="
 
-#: lib/Search.php:751
+#: lib/Search.php:756
 msgid "Date >="
 msgstr "日付 >="
 
@@ -1264,7 +1260,7 @@ msgstr "日付："
 msgid "Day"
 msgstr "日"
 
-#: lib/MIME/Viewer/itip.php:961
+#: lib/MIME/Viewer/itip.php:1013
 msgid "Declined"
 msgstr "謝絶済み"
 
@@ -1296,7 +1292,7 @@ msgstr "デフォルトのソート基準："
 msgid "Default sorting direction:"
 msgstr "デフォルトのソート方向："
 
-#: lib/MIME/Viewer/itip.php:969
+#: lib/MIME/Viewer/itip.php:1021
 msgid "Delegated"
 msgstr "委任済み"
 
@@ -1345,7 +1341,7 @@ msgstr "%s 用の仮想フォルダの定義を削除"
 msgid "Delete fetched messages from remote server?"
 msgstr "取り込んだメッセージをリモートサーバから削除しますか？"
 
-#: lib/MIME/Viewer/itip.php:694
+#: lib/MIME/Viewer/itip.php:746
 msgid "Delete from my calendar"
 msgstr "私の予定表から削除"
 
@@ -1374,11 +1370,11 @@ msgstr "削除？"
 msgid "Deleted"
 msgstr "削除済"
 
-#: lib/Search.php:812
+#: lib/Search.php:817
 msgid "Deleted messages"
 msgstr "削除されたメール"
 
-#: compose.php:243
+#: compose.php:240
 #, php-format
 msgid "Deleted the attachment \"%s\"."
 msgstr "添付 \"%s\" を削除しました。"
@@ -1387,11 +1383,11 @@ msgstr "添付 \"%s\" を削除しました。"
 msgid "Deleting and Moving Messages"
 msgstr "メールの削除と移動"
 
-#: lib/MIME/Viewer/itip.php:666
+#: lib/MIME/Viewer/itip.php:718
 msgid "Deny request"
 msgstr "要求を拒否する"
 
-#: lib/MIME/Viewer/itip.php:586
+#: lib/MIME/Viewer/itip.php:638
 msgid "Deny request for free/busy information"
 msgstr "予定情報の要求を拒否する"
 
@@ -1399,7 +1395,7 @@ msgstr "予定情報の要求を拒否する"
 msgid "Descending"
 msgstr "降順"
 
-#: lib/MIME/Viewer/itip.php:747 lib/MIME/Viewer/itip.php:878
+#: lib/MIME/Viewer/itip.php:799 lib/MIME/Viewer/itip.php:930
 msgid "Description"
 msgstr "説明"
 
@@ -1413,23 +1409,23 @@ msgstr "説明："
 msgid "Details"
 msgstr "詳細"
 
-#: lib/Compose.php:2933
+#: lib/Compose.php:2936
 #, php-format
 msgid "Did not attach \"%s\" as it was only partially uploaded."
 msgstr "\"%s\" は一部しかアップロードされていないので、添付しません。"
 
-#: lib/Compose.php:2942
+#: lib/Compose.php:2945
 #, php-format
 msgid "Did not attach \"%s\" as the file was empty."
 msgstr "ファイル \"%s\" は空白なので添付しません。"
 
-#: lib/Compose.php:2929
+#: lib/Compose.php:2932
 #, php-format
 msgid ""
 "Did not attach \"%s\" as the maximum allowed upload size has been exceeded."
 msgstr "ファイル \"%s\" は許容サイズを超過しているので添付しません。"
 
-#: lib/Compose.php:2937
+#: lib/Compose.php:2940
 #, php-format
 msgid ""
 "Did not attach \"%s\" as the server configuration did not allow the file to "
@@ -1523,7 +1519,7 @@ msgstr "Zip 形式でダウンロード"
 msgid "Draft"
 msgstr "下書き"
 
-#: lib/IMAP/Tree.php:1913
+#: lib/IMAP/Tree.php:1947
 msgid "Draft folder"
 msgstr "下書きフォルダ"
 
@@ -1584,12 +1580,12 @@ msgstr "ホワイトリストを編集"
 msgid "Edit your preferences for accessing other mail accounts."
 msgstr "他のサーバのメールアカウントにアクセスするための設定をして下さい。"
 
-#: lib/Message.php:808
+#: lib/Message.php:807
 #, php-format
 msgid "Emptied all messages from %s."
 msgstr "%s のメールを全て空にしました。"
 
-#: lib/Message.php:784
+#: lib/Message.php:783
 msgid "Emptied all messages from Virtual Trash Folder."
 msgstr "仮想ゴミ箱フォルダーを空にしました。"
 
@@ -1601,11 +1597,11 @@ msgstr "空にする"
 msgid "Empty Selected Folders"
 msgstr "選択したフォルダを削除する"
 
-#: lib/IMP.php:856
+#: lib/IMP.php:859
 msgid "Empty _Spam"
 msgstr "_SPAM清掃"
 
-#: lib/IMP.php:848
+#: lib/IMP.php:851
 msgid "Empty _Trash"
 msgstr "_Tゴミ箱清掃"
 
@@ -1625,24 +1621,24 @@ msgstr "S/MIME を使用しますか？"
 msgid "Enable message previews?"
 msgstr "メッセージのプレビューを使用しますか？"
 
-#: compose.php:1152
+#: compose.php:1150
 msgid "Encr_yption Options"
 msgstr "_Y暗号オプション"
 
-#: lib/MIME/Viewer/itip.php:556 lib/MIME/Viewer/itip.php:558
-#: lib/MIME/Viewer/itip.php:732 lib/MIME/Viewer/itip.php:734
+#: lib/MIME/Viewer/itip.php:608 lib/MIME/Viewer/itip.php:610
+#: lib/MIME/Viewer/itip.php:784 lib/MIME/Viewer/itip.php:786
 msgid "End"
 msgstr "終了"
 
-#: lib/Compose.php:1810
+#: lib/Compose.php:1813
 msgid "End forwarded message"
 msgstr "転送するメッセージは以上です"
 
-#: lib/Compose.php:1702
+#: lib/Compose.php:1705
 msgid "End message"
 msgstr "メッセージは以上です"
 
-#: lib/Compose.php:1700
+#: lib/Compose.php:1703
 #, php-format
 msgid "End message from %s"
 msgstr "%s からのメッセージは以上です"
@@ -1667,11 +1663,11 @@ msgstr "新しい送信控えフォルダの名前を指定してください。"
 msgid "Enter the name for your new trash folder"
 msgstr "新しいゴミ箱フォルダの名前を指定してください。"
 
-#: message.php:568 lib/Search.php:736 config/prefs.php.dist:763
+#: message.php:568 lib/Search.php:741 config/prefs.php.dist:763
 msgid "Entire Message"
 msgstr "メッセージ全体"
 
-#: message.php:175 thread.php:71 lib/Compose.php:1136
+#: message.php:175 thread.php:71 lib/Compose.php:1139
 #, php-format
 msgid "Entry \"%s\" was successfully added to the address book"
 msgstr "\"%s\" というエントリがアドレス帳に追加されました。"
@@ -1690,7 +1686,7 @@ msgstr "IMAP サーバへの接続エラー：[%s] %s。"
 msgid "Error displaying message."
 msgstr "メッセージの表示中にエラーが発生しました。"
 
-#: lib/MIME/Viewer/itip.php:337 lib/MIME/Viewer/itip.php:440
+#: lib/MIME/Viewer/itip.php:340 lib/MIME/Viewer/itip.php:446
 #, php-format
 msgid "Error sending reply: %s."
 msgstr "返信エラー： %s。"
@@ -1739,7 +1735,7 @@ msgstr "全フォルダを展開"
 msgid "Expand Folder"
 msgstr "フォルダを展開"
 
-#: compose.php:829 compose.php:1081
+#: compose.php:827 compose.php:1079
 msgid "Expand Names"
 msgstr "名前を展開"
 
@@ -1755,7 +1751,7 @@ msgstr "サイドバーのデフォルト表示でフォルダツリー全体を展開しますか？"
 msgid "FCKeditor"
 msgstr "FCKeditor"
 
-#: lib/IMP.php:867 lib/IMP.php:869
+#: lib/IMP.php:870 lib/IMP.php:872
 msgid "F_etch Mail"
 msgstr "_Eメール取込"
 
@@ -1790,7 +1786,7 @@ msgstr "Fetchmail: "
 msgid "Fetchmail: no new messages."
 msgstr "Fetchmail: 新着メールなし。"
 
-#: lib/IMP.php:873
+#: lib/IMP.php:876
 msgid "Fi_lters"
 msgstr "_Lフィルタ"
 
@@ -1840,7 +1836,7 @@ msgstr "最初のページ"
 msgid "Flagged For Followup"
 msgstr "続報の印"
 
-#: lib/Search.php:802
+#: lib/Search.php:807
 msgid "Flagged messages"
 msgstr "印付けられたメール"
 
@@ -1848,7 +1844,7 @@ msgstr "印付けられたメール"
 msgid "Fo_rward"
 msgstr "_R転送"
 
-#: lib/IMAP/Tree.php:1958 templates/folders/folders_size.html:6
+#: lib/IMAP/Tree.php:1992 templates/folders/folders_size.html:6
 msgid "Folder"
 msgstr "フォルダ"
 
@@ -1885,28 +1881,28 @@ msgstr "文字色"
 msgid "Format of message dates in the mailbox view for messages dated today"
 msgstr "メールボックス表示での今日１日の時間表示形式"
 
-#: message.php:567 mailbox.php:533 lib/Compose.php:1793
+#: message.php:567 mailbox.php:533 lib/Compose.php:1796
 msgid "Forward"
 msgstr "転送"
 
-#: lib/Compose.php:1779
+#: lib/Compose.php:1782
 msgid "Forward:"
 msgstr "転送:"
 
-#: lib/Compose.php:1892
+#: lib/Compose.php:1895
 msgid "Forwarded Message:"
 msgstr "転送されたメッセージ："
 
-#: lib/Compose.php:1806
+#: lib/Compose.php:1809
 msgid "Forwarded message"
 msgstr "転送されたメッセージ"
 
-#: lib/Compose.php:1804
+#: lib/Compose.php:1807
 #, php-format
 msgid "Forwarded message from %s"
 msgstr "%s から転送されたメッセージ"
 
-#: lib/MIME/Viewer/itip.php:434
+#: lib/MIME/Viewer/itip.php:437
 msgid "Free/Busy Request Response"
 msgstr "予定情報要求応答"
 
@@ -1914,7 +1910,7 @@ msgstr "予定情報要求応答"
 msgid "Fro_m"
 msgstr "_M差出人"
 
-#: lib/Search.php:706 lib/UI/Mailbox.php:99 lib/UI/Message.php:25
+#: lib/Search.php:711 lib/UI/Mailbox.php:99 lib/UI/Message.php:25
 #: templates/compose/compose.html:27
 msgid "From"
 msgstr "From"
@@ -1940,8 +1936,8 @@ msgstr "一般的オプション"
 msgid "Get only new messages? (IMAP only)"
 msgstr "新着メッセージのみ取得？（IMAP のみ）"
 
-#: folders.php:374 lib/MIME/Viewer/itip.php:598 lib/MIME/Viewer/itip.php:808
-#: lib/MIME/Viewer/itip.php:939
+#: folders.php:374 lib/MIME/Viewer/itip.php:650 lib/MIME/Viewer/itip.php:860
+#: lib/MIME/Viewer/itip.php:991
 msgid "Go"
 msgstr "移動"
 
@@ -1962,7 +1958,7 @@ msgstr "アドレス帳の \"%s\" に移動する"
 #: lib/MIME/Viewer/images.php:90 lib/MIME/Viewer/images.php:97
 #: lib/MIME/Viewer/images.php:99 lib/MIME/Viewer/notification.php:60
 #: lib/MIME/Viewer/notification.php:67 lib/MIME/Viewer/related.php:85
-#: lib/MIME/Viewer/pkcs7.php:484 lib/MIME/Viewer/appledouble.php:40
+#: lib/MIME/Viewer/pkcs7.php:484 lib/MIME/Viewer/appledouble.php:48
 #: lib/MIME/Viewer/status.php:119 lib/MIME/Viewer/status.php:128
 msgid "HERE"
 msgstr "ここ"
@@ -2011,7 +2007,7 @@ msgstr "削除済みを隠す"
 msgid "Hide Unsubscribed"
 msgstr "非登録を隠す"
 
-#: compose.php:1043
+#: compose.php:1041
 msgid "High"
 msgstr "高"
 
@@ -2019,7 +2015,7 @@ msgstr "高"
 msgid "High Priority"
 msgstr "優先度高"
 
-#: compose.php:1042
+#: compose.php:1040
 msgid "Highest"
 msgstr "最高"
 
@@ -2039,7 +2035,7 @@ msgstr "フォルダーツリー表示では名前空間を表示しますか？"
 msgid "How to attribute quoted lines in a reply"
 msgstr "返信時の引用句"
 
-#: lib/IMAP.php:303
+#: lib/IMAP.php:309
 msgid "IMAP"
 msgstr "IMAP"
 
@@ -2052,15 +2048,19 @@ msgstr "IMAP（自動判別）"
 msgid "IMAP Server closed the connection. Server Responded: %s"
 msgstr "IMAP サーバが接続を切断しました。サーバの応答：%s"
 
-#: lib/IMAP.php:315
+#: lib/IMAP.php:327
 msgid "IMAP over SSL"
 msgstr "IMAP over SSL"
 
-#: lib/IMAP.php:321
+#: lib/IMAP.php:333
 msgid "IMAP over SSL (self-signed certificate)"
 msgstr "IMAP over SSL (自己証明)"
 
-#: lib/IMAP.php:309
+#: lib/IMAP.php:315
+msgid "IMAP, (self-signed certificate)"
+msgstr "IMAP, (自己証明)"
+
+#: lib/IMAP.php:321
 msgid "IMAP, no TLS"
 msgstr "IMAP, no TLS"
 
@@ -2081,7 +2081,7 @@ msgstr "続けると、フォルダ内のメールはすべて破棄されます！"
 msgid "Image"
 msgstr "画像"
 
-#: lib/MIME/Viewer/html.php:153
+#: lib/MIME/Viewer/html.php:160
 msgid "Images have been blocked to protect your privacy."
 msgstr "プライバシー保護のために画像をブロックしました。"
 
@@ -2170,12 +2170,13 @@ msgstr ""
 "インポートした鍵にはあなたの秘密鍵が含まれています。公開鍵だけを追加するよう"
 "にして下さい！"
 
-#: lib/MIME/Viewer/itip.php:977
+#: lib/MIME/Viewer/itip.php:1029
 msgid "In Process"
 msgstr "処理中"
 
-#: templates/prefs/initialpageselect.inc:4 lib/Folder.php:68 lib/api.php:285
-#: lib/IMP.php:732 lib/IMAP/Tree.php:396 lib/IMAP/Tree.php:1896
+#: templates/prefs/initialpageselect.inc:4 lib/Folder.php:68 lib/api.php:293
+#: lib/IMP.php:732 lib/IMP.php:742 lib/IMAP/Tree.php:404
+#: lib/IMAP/Tree.php:1930
 msgid "Inbox"
 msgstr "INBOX"
 
@@ -2242,7 +2243,7 @@ msgstr "画像の挿入／修正"
 msgid "Insert/Overwrite"
 msgstr "挿入／上書き"
 
-#: lib/MIME/Viewer/itip.php:445
+#: lib/MIME/Viewer/itip.php:451
 msgid "Invalid Action selected for this component."
 msgstr "無効な処置を選択しました。"
 
@@ -2254,18 +2255,18 @@ msgstr "無効なアドレス"
 msgid "Invalid Remote Mailbox"
 msgstr "無効なリモートメールボックス"
 
-#: lib/Compose.php:1186 lib/Compose.php:1201 lib/Compose.php:1213
-#: lib/Compose.php:1228
+#: lib/Compose.php:1189 lib/Compose.php:1204 lib/Compose.php:1216
+#: lib/Compose.php:1231
 #, php-format
 msgid "Invalid character in e-mail address: %s."
 msgstr "メールアドレスに無効な文字が含まれています：%s"
 
-#: lib/Compose.php:1178
+#: lib/Compose.php:1181
 #, php-format
 msgid "Invalid e-mail address: %s."
 msgstr "無効なメールアドレス：%s"
 
-#: lib/Compose.php:1197 lib/Compose.php:1224
+#: lib/Compose.php:1200 lib/Compose.php:1227
 msgid "Invalid hostname."
 msgstr "無効なホスト名です。"
 
@@ -2355,15 +2356,15 @@ msgstr "メールボックスの最後のページ"
 msgid "Last Page"
 msgstr "最後のページ"
 
-#: compose.php:1195
+#: compose.php:1193
 msgid "Link Attachments?"
 msgstr "添付はリンクだけを送信しますか？"
 
-#: attachment.php:34 lib/Compose.php:2597
+#: attachment.php:35 lib/Compose.php:2600
 msgid "Linked attachments are forbidden."
 msgstr "リンク型添付は使用できません。"
 
-#: lib/Compose.php:2613
+#: lib/Compose.php:2616
 #, php-format
 msgid "Links will expire on %s"
 msgstr "リンクは %s で期限切れになります"
@@ -2384,7 +2385,7 @@ msgstr ""
 msgid "Listing in the Header"
 msgstr "ヘッダ部に一覧表示"
 
-#: compose.php:815
+#: compose.php:812
 msgid "Loading..."
 msgstr "ロード中..."
 
@@ -2392,7 +2393,7 @@ msgstr "ロード中..."
 msgid "Local Mailbox:"
 msgstr "ローカルのメールボックス："
 
-#: lib/MIME/Viewer/itip.php:752
+#: lib/MIME/Viewer/itip.php:804
 msgid "Location"
 msgstr "場所"
 
@@ -2413,7 +2414,7 @@ msgstr "ログイン"
 msgid "Login Tasks"
 msgstr "ログインタスク"
 
-#: compose.php:1045
+#: compose.php:1043
 msgid "Low"
 msgstr "低"
 
@@ -2421,11 +2422,11 @@ msgstr "低"
 msgid "Low Priority"
 msgstr "優先度低"
 
-#: compose.php:1046
+#: compose.php:1044
 msgid "Lowest"
 msgstr "最低"
 
-#: lib/MIME/Viewer/appledouble.php:43
+#: lib/MIME/Viewer/appledouble.php:51
 msgid "Macintosh File"
 msgstr "Macintosh ファイル"
 
@@ -2437,7 +2438,7 @@ msgstr "メール プレビュー"
 msgid "Mail server type to connect to:"
 msgstr "接続するメールサーバの種類："
 
-#: lib/IMAP/Tree.php:1903 lib/IMAP/Tree.php:1930
+#: lib/IMAP/Tree.php:1937 lib/IMAP/Tree.php:1964
 msgid "Mailbox"
 msgstr "メールボックス"
 
@@ -2479,11 +2480,11 @@ msgstr "メッセージを既読とする？（IMAP のみ）"
 msgid "Mark simple markup?"
 msgstr "太字、下線、斜体を単純に表示しますか？"
 
-#: search.php:164
+#: search.php:165
 msgid "Match All Queries"
 msgstr "全てが一致する"
 
-#: search.php:162
+#: search.php:163
 msgid "Match Any Query"
 msgstr "どれかが一致する"
 
@@ -2519,7 +2520,7 @@ msgstr "添付サイズの上限に達しました。"
 msgid "Menu Folder List"
 msgstr "メニューフォルダ一覧"
 
-#: lib/Compose.php:1693
+#: lib/Compose.php:1696
 msgid "Message"
 msgstr "メッセージ"
 
@@ -2546,7 +2547,7 @@ msgstr "メッセージオプション"
 msgid "Message Replies/Forwards"
 msgstr "返信／転送"
 
-#: search.php:337
+#: search.php:338
 msgid "Message Search"
 msgstr "メッセージの検索"
 
@@ -2562,7 +2563,7 @@ msgstr "メッセージ原文"
 msgid "Message Viewing"
 msgstr "メッセージ表示"
 
-#: lib/Compose.php:1691
+#: lib/Compose.php:1694
 #, php-format
 msgid "Message from %s"
 msgstr "%s からのメッセージ"
@@ -2579,16 +2580,16 @@ msgstr "メッセージは暗号化されています"
 msgid "Message is signed"
 msgstr "メッセージは署名されています"
 
-#: compose.php:393 compose.php:400
+#: compose.php:390 compose.php:397
 msgid "Message redirected successfully."
 msgstr "メッセージは転送されました。"
 
-#: lib/Compose.php:835
+#: lib/Compose.php:834
 #, php-format
 msgid "Message sent successfully, but not saved to %s"
 msgstr "メッセージは送信されましたが、%s に保存されていません"
 
-#: compose.php:464 compose.php:472
+#: compose.php:461 compose.php:469
 msgid "Message sent successfully."
 msgstr "メッセージの送信成功"
 
@@ -2653,7 +2654,7 @@ msgstr "複数メール表示："
 msgid "NOTE:"
 msgstr "ノート："
 
-#: lib/MIME/Viewer/itip.php:758 lib/MIME/Viewer/itip.php:890
+#: lib/MIME/Viewer/itip.php:810 lib/MIME/Viewer/itip.php:942
 msgid "Name"
 msgstr "名前"
 
@@ -2661,7 +2662,7 @@ msgstr "名前"
 msgid "Name and/or email cannot be empty"
 msgstr "名前かメールは必須です"
 
-#: lib/MIME/Viewer/itip.php:982
+#: lib/MIME/Viewer/itip.php:1034
 msgid "Needs Action"
 msgstr "処置が必要です"
 
@@ -2681,7 +2682,7 @@ msgstr "新規フォルダ"
 msgid "New Mail"
 msgstr "新着メール"
 
-#: compose.php:33 compose.php:255 lib/Block/tree_folders.php:35
+#: compose.php:33 compose.php:252 lib/Block/tree_folders.php:35
 msgid "New Message"
 msgstr "新規メール"
 
@@ -2708,7 +2709,7 @@ msgstr "いいえ"
 msgid "No Certificate found"
 msgstr "証明書が見付かりません"
 
-#: lib/IMP.php:1444
+#: lib/IMP.php:1447
 msgid "No Encryption"
 msgstr "暗号化しない"
 
@@ -2765,11 +2766,11 @@ msgstr "どのフォルダにも新着メールはありません"
 msgid "No folders with unseen messages"
 msgstr "どのフォルダにも未読メールはありません"
 
-#: lib/IMP.php:1045
+#: lib/IMP.php:1048
 msgid "No limit"
 msgstr "無制限"
 
-#: lib/Compose.php:1729
+#: lib/Compose.php:1732
 msgid "No message body text"
 msgstr "本文なし"
 
@@ -2806,18 +2807,18 @@ msgstr "サポートする IMAP 認証がありません。"
 msgid "No user specified."
 msgstr "ユーザが指定されていません。"
 
-#: lib/MIME/Viewer/itip.php:779 lib/MIME/Viewer/itip.php:911
+#: lib/MIME/Viewer/itip.php:831 lib/MIME/Viewer/itip.php:963
 msgid "Non Participant"
 msgstr "参加者以外"
 
 #: templates/prefs/folderselect.inc:21 templates/prefs/sentmailselect.inc:38
 #: templates/prefs/sourceselect.inc:35 templates/prefs/spamselect.inc:20
-#: templates/prefs/trashselect.inc:23 lib/MIME/Viewer/itip.php:742
-#: lib/MIME/Viewer/itip.php:873 templates/mailbox/navbar.html:11
+#: templates/prefs/trashselect.inc:23 lib/MIME/Viewer/itip.php:794
+#: lib/MIME/Viewer/itip.php:925 templates/mailbox/navbar.html:11
 msgid "None"
 msgstr "なし"
 
-#: compose.php:1044
+#: compose.php:1042
 msgid "Normal"
 msgstr "通常"
 
@@ -2866,7 +2867,7 @@ msgstr "メモ"
 msgid "Nothing"
 msgstr "何もしない"
 
-#: attachment.php:108
+#: attachment.php:109
 msgid "Notification: Linked attachment downloaded"
 msgstr "通知：リンクされた添付がダウンロードされました"
 
@@ -2899,19 +2900,19 @@ msgstr "未読メールがあるフォルダだけを表示しますか？"
 msgid "Only one folder should be selected for this action."
 msgstr "フォルダは１つだけ指定して下さい。"
 
-#: lib/IMP.php:924 lib/IMP.php:929
+#: lib/IMP.php:927 lib/IMP.php:932
 msgid "Open Fo_lder"
 msgstr "_Lフォルダを開く"
 
-#: lib/IMP.php:929
+#: lib/IMP.php:932
 msgid "Open Folder"
 msgstr "フォルダを開く"
 
-#: lib/IMAP/Tree.php:1954
+#: lib/IMAP/Tree.php:1988
 msgid "Opened Folder"
 msgstr "フォルダを開く"
 
-#: lib/MIME/Viewer/itip.php:775 lib/MIME/Viewer/itip.php:907
+#: lib/MIME/Viewer/itip.php:827 lib/MIME/Viewer/itip.php:959
 msgid "Optional Participant"
 msgstr "任意の参加者"
 
@@ -2933,7 +2934,7 @@ msgstr "その他のオプション"
 msgid "Other Users' Folders"
 msgstr "他人のフォルダ"
 
-#: lib/api.php:170 templates/login/login.html:103
+#: lib/api.php:178 templates/login/login.html:103
 msgid "Outbound Server"
 msgstr "送信用サーバ"
 
@@ -2942,15 +2943,15 @@ msgstr "送信用サーバ"
 msgid "PGP"
 msgstr "PGP"
 
-#: lib/IMP.php:1447
+#: lib/IMP.php:1450
 msgid "PGP Encrypt Message"
 msgstr "PGP 暗号メッセージ"
 
-#: lib/IMP.php:1452
+#: lib/IMP.php:1455
 msgid "PGP Encrypt Message with passphrase"
 msgstr "PGP 暗号メッセージ（パスフレーズ使用）"
 
-#: lib/Compose.php:1403
+#: lib/Compose.php:1406
 msgid "PGP Error: "
 msgstr "PGP エラー: "
 
@@ -2980,19 +2981,19 @@ msgstr "\"%s\" の PGP 公開鍵は削除されました。"
 msgid "PGP Public Keyring"
 msgstr "PGP 公開鍵リング"
 
-#: lib/IMP.php:1448
+#: lib/IMP.php:1451
 msgid "PGP Sign Message"
 msgstr "PGP 署名"
 
-#: lib/IMP.php:1449
+#: lib/IMP.php:1452
 msgid "PGP Sign/Encrypt Message"
 msgstr "PGP 署名／暗号メッセージ"
 
-#: lib/IMP.php:1453
+#: lib/IMP.php:1456
 msgid "PGP Sign/Encrypt Message with passphrase"
 msgstr "PGP 署名／暗号メッセージ（パスフレーズ使用）"
 
-#: compose.php:735
+#: compose.php:732
 msgid ""
 "PGP encryption cannot be used by default as public keys cannot be found for "
 "all recipients."
@@ -3019,11 +3020,11 @@ msgstr ""
 "PGP のサポートにはポップアップ・ウインドーが必要です。お使いのブラウザがポッ"
 "プアップを禁止にしてあるなら、PGP 機能は正しく動作しません。"
 
-#: lib/Compose.php:1363
+#: lib/Compose.php:1366
 msgid "PGP: Need passphrase for personal private key."
 msgstr "PGP: 秘密鍵のパスフレーズが必要です。"
 
-#: lib/Compose.php:1372
+#: lib/Compose.php:1375
 msgid "PGP: Need passphrase to encrypt your message with."
 msgstr "PGP: 秘密鍵のパスフレーズが必要です。"
 
@@ -3035,15 +3036,19 @@ msgstr "POP3"
 msgid "POP3 (Auto Detect Protocols)"
 msgstr "POP3（自動判別）"
 
-#: lib/IMAP.php:291
+#: lib/IMAP.php:297
 msgid "POP3 over SSL"
 msgstr "POP3 over SSL"
 
-#: lib/IMAP.php:297
+#: lib/IMAP.php:303
 msgid "POP3 over SSL (self-signed certificate)"
 msgstr "POP3 over SSL (self-signed certificate)"
 
 #: lib/IMAP.php:285
+msgid "POP3, (self-signed certificate)"
+msgstr "POP3, (self-signed certificate)"
+
+#: lib/IMAP.php:291
 msgid "POP3, no TLS"
 msgstr "POP3, no TLS"
 
@@ -3089,7 +3094,7 @@ msgstr "パスフレーズは空ではいけません"
 msgid "Passphrases do not match"
 msgstr "パスフレーズが一致しません"
 
-#: lib/api.php:183 templates/login/login.html:92
+#: lib/api.php:191 templates/login/login.html:92
 msgid "Password"
 msgstr "パスワード"
 
@@ -3200,7 +3205,7 @@ msgstr "パスワードを記入してください。"
 msgid "Please provide your username."
 msgstr "ユーザ名を記入してください。"
 
-#: lib/Compose.php:2787 lib/UI/Compose.php:26
+#: lib/Compose.php:2790 lib/UI/Compose.php:26
 msgid "Please resolve ambiguous or invalid addresses."
 msgstr "曖昧なまたは無効なアドレスを修正してください。"
 
@@ -3212,7 +3217,7 @@ msgstr "操作を実行する前にフォルダを選んでください。"
 msgid "Please select at least one folder to search."
 msgstr "検索するフォルダを 1 つ以上選んでください。"
 
-#: templates/compose/redirect.html:39
+#: templates/compose/redirect.html:40
 msgid "Please select or edit in the box to the right:"
 msgstr "右から選択するか編集して下さい："
 
@@ -3220,7 +3225,7 @@ msgstr "右から選択するか編集して下さい："
 msgid "Poll all folders for new mail?"
 msgstr "新着メールを確認するために全フォルダを調べますか？"
 
-#: lib/api.php:161 templates/login/login.html:67
+#: lib/api.php:169 templates/login/login.html:67
 msgid "Port"
 msgstr "ポート"
 
@@ -3244,7 +3249,7 @@ msgstr "プレファレンス"
 msgid "Preferences successfully updated."
 msgstr "設定は正常に更新されました。"
 
-#: compose.php:1215
+#: compose.php:1213
 msgid "Preview"
 msgstr "プレビュー"
 
@@ -3268,7 +3273,7 @@ msgstr "印刷物"
 msgid "Printed By"
 msgstr "印刷："
 
-#: message.php:670 lib/MIME/Viewer/itip.php:866
+#: message.php:670 lib/MIME/Viewer/itip.php:918
 msgid "Priority"
 msgstr "優先度"
 
@@ -3288,7 +3293,7 @@ msgstr "添付を送信した時は尋ねる；デフォルトYES"
 msgid "Prompt to send read receipt when requested by the sender?"
 msgstr "開封確認の返信を送信する前に確認しますか？"
 
-#: lib/api.php:165 templates/login/login.html:72
+#: lib/api.php:173 templates/login/login.html:72
 msgid "Protocol"
 msgstr "プロトコル"
 
@@ -3386,7 +3391,7 @@ msgstr "クォータの状況： %.2f MB / %.2f MB  (%.2f%%)"
 msgid "Quota status: %.2f MB / NO LIMIT"
 msgstr "クォータの状況： %.2f MB /無制限"
 
-#: lib/IMP.php:1043
+#: lib/IMP.php:1046
 #, php-format
 msgid "Quota status: NO LIMIT"
 msgstr "クォータの状況： 無制限"
@@ -3420,11 +3425,11 @@ msgstr "_Tそのまま転送"
 msgid "Redirect"
 msgstr "そのまま転送"
 
-#: templates/compose/redirect.html:82
+#: templates/compose/redirect.html:83
 msgid "Redirect Message"
 msgstr "メールをそのまま転送する"
 
-#: compose.php:379
+#: compose.php:376
 msgid "Redirect this message"
 msgstr "このメールをそのまま転送する"
 
@@ -3448,7 +3453,7 @@ msgstr "リロード"
 msgid "Reload View"
 msgstr "表示をリロード"
 
-#: lib/MIME/Viewer/itip.php:572 lib/MIME/Viewer/itip.php:591
+#: lib/MIME/Viewer/itip.php:624 lib/MIME/Viewer/itip.php:643
 msgid "Remember the free/busy information."
 msgstr "予定情報を記憶する。"
 
@@ -3460,7 +3465,7 @@ msgstr "最後の表示を記憶"
 msgid "Remote Mailbox:"
 msgstr "リモートメールボックス："
 
-#: search.php:286
+#: search.php:287
 msgid "Remove Field From Search"
 msgstr "検索から除外する"
 
@@ -3489,28 +3494,28 @@ msgstr "\"%s\" を \"%s\" に変更できませんでした。サーバのエラー:"
 msgid "Reply"
 msgstr "返信"
 
-#: lib/MIME/Viewer/itip.php:339 lib/MIME/Viewer/itip.php:442
+#: lib/MIME/Viewer/itip.php:342 lib/MIME/Viewer/itip.php:448
 msgid "Reply Sent."
 msgstr "返信完了。"
 
-#: compose.php:348
+#: compose.php:345
 msgid "Reply to All:"
 msgstr "全員に返信："
 
-#: compose.php:350
+#: compose.php:347
 msgid "Reply to List:"
 msgstr "リストに返信："
 
-#: lib/MIME/Viewer/itip.php:574 lib/MIME/Viewer/itip.php:583
-#: lib/MIME/Viewer/itip.php:593
+#: lib/MIME/Viewer/itip.php:626 lib/MIME/Viewer/itip.php:635
+#: lib/MIME/Viewer/itip.php:645
 msgid "Reply with Not Supported Message"
 msgstr "サポート外のメッセージで返信"
 
-#: lib/MIME/Viewer/itip.php:581
+#: lib/MIME/Viewer/itip.php:633
 msgid "Reply with free/busy for next 2 months."
 msgstr "2ヶ月分の予定情報付きで返信"
 
-#: lib/MIME/Viewer/itip.php:580
+#: lib/MIME/Viewer/itip.php:632
 msgid "Reply with requested free/busy information."
 msgstr "要求された予定情報で返信"
 
@@ -3518,11 +3523,11 @@ msgstr "要求された予定情報で返信"
 msgid "Reply-To"
 msgstr "Reply-To"
 
-#: lib/Compose.php:1968
+#: lib/Compose.php:1971
 msgid "Reply-To: "
 msgstr "  返信："
 
-#: compose.php:346
+#: compose.php:343
 msgid "Reply:"
 msgstr "返信:"
 
@@ -3534,7 +3539,7 @@ msgstr "無害と報告"
 msgid "Report as Spam"
 msgstr "SPAMと報告"
 
-#: compose.php:1136
+#: compose.php:1134
 msgid "Request a _Read Receipt"
 msgstr "_R開封確認を要求"
 
@@ -3546,7 +3551,7 @@ msgstr "開封確認を要求しますか？"
 msgid "Requested message not found."
 msgstr "要求されたメールは見付かりませんでした。"
 
-#: lib/MIME/Viewer/itip.php:767 lib/MIME/Viewer/itip.php:899
+#: lib/MIME/Viewer/itip.php:819 lib/MIME/Viewer/itip.php:951
 msgid "Required Participant"
 msgstr "必須参加者"
 
@@ -3601,7 +3606,7 @@ msgstr ""
 msgid "Rights for user \"%s\" cannot be modified."
 msgstr "ユーザ \"%s\" のアクセス権を変更できませんでした。"
 
-#: lib/MIME/Viewer/itip.php:758 lib/MIME/Viewer/itip.php:890
+#: lib/MIME/Viewer/itip.php:810 lib/MIME/Viewer/itip.php:942
 msgid "Role"
 msgstr "役割"
 
@@ -3610,15 +3615,15 @@ msgstr "役割"
 msgid "S/MIME"
 msgstr "S/MIME"
 
-#: lib/IMP.php:1457
+#: lib/IMP.php:1460
 msgid "S/MIME Encrypt Message"
 msgstr "S/MIME 暗号化"
 
-#: lib/Compose.php:1435
+#: lib/Compose.php:1438
 msgid "S/MIME Error: "
 msgstr "S/MIME エラー: "
 
-#: lib/Compose.php:1414
+#: lib/Compose.php:1417
 msgid "S/MIME Error: Need passphrase for personal private key."
 msgstr "S/MIME エラー: 秘密鍵のパスフレーズが必要です。"
 
@@ -3651,11 +3656,11 @@ msgstr "S/MIME 公開鍵リング"
 msgid "S/MIME Public/Private Keypair successfully added."
 msgstr "S/MIME の公開鍵／秘密鍵のペアは追加されました。"
 
-#: lib/IMP.php:1458
+#: lib/IMP.php:1461
 msgid "S/MIME Sign Message"
 msgstr "S/MIME 署名"
 
-#: lib/IMP.php:1459
+#: lib/IMP.php:1462
 msgid "S/MIME Sign/Encrypt Message"
 msgstr "S/MIME 署名／暗号化"
 
@@ -3700,15 +3705,15 @@ msgstr ""
 msgid "SMTP"
 msgstr "SMTP"
 
-#: lib/api.php:173 templates/login/login.html:107
+#: lib/api.php:181 templates/login/login.html:107
 msgid "SMTP Port"
 msgstr "SMTP ポート"
 
-#: compose.php:1019
+#: compose.php:1017
 msgid "S_ubject"
 msgstr "_U件名"
 
-#: compose.php:1115
+#: compose.php:1113
 msgid "Sa_ve a copy in "
 msgstr "_V次の場所にコピーを保存 "
 
@@ -3721,7 +3726,7 @@ msgstr "_V保存"
 msgid "Save"
 msgstr "保存"
 
-#: compose.php:1191
+#: compose.php:1189
 msgid "Save Attachments with message in sent-mail folder?"
 msgstr "添付もメッセージと共に送信控えフォルダに保存しますか？"
 
@@ -3747,7 +3752,7 @@ msgstr "オプションを保存"
 msgid "Save Stationery"
 msgstr "定型句を保存"
 
-#: compose.php:932
+#: compose.php:930
 msgid "Save _Draft"
 msgstr "_D下書きを保存"
 
@@ -3801,12 +3806,12 @@ msgstr ""
 msgid "Saving the draft failed. This is what the server said: %s"
 msgstr "下書きを保存できませんでした。サーバからの応答：%s"
 
-#: mailbox.php:423 search.php:146 lib/Search.php:569
+#: mailbox.php:423 search.php:147 lib/Search.php:574
 #: lib/Block/tree_folders.php:43 templates/contacts/contacts.html:25
 msgid "Search"
 msgstr "検索"
 
-#: mailbox.php:423 search.php:150
+#: mailbox.php:423 search.php:151
 #, php-format
 msgid "Search %s"
 msgstr "検索 %s"
@@ -3819,7 +3824,7 @@ msgstr "検索条件"
 msgid "Search Folders"
 msgstr "検索するフォルダ"
 
-#: search.php:92 templates/contacts/contacts.html:31
+#: search.php:93 templates/contacts/contacts.html:31
 msgid "Search Results"
 msgstr "検索結果"
 
@@ -3831,7 +3836,7 @@ msgstr "検索文字"
 msgid "Seen"
 msgstr "既読"
 
-#: lib/Search.php:782
+#: lib/Search.php:787
 msgid "Seen messages"
 msgstr "既読メッセージ"
 
@@ -3839,7 +3844,7 @@ msgstr "既読メッセージ"
 msgid "Select Another Account"
 msgstr "他のアカウントを選択"
 
-#: search.php:277
+#: search.php:278
 msgid "Select a date"
 msgstr "日付を選択"
 
@@ -3903,7 +3908,7 @@ msgstr "選択されたアドレス"
 msgid "Send Key to Public Keyserver"
 msgstr "鍵を公開鍵サーバに送る"
 
-#: lib/MIME/Viewer/itip.php:679
+#: lib/MIME/Viewer/itip.php:731
 msgid "Send Latest Information"
 msgstr "最新の情報を送る"
 
@@ -3919,7 +3924,7 @@ msgstr "件名なしで送信しますか？"
 msgid "Sent"
 msgstr "送信控え"
 
-#: lib/IMAP/Tree.php:1926
+#: lib/IMAP/Tree.php:1960
 msgid "Sent mail folder"
 msgstr "送信控えフォルダ"
 
@@ -3927,7 +3932,7 @@ msgstr "送信控えフォルダ"
 msgid "Sent mail folder:"
 msgstr "送信控えフォルダ："
 
-#: lib/api.php:158 templates/login/login.html:36 templates/login/login.html:50
+#: lib/api.php:166 templates/login/login.html:36 templates/login/login.html:50
 #: templates/login/login.html:62
 msgid "Server"
 msgstr "サーバ"
@@ -4006,7 +4011,7 @@ msgstr "主なヘッダを表示"
 msgid "Show Deleted"
 msgstr "削除済みを表示"
 
-#: lib/MIME/Viewer/html.php:153
+#: lib/MIME/Viewer/html.php:160
 msgid "Show Images?"
 msgstr "画像を表示？"
 
@@ -4058,7 +4063,7 @@ msgstr "メニューバーにメール取り込みのアイコンを表示しますか？"
 msgid "Show the filter icon on the menubar?"
 msgstr "フィルターのアイコンをメニューに表示しますか？"
 
-#: lib/MIME/Viewer/html.php:168
+#: lib/MIME/Viewer/html.php:175
 msgid "Show this HTML in a new window?"
 msgstr "HTML を別ウインドーで表示しますか？"
 
@@ -4078,11 +4083,11 @@ msgstr "_Zサイズ"
 msgid "Size"
 msgstr "サイズ"
 
-#: lib/Search.php:757
+#: lib/Search.php:762
 msgid "Size (KB) <"
 msgstr "サイズ (KB) <"
 
-#: lib/Search.php:763
+#: lib/Search.php:768
 msgid "Size (KB) >"
 msgstr "サイズ (KB) >"
 
@@ -4122,7 +4127,7 @@ msgstr "アドレス順"
 msgid "Spam"
 msgstr "Spam"
 
-#: lib/IMAP/Tree.php:1919
+#: lib/IMAP/Tree.php:1953
 msgid "Spam folder"
 msgstr "SPAM用フォルダ"
 
@@ -4130,7 +4135,7 @@ msgstr "SPAM用フォルダ"
 msgid "Spam folder:"
 msgstr "SPAMメール用フォルダ"
 
-#: compose.php:1100
+#: compose.php:1098
 msgid "Special Characters"
 msgstr "特殊文字"
 
@@ -4146,12 +4151,12 @@ msgstr "スペルチェック失敗"
 msgid "Split Block"
 msgstr "ブロック分割"
 
-#: lib/MIME/Viewer/itip.php:547 lib/MIME/Viewer/itip.php:549
-#: lib/MIME/Viewer/itip.php:723 lib/MIME/Viewer/itip.php:725
+#: lib/MIME/Viewer/itip.php:599 lib/MIME/Viewer/itip.php:601
+#: lib/MIME/Viewer/itip.php:775 lib/MIME/Viewer/itip.php:777
 msgid "Start"
 msgstr "開始"
 
-#: compose.php:1058 templates/stationery/stationery.html:8
+#: compose.php:1056 templates/stationery/stationery.html:8
 #: templates/stationery/stationery.html:12
 msgid "Stationery"
 msgstr "定型句"
@@ -4168,7 +4173,7 @@ msgstr "定型句の種類："
 msgid "Stationery:"
 msgstr "定型句："
 
-#: lib/MIME/Viewer/itip.php:758 lib/MIME/Viewer/itip.php:890
+#: lib/MIME/Viewer/itip.php:810 lib/MIME/Viewer/itip.php:942
 msgid "Status"
 msgstr "状態"
 
@@ -4196,7 +4201,7 @@ msgstr "改行を除去しますか？"
 msgid "Sub_ject"
 msgstr "_J件名"
 
-#: lib/Search.php:726 lib/UI/Message.php:30 templates/login/recompose.html:41
+#: lib/Search.php:731 lib/UI/Message.php:30 templates/login/recompose.html:41
 msgid "Subject"
 msgstr "件名"
 
@@ -4231,8 +4236,8 @@ msgstr "成功"
 msgid "Sum"
 msgstr "合計"
 
-#: lib/MIME/Viewer/itip.php:740 lib/MIME/Viewer/itip.php:742
-#: lib/MIME/Viewer/itip.php:871 lib/MIME/Viewer/itip.php:873
+#: lib/MIME/Viewer/itip.php:792 lib/MIME/Viewer/itip.php:794
+#: lib/MIME/Viewer/itip.php:923 lib/MIME/Viewer/itip.php:925
 msgid "Summary"
 msgstr "概要"
 
@@ -4240,7 +4245,7 @@ msgstr "概要"
 msgid "Superscript"
 msgstr "上付き"
 
-#: compose.php:1141 compose.php:1142
+#: compose.php:1139 compose.php:1140
 msgid "Switch Composition Method"
 msgstr "編集モードの切替え"
 
@@ -4268,7 +4273,7 @@ msgstr "タスク一覧"
 msgid "Tasks"
 msgstr "タスク"
 
-#: compose.php:1146
+#: compose.php:1144
 msgid "Te_xt"
 msgstr "_X本文"
 
@@ -4276,11 +4281,11 @@ msgstr "_X本文"
 msgid "Tentative: "
 msgstr "仮受諾："
 
-#: lib/MIME/Viewer/itip.php:665
+#: lib/MIME/Viewer/itip.php:717
 msgid "Tentatively Accept request"
 msgstr "要求を仮受諾する"
 
-#: lib/MIME/Viewer/itip.php:965
+#: lib/MIME/Viewer/itip.php:1017
 msgid "Tentatively Accepted"
 msgstr "仮受諾"
 
@@ -4317,11 +4322,11 @@ msgstr ""
 "IMAP サーバは選択された認証方法をサポートしていないようです。管理者に連絡して"
 "下さい。"
 
-#: lib/MIME/Viewer/appledouble.php:40
+#: lib/MIME/Viewer/appledouble.php:48
 msgid "The Macintosh resource fork"
 msgstr "Macintosh リソースフォーク"
 
-#: lib/MIME/Viewer/appledouble.php:40
+#: lib/MIME/Viewer/appledouble.php:48
 #, php-format
 msgid "The Macintosh resource fork can be downloaded %s."
 msgstr "Macintosh リソースフォークは %s からダウンロードできます。"
@@ -4341,7 +4346,7 @@ msgstr "アカウント '%s' は削除されました。"
 msgid "The account \"%s\" has been saved."
 msgstr "アカウント '%s' は保存されました。"
 
-#: attachment.php:43
+#: attachment.php:44
 msgid "The attachment was not found."
 msgstr "添付がありません。"
 
@@ -4357,7 +4362,7 @@ msgstr "以下のボタンは FCKeditor 使用時に表示されます。"
 msgid "The calendar data is invalid"
 msgstr "予定表のデータが無効です"
 
-#: lib/MIME/Viewer/appledouble.php:41
+#: lib/MIME/Viewer/appledouble.php:49
 msgid "The contents of the Macintosh file are below."
 msgstr "Macintosh ファイルの内容は以下の通りです。"
 
@@ -4389,7 +4394,7 @@ msgstr "イベントは予定表に追加されました。"
 msgid "The event was updated in your calendar."
 msgstr "イベントは予定表で更新されました。"
 
-#: lib/Compose.php:2044
+#: lib/Compose.php:2047
 #, php-format
 msgid "The file %s could not be attached."
 msgstr "ファイル %s を添付できませんでした。"
@@ -4467,7 +4472,7 @@ msgstr "メールサーバからの情報メッセージ："
 msgid "The mail server generated the following message:"
 msgstr "メールサーバからのメッセージ："
 
-#: lib/Message.php:798
+#: lib/Message.php:797
 #, php-format
 msgid "The mailbox %s is already empty."
 msgstr "メールボックス %s は既に空です。"
@@ -4625,13 +4630,13 @@ msgstr "署名を置換できませんでした。"
 msgid "The signature was successfully replaced."
 msgstr "署名は置換されました。"
 
-#: attachment.php:59
+#: attachment.php:60
 msgid ""
 "The specified attachment does not exist. It may have been deleted by the "
 "original sender."
 msgstr "指定された添付は存在しません。たぶん送信者が削除したのでしょう。"
 
-#: attachment.php:128
+#: attachment.php:129
 msgid "The specified file cannot be read."
 msgstr "指定されたファイルは読めません。"
 
@@ -4649,6 +4654,13 @@ msgstr "定型句 \"%s\" は削除されました。"
 #, php-format
 msgid "The stationery \"%s\" has been updated."
 msgstr "定型句 \"%s\" は更新されました。"
+
+#: lib/Compose.php:972
+msgid ""
+"The system is not properly configured. A detailed error description has been "
+"logged for the administrator."
+msgstr ""
+"システムが正しく設定されていません。詳細なエラーは管理者用に記録されました。"
 
 #: lib/MIME/Viewer/itip.php:192
 msgid "The task has been added to your tasklist."
@@ -4721,7 +4733,7 @@ msgstr "イベント削除中にエラーが発生しました："
 msgid "There was an error displaying this message part"
 msgstr "メッセージパートの表示でエラーが発生しました。"
 
-#: lib/Message.php:635
+#: lib/Message.php:634
 #, php-format
 msgid ""
 "There was an error flagging messages in the folder \"%s\". This is what the "
@@ -4752,7 +4764,7 @@ msgid ""
 "server said"
 msgstr "\"%s\" を \"%s\" に移動中にエラーが発生しました。サーバからの応答： "
 
-#: lib/Compose.php:749
+#: lib/Compose.php:748
 #, php-format
 msgid "There was an error sending your message: %s"
 msgstr "メールの送信中にエラーが発生しました: %s"
@@ -4767,11 +4779,11 @@ msgstr "PGP 公開鍵はメッセージに添付されていました。"
 
 #: lib/MIME/Viewer/itip.php:106 lib/MIME/Viewer/itip.php:120
 #: lib/MIME/Viewer/itip.php:166 lib/MIME/Viewer/itip.php:180
-#: lib/MIME/Viewer/itip.php:196 lib/MIME/Viewer/itip.php:342
+#: lib/MIME/Viewer/itip.php:196 lib/MIME/Viewer/itip.php:345
 msgid "This action is not supported."
 msgstr "この処置はサポートされていません。"
 
-#: lib/MIME/Viewer/itip.php:202 lib/MIME/Viewer/itip.php:452
+#: lib/MIME/Viewer/itip.php:202 lib/MIME/Viewer/itip.php:458
 msgid "This action is not yet implemented."
 msgstr "この処置はまだ実装されていません。"
 
@@ -4783,7 +4795,7 @@ msgstr "フォルダ名は変更できません："
 msgid "This may take some time. Are you sure you want to continue?"
 msgstr "この操作には時間がかかります。操作を続けますか？"
 
-#: lib/MIME/Viewer/appledouble.php:39
+#: lib/MIME/Viewer/appledouble.php:47
 msgid "This message contains a Macintosh file."
 msgstr "このメールには Macintosh のファイルが含まれています。"
 
@@ -4827,10 +4839,10 @@ msgstr "メールの行先"
 #, php-format
 msgid ""
 "This request cannot be completed because the link you followed or the form "
-"you submitted was only valid for %s seconds"
+"you submitted was only valid for %d minutes. Please try again now."
 msgstr ""
-"要求は完了できません。なぜなら、あなたのクリックしたリンクや送信したフォーム"
-"は %s 秒間だけ有効だからです。"
+"要求が完了できません。なぜなら、あなたのクリックしたリンクや送信したフォーム"
+"は %d 分間だけ有効だからです。再度試してみて下さい。"
 
 #: acl.php:47
 msgid "This server does not support sharing folders."
@@ -4856,7 +4868,7 @@ msgstr "添付された PDF ファイルのサムネイル"
 msgid "Thumbnail of attached image"
 msgstr "添付された画像のサムネイル"
 
-#: compose.php:833 mailbox.php:587 lib/Search.php:711 lib/UI/Mailbox.php:90
+#: compose.php:831 mailbox.php:587 lib/Search.php:716 lib/UI/Mailbox.php:90
 #: lib/UI/Message.php:26 templates/contacts/contacts.html:40
 #: templates/login/recompose.html:14
 msgid "To"
@@ -4886,7 +4898,7 @@ msgstr "_A全員へ"
 msgid "To _List"
 msgstr "_Lリストへ"
 
-#: templates/compose/redirect.html:46
+#: templates/compose/redirect.html:47
 msgid "To field"
 msgstr "To field"
 
@@ -4936,7 +4948,7 @@ msgstr "通常"
 msgid "Trash"
 msgstr "ゴミ箱"
 
-#: lib/IMAP/Tree.php:1906
+#: lib/IMAP/Tree.php:1940
 msgid "Trash folder"
 msgstr "ゴミ箱フォルダ"
 
@@ -4959,7 +4971,7 @@ msgstr "クォータが取得できません"
 msgid "Unanswered"
 msgstr "未返信"
 
-#: lib/Search.php:797
+#: lib/Search.php:802
 msgid "Unanswered messages"
 msgstr "未返信メール"
 
@@ -4967,7 +4979,7 @@ msgstr "未返信メール"
 msgid "Undelete"
 msgstr "削除取り消し"
 
-#: lib/Search.php:817
+#: lib/Search.php:822
 msgid "Undeleted messages"
 msgstr "削除されていないメール"
 
@@ -4991,20 +5003,20 @@ msgstr "AUTHENTICATE コマンドで、サーバから予期しない応答がありました。"
 msgid "Unexpected response from server to Digest-MD5 response."
 msgstr "Digest-MD5 応答で、サーバから予期しない応答がありました。"
 
-#: lib/Search.php:807
+#: lib/Search.php:812
 msgid "Unflagged messages"
 msgstr "印のないメール"
 
-#: lib/MIME/Viewer/itip.php:486
+#: lib/MIME/Viewer/itip.php:492
 #, php-format
 msgid "Unhandled component of type: %s"
 msgstr "扱えない形式です：%s"
 
-#: lib/MIME/Viewer/itip.php:761
+#: lib/MIME/Viewer/itip.php:813
 msgid "Unknown"
 msgstr "不明"
 
-#: lib/UI/Mailbox.php:206
+#: lib/UI/Mailbox.php:206 lib/UI/Mailbox.php:209 lib/UI/Mailbox.php:213
 msgid "Unknown Date"
 msgstr "不明な日付"
 
@@ -5013,7 +5025,7 @@ msgstr "不明な日付"
 msgid "Unknown IMAP response from the server. Server Responded: %s"
 msgstr "サーバから不明な応答がありました。サーバからの応答：%s"
 
-#: lib/MIME/Viewer/itip.php:707
+#: lib/MIME/Viewer/itip.php:759
 msgid "Unknown Meeting"
 msgstr "不明な会議"
 
@@ -5021,7 +5033,7 @@ msgstr "不明な会議"
 msgid "Unknown Recipient"
 msgstr "不明な受信者"
 
-#: lib/MIME/Viewer/itip.php:851
+#: lib/MIME/Viewer/itip.php:903
 msgid "Unknown Task"
 msgstr "不明なタスク"
 
@@ -5038,7 +5050,7 @@ msgstr "名前なし"
 msgid "Unseen"
 msgstr "未読"
 
-#: lib/Search.php:787
+#: lib/Search.php:792
 msgid "Unseen messages"
 msgstr "未読メッセージ"
 
@@ -5050,15 +5062,15 @@ msgstr "未登録"
 msgid "Update"
 msgstr "更新"
 
-#: lib/MIME/Viewer/itip.php:659 lib/MIME/Viewer/itip.php:699
+#: lib/MIME/Viewer/itip.php:711 lib/MIME/Viewer/itip.php:751
 msgid "Update in my calendar"
 msgstr "私の予定表を更新"
 
-#: lib/MIME/Viewer/itip.php:686
+#: lib/MIME/Viewer/itip.php:738
 msgid "Update respondent status"
 msgstr "回答者の状況を更新"
 
-#: lib/MIME/Viewer/itip.php:673
+#: lib/MIME/Viewer/itip.php:725
 msgid "Update this event on my calendar"
 msgstr "私の予定表のイベントを更新"
 
@@ -5074,9 +5086,9 @@ msgstr "デフォルトを使用"
 msgid "Use IMAP folder subscriptions?"
 msgstr "IMAP フォルダを登録（購読）／未登録（非購読）で選択しますか？"
 
-#: config/prefs.php.dist:896
-msgid "Use Virtual Trash Folder?"
-msgstr "仮想ゴミ箱を使用しますか？"
+#: templates/prefs/trashselect.inc:24
+msgid "Use Virtual Trash"
+msgstr "仮想フォルダを使用"
 
 #: templates/acl/acl.html:42
 msgid "User"
@@ -5088,7 +5100,7 @@ msgid ""
 "User \"%s\" successfully given the specified rights for the folder \"%s\"."
 msgstr "ユーザ '%s' にフォルダ '%s' へのアクセス権が設定されました。"
 
-#: lib/api.php:180 templates/login/login.html:85
+#: lib/api.php:188 templates/login/login.html:85
 msgid "Username"
 msgstr "ユーザ名"
 
@@ -5167,7 +5179,7 @@ msgstr "タスク表示"
 msgid "Virtual Folder"
 msgstr "仮想フォルダ"
 
-#: search.php:89
+#: search.php:90
 #, php-format
 msgid "Virtual Folder \"%s\" created succesfully."
 msgstr "仮想フォルダ \"%s\" が作成されました。"
@@ -5179,23 +5191,23 @@ msgstr "仮想フォルダ"
 # Bug ticket #5525
 # msgid "Virtual Folders"
 # msgstr "仮想フォルダ"
-#: search.php:84
+#: search.php:85
 msgid "Virtual Folders require a label."
 msgstr "仮想フォルダにはラベルが必要です。"
 
-#: lib/Search.php:436
+#: lib/Search.php:441
 msgid "Virtual INBOX"
 msgstr "仮想 INBOX"
 
-#: lib/IMAP/Tree.php:1946
+#: lib/IMAP/Tree.php:1980
 msgid "Virtual INBOX Folder"
 msgstr "仮想 INBOX フォルダ"
 
-#: lib/Search.php:380
+#: lib/Search.php:385
 msgid "Virtual Trash"
 msgstr "仮想ゴミ箱"
 
-#: lib/IMAP/Tree.php:1942
+#: lib/IMAP/Tree.php:1976
 msgid "Virtual Trash Folder"
 msgstr "仮想ゴミ箱フォルダ"
 
@@ -5210,10 +5222,11 @@ msgstr "警告"
 #: lib/IMP.php:334
 msgid ""
 "We cannot verify that this request was really sent by you. It could be a "
-"malicious request."
+"malicious request. If you intended to perform this action, you can retry it "
+"now."
 msgstr ""
 "この要求が本当にあなたからのものであるか確認できません。不正な要求の可能性が"
-"あります。"
+"あります。もしもあなたがこの動作の実行を望むなら、もう一度行って下さい。"
 
 #: login.php:196 login.php:355 templates/login/mobile.inc:11
 #, php-format
@@ -5270,7 +5283,7 @@ msgstr "メール作成画面でカーソルを本文のどの位置におきますか？"
 msgid "Whitelist"
 msgstr "ホワイトリスト"
 
-#: lib/prefs.php:237 config/prefs.php.dist:602
+#: lib/prefs.php:241 config/prefs.php.dist:602
 msgid "Xinha"
 msgstr "Xinha"
 
@@ -5318,14 +5331,14 @@ msgstr "あなたはフォルダを作成できません。"
 msgid "You are not allowed to create more than %d folders."
 msgstr "あなたは %d 個以上のフォルダーを作成できません。"
 
-#: lib/Compose.php:982
+#: lib/Compose.php:985
 #, php-format
 msgid ""
 "You are not allowed to send messages to more than %d recipients within %d "
 "hours."
 msgstr "あなたは %2$d 時間内に %1$d 人以上にメールを送信できません。"
 
-#: lib/Compose.php:1254
+#: lib/Compose.php:1257
 #, php-format
 msgid "You are not allowed to send messages to more than %d recipients."
 msgstr "あなたは %d 人以上にメールを送信できません。"
@@ -5361,12 +5374,12 @@ msgstr "あなたにはこのフォルダのアクセス権を変更する権限がありません。"
 msgid "You forwarded this message on %%s to the following recipients: %s."
 msgstr "%%s にメールを次の人に転送しました：%s"
 
-#: lib/IMP.php:1089
+#: lib/IMP.php:1092
 #, php-format
 msgid "You have %s new messages."
 msgstr "新着メールが %s 通あります。"
 
-#: lib/IMP.php:1089
+#: lib/IMP.php:1092
 msgid "You have 1 new message."
 msgstr "新着メールが 1 通あります。"
 
@@ -5378,7 +5391,7 @@ msgstr ""
 "ゴミ箱に移動しようとしましたが、ゴミ箱が定義されていません。先ずゴミ箱を設定"
 "して下さい。"
 
-#: compose.php:153
+#: compose.php:150
 msgid "You have already submitted this page."
 msgstr "あなたはこのページを既に送信しています。"
 
@@ -5390,7 +5403,7 @@ msgstr "新着メールがあります："
 msgid "You have not configured any external mail accounts."
 msgstr "外部のメールアカウントは設定されていません。"
 
-#: lib/Compose.php:1241
+#: lib/Compose.php:1244
 msgid "You must enter at least one recipient."
 msgstr "1 人以上の宛先を指定してください。"
 
@@ -5535,7 +5548,7 @@ msgstr "送信時のデフォルト文字セット:"
 msgid "Your default encryption method for sending messages:"
 msgstr "送信時のデフォルトの暗号方法:"
 
-#: attachment.php:114
+#: attachment.php:115
 #, php-format
 msgid ""
 "Your linked attachment has been downloaded by at least one user.\n"
@@ -5571,8 +5584,8 @@ msgstr "[添付を取り除きました: 元の添付の型：%s、名前 %s]"
 msgid "[Hide Addresses]"
 msgstr "[アドレスを隠す]"
 
-#: message.php:285 rss.php:75 mailbox.php:719 lib/Compose.php:1888
-#: lib/Compose.php:2366
+#: message.php:285 rss.php:75 mailbox.php:719 lib/Compose.php:1891
+#: lib/Compose.php:2369
 msgid "[No Subject]"
 msgstr "[件名なし]"
 
@@ -5584,7 +5597,12 @@ msgstr "[鍵をアドレス帳に保存]"
 msgid "[Show Addresses -"
 msgstr "[アドレスを表示 -"
 
-#: lib/Compose.php:3012
+#: lib/MIME/Headers.php:263
+#, php-format
+msgid "[Show Addresses - %d recipients]"
+msgstr "[アドレスを表示 - %d 受信者]"
+
+#: lib/Compose.php:3015
 msgid "[Truncated Text]"
 msgstr "[省略した文]"
 
@@ -5592,7 +5610,7 @@ msgstr "[省略した文]"
 msgid "[View the raw key]"
 msgstr "[鍵を表示]"
 
-#: compose.php:968
+#: compose.php:966
 msgid "_Bcc"
 msgstr "_Bcc"
 
@@ -5600,7 +5618,7 @@ msgstr "_Bcc"
 msgid "_Blacklist"
 msgstr "_Bブラックリスト"
 
-#: compose.php:965
+#: compose.php:963
 msgid "_Cc"
 msgstr "_Cc"
 
@@ -5608,19 +5626,19 @@ msgstr "_Cc"
 msgid "_Delete"
 msgstr "_D削除"
 
-#: lib/IMP.php:862
+#: lib/IMP.php:865
 msgid "_Folders"
 msgstr "_Fフォルダ"
 
-#: compose.php:945
+#: compose.php:943
 msgid "_Identity"
 msgstr "_ID"
 
-#: lib/IMP.php:831
+#: lib/IMP.php:834
 msgid "_Inbox"
 msgstr "_INBOX"
 
-#: lib/IMP.php:899
+#: lib/IMP.php:902
 msgid "_Log out"
 msgstr "_Lログアウト"
 
@@ -5628,7 +5646,7 @@ msgstr "_Lログアウト"
 msgid "_Message Source"
 msgstr "_Mメール原文"
 
-#: lib/IMP.php:859
+#: lib/IMP.php:862
 msgid "_New Message"
 msgstr "_N新規メール"
 
@@ -5636,7 +5654,7 @@ msgstr "_N新規メール"
 msgid "_Print"
 msgstr "_P印刷"
 
-#: compose.php:1037
+#: compose.php:1035
 msgid "_Priority"
 msgstr "_P優先度"
 
@@ -5649,11 +5667,11 @@ msgstr "_R再表示%s"
 msgid "_Reply"
 msgstr "_R返信"
 
-#: lib/IMP.php:864
+#: lib/IMP.php:867
 msgid "_Search"
 msgstr "_S検索"
 
-#: compose.php:930
+#: compose.php:928
 msgid "_Send Message"
 msgstr "_S送信"
 
@@ -5661,7 +5679,7 @@ msgstr "_S送信"
 msgid "_Thread"
 msgstr "_Tスレッド"
 
-#: compose.php:961 compose.php:963
+#: compose.php:959 compose.php:961
 msgid "_To"
 msgstr "_To"
 
@@ -5677,15 +5695,15 @@ msgstr "_Vスレッド表示"
 msgid "_Whitelist"
 msgstr "_Wホワイトリスト"
 
-#: lib/Compose.php:1009
+#: lib/Compose.php:1012
 msgid "addressee unknown"
 msgstr "アドレス不明"
 
-#: lib/Search.php:590
+#: lib/Search.php:595
 msgid "and"
 msgstr "かつ"
 
-#: lib/Compose.php:1999
+#: lib/Compose.php:2002
 msgid "attachment"
 msgstr "添付"
 
@@ -5697,31 +5715,31 @@ msgstr "attachments.zip"
 msgid "bytes"
 msgstr "バイト"
 
-#: lib/Compose.php:1033
+#: lib/Compose.php:1036
 msgid "cannot create output file"
 msgstr "出力ファイルが作成できません"
 
-#: lib/Compose.php:1005
+#: lib/Compose.php:1008
 msgid "cannot open input"
 msgstr "入力ファイルが開けません"
 
-#: lib/Compose.php:997
+#: lib/Compose.php:1000
 msgid "command line usage error"
 msgstr "コマンド行使用のエラー"
 
-#: lib/Compose.php:1053
+#: lib/Compose.php:1056
 msgid "configuration error"
 msgstr "設定エラー"
 
-#: lib/Compose.php:1029
+#: lib/Compose.php:1032
 msgid "critical system file missing"
 msgstr "重要なシステムファイルの欠落"
 
-#: lib/Compose.php:1001
+#: lib/Compose.php:1004
 msgid "data format error"
 msgstr "データ形式エラー"
 
-#: lib/Compose.php:1057
+#: lib/Compose.php:1060
 msgid "entry not found"
 msgstr "項目がありません"
 
@@ -5729,19 +5747,19 @@ msgstr "項目がありません"
 msgid "from"
 msgstr "from"
 
-#: lib/Compose.php:1013
+#: lib/Compose.php:1016
 msgid "host name unknown"
 msgstr "ホスト名不明"
 
-#: lib/Search.php:593
+#: lib/Search.php:598
 msgid "in"
 msgstr "in"
 
-#: lib/Compose.php:1037
+#: lib/Compose.php:1040
 msgid "input/output error"
 msgstr "入出力エラー"
 
-#: lib/Compose.php:1021
+#: lib/Compose.php:1024
 msgid "internal software error"
 msgstr "ソフトウェア内部のエラー"
 
@@ -5757,19 +5775,19 @@ msgstr "キイ"
 msgid "mailbox file"
 msgstr "メールボックス・ファイル"
 
-#: lib/Compose.php:817
+#: lib/Compose.php:816
 msgid "name"
 msgstr "名前"
 
-#: lib/Search.php:585
+#: lib/Search.php:590
 msgid "not"
 msgstr "not"
 
-#: lib/Search.php:590 templates/fetchmail/fetchmailprefs.html:26
+#: lib/Search.php:595 templates/fetchmail/fetchmailprefs.html:26
 msgid "or"
 msgstr "または"
 
-#: lib/Compose.php:1049
+#: lib/Compose.php:1052
 msgid "permission denied"
 msgstr "アクセスは拒否されました"
 
@@ -5777,19 +5795,19 @@ msgstr "アクセスは拒否されました"
 msgid "recipients]"
 msgstr "[受信者]"
 
-#: lib/Compose.php:1045
+#: lib/Compose.php:1048
 msgid "remote error in protocol"
 msgstr "リモートでのプロトコルエラー"
 
-#: lib/Compose.php:1017
+#: lib/Compose.php:1020
 msgid "service unavailable"
 msgstr "サービス不能"
 
-#: lib/Compose.php:1025
+#: lib/Compose.php:1028
 msgid "system error"
 msgstr "システムエラー"
 
-#: lib/Compose.php:1041
+#: lib/Compose.php:1044
 msgid "temporary failure"
 msgstr "一時的なエラー"
 

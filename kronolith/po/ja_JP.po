@@ -1,14 +1,14 @@
 # Japanese translation for kronolith.
-# Copyright 2004-2009 The Horde Project
+# Copyright 2004-2009 Horde Project
 # This file is distributed under the same license as the kronorith package.
 # Hiromi Kimura <hiromi@tac.tsukuba.ac.jp>
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Kronolith 2.3-RC1\n"
+"Project-Id-Version: kronolith 2.3\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2008-09-06 11:11+0200\n"
-"PO-Revision-Date: 2008-09-24 20:42+0900\n"
+"POT-Creation-Date: 2008-09-25 12:32+0200\n"
+"PO-Revision-Date: 2009-02-10 18:25+0900\n"
 "Last-Translator: Hiromi Kimura <hiromi@tac.tsukuba.ac.jp>\n"
 "Language-Team: i18n@lists.horde.org\n"
 "MIME-Version: 1.0\n"
@@ -241,7 +241,7 @@ msgstr "閲覧可能なもの全て"
 #: templates/edit/edit_timespan.inc:119 lib/Driver.php:2364
 #: lib/Scheduler/kronolith.php:432 lib/Scheduler/kronolith.php:445
 #: lib/Views/Day.php:99 lib/Views/Day.php:102 lib/Views/Week.php:149
-#: lib/Views/Week.php:156
+#: lib/Views/Week.php:156 lib/Views/Year.php:158 lib/Block/month.php:171
 msgid "All day"
 msgstr "丸１日"
 
@@ -387,7 +387,7 @@ msgstr "キャンセル"
 msgid "Cancelled: %s"
 msgstr "キャンセル済み：%s"
 
-#: lib/Driver/kolab.php:1406
+#: lib/Driver/kolab.php:1407
 #, php-format
 msgid "Cannot delete event: %s"
 msgstr "イベントは削除できません：%s"
@@ -575,9 +575,9 @@ msgstr "デフォルト予定表"
 #: templates/perms/perms.inc:57 templates/perms/perms.inc:81
 #: templates/perms/perms.inc:98 templates/perms/perms.inc:122
 #: templates/perms/perms.inc:139 templates/perms/perms.inc:163
-#: templates/perms/perms.inc:180 templates/perms/perms.inc:204
-#: templates/perms/perms.inc:245 templates/perms/perms.inc:262
-#: templates/perms/perms.inc:286 templates/perms/perms.inc:320
+#: templates/perms/perms.inc:180 templates/perms/perms.inc:208
+#: templates/perms/perms.inc:253 templates/perms/perms.inc:270
+#: templates/perms/perms.inc:294 templates/perms/perms.inc:328
 msgid "Delegate"
 msgstr "委任"
 
@@ -585,9 +585,9 @@ msgstr "委任"
 #: templates/perms/perms.inc:56 templates/perms/perms.inc:77
 #: templates/perms/perms.inc:97 templates/perms/perms.inc:118
 #: templates/perms/perms.inc:138 templates/perms/perms.inc:159
-#: templates/perms/perms.inc:179 templates/perms/perms.inc:200
-#: templates/perms/perms.inc:241 templates/perms/perms.inc:261
-#: templates/perms/perms.inc:282 templates/perms/perms.inc:316
+#: templates/perms/perms.inc:179 templates/perms/perms.inc:204
+#: templates/perms/perms.inc:249 templates/perms/perms.inc:269
+#: templates/perms/perms.inc:290 templates/perms/perms.inc:324
 #: calendars/index.php:70 lib/Driver.php:1343 lib/Driver.php:2323
 #: lib/Forms/DeleteCalendar.php:45
 msgid "Delete"
@@ -666,9 +666,9 @@ msgstr "継続（分）"
 #: templates/perms/perms.inc:55 templates/perms/perms.inc:73
 #: templates/perms/perms.inc:96 templates/perms/perms.inc:114
 #: templates/perms/perms.inc:137 templates/perms/perms.inc:155
-#: templates/perms/perms.inc:178 templates/perms/perms.inc:196
-#: templates/perms/perms.inc:237 templates/perms/perms.inc:260
-#: templates/perms/perms.inc:278 templates/perms/perms.inc:312
+#: templates/perms/perms.inc:178 templates/perms/perms.inc:200
+#: templates/perms/perms.inc:245 templates/perms/perms.inc:268
+#: templates/perms/perms.inc:286 templates/perms/perms.inc:320
 #: calendars/index.php:68 lib/Driver.php:2316
 msgid "Edit"
 msgstr "編集"
@@ -684,11 +684,11 @@ msgstr "%s を編集"
 msgid "Edit Attendees"
 msgstr "参加者の編集"
 
-#: perms.php:237
+#: perms.php:249
 msgid "Edit Permissions"
 msgstr "アクセス権編集"
 
-#: perms.php:239
+#: perms.php:251
 #, php-format
 msgid "Edit Permissions for %s"
 msgstr "%s アクセス権を編集"
@@ -790,8 +790,8 @@ msgstr "イベント期間 %s から %s まで"
 msgid "Event not found"
 msgstr "イベントが見つかりません"
 
-#: lib/Driver/kolab.php:453 lib/Driver/kolab.php:1191
-#: lib/Driver/kolab.php:1230 lib/Driver/kolab.php:1382
+#: lib/Driver/kolab.php:453 lib/Driver/kolab.php:1192
+#: lib/Driver/kolab.php:1231 lib/Driver/kolab.php:1383
 #, php-format
 msgid "Event not found: %s"
 msgstr "イベントが見つかりません：%s"
@@ -876,7 +876,7 @@ msgstr "全般"
 msgid "Goto %s"
 msgstr "%s に移動"
 
-#: templates/perms/perms.inc:256
+#: templates/perms/perms.inc:264
 msgid "Groups"
 msgstr "グループ"
 
@@ -1445,9 +1445,9 @@ msgstr "この日数よりも古いイベントはパージされます。"
 #: templates/perms/perms.inc:54 templates/perms/perms.inc:69
 #: templates/perms/perms.inc:95 templates/perms/perms.inc:110
 #: templates/perms/perms.inc:136 templates/perms/perms.inc:151
-#: templates/perms/perms.inc:177 templates/perms/perms.inc:192
-#: templates/perms/perms.inc:233 templates/perms/perms.inc:259
-#: templates/perms/perms.inc:274 templates/perms/perms.inc:308
+#: templates/perms/perms.inc:177 templates/perms/perms.inc:196
+#: templates/perms/perms.inc:241 templates/perms/perms.inc:267
+#: templates/perms/perms.inc:282 templates/perms/perms.inc:316
 msgid "Read"
 msgstr "読み出し"
 
@@ -1605,7 +1605,7 @@ msgstr "土曜"
 msgid "Save"
 msgstr "保存"
 
-#: templates/perms/perms.inc:331
+#: templates/perms/perms.inc:339
 #, php-format
 msgid "Save %s"
 msgstr "%s を保存"
@@ -1623,7 +1623,7 @@ msgstr "参加者を保存"
 msgid "Save Event"
 msgstr "イベントを保存"
 
-#: templates/attendees/attendees.inc:94
+#: templates/perms/perms.inc:340 templates/attendees/attendees.inc:94
 msgid "Save and Finish"
 msgstr "保存して終了"
 
@@ -1654,11 +1654,11 @@ msgstr "予定情報の検索はできません。"
 msgid "Select a date"
 msgstr "日時を選択"
 
-#: templates/perms/perms.inc:296
+#: templates/perms/perms.inc:304
 msgid "Select a group to add"
 msgstr "追加するグループを選択"
 
-#: templates/perms/perms.inc:294
+#: templates/perms/perms.inc:302
 msgid "Select a group to add:"
 msgstr "編集するグループを選択："
 
@@ -1666,7 +1666,7 @@ msgstr "編集するグループを選択："
 msgid "Select a new owner:"
 msgstr "新所有者を選択："
 
-#: templates/perms/perms.inc:213 templates/perms/perms.inc:215
+#: templates/perms/perms.inc:217 templates/perms/perms.inc:219
 msgid "Select a user to add:"
 msgstr "追加するユーザを選択："
 
@@ -1783,9 +1783,9 @@ msgstr "共有予定表："
 #: templates/perms/perms.inc:53 templates/perms/perms.inc:65
 #: templates/perms/perms.inc:94 templates/perms/perms.inc:106
 #: templates/perms/perms.inc:135 templates/perms/perms.inc:147
-#: templates/perms/perms.inc:176 templates/perms/perms.inc:188
-#: templates/perms/perms.inc:229 templates/perms/perms.inc:258
-#: templates/perms/perms.inc:270 templates/perms/perms.inc:304
+#: templates/perms/perms.inc:176 templates/perms/perms.inc:192
+#: templates/perms/perms.inc:237 templates/perms/perms.inc:266
+#: templates/perms/perms.inc:278 templates/perms/perms.inc:312
 #: templates/edit/javascript.inc:262
 msgid "Show"
 msgstr "表示"
@@ -2217,7 +2217,7 @@ msgstr "サポートしていないコンテンツタイプです：%s"
 msgid "Upcoming Events"
 msgstr "これからのイベント"
 
-#: perms.php:231
+#: perms.php:241
 #, php-format
 msgid "Updated \"%s\"."
 msgstr "\"%s\" を更新しました。"
@@ -2231,7 +2231,7 @@ msgstr "更新しました：%s"
 msgid "User Interface"
 msgstr "ユーザーインターフェイス"
 
-#: templates/perms/perms.inc:223
+#: templates/perms/perms.inc:231
 msgid "User to add:"
 msgstr "追加するユーザ："
 
@@ -2240,8 +2240,8 @@ msgstr "追加するユーザ："
 msgid "Username"
 msgstr "ユーザ名"
 
-#: lib/Views/Year.php:156 lib/Views/Year.php:162 lib/Block/month.php:174
-#: lib/Block/month.php:177
+#: lib/Views/Year.php:167 lib/Views/Year.php:170 lib/Block/month.php:179
+#: lib/Block/month.php:182
 msgid "View Day"
 msgstr "日付を表示"
 
@@ -2520,11 +2520,11 @@ msgstr "イベント開始前。「0」はアラーム無しを意味します。"
 #: lib/Views/Event.php:62 lib/Views/Event.php:71
 #, php-format
 msgid "by %s"
-msgstr ""
+msgstr "%s 作"
 
 #: lib/Views/Event.php:64 lib/Views/Event.php:73
 msgid "by me"
-msgstr ""
+msgstr "自作"
 
 #: config/prefs.php.dist:243
 msgid "day"

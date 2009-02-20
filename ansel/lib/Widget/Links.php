@@ -2,7 +2,7 @@
 /**
  * Ansel_Widget_links:: class to wrap the display of various feed links etc...
  *
- * $Horde: ansel/lib/Widget/Links.php,v 1.7.2.5 2009/02/06 18:29:55 mrubinsk Exp $
+ * $Horde: ansel/lib/Widget/Links.php,v 1.7.2.7 2009/02/17 03:09:22 mrubinsk Exp $
  *
  * @author Michael J. Rubinsky <mrubinsk@horde.org>
  * @package Ansel
@@ -36,14 +36,14 @@ class Ansel_Widget_Links extends Ansel_Widget {
             }
         } else {
             // This is an image view
-            $src .= '/images=' . $this->_view->_params['image_id'];
+            $src .= '/thumbsize=screen/images=' . $this->_view->_params['image_id'];
         }
-        $src .= '/container=ansel' . $this->_view->gallery->id;
+        $id = md5(uniqid());
+        $src .= '/container=ansel' . $id;
         $src = Horde::applicationUrl($src, true);
 
         $embed =  htmlentities('<script type="text/javascript" src="' . $src . '"></script>'
-            . '<div id="ansel' . $this->_view->gallery->id . '"></div>');
-
+            . '<div id="ansel' . $id . '"></div>');
 
         $html .= '<div class="embedInput">' . _("Embed: ") . '<br /><input type="text" readonly="readonly" value="' . $embed
             . '" /></div>';

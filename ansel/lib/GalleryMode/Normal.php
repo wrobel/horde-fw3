@@ -3,7 +3,7 @@
  * Ansel_Gallery_Mode_Normal:: Class for encapsulating gallery methods that
  * depend on the current display mode of the gallery.
  *
- * $Horde: ansel/lib/GalleryMode/Normal.php,v 1.2.2.11 2009/01/12 20:08:11 mrubinsk Exp $
+ * $Horde: ansel/lib/GalleryMode/Normal.php,v 1.2.2.12 2009/02/12 15:36:59 mrubinsk Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -213,7 +213,7 @@ class Ansel_GalleryMode_Normal {
             $image = $img;
         } else {
             /* Make sure the image is in this gallery. */
-            if ($image->id != $this->_gallery->id) {
+            if ($image->gallery != $this->_gallery->id) {
                 return false;
             }
         }

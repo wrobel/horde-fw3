@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ansel/img/upload.php,v 1.29.2.6 2009/01/10 23:38:06 mrubinsk Exp $
+ * $Horde: ansel/img/upload.php,v 1.29.2.7 2009/02/10 14:52:28 mrubinsk Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -237,6 +237,10 @@ if ($form->validate($vars)) {
         header('Location: ' . $imageurl);
         exit;
     }
+}
+///* Preview existing images */
+if ($gallery->countImages() && $browser->hasFeature('javascript')) {
+    $haveImages = true;
 }
 $breadcrumbs = Ansel::getBreadCrumbs(' &raquo; ', $gallery);
 $title = _("Add Photo");

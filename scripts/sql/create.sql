@@ -1,4 +1,4 @@
--- $Horde: horde/scripts/sql/create.sql,v 1.1.2.18 2008/08/13 20:18:03 chuck Exp $
+-- $Horde: horde/scripts/sql/create.sql,v 1.1.2.19 2009/02/14 04:43:47 chuck Exp $
 
 CREATE TABLE horde_users (
     user_uid                    VARCHAR(255) NOT NULL,
@@ -146,6 +146,9 @@ CREATE TABLE horde_sessionhandler (
 
     PRIMARY KEY (session_id)
 );
+
+CREATE INDEX session_lastmodified_idx ON horde_sessionhandler (session_lastmodified);
+
 
 CREATE TABLE horde_syncml_map (
     syncml_syncpartner VARCHAR(255) NOT NULL,

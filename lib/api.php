@@ -5,7 +5,7 @@
  * This file defines Horde's external API interface. Other
  * applications can interact with Horde through this API.
  *
- * $Horde: horde/lib/api.php,v 1.43.2.13 2008/07/01 14:33:38 mrubinsk Exp $
+ * $Horde: horde/lib/api.php,v 1.43.2.14 2009/02/18 16:14:53 chuck Exp $
  *
  * @package Horde
  */
@@ -420,12 +420,12 @@ function _horde_addGroup($name, $parent = null)
         return PEAR::raiseError(_("You are not allowed to add groups."));
     }
 
-    if (empty($parent)) {
-        $parent = DATATREE_ROOT;
-    }
-
     require_once 'Horde/Group.php';
     $groups = &Group::singleton();
+
+    if (empty($parent)) {
+        $parent = GROUP_ROOT;
+    }
 
     if (is_a($group = &$groups->newGroup($name, $parent), 'PEAR_Error')) {
         return $group;

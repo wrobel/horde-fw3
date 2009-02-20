@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/VFS/lib/VFS/sql_file.php,v 1.1.2.1 2007/12/20 13:50:21 jan Exp $
+ * $Horde: framework/VFS/lib/VFS/sql_file.php,v 1.1.2.2 2009/02/13 05:45:19 chuck Exp $
  *
  * @package VFS
  */
@@ -46,7 +46,7 @@ include_once 'VFS/file.php';
  * The table structure for the VFS can be found in
  * data/vfs.sql.
  *
- * $Horde: framework/VFS/lib/VFS/sql_file.php,v 1.1.2.1 2007/12/20 13:50:21 jan Exp $
+ * $Horde: framework/VFS/lib/VFS/sql_file.php,v 1.1.2.2 2009/02/13 05:45:19 chuck Exp $
  *
  * @author  Michael Varghese <mike.varghese@ascellatech.com>
  * @package VFS
@@ -768,7 +768,8 @@ class VFS_sql_file extends VFS_file {
         /* Connect to the SQL server using the supplied parameters. */
         require_once 'DB.php';
         $this->_db = &DB::connect($this->_params,
-                                  array('persistent' => !empty($this->_params['persistent'])));
+                                  array('persistent' => !empty($this->_params['persistent']),
+                                        'ssl' => !empty($this->_params['ssl'])));
         if (is_a($this->_db, 'PEAR_Error')) {
             $error = $this->_db;
             $this->_db = false;

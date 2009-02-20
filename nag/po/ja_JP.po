@@ -1,14 +1,14 @@
 # Japanese translation for Nag
-# Copyright 2005-2009 The Horde Project
+# Copyright (C) 2005 Horde Project
 # This file is distributed under the same license as the Nag package.
 # Hiromi Kimura <hiromi@tac.tsukuba.ac.jp>
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Nag 2.3-RC1\n"
+"Project-Id-Version: nag 2.3\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2008-09-06 11:10+0200\n"
-"PO-Revision-Date: 2008-09-25 09:26+0900\n"
+"POT-Creation-Date: 2008-09-25 12:32+0200\n"
+"PO-Revision-Date: 2009-02-10 20:45+0900\n"
 "Last-Translator: Hiromi Kimura <hiromi@tac.tsukuba.ac.jp>\n"
 "Language-Team: i18n@lists.horde.org\n"
 "MIME-Version: 1.0\n"
@@ -116,12 +116,12 @@ msgstr "タスク %s の編集がアクセス拒否されました。"
 msgid "Access denied editing task: %s"
 msgstr "タスクの編集がアクセス拒否されました：%s"
 
-#: lib/Driver.php:340
+#: lib/Driver.php:345
 #, php-format
 msgid "Access denied moving the task to %s."
 msgstr "タスクの %s への移動がアクセス拒否されました。"
 
-#: lib/Driver.php:343
+#: lib/Driver.php:348
 #, php-format
 msgid "Access denied removing task from %s."
 msgstr "タスクの %s からの削除がアクセス拒否されました。"
@@ -728,11 +728,11 @@ msgstr "アクセスが拒否されました"
 msgid "Priority"
 msgstr "優先度"
 
-#: templates/view/task.inc:18 lib/Driver.php:951
+#: templates/view/task.inc:18 lib/Driver.php:956
 msgid "Private"
 msgstr "私用"
 
-#: data.php:60 lib/Driver.php:949
+#: data.php:60 lib/Driver.php:954
 msgid "Private Task"
 msgstr "私的タスク"
 
@@ -1187,7 +1187,7 @@ msgstr "ユニーク ID"
 msgid "Unsupported Content-Type: %s"
 msgstr "サポートされていない Content-Type です：%s"
 
-#: lib/Driver.php:1128
+#: lib/Driver.php:1133
 #, php-format
 msgid ""
 "We would like to remind you of this due task.\n"
@@ -1364,11 +1364,11 @@ msgstr "午前"
 #: view.php:75 view.php:84
 #, php-format
 msgid "by %s"
-msgstr ""
+msgstr "%s 作"
 
 #: view.php:77 view.php:86
 msgid "by me"
-msgstr ""
+msgstr "自作"
 
 #: lib/Nag.php:876 lib/Nag.php:877
 msgid "completed"
@@ -1381,7 +1381,7 @@ msgstr "iCalendar (vTodo)"
 #: lib/Block/tree_menu.php:36
 #, php-format
 msgid "in %s"
-msgstr ""
+msgstr "in %s"
 
 #: lib/Nag.php:849 lib/Nag.php:850 lib/Nag.php:901
 msgid "no due date"
@@ -1397,7 +1397,7 @@ msgstr "開始日時なし"
 
 #: lib/Nag.php:84
 msgid "no time"
-msgstr ""
+msgstr "時間なし"
 
 #: lib/Nag.php:876 lib/Nag.php:877
 msgid "not completed"

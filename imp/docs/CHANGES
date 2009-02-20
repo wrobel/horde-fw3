@@ -2,6 +2,8 @@
 v4.3.4-cvs
 ----------
 
+[mms] Fix [un]escaping of various URLs on message screen caused by security
+      fixes in v4.3.3 (Bug #7926).
 [jan] Fix rendering of subjects in RTL scripts when using LTR translations
       (vilius@lnk.lt, Bug #3511).
 [mms] Add hook to allow hiding of IMAP folders (Request #7353, Gunnar

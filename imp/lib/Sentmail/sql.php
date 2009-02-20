@@ -19,7 +19,7 @@
  * The table structure can be created by the scripts/sql/imp_sentmail.sql
  * script.
  *
- * $Horde: imp/lib/Sentmail/sql.php,v 1.12.2.1 2007/12/20 13:59:29 jan Exp $
+ * $Horde: imp/lib/Sentmail/sql.php,v 1.12.2.2 2009/02/17 17:13:51 chuck Exp $
  *
  * @author  Jan Schneider <jan@horde.org>
  * @since   IMP 4.2
@@ -208,7 +208,8 @@ class IMP_Sentmail_sql extends IMP_Sentmail {
         /* Connect to the SQL server using the supplied parameters. */
         require_once 'DB.php';
         $this->_db = DB::connect($this->_params,
-                                 array('persistent' => !empty($this->_params['persistent'])));
+                                 array('persistent' => !empty($this->_params['persistent']),
+                                       'ssl' => !empty($this->_params['ssl'])));
         if (is_a($this->_db, 'PEAR_Error')) {
             return $this->_db;
         }

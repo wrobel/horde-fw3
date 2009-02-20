@@ -20,7 +20,7 @@
  * The table structure can be created by the scripts/drivers/sql/ingo.sql
  * script.
  *
- * $Horde: ingo/lib/Storage/sql.php,v 1.21.2.3 2008/02/28 18:40:28 jan Exp $
+ * $Horde: ingo/lib/Storage/sql.php,v 1.21.2.4 2009/02/17 18:52:42 chuck Exp $
  *
  * See the enclosed file LICENSE for license information (ASL).  If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.
@@ -85,7 +85,8 @@ class Ingo_Storage_sql extends Ingo_Storage {
         /* Connect to the SQL server using the supplied parameters. */
         require_once 'DB.php';
         $this->_write_db = &DB::connect($this->_params,
-                                        array('persistent' => !empty($this->_params['persistent'])));
+                                        array('persistent' => !empty($this->_params['persistent']),
+                                              'ssl' => !empty($this->_params['ssl'])));
         if (is_a($this->_write_db, 'PEAR_Error')) {
             Horde::fatal($this->_write_db, __FILE__, __LINE__);
         }
@@ -103,7 +104,8 @@ class Ingo_Storage_sql extends Ingo_Storage {
         if (!empty($this->_params['splitread'])) {
             $params = array_merge($this->_params, $this->_params['read']);
             $this->_db = &DB::connect($params,
-                                      array('persistent' => !empty($params['persistent'])));
+                                      array('persistent' => !empty($params['persistent']),
+                                            'ssl' => !empty($params['ssl'])));
             if (is_a($this->_db, 'PEAR_Error')) {
                 Horde::fatal($this->_db, __FILE__, __LINE__);
             }

@@ -7,7 +7,7 @@
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.
  *
- * $Horde: framework/Horde/Horde.php,v 1.489.2.112 2009/01/21 16:48:12 chuck Exp $
+ * $Horde: framework/Horde/Horde.php,v 1.489.2.113 2009/02/14 18:02:06 mrubinsk Exp $
  */
 
 /** Log */
@@ -1862,7 +1862,7 @@ class Horde_Script_Files {
             } else {
                 $url = Horde::url($registry->get('jsuri', $app) . '/' . $file,
                                   $full, -1);
-                $path .= '/js/';
+                $path = $registry->get('jsfs', $app) . '/'; 
             }
         } else {
             $path = $registry->get('templates', $app) . '/javascript/';

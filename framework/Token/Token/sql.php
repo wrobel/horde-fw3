@@ -39,7 +39,7 @@
  * );
  * </pre>
  *
- * $Horde: framework/Token/Token/sql.php,v 1.23.6.16 2009/01/06 15:23:44 jan Exp $
+ * $Horde: framework/Token/Token/sql.php,v 1.23.6.17 2009/02/13 05:45:19 chuck Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -196,7 +196,8 @@ class Horde_Token_sql extends Horde_Token {
         /* Connect to the SQL server using the supplied parameters. */
         require_once 'DB.php';
         $this->_write_db = &DB::connect($this->_params,
-                                  array('persistent' => !empty($this->_params['persistent'])));
+                                  array('persistent' => !empty($this->_params['persistent']),
+                                        'ssl' => !empty($this->_params['ssl'])));
         if (is_a($this->_write_db, 'PEAR_Error')) {
             return $this->_write_db;
         }
@@ -215,7 +216,8 @@ class Horde_Token_sql extends Horde_Token {
         if (!empty($this->_params['splitread'])) {
             $params = array_merge($this->_params, $this->_params['read']);
             $this->_db = &DB::connect($params,
-                                      array('persistent' => !empty($params['persistent'])));
+                                      array('persistent' => !empty($params['persistent']),
+                                            'ssl' => !empty($this->_params['ssl'])));
             if (is_a($this->_db, 'PEAR_Error')) {
                 return $this->_db;
             }

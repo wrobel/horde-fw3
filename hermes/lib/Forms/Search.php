@@ -2,7 +2,7 @@
 /**
  * @package Hermes
  *
- * $Horde: hermes/lib/Forms/Search.php,v 1.8.2.1 2009/01/06 15:23:59 jan Exp $
+ * $Horde: hermes/lib/Forms/Search.php,v 1.8.2.2 2009/02/09 18:04:01 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -81,7 +81,7 @@ class SearchForm extends Horde_Form {
             return array('invalid', array(sprintf(_("An error occurred listing clients: %s"),
                                            $clients->getMessage())));
         } else {
-            $clients = array_merge(array('' => _("- - None - -")), $clients);
+            $clients = array('' => _("- - None - -")) + $clients;
             return array('multienum', array($clients));
         }
     }

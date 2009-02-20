@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/mailbox.php,v 2.617.4.88 2009/01/06 15:24:01 jan Exp $
+ * $Horde: imp/mailbox.php,v 2.617.4.90 2009/02/16 21:15:09 slusarz Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -783,14 +783,16 @@ foreach ($mailboxOverview as $ob) {
 
     if (!empty($conf['hooks']['msglist_format'])) {
         $ob_f = Horde::callHook('_imp_hook_msglist_format', array($ob->mailbox, $ob->uid), 'imp');
-        if (!empty($ob_f['class'])) {
-            $bg = array_merge($bg, $ob_f['class']);
-        }
-        if (!empty($ob_f['flagbits'])) {
-            $flagbits |= $ob_f['flagbits'];
-        }
-        if (!empty($ob_f['status'])) {
-            $msg['status'] .= $ob_f['status'];
+        if (is_array($ob_f)) {
+            if (!empty($ob_f['class'])) {
+                $bg = array_merge($bg, $ob_f['class']);
+            }
+            if (!empty($ob_f['flagbits'])) {
+                $flagbits |= $ob_f['flagbits'];
+            }
+            if (!empty($ob_f['status'])) {
+                $msg['status'] .= $ob_f['status'];
+            }
         }
     }
 

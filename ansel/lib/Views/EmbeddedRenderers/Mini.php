@@ -6,7 +6,7 @@ require_once ANSEL_BASE . '/lib/Views/Gallery.php';
 /**
  * Ansel_View_EmbeddedRenderer_Mini
  *
- * $Horde: ansel/lib/Views/EmbeddedRenderers/Mini.php,v 1.8.2.4 2009/01/06 15:22:31 jan Exp $
+ * $Horde: ansel/lib/Views/EmbeddedRenderers/Mini.php,v 1.8.2.5 2009/02/09 19:20:25 mrubinsk Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -59,8 +59,10 @@ class Ansel_View_EmbeddedRenderer_Mini extends Ansel_View_Gallery {
         $perpage = (isset($this->_params['perpage'])) ? $this->_params['perpage'] : 0;
         $thumbsize = (!empty($this->_params['thumbsize'])) ? $this->_params['thumbsize'] : 'mini';
         // Limit to these image views only.
-        if ($thumbsize != 'mini' && $thumbsize != 'thumb' && $thumbsize != 'prettythumb') {
-            $thumbsize = 'mini';
+        if ($thumbsize != 'mini' && $thumbsize != 'thumb' &&
+            $thumbsize != 'prettythumb' && $thumbsize != 'screen') {
+
+             $thumbsize = 'mini';
         }
 
         /* An image list instead of a gallery? */

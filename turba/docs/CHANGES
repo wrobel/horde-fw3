@@ -2,6 +2,8 @@
 v2.3.2-cvs
 ----------
 
+[cjh] Fix searches for multiple strict fields and at least one non-strict field
+      (tinu@humbapa.ch, Bug #7876).
 [mjr] Specific timeobject categories are now only advertised when they are
       present in a configured source.
 

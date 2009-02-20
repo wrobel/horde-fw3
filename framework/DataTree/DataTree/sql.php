@@ -31,7 +31,7 @@
  * The table structure for the DataTree system is in
  * scripts/sql/horde_datatree.sql.
  *
- * $Horde: framework/DataTree/DataTree/sql.php,v 1.156.2.42 2009/01/06 15:23:02 jan Exp $
+ * $Horde: framework/DataTree/DataTree/sql.php,v 1.156.2.43 2009/02/13 05:45:17 chuck Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -1878,7 +1878,8 @@ class DataTree_sql extends DataTree {
         /* Connect to the SQL server using the supplied parameters. */
         require_once 'DB.php';
         $this->_write_db = DB::connect($this->_params,
-                                       array('persistent' => !empty($this->_params['persistent'])));
+                                       array('persistent' => !empty($this->_params['persistent']),
+                                             'ssl' => !empty($this->_params['ssl'])));
         if (is_a($this->_write_db, 'PEAR_Error')) {
             return $this->_write_db;
         }
@@ -1895,7 +1896,8 @@ class DataTree_sql extends DataTree {
         if (!empty($this->_params['splitread'])) {
             $params = array_merge($this->_params, $this->_params['read']);
             $this->_db = DB::connect($params,
-                                     array('persistent' => !empty($params['persistent'])));
+                                     array('persistent' => !empty($params['persistent']),
+                                           'ssl' => !empty($this->_params['ssl'])));
             if (is_a($this->_db, 'PEAR_Error')) {
                 return $this->_db;
             }

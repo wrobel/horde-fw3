@@ -1,4 +1,4 @@
--- $Horde: horde/scripts/sql/horde_sessionhandler.sapdb.sql,v 1.1 2004/09/18 17:20:59 chuck Exp $
+-- $Horde: horde/scripts/sql/horde_sessionhandler.sapdb.sql,v 1.1.10.1 2009/02/14 04:43:47 chuck Exp $
 
 CREATE TABLE horde_sessionhandler (
     session_id             VARCHAR(32) NOT NULL,
@@ -6,3 +6,5 @@ CREATE TABLE horde_sessionhandler (
     session_data           LONG BYTE,
     PRIMARY KEY (session_id)
 )
+
+CREATE INDEX session_lastmodified_idx ON horde_sessionhandler (session_lastmodified);
