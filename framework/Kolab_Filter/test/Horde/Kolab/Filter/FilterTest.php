@@ -2,7 +2,7 @@
 /**
  * Test the base filter class within the Kolab filter implementation.
  *
- * $Horde: framework/Kolab_Filter/test/Horde/Kolab/Filter/FilterTest.php,v 1.6 2008/12/12 15:24:04 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/test/Horde/Kolab/Filter/FilterTest.php,v 1.6.2.1 2009/02/20 22:37:17 wrobel Exp $
  *
  * @package Horde_Kolab_Filter
  */
@@ -19,7 +19,7 @@ require_once 'Horde/Kolab/Filter/Incoming.php';
 /**
  * Test the filter class.
  *
- * $Horde: framework/Kolab_Filter/test/Horde/Kolab/Filter/FilterTest.php,v 1.6 2008/12/12 15:24:04 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/test/Horde/Kolab/Filter/FilterTest.php,v 1.6.2.1 2009/02/20 22:37:17 wrobel Exp $
  *
  * Copyright 2008 Klarälvdalens Datakonsult AB
  *

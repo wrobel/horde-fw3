@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Transport/lmtp.php,v 1.3 2008/12/12 15:24:04 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Transport/lmtp.php,v 1.3.2.1 2009/02/20 22:37:15 wrobel Exp $
  *
  * @package Kolab_Filter
  */
@@ -8,7 +8,7 @@
 /**
  * Provides LMTP for delivering a mail.
  *
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Transport/lmtp.php,v 1.3 2008/12/12 15:24:04 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Transport/lmtp.php,v 1.3.2.1 2009/02/20 22:37:15 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *

@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Incoming.php,v 1.6 2008/12/12 15:24:03 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Incoming.php,v 1.6.2.1 2009/02/20 22:37:15 wrobel Exp $
  *
  * @package Kolab_Filter
  */
@@ -15,7 +15,7 @@ require_once dirname(__FILE__) . '/Transport.php';
  * A Kolab Server filter for incoming mails that are parsed for iCal
  * contents.
  *
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Incoming.php,v 1.6 2008/12/12 15:24:03 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Incoming.php,v 1.6.2.1 2009/02/20 22:37:15 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *

@@ -2,7 +2,7 @@
 /**
  * All tests for the Horde_Kolab_Filter:: package.
  *
- * $Horde: framework/Kolab_Filter/test/Horde/Kolab/Filter/AllTests.php,v 1.2 2009/01/06 17:49:21 jan Exp $
+ * $Horde: framework/Kolab_Filter/test/Horde/Kolab/Filter/AllTests.php,v 1.2.2.1 2009/02/20 22:37:17 wrobel Exp $
  *
  * @package Horde_Kolab_Filter
  */
@@ -20,7 +20,7 @@ require_once 'PHPUnit/TextUI/TestRunner.php';
 /**
  * Combine the tests for this package.
  *
- * $Horde: framework/Kolab_Filter/test/Horde/Kolab/Filter/AllTests.php,v 1.2 2009/01/06 17:49:21 jan Exp $
+ * $Horde: framework/Kolab_Filter/test/Horde/Kolab/Filter/AllTests.php,v 1.2.2.1 2009/02/20 22:37:17 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
