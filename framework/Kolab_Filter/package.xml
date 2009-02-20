@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.4.9" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+http://pear.php.net/dtd/tasks-1.0.xsd
+http://pear.php.net/dtd/package-2.0
+http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Kolab_Filter</name>
+ <channel>pear.horde.org</channel>
+ <summary>Postfix filters for the Kolab server</summary>
+ <description>The filters provided by this package implement the Kolab
+ server resource management as well as some Kolab server sender
+ policies.
+ </description>
+ <lead>
+  <name>Gunnar Wrobel</name>
+  <user>wrobel</user>
+  <email>p@rdus.de</email>
+  <active>yes</active>
+ </lead>
+ <lead>
+  <name>Chuck Hagenbuch</name>
+  <user>chuck</user>
+  <email>chuck@horde.org</email>
+  <active>yes</active>
+ </lead>
+ <lead>
+  <name>Jan Schneider</name>
+  <user>jan</user>
+  <email>jan@horde.org</email>
+  <active>yes</active>
+ </lead>
+ <date>2008-12-12</date>
+ <version>
+  <release>0.1.3</release>
+  <api>0.1.0</api>
+ </version>
+ <stability>
+  <release>alpha</release>
+  <api>alpha</api>
+ </stability>
+ <license uri="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">LGPL</license>
+ <notes>
+  * Fixed Dovecot delivery.
+  * Fixed copyright information.
+ </notes>
+ <contents>
+  <dir name="/">
+   <file name="COPYING" role="doc" />
+   <dir name="lib">
+    <dir name="Horde">
+     <dir name="Kolab">
+      <file name="Resource.php" role="php" />
+      <dir name="Filter">
+       <file name="Content.php" role="php" />
+       <file name="Base.php" role="php" />
+       <file name="Incoming.php" role="php" />
+       <file name="Outlook.php" role="php" />
+       <file name="Response.php" role="php" />
+       <file name="Transport.php" role="php" />
+       <dir name="Transport">
+        <file name="drop.php" role="php" />
+        <file name="DovecotLDA.php" role="php" />
+        <file name="echo.php" role="php" />
+        <file name="lda.php" role="php" />
+        <file name="lmtp.php" role="php" />
+        <file name="LMTPTLS.php" role="php" />
+        <file name="smtp.php" role="php" />
+        <file name="stdout.php" role="php" />
+       </dir> <!-- /lib/Horde/Kolab/Filter/Transport -->
+      </dir> <!-- /lib/Horde/Kolab/Filter -->
+     </dir> <!-- /lib/Horde/Kolab -->
+    </dir> <!-- /lib/Horde -->
+   </dir> <!-- /lib -->
+   <dir name="script" baseinstalldir="/">
+    <dir name="Horde">
+     <dir name="Kolab">
+      <dir name="Filter">
+       <file name="kolabfilter.php" role="script">
+        <replace from="@php_bin@" to="php_bin" type="pear-config"/>
+       </file>
+       <file name="kolabmailboxfilter.php" role="script">
+        <replace from="@php_bin@" to="php_bin" type="pear-config"/>
+       </file>
+      </dir> <!-- /script/Horde/Kolab/Filter -->
+     </dir> <!-- /script/Horde/Kolab -->
+    </dir> <!-- /script/Horde -->
+   </dir> <!-- /scripts -->
+   <dir name="test">
+    <dir name="Horde">
+     <dir name="Kolab">
+      <dir name="Filter">
+       <file name="AllTests.php" role="test" />
+       <file name="FilterTest.php" role="test" />
+       <file name="ContentTest.php" role="test" />
+       <file name="IncomingTest.php" role="test" />
+       <file name="LoadTest.php" role="test" />
+       <file name="ResourceTest.php" role="test" />
+       <dir name="fixtures">
+        <file name="big.eml" role="test" />
+        <file name="empty.eml" role="test" />
+        <file name="forged.eml" role="test" />
+        <file name="recur_invitation.eml" role="test" />
+        <file name="simple.eml" role="test" />
+        <file name="simple.ret" role="test" />
+        <file name="test.eml" role="test" />
+        <file name="tiny.eml" role="test" />
+        <file name="vacation.eml" role="test" />
+       </dir> <!-- /test/Horde/Kolab/Filter/fixtures -->
+      </dir> <!-- /test/Horde/Kolab/Filter -->
+     </dir> <!-- /test/Horde/Kolab -->
+    </dir> <!-- /test/Horde -->
+   </dir> <!-- /test -->
+  </dir> <!-- / -->
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.0.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0b1</min>
+   </pearinstaller>
+   <package>
+    <name>Horde</name>
+    <channel>pear.horde.org</channel>
+    <min>0.0.2</min>
+   </package>
+   <package>
+    <name>Horde_iCalendar</name>
+    <channel>pear.horde.org</channel>
+    <min>0.0.3</min>
+   </package>
+   <package>
+    <name>Argv</name>
+    <channel>pear.horde.org</channel>
+   </package>
+   <package>
+    <name>Horde_MIME</name>
+    <channel>pear.horde.org</channel>
+    <min>0.0.2</min>
+   </package>
+   <package>
+    <name>Horde_Util</name>
+    <channel>pear.horde.org</channel>
+    <min>0.0.2</min>
+   </package>
+   <package>
+    <name>Kolab_Server</name>
+    <channel>pear.horde.org</channel>
+    <min>0.2.0</min>
+   </package>
+  </required>
+<!--  <optional>
+   <package>
+    <name>Horde_Prefs</name>
+    <channel>pear.horde.org</channel>
+   </package>
+  </optional>-->
+ </dependencies>
+ <phprelease>
+  <filelist>
+   <install name="lib/Horde/Kolab/Resource.php" as="Horde/Kolab/Resource.php" />
+   <install name="lib/Horde/Kolab/Filter/Content.php" as="Horde/Kolab/Filter/Content.php" />
+   <install name="lib/Horde/Kolab/Filter/Base.php" as="Horde/Kolab/Filter/Base.php" />
+   <install name="lib/Horde/Kolab/Filter/Incoming.php" as="Horde/Kolab/Filter/Incoming.php" />
+   <install name="lib/Horde/Kolab/Filter/Outlook.php" as="Horde/Kolab/Filter/Outlook.php" />
+   <install name="lib/Horde/Kolab/Filter/Response.php" as="Horde/Kolab/Filter/Response.php" />
+   <install name="lib/Horde/Kolab/Filter/Transport.php" as="Horde/Kolab/Filter/Transport.php" />
+   <install name="lib/Horde/Kolab/Filter/Transport/DovecotLDA.php" as="Horde/Kolab/Filter/Transport/DovecotLDA.php" />
+   <install name="lib/Horde/Kolab/Filter/Transport/drop.php" as="Horde/Kolab/Filter/Transport/drop.php" />
+   <install name="lib/Horde/Kolab/Filter/Transport/echo.php" as="Horde/Kolab/Filter/Transport/echo.php" />
+   <install name="lib/Horde/Kolab/Filter/Transport/lda.php" as="Horde/Kolab/Filter/Transport/lda.php" />
+   <install name="lib/Horde/Kolab/Filter/Transport/lmtp.php" as="Horde/Kolab/Filter/Transport/lmtp.php" />
+   <install name="lib/Horde/Kolab/Filter/Transport/LMTPTLS.php" as="Horde/Kolab/Filter/Transport/LMTPTLS.php" />
+   <install name="lib/Horde/Kolab/Filter/Transport/smtp.php" as="Horde/Kolab/Filter/Transport/smtp.php" />
+   <install name="lib/Horde/Kolab/Filter/Transport/stdout.php" as="Horde/Kolab/Filter/Transport/stdout.php" />
+   <install name="script/Horde/Kolab/Filter/kolabmailboxfilter.php" as="kolabmailboxfilter" />
+   <install name="script/Horde/Kolab/Filter/kolabfilter.php" as="kolabfilter" />
+   <install name="test/Horde/Kolab/Filter/AllTests.php" as="Horde/Kolab/Filter/AllTests.php" />
+   <install name="test/Horde/Kolab/Filter/ContentTest.php" as="Horde/Kolab/Filter/ContentTest.php" />
+   <install name="test/Horde/Kolab/Filter/FilterTest.php" as="Horde/Kolab/Filter/FilterTest.php" />
+   <install name="test/Horde/Kolab/Filter/IncomingTest.php" as="Horde/Kolab/Filter/IncomingTest.php" />
+   <install name="test/Horde/Kolab/Filter/LoadTest.php" as="Horde/Kolab/Filter/IncomingTest.php" />
+   <install name="test/Horde/Kolab/Filter/ResourceTest.php" as="Horde/Kolab/Filter/ResourceTest.php" />
+   <install name="test/Horde/Kolab/Filter/fixtures/big.eml" as="Horde/Kolab/Filter/fixtures/big.eml" />
+   <install name="test/Horde/Kolab/Filter/fixtures/empty.eml" as="Horde/Kolab/Filter/fixtures/empty.eml" />
+   <install name="test/Horde/Kolab/Filter/fixtures/forged.eml" as="Horde/Kolab/Filter/fixtures/forged.eml" />
+   <install name="test/Horde/Kolab/Filter/fixtures/recur_invitation.eml" as="Horde/Kolab/Filter/fixtures/recur_invitation.eml" />
+   <install name="test/Horde/Kolab/Filter/fixtures/simple.eml" as="Horde/Kolab/Filter/fixtures/simple.eml" />
+   <install name="test/Horde/Kolab/Filter/fixtures/simple.ret" as="Horde/Kolab/Filter/fixtures/simple.ret" />
+   <install name="test/Horde/Kolab/Filter/fixtures/test.eml" as="Horde/Kolab/Filter/fixtures/test.eml" />
+   <install name="test/Horde/Kolab/Filter/fixtures/tiny.eml" as="Horde/Kolab/Filter/fixtures/tiny.eml" />
+   <install name="test/Horde/Kolab/Filter/fixtures/vacation.eml" as="Horde/Kolab/Filter/fixtures/vacation.eml" />
+  </filelist>
+ </phprelease>
+ <changelog>
+  <release>
+   <date>2008-12-05</date>
+   <version>
+    <release>0.1.2</release>
+    <api>0.1.0</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+   <notes>
+    * kolab/issue3260 (kolabfilter does not allow empty sender (and therefore
+      MAILER-DAEMON))
+    * kolab/issue3256 (resmgr responses should reflect server revision in PRODID)
+    * Partial fix for kolab/issue3289 (resmgr dies when it should accept, but has
+      not Calender folder access)
+   </notes>
+  </release>
+  <release>
+   <date>2008-11-25</date>
+   <version>
+    <release>0.1.1</release>
+    <api>0.1.0</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+   <notes>
+     * Fixed retrival of the user data.
+     * Corrected some minor errors from restructuring the package.
+   </notes>
+  </release>
+  <release>
+   <date>2008-10-29</date>
+   <version>
+    <release>0.1.0</release>
+    <api>0.1.0</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+   <notes>
+     * Preparations for an initial release.
+   </notes>
+  </release>
+ </changelog>
+</package>
