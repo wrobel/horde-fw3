@@ -722,7 +722,10 @@ class Horde_Kolab_Server_ldap extends Horde_Kolab_Server {
             . Horde_LDAP::quote($id) . ')))';
         $result = $this->_attrsForFilter($filter, array('mail', 'alias'),
                                          KOLAB_SERVER_RESULT_STRICT);
-        if (empty($result) || is_a($result, 'PEAR_Error')) {
+        if (empty($result)) {
+            return array();
+        }
+        if (is_a($result, 'PEAR_Error')) {
             return $result;
         }
         $addrs = array_merge((array) $result['mail'], (array) $result['alias']);
@@ -746,6 +749,8 @@ class Horde_Kolab_Server_ldap extends Horde_Kolab_Server {
                 }
             }
         }
+
+        $addrs = array_map('strtolower', $addrs);
 
         return $addrs;
     }
