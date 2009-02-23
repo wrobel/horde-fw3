@@ -10,8 +10,7 @@
 /**
  *  We need the unit test framework 
  */
-require_once 'PHPUnit/Framework.php';
-require_once 'PHPUnit/Extensions/OutputTestCase.php';
+require_once 'Horde/Kolab/Test/Filter.php';
 
 require_once 'Horde.php';
 require_once 'Horde/Kolab/Filter/Content.php';
@@ -29,7 +28,7 @@ require_once 'Horde/Kolab/Filter/Content.php';
  * @author  Gunnar Wrobel <wrobel@pardus.de>
  * @package Horde_Kolab_Filter
  */
-class Horde_Kolab_Filter_ContentTest extends PHPUnit_Extensions_OutputTestCase
+class Horde_Kolab_Filter_ContentTest extends Horde_Kolab_Test_Filter
 {
 
     /**
@@ -37,42 +36,21 @@ class Horde_Kolab_Filter_ContentTest extends PHPUnit_Extensions_OutputTestCase
      */
     protected function setUp()
     {
+        $result = $this->prepareBasicSetup();
+
+        $this->server  = &$result['server'];
+        $this->storage = &$result['storage'];
+        $this->auth    = &$result['auth'];
+
         global $conf;
 
-        $conf = array();
-        $conf['log']['enabled']          = false;
-
-        $conf['kolab']['filter']['debug'] = true;
-
-        $conf['kolab']['server'] = array(
-            'driver' => 'test',
-            'params' => array(
-                'cn=me' => array(
-                    'dn' => 'cn=me',
-                    'data' => array(
-                        'objectClass' => array('kolabInetOrgPerson'),
-                        'mail' => array('me@example.com'),
-                        'kolabImapHost' => array('localhost'),
-                        'uid' => array('me'),
-                    )
-                ),
-                'cn=you' => array(
-                    'dn' => 'cn=you',
-                    'data' => array(
-                        'objectClass' => array('kolabInetOrgPerson'),
-                        'mail' => array('you@example.com'),
-                        'kolabImapHost' => array('localhost'),
-                        'uid' => array('you'),
-                    )
-                ),
-            )
-        );
         $conf['kolab']['imap']['server'] = 'localhost';
         $conf['kolab']['imap']['port']   = 0;
         $conf['kolab']['imap']['allow_special_users'] = true;
         $conf['kolab']['filter']['reject_forged_from_header'] = false;
         $conf['kolab']['filter']['email_domain'] = 'example.com';
         $conf['kolab']['filter']['privileged_networks'] = '127.0.0.1';
+        $conf['kolab']['filter']['verify_from_header'] = true;
    }
 
 
@@ -88,68 +66,25 @@ class Horde_Kolab_Filter_ContentTest extends PHPUnit_Extensions_OutputTestCase
         /* Setup the class */
         $parser   = &new Horde_Kolab_Filter_Content();
 
-        /* Parse the mail */
-        $this->expectOutputString(file_get_contents(dirname(__FILE__)
-                                                    . '/fixtures/simple_out.ret'));
+        ob_start();
 
+        /* Parse the mail */
         $result = $parser->parse($inh, 'echo');
         if (is_a($result, 'PEAR_Error')) {
             $this->assertEquals('', $result);
         } else {
             $this->assertTrue(empty($result));
         }
+
+        $this->output = ob_get_contents();
+        ob_end_clean();
+        $this->assertEquals(file_get_contents(dirname(__FILE__)
+                                              . '/fixtures/simple_out.ret'), $this->output);
+
     }
 
     /**
-     * Test sending the forged.eml message.
-     */
-    public function testForgedOut()
-    {
-        $_SERVER['argv'] = array($_SERVER['argv'][0], '--sender=me@example.com', '--user=', '--recipient=you@example.com', '--client=192.168.178.1', '--host=example.com');
-
-        $inh = fopen(dirname(__FILE__) . '/fixtures/forged.eml', 'r');
-
-        /* Setup the class */
-        $parser   = &new Horde_Kolab_Filter_Content();
-
-        /* Parse the mail */
-        $this->expectOutputString(file_get_contents(dirname(__FILE__)
-                                                    . '/fixtures/forged.ret'));
-
-        $result = $parser->parse($inh, 'echo');
-        if (is_a($result, 'PEAR_Error')) {
-            $this->assertEquals('', $result);
-        } else {
-            $this->assertTrue(empty($result));
-        }
-    }
-
-    /**
-     * Test sending the vacation.eml message.
-     */
-    public function testVacationOut()
-    {
-        $_SERVER['argv'] = array($_SERVER['argv'][0], '--sender=me@example.com', '--user=', '--recipient=you@example.net', '--client=', '--host=example.com');
-
-        $inh = fopen(dirname(__FILE__) . '/fixtures/vacation.eml', 'r');
-
-        /* Setup the class */
-        $parser   = &new Horde_Kolab_Filter_Content();
-
-        /* Parse the mail */
-        $this->expectOutputString(file_get_contents(dirname(__FILE__)
-                                                    . '/fixtures/vacation.ret'));
-
-        $result = $parser->parse($inh, 'echo');
-        if (is_a($result, 'PEAR_Error')) {
-            $this->assertEquals('', $result);
-        } else {
-            $this->assertTrue(empty($result));
-        }
-    }
-
-    /**
-     * Test sending a message from a prviledged network.
+     * Test sending a message from a priviledged network.
      */
     public function testPriviledgedOut()
     {
@@ -164,39 +99,79 @@ class Horde_Kolab_Filter_ContentTest extends PHPUnit_Extensions_OutputTestCase
         /* Setup the class */
         $parser   = &new Horde_Kolab_Filter_Content();
 
-        /* Parse the mail */
-        $this->expectOutputString(file_get_contents(dirname(__FILE__)
-                                                    . '/fixtures/privileged.ret'));
+        ob_start();
 
+        /* Parse the mail */
         $result = $parser->parse($inh, 'echo');
         if (is_a($result, 'PEAR_Error')) {
             $this->assertEquals('', $result);
         } else {
             $this->assertTrue(empty($result));
         }
+
+        $this->output = ob_get_contents();
+        ob_end_clean();
+        $this->assertEquals(file_get_contents(dirname(__FILE__)
+                                              . '/fixtures/privileged.ret'), $this->output);
     }
 
     /**
      * Test sending the tiny.eml message.
+     *
+     * @dataProvider addressCombinations
      */
-    public function testTinyOut()
+    public function testSendingValidated($user, $client, $from, $to, $file, $error = '')
     {
-        $_SERVER['argv'] = array($_SERVER['argv'][0], '--sender=me@example.com', '--recipient=you@example.com', '--user=', '--host=example.com');
+        $_SERVER['argv'] = array($_SERVER['argv'][0],
+                                 '--sender=' . $from,
+                                 '--recipient=' . $to,
+                                 '--user=' . $user,
+                                 '--host=example.com',
+                                 '--client=' . $client);
 
-        $inh = fopen(dirname(__FILE__) . '/fixtures/tiny.eml', 'r');
+        $in = file_get_contents(dirname(__FILE__) . '/fixtures/' . $file . '.eml', 'r');
+
+        $tmpfile = Util::getTempFile('KolabFilterTest');
+        $tmpfh = @fopen($tmpfile, 'w');
+        @fwrite($tmpfh, sprintf($in, $from, $to));
+        @fclose($tmpfh);
+
+        $inh = @fopen($tmpfile, 'r');
 
         /* Setup the class */
         $parser   = &new Horde_Kolab_Filter_Content();
 
-        /* Parse the mail */
-        $this->expectOutputString(file_get_contents(dirname(__FILE__)
-                                                    . '/fixtures/tiny.ret'));
+        ob_start();
 
+        /* Parse the mail */
         $result = $parser->parse($inh, 'echo');
-        if (is_a($result, 'PEAR_Error')) {
-            $this->assertEquals('', $result);
-        } else {
+        if (empty($error)) {
+            $this->assertNoError($result);
             $this->assertTrue(empty($result));
+
+            $output = ob_get_contents();
+            ob_end_clean();
+
+            $out = file_get_contents(dirname(__FILE__) . '/fixtures/' . $file . '.ret');
+            $this->assertEquals(sprintf($out, $from, $to), $output);
+        } else {
+            $this->assertError($result, $error);
         }
+
+    }
+
+    public function addressCombinations()
+    {
+        return array(
+            array('', '192.168.178.1', 'me@example.com', 'you@example.com', 'forged'),
+            array('', '', 'me@example.com', 'you@example.net', 'vacation'),
+            array('', '', 'me@example.com', 'you@example.com', 'tiny'),
+            array('me@example.org', 'remote.example.com', 'me@example.org', 'you@example.org', 'validation'),
+            array('me@example.org', 'remote.example.com', 'me.me@example.org', 'you@example.org', 'validation'),
+            array('me@example.org', 'remote.example.com', 'me.me@example.org', 'you@example.org', 'validation'),
+            array('me@example.org', 'remote.example.com', 'meme@example.org', 'you@example.org', 'validation'),
+            array('me@example.org', 'remote.example.com', 'else@example.org', 'you@example.org', 'validation'),
+            array('me@example.org', 'remote.example.com', 'else3@example.org', 'you@example.org', 'validation', 'Invalid From: header. else3@example.org looks like a forged sender'),
+        );
     }
 }

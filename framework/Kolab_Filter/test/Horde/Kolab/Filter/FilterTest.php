@@ -57,6 +57,6 @@ class Horde_Kolab_Filter_FilterTest extends PHPUnit_Framework_TestCase
 
         $this->assertTrue(is_a($result, 'PEAR_Error'));
 
-        $this->assertContains('Please provide a value for the sender and the recipient.', $result->getMessage());
+        $this->assertContains('Please provide one or more recipients.', $result->getMessage());
     }
 }

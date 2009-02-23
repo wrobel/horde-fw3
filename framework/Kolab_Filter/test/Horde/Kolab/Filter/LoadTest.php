@@ -82,6 +82,21 @@ class Horde_Kolab_Filter_LoadTest extends PHPUnit_Extensions_PerformanceTestCase
     {
         $this->setMaxRunningTime(3);
 
+        $tmpdir = Horde::getTempDir();
+        $tmpfile = @tempnam($tmpdir, 'BIG.eml.');
+        $tmpfh = @fopen($tmpfile, "w");
+        $head = file_get_contents('fixtures/tiny.eml');
+        $body = '';
+        for ($i = 0; $i < 50000;$i++) {
+            $body .= md5(microtime());
+            if (($i % 2) == 0) {
+                $body .= "\n";
+            }
+        }
+        @fwrite($tmpfh, $head);
+        @fwrite($tmpfh, $body);
+        @fclose($tmpfh);
+
         $_SERVER['argv'] = array($_SERVER['argv'][0], '--sender=me@example.com', '--recipient=you@example.com', '--user=', '--host=example.com');
 
         for ($i = 0; $i < 10; $i++) {
@@ -95,7 +110,7 @@ class Horde_Kolab_Filter_LoadTest extends PHPUnit_Extensions_PerformanceTestCase
             $parser->parse($inh, 'drop');
 
             $parser = &new Horde_Kolab_Filter_Incoming();
-            $inh = fopen('fixtures/big.eml', 'r');
+            $inh = fopen($tmpfile, 'r');
             $parser->parse($inh, 'drop');
 
         }
