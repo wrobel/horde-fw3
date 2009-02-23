@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Passwd 3.1-cvs\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2008-03-20 17:41+0100\n"
-"PO-Revision-Date: 2008-03-20 17:41+0100\n"
+"POT-Creation-Date: 2009-02-20 17:11+0100\n"
+"PO-Revision-Date: 2009-02-20 17:11+0100\n"
 "Last-Translator: Manuel P. Ayala <mayala@unex.es>\n"
 "Language-Team: i18n@lists.horde.org\n"
 "MIME-Version: 1.0\n"
@@ -49,7 +49,7 @@ msgstr "No se ha desarrollado adecuadamente el motor."
 msgid "Cannot send command to server."
 msgstr "No se puede enviar el comando al servidor."
 
-#: main.php:263 templates/main/main.inc:141
+#: main.php:268 templates/main/main.inc:141
 msgid "Change Password"
 msgstr "Cambiar la contraseña"
 
@@ -117,7 +117,7 @@ msgstr "Error al enviar los datos a smbpasswd."
 msgid "Failed to verify old password."
 msgstr "La comprobación de la contraseña antigua ha fallado."
 
-#: main.php:217 lib/Driver/composite.php:102
+#: main.php:222 lib/Driver/composite.php:102
 #, php-format
 msgid "Failure in changing password for %s: %s"
 msgstr "Fallo al cambiar la contraseña de %s: %s"
@@ -126,12 +126,8 @@ msgstr "Fallo al cambiar la contraseña de %s: %s"
 msgid "Full buffer."
 msgstr "Buffer lleno."
 
-#: lib/Driver.php:72 lib/Driver/vmailmgr.php:42 lib/Driver/poppassd.php:120
-#: lib/Driver/kolab.php:84
-msgid "Incorrect Password"
-msgstr "Contraseña incorrecta"
-
-#: lib/Driver/ldap.php:131
+#: lib/Driver.php:72 lib/Driver/ldap.php:131 lib/Driver/poppassd.php:120
+#: lib/Driver/vmailmgr.php:42 lib/Driver/http.php:72 lib/Driver/kolab.php:84
 msgid "Incorrect old password."
 msgstr "Contraseña antigua incorrecta"
 
@@ -158,10 +154,6 @@ msgstr "El servidor no devolvió una solicitud."
 msgid "No such backend \"%s\" found."
 msgstr "No se encontró el motor \"%s\"."
 
-#: lib/Driver/http.php:72
-msgid "Old password is incorrect."
-msgstr "La contraseña antigua no es correcta."
-
 #: templates/main/main.inc:89
 msgid "Old password:"
 msgstr "Antigua contraseña:"
@@ -170,7 +162,7 @@ msgstr "Antigua contraseña:"
 msgid "Passwd is not properly configured."
 msgstr "Passwd no está bien configurado."
 
-#: main.php:209
+#: main.php:214
 #, php-format
 msgid "Password changed on %s."
 msgstr "Se ha cambiado la contraseña en %s."
@@ -193,7 +185,7 @@ msgstr "Al módulo de contraseñas le faltan parámetros necesarios."
 msgid "Password module is missing target parameter."
 msgstr "Al módulo de contraseñas le falta el parámetro de destino."
 
-#: main.php:183 lib/Driver/servuftp.php:71
+#: main.php:188 lib/Driver/servuftp.php:71
 msgid "Password module is not properly configured"
 msgstr "El módulo de contraseñas no está bien configurado"
 
@@ -256,13 +248,13 @@ msgstr "Incapaz de conectarse al servidor SQL."
 msgid "Unable to open expect stream!"
 msgstr "¡Incapaz de abrir el canal esperado!"
 
-#: lib/Driver/sql.php:135 lib/Driver/poppassd.php:114
+#: lib/Driver/poppassd.php:114 lib/Driver/sql.php:135
 #: lib/Driver/vpopmail.php:150
 msgid "User not found"
 msgstr "No se encontró el usuario"
 
-#: lib/Driver/pine.php:231 lib/Driver/smbldap.php:160 lib/Driver/ldap.php:167
-#: lib/Driver/ldap.php:249 lib/Driver/kolab.php:76
+#: lib/Driver/pine.php:231 lib/Driver/ldap.php:167 lib/Driver/ldap.php:249
+#: lib/Driver/smbldap.php:160 lib/Driver/kolab.php:76
 msgid "User not found."
 msgstr "No se encontró el usuario."
 
@@ -296,12 +288,12 @@ msgstr ""
 "Su nueva contraseña es demasiado larga; ¡las contraseñas no pueden tener más "
 "de %d caracteres!"
 
-#: main.php:172
+#: main.php:177
 msgid "Your new password is too simple to guess!  Not changed!"
 msgstr ""
 "¡Su nueva contraseña es demasiado fácil de adivinar! ¡No se ha cambiado!"
 
-#: main.php:163
+#: main.php:168
 msgid "Your new password is too simple to guess. Not changed!"
 msgstr ""
 "¡Su nueva contraseña es demasiado fácil de adivinar! ¡No se ha cambiado!"
@@ -317,14 +309,22 @@ msgstr "Su nueva contraseña tiene que ser distinta de la actual"
 
 #: main.php:133
 #, php-format
-msgid "Your new password must contain at least %d alphabetic characters."
-msgstr ""
+msgid "Your new password must contain at least %d alphabetic character."
+msgid_plural ""
+"Your new password must contain at least %d alphabetic characters."
+msgstr[0] ""
+"Su nueva contraseña tiene que contener al menos %d carácter alfabético."
+msgstr[1] ""
 "Su nueva contraseña tiene que contener al menos %d caracteres alfabéticos."
 
 #: main.php:138
 #, php-format
-msgid "Your new password must contain at least %d alphanumeric characters."
-msgstr ""
+msgid "Your new password must contain at least %d alphanumeric character."
+msgid_plural ""
+"Your new password must contain at least %d alphanumeric characters."
+msgstr[0] ""
+"Su nueva contraseña tiene que contener al menos %d carácter alfanumérico."
+msgstr[1] ""
 "Su nueva contraseña tiene que contener al menos %d caracteres alfanuméricos."
 
 #: main.php:143
@@ -338,20 +338,38 @@ msgstr ""
 
 #: main.php:123
 #, php-format
-msgid "Your new password must contain at least %d lowercase characters."
-msgstr ""
+msgid "Your new password must contain at least %d lowercase character."
+msgid_plural "Your new password must contain at least %d lowercase characters."
+msgstr[0] ""
+"Su nueva contraseña tiene que contener al menos %d carácter en minúsculas."
+msgstr[1] ""
 "Su nueva contraseña tiene que contener al menos %d caracteres en minúsculas."
 
 #: main.php:128
 #, php-format
-msgid "Your new password must contain at least %d numeric characters."
-msgstr ""
+msgid "Your new password must contain at least %d numeric character."
+msgid_plural "Your new password must contain at least %d numeric characters."
+msgstr[0] ""
+"Su nueva contraseña tiene que contener al menos %d carácter numérico."
+msgstr[1] ""
 "Su nueva contraseña tiene que contener al menos %d caracteres numéricos."
+
+#: main.php:157
+#, php-format
+msgid "Your new password must contain at least %d symbol character."
+msgid_plural "Your new password must contain at least %d symbol characters."
+msgstr[0] ""
+"Su nueva contraseña tiene que contener al menos %d carácter de puntuación."
+msgstr[1] ""
+"Su nueva contraseña tiene que contener al menos %d caracteres de puntuación."
 
 #: main.php:118
 #, php-format
-msgid "Your new password must contain at least %d uppercase characters."
-msgstr ""
+msgid "Your new password must contain at least %d uppercase character."
+msgid_plural "Your new password must contain at least %d uppercase characters."
+msgstr[0] ""
+"Su nueva contraseña tiene que contener al menos %d carácter en mayúsculas."
+msgstr[1] ""
 "Su nueva contraseña tiene que contener al menos %d caracteres en mayúsculas."
 
 #: main.php:149

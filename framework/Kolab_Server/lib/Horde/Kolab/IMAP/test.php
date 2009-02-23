@@ -2,7 +2,7 @@
 /**
  * @package Kolab_Storage
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/IMAP/test.php,v 1.1.2.2 2009/01/06 15:23:15 jan Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/IMAP/test.php,v 1.1.2.3 2009/02/23 23:02:30 wrobel Exp $
  */
 
 /**
@@ -14,7 +14,7 @@ define('KOLAB_IMAP_FLAG_DELETED', 1);
  * The Horde_Kolab_IMAP_Connection_test class simulates an IMAP server for
  * testing purposes.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/IMAP/test.php,v 1.1.2.2 2009/01/06 15:23:15 jan Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/IMAP/test.php,v 1.1.2.3 2009/02/23 23:02:30 wrobel Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

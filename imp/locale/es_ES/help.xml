@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- $Horde: imp/locale/es_ES/help.xml,v 1.24.4.13 2008/03/15 13:23:37 jan Exp $ -->
+<!-- $Horde: imp/locale/es_ES/help.xml,v 1.24.4.14 2009/02/21 11:16:16 jan Exp $ -->
 <help>
 
 <entry id="keyboard-navigation" md5="885a83e5ce7c455f8d7d40a17ca901df" state="uptodate">
@@ -151,24 +151,27 @@
 	</warn>
 </entry>
 
-<entry id="compose-attach" md5="e806e5e1641fb2531cc95d2df277851f" state="uptodate">
-	<title>Redacci&#xF3;n del mensaje: Adjuntos</title>
-	<heading>Adjuntos</heading>
+<entry id="compose-attach">
+	<title>Redacci&#xF3;n del mensaje: Adición de adjuntos</title>
+	<heading>Adición de adjuntos</heading>
 	<para>
 		Puede adjuntar archivos a los mensajes si el navegador soporta la carga de archivos. Se puede cargar m&#xE1;s de un archivo cada vez.
 	</para>
 	<para>
-		Paso 1: Bien escriba la v&#xED;a de acceso y nombre del archivo que quiera adjuntar al mensaje o pulse el bot&#xF3;n "Examinar" y seleccione el archivo que desee adjuntar. La v&#xED;a de acceso y nombre del archivo aparecer&#xE1;n en el recuadro de adjuntos.
+		Paso 1: Bien escriba la v&#xED;a de acceso y nombre del archivo que quiera adjuntar al mensaje o pulse el bot&#xF3;n "Examinar" y seleccione el archivo que desee adjuntar. La v&#xED;a de acceso y nombre del archivo aparecer&#xE1;n en el recuadro de adjuntos. Si su navegador soporta JavaScript, ver&#xE1; un cuadro de entrada de carga adicional para cargar otros archivos al mismo tiempo.
 	</para>
 	<para>
 		Paso 2: Elija si desea que el archivo se vea como un adjunto o directamente en l&#xED;nea en el cuerpo del mensaje. El cliente de correo del destinatario tendr&#xE1; que poder manejar la visualizaci&#xF3;n en l&#xED;nea del tipo de archivo adjuntado o de lo contrario lo ver&#xE1; como un adjunto.
+	</para>
+	<para>
+		A menos que quiera cambiar la descripci&#xF3;n de un adjunto o indicar que tiene que mostrarse en l&#xED;nea al destinatario, ya est&#xE1; listo. Los adjuntos se cargar&#xE1;n cuando env&#xED;e el mensaje. Sin embargo, si quisiera cambiar la descripci&#xF3;n o la disposici&#xF3;n del adjunto, puede pulsar el bot&#xF3;n &quot;Actualizar&quot; para cargar los adjuntos inmediatamente y guardar cualquier otro cambio realizado a los adjuntos existentes.
 	</para>
 	<tip>
 		Tenga en cuenta que en el caso de archivos grandes o conexiones a Internet lentas, el proceso de carga y adjuntado del archivo al mensaje puede llevar bastante tiempo. Tenga paciencia y no pulse otros v&#xED;nculos o botones mientras est&#xE9; esperando la carga de un archivo.
 	</tip>
 </entry>
 
-<entry id="compose-attachments" md5="b0d28bb946919a0c13c45721aa5d3f67" state="uptodate">
+<entry id="compose-attachments">
 	<title>Redacci&#xF3;n del mensaje: Adjuntos</title>
 	<heading>Adjuntos</heading>
 	<para>
@@ -192,7 +195,7 @@
 		Paso 1: Cambie la disposici&#xF3;n de cada adjunto al valor deseado: "En l&#xED;nea" o "Adjunto".
 	</para>
 	<para>
-		Paso 2: Pulse "Actualizar" para ver inmediatamente los cambios, o &#xE9;stos se ejecutar&#xE1;n autom&#xE1;ticamente cuando se env&#xED;e el mensaje.
+		Paso 2: Pulse el bot&#xF3;n &quot;Actualizar&quot; sobre la secci&#xF3;n Adjuntos para ver inmediatamente los cambios o &#xE9;stos se ejecutar&#xE1;n autom&#xE1;ticamente cuando se env&#xED;e el mensaje.
 	</para>
 	<heading>Cambiar la descripci&#xF3;n de los adjuntos</heading>
 	<para>
@@ -202,7 +205,7 @@
 		Paso 1: Introduzca una descripci&#xF3;n en el campo de Descripci&#xF3;n.
 	</para>
 	<para>
-		Paso 2: Pulse "Actualizar" para ver inmediatamente los cambios, o &#xE9;stos se ejecutar&#xE1;n autom&#xE1;ticamente cuando se env&#xED;e el mensaje.
+		Paso 2: Pulse el bot&#xF3;n &quot;Actualizar&quot; sobre la secci&#xF3;n Adjuntos para ver inmediatamente los cambios o &#xE9;stos se ejecutar&#xE1;n autom&#xE1;ticamente cuando se env&#xED;e el mensaje.
 	</para>
 </entry>
 
@@ -228,17 +231,17 @@
 	</para>
 </entry>
 
-<entry id="search" md5="86b2ef57b1194890833d9dd49ebc9b32" state="uptodate">
+<entry id="search">
 	<title>B&#xFA;squeda de mensajes</title>
 	<heading>Criterio de b&#xFA;squeda</heading>
 	<para>
 		Puede buscar mensajes en las carpetas mediante distintos criterios de b&#xFA;squeda.
 	</para>
 	<para>
-		Paso 1: Introduzca texto en los campos que desee a&#xF1;adir al criterio de b&#xFA;squeda.
+		Paso 1: Seleccione si quiere que se cumplan <b>todas</b> las consultas (una b&#xFA;squeda Y ) o <b>cualquiera</b> de ellas (una b&#xFA;squeda O ).
 	</para>
 	<para>
-		Paso 2: Elija la(s) bandera(s) de mensajes que desee a&#xF1;adir al criterio.
+		Paso 2: Elija lo(s) campo(s) que desee a&#xF1;adir al criterio de b&#xFA;squeda y, si fuera necesario, identifique los par&#xE1;metros de b&#xFA;squeda de esos campos.
 	</para>
 	<para>
 		Paso 3: Elija la(s) carpeta(s) en la(s) que desee buscar.
