@@ -46,6 +46,10 @@ http://pear.php.net/dtd/package-2.0.xsd">
   * Fixed unnecessary large test file (kolab/issue3299,
     https://www.intevation.de/roundup/kolab/issue3299)
   * Extended testing.
+  * Added man page (kolab/issue3364,
+    https://www.intevation.de/roundup/kolab/issue3364)
+  * Added string translations (kolab/issue2499,
+    https://www.intevation.de/roundup/kolab/issue2499)
  </notes>
  <contents>
   <dir name="/">
@@ -87,6 +91,13 @@ http://pear.php.net/dtd/package-2.0.xsd">
      </dir> <!-- /lib/Horde/Kolab -->
     </dir> <!-- /lib/Horde -->
    </dir> <!-- /lib -->
+   <dir name="locale" baseinstalldir="/">
+    <dir name="de_DE">
+     <dir name="LC_MESSAGES">
+      <file name="Kolab_Filter.mo" role="data" />
+     </dir> <!-- /locale/de_DE/LC_MESSAGES -->
+    </dir> <!-- /locale/de_DE -->
+   </dir> <!-- /locale -->
    <dir name="script" baseinstalldir="/">
     <dir name="Horde">
      <dir name="Kolab">

@@ -438,7 +438,8 @@ class Horde_Kolab_Filter_Content extends Horde_Kolab_Filter_Base
                                 } else {
                                     $name = '';
                                 }
-                                return '"' . $name . ' ' . $untrusted . '" <' . $from . '>';
+                                $new_from = '"' . $name . ' ' . $untrusted . '" <' . $from . '>';
+                                return '=?utf-8?B?' . base64_encode($new_from) . '?=';
                             } else {
                                 return true;
                             }

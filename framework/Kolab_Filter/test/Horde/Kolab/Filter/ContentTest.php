@@ -141,4 +141,20 @@ class Horde_Kolab_Filter_ContentTest extends Horde_Kolab_Test_Filter
                                  'unmodified_content' => true));
     }
 
+    /**
+     * Test translated forged from headers.
+     */
+    public function testTranslatedForgedFromHeader()
+    {
+        global $conf;
+
+        $conf['kolab']['filter']['locale_path'] = dirname(__FILE__) . '/../../../../locale';
+        $conf['kolab']['filter']['locale'] = 'de_DE';
+
+        $this->sendFixture(dirname(__FILE__) . '/fixtures/forged.eml',
+                           dirname(__FILE__) . '/fixtures/forged_trans.ret',
+                           '', '10.0.0.1', 'me@example.org', 'you@example.org', 'example.org',
+                           array('unmodified_content' => true));
+    }
+
 }

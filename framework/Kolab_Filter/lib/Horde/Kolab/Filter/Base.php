@@ -243,6 +243,12 @@ class Horde_Kolab_Filter_Base
         Horde::logMessage(sprintf("Arguments: %s", print_r($values, true)),
                           __FILE__, __LINE__, PEAR_LOG_DEBUG);
 
+        if (!empty($conf['kolab']['filter']['locale_path'])
+            && !empty($conf['kolab']['filter']['locale'])) {
+            require_once 'Horde/NLS.php';
+            NLS::setTextdomain('Kolab_Filter', $conf['kolab']['filter']['locale_path'], NLS::getCharset());
+            setlocale(LC_ALL, $conf['kolab']['filter']['locale']);
+        }
 
         /* This is used as the default domain for unqualified adresses */
         global $_SERVER;
