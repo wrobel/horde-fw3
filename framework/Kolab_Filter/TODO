@@ -3,8 +3,18 @@
 ====================================
 
 - Convert to Horde4/PHP5
+
 - Could the high speed parsing section be implemented in C?
+
 - Better man page (rewrite in XML)
+
+- Document the policies and the inner workings of the filters
+
+- Modify copyright statements to LGPL>=2.1
+
+- Clean the classes according to PEAR_CodeSniffer
+
+- Add real Kolab server tests that check a running system
 
 - kolab/issue824 (kolabmailboxfilter run once for each recipient)
   https://www.intevation.de/roundup/kolab/issue824

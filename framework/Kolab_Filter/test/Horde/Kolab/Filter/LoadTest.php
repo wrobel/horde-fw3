@@ -85,7 +85,7 @@ class Horde_Kolab_Filter_LoadTest extends PHPUnit_Extensions_PerformanceTestCase
         $tmpdir = Horde::getTempDir();
         $tmpfile = @tempnam($tmpdir, 'BIG.eml.');
         $tmpfh = @fopen($tmpfile, "w");
-        $head = file_get_contents('fixtures/tiny.eml');
+        $head = file_get_contents(dirname(__FILE__) . '/fixtures/tiny.eml');
         $body = '';
         for ($i = 0; $i < 50000;$i++) {
             $body .= md5(microtime());
@@ -102,11 +102,11 @@ class Horde_Kolab_Filter_LoadTest extends PHPUnit_Extensions_PerformanceTestCase
         for ($i = 0; $i < 10; $i++) {
 
             $parser = &new Horde_Kolab_Filter_Incoming();
-            $inh = fopen('fixtures/tiny.eml', 'r');
+            $inh = fopen(dirname(__FILE__) . '/fixtures/tiny.eml', 'r');
             $parser->parse($inh, 'drop');
 
             $parser = &new Horde_Kolab_Filter_Incoming();
-            $inh = fopen('fixtures/simple.eml', 'r');
+            $inh = fopen(dirname(__FILE__) . '/fixtures/simple.eml', 'r');
             $parser->parse($inh, 'drop');
 
             $parser = &new Horde_Kolab_Filter_Incoming();

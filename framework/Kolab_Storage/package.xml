@@ -37,7 +37,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
  </lead>
  <date>2008-12-05</date>
  <version>
-  <release>0.3.0</release>
+  <release>0.4.0</release>
   <api>0.1.0</api>
  </version>
  <stability>
@@ -46,12 +46,8 @@ http://pear.php.net/dtd/package-2.0.xsd">
  </stability>
  <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
  <notes>
-  * Added attachment support.
-  * Fixed triggering folders.
-  * Fixed renaming default folders.
-  * Implemented extended free/busy access concept.
-  * kolab/issue3292 (Sharing default groupware resources does not work
-    in the web client)
+  * Fixed test driver to prevent overwriting folder data when
+    authenticating twice.
  </notes>
  <contents>
   <dir name="/">
@@ -201,6 +197,26 @@ http://pear.php.net/dtd/package-2.0.xsd">
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <date>2008-12-05</date>
+   <version>
+    <release>0.3.0</release>
+    <api>0.1.0</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+   <notes>
+    * Added attachment support.
+    * Fixed triggering folders.
+    * Fixed renaming default folders.
+    * Implemented extended free/busy access concept.
+    * kolab/issue3292 (Sharing default groupware resources does not work
+      in the web client)
+   </notes>
+  </release>
   <release>
    <date>2008-09-12</date>
    <version>

@@ -1,8 +1,17 @@
 <?php
 /**
+ * Resource management for the Kolab server.
+ *
  * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php,v 1.15.2.1 2009/02/20 22:37:14 wrobel Exp $
  *
- * @package Kolab_Filter
+ * PHP version 4
+ *
+ * @category Kolab
+ * @package  Kolab_Filter
+ * @author   Steffen Hansen <steffen@klaralvdalens-datakonsult.se>
+ * @author   Gunnar Wrobel <wrobel@pardus.de>
+ * @license  http://www.fsf.org/copyleft/lgpl.html LGPL
+ * @link     http://pear.horde.org/index.php?package=Kolab_Server
  */
 
 /** Load the iCal handling */
@@ -35,14 +44,14 @@ define('RM_ITIP_TENTATIVE',                 3);
  *
  * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php,v 1.15.2.1 2009/02/20 22:37:14 wrobel Exp $
  *
- * Copyright 2004-2008 Klarälvdalens Datakonsult AB
+ * Copyright 2004-2009 Klarälvdalens Datakonsult AB
  *
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
  *
+ * @package Kolab_Filter
  * @author  Steffen Hansen <steffen@klaralvdalens-datakonsult.se>
  * @author  Gunnar Wrobel <wrobel@pardus.de>
- * @package Kolab_Filter
  */
 class Kolab_Resource
 {

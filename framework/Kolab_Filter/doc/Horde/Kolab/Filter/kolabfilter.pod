@@ -48,5 +48,5 @@ Path to the configuration file for this filter.
 
 =head1 COPYRIGHT AND AUTHORS
 
-Copyright 2004-2008 Klarälvdalens Datakonsult AB
+Copyright 2004-2009 Klarälvdalens Datakonsult AB
 

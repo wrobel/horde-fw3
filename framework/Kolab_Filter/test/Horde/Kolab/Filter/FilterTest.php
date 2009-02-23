@@ -52,7 +52,7 @@ class Horde_Kolab_Filter_FilterTest extends PHPUnit_Framework_TestCase
     {
         $_SERVER['argv'] = array($_SERVER['argv'][0]);
         $parser   = &new Horde_Kolab_Filter_Incoming();
-        $inh = fopen('fixtures/tiny.eml', 'r');
+        $inh = fopen(dirname(__FILE__) . '/fixtures/tiny.eml', 'r');
         $result = $parser->parse($inh, 'echo');
 
         $this->assertTrue(is_a($result, 'PEAR_Error'));
