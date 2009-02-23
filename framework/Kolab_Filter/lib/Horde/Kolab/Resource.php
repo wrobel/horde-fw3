@@ -920,7 +920,6 @@ class Kolab_Resource
         default:
             Horde::logMessage(sprintf('Unknown iTip method (%s passed to sendITipReply())', $type),
                               __FILE__, __LINE__, PEAR_LOG_ERR);
-            shutdown(1, "Unknown iTip method ($type) passed to sendITipReply()");
         }
 
         $itip_reply->setAttribute('ATTENDEE', 'MAILTO:' . $resource, $params);
@@ -979,7 +978,6 @@ class Kolab_Resource
         if (is_a($status, 'PEAR_Error')) {
             Horde::logMessage('Unable to send iTip reply: %s' . $status->getMessage(),
                               __FILE__, __LINE__, PEAR_LOG_ERR);
-            shutdown(1, 'Unable to send iTip reply: ' . $status->getMessage());
         } else {
             Horde::logMessage('Successfully sent iTip reply',
                               __FILE__, __LINE__, PEAR_LOG_DEBUG);
