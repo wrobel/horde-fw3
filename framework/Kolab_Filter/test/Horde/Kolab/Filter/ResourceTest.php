@@ -10,7 +10,7 @@
 /**
  *  We need the base class
  */
-require_once 'Horde/Kolab/Test.php';
+require_once 'Horde/Kolab/Test/Filter.php';
 
 require_once 'Horde.php';
 require_once 'Horde/Kolab/Resource.php';
@@ -31,30 +31,8 @@ require_once 'Horde/iCalendar/vfreebusy.php';
  * @author  Gunnar Wrobel <wrobel@pardus.de>
  * @package Horde_Kolab_Filter
  */
-class Horde_Kolab_Filter_ResourceTest extends Horde_Kolab_Test
+class Horde_Kolab_Filter_ResourceTest extends Horde_Kolab_Test_Filter
 {
-
-    /**
-     * Set up testing.
-     */
-    protected function setUp()
-    {
-        global $conf;
-
-        $conf = array();
-
-        $this->prepareBasicSetup();
-
-        $conf['log']['enabled']          = false;
-
-        $conf['kolab']['filter']['debug'] = true;
-
-        $conf['kolab']['imap']['server'] = 'localhost';
-        $conf['kolab']['imap']['port']   = 0;
-
-        $_SERVER['SERVER_NAME'] = 'localhost';
-    }
-
 
     /**
      * Test retrieval of the resource information
@@ -81,38 +59,67 @@ class Horde_Kolab_Filter_ResourceTest extends Horde_Kolab_Test
         $this->assertTrue($r->handleMessage('localhost', 'test@example.org', 'wrobel@example.org', null));
     }
 
+
     /**
      * Test invitation.
      */
     public function testRecurrenceInvitation()
     {
-        require_once 'Horde/iCalendar/vfreebusy.php';
-        $fb = &new Horde_iCalendar_vfreebusy();
-        $fb->setAttribute('DTSTART', '20080926T000000');
-        $fb->setAttribute('DTEND', '20081126T000000');
+        $GLOBALS['KOLAB_FILTER_TESTING'] = &new Horde_iCalendar_vfreebusy();
+        $GLOBALS['KOLAB_FILTER_TESTING']->setAttribute('DTSTART', Horde_iCalendar::_parseDateTime('20080926T000000Z'));
+        $GLOBALS['KOLAB_FILTER_TESTING']->setAttribute('DTEND', Horde_iCalendar::_parseDateTime('20081126T000000Z'));
 
-        $stub = $this->getMock('Kolab_Resource');
-        $stub->expects($this->any())
-            ->method('internalGetFreeBusy')
-            ->will($this->returnValue($fb));
-        
+        $params = array('unmodified_content' => true,
+                        'incoming' => true);
 
-        $_SERVER['argv'] = array($_SERVER['argv'][0], '--sender=test@example.org', '--recipient=wrobel@example.org', '--user=', '--host=example.com');
+        $this->sendFixture(dirname(__FILE__) . '/fixtures/recur_invitation.eml',
+                           dirname(__FILE__) . '/fixtures/null.ret',
+                           '', '', 'test@example.org', 'wrobel@example.org',
+                           'home.example.org', $params);
 
-        $inh = fopen(dirname(__FILE__) . '/fixtures/recur_invitation.eml', 'r');
+        $result = $this->auth->authenticate('wrobel', array('password' => 'none'));
+        $this->assertNoError($result);
 
-        /* Setup the class */
-        $parser   = &new Horde_Kolab_Filter_Incoming();
-        
-        /* Parse the mail */
-        //$this->expectOutputString('');
-        
-        $result = $parser->parse($inh, 'echo');
-        if (is_a($result, 'PEAR_Error')) {
-            $this->assertEquals('', $result->getMessage());
-        } else {
-            $this->assertTrue(empty($result));
-        }
+        $folder = $this->storage->getFolder('INBOX/Kalender');
+        $data = $folder->getData();
+        $events = $data->getObjects();
+        $this->assertEquals(1222419600, $events[0]['start-date']);
+
+        $result = $data->deleteAll();
+        $this->assertNoError($result);
     }
 
+    /**
+     * Test an that contains a long string.
+     */
+    public function testLongStringInvitation()
+    {
+        require_once 'Horde/iCalendar/vfreebusy.php';
+        $GLOBALS['KOLAB_FILTER_TESTING'] = &new Horde_iCalendar_vfreebusy();
+        $GLOBALS['KOLAB_FILTER_TESTING']->setAttribute('DTSTART', Horde_iCalendar::_parseDateTime('20080926T000000Z'));
+        $GLOBALS['KOLAB_FILTER_TESTING']->setAttribute('DTEND', Horde_iCalendar::_parseDateTime('20081126T000000Z'));
+
+        $params = array('unmodified_content' => true,
+                        'incoming' => true);
+
+        $this->sendFixture(dirname(__FILE__) . '/fixtures/longstring_invitation.eml',
+                           dirname(__FILE__) . '/fixtures/null.ret',
+                           '', '', 'test@example.org', 'wrobel@example.org',
+                           'home.example.org', $params);
+
+        $result = $this->auth->authenticate('wrobel', array('password' => 'none'));
+        $this->assertNoError($result);
+
+        $folder = $this->storage->getFolder('INBOX/Kalender');
+        $data = $folder->getData();
+        $events = $data->getObjects();
+        $summaries = array();
+        foreach ($events as $event) {
+            $summaries[] = $event['summary'];
+        }
+        $this->assertContains('invitationtest2', $summaries);
+
+        $result = $data->deleteAll();
+        $this->assertNoError($result);
+    }
 }

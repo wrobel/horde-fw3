@@ -37,6 +37,40 @@ require_once 'Horde/Kolab/Test/Storage.php';
 class Horde_Kolab_Test_Filter extends Horde_Kolab_Test_Storage
 {
     /**
+     * Set up testing.
+     */
+    protected function setUp()
+    {
+        $result = $this->prepareBasicSetup();
+
+        $this->server  = &$result['server'];
+        $this->storage = &$result['storage'];
+        $this->auth    = &$result['auth'];
+
+        global $conf;
+
+        $conf['kolab']['imap']['server'] = 'localhost';
+        $conf['kolab']['imap']['port']   = 0;
+        $conf['kolab']['imap']['allow_special_users'] = true;
+        $conf['kolab']['filter']['reject_forged_from_header'] = false;
+        $conf['kolab']['filter']['email_domain'] = 'example.org';
+        $conf['kolab']['filter']['privileged_networks'] = '127.0.0.1,192.168.0.0/16';
+        $conf['kolab']['filter']['verify_from_header'] = true;
+        $conf['kolab']['filter']['calendar_id'] = 'calendar';
+        $conf['kolab']['filter']['calendar_pass'] = 'calendar';
+        $conf['kolab']['filter']['lmtp_host'] = 'imap.example.org';
+
+        $result = $this->auth->authenticate('wrobel', array('password' => 'none'));
+        $this->assertNoError($result);
+
+        $folder = $this->storage->getNewFolder();
+        $folder->setName('Kalender');
+        $result = $folder->save(array('type' => 'event',
+                                      'default' => true));
+        $this->assertNoError($result);
+    }
+
+    /**
      * Handle a "given" step.
      *
      * @param array  &$world    Joined "world" of variables.
@@ -103,6 +137,8 @@ class Horde_Kolab_Test_Filter extends Horde_Kolab_Test_Storage
         $this->assertNoError($result);
         $result = $server->add($this->provideFilterUserThree());
         $this->assertNoError($result);
+        $result = $server->add($this->provideFilterCalendarUser());
+        $this->assertNoError($result);
     }
 
     /**
@@ -163,5 +199,79 @@ class Horde_Kolab_Test_Filter extends Horde_Kolab_Test_Storage
                      'kolabImapServer' => 'home.example.org',
                      'kolabFreeBusyServer' => 'https://fb.example.org/freebusy',
                      KOLAB_ATTR_KOLABDELEGATE => 'me@example.org',);
+    }
+
+    /**
+     * Return the calendar user.
+     *
+     * @return array The calendar user.
+     */
+    public function provideFilterCalendarUser()
+    {
+        return array('cn' => 'calendar',
+                     'sn' => 'calendar',
+                     'givenName' => '',
+                     'type' => KOLAB_OBJECT_USER,
+                     'mail' => 'calendar@example.org',
+                     'uid' => 'calendar@home.example.org',
+                     'userPassword' => 'calendar',
+                     'kolabHomeServer' => 'home.example.org',
+                     'kolabImapServer' => 'imap.example.org',
+                );
+    }
+
+    public function sendFixture($infile, $outfile, $user, $client, $from, $to,
+                                $host, $params = array())
+    {
+        $_SERVER['argv'] = array($_SERVER['argv'][0],
+                                 '--sender=' . $from,
+                                 '--recipient=' . $to,
+                                 '--user=' . $user,
+                                 '--host=' . $host,
+                                 '--client=' . $client);
+
+        $in = file_get_contents($infile, 'r');
+
+        $tmpfile = Util::getTempFile('KolabFilterTest');
+        $tmpfh = @fopen($tmpfile, 'w');
+        if (empty($params['unmodified_content'])) {
+            @fwrite($tmpfh, sprintf($in, $from, $to));
+        } else {
+            @fwrite($tmpfh, $in);
+        }
+        @fclose($tmpfh);
+
+        $inh = @fopen($tmpfile, 'r');
+
+        /* Setup the class */
+        if (empty($params['incoming'])) {
+            require_once 'Horde/Kolab/Filter/Content.php';
+            $parser = &new Horde_Kolab_Filter_Content();
+        } else {
+            require_once 'Horde/Kolab/Filter/Incoming.php';
+            $parser = &new Horde_Kolab_Filter_Incoming();
+        }
+
+        ob_start();
+
+        /* Parse the mail */
+        $result = $parser->parse($inh, 'echo');
+        if (empty($params['error'])) {
+            $this->assertNoError($result);
+            $this->assertTrue(empty($result));
+
+            $output = ob_get_contents();
+            ob_end_clean();
+
+            $out = file_get_contents($outfile);
+            if (empty($params['unmodified_content'])) {
+                $this->assertEquals(sprintf($out, $from, $to), $output);
+            } else {
+                $this->assertEquals($out, $output);
+            }
+        } else {
+            $this->assertError($result, $params['error']);
+        }
+
     }
 }

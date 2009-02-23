@@ -107,15 +107,15 @@ class Kolab_List {
             $list = $session->query('kolab_folderlist');
         }
 
-        if (empty($list)) {
-            $list = new Kolab_List();
+        if (empty($list[Auth::getAuth()])) {
+            $list[Auth::getAuth()] = new Kolab_List();
         }
 
         if (!empty($GLOBALS['conf']['kolab']['imap']['cache_folders'])) {
             register_shutdown_function(array(&$list, 'shutdown'));
         }
 
-        return $list;
+        return $list[Auth::getAuth()];
     }
 
     /**

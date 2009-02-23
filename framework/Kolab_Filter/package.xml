@@ -50,6 +50,15 @@ http://pear.php.net/dtd/package-2.0.xsd">
  <contents>
   <dir name="/">
    <file name="COPYING" role="doc" />
+   <dir name="doc">
+    <dir name="Horde">
+     <dir name="Kolab">
+      <dir name="Filter">
+       <file name="kolabfilter.1" role="doc" />
+      </dir> <!-- /doc/Horde/Kolab/Filter -->
+     </dir> <!-- /doc/Horde/Kolab -->
+    </dir> <!-- /doc/Horde -->
+   </dir> <!-- /doc -->
    <dir name="lib">
     <dir name="Horde">
      <dir name="Kolab">
@@ -103,15 +112,25 @@ http://pear.php.net/dtd/package-2.0.xsd">
        <file name="LoadTest.php" role="test" />
        <file name="ResourceTest.php" role="test" />
        <dir name="fixtures">
-        <file name="big.eml" role="test" />
         <file name="empty.eml" role="test" />
+        <file name="empty2.ret" role="test" />
         <file name="forged.eml" role="test" />
+        <file name="forged.ret" role="test" />
+        <file name="longstring_invitation.eml" role="test" />
+        <file name="null.ret" role="test" />
+        <file name="privileged.ret" role="test" />
         <file name="recur_invitation.eml" role="test" />
         <file name="simple.eml" role="test" />
         <file name="simple.ret" role="test" />
+        <file name="simple2.ret" role="test" />
+        <file name="simple_out.ret" role="test" />
         <file name="test.eml" role="test" />
         <file name="tiny.eml" role="test" />
+        <file name="tiny.ret" role="test" />
         <file name="vacation.eml" role="test" />
+        <file name="vacation.ret" role="test" />
+        <file name="validation.eml" role="test" />
+        <file name="validation.ret" role="test" />
        </dir> <!-- /test/Horde/Kolab/Filter/fixtures -->
       </dir> <!-- /test/Horde/Kolab/Filter -->
      </dir> <!-- /test/Horde/Kolab -->
@@ -166,6 +185,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
  </dependencies>
  <phprelease>
   <filelist>
+   <install name="doc/Horde/Kolab/Filter/kolabfilter.1" as="man/man1/kolabfilter.1" />
    <install name="lib/Horde/Kolab/Resource.php" as="Horde/Kolab/Resource.php" />
    <install name="lib/Horde/Kolab/Test/Filter.php" as="Horde/Kolab/Test/Filter.php" />
    <install name="lib/Horde/Kolab/Filter/Content.php" as="Horde/Kolab/Filter/Content.php" />
@@ -188,17 +208,27 @@ http://pear.php.net/dtd/package-2.0.xsd">
    <install name="test/Horde/Kolab/Filter/ContentTest.php" as="Horde/Kolab/Filter/ContentTest.php" />
    <install name="test/Horde/Kolab/Filter/FilterTest.php" as="Horde/Kolab/Filter/FilterTest.php" />
    <install name="test/Horde/Kolab/Filter/IncomingTest.php" as="Horde/Kolab/Filter/IncomingTest.php" />
-   <install name="test/Horde/Kolab/Filter/LoadTest.php" as="Horde/Kolab/Filter/IncomingTest.php" />
+   <install name="test/Horde/Kolab/Filter/LoadTest.php" as="Horde/Kolab/Filter/LoadTest.php" />
    <install name="test/Horde/Kolab/Filter/ResourceTest.php" as="Horde/Kolab/Filter/ResourceTest.php" />
-   <install name="test/Horde/Kolab/Filter/fixtures/big.eml" as="Horde/Kolab/Filter/fixtures/big.eml" />
    <install name="test/Horde/Kolab/Filter/fixtures/empty.eml" as="Horde/Kolab/Filter/fixtures/empty.eml" />
+   <install name="test/Horde/Kolab/Filter/fixtures/empty2.ret" as="Horde/Kolab/Filter/fixtures/empty2.ret" />
    <install name="test/Horde/Kolab/Filter/fixtures/forged.eml" as="Horde/Kolab/Filter/fixtures/forged.eml" />
+   <install name="test/Horde/Kolab/Filter/fixtures/forged.ret" as="Horde/Kolab/Filter/fixtures/forged.ret" />
+   <install name="test/Horde/Kolab/Filter/fixtures/longstring_invitation.eml" as="Horde/Kolab/Filter/fixtures/longstring_invitation.eml" />
+   <install name="test/Horde/Kolab/Filter/fixtures/null.ret" as="Horde/Kolab/Filter/fixtures/null.ret" />
+   <install name="test/Horde/Kolab/Filter/fixtures/privileged.ret" as="Horde/Kolab/Filter/fixtures/privileged.ret" />
    <install name="test/Horde/Kolab/Filter/fixtures/recur_invitation.eml" as="Horde/Kolab/Filter/fixtures/recur_invitation.eml" />
    <install name="test/Horde/Kolab/Filter/fixtures/simple.eml" as="Horde/Kolab/Filter/fixtures/simple.eml" />
    <install name="test/Horde/Kolab/Filter/fixtures/simple.ret" as="Horde/Kolab/Filter/fixtures/simple.ret" />
+   <install name="test/Horde/Kolab/Filter/fixtures/simple2.ret" as="Horde/Kolab/Filter/fixtures/simple2.ret" />
+   <install name="test/Horde/Kolab/Filter/fixtures/simple_out.ret" as="Horde/Kolab/Filter/fixtures/simple_out.ret" />
    <install name="test/Horde/Kolab/Filter/fixtures/test.eml" as="Horde/Kolab/Filter/fixtures/test.eml" />
    <install name="test/Horde/Kolab/Filter/fixtures/tiny.eml" as="Horde/Kolab/Filter/fixtures/tiny.eml" />
+   <install name="test/Horde/Kolab/Filter/fixtures/tiny.ret" as="Horde/Kolab/Filter/fixtures/tiny.ret" />
    <install name="test/Horde/Kolab/Filter/fixtures/vacation.eml" as="Horde/Kolab/Filter/fixtures/vacation.eml" />
+   <install name="test/Horde/Kolab/Filter/fixtures/vacation.ret" as="Horde/Kolab/Filter/fixtures/vacation.ret" />
+   <install name="test/Horde/Kolab/Filter/fixtures/validation.eml" as="Horde/Kolab/Filter/fixtures/validation.eml" />
+   <install name="test/Horde/Kolab/Filter/fixtures/validation.ret" as="Horde/Kolab/Filter/fixtures/validation.ret" />
   </filelist>
  </phprelease>
  <changelog>

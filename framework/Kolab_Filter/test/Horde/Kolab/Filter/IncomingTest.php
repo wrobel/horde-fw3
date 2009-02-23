@@ -10,7 +10,7 @@
 /**
  *  We need the base class
  */
-require_once 'Horde/Kolab/Test.php';
+require_once 'Horde/Kolab/Test/Filter.php';
 
 /**
  *  We need the unit test framework 
@@ -33,30 +33,30 @@ require_once 'Horde/Kolab/Filter/Incoming.php';
  * @author  Gunnar Wrobel <wrobel@pardus.de>
  * @package Horde_Kolab_Filter
  */
-class Horde_Kolab_Filter_IncomingTest extends PHPUnit_Extensions_OutputTestCase
+class Horde_Kolab_Filter_IncomingTest extends Horde_Kolab_Test_Filter
 {
 
-    /**
-     * Set up testing.
-     */
-    protected function setUp()
-    {
-        global $conf;
+/*     /\** */
+/*      * Set up testing. */
+/*      *\/ */
+/*     protected function setUp() */
+/*     { */
+/*         global $conf; */
 
-        $conf = array();
+/*         $conf = array(); */
 
-        $test = new Horde_Kolab_Test();
-        $test->prepareBasicSetup();
+/*         $test = new Horde_Kolab_Test(); */
+/*         $test->prepareBasicSetup(); */
 
-        $conf['log']['enabled']          = false;
+/*         $conf['log']['enabled']          = false; */
 
-        $conf['kolab']['filter']['debug'] = true;
+/*         $conf['kolab']['filter']['debug'] = true; */
 
-        $conf['kolab']['imap']['server'] = 'localhost';
-        $conf['kolab']['imap']['port']   = 0;
+/*         $conf['kolab']['imap']['server'] = 'localhost'; */
+/*         $conf['kolab']['imap']['port']   = 0; */
 
-        $_SERVER['SERVER_NAME'] = 'localhost';
-    }
+/*         $_SERVER['SERVER_NAME'] = 'localhost'; */
+/*     } */
 
 
     /**
@@ -64,23 +64,13 @@ class Horde_Kolab_Filter_IncomingTest extends PHPUnit_Extensions_OutputTestCase
      */
     public function testSimpleIn()
     {
-        $_SERVER['argv'] = array($_SERVER['argv'][0], '--sender=wrobel@example.org', '--recipient=test@example.org', '--user=', '--host=example.org');
+        $params = array('unmodified_content' => true,
+                        'incoming' => true);
 
-        $inh = fopen(dirname(__FILE__) . '/fixtures/simple.eml', 'r');
-
-        /* Setup the class */
-        $parser   = &new Horde_Kolab_Filter_Incoming();
-
-        /* Parse the mail */
-        $this->expectOutputString(file_get_contents(dirname(__FILE__)
-                                                    . '/fixtures/simple2.ret'));
-
-        $result = $parser->parse($inh, 'echo');
-        if (is_a($result, 'PEAR_Error')) {
-            $this->assertEquals('', $result->getMessage());
-        } else {
-            $this->assertTrue(empty($result));
-        }
+        $this->sendFixture(dirname(__FILE__) . '/fixtures/simple.eml',
+                           dirname(__FILE__) . '/fixtures/simple2.ret',
+                           '', '', 'wrobel@example.org', 'me@example.org',
+                           'home.example.org', $params);
     }
 
     /**
@@ -88,22 +78,12 @@ class Horde_Kolab_Filter_IncomingTest extends PHPUnit_Extensions_OutputTestCase
      */
     public function testIncomingLineEnd()
     {
-        $_SERVER['argv'] = array($_SERVER['argv'], '--host=example.org', '--sender=wrobel@example.org', '--recipient=test@example.org', '--client=127.0.0.1', '--user=');
+        $params = array('unmodified_content' => true,
+                        'incoming' => true);
 
-        $inh = fopen(dirname(__FILE__) . '/fixtures/empty.eml', 'r');
-
-        /* Setup the class */
-        $parser   = &new Horde_Kolab_Filter_Incoming();
-
-        /* Parse the mail */
-        $this->expectOutputString(file_get_contents(dirname(__FILE__)
-                                                    . '/fixtures/empty2.ret'));
-
-        $result = $parser->parse($inh, 'echo');
-        if (is_a($result, 'PEAR_Error')) {
-            $this->assertEquals('', $result->getMessage());
-        } else {
-            $this->assertTrue(empty($result));
-        }
+        $this->sendFixture(dirname(__FILE__) . '/fixtures/empty.eml',
+                           dirname(__FILE__) . '/fixtures/empty2.ret',
+                           '', '127.0.0.1', 'wrobel@example.org', 'me@example.org',
+                           'home.example.org', $params);
     }
 }

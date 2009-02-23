@@ -447,9 +447,18 @@ class Kolab_Resource
             // is specified
             if ($action != RM_ACT_ALWAYS_ACCEPT) {
 
-                $vfb = &$this->internalGetFreeBusy($resource);
-                if (is_a($vfb, 'PEAR_Error')) {
-                    return $vfb;
+                /**
+                 * FIXME: This is a temporary injection point for providing a mock
+                 * free/busy setup. It would be better to implement a suite of
+                 * different free/busy drivers.
+                 */
+                if (isset($GLOBALS['KOLAB_FILTER_TESTING'])) {
+                    $vfb = $GLOBALS['KOLAB_FILTER_TESTING'];
+                } else {
+                    $vfb = &$this->internalGetFreeBusy($resource);
+                    if (is_a($vfb, 'PEAR_Error')) {
+                        return $vfb;
+                    }
                 }
 
                 $vfbstart = $vfb->getAttributeDefault('DTSTART', 0);

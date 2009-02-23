@@ -1,13 +1,13 @@
-Return-Path: <jramirezme@kof.com.mx>
-Received: from localhost (fqdn.example.com [127.0.0.1])
-	 by demo.example.com (Cyrus v2.3.9-openpkg) with LMTPA;
+Return-Path: <jramirezme@kof.org.mx>
+Received: from localhost (fqdn.example.org [127.0.0.1])
+	 by demo.example.org (Cyrus v2.3.9-openpkg) with LMTPA;
 	 Sat, 10 Nov 2007 20:44:52 +0100
 X-Sieve: CMU Sieve 2.3
-Received: from localhost (fqdn.example.com [127.0.0.1])
-	by demo.example.com (Postfix) with ESMTP id 395055FC0128
-	for <wrobel@demo.example.com>; Sat, 10 Nov 2007 20:44:52 +0100 (CET)
+Received: from localhost (fqdn.example.org [127.0.0.1])
+	by demo.example.org (Postfix) with ESMTP id 395055FC0128
+	for <wrobel@demo.example.org>; Sat, 10 Nov 2007 20:44:52 +0100 (CET)
 X-Quarantine-ID: <pcNZVfHFgssC>
-X-Virus-Scanned: by amavisd-new at demo.example.com
+X-Virus-Scanned: by amavisd-new at demo.example.org
 X-Spam-Flag: YES
 X-Spam-Score: 15.576
 X-Spam-Level: ***************
@@ -15,23 +15,23 @@ X-Spam-Status: Yes, score=15.576 tagged_above=3 required=6.3
 	tests=[FRT_PENIS1=3.799, HTML_MESSAGE=0.001, PLING_QUERY=2.16,
 	RCVD_FORGED_WROTE=4.365, RCVD_FORGED_WROTE2=2.052, RDNS_NONE=0.1,
 	SUBJECT_FUZZY_PENIS=3.099]
-Received: from demo.example.com ([127.0.0.1])
-	by localhost (demo.example.com [127.0.0.1]) (amavisd-new, port 10024)
-	with ESMTP id pcNZVfHFgssC for <wrobel@demo.example.com>;
+Received: from demo.example.org ([127.0.0.1])
+	by localhost (demo.example.org [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id pcNZVfHFgssC for <wrobel@demo.example.org>;
 	Sat, 10 Nov 2007 20:44:51 +0100 (CET)
-Received: from localhost (fqdn.example.com [127.0.0.1])
-	by demo.example.com (Postfix) with ESMTP id ABE8E5FC012A
-	for <wrobel@demo.example.com>; Sat, 10 Nov 2007 20:44:51 +0100 (CET)
+Received: from localhost (fqdn.example.org [127.0.0.1])
+	by demo.example.org (Postfix) with ESMTP id ABE8E5FC012A
+	for <wrobel@demo.example.org>; Sat, 10 Nov 2007 20:44:51 +0100 (CET)
 Received: from town.windham.me.us (unknown [85.192.14.1])
-	by demo.example.com (Postfix) with SMTP id D10375FC0128
-	for <wrobel@demo.example.com>; Sat, 10 Nov 2007 20:44:49 +0100 (CET)
-Received: from 192.85.78.105 (HELO ccfemsasmtp.kof.com.mx)
-     by demo.example.com with esmtp (CEYPNSAEHHT CYXPCJ)
+	by demo.example.org (Postfix) with SMTP id D10375FC0128
+	for <wrobel@demo.example.org>; Sat, 10 Nov 2007 20:44:49 +0100 (CET)
+Received: from 192.85.78.105 (HELO ccfemsasmtp.kof.org.mx)
+     by demo.example.org with esmtp (CEYPNSAEHHT CYXPCJ)
      id UNrWB0-GRSpeC-lz
-     for wrobel@demo.example.com; Sat, 10 Nov 2007 22:45:12 +0300
+     for wrobel@demo.example.org; Sat, 10 Nov 2007 22:45:12 +0300
 Message-ID: <1d2101c823d2$3555aa10$ac112c15@Meredith>
-From: "Meredith F. Dick" <Meredith@kof.com.mx>
-To: "Marta Z. Rodrigues" <wrobel@demo.example.com>
+From: "Meredith F. Dick" <Meredith@kof.org.mx>
+To: "Marta Z. Rodrigues" <wrobel@demo.example.org>
 Subject: ***SPAM*** Don't you think it's time you stopped being a loser
 Date: Sat, 10 Nov 2007 22:45:12 +0300
 MIME-Version: 1.0

@@ -1,9 +1,9 @@
-Return-Path: <me@example.com>
-Received: from localhost (fqdn.example.com [127.0.0.1])
-	 by demo.example.com (Cyrus v2.3.9-openpkg) with LMTPA;
+Return-Path: <me@example.org>
+Received: from localhost (fqdn.example.org [127.0.0.1])
+	 by demo.example.org (Cyrus v2.3.9-openpkg) with LMTPA;
 	 Sat, 10 Nov 2007 20:44:52 +0100
 Message-ID: <1d2101c823d2$3555aa10$ac112c15@Meredith>
-From: me@example.com
+From: me@example.org
 To: you@example.net
 Subject: Me to You
 Date: Sat, 10 Nov 2007 22:45:12 +0300
