@@ -51,36 +51,6 @@ class Horde_Kolab_Filter_Response
      */
     function Horde_Kolab_Filter_Response()
     {
-        global $conf;
-
-        /* Always display all possible problems */
-        ini_set('error_reporting', E_ALL);
-        ini_set('track_errors', '1');
-
-        /* Setup error logging */
-        if (isset($conf['kolab']['filter']['error_log'])) {
-            ini_set('log_errors', '1');
-            ini_set('error_log', $conf['kolab']['filter']['error_log']);
-        }
-
-        /* Print PHP messages to StdOut if we are debugging */
-        if (isset($conf['kolab']['filter']['debug'])
-            && $conf['kolab']['filter']['debug']) {
-            ini_set('display_errors', '1');
-        }
-
-        /* Provide basic syslog debugging if nothing has been
-         * specified
-         */
-        if (!isset($conf['log'])) {
-            $conf['log']['enabled']          = true;
-            $conf['log']['priority']         = PEAR_LOG_DEBUG;
-            $conf['log']['type']             = 'syslog';
-            $conf['log']['name']             = LOG_MAIL;
-            $conf['log']['ident']            = 'kolabfilter';
-            $conf['log']['params']           = array();
-        }
-
         /* Set a custom PHP error handler to catch any coding errors */
         set_error_handler(array($this, '_fatal'));
     }
