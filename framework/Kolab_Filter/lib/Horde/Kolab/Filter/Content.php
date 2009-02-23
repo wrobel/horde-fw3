@@ -381,7 +381,7 @@ class Horde_Kolab_Filter_Content extends Horde_Kolab_Filter_Base
                 return $server;
             }
 
-            $allowed_addrs = $server->addrsForUid($recipient);
+            $allowed_addrs = $server->addrsForIdOrMail($sasluser);
             if (is_a($allowed_addrs, 'PEAR_Error')) {
                 $allowed_addrs->code = OUT_LOG | EX_NOUSER;
                 return $allowed_addrs;
