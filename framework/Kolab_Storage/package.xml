@@ -46,8 +46,8 @@ http://pear.php.net/dtd/package-2.0.xsd">
  </stability>
  <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
  <notes>
-  * Fixed test driver to prevent overwriting folder data when
-    authenticating twice.
+  * Fixed list driver to prevent overwriting folder data when
+    authenticating twice (relevant for testing).
  </notes>
  <contents>
   <dir name="/">

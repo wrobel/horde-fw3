@@ -53,6 +53,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
   * Fixed addrsForIdOrMail to return only lowercased mail addresses
     (kolab/issue3426,
     https://www.intevation.de/roundup/kolab/issue3426)
+  * Fixed testing problems with the test IMAP driver.
  </notes>
  <contents>
   <dir name="/">
