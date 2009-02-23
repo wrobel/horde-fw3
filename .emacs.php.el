@@ -3,6 +3,8 @@
 (setq liblocs (concat ":"
 		      current-dir
 		      "lib:"
+		      current-dir
+		      "../horde-release/horde-webmail/pear:"
                       "/usr/share/php5:"
                       "/usr/share/php\""))
 
