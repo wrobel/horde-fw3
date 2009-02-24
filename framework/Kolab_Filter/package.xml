@@ -50,6 +50,8 @@ http://pear.php.net/dtd/package-2.0.xsd">
     https://www.intevation.de/roundup/kolab/issue3364)
   * Added string translations (kolab/issue2499,
     https://www.intevation.de/roundup/kolab/issue2499)
+  * Fixed the Outlook iCal handler (kolab/issue3192,
+    https://www.intevation.de/roundup/kolab/issue3192)
  </notes>
  <contents>
   <dir name="/">

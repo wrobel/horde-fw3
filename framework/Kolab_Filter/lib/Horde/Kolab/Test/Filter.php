@@ -59,6 +59,7 @@ class Horde_Kolab_Test_Filter extends Horde_Kolab_Test_Storage
         $conf['kolab']['filter']['calendar_id'] = 'calendar';
         $conf['kolab']['filter']['calendar_pass'] = 'calendar';
         $conf['kolab']['filter']['lmtp_host'] = 'imap.example.org';
+	$conf['kolab']['filter']['testing'] = true;
 
         $result = $this->auth->authenticate('wrobel', array('password' => 'none'));
         $this->assertNoError($result);

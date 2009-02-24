@@ -53,13 +53,13 @@ class Horde_Kolab_Filter_Content extends Horde_Kolab_Filter_Base
         if (isset($conf['kolab']['filter']['verify_from_header'])) {
             $verify_from_header = $conf['kolab']['filter']['verify_from_header'];
         } else {
-            $verify_from_header = true;
+            $verify_from_header = false;
         }
 
         if (isset($conf['kolab']['filter']['allow_sender_header'])) {
             $allow_sender_header = $conf['kolab']['filter']['allow_sender_header'];
         } else {
-            $allow_sender_header = true;
+            $allow_sender_header = false;
         }
 
         if (isset($conf['kolab']['filter']['allow_outlook_ical_forward'])) {
@@ -173,7 +173,7 @@ class Horde_Kolab_Filter_Content extends Horde_Kolab_Filter_Base
                                                       $this->_sender,
                                                       $this->_recipients,
                                                       $from, $subject,
-                                                      $this->_tmpfname);
+                                                      $this->_tmpfile);
                 if (is_a($rc, 'PEAR_Error')) {
                     return $rc;
                 } else if ($rc === true) {
@@ -325,7 +325,7 @@ class Horde_Kolab_Filter_Content extends Horde_Kolab_Filter_Base
         if (isset($conf['kolab']['filter']['reject_forged_from_header'])) {
             $reject_forged_from_header = $conf['kolab']['filter']['reject_forged_from_header'];
         } else {
-            $reject_forged_from_header = true;
+            $reject_forged_from_header = false;
         }
 
         if (isset($conf['kolab']['filter']['kolabhosts'])) {

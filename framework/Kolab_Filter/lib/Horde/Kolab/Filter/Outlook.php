@@ -181,7 +181,7 @@ class Kolab_Filter_Outlook
 
         // Read in message text
         $requestText = '';
-        $handle = @fopen( $tmpfname, "r" );
+        $handle = @fopen($tmpfname, "r");
         if ($handle === false) {
             $msg = $php_errormsg;
             return PEAR::raiseError(sprintf("Error: Could not open %s for writing: %s",
@@ -235,6 +235,21 @@ class Kolab_Filter_Outlook
             $headerArray = $toppart->encode($msg_headers, $toppart->getCharset());
         }
 
+        global $conf;
+
+        /**
+         * FIXME: Another hack for the testing mode. Should probably use the
+         * Kolab_Filter_Transport class in the _inject method.
+         */
+        if (empty($conf['kolab']['filter']['testing'])) {
+            return $this->_inject();
+        } else {
+            return true;
+        }
+    }
+
+    function _inject(&$toppart, $recipients, $headerArray)
+    {
         // Inject message back into postfix
         require_once 'Mail.php';
         $mailer = &Mail::factory('SMTP', array('auth' => false, 'port' => 10026 ));

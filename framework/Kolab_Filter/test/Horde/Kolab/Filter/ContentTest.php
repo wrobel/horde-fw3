@@ -122,6 +122,12 @@ class Horde_Kolab_Filter_ContentTest extends Horde_Kolab_Test_Filter
                   dirname(__FILE__) . '/fixtures/validation.ret',
                   'me@example.org', 'remote.example.org', 'else3@example.org', 'you@example.org', 'example.org',
                   array('error' =>'Invalid From: header. else3@example.org looks like a forged sender')),
+            /**
+             * Test forwarding an invitation
+             */
+            array(dirname(__FILE__) . '/fixtures/invitation_forward.eml',
+                  dirname(__FILE__) . '/fixtures/null.ret',
+                  'me@example.org', '10.0.2.1', 'me@example.org', 'you@example.org', 'example.org'),
         );
     }
 
