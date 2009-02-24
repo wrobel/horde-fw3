@@ -1208,8 +1208,6 @@ class Kolab_Folder {
      */
     function trigger($name = null)
     {
-        global $conf;
-
         $type =  $this->getType();
         if (is_a($type, 'PEAR_Error')) {
             return $type;
@@ -1252,6 +1250,12 @@ class Kolab_Folder {
      */
     function triggerUrl($url)
     {
+        global $conf;
+
+        if (!empty($conf['kolab']['no_triggering'])) {
+            return true;
+        }
+
         $options['method'] = 'GET';
         $options['timeout'] = 5;
         $options['allowRedirects'] = true;

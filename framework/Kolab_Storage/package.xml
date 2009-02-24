@@ -48,6 +48,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
  <notes>
   * Fixed list driver to prevent overwriting folder data when
     authenticating twice (relevant for testing).
+  * Allow to supress triggering (relevant for testing).
  </notes>
  <contents>
   <dir name="/">

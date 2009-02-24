@@ -208,6 +208,9 @@ class Horde_Kolab_Test_Storage extends Horde_Kolab_Test_Server
 /** Ensure we still use the LDAP test driver */
 \$conf['kolab']['server']['driver'] = 'test';
 
+/** Ensure that we do not trigger on folder update */
+\$conf['kolab']['no_triggering'] = true;
+
 /** Storage location for the free/busy system */
 \$conf['fb']['cache_dir']             = '/tmp';
 \$conf['kolab']['freebusy']['server'] = 'https://fb.example.org/freebusy';
