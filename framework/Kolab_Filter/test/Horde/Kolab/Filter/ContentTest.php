@@ -2,7 +2,7 @@
 /**
  * Test the content filter class within the Kolab filter implementation.
  *
- * $Horde: framework/Kolab_Filter/test/Horde/Kolab/Filter/ContentTest.php,v 1.6.2.1 2009/02/20 22:37:17 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/test/Horde/Kolab/Filter/ContentTest.php,v 1.6.2.2 2009/02/24 11:17:40 wrobel Exp $
  *
  * @package Horde_Kolab_Filter
  */
@@ -18,7 +18,7 @@ require_once 'Horde/Kolab/Filter/Content.php';
 /**
  * Test the content filter.
  *
- * $Horde: framework/Kolab_Filter/test/Horde/Kolab/Filter/ContentTest.php,v 1.6.2.1 2009/02/20 22:37:17 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/test/Horde/Kolab/Filter/ContentTest.php,v 1.6.2.2 2009/02/24 11:17:40 wrobel Exp $
  *
  * Copyright 2008 Klarälvdalens Datakonsult AB
  *
