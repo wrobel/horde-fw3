@@ -519,7 +519,7 @@ class Horde_Kolab_Server_ldap extends Horde_Kolab_Server {
 
             $result = array();
             foreach ($attrs as $attr) {
-                if ($entry[$attr]['count'] > 0) {
+                if (isset($entry[$attr]) && $entry[$attr]['count'] > 0) {
                     unset($entry[$attr]['count']);
                     $result[$attr] = $entry[$attr];
                 }
@@ -728,7 +728,11 @@ class Horde_Kolab_Server_ldap extends Horde_Kolab_Server {
         if (is_a($result, 'PEAR_Error')) {
             return $result;
         }
-        $addrs = array_merge((array) $result['mail'], (array) $result['alias']);
+        if (isset($result['alias'])) {
+            $addrs = array_merge((array) $result['mail'], (array) $result['alias']);
+        } else {
+            $addrs = $result['mail'];
+        }
         $mail  = $result['mail'][0];
 
         $filter = '(&(objectClass=kolabInetOrgPerson)(kolabDelegate='
