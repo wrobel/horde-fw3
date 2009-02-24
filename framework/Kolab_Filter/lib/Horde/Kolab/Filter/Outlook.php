@@ -242,7 +242,7 @@ class Kolab_Filter_Outlook
          * Kolab_Filter_Transport class in the _inject method.
          */
         if (empty($conf['kolab']['filter']['testing'])) {
-            return $this->_inject();
+            return Kolab_Filter_Outlook::_inject($toppart, $recipients, $headerArray);
         } else {
             return true;
         }
