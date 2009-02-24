@@ -2,7 +2,7 @@
 /**
  * The driver for accessing the Kolab user database stored in LDAP.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php,v 1.2.2.9 2009/02/23 23:02:30 wrobel Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php,v 1.2.2.10 2009/02/24 07:39:47 wrobel Exp $
  *
  * PHP version 4
  *
@@ -20,7 +20,7 @@ require_once 'Horde/LDAP.php';
  * This class provides methods to deal with Kolab objects stored in
  * the standard Kolab LDAP db.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php,v 1.2.2.9 2009/02/23 23:02:30 wrobel Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php,v 1.2.2.10 2009/02/24 07:39:47 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
