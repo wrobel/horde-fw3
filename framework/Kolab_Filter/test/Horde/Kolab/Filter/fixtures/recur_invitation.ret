@@ -1,5 +1,5 @@
-Mail from sender: test@example.org
-Mail to recipient: wrobel@example.org
+Mail from sender: wrobel@example.org
+Mail to recipient: else@example.org
 Received: from localhost (example.org [127.0.0.1])
 	by example.org (Postfix) with ESMTP id 4E36AC2E001A
 	for <wrobel@example.org>; Fri, 26 Sep 2008 10:54:08 +0200 (CEST)

@@ -196,8 +196,8 @@ class Horde_Kolab_Test_Filter extends Horde_Kolab_Test_Storage
                      'mail' => 'else@example.org',
                      'uid' => 'else',
                      'userPassword' => 'else',
-                     'kolabHomeServer' => 'home.example.org',
-                     'kolabImapServer' => 'home.example.org',
+                     'kolabHomeServer' => 'imap.example.org',
+                     'kolabImapServer' => 'imap.example.org',
                      'kolabFreeBusyServer' => 'https://fb.example.org/freebusy',
                      KOLAB_ATTR_KOLABDELEGATE => 'me@example.org',);
     }

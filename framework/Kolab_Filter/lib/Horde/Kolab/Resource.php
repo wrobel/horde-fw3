@@ -98,6 +98,9 @@ class Kolab_Resource
             $actions->code = OUT_LOG | EX_UNAVAILABLE;
             return $actions;
         }
+        if ($actions === false) {
+            $actions = array(RM_ACT_MANUAL);
+        }
 
         $policies = array();
         $defaultpolicy = false;

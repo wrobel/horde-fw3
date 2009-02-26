@@ -122,4 +122,23 @@ class Horde_Kolab_Filter_ResourceTest extends Horde_Kolab_Test_Filter
         $result = $data->deleteAll();
         $this->assertNoError($result);
     }
+
+    /**
+     * Test invitation when no default has been given.
+     */
+    public function testRecurrenceNodefault()
+    {
+        $GLOBALS['KOLAB_FILTER_TESTING'] = &new Horde_iCalendar_vfreebusy();
+        $GLOBALS['KOLAB_FILTER_TESTING']->setAttribute('DTSTART', Horde_iCalendar::_parseDateTime('20080926T000000Z'));
+        $GLOBALS['KOLAB_FILTER_TESTING']->setAttribute('DTEND', Horde_iCalendar::_parseDateTime('20081126T000000Z'));
+
+        $params = array('unmodified_content' => true,
+                        'incoming' => true);
+
+        $this->sendFixture(dirname(__FILE__) . '/fixtures/recur_invitation.eml',
+                           dirname(__FILE__) . '/fixtures/recur_invitation.ret',
+                           '', '', 'wrobel@example.org', 'else@example.org', 
+                           'home.example.org', $params);
+    }
+
 }
