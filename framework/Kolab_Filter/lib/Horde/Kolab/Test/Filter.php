@@ -59,6 +59,8 @@ class Horde_Kolab_Test_Filter extends Horde_Kolab_Test_Storage
         $conf['kolab']['filter']['calendar_id'] = 'calendar';
         $conf['kolab']['filter']['calendar_pass'] = 'calendar';
         $conf['kolab']['filter']['lmtp_host'] = 'imap.example.org';
+        $conf['kolab']['filter']['simple_locks'] = true;
+        $conf['kolab']['filter']['simple_locks_timeout'] = 3;
 
         $result = $this->auth->authenticate('wrobel', array('password' => 'none'));
         $this->assertNoError($result);
