@@ -416,22 +416,33 @@ class Kolab_Resource
             }
         }
 
-        $is_update = false;
-        $ignore = array();
+        $is_update  = false;
+        $imap_error = false;
+        $ignore     = array();
 
         $folder = $this->_imapConnect($id);
         if (is_a($folder, 'PEAR_Error')) {
-            return $folder;
+            $imap_error = &$folder;
         }
-        if (!$folder->exists()) {
-            return PEAR::raiseError('Error, could not open calendar folder!',
+        if (!is_a($imap_error, 'PEAR_Error') && !$folder->exists()) {
+            $imap_error = &PEAR::raiseError('Error, could not open calendar folder!',
                                     OUT_LOG | EX_TEMPFAIL);
         }
 
-        $data = $folder->getData();
-        if (is_a($data, 'PEAR_Error')) {
-            $result->code = OUT_LOG | EX_UNAVAILABLE;
-            return $data;
+        if (!is_a($imap_error, 'PEAR_Error')) {
+            $data = $folder->getData();
+            if (is_a($data, 'PEAR_Error')) {
+                $imap_error = &$data;
+            }
+        }
+
+        if (is_a($imap_error, 'PEAR_Error')) {
+            Horde::logMessage(sprintf('Failed accessing IMAP calendar: %s',
+                                      $folder->getMessage()),
+                              __FILE__, __LINE__, PEAR_LOG_ERR);
+            if ($action == RM_ACT_MANUAL_IF_CONFLICTS) {
+                return true;
+            }
         }
 
         switch ($method) {
@@ -442,12 +453,12 @@ class Kolab_Resource
                 break;
             }
 
-            if ($data->objectUidExists($uid)) {
+            if (is_a($imap_error, 'PEAR_Error') || !$data->objectUidExists($uid)) {
+                $old_uid = null;
+            } else {
                 $old_uid = $uid;
                 $ignore[] = $uid;
                 $is_update = true;
-            } else {
-                $old_uid = null;
             }
 
             /** Generate the Kolab object */
@@ -556,6 +567,14 @@ class Kolab_Resource
                 }
             }
 
+            if (is_a($imap_error, 'PEAR_Error')) {
+                Horde::logMessage('Could not access users calendar; rejecting',
+                                  __FILE__, __LINE__, PEAR_LOG_INFO);
+                $this->sendITipReply($cn, $id, $itip, RM_ITIP_DECLINE,
+                                     $organiser, $uid, $is_update);
+                return false;
+            }
+
             // At this point there was either no conflict or RM_ACT_ALWAYS_ACCEPT
             // was specified; either way we add the new event & send an 'ACCEPT'
             // iTip reply
@@ -616,7 +635,10 @@ class Kolab_Resource
              */
             $summary = String::convertCharset($summary, 'utf-8', 'iso-8859-1');
 
-            if (!$data->objectUidExists($uid)) {
+            if (is_a($imap_error, 'PEAR_Error')) {
+                $body = sprintf(_("Unable to access %s's calendar:"), $resource) . "\n\n" . $summary;
+                $subject = sprintf(_("Error processing \"%s\""), $summary);
+            } else if (!$data->objectUidExists($uid)) {
                 Horde::logMessage(sprintf('Canceled event %s is not present in %s\'s calendar',
                                           $uid, $resource),
                                   __FILE__, __LINE__, PEAR_LOG_WARNING);
@@ -705,12 +727,6 @@ class Kolab_Resource
                               __FILE__, __LINE__, PEAR_LOG_INFO);
             return true;
         }
-
-        // Pass the message through to the group's mailbox
-        Horde::logMessage(sprintf('Passing through %s method to %s',
-                                  $method, $resource),
-                          __FILE__, __LINE__, PEAR_LOG_INFO);
-        return true;
     }
 
     /**
