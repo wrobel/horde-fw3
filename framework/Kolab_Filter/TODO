@@ -23,13 +23,6 @@
   rejects vaild one))
   https://www.intevation.de/roundup/kolab/issue954
 
-- kolab/issue1336 (Resource booking fails, if TRANSP:TRANSPARENT in
-  the invitation)
-  https://www.intevation.de/roundup/kolab/issue1336
-
-- kolab/issue1382 (resmgr accepts concurrent overlapping invitations)
-  https://www.intevation.de/roundup/kolab/issue1382
-
 - kolab/issue2833 (Mail filter setting "Always reject" should reject
   instead of bounce)
   https://www.intevation.de/roundup/kolab/issue2833
@@ -37,13 +30,5 @@
 - kolab/issue3287 (Document the Kolab_Filter policies)
   https://www.intevation.de/roundup/kolab/issue3287
 
-- kolab/issue3289 (resmgr dies when it should accept, but has not
-  Calender folder access)
-  https://www.intevation.de/roundup/kolab/issue3289
-
 - kolab/issue3347 (recipient delimiter ignored by kolabmailboxfilter)
   https://www.intevation.de/roundup/kolab/issue3347
-
-- kolab/issue3441 (Resources with policy "always accept" do not work if domain != kolabhost)
-  https://www.intevation.de/roundup/kolab/issue3441
-

@@ -39,6 +39,10 @@ http://pear.php.net/dtd/package-2.0.xsd">
  </stability>
  <license uri="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">LGPL</license>
  <notes>
+  * Resources with policy "always accept" do not work if domain != kolabhost
+    (kolab/issue3441, https://www.intevation.de/roundup/kolab/issue3441)
+  * Resource booking fails if TRANSP:TRANSPARENT in the invitation
+    (kolab/issue1336, https://www.intevation.de/roundup/kolab/issue1336)
   * Implemented simple resource locking (kolab/issue1382,
     https://www.intevation.de/roundup/kolab/issue1382)
   * Kolab_Filter dies when it should accept but has no Calender folder access

@@ -249,9 +249,6 @@ class Kolab_Resource
         $object['body'] = $itip->getAttributeDefault('DESCRIPTION', '');
         $object['start-date'] = $itip->getAttributeDefault('DTSTART', '');
         $object['end-date'] = $itip->getAttributeDefault('DTEND', '');
-        if ($itip->getAttributeDefault('TRANSP', 'OPAQUE') == 'TRANSPARENT') {
-            $object['show-time-as'] = $itip->getAttributeDefault('DTEND', '');
-        }
 
         $attendees = $itip->getAttribute('ATTENDEE');
         if (!is_a( $attendees, 'PEAR_Error')) {
