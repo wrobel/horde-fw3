@@ -23,7 +23,7 @@ include_once 'Horde/Form/Renderer.php';
  * configuration of Horde applications, writing conf.php files from
  * conf.xml source files, generating user interfaces, etc.
  *
- * $Horde: framework/Horde/Horde/Config.php,v 1.80.2.39 2009/02/13 05:45:18 chuck Exp $
+ * $Horde: framework/Horde/Horde/Config.php,v 1.80.2.40 2009/02/25 05:35:42 chuck Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -658,7 +658,6 @@ class Horde_Config {
             'required' => false,
             'desc' => 'Certification Authority to use for SSL connections',
             'default' => $this->_default($ctx . '|ca', ''));
-
         $oci8_fields = array(
             'persistent' => $persistent,
             'username' => $username,

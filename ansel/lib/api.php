@@ -2,7 +2,7 @@
 /**
  * Ansel external API interface.
  *
- * $Horde: ansel/lib/api.php,v 1.122.2.7 2009/01/06 15:22:28 jan Exp $
+ * $Horde: ansel/lib/api.php,v 1.122.2.9 2009/03/02 23:31:16 mrubinsk Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *
@@ -51,7 +51,10 @@ $_services['saveImage'] = array(
                     'gallery_id'   => 'string',
                     'image'        => '{urn:horde}hashHash',
                     'default'      => 'boolean',
-                    'gallery_data' => '{urn:horde}hashHash'),
+                    'gallery_data' => '{urn:horde}hashHash',
+                    'encoding'     => 'string',
+                    'slug'         => 'string',
+                    'compression'  => 'string'),
     'type' => '{urn:horde}stringArray'
 );
 
@@ -64,35 +67,43 @@ $_services['createGallery'] = array(
 
 $_services['removeImage'] = array(
     'args' => array('app'        => 'string',
-                    'gallery_id' => 'string',
-                    'image_id'   => 'string'),
+                    'gallery_id' => 'integer',
+                    'image_id'   => 'integer'),
     'type' => 'int'
 );
 
 $_services['removeGallery'] = array(
     'args' => array('app'        => 'string',
-                    'gallery_id' => 'string'),
+                    'gallery_id' => 'integer'),
     'type' => 'int'
 );
 
 $_services['getImageUrl'] = array(
     'args' => array('app'        => 'string',
-                    'image_id'   => 'string',
+                    'image_id'   => 'integer',
                     'view'       => 'string',
                     'full'       => 'boolean',
                     'style'      => 'string'),
     'type' => 'string'
 );
 
+$_services['getImageContent'] = array(
+    'args' => array('image_id'   => 'integer',
+                    'view'       => 'string',
+                    'style'      => 'string',
+                    'app'        => 'string'),
+    'type' => 'string'
+);
+
 $_services['count'] = array(
     'args' => array('app'        => 'string',
-                    'gallery_id' => 'string'),
+                    'gallery_id' => 'integer'),
     'type' => 'int'
 );
 
 $_services['getDefaultImage'] = array(
     'args' => array('app'        => 'string',
-                    'gallery_id' => 'string',
+                    'gallery_id' => 'integer',
                     'style'      => 'string'),
     'type' => 'string'
 );
@@ -125,7 +136,7 @@ $_services['selectGalleries'] = array(
 
 $_services['listImages'] = array(
     'args' => array('app'        => 'string',
-                    'gallery_id' => 'string',
+                    'gallery_id' => 'integer',
                     'perm'       => 'integer',
                     'view'       => 'string',
                     'full'       => 'boolean',
@@ -181,6 +192,10 @@ $_services['renderView'] = array(
                     'view' => 'string'),
     'type' => 'string'
 );
+
+$_services['getGalleryStyles'] = array(
+    'args' => array(),
+    'type' => '{urn:horde}hash');
 
 /**
  * Returns a list of available permissions.
@@ -429,29 +444,44 @@ function _ansel_hasComments()
     }
 }
 
-function _getImageData($data, $encoding = 'none', $compression = 'none')
+/**
+ * Returns decoded image data
+ *
+ * @param string $data         The id of the image.
+ * @param string $encoding     The encoding type for the image data.
+ *                             (none, base64, or binhex)
+ * @param string $compression  The compression type for the image data.
+ *                             (none, gzip, or lzf)
+ * @param boolean $upload      Process direction (true of encode/compress or false if decode/decompress)
+ *
+ * @return string  The image path.
+ */
+function _getImageData($data, $encoding = 'none', $compression = 'none', $upload = true)
 {
-    switch($encoding) {
+    switch ($encoding) {
     case 'base64':
-        $data = base64_decode($data);
+        $data = $upload ? base64_decode($data) : base64_encode($data);
         break;
+
     case 'binhex':
-        $data = pack('H*', $data);
+        $data = $upload ? pack('H*', $data) : unpack('H*', $data);
     }
 
-    switch($compression) {
-        case 'gzip':
-            if (Util::loadExtension('zlib')) {
-                return gzuncompress($data);
-            }
-            break;
-        case 'lzf':
-            if (Util::loadExtension('lzf')) {
-                return lzf_decompress($data);
-            }
-            break;
-        default:
-            return $data;
+    switch ($compression) {
+    case 'gzip':
+        if (Util::loadExtension('zlib')) {
+            return $upload ? gzuncompress($data) : gzcompress($data);
+        }
+        break;
+
+    case 'lzf':
+        if (Util::loadExtension('lzf')) {
+            return $upload ? lzf_decompress($data) : lzf_compress($data);
+        }
+        break;
+
+    default:
+        return $data;
     }
 }
 
@@ -470,6 +500,8 @@ function _getImageData($data, $encoding = 'none', $compression = 'none')
  *                             (none, base64, or binhex)
  * @param string $slug         Use gallery slug instead of id. (Pass '0' or null
  *                             to gallery_id parameter).
+ * @param string $compression  The compression type for the image data.
+ *                             (none, gzip, or lzf)
  *
  * @return mixed  An array of image/gallery data || PEAR_Error
  */
@@ -487,17 +519,17 @@ function _ansel_saveImage($app = null, $gallery_id, $image, $default = false,
         $GLOBALS['ansel_storage'] = new Ansel_Storage($app);
     }
 
-    Horde::logMessage(sprintf("Receiving image %s in _ansel_saveImage() with a raw filesize of %i", $image['filename'], strlen($image['data'])),
-         __FILE__, __LINE__, PEAR_LOG_DEBUG);
-    Horde::logMessage("Receiving image in _ansel_saveImage()", __FILE__, __LINE__, PEAR_LOG_DEBUG);
     if (isset($image['filename']) &&
         isset($image['description']) &&
         isset($image['data']) &&
         isset($image['type'])) {
+        Horde::logMessage(sprintf("Receiving image %s in _ansel_saveImage() with a raw filesize of %i", $image['filename'], strlen($image['data'])), __FILE__, __LINE__, PEAR_LOG_DEBUG);
         $image_data = array('image_filename' => $image['filename'],
                             'image_caption' => $image['description'],
                             'image_type' => $image['type'],
-                            'data' => _getImageData($image['data'], $encoding, $compression));
+                            'data' => _getImageData($image['data'], $encoding, $compression, true));
+    } else {
+        Horde::logMessage(sprintf("Receiving image %s in _ansel_saveImage() with a raw filesize of %i", $image['file'], filesize($image['file'])), __FILE__, __LINE__, PEAR_LOG_DEBUG);
     }
 
     if (is_null($image_data) && getimagesize($image['file']) === false) {
@@ -661,8 +693,10 @@ function _ansel_removeGallery($app = null, $gallery_id)
     }
 
     $gallery = $GLOBALS['ansel_storage']->getGallery($gallery_id);
-    if (is_a($gallery, 'PEAR_Error') ||
-        !$gallery->hasPermission(Auth::getAuth(), PERMS_DELETE)) {
+    if (is_a($gallery, 'PEAR_Error')) {
+        return PEAR::raiseError(sprintf(_("Access denied deleting gallery \"%s\"."),
+                                        $gallery->getMessage()));
+    } elseif (!$gallery->hasPermission(Auth::getAuth(), PERMS_DELETE)) {
         return PEAR::raiseError(sprintf(_("Access denied deleting gallery \"%s\"."),
                                         $gallery->get('name')));
     } else {
@@ -772,6 +806,74 @@ function _ansel_getImageUrl($app = null, $image_id, $view = 'screen',
     }
 
     return Ansel::getImageUrl($image_id, $view, $full, $style);
+}
+
+/**
+ * Returns image file content.
+ *
+ * @param integer $image_id  The id of the image.
+ * @param string $view       The view ('screen', 'thumb', 'full', etc) to show.
+ * @param string $style      Force use of this gallery style.
+ * @param integer $app       Application used.
+ * @param string $encoding     The encoding type for the image data.
+ *                             (none, base64, or binhex)
+ * @param string $compression  The compression type for the image data.
+ *                             (none, gzip, or lzf)
+ *
+ * @return string  The image path.
+ */
+function _ansel_getImageContent($image_id, $view = 'screen', $style = null,
+                                $app = null, $encoding = null, $compression = 'none')
+{
+    require_once dirname(__FILE__) . '/base.php';
+
+    /* If no app is given use Ansel's own gallery which is initialized in
+       base.php */
+    if (!is_null($app)) {
+        $GLOBALS['ansel_storage'] = new Ansel_Storage($app);
+    }
+
+    // Get image
+    $image = $GLOBALS['ansel_storage']->getImage($image_id);
+    if (is_a($image, 'PEAR_Error')) {
+        return $image;
+    }
+
+    // Get gallery
+    $gallery = $GLOBALS['ansel_storage']->getGallery($image->gallery);
+    if (is_a($gallery, 'PEAR_Error')) {
+        return $gallery;
+    }
+
+    // Check age and password
+    if (!$gallery->hasPasswd() || !$gallery->isOldEnough()) {
+        return PEAR::raiseError(_("Locked galleries are not viewable via the api."));
+    }
+
+    if ($view == 'full') {
+        // Check permissions for full view
+        if (!$gallery->canDownload()) {
+            return PEAR::RaiseError(sprintf(_("Access denied downloading photos from \"%s\"."), $gallery->get('name')));
+        }
+
+        $data = $GLOBALS['ansel_vfs']->read($image->getVFSPath('full'),
+                                            $image->getVFSName('full'));
+    } else {
+        // Load View
+        $result = $image->load($view, $style);
+        if (is_a($result, 'PEAR_Error')) {
+            return $result;
+        }
+
+        // Return image content
+        $data = $image->_image->raw();
+    }
+
+    if (is_a($data, 'PEAR_Error')) {
+        return $data;
+    }
+
+    return _getImageData($data, $encoding, $compression, false);
 }
 
 /**
@@ -1158,6 +1260,18 @@ function _ansel_galleryExists($app, $gallery_id = null, $slug = '')
     }
 
     return $GLOBALS['ansel_storage']->galleryExists($gallery_id, $slug);
+}
+
+/**
+ * Get a list of all configured styles.
+ *
+ * @return hash of style definitions.
+ */
+function _ansel_getGalleryStyles()
+{
+    require_once dirname(__FILE__) . '/base.php';
+
+    return Ansel::getAvailableStyles();
 }
 
 /**

@@ -47,7 +47,7 @@
  * See the enclosed file COPYING for license information (LGPL). If you did
  * not receive this file, see http://opensource.org/licenses/lgpl-license.php.
  *
- *  $Horde: framework/Lock/Lock/sql.php,v 1.8.2.7 2009/02/13 05:45:18 chuck Exp $
+ *  $Horde: framework/Lock/Lock/sql.php,v 1.8.2.8 2009/02/25 05:35:42 chuck Exp $
  *
  * @author  Ben Klang <ben@alkaloid.net>
  * @since   Horde 3.2
@@ -403,7 +403,7 @@ class Horde_Lock_sql extends Horde_Lock
             $this->_db = &DB::connect(
                 $params,
                 array('persistent' => !empty($params['persistent']),
-                      'ssl' => !empty($this->_params['ssl']))
+                      'ssl' => !empty($params['ssl']))
             );
             if (is_a($this->_db, 'PEAR_Error')) {
                 Horde::logMessage($result, __FILE__, __LINE__, PEAR_LOG_ERR);

@@ -2,7 +2,7 @@
 /**
  * @package IMP
  *
- * $Horde: imp/lib/Crypt/PGP.php,v 1.90.2.24 2009/02/10 18:47:41 slusarz Exp $
+ * $Horde: imp/lib/Crypt/PGP.php,v 1.90.2.25 2009/03/03 21:26:24 slusarz Exp $
  */
 
 /** Horde_Crypt_pgp */
@@ -215,6 +215,12 @@ class IMP_PGP extends Horde_Crypt_pgp {
         /* Try retrieving via a PGP public keyserver. */
         if ($server && is_a($result, 'PEAR_Error')) {
             $result = $this->getFromPublicKeyserver($fingerprint, $address);
+
+            /* If there is a cache driver configured and a cache object exists,
+             * store the public key in the cache. */
+            if (is_object($cache) && !is_a($result, 'PEAR_Error')) {
+                $cache->set("PGPpublicKey_" . $address . $fingerprint, $result, 3600);
+            }
         }
 
         /* Return now, if no public key found at all. */
@@ -227,12 +233,6 @@ class IMP_PGP extends Horde_Crypt_pgp {
          * if the keys are different. */
         if (is_array($result)) {
             reset($result);
-        }
-
-        /* If there is a cache driver configured and a cache object exists,
-         * store the public key in the cache. */
-        if (is_object($cache)) {
-            $cache->set("PGPpublicKey_" . $address . $fingerprint, $result, 3600);
         }
 
         return $result;

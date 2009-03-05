@@ -31,7 +31,7 @@
  * The table structure for the DataTree system is in
  * scripts/sql/horde_datatree.sql.
  *
- * $Horde: framework/DataTree/DataTree/sql.php,v 1.156.2.43 2009/02/13 05:45:17 chuck Exp $
+ * $Horde: framework/DataTree/DataTree/sql.php,v 1.156.2.44 2009/02/25 05:35:42 chuck Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -1897,7 +1897,7 @@ class DataTree_sql extends DataTree {
             $params = array_merge($this->_params, $this->_params['read']);
             $this->_db = DB::connect($params,
                                      array('persistent' => !empty($params['persistent']),
-                                           'ssl' => !empty($this->_params['ssl'])));
+                                           'ssl' => !empty($params['ssl'])));
             if (is_a($this->_db, 'PEAR_Error')) {
                 return $this->_db;
             }

@@ -29,6 +29,7 @@ SEQUENCE:2
 STATUS:CONFIRMED
 SUMMARY:Bug Triage
 TRANSP:OPAQUE
+CATEGORIES:foo,bar,fuz buz,blah\, blah
 END:VEVENT
 END:VCALENDAR
 VCARD;
@@ -300,6 +301,21 @@ Not been invited ? Want to attend ? Let us know and we\'ll add you!',
     'values' => 
     array (
       0 => 'OPAQUE',
+    ),
+  ),
+  14 => 
+  array (
+    'name' => 'CATEGORIES',
+    'params' => 
+    array (
+    ),
+    'value' => 'foo,bar,fuz buz,blah, blah',
+    'values' => 
+    array (
+      0 => 'foo',
+      1 => 'bar',
+      2 => 'fuz buz',
+      3 => 'blah, blah',
     ),
   ),
 )

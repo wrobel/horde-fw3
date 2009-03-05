@@ -7,7 +7,7 @@
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.
  *
- * $Horde: framework/Alarm/Alarm/sql.php,v 1.11.2.5 2009/02/13 05:45:16 chuck Exp $
+ * $Horde: framework/Alarm/Alarm/sql.php,v 1.11.2.6 2009/02/25 05:35:41 chuck Exp $
  */
 
 /**
@@ -367,7 +367,7 @@ class Horde_Alarm_sql extends Horde_Alarm {
             $params = array_merge($this->_params, $this->_params['read']);
             $this->_db = &DB::connect($params,
                                       array('persistent' => !empty($params['persistent']),
-                                            'ssl' => !empty($this->_params['ssl'])));
+                                            'ssl' => !empty($params['ssl'])));
             if (is_a($this->_db, 'PEAR_Error')) {
                 return $this->_db;
             }

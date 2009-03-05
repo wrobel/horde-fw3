@@ -49,7 +49,7 @@
  * The table structure for the Auth system is in
  * scripts/sql/horde_users.sql.
  *
- * $Horde: framework/Auth/Auth/sql.php,v 1.69.10.24 2009/02/13 05:45:17 chuck Exp $
+ * $Horde: framework/Auth/Auth/sql.php,v 1.69.10.25 2009/02/25 05:35:41 chuck Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -482,7 +482,7 @@ class Auth_sql extends Auth {
             $params = array_merge($this->_params, $this->_params['read']);
             $this->_db = &DB::connect($params,
                                       array('persistent' => !empty($params['persistent']),
-                                            'ssl' => !empty($this->_params['ssl'])));
+                                            'ssl' => !empty($params['ssl'])));
             if (is_a($this->_db, 'PEAR_Error')) {
                 return $this->_db;
             }

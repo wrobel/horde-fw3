@@ -45,7 +45,7 @@
  * );
  * </pre>
  *
- * $Horde: framework/Cache/Cache/sql.php,v 1.12.2.12 2009/02/13 05:45:17 chuck Exp $
+ * $Horde: framework/Cache/Cache/sql.php,v 1.12.2.13 2009/02/25 05:35:42 chuck Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *
@@ -354,7 +354,7 @@ class Horde_Cache_sql extends Horde_Cache {
             $this->_db = &DB::connect(
                 $params,
                 array('persistent' => !empty($params['persistent']),
-                      'ssl' => !empty($this->_params['ssl']))
+                      'ssl' => !empty($params['ssl']))
             );
             if (is_a($this->_db, 'PEAR_Error')) {
                 Horde::logMessage($result, __FILE__, __LINE__, PEAR_LOG_ERR);
