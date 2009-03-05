@@ -2,6 +2,8 @@
 v1.1-cvs
 --------
 
+[mms] Navigation link now uses description from backends.php (Request #8037,
+      Thomas Reifferscheid <thomas@reifferscheid.org>).
 [mms] Fix autologin when switching backends on login page (Bug #7892,
       horde@smartsector.hu).
 

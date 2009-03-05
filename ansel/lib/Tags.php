@@ -2,7 +2,7 @@
 /**
  * Classes for dealing with tags within Ansel
  *
- * $Horde: ansel/lib/Tags.php,v 1.87.2.3 2009/01/06 15:22:28 jan Exp $
+ * $Horde: ansel/lib/Tags.php,v 1.87.2.4 2009/03/02 23:02:35 mrubinsk Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *
@@ -123,327 +123,321 @@ class Ansel_Tags {
      *
      * @return mixed  An array containing tag_name, and total | PEAR_Error
      */
-     function listTagInfo($tags = null, $limit = 500)
-     {
-         global $conf;
-         // Only return the full list if $tags is omitted, not if
-         // an empty array is passed
-         if (is_array($tags) && count($tags) == 0) {
-             return array();
-         }
-         if (isset($GLOBALS['cache'])) {
-             $cache_key = 'ansel_taginfo_' . (!is_null($tags) ? md5(serialize($tags) . $limit) : $limit);
-             $cvalue = $GLOBALS['cache']->get($cache_key, $conf['cache']['default_lifetime']);
-             if ($cvalue) {
-                 return unserialize($cvalue);
-             }
-         }
+    function listTagInfo($tags = null, $limit = 500)
+    {
+        global $conf;
+        // Only return the full list if $tags is omitted, not if
+        // an empty array is passed
+        if (is_array($tags) && count($tags) == 0) {
+            return array();
+        }
+        if (isset($GLOBALS['cache'])) {
+            $cache_key = 'ansel_taginfo_' . (!is_null($tags) ? md5(serialize($tags) . $limit) : $limit);
+            $cvalue = $GLOBALS['cache']->get($cache_key, $conf['cache']['default_lifetime']);
+            if ($cvalue) {
+                return unserialize($cvalue);
+            }
+        }
 
-         $sql = 'SELECT tn.tag_id, tag_name, COUNT(tag_name) as total FROM ansel_tags as tn INNER JOIN (SELECT tag_id FROM ansel_galleries_tags UNION ALL SELECT tag_id FROM ansel_images_tags) as t ON t.tag_id = tn.tag_id ';
-         if (!is_null($tags) && is_array($tags)) {
-             $sql .= 'WHERE tn.tag_id IN (' . implode(',', $tags) . ') ';
-         }
-         $sql .= 'GROUP BY tn.tag_id, tag_name ORDER BY total DESC';
-         if ($limit > 0) {
+        $sql = 'SELECT tn.tag_id, tag_name, COUNT(tag_name) as total FROM ansel_tags as tn INNER JOIN (SELECT tag_id FROM ansel_galleries_tags UNION ALL SELECT tag_id FROM ansel_images_tags) as t ON t.tag_id = tn.tag_id ';
+        if (!is_null($tags) && is_array($tags)) {
+            $sql .= 'WHERE tn.tag_id IN (' . implode(',', $tags) . ') ';
+        }
+        $sql .= 'GROUP BY tn.tag_id, tag_name ORDER BY total DESC';
+        if ($limit > 0) {
             $sql .= ' LIMIT ' . (int)$limit;
-         }
-         $results = $GLOBALS['ansel_db']->queryAll($sql, null, MDB2_FETCHMODE_ASSOC, true);
-         foreach ($results as $id => $taginfo) {
-             $results[$id]['tag_name'] = String::convertCharset(
-                 $taginfo['tag_name'], $GLOBALS['conf']['sql']['charset']);
-         }
-         if (isset($GLOBALS['cache'])) {
-             $GLOBALS['cache']->set($cache_key, serialize($results));
-         }
+        }
+        $results = $GLOBALS['ansel_db']->queryAll($sql, null, MDB2_FETCHMODE_ASSOC, true);
+        foreach ($results as $id => $taginfo) {
+            $results[$id]['tag_name'] = String::convertCharset(
+                $taginfo['tag_name'], $GLOBALS['conf']['sql']['charset']);
+        }
+        if (isset($GLOBALS['cache'])) {
+            $GLOBALS['cache']->set($cache_key, serialize($results));
+        }
 
-         return $results;
-     }
+        return $results;
+    }
 
-     /**
-      * Search for resources matching the specified criteria
-      *
-      * @param array  $ids            An array of tag_ids to search for.
-      * @param int    $max            The maximum number of resources to return.
-      * @param int    $from           The number to start from
-      * @param string $resource_type  Either 'images', 'galleries', or 'all'.
-      * @param string $user           Limit the result set to resources
-      *                               owned by this user.
-      *
-      * @return mixed An array of image_ids and galery_ids objects | PEAR_Error
-      */
-     function searchTagsById($ids, $max = 0, $from = 0,
-                             $resource_type = 'all', $user = null)
-     {
-         if (!is_array($ids) || !count($ids)) {
-             return array('galleries' => array(), 'images' => array());
-         }
-
-         $skey = md5(serialize($ids) . $from . $resource_type . $max . $user);
-
-         if (isset($GLOBALS['cache'])) {
-             $key = Auth::getAuth() . '__anseltagsearches';
-             $cvalue = $GLOBALS['cache']->get($key, 300);
-             $cvalue = @unserialize($cvalue);
-             if (!$cvalue) {
-                 $cvalue = array();
-             }
-             if (!empty($cvalue[$skey])) {
-                 return $cvalue[$skey];
-             }
-         }
-
-         $ids = array_values($ids);
-         $results = array();
-         /* Retrieve any images that match */
-         if ($resource_type != 'galleries') {
-             $sql = 'SELECT DISTINCT i.image_id FROM ansel_images as i, ansel_images_tags as t';
-             for ($i = 0; $i < count($ids); $i++) {
-                 $sql .= ', ansel_images_tags as t' . $i;
-             }
-             $sql .= ' WHERE i.image_id = t.image_id';
-             for ($i = 0 ; $i < count($ids); $i++) {
-                 $sql .= ' AND t' . $i . '.tag_id = ' . (int)$ids[$i] . ' AND t' . $i . '.image_id = i.image_id';
-             }
-             Horde::logMessage('SQL query by Ansel_Tags::searchTags: ' . $sql, __FILE__, __LINE__, PEAR_LOG_DEBUG);
-             $GLOBALS['ansel_db']->setLimit($max, $from);
-             $images = $GLOBALS['ansel_db']->queryCol($sql);
-             if (is_a($images, 'PEAR_Error')) {
-                 Horde::logMessage($images, __FILE__, __LINE__, PEAR_LOG_ERR);
-                 $results['images'] = array();
-             } else {
-                 /* Check permissions and filter on $user if required */
-                 $imgs = array();
-                 foreach ($images as $id) {
-                     $img = &$GLOBALS['ansel_storage']->getImage($id);
-                     $gal = $GLOBALS['ansel_storage']->getGallery($img->gallery);
-                     if (!is_a($gal, 'PEAR_Error')) {
-                         $owner = $gal->get('owner');
-                         if ($gal->hasPermission(Auth::getAuth(), PERMS_SHOW) &&
-                             (!isset($user) || (isset($user) && $owner == $user))) {
-                             $imgs[] = $id;
-                         }
-                     } else {
-                         Horde::logMessage($gal, __FILE__, __LINE__, PEAR_LOG_ERR);
-                     }
-                 }
-                 $results['images'] = $imgs;
-             }
-         }
-
-         /* Now get the galleries that match */
-         if ($resource_type != 'images') {
-             $results['galleries'] = array();
-
-             $table = 'ansel_shares';
-             $sql = 'SELECT DISTINCT dt.share_id FROM ' . $table . ' as dt, ansel_galleries_tags as t';
-             for ($i = 0; $i < count($ids); $i++) {
-                 $sql .= ', ansel_galleries_tags as t' . $i;
-             }
-             $sql .= ' WHERE dt.share_id = t.gallery_id';
-             for ($i = 0; $i < count($ids); $i++) {
-                 $sql .= ' AND t' . $i . '.tag_id = ' . (int)$ids[$i] . ' AND t' . $i . '.gallery_id = dt.share_id';
-             }
-             Horde::logMessage('SQL query by Ansel_Tags::searchTags: ' . $sql, __FILE__, __LINE__, PEAR_LOG_DEBUG);
-             $GLOBALS['ansel_db']->setLimit($max, $from);
-
-             $galleries = $GLOBALS['ansel_db']->queryCol($sql);
-             if (is_a($galleries, 'PEAR_Error')) {
-                 Horde::logMessage($galleries, __FILE__, __LINE__, PEAR_LOG_ERR);
-             } else {
-                 /* Check perms */
-                 foreach ($galleries as $id) {
-                     $gallery = $GLOBALS['ansel_storage']->getGallery($id);
-                     if ($gallery->hasPermission(Auth::getAuth(), PERMS_SHOW)  && (!isset($user) || (isset($user) && $gallery->get('owner') == $user))) {
-                         $results['galleries'][] = $id;
-                     }
-                 }
-             }
-         }
-
-         if (isset($GLOBALS['cache'])) {
-             $cvalue[$skey] = $results;
-             $GLOBALS['cache']->set($key, serialize($cvalue));
-         }
-
-         return $results;
-     }
-
-     /**
-      * Search for resources matching a specified set of tags
-      * and optionally limit the result set to resources owned by
-      * a specific user.
-      *
-      * @param array  $names          An array of tag strings to search for.
-      * @param int    $max            The maximum number of resources to return.
-      * @param int    $from           The resource to start at.
-      * @param string $resource_type  Either 'images', 'galleries', or 'all'.
-      * @param string $user           Limit the result set to resources owned by
-      *                               specified user.
-      *
-      * @return mixed An array of image_ids and gallery_ids | PEAR_Error
-      */
-     function searchTags($names = array(), $max = 10, $from = 0,
+    /**
+     * Search for resources matching the specified criteria
+     *
+     * @param array  $ids            An array of tag_ids to search for.
+     * @param int    $max            The maximum number of resources to return.
+     * @param int    $from           The number to start from
+     * @param string $resource_type  Either 'images', 'galleries', or 'all'.
+     * @param string $user           Limit the result set to resources
+     *                               owned by this user.
+     *
+     * @return mixed An array of image_ids and galery_ids objects | PEAR_Error
+     */
+    function searchTagsById($ids, $max = 0, $from = 0,
                          $resource_type = 'all', $user = null)
-     {
-         /* Get the tag_ids */
-         $ids = Ansel_Tags::getTagIds($names);
-         return Ansel_Tags::searchTagsbyId($ids, $max, $from, $resource_type,
-                                           $user);
-     }
+    {
+        if (!is_array($ids) || !count($ids)) {
+            return array('galleries' => array(), 'images' => array());
+        }
 
-     /**
-      * Retrieve a set of tags with relationships to the specified set
-      * of tags.
-      *
-      * @param array $tags  An array of tag_ids
-      *
-      * @return mixed A hash of tag_id -> tag_name | PEAR_Error
-      */
-     function getRelatedTags($ids)
-     {
-         if (!count($ids)) {
-             return array();
-         }
+        $skey = md5(serialize($ids) . $from . $resource_type . $max . $user);
 
-         /* Build the monster SQL statement.*/
-         $sql = 'SELECT DISTINCT t.tag_id, t.tag_name FROM ansel_images_tags as r, ansel_images as i, ansel_tags as t';
-         for ($i = 0; $i < count($ids); $i++) {
-             $sql .= ',ansel_images_tags as r' . $i;
-         }
-         $sql .= ' WHERE r.tag_id = t.tag_id AND r.image_id = i.image_id';
-         for ($i = 0; $i < count($ids); $i++) {
-             $sql .= ' AND r' . $i . '.image_id = r.image_id AND r.tag_id != ' . (int)$ids[$i] . ' AND r' . $i . '.tag_id = ' . (int)$ids[$i];
-         }
+        if (isset($GLOBALS['cache'])) {
+           $key = Auth::getAuth() . '__anseltagsearches';
+           $cvalue = $GLOBALS['cache']->get($key, 300);
+           $cvalue = @unserialize($cvalue);
+           if (!$cvalue) {
+               $cvalue = array();
+           }
+           if (!empty($cvalue[$skey])) {
+               return $cvalue[$skey];
+           }
+        }
 
-         /* Note that we don't convertCharset here, it's done in listTagInfo */
-         $imgtags = $GLOBALS['ansel_db']->queryAll($sql, null, MDB2_FETCHMODE_ASSOC, true);
+        $ids = array_values($ids);
+        $results = array();
+        /* Retrieve any images that match */
+        if ($resource_type != 'galleries') {
+            $sql = 'SELECT image_id, count(tag_id) FROM ansel_images_tags '
+                . 'WHERE tag_id IN (' . implode(',', $ids) . ') GROUP BY '
+                . 'image_id HAVING count(tag_id) = ' . count($ids);
 
-         /* Now get the galleries. */
-         $table = 'ansel_shares';
-         $sql = 'SELECT DISTINCT t.tag_id, t.tag_name FROM ansel_galleries_tags as r, ' . $table . ' AS i, ansel_tags as t';
-         for ($i = 0; $i < count($ids); $i++) {
-             $sql .= ', ansel_galleries_tags as r' . $i;
-         }
-         $sql .= ' WHERE r.tag_id = t.tag_id AND r.gallery_id = i.share_id';
-         for ($i = 0; $i < count($ids); $i++) {
-             for ($i = 0; $i < count($ids); $i++) {
-                 $sql .= ' AND r' . $i . '.gallery_id = r.gallery_id AND r.tag_id != ' . (int)$ids[$i] . ' AND r' . $i . '.tag_id = ' . (int)$ids[$i];
-             }
-         }
-         $galtags = $GLOBALS['ansel_db']->queryAll($sql, null, MDB2_FETCHMODE_ASSOC, true);
+            Horde::logMessage('SQL query by Ansel_Tags::searchTags: ' . $sql, __FILE__, __LINE__, PEAR_LOG_DEBUG);
+            $GLOBALS['ansel_db']->setLimit($max, $from);
+            $images = $GLOBALS['ansel_db']->queryCol($sql);
+            if (is_a($images, 'PEAR_Error')) {
+                Horde::logMessage($images, __FILE__, __LINE__, PEAR_LOG_ERR);
+                $results['images'] = array();
+            } else {
+                /* Check permissions and filter on $user if required */
+                $imgs = array();
+                foreach ($images as $id) {
+                    $img = &$GLOBALS['ansel_storage']->getImage($id);
+                    $gal = $GLOBALS['ansel_storage']->getGallery($img->gallery);
+                    if (!is_a($gal, 'PEAR_Error')) {
+                        $owner = $gal->get('owner');
+                        if ($gal->hasPermission(Auth::getAuth(), PERMS_SHOW) &&
+                            (!isset($user) || (isset($user) && $owner == $user))) {
+                            $imgs[] = $id;
+                        }
+                    } else {
+                        Horde::logMessage($gal, __FILE__, __LINE__, PEAR_LOG_ERR);
+                    }
+                }
+                    $results['images'] = $imgs;
+            }
+        }
 
-         /* Can't use array_merge here since it would renumber the array keys */
-         foreach ($galtags as $id => $name) {
-             if (empty($imgtags[$id])) {
-                 $imgtags[$id] = $name;
-             }
-         }
+        /* Now get the galleries that match */
+        if ($resource_type != 'images') {
+            $results['galleries'] = array();
+            $sql = 'SELECT gallery_id, count(tag_id) FROM ansel_galleries_tags '
+               . 'WHERE tag_id IN (' . implode(',', $ids) . ') GROUP BY '
+               . 'gallery_id HAVING count(tag_id) = ' . count($ids);
 
-         /* Get an array of tag info sorted by total */
-         $tagids = array_keys($imgtags);
-         if (count($tagids)) {
-             $imgtags = Ansel_Tags::listTagInfo($tagids);
-         }
+            Horde::logMessage('SQL query by Ansel_Tags::searchTags: ' . $sql, __FILE__, __LINE__, PEAR_LOG_DEBUG);
+            $GLOBALS['ansel_db']->setLimit($max, $from);
 
-         return $imgtags;
-     }
+            $galleries = $GLOBALS['ansel_db']->queryCol($sql);
+            if (is_a($galleries, 'PEAR_Error')) {
+                Horde::logMessage($galleries, __FILE__, __LINE__, PEAR_LOG_ERR);
+            } else {
+                /* Check perms */
+                foreach ($galleries as $id) {
+                    $gallery = $GLOBALS['ansel_storage']->getGallery($id);
+                    if (is_a($gallery, 'PEAR_Error')) {
+                        Horde::logMessage($gallery, __FILE__, __LINE__, PEAR_LOG_ERR);
+                        continue;
+                    }
+                    if ($gallery->hasPermission(Auth::getAuth(), PERMS_SHOW)  && (!isset($user) || (isset($user) && $gallery->get('owner') == $user))) {
+                        $results['galleries'][] = $id;
+                    }
+                }
+            }
+        }
 
-     /**
-      * Get the URL for a tag link
-      *
-      * @param array $tags      The tag ids to link to
-      * @param string $action   The action we want to perform with this tag.
-      * @param string $owner    The owner we want to filter the results by
-      *
-      * @return string  The URL for this tag and action
-      */
-     function getTagLinks($tags, $action = 'add', $owner = null)
-     {
-         $results = array();
-         foreach ($tags as $id => $taginfo) {
-             $params = array('view' => 'Results',
-                             'tag' => $taginfo['tag_name']);
-             if (!empty($owner)) {
-                 $params['owner'] = $owner;
-             }
-             if ($action != 'add') {
-                 $params['actionID'] = $action;
-             }
-             $link = Ansel::getUrlFor('view', $params, true);
-             $results[$id] = $link;
-         }
+        if (isset($GLOBALS['cache'])) {
+            $cvalue[$skey] = $results;
+            $GLOBALS['cache']->set($key, serialize($cvalue));
+        }
 
-         return $results;
-     }
+        return $results;
+    }
 
-     /**
+    /**
+     * Search for resources matching a specified set of tags
+     * and optionally limit the result set to resources owned by
+      * a specific user.
+     *
+     * @param array  $names          An array of tag strings to search for.
+     * @param int    $max            The maximum number of resources to return.
+     * @param int    $from           The resource to start at.
+     * @param string $resource_type  Either 'images', 'galleries', or 'all'.
+     * @param string $user           Limit the result set to resources owned by
+     *                               specified user.
+     *
+     * @return mixed An array of image_ids and gallery_ids | PEAR_Error
+     */
+    function searchTags($names = array(), $max = 10, $from = 0,
+                        $resource_type = 'all', $user = null)
+    {
+        /* Get the tag_ids */
+        $ids = Ansel_Tags::getTagIds($names);
+        return Ansel_Tags::searchTagsbyId($ids, $max, $from, $resource_type,
+                                          $user);
+    }
+
+    /**
+     * Retrieve a set of tags with relationships to the specified set
+     * of tags.
+     *
+     * @param array $tags  An array of tag_ids
+     *
+     * @return mixed A hash of tag_id -> tag_name | PEAR_Error
+     */
+    function getRelatedTags($ids)
+    {
+        if (!count($ids)) {
+            return array();
+        }
+
+        /* Build the monster SQL statement.*/
+        $sql = 'SELECT DISTINCT t.tag_id, t.tag_name FROM ansel_images_tags as r, ansel_images as i, ansel_tags as t';
+        for ($i = 0; $i < count($ids); $i++) {
+            $sql .= ',ansel_images_tags as r' . $i;
+        }
+        $sql .= ' WHERE r.tag_id = t.tag_id AND r.image_id = i.image_id';
+        for ($i = 0; $i < count($ids); $i++) {
+            $sql .= ' AND r' . $i . '.image_id = r.image_id AND r.tag_id != ' . (int)$ids[$i] . ' AND r' . $i . '.tag_id = ' . (int)$ids[$i];
+        }
+
+        /* Note that we don't convertCharset here, it's done in listTagInfo */
+        $imgtags = $GLOBALS['ansel_db']->queryAll($sql, null, MDB2_FETCHMODE_ASSOC, true);
+
+        /* Now get the galleries. */
+        $table = 'ansel_shares';
+        $sql = 'SELECT DISTINCT t.tag_id, t.tag_name FROM ansel_galleries_tags as r, ' . $table . ' AS i, ansel_tags as t';
+        for ($i = 0; $i < count($ids); $i++) {
+            $sql .= ', ansel_galleries_tags as r' . $i;
+        }
+        $sql .= ' WHERE r.tag_id = t.tag_id AND r.gallery_id = i.share_id';
+        for ($i = 0; $i < count($ids); $i++) {
+            for ($i = 0; $i < count($ids); $i++) {
+                $sql .= ' AND r' . $i . '.gallery_id = r.gallery_id AND r.tag_id != ' . (int)$ids[$i] . ' AND r' . $i . '.tag_id = ' . (int)$ids[$i];
+            }
+        }
+        $galtags = $GLOBALS['ansel_db']->queryAll($sql, null, MDB2_FETCHMODE_ASSOC, true);
+
+        /* Can't use array_merge here since it would renumber the array keys */
+        foreach ($galtags as $id => $name) {
+            if (empty($imgtags[$id])) {
+                $imgtags[$id] = $name;
+            }
+        }
+
+        /* Get an array of tag info sorted by total */
+        $tagids = array_keys($imgtags);
+        if (count($tagids)) {
+            $imgtags = Ansel_Tags::listTagInfo($tagids);
+        }
+
+        return $imgtags;
+    }
+
+    /**
+     * Get the URL for a tag link
+     *
+     * @param array $tags      The tag ids to link to
+     * @param string $action   The action we want to perform with this tag.
+     * @param string $owner    The owner we want to filter the results by
+     *
+     * @return string  The URL for this tag and action
+     */
+    function getTagLinks($tags, $action = 'add', $owner = null)
+    {
+        $results = array();
+        foreach ($tags as $id => $taginfo) {
+            $params = array('view' => 'Results',
+                            'tag' => $taginfo['tag_name']);
+            if (!empty($owner)) {
+                $params['owner'] = $owner;
+            }
+            if ($action != 'add') {
+                $params['actionID'] = $action;
+            }
+            $link = Ansel::getUrlFor('view', $params, true);
+            $results[$id] = $link;
+        }
+
+        return $results;
+    }
+
+    /**
       * Get a list of tag_ids from a list of tag_names
       *
       * @param array $tags An array of tag_names
       *
       * @return mixed  An array of tag_names => tag_ids | PEAR_Error
       */
-     function getTagIds($tags)
-     {
-         if (!count($tags)) {
-             return array();
-         }
-         $stmt = $GLOBALS['ansel_db']->prepare('SELECT ansel_tags.tag_name, ansel_tags.tag_id FROM ansel_tags WHERE ansel_tags.tag_name IN (' . str_repeat('?, ', count($tags) - 1) . '?)');
-         $result = $stmt->execute(array_values($tags));
-         $ids = $result->fetchAll(MDB2_FETCHMODE_ASSOC, true);
-         foreach ($ids as $tag => $id) {
-             $newIds[String::convertCharset($tag, $GLOBALS['conf']['sql']['charset'])] = $id;
-         }
-         $result->free();
-         $stmt->free();
+    function getTagIds($tags)
+    {
+        if (!count($tags)) {
+            return array();
+        }
+        $stmt = $GLOBALS['ansel_db']->prepare('SELECT ansel_tags.tag_name, ansel_tags.tag_id FROM ansel_tags WHERE ansel_tags.tag_name IN (' . str_repeat('?, ', count($tags) - 1) . '?)');
+        $result = $stmt->execute(array_values($tags));
+        $ids = $result->fetchAll(MDB2_FETCHMODE_ASSOC, true);
+        $newIds = array();
+        foreach ($ids as $tag => $id) {
+            $newIds[String::convertCharset($tag, $GLOBALS['conf']['sql']['charset'])] = $id;
+        }
+        $result->free();
+        $stmt->free();
 
-         return $newIds;
-         $newIds = array();
-     }
+        return $newIds;
+    }
 
-     /**
-      *
-      */
-     function getTagNames($ids)
-     {
-         if (!count($ids)) {
-             return array();
-         }
-         $stmt = $GLOBALS['ansel_db']->prepare('SELECT t.tag_id, t.tag_name FROM ansel_tags as t WHERE t.tag_id IN(' . str_repeat('?, ', count($ids) - 1) . '?)');
-         $result = $stmt->execute(array_values($ids));
-         $tags = $result->fetchAll(MDB2_FETCHMODE_ASSOC, true);
-         foreach ($tags as $id => $tag) {
-             $tags[$id] = String::convertCharset(
-                 $tag, $GLOBALS['conf']['sql']['charset']);
-         }
-         $result->free();
-         $stmt->free();
+    /**
+     *
+     */
+    function getTagNames($ids)
+    {
+        if (!count($ids)) {
+            return array();
+        }
+        $stmt = $GLOBALS['ansel_db']->prepare('SELECT t.tag_id, t.tag_name FROM ansel_tags as t WHERE t.tag_id IN(' . str_repeat('?, ', count($ids) - 1) . '?)');
+        $result = $stmt->execute(array_values($ids));
+        $tags = $result->fetchAll(MDB2_FETCHMODE_ASSOC, true);
+        foreach ($tags as $id => $tag) {
+            $tags[$id] = String::convertCharset(
+                $tag, $GLOBALS['conf']['sql']['charset']);
+        }
+        $result->free();
+        $stmt->free();
 
-         return $tags;
-     }
+        return $tags;
+    }
 
-     /**
-      * Retrieve an Ansel_Tags_Search object
-      */
-     function getSearch($tags = null, $owner = null)
-     {
-         return new Ansel_Tags_Search($tags, $owner);
-     }
+    /**
+     * Retrieve an Ansel_Tags_Search object
+     */
+    function getSearch($tags = null, $owner = null)
+    {
+        return new Ansel_Tags_Search($tags, $owner);
+    }
 
-     /**
-      * Clear the session cache
-      */
-     function clearSearch()
-     {
-         unset($_SESSION['ansel_tags_search']);
-     }
+    /**
+     * Clear the session cache
+     */
+    function clearSearch()
+    {
+        unset($_SESSION['ansel_tags_search']);
+    }
 
-     function clearCache()
-     {
+    function clearCache()
+    {
         if ($GLOBALS['conf']['ansel_cache']['usecache']) {
             $GLOBALS['cache']->expire(Auth::getAuth() . '__anseltagsearches');
         }
-     }
+    }
 }
 
 /**

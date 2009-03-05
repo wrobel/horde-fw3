@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/lib/Mailbox.php,v 1.76.10.75 2009/01/06 15:24:04 jan Exp $
+ * $Horde: imp/lib/Mailbox.php,v 1.76.10.76 2009/03/04 21:16:02 slusarz Exp $
  *
  * @package IMP
  */
@@ -453,6 +453,16 @@ class IMP_Mailbox {
             if ($this->_removeMsgs($indices)) {
                 $imap_cache->expireCache($this->_mailbox, 2 | 4);
                 $this->_setSorted(4);
+
+                /* For POP3 mailboxes, on expunge we need to login/logout since
+                 * c-client caches the message indices. */
+                if ($_SESSION['imp']['base_protocol'] == 'pop3') {
+                    $imp_imap = &IMP_IMAP::singleton();
+                    $imp_imap->reopen();
+
+                    $this->_build = false;
+                    $this->_buildMailbox();
+                }
             }
             break;
 

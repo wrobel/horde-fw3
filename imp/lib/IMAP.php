@@ -16,7 +16,7 @@ define('IMP_IMAP_AUTO', 4);
  * The IMP_IMAP:: class facilitates connections to the IMAP/POP3 server via
  * the c-client PHP extensions.
  *
- * $Horde: imp/lib/IMAP.php,v 1.11.10.21 2009/01/06 15:24:04 jan Exp $
+ * $Horde: imp/lib/IMAP.php,v 1.11.10.23 2009/03/04 21:19:54 slusarz Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -357,6 +357,18 @@ class IMP_IMAP {
             $imap_flags |= OP_READONLY;
         }
         return $imap_flags;
+    }
+
+    /**
+     * Reopens the IMAP connection.
+     *
+     * @since IMP 4.3.4
+     */
+    function reopen()
+    {
+        if (!empty($this->_stream)) {
+            imap_reopen($this->_stream, IMP::serverString($this->_openMbox), $this->_mboxFlags);
+        }
     }
 
 }

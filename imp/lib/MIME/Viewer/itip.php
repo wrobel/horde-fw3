@@ -4,7 +4,7 @@
  * and provides an option to import the data into a calendar source,
  * if one is available.
  *
- * $Horde: imp/lib/MIME/Viewer/itip.php,v 1.37.2.44 2009/01/07 18:53:20 jan Exp $
+ * $Horde: imp/lib/MIME/Viewer/itip.php,v 1.37.2.45 2009/02/25 17:32:04 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -135,31 +135,31 @@ class IMP_MIME_Viewer_itip extends MIME_Viewer {
                     $guid = $components[$key]->getAttribute('UID');
                     // Check if this is an update.
                     if ($registry->hasMethod('calendar/export') &&
-                        !is_a($registry->call('calendar/export', array($guid, 'text/calendar')), 'PEAR_Error')) {
-                        // Update in Kronolith.
+                        !is_a($registry->call('calendar/export', array('uid' => $guid, 'contentType' => 'text/calendar')), 'PEAR_Error')) {
+                        // Try to update in calendar.
                         if ($registry->hasMethod('calendar/replace')) {
-                            $handled = true;
                             $result = $registry->call('calendar/replace', array('uid' => $guid, 'content' => $components[$key], 'contentType' => $this->mime_part->getType()));
                             if (is_a($result, 'PEAR_Error')) {
-                                $this->_msgs[$key][] = array('error', _("There was an error updating the event:") . ' ' . $result->getMessage());
+                                // Could be a missing permission.
+                                $this->_msgs[$key][] = array('warning', _("There was an error updating the event:") . ' ' . $result->getMessage() . '. ' . _("Trying to import the event instead."));
                             } else {
+                                $handled = true;
                                 $url = Horde::url($registry->link('calendar/show', array('uid' => $guid)));
                                 $this->_msgs[$key][] = array('success', _("The event was updated in your calendar.") .
                                                              '&nbsp;' . Horde::link($url, _("View event"), null, '_blank') . Horde::img('mime/icalendar.png', _("View event"), null, $registry->getImageDir('horde')) . '</a>');
                             }
                         }
-                    } else {
-                        // Import into Kronolith.
-                        if ($registry->hasMethod('calendar/import')) {
-                            $handled = true;
-                            $guid = $registry->call('calendar/import', array('content' => $components[$key], 'contentType' => $this->mime_part->getType()));
-                            if (is_a($guid, 'PEAR_Error')) {
-                                $this->_msgs[$key][] = array('error', _("There was an error importing the event:") . ' ' . $guid->getMessage());
-                            } else {
-                                $url = Horde::url($registry->link('calendar/show', array('uid' => $guid)));
-                                $this->_msgs[$key][] = array('success', _("The event was added to your calendar.") .
-                                                             '&nbsp;' . Horde::link($url, _("View event"), null, '_blank') . Horde::img('mime/icalendar.png', _("View event"), null, $registry->getImageDir('horde')) . '</a>');
-                            }
+                    }
+                    if (!$handled && $registry->hasMethod('calendar/import')) {
+                        // Import into calendar.
+                        $handled = true;
+                        $guid = $registry->call('calendar/import', array('content' => $components[$key], 'contentType' => $this->mime_part->getType()));
+                        if (is_a($guid, 'PEAR_Error')) {
+                            $this->_msgs[$key][] = array('error', _("There was an error importing the event:") . ' ' . $guid->getMessage());
+                        } else {
+                            $url = Horde::url($registry->link('calendar/show', array('uid' => $guid)));
+                            $this->_msgs[$key][] = array('success', _("The event was added to your calendar.") .
+                                                         '&nbsp;' . Horde::link($url, _("View event"), null, '_blank') . Horde::img('mime/icalendar.png', _("View event"), null, $registry->getImageDir('horde')) . '</a>');
                         }
                     }
                     if (!$handled) {

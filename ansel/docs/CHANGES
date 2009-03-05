@@ -2,6 +2,7 @@
 v1.0-cvs
 --------
 
+[mjr] Add a new api method for obtaining the available gallery styles.
 [mjr] Add a widget to the gallery view for showing faces that the gallery owner
       has tagged.
 [mjr] Allow embedding screen size images in external sites as well.
