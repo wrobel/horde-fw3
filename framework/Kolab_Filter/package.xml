@@ -28,9 +28,9 @@ http://pear.php.net/dtd/package-2.0.xsd">
   <email>jan@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2009-02-24</date>
+ <date>2009-03-05</date>
  <version>
-  <release>0.1.4</release>
+  <release>0.1.5</release>
   <api>0.1.0</api>
  </version>
  <stability>
@@ -39,19 +39,9 @@ http://pear.php.net/dtd/package-2.0.xsd">
  </stability>
  <license uri="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">LGPL</license>
  <notes>
-  * Fixed log location for fatal errors (kolab/issue3426,
-    https://www.intevation.de/roundup/kolab/issue3426)
-  * Fixed invalid function call in Content.php (kolab/issue3426,
-    https://www.intevation.de/roundup/kolab/issue3426)
-  * Fixed unnecessary large test file (kolab/issue3299,
-    https://www.intevation.de/roundup/kolab/issue3299)
-  * Extended testing.
-  * Added man page (kolab/issue3364,
-    https://www.intevation.de/roundup/kolab/issue3364)
-  * Added string translations (kolab/issue2499,
-    https://www.intevation.de/roundup/kolab/issue2499)
-  * Fixed the Outlook iCal handler (kolab/issue3192,
-    https://www.intevation.de/roundup/kolab/issue3192)
+  * Ensure that the Outlook iCal handler adds the ORGANIZER of an
+    event and fix reinjection port for rewritten invitations
+    (kolab/issue3192, https://www.intevation.de/roundup/kolab/issue3192)
  </notes>
  <contents>
   <dir name="/">
@@ -254,6 +244,33 @@ http://pear.php.net/dtd/package-2.0.xsd">
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <date>2009-02-24</date>
+   <version>
+    <release>0.1.4</release>
+    <api>0.1.0</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <license uri="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">LGPL</license>
+   <notes>
+    * Fixed log location for fatal errors (kolab/issue3426,
+      https://www.intevation.de/roundup/kolab/issue3426)
+    * Fixed invalid function call in Content.php (kolab/issue3426,
+      https://www.intevation.de/roundup/kolab/issue3426)
+    * Fixed unnecessary large test file (kolab/issue3299,
+      https://www.intevation.de/roundup/kolab/issue3299)
+    * Extended testing.
+    * Added man page (kolab/issue3364,
+      https://www.intevation.de/roundup/kolab/issue3364)
+    * Added string translations (kolab/issue2499,
+      https://www.intevation.de/roundup/kolab/issue2499)
+    * Fixed the Outlook iCal handler (kolab/issue3192,
+      https://www.intevation.de/roundup/kolab/issue3192)
+   </notes>
+  </release>
   <release>
    <date>2008-12-12</date>
    <version>

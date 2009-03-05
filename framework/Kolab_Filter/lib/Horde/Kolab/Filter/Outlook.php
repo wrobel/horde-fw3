@@ -104,7 +104,8 @@ class Kolab_Filter_Outlook
         $iCal->parsevCalendar($icaltxt);
         $vevent =& $iCal->findComponent('VEVENT');
         if ($vevent) {
-            if (!$vevent->organizerName()) {
+            $organizer = $vevent->getAttribute('ORGANIZER', true);
+            if (is_a($organizer, 'PEAR_Error')) {
                 $adrs = imap_rfc822_parse_adrlist($from, $email_domain);
                 if (count($adrs) > 0) {
                     $org_email = 'mailto:'.$adrs[0]->mailbox.'@'.$adrs[0]->host;
@@ -167,7 +168,8 @@ class Kolab_Filter_Outlook
      *
      * @return boolena|PEAR_Error True if the message was successfully rewritten.
      */
-    function embedICal($fqhostname, $sender, $recipients, $origfrom, $subject, $tmpfname) 
+    function embedICal($fqhostname, $sender, $recipients, $origfrom, $subject,
+		       $tmpfname, $transport)
     {
         Horde::logMessage(sprintf("Encapsulating iCal message forwarded by %s", $sender), 
                           __FILE__, __LINE__, PEAR_LOG_DEBUG);
@@ -235,39 +237,38 @@ class Kolab_Filter_Outlook
             $headerArray = $toppart->encode($msg_headers, $toppart->getCharset());
         }
 
-        global $conf;
-
-        /**
-         * FIXME: Another hack for the testing mode. Should probably use the
-         * Kolab_Filter_Transport class in the _inject method.
-         */
-        if (empty($conf['kolab']['filter']['testing'])) {
-            return Kolab_Filter_Outlook::_inject($toppart, $recipients, $headerArray);
-        } else {
-            return true;
-        }
+        return Kolab_Filter_Outlook::_inject($toppart, $recipients, $msg_headers, $sender, $transport);
     }
 
-    function _inject(&$toppart, $recipients, $headerArray)
+    function _inject(&$toppart, $recipients, $msg_headers, $sender, $transport)
     {
-        // Inject message back into postfix
-        require_once 'Mail.php';
-        $mailer = &Mail::factory('SMTP', array('auth' => false, 'port' => 10026 ));
+        global $conf;
 
-        $msg = $toppart->toString();
-        /* Make sure the message has a trailing newline. */
-        if (substr($msg, -1) != "\n") {
-            $msg .= "\n";
+        if (isset($conf['kolab']['filter']['smtp_host'])) {
+            $host = $conf['kolab']['filter']['smtp_host'];
+        } else {
+            $host = 'localhost';
+        }
+        if (isset($conf['kolab']['filter']['smtp_port'])) {
+            $port = $conf['kolab']['filter']['smtp_port'];
+        } else {
+            $port = 10025;
         }
 
-        $result = $mailer->send($recipients, $headerArray, $msg);
+        $transport = &Horde_Kolab_Filter_Transport::factory($transport, 
+                                               array('host' => $host, 
+                                                     'port' => $port));
+
+        $result = $transport->start($sender, $recipients);
         if (is_a($result, 'PEAR_Error')) {
-            $append = sprintf(", original code %s", $result->getCode());
-            $result->message = $result->getMessage() . $append;
-            $result->code = OUT_LOG | OUT_STDOUT | EX_TEMPFAIL;
             return $result;
         }
 
-        return true;
+        $result = $transport->data($msg_headers->toString() . '\r\n\r\n' . $toppart->toString());
+        if (is_a($result, 'PEAR_Error')) {
+            return $result;
+        }
+
+        return $transport->end();
     }
 }

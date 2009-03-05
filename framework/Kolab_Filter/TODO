@@ -44,3 +44,6 @@
 - kolab/issue3347 (recipient delimiter ignored by kolabmailboxfilter)
   https://www.intevation.de/roundup/kolab/issue3347
 
+- kolab/issue3441 (Resources with policy "always accept" do not work if domain != kolabhost)
+  https://www.intevation.de/roundup/kolab/issue3441
+

@@ -126,7 +126,7 @@ class Horde_Kolab_Filter_ContentTest extends Horde_Kolab_Test_Filter
              * Test forwarding an invitation
              */
             array(dirname(__FILE__) . '/fixtures/invitation_forward.eml',
-                  dirname(__FILE__) . '/fixtures/null.ret',
+                  dirname(__FILE__) . '/fixtures/invitation_forward.ret',
                   'me@example.org', '10.0.2.1', 'me@example.org', 'you@example.org', 'example.org'),
         );
     }

@@ -173,7 +173,8 @@ class Horde_Kolab_Filter_Content extends Horde_Kolab_Filter_Base
                                                       $this->_sender,
                                                       $this->_recipients,
                                                       $from, $subject,
-                                                      $this->_tmpfile);
+                                                      $this->_tmpfile,
+                                                      $transport);
                 if (is_a($rc, 'PEAR_Error')) {
                     return $rc;
                 } else if ($rc === true) {
