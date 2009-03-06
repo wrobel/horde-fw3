@@ -273,6 +273,8 @@ class Horde_Kolab_Test_Filter extends Horde_Kolab_Test_Storage
             $out    = preg_replace('/^Message-ID.*$/m', '----', $out);
             $output = preg_replace('/boundary=.*$/m', '----', $output);
             $out    = preg_replace('/boundary=.*$/m', '----', $out);
+            $output = preg_replace('/\s/', '', $output);
+            $out    = preg_replace('/\s/', '', $out);
 
             if (empty($params['unmodified_content'])) {
                 $this->assertEquals(sprintf($out, $from, $to), $output);
