@@ -28,6 +28,10 @@ require_once 'config.php';
 
 $conf['kolab']['misc']['allow_special'] = true;
 
+if (empty($_SERVER['SERVER_NAME'])) {
+    $_SERVER['SERVER_NAME'] = $conf['kolab']['imap']['server'];
+}
+
 $fb = &new Horde_Kolab_FreeBusy();
 $result = $fb->regenerate();
 if (is_a($result, 'PEAR_Error')) {
@@ -39,7 +43,13 @@ if (!is_array($result)) {
     $result = array($result);
 }
 
+if (PHP_SAPI == 'cli') {
+    $break = "";
+} else {
+    $break = '<br/>';
+}
+
 foreach ($result as $line) {
-    echo $line . '<br/>';
+    echo $line . $break;
 }
 exit(0);
