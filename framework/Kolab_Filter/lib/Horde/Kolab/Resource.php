@@ -596,7 +596,7 @@ class Kolab_Resource
                 if (is_dir($lockdir)) {
                     $lockfile = $lockdir . '/' . $resource . '.lock';
                     $counter = 0;
-                    while ($counter < $timeout && @file_get_contents($lockfile) === 'LOCKED') {
+                    while ($counter < $timeout && @file_get_contents($lockfile) == 'LOCKED') {
                         sleep(1);
                         $counter++;
                     }
