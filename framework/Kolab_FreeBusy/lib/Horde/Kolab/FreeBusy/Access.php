@@ -313,13 +313,19 @@ class Horde_Kolab_FreeBusy_Access {
      */
     function _process() 
     {
+        global $conf;
+
         require_once 'Horde/Kolab/Server.php';
 
         /* Connect to the Kolab user database */
-        $db = &Horde_Kolab_Server::singleton();
+        $db = &Horde_Kolab_Server::singleton(array('uid' => $conf['kolab']['ldap']['phpdn']));
+        // TODO: Remove once Kolab_Server has been fixed to always return the base dn
+        $db->fetch();
 
         /* Retrieve the server configuration */
-        $server = $db->fetch('k=kolab', KOLAB_OBJECT_SERVER);
+        $server = $db->fetch(sprintf('k=kolab,%s',
+				     $db->getBaseUid()),
+			     KOLAB_OBJECT_SERVER);
         if (is_a($server, 'PEAR_Error')) {
             return $server;
         }
