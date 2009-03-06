@@ -2,7 +2,7 @@
 /**
  * Resource management for the Kolab server.
  *
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php,v 1.15.2.3 2009/03/05 10:08:53 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php,v 1.15.2.4 2009/03/06 08:43:12 wrobel Exp $
  *
  * PHP version 4
  *
@@ -42,7 +42,7 @@ define('RM_ITIP_TENTATIVE',                 3);
 /**
  * Provides Kolab resource handling
  *
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php,v 1.15.2.3 2009/03/05 10:08:53 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php,v 1.15.2.4 2009/03/06 08:43:12 wrobel Exp $
  *
  * Copyright 2004-2009 Klarälvdalens Datakonsult AB
  *
