@@ -169,6 +169,8 @@ class Horde_Kolab_FreeBusy_Cache {
                 if (is_a($result, 'PEAR_Error')) {
                     return $result;
                 }
+            } else {
+                $acl = null;
             }
 
             Horde::logMessage(sprintf("Horde_Kolab_FreeBusy_Cache::store(file=%s, relevance=%s, acl=%s, xacl=%s)",
