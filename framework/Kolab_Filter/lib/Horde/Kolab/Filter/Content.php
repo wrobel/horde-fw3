@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Content.php,v 1.4.2.2 2009/02/24 11:17:39 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Content.php,v 1.4.2.3 2009/03/05 10:08:53 wrobel Exp $
  *
  * @package Kolab_Filter
  */
@@ -20,7 +20,7 @@ define('RM_STATE_READING_BODY',   5 );
 /**
  * A Kolab Server filter for outgoing mails.
  *
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Content.php,v 1.4.2.2 2009/02/24 11:17:39 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Content.php,v 1.4.2.3 2009/03/05 10:08:53 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *
