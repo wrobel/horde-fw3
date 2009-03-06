@@ -14,7 +14,7 @@
 /**
  *  We need the base class
  */
-require_once 'Horde/Kolab/Test.php';
+require_once 'Horde/Kolab/Test/Storage.php';
 
 require_once 'Horde/Kolab/FreeBusy.php';
 
@@ -34,7 +34,7 @@ require_once 'Horde/Kolab/FreeBusy.php';
  * @license  http://www.fsf.org/copyleft/lgpl.html LGPL
  * @link     http://pear.horde.org/index.php?package=Kolab_FreeBusy
  */
-class Horde_Kolab_FreeBusy_FreeBusyTest extends Horde_Kolab_Test
+class Horde_Kolab_FreeBusy_FreeBusyTest extends Horde_Kolab_Test_Storage
 {
 
     /**
@@ -70,6 +70,12 @@ class Horde_Kolab_FreeBusy_FreeBusyTest extends Horde_Kolab_Test
     public function testFetch()
     {
         $world = $this->prepareBasicSetup();
+
+        global $conf;
+        $conf['kolab']['ldap']['phpdn'] = null;
+        $conf['fb']['cache_dir']             = '/tmp';
+        $conf['kolab']['freebusy']['server'] = 'https://fb.example.org/freebusy';
+        $conf['fb']['use_acls'] = true;
 
         $this->assertTrue($world['auth']->authenticate('wrobel@example.org',
                                                         array('password' => 'none')));
@@ -107,6 +113,12 @@ class Horde_Kolab_FreeBusy_FreeBusyTest extends Horde_Kolab_Test
     public function testTrigger()
     {
         $world = $this->prepareBasicSetup();
+
+        global $conf;
+        $conf['kolab']['ldap']['phpdn'] = null;
+        $conf['fb']['cache_dir']             = '/tmp';
+        $conf['kolab']['freebusy']['server'] = 'https://fb.example.org/freebusy';
+        $conf['fb']['use_acls'] = true;
 
         $this->assertTrue($world['auth']->authenticate('wrobel@example.org',
                                                         array('password' => 'none')));
@@ -153,6 +165,12 @@ class Horde_Kolab_FreeBusy_FreeBusyTest extends Horde_Kolab_Test
     public function testForeignTrigger()
     {
         $world = $this->prepareBasicSetup();
+
+        global $conf;
+        $conf['kolab']['ldap']['phpdn'] = null;
+        $conf['fb']['cache_dir']             = '/tmp';
+        $conf['kolab']['freebusy']['server'] = 'https://fb.example.org/freebusy';
+        $conf['fb']['use_acls'] = true;
 
         $this->assertTrue($world['auth']->authenticate('wrobel@example.org',
                                                         array('password' => 'none')));

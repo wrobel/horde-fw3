@@ -17,7 +17,7 @@
 /**
  *  We need the base class
  */
-require_once 'Horde/Kolab/Test.php';
+require_once 'Horde/Kolab/Test/FreeBusy.php';
 
 /**
  * Checks for the Kolab Free/Busy system.
@@ -35,7 +35,7 @@ require_once 'Horde/Kolab/Test.php';
  * @license  http://www.fsf.org/copyleft/lgpl.html LGPL
  * @link     http://pear.horde.org/index.php?package=Kolab_Server
  */
-class Horde_Kolab_FreeBusy_FreeBusyScenarioTest extends Horde_Kolab_Test
+class Horde_Kolab_FreeBusy_FreeBusyScenarioTest extends Horde_Kolab_Test_FreeBusy
 {
     /**
      * Test triggering a calendar folder.
