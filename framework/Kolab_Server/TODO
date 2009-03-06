@@ -1,0 +1,8 @@
+====================================
+ Kolab_Server Development TODO List
+====================================
+
+ - Ensure getBaseUid always returns a value (see
+   Kolab_Freebusy/lib/Horde/Kolab/FreeBusy/Access.php)
+
+ - Ensure the correct hostnames for a user get returned (getServer).

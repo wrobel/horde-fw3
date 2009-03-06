@@ -16,6 +16,10 @@
 
 - Add real Kolab server tests that check a running system
 
+- Merge the LMTP TLS hack into upstream PEAR Net_LMTP
+
+- Check how Kolab_Filter deals with quotes (") in e-mail addresses.
+
 - kolab/issue824 (kolabmailboxfilter run once for each recipient)
   https://www.intevation.de/roundup/kolab/issue824
 
