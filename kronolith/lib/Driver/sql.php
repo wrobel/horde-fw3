@@ -3,7 +3,7 @@
  * The Kronolith_Driver_sql:: class implements the Kronolith_Driver
  * API for a SQL backend.
  *
- * $Horde: kronolith/lib/Driver/sql.php,v 1.136.2.43 2009/02/17 18:52:00 chuck Exp $
+ * $Horde: kronolith/lib/Driver/sql.php,v 1.136.2.44 2009/03/06 18:12:09 jan Exp $
  *
  * @author  Luc Saillard <luc.saillard@fr.alcove.com>
  * @author  Chuck Hagenbuch <chuck@horde.org>
@@ -219,7 +219,7 @@ class Kronolith_Driver_sql extends Kronolith_Driver {
 
         $event = $this->_db->getRow($query, $values, DB_FETCHMODE_ASSOC);
         if (is_a($event, 'PEAR_Error')) {
-            Horde::logMessage($result, __FILE__, __LINE__, PEAR_LOG_ERR);
+            Horde::logMessage($event, __FILE__, __LINE__, PEAR_LOG_ERR);
             return $event;
         }
 
