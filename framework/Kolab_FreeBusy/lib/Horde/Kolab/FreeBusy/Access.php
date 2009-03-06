@@ -2,7 +2,7 @@
 /**
  * Access handlers for Kolab free/busy.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Access.php,v 1.15.2.1 2009/03/06 18:12:01 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Access.php,v 1.15.2.2 2009/03/06 20:47:39 wrobel Exp $
  *
  * @package Kolab_FreeBusy
  */
@@ -17,7 +17,7 @@ require_once 'Horde/Auth.php';
  * The Horde_Kolab_FreeBusy_Access:: class provides functionality to check
  * free/busy access rights for the specified folder.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Access.php,v 1.15.2.1 2009/03/06 18:12:01 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Access.php,v 1.15.2.2 2009/03/06 20:47:39 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *

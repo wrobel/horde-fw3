@@ -2,7 +2,7 @@
 /**
  * A script for regenerating the Kolab Free/Busy cache.
  *
- * $Horde: framework/Kolab_FreeBusy/www/Horde/Kolab/FreeBusy/regenerate.php,v 1.3.2.1 2009/03/06 18:12:02 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/www/Horde/Kolab/FreeBusy/regenerate.php,v 1.3.2.2 2009/03/06 20:47:40 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

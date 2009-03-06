@@ -2,7 +2,7 @@
 /**
  * Caching for the Kolab free/busy data.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.1 2009/03/06 18:12:01 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.2 2009/03/06 20:47:39 wrobel Exp $
  *
  * @package Kolab_FreeBusy
  */
@@ -15,7 +15,7 @@ require_once 'Horde/iCalendar/vfreebusy.php';
  * The Horde_Kolab_FreeBusy_Cache:: class provides functionality to store
  * prepared free/busy data for quick retrieval.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.1 2009/03/06 18:12:01 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.2 2009/03/06 20:47:39 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *
@@ -479,7 +479,7 @@ class Horde_Kolab_FreeBusy_Cache {
 /**
  * A berkeley db based cache for free/busy data.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.1 2009/03/06 18:12:01 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.2 2009/03/06 20:47:39 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *
@@ -731,7 +731,7 @@ class Horde_Kolab_FreeBusy_Cache_DB {
  * A berkeley db based cache for free/busy data that holds relevant
  * cache files based on folder ACLs.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.1 2009/03/06 18:12:01 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.2 2009/03/06 20:47:39 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *
@@ -796,7 +796,7 @@ class Horde_Kolab_FreeBusy_Cache_DB_acl extends Horde_Kolab_FreeBusy_Cache_DB {
  * A berkeley db based cache for free/busy data that holds relevant
  * cache files based on extended folder ACLs.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.1 2009/03/06 18:12:01 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.2 2009/03/06 20:47:39 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *
@@ -859,7 +859,7 @@ class Horde_Kolab_FreeBusy_Cache_DB_xacl extends Horde_Kolab_FreeBusy_Cache_DB {
 /**
  * A representation of a cache file.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.1 2009/03/06 18:12:01 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.2 2009/03/06 20:47:39 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *
@@ -1038,7 +1038,7 @@ class Horde_Kolab_FreeBusy_Cache_File {
 /**
  * A cache file for partial free/busy information.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.1 2009/03/06 18:12:01 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.2 2009/03/06 20:47:39 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *
@@ -1108,7 +1108,7 @@ class Horde_Kolab_FreeBusy_Cache_File_pvcal extends Horde_Kolab_FreeBusy_Cache_F
 /**
  * A cache file for complete free/busy information.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.1 2009/03/06 18:12:01 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.2 2009/03/06 20:47:39 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *
@@ -1237,7 +1237,7 @@ class Horde_Kolab_FreeBusy_Cache_File_vcal extends Horde_Kolab_FreeBusy_Cache_Fi
  * ACL storage and is required to hold the old ACL list for updates to
  * the DB based cache.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.1 2009/03/06 18:12:01 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.2 2009/03/06 20:47:39 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *
@@ -1348,7 +1348,7 @@ class Horde_Kolab_FreeBusy_Cache_File_acl extends Horde_Kolab_FreeBusy_Cache_Fil
  * DB based ACL storage and is required to hold the old ACL list for
  * updates to the DB based cache.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.1 2009/03/06 18:12:01 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.2 2009/03/06 20:47:39 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *
