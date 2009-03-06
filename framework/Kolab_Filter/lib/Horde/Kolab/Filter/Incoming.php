@@ -139,6 +139,7 @@ class Horde_Kolab_Filter_Incoming extends Horde_Kolab_Filter_Base
                 $r = &new Kolab_Resource();
                 $rc = $r->handleMessage($this->_fqhostname, $this->_sender,
                                         $recip, $this->_tmpfile);
+                $r->cleanup();
                 if (is_a($rc, 'PEAR_Error')) {
                     return $rc;
                 } else if ($rc === true) {

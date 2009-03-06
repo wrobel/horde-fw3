@@ -39,6 +39,16 @@ http://pear.php.net/dtd/package-2.0.xsd">
  </stability>
  <license uri="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">LGPL</license>
  <notes>
+  * Resources with policy "always accept" do not work if domain != kolabhost
+    (kolab/issue3441, https://www.intevation.de/roundup/kolab/issue3441)
+  * Resource booking fails if TRANSP:TRANSPARENT in the invitation
+    (kolab/issue1336, https://www.intevation.de/roundup/kolab/issue1336)
+  * Implemented simple resource locking (kolab/issue1382,
+    https://www.intevation.de/roundup/kolab/issue1382)
+  * Kolab_Filter dies when it should accept but has no Calender folder access
+    (kolab/issue3289, https://www.intevation.de/roundup/kolab/issue3289)
+  * Delivery of invitations fails with no kolabInvitationPolicy is in ldap,
+    (kolab/issue3435, https://www.intevation.de/roundup/kolab/issue3435)
   * Ensure that the Outlook iCal handler adds the ORGANIZER of an
     event and fix reinjection port for rewritten invitations
     (kolab/issue3192, https://www.intevation.de/roundup/kolab/issue3192)
@@ -121,10 +131,12 @@ http://pear.php.net/dtd/package-2.0.xsd">
         <file name="forged.ret" role="test" />
         <file name="forged_trans.ret" role="test" />
         <file name="invitation_forward.eml" role="test" />
+        <file name="invitation_forward.ret" role="test" />
         <file name="longstring_invitation.eml" role="test" />
         <file name="null.ret" role="test" />
         <file name="privileged.ret" role="test" />
         <file name="recur_invitation.eml" role="test" />
+        <file name="recur_invitation.ret" role="test" />
         <file name="simple.eml" role="test" />
         <file name="simple.ret" role="test" />
         <file name="simple2.ret" role="test" />
@@ -226,10 +238,12 @@ http://pear.php.net/dtd/package-2.0.xsd">
    <install name="test/Horde/Kolab/Filter/fixtures/forged.ret" as="Horde/Kolab/Filter/fixtures/forged.ret" />
    <install name="test/Horde/Kolab/Filter/fixtures/forged_trans.ret" as="Horde/Kolab/Filter/fixtures/forged_trans.ret" />
    <install name="test/Horde/Kolab/Filter/fixtures/invitation_forward.eml" as="Horde/Kolab/Filter/fixtures/invitation_forward.eml" />
+   <install name="test/Horde/Kolab/Filter/fixtures/invitation_forward.ret" as="Horde/Kolab/Filter/fixtures/invitation_forward.ret" />
    <install name="test/Horde/Kolab/Filter/fixtures/longstring_invitation.eml" as="Horde/Kolab/Filter/fixtures/longstring_invitation.eml" />
    <install name="test/Horde/Kolab/Filter/fixtures/null.ret" as="Horde/Kolab/Filter/fixtures/null.ret" />
    <install name="test/Horde/Kolab/Filter/fixtures/privileged.ret" as="Horde/Kolab/Filter/fixtures/privileged.ret" />
    <install name="test/Horde/Kolab/Filter/fixtures/recur_invitation.eml" as="Horde/Kolab/Filter/fixtures/recur_invitation.eml" />
+   <install name="test/Horde/Kolab/Filter/fixtures/recur_invitation.ret" as="Horde/Kolab/Filter/fixtures/recur_invitation.ret" />
    <install name="test/Horde/Kolab/Filter/fixtures/simple.eml" as="Horde/Kolab/Filter/fixtures/simple.eml" />
    <install name="test/Horde/Kolab/Filter/fixtures/simple.ret" as="Horde/Kolab/Filter/fixtures/simple.ret" />
    <install name="test/Horde/Kolab/Filter/fixtures/simple2.ret" as="Horde/Kolab/Filter/fixtures/simple2.ret" />

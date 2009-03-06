@@ -253,7 +253,7 @@ class Horde_Kolab_Filter_Base
         /* This is used as the default domain for unqualified adresses */
         global $_SERVER;
         if (!array_key_exists('SERVER_NAME', $_SERVER)) {
-            $_SERVER['SERVER_NAME'] = $conf['kolab']['filter']['email_domain'];
+            $_SERVER['SERVER_NAME'] = $conf['kolab']['imap']['server'];
         }
 
         if (!array_key_exists('REMOTE_ADDR', $_SERVER)) {

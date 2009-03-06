@@ -264,7 +264,7 @@ class Kolab_Filter_Outlook
             return $result;
         }
 
-        $result = $transport->data($msg_headers->toString() . '\r\n\r\n' . $toppart->toString());
+        $result = $transport->data($msg_headers->toString() . $toppart->toString());
         if (is_a($result, 'PEAR_Error')) {
             return $result;
         }

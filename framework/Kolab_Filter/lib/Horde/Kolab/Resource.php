@@ -249,9 +249,6 @@ class Kolab_Resource
         $object['body'] = $itip->getAttributeDefault('DESCRIPTION', '');
         $object['start-date'] = $itip->getAttributeDefault('DTSTART', '');
         $object['end-date'] = $itip->getAttributeDefault('DTEND', '');
-        if ($itip->getAttributeDefault('TRANSP', 'OPAQUE') == 'TRANSPARENT') {
-            $object['show-time-as'] = $itip->getAttributeDefault('DTEND', '');
-        }
 
         $attendees = $itip->getAttribute('ATTENDEE');
         if (!is_a( $attendees, 'PEAR_Error')) {
@@ -416,22 +413,33 @@ class Kolab_Resource
             }
         }
 
-        $is_update = false;
-        $ignore = array();
+        $is_update  = false;
+        $imap_error = false;
+        $ignore     = array();
 
         $folder = $this->_imapConnect($id);
         if (is_a($folder, 'PEAR_Error')) {
-            return $folder;
+            $imap_error = &$folder;
         }
-        if (!$folder->exists()) {
-            return PEAR::raiseError('Error, could not open calendar folder!',
+        if (!is_a($imap_error, 'PEAR_Error') && !$folder->exists()) {
+            $imap_error = &PEAR::raiseError('Error, could not open calendar folder!',
                                     OUT_LOG | EX_TEMPFAIL);
         }
 
-        $data = $folder->getData();
-        if (is_a($data, 'PEAR_Error')) {
-            $result->code = OUT_LOG | EX_UNAVAILABLE;
-            return $data;
+        if (!is_a($imap_error, 'PEAR_Error')) {
+            $data = $folder->getData();
+            if (is_a($data, 'PEAR_Error')) {
+                $imap_error = &$data;
+            }
+        }
+
+        if (is_a($imap_error, 'PEAR_Error')) {
+            Horde::logMessage(sprintf('Failed accessing IMAP calendar: %s',
+                                      $folder->getMessage()),
+                              __FILE__, __LINE__, PEAR_LOG_ERR);
+            if ($action == RM_ACT_MANUAL_IF_CONFLICTS) {
+                return true;
+            }
         }
 
         switch ($method) {
@@ -442,12 +450,12 @@ class Kolab_Resource
                 break;
             }
 
-            if ($data->objectUidExists($uid)) {
+            if (is_a($imap_error, 'PEAR_Error') || !$data->objectUidExists($uid)) {
+                $old_uid = null;
+            } else {
                 $old_uid = $uid;
                 $ignore[] = $uid;
                 $is_update = true;
-            } else {
-                $old_uid = null;
             }
 
             /** Generate the Kolab object */
@@ -556,12 +564,61 @@ class Kolab_Resource
                 }
             }
 
+            if (is_a($imap_error, 'PEAR_Error')) {
+                Horde::logMessage('Could not access users calendar; rejecting',
+                                  __FILE__, __LINE__, PEAR_LOG_INFO);
+                $this->sendITipReply($cn, $id, $itip, RM_ITIP_DECLINE,
+                                     $organiser, $uid, $is_update);
+                return false;
+            }
+
             // At this point there was either no conflict or RM_ACT_ALWAYS_ACCEPT
             // was specified; either way we add the new event & send an 'ACCEPT'
             // iTip reply
 
             Horde::logMessage(sprintf('Adding event %s', $uid),
                               __FILE__, __LINE__, PEAR_LOG_INFO);
+
+            if (!empty($conf['kolab']['filter']['simple_locks'])) {
+                if (!empty($conf['kolab']['filter']['simple_locks_timeout'])) {
+                    $timeout = $conf['kolab']['filter']['simple_locks_timeout'];
+                } else {
+                    $timeout = 60;
+                }
+                if (!empty($conf['kolab']['filter']['simple_locks_dir'])) {
+                    $lockdir = $conf['kolab']['filter']['simple_locks_dir'];
+                } else {
+                    $lockdir = Horde::getTempDir() . '/Kolab_Filter_locks';
+                    if (!is_dir($lockdir)) {
+                        mkdir($lockdir, 0700);
+                    }
+                }
+                if (is_dir($lockdir)) {
+                    $lockfile = $lockdir . '/' . $resource . '.lock';
+                    $counter = 0;
+                    while ($counter < $timeout && @file_get_contents($lockfile) === 'LOCKED') {
+                        sleep(1);
+                        $counter++;
+                    }
+                    if ($counter == $timeout) {
+                        Horde::logMessage(sprintf('Lock timeout of %s seconds exceeded. Rejecting invitation.', $timeout),
+                                          __FILE__, __LINE__, PEAR_LOG_ERR);
+                        $this->sendITipReply($cn, $id, $itip, RM_ITIP_DECLINE,
+                                             $organiser, $uid, $is_update);
+                        return false;
+                    }
+                    $result = file_put_contents($lockfile, 'LOCKED');
+                    if ($result === false) {
+                        Horde::logMessage(sprintf('Failed creating lock file %s.', $lockfile),
+                                          __FILE__, __LINE__, PEAR_LOG_ERR);
+                    } else {
+                        $this->lockfile = $lockfile;
+                    }
+                } else {
+                    Horde::logMessage(sprintf('The lock directory %s is missing. Disabled locking.', $lockdir),
+                                      __FILE__, __LINE__, PEAR_LOG_ERR);
+                }
+            }
 
             $result = $data->save($object, $old_uid);
             if (is_a($result, 'PEAR_Error')) {
@@ -616,7 +673,10 @@ class Kolab_Resource
              */
             $summary = String::convertCharset($summary, 'utf-8', 'iso-8859-1');
 
-            if (!$data->objectUidExists($uid)) {
+            if (is_a($imap_error, 'PEAR_Error')) {
+                $body = sprintf(_("Unable to access %s's calendar:"), $resource) . "\n\n" . $summary;
+                $subject = sprintf(_("Error processing \"%s\""), $summary);
+            } else if (!$data->objectUidExists($uid)) {
                 Horde::logMessage(sprintf('Canceled event %s is not present in %s\'s calendar',
                                           $uid, $resource),
                                   __FILE__, __LINE__, PEAR_LOG_WARNING);
@@ -705,12 +765,23 @@ class Kolab_Resource
                               __FILE__, __LINE__, PEAR_LOG_INFO);
             return true;
         }
+    }
 
-        // Pass the message through to the group's mailbox
-        Horde::logMessage(sprintf('Passing through %s method to %s',
-                                  $method, $resource),
-                          __FILE__, __LINE__, PEAR_LOG_INFO);
-        return true;
+    /**
+     * Helper function to clean up after handling an invitation
+     *
+     * @return NULL
+     */
+    function cleanup()
+    {
+        if (!empty($this->lockfile)) {
+            @unlink($this->lockfile);
+            if (file_exists($this->lockfile)) {
+                Horde::logMessage(sprintf('Failed removing the lockfile %s.', $lockfile),
+                                  __FILE__, __LINE__, PEAR_LOG_ERR);
+            }
+            $this->lockfile = null;
+        }
     }
 
     /**

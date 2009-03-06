@@ -59,6 +59,8 @@ class Horde_Kolab_Test_Filter extends Horde_Kolab_Test_Storage
         $conf['kolab']['filter']['calendar_id'] = 'calendar';
         $conf['kolab']['filter']['calendar_pass'] = 'calendar';
         $conf['kolab']['filter']['lmtp_host'] = 'imap.example.org';
+        $conf['kolab']['filter']['simple_locks'] = true;
+        $conf['kolab']['filter']['simple_locks_timeout'] = 3;
 
         $result = $this->auth->authenticate('wrobel', array('password' => 'none'));
         $this->assertNoError($result);
@@ -267,6 +269,12 @@ class Horde_Kolab_Test_Filter extends Horde_Kolab_Test_Storage
 
             $output = preg_replace('/^--+=.*$/m', '----', $output);
             $out    = preg_replace('/^--+=.*$/m', '----', $out);
+            $output = preg_replace('/^Message-ID.*$/m', '----', $output);
+            $out    = preg_replace('/^Message-ID.*$/m', '----', $out);
+            $output = preg_replace('/boundary=.*$/m', '----', $output);
+            $out    = preg_replace('/boundary=.*$/m', '----', $out);
+            $output = preg_replace('/\s/', '', $output);
+            $out    = preg_replace('/\s/', '', $out);
 
             if (empty($params['unmodified_content'])) {
                 $this->assertEquals(sprintf($out, $from, $to), $output);
