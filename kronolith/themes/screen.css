@@ -1,5 +1,5 @@
 /**
- * $Horde: kronolith/themes/screen.css,v 1.2.4.21 2008/10/13 22:02:02 jan Exp $
+ * $Horde: kronolith/themes/screen.css,v 1.2.4.22 2009/03/06 11:29:31 jan Exp $
  */
 
 #menu {
@@ -404,6 +404,7 @@ table#calendar-list th.sortdown {
     overflow: auto;
     padding: 2px;
     font-size: 90%;
+    word-wrap: break-word;
 }
 .calendar-list-icon {
     width: 1%;
