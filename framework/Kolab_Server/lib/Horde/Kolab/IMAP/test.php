@@ -2,7 +2,7 @@
 /**
  * @package Kolab_Storage
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/IMAP/test.php,v 1.1.2.3 2009/02/23 23:02:30 wrobel Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/IMAP/test.php,v 1.1.2.4 2009/03/08 05:30:12 wrobel Exp $
  */
 
 /**
@@ -14,7 +14,7 @@ define('KOLAB_IMAP_FLAG_DELETED', 1);
  * The Horde_Kolab_IMAP_Connection_test class simulates an IMAP server for
  * testing purposes.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/IMAP/test.php,v 1.1.2.3 2009/02/23 23:02:30 wrobel Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/IMAP/test.php,v 1.1.2.4 2009/03/08 05:30:12 wrobel Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *
@@ -550,7 +550,7 @@ class Horde_Kolab_IMAP_test extends Horde_Kolab_IMAP {
      */
     function appendMessage($msg)
     {
-        $split = strpos('\r\n\r\n', $msg);
+        $split = strpos($msg, "\r\n\r\n");
         $mail = array('header' => substr($msg, 0, $split + 2),
                       'body' => substr($msg, $split + 3));
         return $this->_appendMessage($mail);

@@ -1,5 +1,5 @@
 /**
- * $Horde: imp/themes/screen.css,v 1.2.2.34 2008/08/05 23:16:50 slusarz Exp $
+ * $Horde: imp/themes/screen.css,v 1.2.2.35 2009/03/07 13:52:35 jan Exp $
  */
 
 /* Align styles, added for BC. */
@@ -39,6 +39,9 @@ input[type=image] {
 }
 
 /* Message list table styles. */
+.searchfolder a.smallheader {
+    display: block;
+}
 .messageList {
     table-layout: fixed;
     width: 100%;
