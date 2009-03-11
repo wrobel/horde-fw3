@@ -6,7 +6,7 @@ require_once 'Horde/IMAP/Cache.php';
  * The IMP_IMAP_Cache:: class extends Horde's IMAP_Cache:: class to add extra
  * IMP-specific functionality.
  *
- * $Horde: imp/lib/IMAP/Cache.php,v 1.36.2.5 2009/01/06 15:24:05 jan Exp $
+ * $Horde: imp/lib/IMAP/Cache.php,v 1.36.2.6 2009/03/10 05:46:40 slusarz Exp $
  *
  * Copyright 2006-2009 The Horde Project (http://www.horde.org/)
  *
@@ -98,7 +98,7 @@ class IMP_IMAP_Cache extends IMAP_Cache {
             require_once 'Horde/Cache.php';
             $cache = &Horde_Cache::singleton($GLOBALS['conf']['cache']['driver'], Horde::getDriverConfig('cache', $GLOBALS['conf']['cache']['driver']));
             $res = $cache->get($this->_getHordeCacheID($mailbox), $GLOBALS['conf']['mlistcache']['lifetime']);
-            if ($res === false) {
+            if (($res === false) || !strval($res)) {
                 $this->_cache[$mailbox] = array('d' => array(), 'k' => null);
             } else {
                 require_once 'Horde/Serialize.php';
