@@ -8,7 +8,7 @@ require_once 'Horde/Serialize.php';
  * query information about individual mailboxes.
  * In IMP, folders = IMAP mailboxes so the two terms are used interchangably.
  *
- * $Horde: imp/lib/IMAP/Tree.php,v 1.25.2.68 2009/02/05 21:05:37 slusarz Exp $
+ * $Horde: imp/lib/IMAP/Tree.php,v 1.25.2.69 2009/03/10 21:11:31 slusarz Exp $
  *
  * Copyright 2000-2009 The Horde Project (http://www.horde.org/)
  *
@@ -138,6 +138,13 @@ class IMP_Tree {
     var $_subscribed = null;
 
     /**
+     * The cached full list of mailboxes on the server.
+     *
+     * @var array
+     */
+    var $_fulllist = null;
+
+    /**
      * Tree changed flag.  Set when something in the tree has been altered.
      *
      * @var boolean
@@ -265,10 +272,10 @@ class IMP_Tree {
          * regenerated for each request.
          * Don't store $_currkey, $_currparent, and $_currstack since the
          * user MUST call reset() before cycling through the tree.
-         * Don't store $_subscribed - this information is stored in the
-         * elements.
+         * Don't store $_subscribed and $_fulllist - - this information is
+         * stored in the elements.
          * Reset the $_changed and $_trackdiff flags. */
-        $this->_currkey = $this->_currparent = $this->_eltdiff = $this->_expanded = $this->_imap_sort = $this->_poll = $this->_subscribed = null;
+        $this->_currkey = $this->_currparent = $this->_eltdiff = $this->_expanded = $this->_fulllist = $this->_imap_sort = $this->_poll = $this->_subscribed = null;
         $this->_currstack = array();
         $this->_changed = false;
         $this->_trackdiff = true;
@@ -295,10 +302,8 @@ class IMP_Tree {
      */
     function _getList($showunsub)
     {
-        static $full_list;
-
-        if ($showunsub && isset($full_list)) {
-            return $full_list;
+        if ($showunsub && !is_null($this->_fulllist)) {
+            return $this->_fulllist;
         } elseif (!$showunsub && !is_null($this->_subscribed)) {
             return array_keys($this->_subscribed);
         }
@@ -322,8 +327,8 @@ class IMP_Tree {
 
         // Cached mailbox lists.
         if ($showunsub) {
-            $full_list = array_keys($names);
-            return $full_list;
+            $this->_fulllist = array_keys($names);
+            return $this->_fulllist;
         } else {
             // Need to compare to full list to remove non-existent mailboxes
             // See RFC 3501 [6.3.9]
@@ -878,6 +883,13 @@ class IMP_Tree {
         $this->_changed = true;
 
         $elt = &$this->_tree[$id];
+
+        /* Delete the entry from the folder list cache(s). */
+        foreach (array('_subscribed', '_fulllist') as $var) {
+            if (!is_null($this->$var)) {
+                $this->$var = array_values(array_diff($this->$var, array($id)));
+            }
+        }
 
         /* Do not delete from tree if there are child elements - instead,
          * convert to a container element. */
