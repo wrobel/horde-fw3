@@ -57,7 +57,7 @@ function arrowHandler(e)
             $actionHTML .= ' | ' . Horde::link(Horde::applicationUrl(Util::addParameter($imageActionUrl, 'actionID', 'editimage')), '', '', '', '', '', '', array('id' => 'image_edit_link')) . _("Edit") . '</a>';
         }
         if ($this->gallery->hasPermission(Auth::getAuth(), PERMS_DELETE) && empty($this->_params['api'])) {
-            $actionHTML .= ' | ' . Horde::link(Horde::applicationUrl(Util::addParameter($imageActionUrl, 'actionID', 'delete')), '', '', '', 'return window.confirm(\'' . addslashes(sprintf(_("Do you want to permanently delete \"%s\"?"), $this->resource->filename)) . '\');', '', '', array('id' => 'image_delete_link')) . _("Delete") . '</a>';
+            $actionHTML .= ' | ' . Horde::link(Horde::applicationUrl(Util::addParameter($imageActionUrl, 'actionID', 'delete')), '', '', '', 'return window.confirm(\'' . addslashes(sprintf(_("Do you want to permanently delete ''%s''?"), $this->resource->filename)) . '\');', '', '', array('id' => 'image_delete_link')) . _("Delete") . '</a>';
         }
         if (!empty($conf['ecard']['enable']) && !empty($ecardurl)) {
             $actionHTML .= (empty($this->_params['api']) && $needSeperator ? ' | ' : '') . Horde::link($ecardurl, '', '', '_blank', '', '', '', array('id' => 'image_ecard_link')) . _("Send an Ecard"); $needSeperator = true . '</a>';

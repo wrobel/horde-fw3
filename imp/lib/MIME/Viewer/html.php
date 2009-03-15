@@ -6,7 +6,7 @@ require_once 'Horde/MIME/Viewer/html.php';
  * The MIME_Viewer_html class renders out HTML text with an effort to
  * remove potentially malicious code.
  *
- * $Horde: imp/lib/MIME/Viewer/html.php,v 1.75.2.38 2009/01/06 15:24:09 jan Exp $
+ * $Horde: imp/lib/MIME/Viewer/html.php,v 1.75.2.39 2009/03/12 19:10:48 slusarz Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -258,11 +258,11 @@ class IMP_MIME_Viewer_html extends MIME_Viewer_html {
          * mailto: links, links that have an "#xyz" anchor and ignore
          * all links that already have a target. */
         return preg_replace(
-            array('/<a\s([^>]*\s*href=["\']?(#|mailto:))/i',
-                  '/<a\s([^>]*)\s*target=["\']?[^>"\'\s]*["\']?/i',
+            array('/<a\s([^>]*\s+href=["\']?(#|mailto:))/i',
+                  '/<a\s([^>]*)\s+target=["\']?[^>"\'\s]*["\']?/i',
                   '/<a\s/i',
-                  '/<area\s([^>]*\s*href=["\']?(#|mailto:))/i',
-                  '/<area\s([^>]*)\s*target=["\']?[^>"\'\s]*["\']?/i',
+                  '/<area\s([^>]*\s+href=["\']?(#|mailto:))/i',
+                  '/<area\s([^>]*)\s+target=["\']?[^>"\'\s]*["\']?/i',
                   '/<area\s/i',
                   "/\x01/",
                   "/\x02/"),

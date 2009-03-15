@@ -1,46 +1,74 @@
 /**
- * Accesskeys javascript file.
- *
- * See the enclosed file COPYING for license information (LGPL). If you
- * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.
  */
 var AccessKeys = {
 
-    macos: navigator.appVersion.indexOf("Mac") !=- 1,
+    macos: navigator.userAgent.indexOf('Mac') > -1,
+
+    elements: [],
+
+    replace: function()
+    {
+        $$('*[accesskey]').each(function(elm) {
+            this.elements[elm.readAttribute('accesskey').toUpperCase()] = elm;
+        }, this);
+        document.observe('keydown', this.keydownHandler.bind(this));
+    },
 
     keydownHandler: function(e)
     {
-        var elt, elts, evt, key;
-
         if ((this.macos && e.ctrlKey) ||
             (e.altKey && !e.ctrlKey)) {
-            // Need to search for both upper and lowercase value
-            key = String.fromCharCode(e.keyCode || e.charCode);
-            elts = $$('[accesskey="' + key.toUpperCase() + '"]').concat($$('[accesskey="' + key.toLowerCase() + '"]'));
-
-            if (elt = elts.first()) {
-                // Remove duplicate accesskeys
-                if (elts.size() > 1) {
-                    elts.slice(1).invoke('writeAttribute', 'accesskey', null);
-                }
-
+            var kc = String.fromCharCode(e.keyCode || e.charCode).toUpperCase();
+            if (this.elements[kc]) {
+                this.execute(this.elements[kc], e);
                 e.stop();
-
-                // Trigger a mouse event on the accesskey element.
-                if (elt.tagName == 'INPUT') {
-                    // NOOP
-                } else if (elt.match('A') && elt.onclick) {
-                    elt.onclick();
-                } else if (document.createEvent) {
-                    evt = document.createEvent('MouseEvents');
-                    evt.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-                    elt.dispatchEvent(evt);
-                } else {
-                    elt.fireEvent('onclick');
-                }
             }
         }
-    }
-};
+    },
 
-document.observe('keydown', AccessKeys.keydownHandler.bindAsEventListener(AccessKeys));
+    execute: function(element, e)
+    {
+        if (!element) {
+            return;
+        }
+
+        switch (element.tagName) {
+        case 'A':
+            element.focus();
+            if (element.onclick) {
+                if (element.onclick()) {
+                    window.location.href = element.href;
+                }
+            } else {
+                window.location.href = element.href;
+            }
+            return;
+        case 'INPUT':
+        case 'SELECT':
+        case 'TEXTAREA':
+            element.focus();
+            switch (element.type.toUpperCase()) {
+            case 'BUTTON':
+            case 'RESET':
+            case 'SUBMIT':
+                element.click();
+                break;
+            }
+            return;
+        case 'LABEL':
+            this.execute($(element.htmlFor));
+            return;
+        }
+
+        if (typeof $(element)._prototypeEventID == 'undefined') {
+            return;
+        }
+        var handlers = $H(Event.cache[$(element)._prototypeEventID.first()]);
+        if (handlers.get('click')) {
+            handlers.get('click').each(function(wrapper) { wrapper(e); });
+        }
+    }
+
+}
+
+Event.observe(window, 'load', AccessKeys.replace.bind(AccessKeys));

@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ansel/lib/Ansel.php,v 1.517.2.41 2009/02/06 18:54:25 mrubinsk Exp $
+ * $Horde: ansel/lib/Ansel.php,v 1.517.2.42 2009/03/14 04:30:20 mrubinsk Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *
@@ -2127,7 +2127,7 @@ class Ansel_Image {
             if ($ext = MIME_Magic::MIMEToExt($type)) {
                 $vfsname .= '.' . $ext;
             }
-        } elseif ($GLOBALS['conf']['image']['type'] == 'jpeg') {
+        } elseif (($GLOBALS['conf']['image']['type'] == 'jpeg') || $view == 'screen') {
             $vfsname .= '.jpg';
         } else {
             $vfsname .= '.png';
@@ -2212,7 +2212,7 @@ class Ansel_Image {
 
         /* Get VFS name */
         $vfsname = $id . '.';
-        if ($GLOBALS['conf']['image']['type'] == 'jpeg') {
+        if ($GLOBALS['conf']['image']['type'] == 'jpeg' || $view == 'screen') {
             $vfsname .= 'jpg';
         } else {
             $vfsname .= 'png';
@@ -2244,6 +2244,14 @@ class Ansel_Image {
         if (is_a($data, 'PEAR_Error')) {
             Horde::logMessage($data, __FILE__, __LINE__, PEAR_LOG_ERR);
             return $data;
+        }
+
+        // HACK: Need to replace the image object with a JPG typed image if
+        //       we are generating a screen image. Need to do the replacement (
+        //       and do it *here* for BC reasons with Horde_Image.
+        if ($view == 'screen' && $GLOBALS['conf']['image']['type'] != 'jpg') {
+            $this->_image = Ansel::getImageObject(array('type' => 'jpg'));
+            $this->_image->reset();
         }
         if (is_a($result = $this->_image->loadString($this->getVFSPath('full') . '/' . $this->id, $data), 'PEAR_Error')) {
             return $result;
@@ -2881,6 +2889,8 @@ class Ansel_Image {
     {
         if ($view == 'full') {
            return $this->type;
+        } elseif ($view == 'screen') {
+            return 'image/jpg';
         } else {
             return 'image/' . $GLOBALS['conf']['image']['type'];
         }
