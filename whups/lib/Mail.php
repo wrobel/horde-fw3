@@ -2,7 +2,7 @@
 /**
  * Whups mail processing library.
  *
- * $Horde: whups/lib/Mail.php,v 1.46.2.1 2009/01/06 15:28:17 jan Exp $
+ * $Horde: whups/lib/Mail.php,v 1.46.2.2 2009/03/16 11:52:25 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *
@@ -239,7 +239,7 @@ class Whups_Mail {
         $body_id = $contents->findBody();
         if ($body_id) {
             $part = &$contents->getMIMEPart($body_id);
-            $comment .= $part->transferDecode();
+            $comment .= String::convertCharset($part->transferDecode(), $part->getCharset());
         } else {
             $comment .= _("[ Could not render body of message. ]");
         }

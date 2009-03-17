@@ -2,6 +2,10 @@
 v1.0.1-cvs
 ----------
 
+[jan] Save queue email addresses when editing queues (horde@hatzidakis.org,
+      Bug #7905).
+[jan] Fix charset conversion of comments added with mail-filter.php
+      (thomas@gelf.net, Bug #7730).
 [cjh] Show version changes in the ticket history.
 [jan] Use all credentials and mailer settings when sending mails.
 [cjh] Allow changing the queue version from the Update screen.

@@ -3,7 +3,7 @@
  * Whups_Driver_sql class - implements a Whups backend for the
  * PEAR::DB abstraction layer.
  *
- * $Horde: whups/lib/Driver/sql.php,v 1.306.2.5 2009/02/01 17:04:01 chuck Exp $
+ * $Horde: whups/lib/Driver/sql.php,v 1.306.2.6 2009/03/16 15:11:58 jan Exp $
  *
  * Copyright 2001-2002 Robert E. Coyle <robertecoyle@hotmail.com>
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
@@ -1312,7 +1312,7 @@ class Whups_Driver_sql extends Whups_Driver {
     }
 
     function updateQueue($queueId, $name, $description, $types, $versioned,
-                         $slug = '', $default = null)
+                         $slug = '', $email = '', $default = null)
     {
         global $registry;
 
@@ -1327,7 +1327,7 @@ class Whups_Driver_sql extends Whups_Driver {
             // First update the queue entry itself.
             $query = 'UPDATE whups_queues SET queue_name = ?, '
                      . 'queue_description = ?, queue_versioned = ?, '
-                     . 'queue_slug = ? WHERE queue_id = ?';
+                     . 'queue_slug = ?, queue_email = ? WHERE queue_id = ?';
             $values = array(String::convertCharset($name,
                                                    NLS::getCharset(),
                                                    $this->_params['charset']),
@@ -1336,6 +1336,7 @@ class Whups_Driver_sql extends Whups_Driver {
                                                    $this->_params['charset']),
                             (empty($versioned) ? 0 : 1),
                             $slug,
+                            $email,                            
                             $queueId);
             Horde::logMessage(
                 sprintf('Whups_Driver_sql::updateQueue(): query="%s"; values="%s"',

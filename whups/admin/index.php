@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: whups/admin/index.php,v 1.18.2.1 2009/01/06 15:28:16 jan Exp $
+ * $Horde: whups/admin/index.php,v 1.18.2.2 2009/03/16 15:11:57 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -354,6 +354,7 @@ case 'editqueuestep2form':
                                              $vars->get('types'),
                                              $vars->get('versioned'),
                                              $vars->get('slug'),
+                                             $vars->get('email'),                                             
                                              $vars->get('default'));
         if (!is_a($result, 'PEAR_Error')) {
             $notification->push(_("The queue has been modified."),

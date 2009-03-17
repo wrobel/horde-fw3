@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Prefs/Prefs.php,v 1.137.10.40 2009/02/05 21:03:40 chuck Exp $
+ * $Horde: framework/Prefs/Prefs.php,v 1.137.10.41 2009/03/16 12:01:38 jan Exp $
  */
 
 /** Preference is administratively locked. */
@@ -792,7 +792,11 @@ class Prefs {
                     continue;
                 }
 
-                $this->_scopes[$scope][$name]['v'] = $this->convertToDriver($val, NLS::getCharset());
+                if ($this->_scopes[$scope][$name]['m'] & _PREF_DEFAULT) {
+                    $this->_scopes[$scope][$name]['v'] = $val;
+                } else {
+                    $this->_scopes[$scope][$name]['v'] = $this->convertToDriver($val, NLS::getCharset());
+                }
                 if (!($this->_scopes[$scope][$name]['m'] & _PREF_LOCKED)) {
                     $this->_scopes[$scope][$name]['m'] |= _PREF_DIRTY;
                 }

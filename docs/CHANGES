@@ -2,6 +2,7 @@
 v3.3.4-cvs
 ----------
 
+[jan] Fix charset conversion in preference hooks (Bug #7489).
 [cjh] Proactively disable allow_url_include in core.php.
 [cjh] Add an index on session_lastmodified to the Horde sessionhandler tables.
 [mjr] Force the use of REQUEST_URI instead of PATH_INFO in Util::getPathInfo()
