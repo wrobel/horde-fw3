@@ -23,16 +23,16 @@ User-Agent: Horde Application Framework 3.2
 Date: %s, %d %s %d %d:%d:%d %s%d
 MIME-Version: 1.0
 Content-Type: multipart/mixed;
-	boundary="=_%s"
+ boundary="=_%s"
 Content-Transfer-Encoding: 7bit
 
 This message is in MIME format.
 
 --=_%s
 Content-Type: text/plain;
-	charset=iso-8859-15;
-	DelSp="Yes";
-	format="flowed"
+ charset=iso-8859-15;
+ DelSp="Yes";
+ format="flowed"
 Content-Disposition: inline
 Content-Transfer-Encoding: 7bit
 
@@ -41,9 +41,9 @@ the body
 
 --=_%s
 Content-Type: application/octet-stream;
-	name="attachment.bin"
+ name="attachment.bin"
 Content-Disposition: attachment;
-	filename="attachment.bin"
+ filename="attachment.bin"
 Content-Transfer-Encoding: base64
 
 WnfDtmxmIEJveGvDpG1wZmVyIGphZ2VuIFZpa3RvciBxdWVyIMO8YmVyIGRlbiBncm/Dn2VuIFN5
@@ -51,10 +51,10 @@ bHRlciBEZWljaC4K
 
 --=_%s
 Content-Type: text/html;
-	charset=iso-8859-15;
-	name="my_name.html"
+ charset=iso-8859-15;
+ name="my_name.html"
 Content-Disposition: attachment;
-	filename="my_name.html"
+ filename="my_name.html"
 Content-Transfer-Encoding: 7bit
 
 <?php

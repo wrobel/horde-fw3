@@ -16,7 +16,7 @@ define('IMP_IMAP_AUTO', 4);
  * The IMP_IMAP:: class facilitates connections to the IMAP/POP3 server via
  * the c-client PHP extensions.
  *
- * $Horde: imp/lib/IMAP.php,v 1.11.10.23 2009/03/04 21:19:54 slusarz Exp $
+ * $Horde: imp/lib/IMAP.php,v 1.11.10.25 2009/03/19 10:28:16 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -282,7 +282,7 @@ class IMP_IMAP {
                 'base' => 'POP3'
             ),
             'pop3tls' => array(
-                'name' => _("POP3, (self-signed certificate)"),
+                'name' => _("POP3 (self-signed certificate)"),
                 'string' => 'pop3/novalidate-cert',
                 'port' => 110,
                 'base' => 'POP3'
@@ -312,7 +312,7 @@ class IMP_IMAP {
                 'base' => 'IMAP'
             ),
             'imaptls' => array(
-                'name' => _("IMAP, (self-signed certificate)"),
+                'name' => _("IMAP (self-signed certificate)"),
                 'string' => 'imap/novalidate-cert',
                 'port' => 143,
                 'base' => 'IMAP'

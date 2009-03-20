@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Trean 0.1-cvs\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2008-08-01 10:44+0200\n"
+"POT-Creation-Date: 2009-03-19 10:37+0100\n"
 "PO-Revision-Date: 2008-06-23 18:31+0200\n"
 "Last-Translator: Jan Schneider <jan@horde.org>\n"
 "Language-Team: i18n@lists.horde.org\n"
@@ -181,7 +181,7 @@ msgstr "Liste"
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: templates/views/BookmarkList.php:28
+#: templates/views/BookmarkList.php:29
 msgid "Clicks"
 msgstr "Klicks"
 
@@ -339,7 +339,7 @@ msgstr "Firefox/Mozilla"
 msgid "First level shown"
 msgstr "Erste Ebene anzeigen"
 
-#: templates/add.html.php:47 templates/views/BookmarkList.php:26
+#: templates/add.html.php:47 templates/views/BookmarkList.php:27
 #: templates/edit/bookmark.inc:25 lib/Block/bookmarks.php:42
 msgid "Folder"
 msgstr "Ordner"
@@ -599,7 +599,7 @@ msgstr "Bedingung nicht erfüllt"
 msgid "Proxy Authentication Required"
 msgstr "Proxy-Authentifizierung erforderlich"
 
-#: templates/views/BookmarkList.php:27
+#: templates/views/BookmarkList.php:28
 msgid "Rating"
 msgstr "Bewertung"
 
@@ -661,7 +661,7 @@ msgstr "Siehe unter"
 msgid "Select All"
 msgstr "Alle auswählen"
 
-#: templates/views/BookmarkList.php:29
+#: templates/views/BookmarkList.php:24
 msgid "Select All/Select None"
 msgstr "Alle/Keine auswählen"
 
@@ -768,7 +768,7 @@ msgstr "Beim Speichern des Lesezeichens ist ein Fehler aufgetreten: %s"
 msgid "There was an error saving the folder: %s"
 msgstr "Beim Speichern des Ordners ist ein Fehler aufgetreten: %s"
 
-#: templates/add.html.php:37 templates/views/BookmarkList.php:25
+#: templates/add.html.php:37 templates/views/BookmarkList.php:26
 #: templates/edit/bookmark.inc:10 lib/Forms/Search.php:21
 #: lib/Block/bookmarks.php:49 config/prefs.php.dist:21
 msgid "Title"

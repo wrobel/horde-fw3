@@ -1,1 +1,1 @@
-<?php define('PASSWD_VERSION', 'H3 (3.1-cvs)') ?>
+<?php define('PASSWD_VERSION', 'H3 (3.1.1-cvs)') ?>

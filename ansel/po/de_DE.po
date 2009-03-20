@@ -1,15 +1,15 @@
 # German translations for Ansel.
 # Copyright 2003-2009 The Horde Project
 # This file is distributed under the same license as the Ansel package.
-# Jan Schneider <jan@horde.org>, 2003-2008.
+# Jan Schneider <jan@horde.org>, 2003-2009.
 #
 # caption: Fotounterschrift
 msgid ""
 msgstr ""
 "Project-Id-Version: Ansel 1.0-cvs\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2009-01-03 18:57+0100\n"
-"PO-Revision-Date: 2009-01-03 19:12+0100\n"
+"POT-Creation-Date: 2009-03-19 11:55+0100\n"
+"PO-Revision-Date: 2009-03-19 11:57+0100\n"
 "Last-Translator: Jan Schneider <jan@horde.org>\n"
 "Language-Team: i18n@lists.horde.org\n"
 "MIME-Version: 1.0\n"
@@ -42,7 +42,7 @@ msgid_plural "%d Groups"
 msgstr[0] "%d Gruppe"
 msgstr[1] "%d Gruppen"
 
-#: templates/view/gallerylightbox.inc:110 templates/view/results.inc:67
+#: templates/view/gallerylightbox.inc:121 templates/view/results.inc:67
 #, php-format
 msgid "%d Item"
 msgid_plural "%d Items"
@@ -68,7 +68,7 @@ msgid_plural "%d galleries"
 msgstr[0] "%d Galerie"
 msgstr[1] "%d Galerien"
 
-#: templates/view/gallery.inc:89
+#: templates/view/gallery.inc:105
 #, php-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -120,12 +120,12 @@ msgstr "%d bis %d von %d Galerien"
 msgid "%d to %d of %d Groups"
 msgstr "%d bis %d von %d Gruppen"
 
-#: templates/view/gallerylightbox.inc:110 templates/view/results.inc:67
+#: templates/view/gallerylightbox.inc:121 templates/view/results.inc:67
 #, php-format
 msgid "%d to %d of %d Items"
 msgstr "%d bis %d von %d Elementen"
 
-#: templates/view/gallery.inc:89
+#: templates/view/gallery.inc:105
 #, php-format
 msgid "%d to %d of %d items"
 msgstr "%d bis %d von %d Elementen"
@@ -150,7 +150,7 @@ msgstr "%s von %s"
 msgid "%s on %s"
 msgstr "%s auf %s"
 
-#: templates/group/owner.inc:16 lib/Ansel.php:701
+#: templates/group/owner.inc:16 lib/Ansel.php:699
 #: lib/Widget/OtherGalleries.php:28 lib/Views/List.php:167
 #, php-format
 msgid "%s's Galleries"
@@ -161,7 +161,7 @@ msgstr "Galerien von %s"
 msgid "%s: faces %s"
 msgstr "%s: %s Gesichter"
 
-#: lib/Ansel.php:2689
+#: lib/Ansel.php:2768
 #, php-format
 msgid "(c) %s %s"
 msgstr "(c) %s %s"
@@ -325,25 +325,25 @@ msgstr "90° im UZS"
 msgid "90 deg CW Mirrored"
 msgstr "90° im UZS, gespiegelt"
 
-#: config/styles.php.dist:128
+#: config/styles.php.dist:130
 msgid "A Lightbox Inspired Style (Drop Shadows, No Background)"
 msgstr "Ein von Lightbox inspirierter Stil (Schattenwurf, kein Hintergrund)"
 
-#: config/styles.php.dist:116
+#: config/styles.php.dist:118
 msgid "A Lightbox Inspired Style (No Background)"
 msgstr "Ein von Lightbox inspirierter Stil (Kein Hintergrund)"
 
-#: config/styles.php.dist:104
+#: config/styles.php.dist:106
 msgid "A Lightbox Inspired Style (White Background)"
 msgstr "Ein von Lightbox inspirierter Stil (Weißer Hintergrund)"
 
-#: lib/api.php:507
+#: lib/api.php:539
 msgid "A gallery to add this photo to is required."
 msgstr ""
 "Die Galerie, zu der dieses Foto hinzugefügt werden soll, muss angegeben "
 "werden."
 
-#: lib/Exif/fujifilm.php:167
+#: lib/Exif/fujifilm.php:161
 msgid "AE Good"
 msgstr "AE erfolgreich"
 
@@ -364,48 +364,48 @@ msgstr "AI-Servo"
 msgid "Access denied adding a gallery to \"%s\"."
 msgstr "Zugriff verweigert beim Hinzufügen der Galerie zu \"%s\"."
 
-#: xppublish.php:178 scripts/ansel.php:134 lib/api.php:384 lib/api.php:521
+#: xppublish.php:178 scripts/ansel.php:134 lib/api.php:399 lib/api.php:553
 #, php-format
 msgid "Access denied adding photos to \"%s\"."
 msgstr "Zugriff verweigert beim Hinzufügen der Fotos zu \"%s\"."
 
-#: lib/Ansel.php:1675
+#: lib/Ansel.php:1746
 msgid "Access denied adding tags to this gallery."
 msgstr "Zugriff verweigert beim Hinzufügen von Tags zu dieser Galerie."
 
-#: lib/Ansel.php:2777
+#: lib/Ansel.php:2856
 msgid "Access denied adding tags to this photo."
 msgstr "Zugriff verweigert beim Hinzufügen von Tags zu diesem Foto."
 
-#: lib/Ansel.php:1313
+#: lib/Ansel.php:1384
 #, php-format
 msgid "Access denied copying photos to \"%s\"."
 msgstr "Zugriff verweigert beim Kopieren der Fotos nach \"%s\"."
 
-#: lib/api.php:617
+#: lib/api.php:649
 msgid "Access denied creating new galleries."
 msgstr "Zugriff verweigert beim Erstellen neuer Galerien."
 
-#: lib/api.php:574 lib/api.php:654
+#: lib/api.php:606 lib/api.php:686
 msgid "Access denied deleting galleries."
 msgstr "Zugriff verweigert beim Löschen der Galerien."
 
-#: gallery/delete.php:28 gallery/delete.php:57 lib/api.php:666
+#: gallery/delete.php:28 gallery/delete.php:57 lib/api.php:697 lib/api.php:700
 #, php-format
 msgid "Access denied deleting gallery \"%s\"."
 msgstr "Zugriff verweigert beim Löschen der Galerie \"%s\"."
 
-#: image.php:572 lib/api.php:591 lib/Views/Results.php:125
+#: image.php:572 lib/api.php:623 lib/Views/Results.php:125
 #, php-format
 msgid "Access denied deleting photos from \"%s\"."
 msgstr "Zugriff verweigert beim Löschen der Fotos aus \"%s\"."
 
-#: gallery.php:96 lib/Ansel.php:2579
+#: gallery.php:91 image.php:704 lib/api.php:856 lib/Ansel.php:2658
 #, php-format
 msgid "Access denied downloading photos from \"%s\"."
 msgstr "Zugriff verweigert beim Herunterladen der Fotos von \"%s\"."
 
-#: gallery.php:181
+#: gallery.php:130
 msgid "Access denied editing galleries."
 msgstr "Zugriff verweigert beim Bearbeiten der Galerien."
 
@@ -414,23 +414,23 @@ msgstr "Zugriff verweigert beim Bearbeiten der Galerien."
 msgid "Access denied editing gallery \"%s\"."
 msgstr "Zugriff verweigert beim Bearbeiten der Galerie \"%s\"."
 
-#: image.php:304 image.php:698 faces/custom.php:29 faces/delete.php:29
+#: image.php:304 image.php:731 faces/custom.php:29 faces/delete.php:29
 #: faces/name.php:28 lib/Faces.php:540 lib/Faces.php:638
 #: lib/XRequest/EditFaces.php:134
 msgid "Access denied editing the photo."
 msgstr "Zugriff verweigert beim Bearbeiten des Fotos."
 
-#: lib/GalleryMode/Normal.php:167 lib/GalleryMode/Date.php:426
+#: lib/GalleryMode/Normal.php:174 lib/GalleryMode/Date.php:431
 #, php-format
 msgid "Access denied moving photos to \"%s\"."
 msgstr "Zugriff verweigert beim Verschieben der Fotos nach \"%s\"."
 
-#: lib/GalleryMode/Normal.php:169 lib/GalleryMode/Date.php:428
+#: lib/GalleryMode/Normal.php:176 lib/GalleryMode/Date.php:433
 #, php-format
 msgid "Access denied removing photos from \"%s\"."
 msgstr "Zugriff verweigert beim Entfernen der Fotos aus \"%s\"."
 
-#: gallery.php:224
+#: gallery.php:173
 #, php-format
 msgid "Access denied saving gallery \"%s\"."
 msgstr "Zugriff verweigert beim Speichern der Galerie \"%s\"."
@@ -450,12 +450,12 @@ msgstr "Zugriff verweigert beim Setzen der Fotosunterschrift für %s."
 msgid "Access denied to gallery \"%s\"."
 msgstr "Zugriff auf Galerie \"%s\" verweigert."
 
-#: lib/Ansel.php:1660 lib/Views/Gallery.php:154 lib/Block/gallery.php:156
+#: lib/Ansel.php:1731 lib/Views/Gallery.php:154 lib/Block/gallery.php:156
 #: lib/Block/recent_comments.php:154 lib/Block/recently_added.php:197
 msgid "Access denied viewing this gallery."
 msgstr "Zugriff auf diese Galerie verweigert."
 
-#: lib/Ansel.php:2756 img/full.php:26 img/prettythumb.php:26 img/mini.php:25
+#: lib/Ansel.php:2835 img/full.php:26 img/prettythumb.php:26 img/mini.php:25
 #: img/index.php:25 img/thumb.php:25 img/download.php:26 img/screen.php:25
 msgid "Access denied viewing this photo."
 msgstr "Zugriff auf dieses Foto verweigert."
@@ -468,7 +468,7 @@ msgstr "Aktion"
 msgid "Action was cancelled."
 msgstr "Die Aktion wurde abgebrochen."
 
-#: templates/view/gallerylightbox.inc:136 templates/view/results.inc:81
+#: templates/view/gallerylightbox.inc:147 templates/view/results.inc:81
 msgid "Actions: "
 msgstr "Aktionen: "
 
@@ -480,7 +480,7 @@ msgstr "Hinzufügen"
 msgid "Add Content"
 msgstr "Inhalt hinzufügen"
 
-#: img/upload.php:242
+#: img/upload.php:246
 msgid "Add Photo"
 msgstr "Foto Hinzufügen"
 
@@ -488,11 +488,11 @@ msgstr "Foto Hinzufügen"
 msgid "Add a custom face range"
 msgstr "Ein Gesicht manuell hinzufügen"
 
-#: lib/Widget/Actions.php:122
+#: lib/Widget/Actions.php:124
 msgid "Add to bookmarks"
 msgstr "Zu Lesezeichen hinzufügen"
 
-#: gallery.php:43 gallery.php:300
+#: gallery.php:43 gallery.php:251
 msgid "Adding A New Gallery"
 msgstr "Neue Galerie hinzufügen"
 
@@ -505,7 +505,7 @@ msgstr "Untergalerie zu %s hinzufügen"
 msgid "Adding subdirectories:"
 msgstr "Füge Unterverzeichnisse hinzu:"
 
-#: lib/api.php:194
+#: lib/api.php:209
 msgid "Administrators"
 msgstr "Administratoren"
 
@@ -513,7 +513,7 @@ msgstr "Administratoren"
 msgid "Advertisement content"
 msgstr "Werbungsinhalte"
 
-#: templates/view/gallery.inc:117 templates/view/gallerylightbox.inc:133
+#: templates/view/gallery.inc:133 templates/view/gallerylightbox.inc:144
 #: templates/view/results.inc:77
 msgid "All"
 msgstr "Alle"
@@ -522,7 +522,7 @@ msgstr "Alle"
 msgid "All Galleries"
 msgstr "allen Galerien"
 
-#: lib/GalleryMode/Date.php:123
+#: lib/GalleryMode/Date.php:128
 msgid "All dates"
 msgstr "Alle Daten"
 
@@ -546,7 +546,7 @@ msgstr "Blende"
 msgid "Aperture Priority"
 msgstr "Blendenautomatik"
 
-#: lib/Exif/fujifilm.php:146
+#: lib/Exif/fujifilm.php:140
 msgid "Aperture Prority AE"
 msgstr "Blendenautomatik AE"
 
@@ -571,8 +571,8 @@ msgstr "Es wurde versucht, ein nicht existierendes Recht zu bearbeiten."
 msgid "Authenticated users"
 msgstr "Angemeldete Benutzer"
 
-#: lib/Exif.php:395 lib/Exif/fujifilm.php:95 lib/Exif/fujifilm.php:118
-#: lib/Exif/fujifilm.php:130 lib/Exif/fujifilm.php:140
+#: lib/Exif.php:395 lib/Exif/fujifilm.php:89 lib/Exif/fujifilm.php:112
+#: lib/Exif/fujifilm.php:124 lib/Exif/fujifilm.php:134
 #: lib/Exif/panasonic.php:127 lib/Exif/panasonic.php:148
 #: lib/Exif/nikon.php:145 lib/Exif/canon.php:109 lib/Exif/canon.php:213
 #: lib/Exif/canon.php:242 lib/Exif/canon.php:346
@@ -583,7 +583,7 @@ msgstr "Automatisch"
 msgid "Auto + Red Eye Reduction"
 msgstr "Automatisch + Rote-Augen-Reduzierung"
 
-#: lib/Exif/fujifilm.php:162
+#: lib/Exif/fujifilm.php:156
 msgid "Auto Focus Good"
 msgstr "Autofokus erfolgreich"
 
@@ -663,13 +663,17 @@ msgstr "Helligkeit-"
 msgid "Browse"
 msgstr "Liste"
 
-#: lib/Ansel.php:756
+#: lib/Ansel.php:754
 msgid "Browse Tags"
 msgstr "Tags anzeigen"
 
 #: lib/Exif.php:174
 msgid "Bulb"
 msgstr "Bulb"
+
+#: lib/Block/recent_comments.php:106
+msgid "By"
+msgstr "Von"
 
 #: lib/Exif.php:482
 msgid "Camera Make"
@@ -683,7 +687,7 @@ msgstr "Kameramodell"
 msgid "Camera Orientation"
 msgstr "Kameraausrichtung"
 
-#: scripts/remote_import.php:307 lib/Ansel.php:527
+#: scripts/remote_import.php:307 lib/Ansel.php:525
 #, php-format
 msgid "Can't get unknown file type \"%s\"."
 msgstr "Unbekannter Dateityp \"%s\" kann nicht verarbeitet werden."
@@ -762,7 +766,7 @@ msgstr ""
 msgid "Change options dealing with tags and exif data."
 msgstr "Legen Sie die Einstellungen für Tags und Exif-Daten fest."
 
-#: lib/Widget/Actions.php:135
+#: lib/Widget/Actions.php:141
 msgid "Change properties"
 msgstr "Eigenschaften ändern"
 
@@ -783,15 +787,15 @@ msgstr "Legen Sie Ihre Wasserzeichen-Einstellungen fest."
 msgid "Changes cancelled."
 msgstr "Änderungen abgebrochen."
 
-#: lib/Exif/fujifilm.php:107
+#: lib/Exif/fujifilm.php:101
 msgid "Chroma Saturation High"
 msgstr "Hohe Farbsättigung"
 
-#: lib/Exif/fujifilm.php:108
+#: lib/Exif/fujifilm.php:102
 msgid "Chroma Saturation Low(ORG)"
 msgstr "Niedrige Farbsättigung (ORG)"
 
-#: lib/Exif/fujifilm.php:106
+#: lib/Exif/fujifilm.php:100
 msgid "Chroma Saturation Normal(STD)"
 msgstr "Normale Farbsättigung (STD)"
 
@@ -807,7 +811,7 @@ msgstr "Klicken um Fotounterschrift hinzuzufügen..."
 msgid "Close-up (Macro)"
 msgstr "Nahaufnahme (Makro)"
 
-#: lib/Exif/fujifilm.php:97 lib/Exif/panasonic.php:131 lib/Exif/nikon.php:150
+#: lib/Exif/fujifilm.php:91 lib/Exif/panasonic.php:131 lib/Exif/nikon.php:150
 #: lib/Exif/canon.php:348
 msgid "Cloudy"
 msgstr "Bewölkt"
@@ -866,15 +870,15 @@ msgstr "Weiter - Ich bin über %d"
 msgid "Continuous"
 msgstr "Kontinuierlich"
 
-#: lib/Exif/fujifilm.php:113
+#: lib/Exif/fujifilm.php:107
 msgid "Contrast High(HARD)"
 msgstr "Hoher Kontrast (HARD)"
 
-#: lib/Exif/fujifilm.php:114
+#: lib/Exif/fujifilm.php:108
 msgid "Contrast Low(ORG)"
 msgstr "Niedriger Kontrast (ORG)"
 
-#: lib/Exif/fujifilm.php:112
+#: lib/Exif/fujifilm.php:106
 msgid "Contrast Normal(STD)"
 msgstr "Normaler Kontrast (STD)"
 
@@ -912,8 +916,8 @@ msgid_plural "Copied %d photos to %s"
 msgstr[0] "%d Foto nach %s kopiert"
 msgstr[1] "%d Fotos nach %s kopiert"
 
-#: templates/view/gallerylightbox.inc:147 templates/view/results.inc:87
-#: lib/Views/GalleryRenderers/Gallery.php:128
+#: templates/view/gallerylightbox.inc:161 templates/view/results.inc:87
+#: lib/Views/GalleryRenderers/Gallery.php:126
 msgid "Copy"
 msgstr "Kopiere"
 
@@ -939,14 +943,14 @@ msgstr "Die gzip-Erweiterung konnte nicht geladen werden."
 msgid "Could not load the lzf extension"
 msgstr "Die lzf-Erweiterung konnte nicht geladen werden."
 
-#: lib/Ansel.php:1099
+#: lib/Ansel.php:1170
 #, php-format
 msgid "Could not save gallery, the slug, \"%s\", already exists."
 msgstr ""
 "Die Galerie konnte nicht gespeichert werden, der Kurzname \"%s\" existiert "
 "bereits."
 
-#: lib/Ansel.php:1092
+#: lib/Ansel.php:1163
 #, php-format
 msgid "Could not save gallery, the slug, \"%s\", contains invalid characters."
 msgstr ""
@@ -989,7 +993,7 @@ msgstr "Galerie erstellen"
 msgid "Create a new gallery:"
 msgstr "Neue Galerie erstellen:"
 
-#: lib/Widget/Actions.php:54
+#: lib/Widget/Actions.php:56
 msgid "Create a subgallery"
 msgstr "Untergalerie erstellen"
 
@@ -1006,12 +1010,12 @@ msgstr "Erstelle Galerie: \"%s\""
 msgid "Creative"
 msgstr "Kreativ"
 
-#: image.php:710 templates/image/crop_image.inc:114
+#: image.php:743 templates/image/crop_image.inc:114
 #: templates/image/edit_image.inc:31 templates/image/resize_image.inc:62
 msgid "Crop"
 msgstr "Beschneiden"
 
-#: lib/Exif/fujifilm.php:102 lib/Exif/canon.php:352
+#: lib/Exif/fujifilm.php:96 lib/Exif/canon.php:352
 msgid "Custom"
 msgstr "Angepasst"
 
@@ -1031,7 +1035,8 @@ msgstr ""
 msgid "Custom watermark to use for photos"
 msgstr "Standard-Wasserzeichentext für Fotos"
 
-#: templates/view/list.inc:21 lib/Block/recently_added.php:101
+#: templates/view/list.inc:21 lib/Block/recent_comments.php:106
+#: lib/Block/recently_added.php:101
 msgid "Date"
 msgstr "Datum"
 
@@ -1051,7 +1056,7 @@ msgstr "Aufnahmedatum"
 msgid "Day white fluorescent"
 msgstr "Tages-weiße Leuchtstoffröhre"
 
-#: lib/Exif.php:370 lib/Exif/fujifilm.php:96 lib/Exif/panasonic.php:129
+#: lib/Exif.php:370 lib/Exif/fujifilm.php:90 lib/Exif/panasonic.php:129
 #: lib/Exif/nikon.php:147
 msgid "Daylight"
 msgstr "Tageslicht"
@@ -1060,15 +1065,15 @@ msgstr "Tageslicht"
 msgid "Daylight fluorescent"
 msgstr "Tageslicht-Leuchtstoffröhre"
 
-#: lib/Exif/fujifilm.php:98
+#: lib/Exif/fujifilm.php:92
 msgid "DaylightColor-fluorescence"
 msgstr "DaylightColor-Leuchtstoffröhre"
 
-#: lib/Exif/fujifilm.php:99
+#: lib/Exif/fujifilm.php:93
 msgid "DaywhiteColor-fluorescence"
 msgstr "DaywhiteColor-Leuchtstoffröhre"
 
-#: config/styles.php.dist:56
+#: config/styles.php.dist:58
 msgid "Default"
 msgstr "Standard"
 
@@ -1080,17 +1085,17 @@ msgstr "Standardkategorie für Galerien"
 msgid "Default style for galleries"
 msgstr "Standardstil für Galerien"
 
-#: templates/view/image.inc:60 templates/view/gallerylightbox.inc:141
+#: templates/view/image.inc:60 templates/view/gallerylightbox.inc:155
 #: templates/view/results.inc:82 templates/view/slideshow.inc:21
-#: lib/Views/GalleryRenderers/Gallery.php:122
+#: lib/Views/GalleryRenderers/Gallery.php:120
 msgid "Delete"
 msgstr "Löschen"
 
-#: lib/Widget/Actions.php:179
+#: lib/Widget/Actions.php:185
 msgid "Delete All Photos"
 msgstr "Alle Fotos löschen"
 
-#: lib/Widget/Actions.php:180
+#: lib/Widget/Actions.php:186
 msgid "Delete Entire Gallery"
 msgstr "Gesamte Galerie löschen"
 
@@ -1144,10 +1149,15 @@ msgstr "Möchten Sie wirklich diese Galerie melden?"
 msgid "Do you really want to report this photo?"
 msgstr "Möchten Sie wirklich dieses Foto melden?"
 
-#: templates/view/image.inc:60 templates/view/slideshow.inc:21
+#: templates/view/slideshow.inc:21
 #, php-format
 msgid "Do you want to permanently delete \"%s\"?"
 msgstr "Möchten Sie \"%s\" endgültig löschen?"
+
+#: templates/view/image.inc:60
+#, php-format
+msgid "Do you want to permanently delete ''%s''?"
+msgstr "Möchten Sie ''%s'' endgültig löschen?"
 
 #: gallery/sort.php:81 scripts/all_images_exif_to_tags.php:109
 msgid "Done"
@@ -1157,11 +1167,19 @@ msgstr "Fertig"
 msgid "Download Original Photo"
 msgstr "Originalfoto herunterladen"
 
-#: lib/Widget/Actions.php:129
+#: lib/Widget/Actions.php:135
 msgid "Download as zip file"
 msgstr "Als ZIP-Datei herunterladen"
 
-#: gallery.php:84
+#: lib/Views/GalleryRenderers/Gallery.php:113
+msgid "Download selected images"
+msgstr "Ausgewählte Fotos herunterladen"
+
+#: templates/view/gallerylightbox.inc:149
+msgid "Download selected photos"
+msgstr "Ausgewählte Fotos herunterladen"
+
+#: lib/Ansel.php:957
 msgid ""
 "Downloading zip files is not enabled. Talk to your server administrator."
 msgstr ""
@@ -1195,8 +1213,8 @@ msgstr "Bearbeiten"
 msgid "Edit %s :: %s"
 msgstr "%s Bearbeiten :: %s"
 
-#: edit_dates.php:48 templates/view/gallerylightbox.inc:138
-#: lib/Views/GalleryRenderers/Gallery.php:119
+#: edit_dates.php:48 templates/view/gallerylightbox.inc:152
+#: lib/Views/GalleryRenderers/Gallery.php:117
 msgid "Edit Dates"
 msgstr "Daten bearbeiten"
 
@@ -1221,7 +1239,7 @@ msgstr "Foto bearbeiten"
 msgid "Edit face region"
 msgstr "Gesicht bearbeiten"
 
-#: lib/Widget/GalleryFaces.php:76 lib/Widget/ImageFaces.php:77
+#: lib/Widget/GalleryFaces.php:79 lib/Widget/ImageFaces.php:77
 msgid "Edit faces"
 msgstr "Gesichter bearbeiten"
 
@@ -1234,7 +1252,7 @@ msgstr "Eigenschaften bearbeiten :: %s"
 msgid "Editing dates for the following photos"
 msgstr "Daten für die folgenden Fotos bearbeiten"
 
-#: lib/Widget/Links.php:43
+#: lib/Widget/Links.php:48
 msgid "Embed: "
 msgstr "Einbetten: "
 
@@ -1349,7 +1367,7 @@ msgstr "Datei %s"
 msgid "File Size"
 msgstr "Dateigröße"
 
-#: lib/api.php:286 lib/api.php:352
+#: lib/api.php:301 lib/api.php:367
 msgid "File not found."
 msgstr "Datei nicht gefunden."
 
@@ -1365,7 +1383,7 @@ msgstr "Hochzuladende Datei"
 msgid "Filename"
 msgstr "Dateiname"
 
-#: lib/Widget/Actions.php:157 lib/Widget/GalleryFaces.php:76
+#: lib/Widget/Actions.php:163 lib/Widget/GalleryFaces.php:79
 #: lib/Widget/ImageFaces.php:77
 msgid "Find faces"
 msgstr "Gesichter finden"
@@ -1473,7 +1491,7 @@ msgstr "Von: "
 msgid "Full Auto"
 msgstr "Vollautomatik"
 
-#: lib/Ansel.php:753 config/prefs.php.dist:58
+#: lib/Ansel.php:751 config/prefs.php.dist:58
 msgid "Galleries"
 msgstr "Galerien"
 
@@ -1496,7 +1514,7 @@ msgid "Gallery"
 msgstr "Galerie"
 
 #: image.php:65 scripts/remote_import.php:187 scripts/remote_import.php:196
-#: lib/Ansel.php:3109 img/upload_preview.php:19 img/upload.php:21
+#: lib/Ansel.php:3190 img/upload_preview.php:19 img/upload.php:21
 #, php-format
 msgid "Gallery %s not found."
 msgstr "Galerie %s nicht gefunden."
@@ -1602,7 +1620,7 @@ msgstr "Galerien gruppieren nach"
 msgid "Halogen"
 msgstr "Halogen"
 
-#: lib/Exif/fujifilm.php:90 lib/Exif/fujifilm.php:91
+#: lib/Exif/fujifilm.php:84 lib/Exif/fujifilm.php:85
 msgid "Hard"
 msgstr "Hart"
 
@@ -1652,7 +1670,11 @@ msgstr "Ungültige Größe für InteroperabilityIFD"
 msgid "Illegal size for SubIFD"
 msgstr "Ungültige Größe für SubIFD"
 
-#: lib/Exif/fujifilm.php:101 lib/Exif/nikon.php:148
+#: lib/Block/recent_comments.php:106
+msgid "Image"
+msgstr "Bild"
+
+#: lib/Exif/fujifilm.php:95 lib/Exif/nikon.php:148
 msgid "Incandescense"
 msgstr "Glühlampe"
 
@@ -1660,7 +1682,7 @@ msgstr "Glühlampe"
 msgid "Inch"
 msgstr "Inch"
 
-#: lib/Ansel.php:2270
+#: lib/Ansel.php:2349
 msgid "Incomplete photo"
 msgstr "Unvollständiges Foto"
 
@@ -1681,12 +1703,12 @@ msgstr "Interner Blitz"
 msgid "Invalid gallery \"%s\" specified."
 msgstr "Ungültige Galerie \"%s\" angegeben."
 
-#: xppublish.php:87 xppublish.php:174 lib/api.php:273
+#: xppublish.php:87 xppublish.php:174 lib/api.php:288
 msgid "Invalid gallery specified."
 msgstr "Ungültige Galerie angegeben."
 
 #: templates/image/crop_image.inc:149 lib/Exif.php:253
-#: lib/Exif/fujifilm.php:142 lib/Exif/canon.php:156
+#: lib/Exif/fujifilm.php:136 lib/Exif/canon.php:156
 msgid "Landscape"
 msgstr "Quer"
 
@@ -1715,7 +1737,7 @@ msgstr "Links"
 msgid "Light source"
 msgstr "Lichtquelle"
 
-#: config/styles.php.dist:142 config/styles.php.dist:179
+#: config/styles.php.dist:144 config/styles.php.dist:181
 msgid "Lightbox with Polaroids (No Background)"
 msgstr "Lightbox mit Polaroids (Kein Hintergrund)"
 
@@ -1732,7 +1754,7 @@ msgstr "Galerieliste"
 msgid "Listing photos in %s"
 msgstr "Fotos in %s anzeigen"
 
-#: templates/image/upload.inc:30
+#: templates/image/upload.inc:27
 msgid "Loading ..."
 msgstr "Lade..."
 
@@ -1745,8 +1767,8 @@ msgstr "Lade..."
 msgid "Locked (Pan Mode)"
 msgstr "Fest (Panoramamodus)"
 
-#: lib/Views/Image.php:67 lib/Views/Image.php:92 lib/Views/Gallery.php:111
-#: lib/Views/Gallery.php:133
+#: lib/api.php:850 lib/Views/Image.php:64 lib/Views/Image.php:89
+#: lib/Views/Gallery.php:111 lib/Views/Gallery.php:133
 msgid "Locked galleries are not viewable via the api."
 msgstr "Gesperrte Galerien können nicht über die API betrachtet werden."
 
@@ -1798,14 +1820,14 @@ msgstr ""
 "Pflichtwerte für lange Parameter sind auch für kurze Parameter verpflichtend."
 
 #: templates/image/crop_image.inc:138 lib/Exif.php:246 lib/Exif.php:396
-#: lib/Exif/fujifilm.php:131 lib/Exif/panasonic.php:135
+#: lib/Exif/fujifilm.php:125 lib/Exif/panasonic.php:135
 #: lib/Exif/panasonic.php:141 lib/Exif/panasonic.php:150
 #: lib/Exif/panasonic.php:199 lib/Exif/nikon.php:182 lib/Exif/canon.php:155
 #: lib/Exif/canon.php:241 lib/Exif/canon.php:264
 msgid "Manual"
 msgstr "Manuell"
 
-#: lib/Exif/fujifilm.php:148
+#: lib/Exif/fujifilm.php:142
 msgid "Manual Exposure"
 msgstr "Manuelle Belichtung"
 
@@ -1884,7 +1906,7 @@ msgstr "Modus 2"
 msgid "Modified"
 msgstr "Geändert"
 
-#: gallery.php:164
+#: gallery.php:113
 #, php-format
 msgid "Modifying: %s"
 msgstr "Bearbeite: %s"
@@ -1901,8 +1923,8 @@ msgstr ""
 "Mehr als ein Gesicht im Foto gefunden. Bitte beachten Sie, dass immer nur "
 "ein Gesicht auf einmal gesucht werden kann."
 
-#: templates/view/gallerylightbox.inc:144 templates/view/results.inc:84
-#: lib/Views/GalleryRenderers/Gallery.php:125
+#: templates/view/gallerylightbox.inc:158 templates/view/results.inc:84
+#: lib/Views/GalleryRenderers/Gallery.php:123
 msgid "Move"
 msgstr "Verschiebe"
 
@@ -1925,7 +1947,7 @@ msgstr "Multi-Spot"
 msgid "Multiple Photos"
 msgstr "Mehrere Fotos"
 
-#: templates/group/owner.inc:3 lib/Ansel.php:688 lib/Views/List.php:155
+#: templates/group/owner.inc:3 lib/Ansel.php:686 lib/Views/List.php:155
 #: lib/Block/my_galleries.php:3 lib/Block/my_galleries.php:37
 #: config/prefs.php.dist:59
 msgid "My Galleries"
@@ -1961,7 +1983,7 @@ msgstr "Neuer Galerietitel"
 msgid "Next"
 msgstr "Weiter"
 
-#: lib/Exif/fujifilm.php:144 lib/Exif/canon.php:159
+#: lib/Exif/fujifilm.php:138 lib/Exif/canon.php:159
 msgid "Night"
 msgstr "Nachts"
 
@@ -1981,14 +2003,14 @@ msgstr "Nein"
 msgid "No Flash"
 msgstr "Kein Blitz"
 
-#: lib/Exif/fujifilm.php:157
+#: lib/Exif/fujifilm.php:151
 msgid "No Warning"
 msgstr "Keine Warnung"
 
 #: templates/faces/index.inc:14 templates/faces/search.inc:18
 #: templates/faces/faces.inc:10 faces/image.php:52 faces/search/image.php:76
-#: lib/XRequest/EditFaces.php:120 lib/Widget/GalleryFaces.php:56
-#: lib/Widget/ImageFaces.php:56 lib/Widget/ImageFaces.php:97
+#: lib/XRequest/EditFaces.php:120 lib/Widget/GalleryFaces.php:59
+#: lib/Widget/ImageFaces.php:97
 msgid "No faces found"
 msgstr "Keine Gesichter gefunden"
 
@@ -2004,7 +2026,7 @@ msgstr "Keine Datei angegeben"
 msgid "No gallery specified"
 msgstr "Keine Galerie angegeben"
 
-#: templates/view/gallery.inc:119 templates/view/gallerylightbox.inc:134
+#: templates/view/gallery.inc:135 templates/view/gallerylightbox.inc:145
 #: templates/view/results.inc:78 lib/Exif/nikon.php:155 lib/Exif/canon.php:172
 #: config/prefs.php.dist:71 config/prefs.php.dist:238
 #: config/prefs.php.dist:259
@@ -2015,7 +2037,7 @@ msgstr "Keine"
 msgid "None (Owner only)"
 msgstr "Keine (Nur Besitzer)"
 
-#: templates/gallery/gallery.inc:50 lib/Exif/fujifilm.php:89
+#: templates/gallery/gallery.inc:50 lib/Exif/fujifilm.php:83
 #: lib/Exif/panasonic.php:181 lib/Exif/panasonic.php:313 lib/Exif/sanyo.php:72
 #: lib/Exif/sanyo.php:80 lib/Exif/nikon.php:130 lib/Exif/canon.php:88
 #: lib/Exif/canon.php:100 lib/Exif/canon.php:181 lib/Exif/canon.php:190
@@ -2056,8 +2078,8 @@ msgstr "Anzahl der Elemente pro Seite"
 msgid "Number of tiles per row"
 msgstr "Anzahl der Elemente pro Zeile"
 
-#: lib/Exif/fujifilm.php:120 lib/Exif/fujifilm.php:125
-#: lib/Exif/fujifilm.php:135 lib/Exif/fujifilm.php:152
+#: lib/Exif/fujifilm.php:114 lib/Exif/fujifilm.php:119
+#: lib/Exif/fujifilm.php:129 lib/Exif/fujifilm.php:146
 #: lib/Exif/panasonic.php:163 lib/Exif/panasonic.php:174
 #: lib/Exif/panasonic.php:243 lib/Exif/panasonic.php:258
 #: lib/Exif/panasonic.php:291 lib/Exif/canon.php:94 lib/Exif/canon.php:108
@@ -2068,8 +2090,8 @@ msgstr "Aus"
 msgid "Offensive content"
 msgstr "Anstößiger Inhalt"
 
-#: lib/Exif/fujifilm.php:119 lib/Exif/fujifilm.php:126
-#: lib/Exif/fujifilm.php:136 lib/Exif/fujifilm.php:153
+#: lib/Exif/fujifilm.php:113 lib/Exif/fujifilm.php:120
+#: lib/Exif/fujifilm.php:130 lib/Exif/fujifilm.php:147
 #: lib/Exif/panasonic.php:172 lib/Exif/canon.php:110
 msgid "On"
 msgstr "An"
@@ -2114,11 +2136,11 @@ msgstr "Sonstige"
 msgid "Others"
 msgstr "Weitere"
 
-#: lib/Exif/fujifilm.php:163
+#: lib/Exif/fujifilm.php:157
 msgid "Out of Focus"
 msgstr "Unscharf"
 
-#: lib/Exif/fujifilm.php:168
+#: lib/Exif/fujifilm.php:162
 msgid "Over Exposure"
 msgstr "Überbelichtung"
 
@@ -2156,7 +2178,7 @@ msgstr "Passwort"
 msgid "Pause Slideshow"
 msgstr "Diashow Pause"
 
-#: lib/Widget/OwnerFaces.php:34
+#: lib/Widget/OwnerFaces.php:47
 #, php-format
 msgid "People in galleries of %s (%d of %d)"
 msgstr "Personen in Galerien von %s (%d von %d)"
@@ -2187,7 +2209,7 @@ msgstr "Haustier"
 
 #: templates/faces/face.inc:30 templates/faces/gallery.inc:6
 #: lib/Views/GalleryRenderers/GalleryLightbox.php:129
-#: lib/Views/EmbeddedRenderers/Mini.php:148 lib/Block/recently_added.php:101
+#: lib/Views/EmbeddedRenderers/Mini.php:150 lib/Block/recently_added.php:101
 msgid "Photo"
 msgstr "Foto"
 
@@ -2223,7 +2245,7 @@ msgid "Photo is too small. Search photo must be at least 50x50 pixels."
 msgstr ""
 "Das Foto ist zu klein. Suchfotos müssen mindestens 50x50 Pixel groß sein."
 
-#: lib/Ansel.php:3298
+#: lib/Ansel.php:3379
 msgid "Photo not found"
 msgstr "Foto nicht gefunden"
 
@@ -2240,11 +2262,11 @@ msgstr "Fotosuche"
 msgid "Photos by %s"
 msgstr "Fotos nach %s"
 
-#: templates/image/upload.inc:25
+#: templates/image/upload.inc:22
 msgid "Photos in this gallery"
 msgstr "Fotos in dieser Galerie"
 
-#: lib/Ansel.php:3336
+#: lib/Ansel.php:3417
 msgid "Photos not found"
 msgstr "Fotos nicht gefunden"
 
@@ -2282,12 +2304,12 @@ msgstr ""
 "Bitte laden Sie ein Foto hoch mit dem Gesicht, nach dem Sie suchen möchten. "
 "Sie können immer nur nach einem Gesicht auf einmal suchen."
 
-#: config/styles.php.dist:94
+#: config/styles.php.dist:96
 msgid "Polaroid Style Thumbnails (White Background)"
 msgstr "Polaroid-Vorschau (Weißer Hintergrund)"
 
 #: templates/image/crop_image.inc:150 lib/Exif.php:252
-#: lib/Exif/fujifilm.php:141 lib/Exif/panasonic.php:183 lib/Exif/canon.php:162
+#: lib/Exif/fujifilm.php:135 lib/Exif/panasonic.php:183 lib/Exif/canon.php:162
 msgid "Portrait"
 msgstr "Hoch"
 
@@ -2299,11 +2321,11 @@ msgstr "Voreingestellt"
 msgid "Press the \"Back\" button and try again."
 msgstr "Drücken Sie den \"Zurück\"-Knopf und versuchen Sie es noch einmal."
 
-#: config/styles.php.dist:64
+#: config/styles.php.dist:66
 msgid "Pretty Thumbnails (No Background)"
 msgstr "Hübsche Vorschau (Kein Hintergrund)"
 
-#: config/styles.php.dist:75
+#: config/styles.php.dist:77
 msgid "Pretty Thumbnails (White Background)"
 msgstr "Hübsche Vorschau (Weißer Hintergrund)"
 
@@ -2311,7 +2333,7 @@ msgstr "Hübsche Vorschau (Weißer Hintergrund)"
 msgid "Preview"
 msgstr "Vorschau"
 
-#: image.php:511 image.php:715
+#: image.php:511 image.php:748
 #, php-format
 msgid "Preview changes for %s :: %s"
 msgstr "Vorschau der Änderungen für %s :: %s"
@@ -2326,7 +2348,7 @@ msgstr "Zurück"
 msgid "Program"
 msgstr "Programm"
 
-#: lib/Exif/fujifilm.php:145
+#: lib/Exif/fujifilm.php:139
 msgid "Program AE"
 msgstr "Programm AE"
 
@@ -2498,7 +2520,7 @@ msgstr "Rote Augen, Reflektion gemessen"
 msgid "Red Eye, Return light not detected"
 msgstr "Rote Augen, Reflektion nicht gemessen"
 
-#: lib/Exif/fujifilm.php:121
+#: lib/Exif/fujifilm.php:115
 msgid "Red-Eye Reduction"
 msgstr "Rote-Augen-Reduzierung"
 
@@ -2507,7 +2529,7 @@ msgstr "Rote-Augen-Reduzierung"
 msgid "Refresh List"
 msgstr "Liste aktualisieren"
 
-#: lib/Widget/Actions.php:153
+#: lib/Widget/Actions.php:159
 msgid "Regenerate all photo views"
 msgstr "Fotoansichten neu erstellen"
 
@@ -2519,7 +2541,7 @@ msgstr "Gesichter für dieses Foto neu erkennen"
 msgid "Related Tags"
 msgstr "Ähnliche Tags"
 
-#: lib/Tags.php:601
+#: lib/Tags.php:595
 #, php-format
 msgid "Remove %s from search"
 msgstr "%s aus der Suche entfernen"
@@ -2534,7 +2556,7 @@ msgstr "Foto durch diese Datei ersetzen"
 
 #: report.php:47 report.php:66 templates/faces/face.inc:9
 #: templates/faces/search.inc:10 templates/view/image.inc:78
-#: templates/tile/face.inc:30 lib/Widget/Actions.php:175
+#: templates/tile/face.inc:30 lib/Widget/Actions.php:181
 msgid "Report"
 msgstr "Melden"
 
@@ -2568,11 +2590,11 @@ msgstr "Meldetyp"
 msgid "Reset"
 msgstr "Zurücksetzen"
 
-#: lib/Widget/Actions.php:150
+#: lib/Widget/Actions.php:156
 msgid "Reset all thumbnails"
 msgstr "Vorschauen zurücksetzen"
 
-#: lib/Widget/Actions.php:163
+#: lib/Widget/Actions.php:169
 msgid "Reset default photo"
 msgstr "Standardfoto zurücksetzen"
 
@@ -2683,11 +2705,11 @@ msgstr "Suche alle Fotos getaggt mit: "
 msgid "Searching for faces in %s"
 msgstr "Nach Gesichtern in %s suchen"
 
-#: templates/view/gallerylightbox.inc:133 templates/view/results.inc:77
+#: templates/view/gallerylightbox.inc:144 templates/view/results.inc:77
 msgid "Select All"
 msgstr "Alle auswählen"
 
-#: templates/view/gallerylightbox.inc:134 templates/view/results.inc:78
+#: templates/view/gallerylightbox.inc:145 templates/view/results.inc:78
 msgid "Select None"
 msgstr "Keine auswählen"
 
@@ -2695,16 +2717,16 @@ msgstr "Keine auswählen"
 msgid "Select for Action"
 msgstr "Für eine Aktion auswählen"
 
-#: templates/view/gallery.inc:115
+#: templates/view/gallery.inc:131
 msgid "Select:"
 msgstr "Auswahl:"
 
-#: templates/view/gallerylightbox.inc:132 templates/view/results.inc:76
+#: templates/view/gallerylightbox.inc:143 templates/view/results.inc:76
 #, php-format
 msgid "Select: %s, %s"
 msgstr "Auswahl: %s, %s"
 
-#: templates/view/gallery.inc:123 templates/view/gallerylightbox.inc:149
+#: templates/view/gallery.inc:139 templates/view/gallerylightbox.inc:163
 #: templates/view/results.inc:89
 msgid "Selected photos to"
 msgstr "ausgewählte Fotos nach"
@@ -2738,11 +2760,11 @@ msgstr "Trennen Sie mehrere Tags durch Kommas."
 msgid "Sepia"
 msgstr "Sepia"
 
-#: lib/Widget/Actions.php:140
+#: lib/Widget/Actions.php:146
 msgid "Set captions"
 msgstr "Fotounterschriften setzen"
 
-#: lib/Widget/Actions.php:168
+#: lib/Widget/Actions.php:174
 msgid "Set permissions"
 msgstr "Rechte festlegen"
 
@@ -2750,7 +2772,7 @@ msgstr "Rechte festlegen"
 msgid "Shade"
 msgstr "Schatten"
 
-#: config/styles.php.dist:84
+#: config/styles.php.dist:86
 msgid "Shadowed Thumbnails (White Background)"
 msgstr "Vorschau mit Schatten (Weißer Hintergrund)"
 
@@ -2758,7 +2780,7 @@ msgstr "Vorschau mit Schatten (Weißer Hintergrund)"
 msgid "Show EXIF data"
 msgstr "EXIF-Daten anzeigen"
 
-#: lib/Exif.php:249 lib/Exif/fujifilm.php:147 lib/Exif/panasonic.php:195
+#: lib/Exif.php:249 lib/Exif/fujifilm.php:141 lib/Exif/panasonic.php:195
 msgid "Shutter Priority"
 msgstr "Verschlussprogramm"
 
@@ -2774,11 +2796,11 @@ msgstr "Ähnliche Fotos"
 msgid "Similar faces"
 msgstr "Ähnliche Gesichter"
 
-#: lib/Exif/panasonic.php:203 config/styles.php.dist:158
+#: lib/Exif/panasonic.php:203 config/styles.php.dist:160
 msgid "Simple"
 msgstr "Einfach"
 
-#: config/styles.php.dist:167
+#: config/styles.php.dist:169
 msgid "Simple Lightbox"
 msgstr "Lightbox einfach"
 
@@ -2819,7 +2841,7 @@ msgstr "Klein"
 msgid "Snow"
 msgstr "Schnee"
 
-#: lib/Exif/fujifilm.php:87 lib/Exif/fujifilm.php:88
+#: lib/Exif/fujifilm.php:81 lib/Exif/fujifilm.php:82
 msgid "Soft"
 msgstr "Weich"
 
@@ -2827,7 +2849,7 @@ msgstr "Weich"
 msgid "Sort by:"
 msgstr "Sortieren nach:"
 
-#: lib/Widget/Actions.php:146
+#: lib/Widget/Actions.php:152
 msgid "Sort photos"
 msgstr "Fotos sortieren"
 
@@ -2839,7 +2861,7 @@ msgstr "SpeedLight"
 msgid "Sport"
 msgstr "Sport"
 
-#: lib/Exif/fujifilm.php:143 lib/Exif/panasonic.php:187
+#: lib/Exif/fujifilm.php:137 lib/Exif/panasonic.php:187
 msgid "Sports"
 msgstr "Sport"
 
@@ -2869,7 +2891,7 @@ msgid "Standard light C"
 msgstr "Standardlicht C"
 
 #: templates/view/image.inc:88 templates/view/image.inc:115
-#: templates/view/slideshow.inc:38 lib/Widget/Actions.php:47
+#: templates/view/slideshow.inc:38 lib/Widget/Actions.php:49
 msgid "Start Slideshow"
 msgstr "Diashow starten"
 
@@ -2882,6 +2904,10 @@ msgstr "Speichere Foto \"%s\"..."
 #: templates/gallery/gallery.inc:40
 msgid "Style for this gallery"
 msgstr "Stil für diese Galerie"
+
+#: lib/Block/recent_comments.php:106
+msgid "Subject"
+msgstr "Betreff"
 
 #: scripts/recursive_import.php:200 scripts/ansel.php:235
 #: scripts/remote_import.php:271
@@ -2957,7 +2983,7 @@ msgstr "Das Verzeichnis \"%s\" enthält keine gültigen Fotos."
 msgid "The directory \"%s\" is empty."
 msgstr "Das Verzeichnis \"%s\" ist leer."
 
-#: scripts/remote_import.php:297 lib/Ansel.php:517
+#: scripts/remote_import.php:297 lib/Ansel.php:515
 #, php-format
 msgid "The file \"%s\" doesn't exist."
 msgstr "Die Datei \"%s\" existiert nicht."
@@ -2966,41 +2992,41 @@ msgstr "Die Datei \"%s\" existiert nicht."
 msgid "The file could not be found."
 msgstr "Die Datei konnte nicht gefunden werden."
 
-#: image.php:210 lib/api.php:504 img/upload.php:180
+#: image.php:210 lib/api.php:536 img/upload.php:180
 msgid "The file you uploaded does not appear to be a valid photo."
 msgstr ""
 "Die Datei, die Sie hochgeladen haben, scheint kein gültiges Foto zu sein."
 
-#: lib/Ansel.php:2979
+#: lib/Ansel.php:3060
 #, php-format
 msgid "The gallery \"%s\" could not be created: %s"
 msgstr "Die Galerie \"%s\" konnte nicht erstellt werden: %s"
 
-#: gallery.php:321 xppublish.php:123 scripts/recursive_import.php:157
+#: gallery.php:272 xppublish.php:123 scripts/recursive_import.php:157
 #: scripts/ansel.php:156 scripts/remote_import.php:210
 #, php-format
 msgid "The gallery \"%s\" couldn't be created: %s"
 msgstr "Die Galerie \"%s\" konnte nicht erstellt werden: %s"
 
-#: gallery.php:327 xppublish.php:127 scripts/recursive_import.php:159
+#: gallery.php:278 xppublish.php:127 scripts/recursive_import.php:159
 #: scripts/ansel.php:161 scripts/remote_import.php:212
 #, php-format
 msgid "The gallery \"%s\" was created successfully."
 msgstr "Die Galerie \"%s\" wurde erfolgreich erstellt."
 
-#: gallery.php:270
+#: gallery.php:221
 msgid "The gallery was saved."
 msgstr "Die Galerie wurde gespeichert."
 
-#: gallery.php:383
+#: gallery.php:334
 msgid "The gallery's default photo has successfully been reset."
 msgstr "Das Standardfoto dieser Galerie wurde erfolgreich zurückgesetzt."
 
-#: gallery.php:400
+#: gallery.php:351
 msgid "The gallery's thumbnails have successfully been reset."
 msgstr "Die Vorschauen dieser Galerie wurde erfolgreich zurückgesetzt."
 
-#: gallery.php:423
+#: gallery.php:374
 msgid "The gallery's views have successfully been reset."
 msgstr "Die Ansichten dieser Galerie wurden erfolgreich zurückgesetzt."
 
@@ -3014,7 +3040,7 @@ msgstr ""
 "Der Besitzer des Fotos, der den Gesichternamen weitergeben wird, wurde "
 "benachrichtigt."
 
-#: lib/Ansel.php:2942
+#: lib/Ansel.php:3023
 #, php-format
 msgid "The slug \"%s\" already exists."
 msgstr "Der Kurzname \"%s\" existiert bereits."
@@ -3030,13 +3056,13 @@ msgstr ""
 msgid "There are no photo galleries available."
 msgstr "Es sind keine Fotogalerien verfügbar."
 
-#: gallery.php:116
+#: lib/Ansel.php:979
 #, php-format
 msgid "There are no photos in %s to download."
 msgstr "In %s befinden sich keine Fotos zum Herunterladen."
 
-#: templates/captions/captions.inc:52 templates/view/gallery.inc:127
-#: templates/view/gallerylightbox.inc:153 templates/view/results.inc:99
+#: templates/captions/captions.inc:52 templates/view/gallery.inc:143
+#: templates/view/gallerylightbox.inc:167 templates/view/results.inc:99
 msgid "There are no photos in this gallery."
 msgstr "In dieser Galerie befinden sich keine Fotos."
 
@@ -3054,7 +3080,7 @@ msgstr ""
 "Beim Hinzufügen des Fotos \"%s\" zur Galerie \"%s\" ist ein Problem "
 "aufgetreten: %s"
 
-#: gallery/delete.php:34 lib/api.php:679
+#: gallery/delete.php:34 lib/api.php:713
 #, php-format
 msgid "There was a problem deleting %s: %s"
 msgstr "Beim Löschen von %s ist ein Problem aufgetreten: %s"
@@ -3158,7 +3184,7 @@ msgstr "Tv"
 msgid "Two Chip Color Area Sensor"
 msgstr "Two Chip Color Area Sensor"
 
-#: lib/Widget.php:75 lib/ImageView.php:96 lib/Search.php:57 lib/api.php:1208
+#: lib/Widget.php:75 lib/ImageView.php:96 lib/Search.php:57 lib/api.php:1322
 #, php-format
 msgid "Unable to load the definition of %s."
 msgstr "Der %s-Treiber konnte nicht geladen werden."
@@ -3184,8 +3210,8 @@ msgid "Unfiled"
 msgstr "Nicht zugeordnet"
 
 #: lib/Exif.php:241 lib/Exif.php:254 lib/Exif.php:270 lib/Exif.php:356
-#: lib/Exif.php:390 lib/Exif.php:397 lib/Exif.php:454 lib/Exif/fujifilm.php:92
-#: lib/Exif/fujifilm.php:103 lib/Exif/sanyo.php:73 lib/Exif/sanyo.php:77
+#: lib/Exif.php:390 lib/Exif.php:397 lib/Exif.php:454 lib/Exif/fujifilm.php:86
+#: lib/Exif/fujifilm.php:97 lib/Exif/sanyo.php:73 lib/Exif/sanyo.php:77
 #: lib/Exif/sanyo.php:81 lib/Exif/olympus.php:83 lib/Exif/olympus.php:88
 #: lib/Exif/nikon.php:122 lib/Exif/nikon.php:127 lib/Exif/nikon.php:135
 #: lib/Exif/nikon.php:142 lib/Exif/nikon.php:152 lib/Exif/nikon.php:157
@@ -3209,7 +3235,7 @@ msgstr "Unbekannt"
 msgid "Unknown (%s)"
 msgstr "Unbekannt (%s)"
 
-#: gallery.php:172
+#: gallery.php:121
 msgid "Unknown gallery"
 msgstr "Unbekannte Galerie"
 
@@ -3220,12 +3246,12 @@ msgstr "Unbekannte Galerie"
 msgid "Unknown(%s)"
 msgstr "Unbekannt(%s)"
 
-#: lib/Exif/fujifilm.php:109 lib/Exif/fujifilm.php:115
-#: lib/Exif/fujifilm.php:122 lib/Exif/fujifilm.php:127
-#: lib/Exif/fujifilm.php:132 lib/Exif/fujifilm.php:137
-#: lib/Exif/fujifilm.php:149 lib/Exif/fujifilm.php:154
-#: lib/Exif/fujifilm.php:159 lib/Exif/fujifilm.php:164
-#: lib/Exif/fujifilm.php:169
+#: lib/Exif/fujifilm.php:103 lib/Exif/fujifilm.php:109
+#: lib/Exif/fujifilm.php:116 lib/Exif/fujifilm.php:121
+#: lib/Exif/fujifilm.php:126 lib/Exif/fujifilm.php:131
+#: lib/Exif/fujifilm.php:143 lib/Exif/fujifilm.php:148
+#: lib/Exif/fujifilm.php:153 lib/Exif/fujifilm.php:158
+#: lib/Exif/fujifilm.php:163
 msgid "Unknown: "
 msgstr "Unbekannt: "
 
@@ -3239,7 +3265,7 @@ msgstr "Unbekannt: %s"
 msgid "Unknown: (%s)"
 msgstr "Unbekannt: (%s)"
 
-#: lib/Ansel.php:2910 lib/tests/GalleryTest.php:42
+#: lib/Ansel.php:2991 lib/tests/GalleryTest.php:42
 msgid "Unnamed"
 msgstr "Unbenannt"
 
@@ -3269,7 +3295,7 @@ msgstr "Fotos nach %s hochladen"
 msgid "Upload face photo"
 msgstr "Foto mit Gesicht hochladen"
 
-#: lib/Widget/Actions.php:50 img/upload.php:29
+#: lib/Widget/Actions.php:52 img/upload.php:29
 msgid "Upload photos"
 msgstr "Fotos hochladen"
 
@@ -3372,7 +3398,7 @@ msgstr "Standardansicht"
 msgid "Warm"
 msgstr "Warm"
 
-#: lib/Exif/fujifilm.php:158
+#: lib/Exif/fujifilm.php:152
 msgid "Warning"
 msgstr "Warnung"
 
@@ -3428,7 +3454,7 @@ msgstr "Weißabgleich"
 msgid "White fluorescent"
 msgstr "Weiße Leuchtstoffröhre"
 
-#: lib/Exif/fujifilm.php:100
+#: lib/Exif/fujifilm.php:94
 msgid "White-fluorescence"
 msgstr "Weiße Leuchtstoffröhre"
 
@@ -3468,7 +3494,7 @@ msgstr "Sie dürfen dieses Foto nicht bearbeiten."
 msgid "You did not select any photos to upload."
 msgstr "Sie haben keine Fotos zum Hochladen ausgewählt."
 
-#: gallery.php:285
+#: gallery.php:236
 #, php-format
 msgid "You do not have permission to add children to %s."
 msgstr "Sie haben nicht genügend Rechte, um Unterpunkte zu %s hinzuzufügen."
@@ -3497,7 +3523,7 @@ msgstr ""
 msgid "You have no photo galleries, add one!"
 msgstr "Sie haben noch keine Fotogalerien, legen Sie sich eine an!"
 
-#: templates/view/gallery.inc:42 templates/view/gallery.inc:56
+#: templates/view/gallery.inc:43 templates/view/gallery.inc:58
 #: templates/view/gallerylightbox.inc:43 templates/view/gallerylightbox.inc:57
 #: templates/view/results.inc:30 templates/view/results.inc:44
 msgid "You must choose a gallery to move photos to."
@@ -3508,11 +3534,11 @@ msgstr ""
 msgid "You must choose photos to delete."
 msgstr "Sie müssen die Fotos auswählen, die gelöscht werden sollen."
 
-#: templates/view/gallery.inc:79 templates/view/gallerylightbox.inc:80
+#: templates/view/gallery.inc:82 templates/view/gallerylightbox.inc:80
 msgid "You must choose photos to edit."
 msgstr "Sie müssen die Fotos auswählen, die bearbeitet werden sollen."
 
-#: lib/Ansel.php:67 lib/Ansel.php:75
+#: lib/Ansel.php:65 lib/Ansel.php:73
 msgid "You must configure a VFS backend to use Ansel."
 msgstr "Sie müssen ein VFS-Backend konfigurieren, um Ansel benutzen zu können."
 
@@ -3530,13 +3556,17 @@ msgstr "Sie müssen Ihre Emailadresse angeben."
 msgid "You must login with an administrative account."
 msgstr "Sie müssen sich mit einem Administratorenkonto anmelden."
 
-#: gallery.php:297
+#: gallery.php:248
 msgid "You must provide a display name for your new gallery."
 msgstr "Sie müssen einen Anzeigenamen für die neue Galerie angeben."
 
 #: edit_dates.php:36
 msgid "You must select at least on photo to edit."
 msgstr "Sie müssen erst mindestens ein Foto auswählen."
+
+#: image.php:713
+msgid "You must select images to download."
+msgstr "Sie müssen Bilder zum Herunterladen auswählen."
 
 #: scripts/recursive_import.php:95 scripts/remote_import.php:119
 msgid "You must specify a valid directory."
@@ -3560,27 +3590,27 @@ msgstr "Sie müssen erst das Suchfoto hochladen"
 msgid "Zip File Upload"
 msgstr "ZIP-Datei"
 
-#: lib/Ansel.php:587
+#: lib/Ansel.php:585
 msgid "_Browse"
 msgstr "_Liste"
 
-#: lib/Ansel.php:627
+#: lib/Ansel.php:625
 msgid "_Faces"
 msgstr "Ge_sichter"
 
-#: lib/Ansel.php:595
+#: lib/Ansel.php:593
 msgid "_Galleries"
 msgstr "_Galerien"
 
-#: lib/Ansel.php:607
+#: lib/Ansel.php:605
 msgid "_My Galleries"
 msgstr "_Meine Galerien"
 
-#: lib/Ansel.php:619
+#: lib/Ansel.php:617
 msgid "_New Gallery"
 msgstr "_Neue Galerie"
 
-#: lib/Ansel.php:632
+#: lib/Ansel.php:630
 msgid "_Print"
 msgstr "_Drucken"
 
@@ -3598,7 +3628,7 @@ msgid "none"
 msgstr "Nichts"
 
 #: lib/Views/GalleryRenderers/GalleryLightbox.php:130
-#: lib/Views/EmbeddedRenderers/Mini.php:149
+#: lib/Views/EmbeddedRenderers/Mini.php:151
 msgid "of"
 msgstr "von"
 

@@ -1,7 +1,7 @@
 # German translations for Horde.
 # Copyright 2001-2009 The Horde Project (http://www.horde.org/)
 # This file is distributed under the same license as the Horde package.
-# Jan Schneider <jan@horde.org>, 2001-2008.
+# Jan Schneider <jan@horde.org>, 2001-2009.
 #
 # margin: Außenabstand
 # padding: Innenabstand
@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Horde 3.2-cvs\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2008-09-25 12:39+0200\n"
-"PO-Revision-Date: 2008-10-15 11:52+0200\n"
+"POT-Creation-Date: 2009-03-19 10:36+0100\n"
+"PO-Revision-Date: 2009-03-19 11:55+0100\n"
 "Last-Translator: Jan Schneider <jan@horde.org>\n"
 "Language-Team: German <dev@lists.horde.org>\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid " (%s days ago)"
 msgstr " (vor %s Tagen)"
 
-#: framework/Horde/Horde.php:1592
+#: framework/Horde/Horde.php:1597
 #, php-format
 msgid " (Accesskey %s)"
 msgstr " (Zugriffstaste %s)"
@@ -113,7 +113,7 @@ msgstr "%.2fMB (%3$.2f%%) von %2$.2fMB erlaubten verbraucht"
 msgid "%d %s and %s"
 msgstr "%d %s und %s"
 
-#: framework/MIME/MIME/Viewer/vcard.php:57
+#: framework/MIME/MIME/Viewer/vcard.php:64
 #, php-format
 msgid "%d contact was successfully added to your address book."
 msgid_plural "%d contacts were successfully added to your address book."
@@ -152,17 +152,17 @@ msgstr "%d-Tage-Vorhersage"
 msgid "%s - Notice"
 msgstr "%s - Hinweis"
 
-#: framework/Crypt/Crypt/smime.php:711
+#: framework/Crypt/Crypt/smime.php:708
 #, php-format
 msgid "%s Fingerprint"
 msgstr "%s Fingerabdruck"
 
-#: framework/MIME/MIME/Contents.php:1000 framework/MIME/MIME/Contents.php:1006
+#: framework/MIME/MIME/Contents.php:1001 framework/MIME/MIME/Contents.php:1007
 #, php-format
 msgid "%s KB"
 msgstr "%s KB"
 
-#: framework/MIME/MIME/Contents.php:998 framework/MIME/MIME/Contents.php:1004
+#: framework/MIME/MIME/Contents.php:999 framework/MIME/MIME/Contents.php:1005
 #, php-format
 msgid "%s MB"
 msgstr "%s MB"
@@ -187,7 +187,7 @@ msgstr "%s Registrierung"
 msgid "%s Terms of Agreement"
 msgstr "%s Nutzungsbedingungen"
 
-#: framework/VFS/lib/VFS/smb.php:512 framework/VFS/lib/VFS/smb.php:567
+#: framework/VFS/lib/VFS/smb.php:527 framework/VFS/lib/VFS/smb.php:582
 #: framework/VFS/lib/VFS/ftp.php:770 framework/VFS/lib/VFS/ftp.php:832
 #: framework/VFS/lib/VFS/ssh2.php:750 framework/VFS/lib/VFS/ssh2.php:815
 #, php-format
@@ -204,6 +204,43 @@ msgstr "%s mit %s %s"
 #, php-format
 msgid "%s authentication credentials"
 msgstr "%s-Anmeldedaten"
+
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:979
+#, php-format
+msgid "%s has accepted the invitation to the following event:"
+msgstr "%s hat die Einladung zu dem folgenden Termin angenommen:"
+
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:978
+#, php-format
+msgid "%s has accepted the update to the following event:"
+msgstr "%s hat die Aktualisierung des folgenden Termins angenommen:"
+
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:702
+#, php-format
+msgid "%s has been cancelled"
+msgstr "%s wurde abgesagt"
+
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:969
+#, php-format
+msgid "%s has declined the invitation to the following event:"
+msgstr "%s hat die Einladung zu dem folgenden Termin abgelehnt:"
+
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:968
+#, php-format
+msgid "%s has declined the update to the following event:"
+msgstr "%s hat die Aktualisierung des folgenden Termins abgelehnt:"
+
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:989
+#, php-format
+msgid "%s has tentatively accepted the invitation to the following event:"
+msgstr ""
+"%s hat die Einladung zu dem folgenden Termin unter Vorbehalt angenommen:"
+
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:988
+#, php-format
+msgid "%s has tentatively accepted the update to the following event:"
+msgstr ""
+"%s hat die Aktualisierung des folgenden Termins unter Vorbehalt angenommen:"
 
 #: framework/Block/Block/Collection.php:132
 #, php-format
@@ -261,6 +298,16 @@ msgstr ""
 "Absender. Folgen Sie keinen Links in dieser Nachricht und hüten Sie sich "
 "davor, dem Absender persönliche Daten preiszugeben."
 
+#: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Content.php:404
+#, php-format
+msgid "(UNTRUSTED, sender <%s> is not authenticated)"
+msgstr "(NICHT VERTRAUENSWÜRDIG, Absender <%s> ist nicht authentifiziert)"
+
+#: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Content.php:398
+#, php-format
+msgid "(UNTRUSTED, sender is <%s>)"
+msgstr "(NICHT VERTRAUENSWÜRDIG, Absender ist <%s>)"
+
 #: lib/Block/weatherdotcom.php:370 lib/Block/weatherdotcom.php:415
 msgid ", gusting "
 msgstr ", böig "
@@ -277,7 +324,7 @@ msgstr ", schwankend von %s bis %s"
 
 #: framework/Perms/Perms/UI.php:341 framework/Perms/Perms/UI.php:400
 #: framework/Form/Form.php:2730 framework/Form/Form.php:2796
-#: framework/UI/UI/VarRenderer/html.php:824
+#: framework/UI/UI/VarRenderer/html.php:833
 msgid "-- select --"
 msgstr "-- Auswählen --"
 
@@ -305,15 +352,27 @@ msgstr "24-Stunden-Format"
 msgid "24 hours"
 msgstr "24 Stunden"
 
+#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/View.php:237
+msgid "401 Unauthorized"
+msgstr "401 Nicht autorisiert"
+
+#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/View.php:216
+msgid "404 Not Found"
+msgstr "404 Nicht gefunden"
+
 #: framework/Alarm/Alarm.php:344
 msgid "5 minutes"
 msgstr "5 Minuten"
+
+#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/View.php:254
+msgid "500 Server Error"
+msgstr "500 Serverfehler"
 
 #: framework/Alarm/Alarm.php:347
 msgid "6 hours"
 msgstr "6 Stunden"
 
-#: framework/UI/UI/Pager.php:73
+#: framework/UI/UI/Pager.php:75
 msgid "<Previous"
 msgstr "<Zurück"
 
@@ -325,7 +384,7 @@ msgstr "A Zeichen"
 msgid "A database backend is required for this block."
 msgstr "Fr diesen Block wird eine Datenbank bentigt."
 
-#: framework/Horde/Horde.php:192
+#: framework/Horde/Horde.php:193
 msgid "A fatal error has occurred"
 msgstr "Ein schwerer Fehler ist aufgetreten:"
 
@@ -345,23 +404,23 @@ msgstr ""
 msgid "A newer version (%s) exists."
 msgstr "Eine neuere Version (%s) existiert."
 
-#: framework/Crypt/Crypt/pgp.php:1327
+#: framework/Crypt/Crypt/pgp.php:1338
 msgid "A passphrase is required to decrypt a message."
 msgstr "Ein Passwort wird für die Entschlüsselung einer Nachricht benötigt."
 
-#: framework/Crypt/Crypt/pgp.php:1151
+#: framework/Crypt/Crypt/pgp.php:1162
 msgid "A public PGP key is required to encrypt a message."
 msgstr ""
 "Ein öffentlicher PGP-Schlüssel wird für die Verschlüsselung einer Nachricht "
 "benötigt."
 
-#: framework/Crypt/Crypt/pgp.php:1405
+#: framework/Crypt/Crypt/pgp.php:1416
 msgid "A public PGP key is required to verify a signed message."
 msgstr ""
 "Ein öffentlicher PGP-Schlüssel wird für die Überprüfung einer "
 "unterzeichneten Nachricht benötigt."
 
-#: framework/Crypt/Crypt/pgp.php:1246
+#: framework/Crypt/Crypt/pgp.php:1257
 msgid ""
 "A public PGP key, private PGP key, and passphrase are required to sign a "
 "message."
@@ -369,13 +428,13 @@ msgstr ""
 "Ein öffentlicher und ein privater PGP-Schlüssel sowie ein Passwort wird für "
 "die Unterzeichnung einer Nachricht benötigt."
 
-#: framework/Crypt/Crypt/smime.php:370
+#: framework/Crypt/Crypt/smime.php:367
 msgid "A public S/MIME key is required to encrypt a message."
 msgstr ""
 "Ein öffentlicher S/MIME-Schlüssel wird für die Verschlüsselung einer "
 "Nachricht benötigt."
 
-#: framework/Crypt/Crypt/smime.php:512
+#: framework/Crypt/Crypt/smime.php:509
 msgid ""
 "A public S/MIME key, private S/MIME key, and passphrase are required to "
 "decrypt a message."
@@ -383,7 +442,7 @@ msgstr ""
 "Ein öffentlicher und ein privater S/MIME-Schlüssel sowie ein Passwort wird "
 "für die Entschlüsselung einer Nachricht benötigt."
 
-#: framework/Crypt/Crypt/smime.php:437
+#: framework/Crypt/Crypt/smime.php:434
 msgid ""
 "A public S/MIME key, private S/MIME key, and passphrase are required to sign "
 "a message."
@@ -451,6 +510,10 @@ msgstr "AM/PM"
 msgid "API ID"
 msgstr "API ID"
 
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:980
+msgid "Accepted: "
+msgstr "Angenommen: "
+
 #: framework/VFS/lib/VFS/musql.php:319
 msgid "Access denied creating VFS directory."
 msgstr "Zugriff verweigert beim Anlegen des VFS-Verzeichnisses."
@@ -458,6 +521,10 @@ msgstr "Zugriff verweigert beim Anlegen des VFS-Verzeichnisses."
 #: framework/VFS/lib/VFS/musql.php:142
 msgid "Access denied creating VFS file."
 msgstr "Zugriff verweigert beim Anlegen der VFS-Datei."
+
+#: framework/Kolab_Server/lib/Horde/Kolab/Session.php:141
+msgid "Access to special Kolab users is denied."
+msgstr "Zugriff von speziellen Kolabbenutzern verweigert."
 
 #: lib/Block/account.php:3
 msgid "Account Information"
@@ -475,7 +542,7 @@ msgstr "Konto eingefroren."
 msgid "Accounting"
 msgstr "Buchhaltung"
 
-#: framework/Perms/Perms/UI.php:195 framework/UI/UI/VarRenderer/html.php:627
+#: framework/Perms/Perms/UI.php:195 framework/UI/UI/VarRenderer/html.php:636
 #: templates/portal/add.inc:14 templates/admin/groups/addchild.inc:12
 msgid "Add"
 msgstr "Hinzufügen"
@@ -535,11 +602,11 @@ msgstr "Paar hinzufügen"
 msgid "Add the %s Menu as a Mozilla Sidebar"
 msgstr "Das %s-Menü zur Mozilla Sidebar hinzufügen"
 
-#: framework/MIME/MIME/Viewer/vcard.php:317
+#: framework/MIME/MIME/Viewer/vcard.php:323
 msgid "Add to address book:"
 msgstr "Zum Adressbuch hinzufügen:"
 
-#: framework/MIME/MIME/Viewer/vcard.php:332
+#: framework/MIME/MIME/Viewer/vcard.php:338
 msgid "Add to my address book"
 msgstr "Zu meinem Adressbuch hinzufügen"
 
@@ -565,13 +632,13 @@ msgstr "\"%s\" wurde zum System hinzugefügt. Sie können sich jetzt anmelden."
 msgid "Adding users is disabled."
 msgstr "Das Hinzufügen von Benutzern ist nicht möglich."
 
-#: framework/MIME/MIME/Viewer/vcard.php:143
-#: framework/MIME/MIME/Viewer/vcard.php:201 framework/Form/Form.php:1556
+#: framework/MIME/MIME/Viewer/vcard.php:151
+#: framework/MIME/MIME/Viewer/vcard.php:209 framework/Form/Form.php:1556
 #: lib/Block/vatid.php:102
 msgid "Address"
 msgstr "Adresse"
 
-#: framework/MIME/MIME/Viewer/vcard.php:319 config/registry.php.dist:132
+#: framework/MIME/MIME/Viewer/vcard.php:325 config/registry.php.dist:132
 msgid "Address Book"
 msgstr "Adressbuch"
 
@@ -644,7 +711,7 @@ msgstr "Albanien"
 msgid "Algeria"
 msgstr "Algerien"
 
-#: framework/MIME/MIME/Viewer/vcard.php:88
+#: framework/MIME/MIME/Viewer/vcard.php:94
 msgid "Alias"
 msgstr "Spitzname"
 
@@ -727,10 +794,6 @@ msgstr "Anguilla"
 #: framework/NLS/NLS/GeoIP.php:119
 msgid "Anonymous Proxy"
 msgstr "Anonymer Proxy"
-
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Session.php:131
-msgid "Anonymous user."
-msgstr "Anonymer Benutzer."
 
 #: services/resetpassword.php:53
 msgid "Answer"
@@ -872,7 +935,7 @@ msgstr "Es wurde versucht, ein nicht existierendes Recht zu bearbeiten."
 msgid "Attempt to edit a non-existent share."
 msgstr "Es wurde versucht, ein nicht existierendes Recht zu bearbeiten."
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/Object.php:182
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/Object.php:289
 #, php-format
 msgid "Attribute \"%s\" not supported!"
 msgstr "Dat Attribut \"%s\" wird nicht unterstützt!"
@@ -1112,7 +1175,7 @@ msgstr "Bermudas"
 msgid "Bhutan"
 msgstr "Bhutan"
 
-#: framework/MIME/MIME/Viewer/vcard.php:94
+#: framework/MIME/MIME/Viewer/vcard.php:100
 msgid "Birthday"
 msgstr "Geburtstag"
 
@@ -1211,7 +1274,7 @@ msgstr "Burundi"
 msgid "CRC"
 msgstr "CRC"
 
-#: framework/Crypt/Crypt/smime.php:604
+#: framework/Crypt/Crypt/smime.php:601
 msgid "CRL Distribution Points"
 msgstr "CRL Distributionsstelle"
 
@@ -1270,13 +1333,13 @@ msgstr "Externe Session-Handler können nicht administriert werden."
 msgid "Cannot connect to IMAP server: %s"
 msgstr "Verbindung zum IMAP-Server kann nicht hergestellt werden: %s"
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:58
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:70
 msgid "Cannot connect to the Kolab LDAP server. PHP does not support LDAP!"
 msgstr ""
 "Verbindung zum Kolab-LDAP-Server kann nicht hergestellt werden. PHP "
 "unterstützt kein LDAP!"
 
-#: framework/VFS/lib/VFS.php:409 framework/VFS/lib/VFS/smb.php:496
+#: framework/VFS/lib/VFS.php:409 framework/VFS/lib/VFS/smb.php:511
 #: framework/VFS/lib/VFS/file.php:272 framework/VFS/lib/VFS/ftp.php:749
 #: framework/VFS/lib/VFS/ssh2.php:729 framework/VFS/lib/VFS/sql_file.php:181
 msgid "Cannot copy file(s) - source and destination are the same."
@@ -1284,7 +1347,7 @@ msgstr ""
 "Datei(en) können nicht kopiert werden - Quell- und Zieldateien sind "
 "identisch."
 
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Folder.php:282
+#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Folder.php:290
 msgid "Cannot create this folder! The name has not yet been set."
 msgstr ""
 "Dieser Order kann nicht angelegt werden! Der Name wurde noch nicht "
@@ -1300,7 +1363,7 @@ msgstr "Die Datei \"%s\" konnte nicht gelöscht werden."
 msgid "Cannot find a temporary directory."
 msgstr "Kein temporäres Verzeichnis gefunden."
 
-#: framework/VFS/lib/VFS/smb.php:551 framework/VFS/lib/VFS/file.php:231
+#: framework/VFS/lib/VFS/smb.php:566 framework/VFS/lib/VFS/file.php:231
 #: framework/VFS/lib/VFS/ftp.php:811 framework/VFS/lib/VFS/ssh2.php:793
 #: framework/VFS/lib/VFS/sql_file.php:140
 msgid "Cannot move file(s) - destination is within source."
@@ -1353,11 +1416,6 @@ msgid "Cannot route message to specified number."
 msgstr ""
 "Die Nachricht konnte nicht an die angegebe Nummer weitergeleitet werden."
 
-#: framework/Kolab/Kolab.php:836
-#, php-format
-msgid "Cannot trigger shared folder %s."
-msgstr "Gemeinsamer Ordner %s kann nicht aktualisiert werden."
-
 #: framework/File_CSV/CSV.php:418
 #, php-format
 msgid "Cannot write to file \"%s\""
@@ -1389,7 +1447,7 @@ msgstr "Cayman-Inseln"
 msgid "Cc"
 msgstr "Cc"
 
-#: framework/MIME/MIME/Viewer/vcard.php:229
+#: framework/MIME/MIME/Viewer/vcard.php:235
 msgid "Cell Phone"
 msgstr "Mobiltelefon"
 
@@ -1406,15 +1464,15 @@ msgstr "Zentralafrikanische Republik"
 msgid "Central European (ISO-8859-2)"
 msgstr "Mitteleuropäisch (ISO-8859-2)"
 
-#: framework/Crypt/Crypt/smime.php:706
+#: framework/Crypt/Crypt/smime.php:703
 msgid "Certificate Details"
 msgstr "Zertifikatdetails"
 
-#: framework/Crypt/Crypt/smime.php:618
+#: framework/Crypt/Crypt/smime.php:615
 msgid "Certificate Owner"
 msgstr "Zertifikatbesitzer"
 
-#: framework/Crypt/Crypt/smime.php:603
+#: framework/Crypt/Crypt/smime.php:600
 msgid "Certificate Policies"
 msgstr "Zertifikatrichtlinien"
 
@@ -1595,8 +1653,8 @@ msgstr "Menü einfahren"
 msgid "Colombia"
 msgstr "Kolumbien"
 
-#: framework/UI/UI/VarRenderer/html.php:575
-#: framework/UI/UI/VarRenderer/html.php:577
+#: framework/UI/UI/VarRenderer/html.php:584
+#: framework/UI/UI/VarRenderer/html.php:586
 #: templates/prefs/categorymanagement.inc:58
 #: templates/prefs/categorymanagement.inc:74
 #: templates/prefs/categorymanagement.inc:90
@@ -1623,11 +1681,11 @@ msgstr "Befehl"
 msgid "Command Shell"
 msgstr "Befehlszeile"
 
-#: framework/Crypt/Crypt/pgp.php:440
+#: framework/Crypt/Crypt/pgp.php:449
 msgid "Comment"
 msgstr "Kommentar"
 
-#: framework/Crypt/Crypt/smime.php:573
+#: framework/Crypt/Crypt/smime.php:570
 msgid "Common Name"
 msgstr "Eindeutiger Name"
 
@@ -1636,7 +1694,7 @@ msgstr "Eindeutiger Name"
 msgid "Comoros"
 msgstr "Komoren"
 
-#: framework/MIME/MIME/Viewer/vcard.php:281
+#: framework/MIME/MIME/Viewer/vcard.php:287
 msgid "Company"
 msgstr "Firma"
 
@@ -1706,11 +1764,11 @@ msgstr "Verbindung fehlgeschlagen."
 msgid "Connection failed: "
 msgstr "Verbindung fehlgeschlagen: "
 
-#: framework/Crypt/Crypt/pgp.php:983
+#: framework/Crypt/Crypt/pgp.php:994
 msgid "Connection refused to the public keyserver."
 msgstr "Verbindung zum öffentlichen Schlüsselserver wurde abgewiesen."
 
-#: framework/Crypt/Crypt/pgp.php:985
+#: framework/Crypt/Crypt/pgp.php:996
 #, php-format
 msgid "Connection refused to the public keyserver. Reason: %s (%s)"
 msgstr ""
@@ -1752,7 +1810,7 @@ msgstr "Cook-Inseln"
 msgid "Cookie"
 msgstr "Cookie"
 
-#: framework/VFS/lib/VFS/smb.php:529
+#: framework/VFS/lib/VFS/smb.php:544
 #, php-format
 msgid "Copy failed: %s"
 msgstr "Kopieren fehlgeschlagen: %s"
@@ -1776,19 +1834,19 @@ msgstr "Costa Rica"
 msgid "Cote d'Ivoire"
 msgstr "Elfenbeinküste"
 
-#: framework/Crypt/Crypt/pgp.php:1207
+#: framework/Crypt/Crypt/pgp.php:1218
 msgid "Could not PGP encrypt message: "
 msgstr "Die Nachricht konnte nicht mit PGP verschlüsselt werden: "
 
-#: framework/Crypt/Crypt/pgp.php:1285
+#: framework/Crypt/Crypt/pgp.php:1296
 msgid "Could not PGP sign message: "
 msgstr "Die Nachricht konnte nicht mit PGP unterzeichnet werden: "
 
-#: framework/Crypt/Crypt/smime.php:399
+#: framework/Crypt/Crypt/smime.php:396
 msgid "Could not S/MIME encrypt message."
 msgstr "Die Nachricht konnte nicht mit S/MIME verschlüsselt werden."
 
-#: framework/Crypt/Crypt/smime.php:473
+#: framework/Crypt/Crypt/smime.php:470
 msgid "Could not S/MIME sign message."
 msgstr "Die Nachricht konnte nicht mit S/MIME unterzeichnet werden."
 
@@ -1819,7 +1877,7 @@ msgstr "Kontostand konnte nicht überprüft werden. %s"
 msgid "Could not connect to LDAP server."
 msgstr "Verbindung zum LDAP-Server fehlgeschlagen."
 
-#: framework/SessionHandler/SessionHandler/memcache.php:294
+#: framework/SessionHandler/SessionHandler/memcache.php:305
 msgid "Could not connect to memcache servers."
 msgstr "Verbindung zu Memcache-Servern fehlgeschlagen."
 
@@ -1833,11 +1891,11 @@ msgstr "FTP-Verbindung zum Server \"%s\" konnte nicht hergestellt werden: %s"
 msgid "Could not create distribution list. %s"
 msgstr "Verteilerliste konnte nicht erstellt werden. %s"
 
-#: framework/Crypt/Crypt/pgp.php:1365
+#: framework/Crypt/Crypt/pgp.php:1376
 msgid "Could not decrypt PGP data: "
 msgstr "PGP-Daten konnten nicht entschlüsselt werden: "
 
-#: framework/Crypt/Crypt/smime.php:529
+#: framework/Crypt/Crypt/smime.php:526
 msgid "Could not decrypt S/MIME data."
 msgstr "S/MIME-Daten konnten nicht entschlüsselt werden."
 
@@ -1856,7 +1914,7 @@ msgstr "Verteilerliste konnte nicht gelöscht werden. %s"
 msgid "Could not delete setup upgrade script \"%s\"."
 msgstr "Das Aktualisierungsskript \"%s\" konnte nicht gelöscht werden."
 
-#: framework/Crypt/Crypt/smime.php:387 framework/Crypt/Crypt/pgp.php:1169
+#: framework/Crypt/Crypt/smime.php:384 framework/Crypt/Crypt/pgp.php:1180
 msgid "Could not determine the recipient's e-mail address."
 msgstr "Die E-Mail-Adresse des Empfängers konnte nicht ermittelt werden."
 
@@ -1884,7 +1942,7 @@ msgstr "Die Strategie \"%s\" konnte nicht geladen werden."
 msgid "Could not mkdir \"%s\"."
 msgstr "Das Verzeichnis \"%s\" konnte nicht angelegt werden."
 
-#: framework/Crypt/Crypt/pgp.php:791 framework/Crypt/Crypt/pgp.php:887
+#: framework/Crypt/Crypt/pgp.php:802 framework/Crypt/Crypt/pgp.php:898
 msgid "Could not obtain public key from the keyserver."
 msgstr "Öffentlicher Schlüssel konnte nicht vom Schlüsselserver geholt werden."
 
@@ -2068,7 +2126,7 @@ msgstr ""
 msgid "Counted text"
 msgstr "Gezählter Text"
 
-#: framework/Crypt/Crypt/smime.php:576 lib/Block/vatid.php:92
+#: framework/Crypt/Crypt/smime.php:573 lib/Block/vatid.php:92
 msgid "Country"
 msgstr "Land"
 
@@ -2143,10 +2201,6 @@ msgstr "Aktuelles Wetter"
 msgid "Current condition: "
 msgstr "Derzeitige Bedingungen: "
 
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Session.php:158
-msgid "Current user is not a standard Kolab user."
-msgstr "Der aktuelle Benutzer ist kein Standard-Kolab-Benutzer."
-
 #: config/prefs.php.dist:131
 #, php-format
 msgid "Customize tasks to run upon logon to %s."
@@ -2199,8 +2253,8 @@ msgstr "Täglich"
 msgid "Data"
 msgstr "Daten"
 
-#: framework/Kolab_Format/lib/Horde/Kolab/Format/XML.php:483
-#: framework/Kolab_Format/lib/Horde/Kolab/Format/XML.php:669
+#: framework/Kolab_Format/lib/Horde/Kolab/Format/XML.php:528
+#: framework/Kolab_Format/lib/Horde/Kolab/Format/XML.php:714
 #, php-format
 msgid "Data value for %s is empty in Kolab XML object!"
 msgstr "Der Datenwert für %s ist leer im Kolab-XML-Objekt!"
@@ -2253,7 +2307,11 @@ msgstr "Tag"
 msgid "December"
 msgstr "Dezember"
 
-#: framework/Prefs/Prefs/UI.php:216 lib/prefs.php:137
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:970
+msgid "Declined: "
+msgstr "Abgelehnt: "
+
+#: framework/Prefs/Prefs/UI.php:216 lib/prefs.php:135
 msgid "Default"
 msgstr "Standard"
 
@@ -2363,7 +2421,7 @@ msgstr "Auslieferungszeit"
 msgid "Denmark"
 msgstr "Dänemark"
 
-#: framework/MIME/MIME/Viewer/vcard.php:283
+#: framework/MIME/MIME/Viewer/vcard.php:289
 msgid "Department"
 msgstr "Abteilung"
 
@@ -2375,11 +2433,11 @@ msgstr "Beschreiben Sie das Problem"
 msgid "Description"
 msgstr "Beschreibung"
 
-#: framework/Horde/Horde.php:236
+#: framework/Horde/Horde.php:237
 msgid "Details have been logged for the administrator."
 msgstr "Details wurden für den Administrator mitgeloggt."
 
-#: framework/Horde/Horde.php:227
+#: framework/Horde/Horde.php:228
 msgid "Details:"
 msgstr "Details:"
 
@@ -2403,7 +2461,7 @@ msgstr "Taupunkt der letzten Stunde: "
 msgid "Dew point: "
 msgstr "Taupunkt: "
 
-#: framework/UI/UI/VarRenderer/html.php:1171
+#: framework/UI/UI/VarRenderer/html.php:1180
 #, php-format
 msgid "Dial %s"
 msgstr "%s wählen"
@@ -2460,8 +2518,8 @@ msgstr ""
 "Enthält die erste Zeile die Feldnamen? Wenn ja, dieses Auswahlkästchen "
 "markieren:"
 
-#: framework/MIME/MIME/Viewer/vcard.php:128
-#: framework/MIME/MIME/Viewer/vcard.php:186
+#: framework/MIME/MIME/Viewer/vcard.php:134
+#: framework/MIME/MIME/Viewer/vcard.php:192
 msgid "Domestic Address"
 msgstr "Inlandsadresse"
 
@@ -2480,7 +2538,7 @@ msgid "Don't have an account? Sign up."
 msgstr "Noch keinen Zugang? Hier anmelden."
 
 #: admin/setup/index.php:134 admin/setup/index.php:169
-#: framework/MIME/MIME/Contents.php:1016
+#: framework/MIME/MIME/Contents.php:1017
 #, php-format
 msgid "Download %s"
 msgstr "%s Herunterladen"
@@ -2509,7 +2567,7 @@ msgstr "Webmail Dynamisch"
 msgid "E characters"
 msgstr "E Zeichen"
 
-#: framework/Crypt/Crypt/pgp.php:440
+#: framework/Crypt/Crypt/pgp.php:449
 msgid "E-Mail"
 msgstr "E-Mail-Adresse"
 
@@ -2586,11 +2644,11 @@ msgstr "Ägypten"
 msgid "El Salvador"
 msgstr "El Salvador"
 
-#: framework/MIME/MIME/Viewer/vcard.php:266 framework/Form/Form.php:2377
+#: framework/MIME/MIME/Viewer/vcard.php:272 framework/Form/Form.php:2377
 msgid "Email"
 msgstr "E-Mail-Adresse"
 
-#: framework/Crypt/Crypt/smime.php:572 templates/admin/groups/edit.inc:11
+#: framework/Crypt/Crypt/smime.php:569 templates/admin/groups/edit.inc:11
 #: templates/admin/user/update.inc:69
 msgid "Email Address"
 msgstr "E-Mail-Adresse"
@@ -2650,8 +2708,8 @@ msgstr ""
 "Passwort zurücksetzen möchten, z. B. \"Wie lautet der Name Ihres Haustiers?"
 "\":"
 
-#: framework/UI/UI/VarRenderer/html.php:966
-#: framework/UI/UI/VarRenderer/html.php:978
+#: framework/UI/UI/VarRenderer/html.php:975
+#: framework/UI/UI/VarRenderer/html.php:987
 msgid "Enter the letters below:"
 msgstr "Geben Sie die folgenden Buchstaben ein:"
 
@@ -2674,12 +2732,13 @@ msgid "Eritrea"
 msgstr "Eritrea"
 
 #: framework/Notification/Notification/Listener/status.php:27
-#: framework/Block/Block/Layout/View.php:91 lib/Block/weatherdotcom.php:53
-#: lib/Block/metar.php:44
+#: framework/Block/Block/Layout/View.php:91
+#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/View.php:254
+#: lib/Block/weatherdotcom.php:53 lib/Block/metar.php:44
 msgid "Error"
 msgstr "Fehler"
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:80
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:92
 #, php-format
 msgid "Error connecting to LDAP server %s!"
 msgstr "Verbindung zum LDAP-Server %s kann nicht hergestellt werden!"
@@ -2703,6 +2762,12 @@ msgstr "Fehler beim Löschen der Synchronisationssitzung:"
 msgid "Error deleting synchronization sessions:"
 msgstr "Fehler beim Löschen der Synchronisationssitzungen:"
 
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:678
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:684
+#, php-format
+msgid "Error processing \"%s\""
+msgstr "Fehler beim Verarbeiten von \"%s\""
+
 #: framework/Group/Group/kolab.php:285
 #, php-format
 msgid "Error searching for user with the email address \"%s\"!"
@@ -2712,7 +2777,7 @@ msgstr "Fehler beim Suchen nach dem Benutzer mit der E-Mail-Adresse \"%s\"!"
 msgid "Error sending PDU"
 msgstr "Fehler beim Senden der PDU"
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:86
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:98
 #, php-format
 msgid "Error setting LDAP protocol on server %s to v3: %s"
 msgstr ""
@@ -2801,11 +2866,11 @@ msgstr "Ausführen"
 msgid "Expand"
 msgstr "Vergrößern"
 
-#: framework/Crypt/Crypt/pgp.php:439
+#: framework/Crypt/Crypt/pgp.php:448
 msgid "Expiration Date"
 msgstr "Verfallsdatum"
 
-#: framework/Crypt/Crypt/smime.php:683
+#: framework/Crypt/Crypt/smime.php:680
 msgid "Exponent"
 msgstr "Exponent"
 
@@ -2821,25 +2886,55 @@ msgstr "Hochladen der Konfiguration per FTP"
 msgid "Fade to Green"
 msgstr "Grüner Übergang"
 
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/IMAP/pear.php:275
+#: framework/Kolab_Server/lib/Horde/Kolab/IMAP/pear.php:275
 #, php-format
 msgid "Failed fetching IMAP message %s. Error was %s"
 msgstr ""
 "Lesen der IMAP-Nachricht %s fehlgeschlagen. Die Fehlermeldung lautete %s"
 
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/IMAP/pear.php:248
+#: framework/Kolab_Server/lib/Horde/Kolab/IMAP/pear.php:248
 #, php-format
 msgid "Failed fetching body of IMAP message %s. Error was %s"
 msgstr ""
 "Lesen des Textes der IMAP-Nachricht %s fehlgeschlagen. Die Fehlermeldung "
 "lautete %s"
 
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/IMAP/pear.php:221
+#: framework/Kolab_Server/lib/Horde/Kolab/IMAP/pear.php:221
 #, php-format
 msgid "Failed fetching headers of IMAP message %s. Error was %s"
 msgstr ""
 "Lesen der Kopfeinträge der IMAP-Nachricht %s fehlgeschlagen. Die "
 "Fehlermeldung lautete %s"
+
+#: framework/Kolab_Server/lib/Horde/Kolab/Server.php:176
+#, php-format
+msgid "Failed identifying the UID of the Kolab user %s. Error was: %s"
+msgstr ""
+"Die UID des Kolab-Benutzers %s konnte nicht festgestellt werden. "
+"Fehlermeldung des Servers: %s"
+
+#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy.php:288
+#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy.php:299
+#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy.php:305
+#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy.php:315
+#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy.php:324
+#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy.php:333
+#, php-format
+msgid "Failed regenerating calendar %s: %s"
+msgstr "Der Kalender %s konnte nicht neu geladen werden: %s"
+
+#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Folder.php:1103
+#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Folder.php:1109
+#, php-format
+msgid "Failed retrieving the message with ID %s. Original error: %s."
+msgstr ""
+"Lesen der Nachricht mit der ID %s fehlgeschlagen. Fehlermeldung des Servers: "
+"%s"
+
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:991
+#, php-format
+msgid "Failed saving object. Error was: %s"
+msgstr "Fehler beim Speichern des Objekts. Fehlermeldung des Servers: %s"
 
 #: framework/Auth/Auth/ldap.php:98
 msgid "Failed to connect to LDAP server."
@@ -2872,26 +2967,31 @@ msgstr "Aufbau einen neuen SASL-Verbindung ist fehlgeschlagen."
 msgid "Failed to load Kolab Format driver %s"
 msgstr "Kolab-Format-Treiber %s konnte nicht geladen werden"
 
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/IMAP.php:134
+#: framework/Kolab_Server/lib/Horde/Kolab/IMAP.php:134
 #, php-format
 msgid "Failed to load Kolab IMAP driver %s"
 msgstr "Kolab-IMAP-%s-Treiber konnte nicht geladen werden"
 
-#: framework/Kolab_Format/lib/Horde/Kolab/Format/XML.php:358
+#: framework/Kolab_Format/lib/Horde/Kolab/Format/XML.php:373
 #, php-format
 msgid "Failed to load Kolab XML driver %s"
 msgstr "Kolab-XML-%s-Treiber konnte nicht geladen werden"
 
-#: framework/VFS/lib/VFS/smb.php:574 framework/VFS/lib/VFS/ftp.php:837
+#: framework/VFS/lib/VFS/smb.php:589 framework/VFS/lib/VFS/ftp.php:837
 #: framework/VFS/lib/VFS/ssh2.php:820
 #, php-format
 msgid "Failed to move to \"%s\"."
 msgstr "Es konnte nicht nach \"%s\" verschoben werden."
 
-#: framework/VFS/lib/VFS/smb.php:524
+#: framework/VFS/lib/VFS/smb.php:539
 #, php-format
 msgid "Failed to retrieve: %s"
 msgstr "Fehler beim Lesen: %s"
+
+#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Folder.php:1238
+#, php-format
+msgid "Failed triggering folder %s. Error was: %s"
+msgstr "Fehler beim Anlegen des Ordners %s. Fehlermeldung des Servers: %s"
 
 #: lib/Block/weatherdotcom_strings.php:28
 msgid "Fair"
@@ -2911,7 +3011,7 @@ msgstr "Faröer"
 msgid "Fatal Error:"
 msgstr "Schwerer Fehler:"
 
-#: framework/MIME/MIME/Viewer/vcard.php:220
+#: framework/MIME/MIME/Viewer/vcard.php:226
 msgid "Fax"
 msgstr "Fax"
 
@@ -2987,7 +3087,7 @@ msgstr "Dateiauswahl"
 msgid "File upload"
 msgstr "Datei-Hochladen"
 
-#: framework/Browser/Browser.php:1033
+#: framework/Browser/Browser.php:1042
 msgid "File uploads not supported."
 msgstr "Das Hochladen von Dateien wird nicht unterstützt."
 
@@ -3042,6 +3142,16 @@ msgstr "Neblig"
 msgid "Folder \"%s\" does not exist"
 msgstr "Das Verzeichnis \"%s\" existiert nicht"
 
+#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Imap.php:119
+#, php-format
+msgid "Folder %s does not exist!"
+msgstr "Der Order %s existiert nicht!"
+
+#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Imap.php:126
+#, php-format
+msgid "Folder %s has type \"%s\" not \"event\"!"
+msgstr "Der Ordner %s hat den Typ \"%s\" nicht \"event\"!"
+
 #: framework/Form/Form.php:4268
 msgid "Font"
 msgstr "Schriftart"
@@ -3094,8 +3204,8 @@ msgstr "Foren"
 msgid "Forwards"
 msgstr "Weiterleitung"
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:304
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:362
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:449
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:502
 #, php-format
 msgid "Found %s results when expecting only one!"
 msgstr "%s Ergebnisse erhalten, nur eines erwartet!"
@@ -3192,7 +3302,7 @@ msgstr "Ghana"
 msgid "Gibraltar"
 msgstr "Gibraltar"
 
-#: framework/Crypt/Crypt/smime.php:582
+#: framework/Crypt/Crypt/smime.php:579
 msgid "Given Name"
 msgstr "Vorname"
 
@@ -3209,7 +3319,7 @@ msgstr "Los"
 msgid "Goedel"
 msgstr "Goedel"
 
-#: framework/UI/UI/VarRenderer/html.php:1316
+#: framework/UI/UI/VarRenderer/html.php:1325
 msgid "Google Maps"
 msgstr "Google Maps"
 
@@ -3354,7 +3464,7 @@ msgstr "HTTP-Authentifizierung nicht gefunden."
 msgid "Haiti"
 msgstr "Haiti"
 
-#: framework/Crypt/Crypt/pgp.php:440
+#: framework/Crypt/Crypt/pgp.php:449
 msgid "Hash-Algorithm"
 msgstr "Hash-Algorithmus"
 
@@ -3433,8 +3543,8 @@ msgstr "Hoch"
 msgid "Holy See (Vatican City State)"
 msgstr "Vatikanstadt"
 
-#: framework/MIME/MIME/Viewer/vcard.php:122
-#: framework/MIME/MIME/Viewer/vcard.php:180
+#: framework/MIME/MIME/Viewer/vcard.php:128
+#: framework/MIME/MIME/Viewer/vcard.php:186
 msgid "Home Address"
 msgstr "Adresse privat"
 
@@ -3442,7 +3552,7 @@ msgstr "Adresse privat"
 msgid "Home Directory"
 msgstr "Heimverzeichnis"
 
-#: framework/MIME/MIME/Viewer/vcard.php:223
+#: framework/MIME/MIME/Viewer/vcard.php:229
 msgid "Home Phone"
 msgstr "Telefon privat"
 
@@ -3476,11 +3586,11 @@ msgstr ""
 "Horde/Kolab: Die MIME-ID des Abschnitts vom Typ %s konnte nicht "
 "herausgefunden werden."
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:72
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:84
 msgid "Horde_Kolab_Server_ldap needs a base_dn parameter!"
 msgstr "Horde_Kolab_Server_ldap benötigt einen base_dn Parameter!"
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:65
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:77
 msgid "Horde_Kolab_Server_ldap needs a server parameter!"
 msgstr "Horde_Kolab_Server_ldap benötigt einen server Parameter!"
 
@@ -3517,38 +3627,38 @@ msgstr "Ungarn"
 msgid "I characters"
 msgstr "I Zeichen"
 
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/IMAP/cclient.php:159
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/IMAP/cclient.php:200
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/IMAP/cclient.php:225
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/IMAP/cclient.php:252
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/IMAP/cclient.php:273
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/IMAP/cclient.php:321
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/IMAP/cclient.php:460
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/IMAP/cclient.php:528
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/IMAP/cclient.php:553
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/IMAP/cclient.php:581
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/IMAP/cclient.php:607
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/IMAP/cclient.php:643
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/IMAP/cclient.php:667
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/IMAP/cclient.php:691
+#: framework/Kolab_Server/lib/Horde/Kolab/IMAP/cclient.php:159
+#: framework/Kolab_Server/lib/Horde/Kolab/IMAP/cclient.php:200
+#: framework/Kolab_Server/lib/Horde/Kolab/IMAP/cclient.php:225
+#: framework/Kolab_Server/lib/Horde/Kolab/IMAP/cclient.php:252
+#: framework/Kolab_Server/lib/Horde/Kolab/IMAP/cclient.php:273
+#: framework/Kolab_Server/lib/Horde/Kolab/IMAP/cclient.php:321
+#: framework/Kolab_Server/lib/Horde/Kolab/IMAP/cclient.php:460
+#: framework/Kolab_Server/lib/Horde/Kolab/IMAP/cclient.php:528
+#: framework/Kolab_Server/lib/Horde/Kolab/IMAP/cclient.php:553
+#: framework/Kolab_Server/lib/Horde/Kolab/IMAP/cclient.php:581
+#: framework/Kolab_Server/lib/Horde/Kolab/IMAP/cclient.php:607
+#: framework/Kolab_Server/lib/Horde/Kolab/IMAP/cclient.php:643
+#: framework/Kolab_Server/lib/Horde/Kolab/IMAP/cclient.php:667
+#: framework/Kolab_Server/lib/Horde/Kolab/IMAP/cclient.php:691
 #, php-format
 msgid "IMAP error. Folder: %s. Error: %s"
 msgstr "IMAP-Fehler. Ordner: %s. Fehler: %s"
 
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/IMAP/pear.php:424
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/IMAP/pear.php:474
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/IMAP/pear.php:494
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/IMAP/cclient.php:389
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/IMAP/cclient.php:413
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/IMAP/cclient.php:719
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/IMAP/cclient.php:743
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/IMAP/cclient.php:764
+#: framework/Kolab_Server/lib/Horde/Kolab/IMAP/pear.php:424
+#: framework/Kolab_Server/lib/Horde/Kolab/IMAP/pear.php:474
+#: framework/Kolab_Server/lib/Horde/Kolab/IMAP/pear.php:494
+#: framework/Kolab_Server/lib/Horde/Kolab/IMAP/cclient.php:389
+#: framework/Kolab_Server/lib/Horde/Kolab/IMAP/cclient.php:413
+#: framework/Kolab_Server/lib/Horde/Kolab/IMAP/cclient.php:719
+#: framework/Kolab_Server/lib/Horde/Kolab/IMAP/cclient.php:743
+#: framework/Kolab_Server/lib/Horde/Kolab/IMAP/cclient.php:764
 #, php-format
 msgid "IMAP error. Message: %s. Error: %s"
 msgstr "IMAP-Fehler. Nachricht: %s. Fehler: %s"
 
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/IMAP/cclient.php:105
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/IMAP/cclient.php:133
+#: framework/Kolab_Server/lib/Horde/Kolab/IMAP/cclient.php:105
+#: framework/Kolab_Server/lib/Horde/Kolab/IMAP/cclient.php:133
 #, php-format
 msgid "IMAP error. Server: %s. Error: %s"
 msgstr "IMAP-Fehler. Server: %s. Fehler: %s"
@@ -3568,11 +3678,11 @@ msgstr "Löschen des IMAP-Postfachs ist fehlgeschlagen: %s"
 msgid "IMAP mailbox quota creation failed: %s"
 msgstr "Festlegen der IMAP-Postfach-Quota ist fehlgeschlagen: %s"
 
-#: framework/Auth/Auth/ipbasic.php:77
+#: framework/Auth/Auth/ipbasic.php:74
 msgid "IP Address not available."
 msgstr "IP-Adresse nicht verfügbar."
 
-#: framework/Auth/Auth/ipbasic.php:88
+#: framework/Auth/Auth/ipbasic.php:85
 msgid "IP Address not within allowed CIDR block."
 msgstr "IP-Adresse nicht im erlaubten CIDR-Block."
 
@@ -3775,12 +3885,15 @@ msgid ""
 msgstr ""
 "Interner Datenbankfehler. Details wurden für den Administrator mitgeloggt."
 
-#: framework/MIME/MIME/Viewer/vcard.php:131
-#: framework/MIME/MIME/Viewer/vcard.php:189
+#: framework/MIME/MIME/Viewer/vcard.php:137
+#: framework/MIME/MIME/Viewer/vcard.php:195
 msgid "International Address"
 msgstr "Internationale Adresse"
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server.php:171
+#: framework/Kolab_Server/lib/Horde/Kolab/Server.php:237
+#: framework/Kolab_Server/lib/Horde/Kolab/Server.php:259
+#: framework/Kolab_Server/lib/Horde/Kolab/Server.php:297
+#: framework/Kolab_Server/lib/Horde/Kolab/Server.php:615
 #, php-format
 msgid "Invalid Kolab object type \"%s\"."
 msgstr "Ungültiger Kolab-Objekttyp \"%s\"."
@@ -3802,6 +3915,11 @@ msgstr "Ungültige ZIP-Daten."
 #: admin/setup/config.php:34
 msgid "Invalid application."
 msgstr "Ungültige Anwendung."
+
+#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Access.php:230
+#, php-format
+msgid "Invalid authentication for user %s!"
+msgstr "Ungültige Anmeldung für Benutzer %s!"
 
 #: framework/Group/Group/ldap.php:713
 msgid "Invalid basedn configured"
@@ -3895,7 +4013,7 @@ msgstr "Ungültige Unicode-Daten."
 msgid "Inventory"
 msgstr "Inventar"
 
-#: framework/UI/UI/VarRenderer/html.php:754
+#: framework/UI/UI/VarRenderer/html.php:763
 #: framework/UI/UI/VarRenderer/tableset_html.php:25
 msgid "Invert selection"
 msgstr "Auswahl umkehren"
@@ -3928,7 +4046,7 @@ msgstr "Vereinzelte Gewitter"
 msgid "Israel"
 msgstr "Israel"
 
-#: framework/Crypt/Crypt/smime.php:632
+#: framework/Crypt/Crypt/smime.php:629
 msgid "Issuer"
 msgstr "Aussteller"
 
@@ -4000,31 +4118,31 @@ msgstr "Kerberos-Server hat Authentifizierung zurückgewiesen."
 msgid "Kernel Newbies"
 msgstr "Kernel-Neulinge"
 
-#: framework/Crypt/Crypt/pgp.php:438
+#: framework/Crypt/Crypt/pgp.php:447
 msgid "Key Creation"
 msgstr "Schlüsselerzeugung"
 
-#: framework/Crypt/Crypt/pgp.php:441
+#: framework/Crypt/Crypt/pgp.php:450
 msgid "Key Fingerprint"
 msgstr "Fingerabdruck des Schlüssels"
 
-#: framework/Crypt/Crypt/pgp.php:441
+#: framework/Crypt/Crypt/pgp.php:450
 msgid "Key ID"
 msgstr "Schlüssel-Id"
 
-#: framework/Crypt/Crypt/pgp.php:439
+#: framework/Crypt/Crypt/pgp.php:448
 msgid "Key Length"
 msgstr "Schlüssellänge"
 
-#: framework/Crypt/Crypt/pgp.php:438
+#: framework/Crypt/Crypt/pgp.php:447
 msgid "Key Type"
 msgstr "Schlüsseltyp"
 
-#: framework/Crypt/Crypt/smime.php:605
+#: framework/Crypt/Crypt/smime.php:602
 msgid "Key Usage"
 msgstr "Schlüsselzweck"
 
-#: framework/Crypt/Crypt/pgp.php:812
+#: framework/Crypt/Crypt/pgp.php:823
 msgid "Key already exists on the public keyserver."
 msgstr ""
 "Der Schlüssel befindet sich bereits auf dem öffentlichen Schlüsselserver."
@@ -4046,7 +4164,7 @@ msgstr "Kiribati"
 msgid "Kolab"
 msgstr "Kolab"
 
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Data.php:566
+#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Data.php:594
 #, php-format
 msgid "Kolab cache: Object uid %s does not exist in the cache!"
 msgstr "Kolab cache: Objekt-UID %s existiert nicht im Cache!"
@@ -4075,22 +4193,22 @@ msgstr "Kuwait"
 msgid "Kyrgyzstan"
 msgstr "Kirgisistan"
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:189
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:224
 #, php-format
 msgid "LDAP Error: Empty result for: %s."
 msgstr "LDAP-Fehler: Kein Resultat für: %s"
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:154
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:189
 #, php-format
 msgid "LDAP Error: Failed to search using filter %s. Error was: %s"
 msgstr "LDAP-Fehler: Suche mit dem Filter %s fehlgeschlagen. Fehlermeldung: %s"
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:194
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:229
 #, php-format
 msgid "LDAP Error: No such dn: %s: %s"
 msgstr "LDAP-Fehler: DN %s nicht gefunden: %s"
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:183
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:218
 #, php-format
 msgid "LDAP Error: No such object: %s: %s"
 msgstr "LDAP-Fehler: Objekt %s nicht gefunden: %s"
@@ -4265,8 +4383,8 @@ msgstr ""
 msgid "Link title attribute"
 msgstr "Link-Title-Attribut"
 
-#: framework/Text_Filter/Filter/html2text.php:192
-#: framework/Text_Filter/Filter/html2text.php:193
+#: framework/Text_Filter/Filter/html2text.php:187
+#: framework/Text_Filter/Filter/html2text.php:188
 msgid "Links"
 msgstr "Links"
 
@@ -4355,7 +4473,7 @@ msgstr "Lokale Uhrzeit: "
 msgid "Locale and Time"
 msgstr "Sprache und Zeit"
 
-#: framework/Crypt/Crypt/smime.php:578 lib/Block/weatherdotcom.php:62
+#: framework/Crypt/Crypt/smime.php:575 lib/Block/weatherdotcom.php:62
 #: lib/Block/sunrise.php:22 lib/Block/metar.php:80
 msgid "Location"
 msgstr "Ort"
@@ -4493,8 +4611,8 @@ msgstr ""
 "Verwalten Sie die Kategorien, mit denen Sie Elemente und Einträge "
 "kennzeichnen können, sowie die zugehörigen Farben."
 
-#: framework/UI/UI/VarRenderer/html.php:1242
-#: framework/UI/UI/VarRenderer/html.php:1291
+#: framework/UI/UI/VarRenderer/html.php:1251
+#: framework/UI/UI/VarRenderer/html.php:1300
 msgid "MapQuest map"
 msgstr "MapQuest-Karte"
 
@@ -4600,7 +4718,7 @@ msgstr "Mittel"
 msgid "Members"
 msgstr "Mitglieder"
 
-#: framework/SessionHandler/SessionHandler/memcache.php:298
+#: framework/SessionHandler/SessionHandler/memcache.php:309
 msgid "Memcache session tracking not enabled."
 msgstr "Sitzungsverfolgung für Memcache ist nicht aktiviert."
 
@@ -4612,7 +4730,7 @@ msgstr "Menümodus:"
 msgid "Message"
 msgstr "Nachricht"
 
-#: framework/Crypt/Crypt/smime.php:216
+#: framework/Crypt/Crypt/smime.php:215
 msgid ""
 "Message Verified Successfully but the signer's certificate could not be "
 "verified."
@@ -4734,7 +4852,7 @@ msgstr "Mäßig"
 msgid "Modified Date"
 msgstr "Änderungsdatum"
 
-#: framework/Crypt/Crypt/smime.php:680
+#: framework/Crypt/Crypt/smime.php:677
 msgid "Modulus"
 msgstr "Modulus"
 
@@ -4821,12 +4939,12 @@ msgstr "Nach rechts"
 msgid "Move Up"
 msgstr "Nach oben"
 
-#: framework/UI/UI/VarRenderer/html.php:599
+#: framework/UI/UI/VarRenderer/html.php:608
 msgid "Move down"
 msgstr "Nach unten"
 
-#: framework/UI/UI/VarRenderer/html.php:598
-#: framework/UI/UI/VarRenderer/html.php:599
+#: framework/UI/UI/VarRenderer/html.php:607
+#: framework/UI/UI/VarRenderer/html.php:608
 msgid "Move up"
 msgstr "Nach oben"
 
@@ -4843,7 +4961,7 @@ msgstr "Mozilla"
 msgid "Multi-level drop down lists"
 msgstr "Auswahlliste in mehreren Ebenen"
 
-#: framework/UI/UI/VarRenderer/html.php:1211
+#: framework/UI/UI/VarRenderer/html.php:1220
 msgid "Multimap UK map"
 msgstr "Multimap-UK-Karte"
 
@@ -4880,7 +4998,7 @@ msgstr "Burma"
 msgid "NO, I Do NOT Agree"
 msgstr "NEIN, ich stimme NICHT zu"
 
-#: framework/Crypt/Crypt/pgp.php:438 framework/MIME/MIME/Viewer/vcard.php:83
+#: framework/Crypt/Crypt/pgp.php:447 framework/MIME/MIME/Viewer/vcard.php:89
 #: framework/MIME/MIME/Viewer/tnef.php:36 lib/Block/vatid.php:99
 msgid "Name"
 msgstr "Name"
@@ -4914,35 +5032,35 @@ msgstr "Niederlande"
 msgid "Netherlands Antilles"
 msgstr "Niederländische Antillen"
 
-#: framework/Crypt/Crypt/smime.php:588
+#: framework/Crypt/Crypt/smime.php:585
 msgid "Netscape Base URL"
 msgstr "Netscape-Basis-URL"
 
-#: framework/Crypt/Crypt/smime.php:590
+#: framework/Crypt/Crypt/smime.php:587
 msgid "Netscape CA Revocation URL"
 msgstr "Netscape-CA-Sperrungs-URL"
 
-#: framework/Crypt/Crypt/smime.php:592
+#: framework/Crypt/Crypt/smime.php:589
 msgid "Netscape CA policy URL"
 msgstr "Netscape-CA-Richtlinien-URL"
 
-#: framework/Crypt/Crypt/smime.php:591
+#: framework/Crypt/Crypt/smime.php:588
 msgid "Netscape Renewal URL"
 msgstr "Netscape-Zetifikatserneuerungs-URL"
 
-#: framework/Crypt/Crypt/smime.php:589
+#: framework/Crypt/Crypt/smime.php:586
 msgid "Netscape Revocation URL"
 msgstr "Netscape-Sperrungs-URL"
 
-#: framework/Crypt/Crypt/smime.php:593
+#: framework/Crypt/Crypt/smime.php:590
 msgid "Netscape SSL server name"
 msgstr "Netscape-SSL-Servername"
 
-#: framework/Crypt/Crypt/smime.php:594
+#: framework/Crypt/Crypt/smime.php:591
 msgid "Netscape certificate comment"
 msgstr "Netscape-Kommentar"
 
-#: framework/Crypt/Crypt/smime.php:587
+#: framework/Crypt/Crypt/smime.php:584
 msgid "Netscape certificate type"
 msgstr "Netscape-Zertifikattyp"
 
@@ -4950,7 +5068,7 @@ msgstr "Netscape-Zertifikattyp"
 msgid "Network Tools"
 msgstr "Netzwerkwerkzeuge"
 
-#: framework/Crypt/Crypt/pgp.php:461 templates/portal/layout.inc:97
+#: framework/Crypt/Crypt/pgp.php:472 templates/portal/layout.inc:97
 #: config/prefs.php.dist:393 config/prefs.php.dist:444
 msgid "Never"
 msgstr "Nie"
@@ -5014,7 +5132,7 @@ msgstr "Nächste 4 Phasen"
 msgid "Next options"
 msgstr "Nächste Einstellungen"
 
-#: framework/UI/UI/Pager.php:116
+#: framework/UI/UI/Pager.php:122
 msgid "Next>"
 msgstr "Weiter>"
 
@@ -5042,7 +5160,7 @@ msgstr "Nachts"
 msgid "Niue"
 msgstr "Niue"
 
-#: framework/UI/UI/VarRenderer/html.php:1074
+#: framework/UI/UI/VarRenderer/html.php:1083
 msgid "No"
 msgstr "Nein"
 
@@ -5077,8 +5195,8 @@ msgid "No children can be added to this permission."
 msgstr ""
 "Unterhalb dieser Ebene können keine weiteren Unterrechte hinzugefügt werden."
 
-#: framework/Horde/Horde.php:199 framework/Horde/Horde.php:677
-#: framework/Util/Util.php:788
+#: framework/Horde/Horde.php:200 framework/Horde/Horde.php:682
+#: framework/Util/Util.php:793
 #, php-format
 msgid "No configuration information specified for %s."
 msgstr "Für %s wurden keine Konfigurationsinformationen angegeben."
@@ -5112,7 +5230,7 @@ msgstr "Kein Kredit mehr übrig."
 msgid "No destination supplied."
 msgstr "Kein Empfänger angegeben."
 
-#: framework/Browser/Browser.php:1051
+#: framework/Browser/Browser.php:1060
 msgid "No file uploaded"
 msgstr "Keine Datei hochgeladen"
 
@@ -5156,11 +5274,11 @@ msgstr "Keine Nummer angegeben."
 msgid "No offensive fortunes"
 msgstr "Keine anstößigen Glückskekse"
 
-#: framework/Kolab_Format/lib/Horde/Kolab/Format/XML.php:379
+#: framework/Kolab_Format/lib/Horde/Kolab/Format/XML.php:424
 msgid "No or unreadable content in Kolab XML object"
 msgstr "Kein oder nicht lesbarer Inhalt im Kolab-XML-Objekt"
 
-#: framework/Crypt/Crypt/smime.php:1312
+#: framework/Crypt/Crypt/smime.php:1309
 msgid ""
 "No path to the OpenSSL binary provided. The OpenSSL binary is necessary to "
 "work with PKCS 12 data."
@@ -5194,13 +5312,23 @@ msgstr "Kein Trennzeichen angegeben."
 msgid "No stable version exists yet."
 msgstr "Noch keine stabile Version verfügbar."
 
-#: framework/VFS/lib/VFS/smb.php:644
+#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy.php:140
+#, php-format
+msgid "No such account %s!"
+msgstr "Kein Benutzerkonto %s gefunden!"
+
+#: framework/VFS/lib/VFS/smb.php:659
 msgid "No such file"
 msgstr "Datei nicht gefunden"
 
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Session.php:143
-msgid "No such user."
-msgstr "Benutzer nicht gefunden."
+#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Access.php:129
+#, php-format
+msgid "No such folder %s"
+msgstr "Ordner %s nicht gefunden"
+
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:917
+msgid "No summary available"
+msgstr "Keine Zusammenfassung verfügbar"
 
 #: lib/Block/weatherdotcom.php:144
 msgid "No temporary directory available for cache."
@@ -5215,10 +5343,10 @@ msgstr "Kein Benutzername und/oder Passwort angeben."
 msgid "No valid XML data returned"
 msgstr "Es wurden keine gültigen XML-Daten zurückgegeben"
 
-#: framework/UI/UI/VarRenderer/html.php:1082
-#: framework/UI/UI/VarRenderer/html.php:1092
-#: framework/UI/UI/VarRenderer/html.php:1103
-#: framework/UI/UI/VarRenderer/html.php:1120
+#: framework/UI/UI/VarRenderer/html.php:1091
+#: framework/UI/UI/VarRenderer/html.php:1101
+#: framework/UI/UI/VarRenderer/html.php:1112
+#: framework/UI/UI/VarRenderer/html.php:1129
 msgid "No values"
 msgstr "Keine Werte"
 
@@ -5234,8 +5362,8 @@ msgstr ""
 "Keine Versionsnummer in Ihrer Konfiguration gefunden. Erneuern Sie Ihre "
 "Konfiguration."
 
-#: framework/Crypt/Crypt/pgp.php:463 templates/syncml/syncml.inc:5
-#: templates/prefs/identityselect.inc:93
+#: framework/Crypt/Crypt/pgp.php:474 framework/Crypt/Crypt/pgp.php:475
+#: templates/syncml/syncml.inc:5 templates/prefs/identityselect.inc:93
 msgid "None"
 msgstr "Keine"
 
@@ -5262,11 +5390,11 @@ msgstr "Nördliche Marianen"
 msgid "Norway"
 msgstr "Norwegen"
 
-#: framework/Crypt/Crypt/smime.php:647
+#: framework/Crypt/Crypt/smime.php:644
 msgid "Not After"
 msgstr "Gültig bis"
 
-#: framework/Crypt/Crypt/smime.php:646
+#: framework/Crypt/Crypt/smime.php:643
 msgid "Not Before"
 msgstr "Gültig ab"
 
@@ -5274,9 +5402,15 @@ msgstr "Gültig ab"
 msgid "Not a directory"
 msgstr "Kein Verzeichnis"
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server.php:213
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/test.php:176
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/test.php:206
+#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/View.php:216
+msgid "Not found"
+msgstr "Nicht gefunden"
+
+#: framework/Kolab_Server/lib/Horde/Kolab/Server.php:347
+#: framework/Kolab_Server/lib/Horde/Kolab/Server.php:360
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:975
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/test.php:307
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/test.php:366
 msgid "Not implemented!"
 msgstr "Nicht implementiert!"
 
@@ -5295,6 +5429,7 @@ msgstr "Nicht implementiert."
 #: framework/VFS/lib/VFS.php:498 framework/VFS/lib/VFS.php:531
 #: framework/VFS/lib/VFS.php:592 framework/VFS/lib/VFS.php:674
 #: framework/VFS/lib/VFS.php:743 framework/VFS/lib/VFS.php:760
+#: framework/VFS/lib/VFS/kolab.php:113 framework/VFS/lib/VFS/kolab.php:145
 #: framework/VFS/lib/VFS/horde.php:82 framework/VFS/lib/VFS/horde.php:131
 #: framework/VFS/lib/VFS/horde.php:151 framework/VFS/lib/VFS/horde.php:170
 #: framework/VFS/lib/VFS/horde.php:189 framework/VFS/lib/VFS/horde.php:207
@@ -5303,7 +5438,7 @@ msgid "Not supported."
 msgstr "Nicht unterstützt."
 
 #: framework/Share/Share/kolab.php:445 framework/Kolab/Kolab.php:732
-#: framework/MIME/MIME/Viewer/vcard.php:289 config/registry.php.dist:194
+#: framework/MIME/MIME/Viewer/vcard.php:295 config/registry.php.dist:194
 msgid "Notes"
 msgstr "Notizen"
 
@@ -5349,7 +5484,7 @@ msgstr "Keine Nummern für die Verteilerliste angegeben."
 msgid "O characters"
 msgstr "O Zeichen"
 
-#: framework/UI/UI/VarRenderer/html.php:947
+#: framework/UI/UI/VarRenderer/html.php:956
 msgid "Object"
 msgstr "Objekt"
 
@@ -5388,12 +5523,12 @@ msgstr "Büro"
 msgid "Old and new passwords must be different."
 msgstr "Ihr neues Passwort muss sich von Ihrem alten unterscheiden."
 
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Data.php:291
+#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Data.php:283
 #, php-format
 msgid "Old object %s does not exist."
 msgstr "Altes Object %s existiert nicht."
 
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Data.php:298
+#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Data.php:290
 #, php-format
 msgid "Old object %s does not map to a uid."
 msgstr "Das alte Objekt %s kann keiner UID zugeordnet werden."
@@ -5443,7 +5578,7 @@ msgstr ""
 msgid "Open in a new window"
 msgstr "In neuem Fenster öffnen"
 
-#: framework/Crypt/Crypt/smime.php:247
+#: framework/Crypt/Crypt/smime.php:260
 msgid "OpenSSL error: Could not extract data from signed S/MIME part."
 msgstr ""
 "OpenSSL-Fehler: Signierte S/MIME-Daten konnten nicht extrahiert werden."
@@ -5462,11 +5597,11 @@ msgstr "Einstellungen"
 msgid "Options for %s"
 msgstr "Einstellungen für %s"
 
-#: framework/Crypt/Crypt/smime.php:574
+#: framework/Crypt/Crypt/smime.php:571
 msgid "Organisation"
 msgstr "Organisation"
 
-#: framework/Crypt/Crypt/smime.php:575
+#: framework/Crypt/Crypt/smime.php:572
 msgid "Organisational Unit"
 msgstr "Organisationsabteilung"
 
@@ -5492,8 +5627,7 @@ msgstr "Andere Zeichen"
 msgid "Owner"
 msgstr "Besitzer"
 
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Folder.php:424
-#: framework/Kolab/Kolab.php:826
+#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Folder.php:489
 #, php-format
 msgid "Owner of folder %s cannot be determined."
 msgstr "Besitzer des Ordners %s konnte nicht festgestellt werden."
@@ -5510,11 +5644,11 @@ msgstr "PAM-Authentifizierung ist nicht verfügbar."
 msgid "PEAR::Mail backend"
 msgstr "PEAR::Mail-Backend"
 
-#: framework/Crypt/Crypt/pgp.php:1511
+#: framework/Crypt/Crypt/pgp.php:1523
 msgid "PGP Digital Signature"
 msgstr "Digitale PGP-Unterschrift"
 
-#: framework/Crypt/Crypt/pgp.php:1557
+#: framework/Crypt/Crypt/pgp.php:1570
 msgid "PGP Encrypted Data"
 msgstr "PGP-verschlüsselte Daten"
 
@@ -5522,11 +5656,11 @@ msgstr "PGP-verschlüsselte Daten"
 msgid "PGP Key"
 msgstr "PGP-Schlüssel"
 
-#: framework/Crypt/Crypt/pgp.php:1609
+#: framework/Crypt/Crypt/pgp.php:1626
 msgid "PGP Public Key"
 msgstr "Öffentlicher PGP-Schlüssel"
 
-#: framework/Crypt/Crypt/pgp.php:1591
+#: framework/Crypt/Crypt/pgp.php:1607
 msgid "PGP Signed/Encrypted Data"
 msgstr "Mit PGP unterzeichnete/verschlüsselte Daten"
 
@@ -5542,7 +5676,7 @@ msgstr "PHP Code"
 msgid "PHP Shell"
 msgstr "PHP Shell"
 
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/IMAP/cclient.php:569
+#: framework/Kolab_Server/lib/Horde/Kolab/IMAP/cclient.php:569
 #, php-format
 msgid "PHP does not support imap_myrights."
 msgstr "PHP unterstützt nicht imap_myrights()."
@@ -5633,8 +5767,8 @@ msgstr "Papua-Neuguinea"
 msgid "Paraguay"
 msgstr "Paraguay"
 
-#: framework/MIME/MIME/Viewer/vcard.php:137
-#: framework/MIME/MIME/Viewer/vcard.php:195
+#: framework/MIME/MIME/Viewer/vcard.php:143
+#: framework/MIME/MIME/Viewer/vcard.php:201
 msgid "Parcel Address"
 msgstr "Paketadresse"
 
@@ -5655,7 +5789,7 @@ msgstr "Passwort"
 msgid "Password changed successfully."
 msgstr "Passwort erfolgreich geändert."
 
-#: framework/Crypt/Crypt/smime.php:1348
+#: framework/Crypt/Crypt/smime.php:1345
 msgid "Password incorrect"
 msgstr "Falsches Passwort"
 
@@ -5713,7 +5847,7 @@ msgstr "Rechte"
 msgid "Permission \"%s\" not deleted."
 msgstr "Recht \"%s\" wurde nicht gelöscht."
 
-#: framework/VFS/lib/VFS/smb.php:647
+#: framework/VFS/lib/VFS/smb.php:662
 msgid "Permission Denied"
 msgstr "Zugriff verweigert"
 
@@ -5744,7 +5878,7 @@ msgstr "Haustiere"
 msgid "Philippines"
 msgstr "Philippinen"
 
-#: framework/MIME/MIME/Viewer/vcard.php:232
+#: framework/MIME/MIME/Viewer/vcard.php:238
 msgid "Phone"
 msgstr "Telefon"
 
@@ -5752,7 +5886,7 @@ msgstr "Telefon"
 msgid "Phone number"
 msgstr "Telefonnummer"
 
-#: framework/MIME/MIME/Viewer/vcard.php:104
+#: framework/MIME/MIME/Viewer/vcard.php:110
 msgid "Photo"
 msgstr "Foto"
 
@@ -5779,6 +5913,10 @@ msgstr "Plattheiten"
 #: framework/Alarm/Alarm.php:455
 msgid "Play a sound?"
 msgstr "Einen Klang abspielen?"
+
+#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Access.php:226
+msgid "Please authenticate!"
+msgstr "Bitte melden Sie sich an!"
 
 #: framework/Form/Form.php:3739
 msgid "Please choose a sound."
@@ -5862,8 +6000,8 @@ msgstr "Abschicken"
 msgid "Post to this folder (not enforced by IMAP)"
 msgstr "Senden an diesen Ordner (nicht durch IMAP)"
 
-#: framework/MIME/MIME/Viewer/vcard.php:134
-#: framework/MIME/MIME/Viewer/vcard.php:192
+#: framework/MIME/MIME/Viewer/vcard.php:140
+#: framework/MIME/MIME/Viewer/vcard.php:198
 msgid "Postal Address"
 msgstr "Postadresse"
 
@@ -5896,8 +6034,8 @@ msgstr "Benutzereinstellungen"
 msgid "Preferences \"%s\" deleted in scope \"%s\"."
 msgstr "Benutzereinstellungen \"%s\" im Bereich \"%s\" gelöscht."
 
-#: framework/MIME/MIME/Viewer/vcard.php:140
-#: framework/MIME/MIME/Viewer/vcard.php:198
+#: framework/MIME/MIME/Viewer/vcard.php:146
+#: framework/MIME/MIME/Viewer/vcard.php:204
 msgid "Preferred Address"
 msgstr "Bevorzugte Adresse"
 
@@ -5918,7 +6056,7 @@ msgid "Pressure: "
 msgstr "Luftdruck: "
 
 #: framework/UI/UI/VarRenderer/html.php:221
-#: framework/UI/UI/VarRenderer/html.php:1519
+#: framework/UI/UI/VarRenderer/html.php:1528
 msgid "Preview"
 msgstr "Vorschau"
 
@@ -5926,7 +6064,7 @@ msgstr "Vorschau"
 msgid "Previous options"
 msgstr "Voherige Einstellungen"
 
-#: framework/Crypt/Crypt/pgp.php:459
+#: framework/Crypt/Crypt/pgp.php:470
 msgid "Private Key"
 msgstr "Privater Schlüssel"
 
@@ -5947,15 +6085,15 @@ msgstr "Nachfragetext"
 msgid "Protect address from spammers?"
 msgstr "Adresse vor Spammern schützen?"
 
-#: framework/Crypt/Crypt/pgp.php:459
+#: framework/Crypt/Crypt/pgp.php:470
 msgid "Public Key"
 msgstr "Öffentlicher Schlüssel"
 
-#: framework/Crypt/Crypt/smime.php:652
+#: framework/Crypt/Crypt/smime.php:649
 msgid "Public Key Algorithm"
 msgstr "Algorithmus des öffentlichen Schlüssels"
 
-#: framework/Crypt/Crypt/smime.php:651
+#: framework/Crypt/Crypt/smime.php:648
 msgid "Public Key Info"
 msgstr "Informationen zum öffentlichen Schlüssel"
 
@@ -5993,7 +6131,7 @@ msgstr "Abfrage"
 msgid "Quota"
 msgstr "Speicherplatz-Kontingent"
 
-#: framework/Crypt/Crypt/smime.php:670
+#: framework/Crypt/Crypt/smime.php:667
 #, php-format
 msgid "RSA Public Key (%d bit)"
 msgstr "Öffentlicher RSA Schlüssel (%d Bit)"
@@ -6110,7 +6248,7 @@ msgid "Remote URL (http://www.example.com/horde):"
 msgstr "Serveradresse (http://www.example.com/horde):"
 
 #: framework/Block/Block/Layout.php:113 framework/Block/Block/Layout.php:117
-#: framework/UI/UI/VarRenderer/html.php:630 templates/admin/groups/edit.inc:23
+#: framework/UI/UI/VarRenderer/html.php:639 templates/admin/groups/edit.inc:23
 #: templates/admin/user/approve.inc:34
 #: templates/admin/user/removequeued.inc:13
 msgid "Remove"
@@ -6145,7 +6283,7 @@ msgstr "Anfrage konnte nicht beantwortet werden. Zurückgegebener Fehlercode: "
 msgid "Requested service could not be found."
 msgstr "Der gewünschte Dienst konnte nicht gefunden werden."
 
-#: framework/Horde/Horde.php:206 framework/Horde/Horde.php:687
+#: framework/Horde/Horde.php:207 framework/Horde/Horde.php:692
 #, php-format
 msgid "Required \"%s\" not specified in %s configuration."
 msgstr "\"%s\" wurde in der Konfiguration für %s nicht angegeben."
@@ -6157,7 +6295,7 @@ msgstr "\"%s\" wurde in der Konfiguration für %s nicht angegeben."
 msgid "Required \"%s\" not specified in VFS configuration."
 msgstr "\"%s\" wurde in der VFS-Konfiguration nicht angegeben."
 
-#: framework/Util/Util.php:796
+#: framework/Util/Util.php:801
 #, php-format
 msgid "Required \"%s\" not specified in configuration."
 msgstr "\"%s\" wurde in der Konfiguration nicht angegeben."
@@ -6199,12 +6337,12 @@ msgstr "Ergebnisse"
 msgid "Results for %s"
 msgstr "Ergebnisse für %s"
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:318
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:463
 #, php-format
 msgid "Retrieving DN failed. Error was: %s"
 msgstr "Lesen der DN fehlgeschlagen. Fehlermeldung: %s"
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:376
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:516
 #, php-format
 msgid "Retrieving attributes failed. Error was: %s"
 msgstr "Lesen der Attribute fehlgeschlagen. Fehlermeldung: %s"
@@ -6234,7 +6372,7 @@ msgstr "Réunion"
 msgid "Revert Configuration"
 msgstr "Konfiguration zurücksetzen"
 
-#: framework/Crypt/Crypt/pgp.php:1733
+#: framework/Crypt/Crypt/pgp.php:1750
 msgid "Revocation key not generated successfully."
 msgstr "Der Rückrufschlüssel konnte nicht erstellt werden."
 
@@ -6258,7 +6396,7 @@ msgstr "Rechte Überschrift"
 msgid "Right values"
 msgstr "Rechte Werte"
 
-#: framework/MIME/MIME/Viewer/vcard.php:276
+#: framework/MIME/MIME/Viewer/vcard.php:282
 msgid "Role"
 msgstr "Rolle"
 
@@ -6293,11 +6431,11 @@ msgstr "Russische Förderation"
 msgid "Rwanda"
 msgstr "Ruanda"
 
-#: framework/Crypt/Crypt/smime.php:287
+#: framework/Crypt/Crypt/smime.php:284
 msgid "S/MIME Cryptographic Signature"
 msgstr "S/MIME krytographische Unterschrift"
 
-#: framework/Crypt/Crypt/smime.php:329
+#: framework/Crypt/Crypt/smime.php:326
 msgid "S/MIME Encrypted Message"
 msgstr "Mit S/MIME verschlüsselte Nachricht"
 
@@ -6445,10 +6583,11 @@ msgstr "Suche"
 msgid "Search Engines"
 msgstr "Suchmaschinen"
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:310
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:328
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:368
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:394
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:455
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:470
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:508
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:531
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:910
 #, php-format
 msgid "Search failed. Error was: %s"
 msgstr "Suche fehlgeschlagen: Fehlermeldung: %s"
@@ -6481,7 +6620,7 @@ msgstr "Server auswählen"
 msgid "Select a user to add:"
 msgstr "Hinzuzufügenden Benutzer auswählen:"
 
-#: framework/UI/UI/VarRenderer/html.php:752
+#: framework/UI/UI/VarRenderer/html.php:761
 #: framework/UI/UI/VarRenderer/tableset_html.php:23
 msgid "Select all"
 msgstr "Alle auswählen"
@@ -6490,11 +6629,11 @@ msgstr "Alle auswählen"
 msgid "Select all date components."
 msgstr "Legen Sie alle Datumskomponenten fest."
 
-#: services/editor/xinha/plugins/AnselImage/insert_image.php:146
+#: services/editor/xinha/plugins/AnselImage/insert_image.php:130
 msgid "Select an image"
 msgstr "Bild auswählen"
 
-#: framework/UI/UI/VarRenderer/html.php:947
+#: framework/UI/UI/VarRenderer/html.php:956
 msgid "Select an object"
 msgstr "Objekt auswählen"
 
@@ -6502,7 +6641,7 @@ msgstr "Objekt auswählen"
 msgid "Select editor plugins"
 msgstr "Editorplugins auswählen"
 
-#: framework/UI/UI/VarRenderer/html.php:753
+#: framework/UI/UI/VarRenderer/html.php:762
 #: framework/UI/UI/VarRenderer/tableset_html.php:24
 msgid "Select none"
 msgstr "Keinen auswählen"
@@ -6559,7 +6698,7 @@ msgstr "Selbstlöschung..."
 msgid "Send Problem Report"
 msgstr "Problembericht abschicken"
 
-#: framework/UI/UI/VarRenderer/html.php:1187
+#: framework/UI/UI/VarRenderer/html.php:1196
 msgid "Send SMS"
 msgstr "SMS verschicken"
 
@@ -6591,7 +6730,7 @@ msgstr "Serbien"
 msgid "Serbia and Montenegro"
 msgstr "Serbien und Montenegro"
 
-#: framework/Crypt/Crypt/smime.php:708
+#: framework/Crypt/Crypt/smime.php:705
 msgid "Serial Number"
 msgstr "Seriennummer"
 
@@ -6683,7 +6822,7 @@ msgstr "Share \"%s\" existiert nicht."
 msgid "Share ID %d does not exist."
 msgstr "Share-ID %d existiert nicht."
 
-#: framework/Share/Share/sql_hierarchical.php:552
+#: framework/Share/Share/sql_hierarchical.php:556
 msgid "Share names are not supported in this driver"
 msgstr "Sharenamen werden von diesem Treiber nicht unterstützt"
 
@@ -6794,11 +6933,11 @@ msgstr "Sierra Leone"
 msgid "Sign up"
 msgstr "Registrieren"
 
-#: framework/Crypt/Crypt/smime.php:719
+#: framework/Crypt/Crypt/smime.php:716
 msgid "Signature"
 msgstr "Signatur"
 
-#: framework/Crypt/Crypt/smime.php:718
+#: framework/Crypt/Crypt/smime.php:715
 msgid "Signature Algorithm"
 msgstr "Signaturalgorithmus"
 
@@ -6951,9 +7090,9 @@ msgstr "Sonderzeichen-Eingabe"
 msgid "Special characters"
 msgstr "Sonderzeichen"
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/Object.php:99
-msgid "Specify either the DN or a search result!"
-msgstr "Angabe einer DN oder eines Suchergebnisses ist notwendig!"
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/Object.php:179
+msgid "Specify either the UID or a search result!"
+msgstr "Angabe der UID oder eines Suchergebnisses ist notwendig!"
 
 #: lib/Block/fortune.php:70
 msgid "Sports"
@@ -6979,7 +7118,7 @@ msgstr "Star Trek"
 msgid "Start year"
 msgstr "Startjahr"
 
-#: framework/Crypt/Crypt/smime.php:577
+#: framework/Crypt/Crypt/smime.php:574
 msgid "State or Province"
 msgstr "Bundesstaat oder Provinz"
 
@@ -6991,7 +7130,7 @@ msgstr "Status"
 msgid "Storage format"
 msgstr "Speicherformat"
 
-#: framework/Crypt/Crypt/smime.php:579
+#: framework/Crypt/Crypt/smime.php:576
 msgid "Street Address"
 msgstr "Straße"
 
@@ -7028,6 +7167,11 @@ msgid ""
 msgstr ""
 "Die Registrierungsanfrage für \"%s\" wurde abgeschickt. Sie können sich noch "
 "nicht anmelden, solange die Anfrage noch nicht bestätigt wurde."
+
+#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Folder.php:526
+#, php-format
+msgid "Subpath of folder %s cannot be determined."
+msgstr "Pfad des Ordners %s konnte nicht festgestellt werden."
 
 #: admin/sqlshell.php:108
 #: framework/Notification/Notification/Listener/status.php:28
@@ -7125,7 +7269,7 @@ msgstr "Sonnenuntergang: "
 msgid "Suriname"
 msgstr "Surinam"
 
-#: framework/Crypt/Crypt/smime.php:581
+#: framework/Crypt/Crypt/smime.php:578
 msgid "Surname"
 msgstr "Nachname"
 
@@ -7244,7 +7388,7 @@ msgstr "Aufgaben"
 msgid "Teal"
 msgstr "Mint"
 
-#: framework/Crypt/Crypt/smime.php:580
+#: framework/Crypt/Crypt/smime.php:577
 msgid "Telephone Number"
 msgstr "Telefonnummer"
 
@@ -7269,6 +7413,10 @@ msgstr "Temperatur<br />(%sMax%s/%sMin%s) &deg;%s"
 #, php-format
 msgid "Template \"%s\" not found."
 msgstr "Vorlage \"%s\" nicht gefunden."
+
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:990
+msgid "Tentative: "
+msgstr "Unter Vorbehalt: "
 
 #: framework/Form/Form.php:1201 framework/Form/Form.php:4247
 #: framework/Form/Form.php:4266
@@ -7317,7 +7465,7 @@ msgstr "Die IMSP-Logdatei konnte nicht erstellt werden."
 msgid "The Kolab group driver requires LDAP support."
 msgstr "Der Kolab-Gruppentreiber benötigt LDAP-Unterstützung in PHP."
 
-#: framework/Share/Share/kolab.php:681
+#: framework/Share/Share/kolab.php:689
 msgid "The Kolab share object has not been initialized yet!"
 msgstr "Das Kolab-Shareobjekt wurde noch nicht instialisiert!"
 
@@ -7329,9 +7477,15 @@ msgstr "Die Maintenance:: Klasse konnte nicht geladen werden"
 msgid "The SSH2 PECL extension is not available."
 msgstr "Die SSH2-PECL-Extension ist nicht verfügbar."
 
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Session.php:175
-msgid "The URL for the Kolab IMAP Server is not available!"
-msgstr "Die URL für den Kolab-IMAP-Server ist nicht verfügbar!"
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/group.php:188
+#, php-format
+msgid "The UID %s is already a member of the group %s!"
+msgstr "Die UID %s ist bereits in Mitglied der Gruppe %s!"
+
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/group.php:211
+#, php-format
+msgid "The UID %s is no member of the group %s!"
+msgstr "Die UID %s ist kein Mitglied der Gruppe %s!"
 
 #: framework/Perms/Perms.php:199 framework/Perms/Perms.php:210
 #: framework/Perms/Perms.php:221 framework/Perms/Perms.php:233
@@ -7369,7 +7523,7 @@ msgstr ""
 "Die ID-Nummer des Kontakts wurde nicht angeben, war leer oder konnte in der "
 "Datenbank nicht gefunden werden."
 
-#: framework/Crypt/Crypt/pgp.php:1409
+#: framework/Crypt/Crypt/pgp.php:1420
 msgid ""
 "The detached PGP signature block is required to verify the signed message."
 msgstr ""
@@ -7402,12 +7556,12 @@ msgid "The encryption features require a secure web connection."
 msgstr ""
 "Die Verschlüsselungsfunktionen benötigen eine sichere Serververbindung."
 
-#: framework/Horde/Horde.php:207 framework/Horde/Horde.php:688
+#: framework/Horde/Horde.php:208 framework/Horde/Horde.php:693
 #, php-format
 msgid "The file %s should contain a %s setting."
 msgstr "Die Datei %s sollte einen %s Eintrag enthalten."
 
-#: framework/Horde/Horde.php:200 framework/Horde/Horde.php:678
+#: framework/Horde/Horde.php:201 framework/Horde/Horde.php:683
 #, php-format
 msgid "The file %s should contain some %s settings."
 msgstr "Die Datei %s sollte einige %s Einträge enthalten."
@@ -7423,10 +7577,19 @@ msgstr ""
 "Bei den folgenden Anwendungen sind Fehler aufgetreten, während die "
 "Benutzerdaten entfernt wurden: %s"
 
-#: framework/Horde/Horde.php:228
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:701
+msgid "The following event has been successfully removed:"
+msgstr "Der folgende Termin wurde erfolgreich gelöscht:"
+
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:683
+#, php-format
+msgid "The following event that was canceled is not present in %s's calendar:"
+msgstr "Der folgende abgesagte Termin befindet sich nicht in %ss Kalender:"
+
+#: framework/Horde/Horde.php:229
 msgid ""
 "The full error message is logged in Horde's log file, and is shown below "
-"only to administrators. Non-adminitrative users will not see error details."
+"only to administrators. Non-administrative users will not see error details."
 msgstr ""
 "Die vollständige Fehlermeldung wurde in Hordes Logdatei geschrieben und für "
 "Administratoren weiter unten ausgegeben. Benutzer, die keine Administratoren "
@@ -7494,6 +7657,17 @@ msgstr ""
 "\n"
 "Das heißt nicht, dass die Nachricht auch gelesen oder verstanden wurde."
 
+#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Folder.php:920
+#, php-format
+msgid ""
+"The message with ID %s does not exist. This probably means that the Kolab "
+"object has been modified by somebody else while you were editing it. Your "
+"edits have been lost."
+msgstr ""
+"Die Nachricht mit der ID %s existiert nicht. Das liegt vermutlich daran, "
+"dass dieses Kolab-Object von jemand anderem verändert wurde, während Sie es "
+"bearbeitet haben. Ihre Änderungen sind verloren."
+
 #: framework/Form/Form.php:2389
 msgid "The name to use when linking to the compose page"
 msgstr "Name für den Link zur Nachrichtenerstellung"
@@ -7508,7 +7682,7 @@ msgstr ""
 msgid "The number of fields must be numeric."
 msgstr "Die Anzahl der Felder muss als Zahl angegeben werden."
 
-#: framework/Crypt/Crypt/smime.php:1238
+#: framework/Crypt/Crypt/smime.php:1235
 msgid "The openssl module is required for the Horde_Crypt_smime:: class."
 msgstr "Das OpenSSL-Modul wird für die Horde_Crypt_smime:: Klasse benötigt."
 
@@ -7554,6 +7728,11 @@ msgstr "Der angegebene Ländercode ist ungültig"
 #: framework/File_CSV/CSV.php:560
 msgid "The quote character must be one single character."
 msgstr "Das Anführungszeichen muss als einzelnes Zeichen angegeben werden."
+
+#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/View.php:214
+#, php-format
+msgid "The requested URL %s was not found on this server."
+msgstr "Die gesuchte URL %s wurde auf diesem Server nicht gefunden."
 
 #: framework/File_CSV/CSV.php:552
 msgid "The separator must be one single character."
@@ -7666,14 +7845,14 @@ msgstr "Beim Löschen von \"%s\" aus dem System ist ein Problem aufgetreten: "
 msgid "There was a problem updating \"%s\": %s"
 msgstr "Beim Aktualisieren von \"%s\" ist ein Problem aufgetreten: %s"
 
-#: framework/Browser/Browser.php:1058
+#: framework/Browser/Browser.php:1067
 #, php-format
 msgid "There was a problem with the file upload: No %s was uploaded."
 msgstr ""
 "Beim Hochladen der Datei ist ein Fehler aufgetreten. %s wurde nicht "
 "hochgeladen."
 
-#: framework/Browser/Browser.php:1063
+#: framework/Browser/Browser.php:1072
 #, php-format
 msgid ""
 "There was a problem with the file upload: The %s was larger than the maximum "
@@ -7682,7 +7861,7 @@ msgstr ""
 "Beim Hochladen der Datei ist ein Fehler aufgetreten. %s war größer als die "
 "maximal erlaubte Größe (%d Bytes)."
 
-#: framework/Browser/Browser.php:1065
+#: framework/Browser/Browser.php:1074
 #, php-format
 msgid ""
 "There was a problem with the file upload: The %s was only partially uploaded."
@@ -7695,7 +7874,7 @@ msgstr ""
 msgid "There was an error displaying this message part"
 msgstr "Beim Anzeigen dieses Nachrichtenteils ist ein Fehler aufgetreten."
 
-#: framework/MIME/MIME/Viewer/vcard.php:52
+#: framework/MIME/MIME/Viewer/vcard.php:55
 msgid "There was an error importing the contact data:"
 msgstr "Beim Importieren der Kontaktdaten ist ein Fehler aufgetreten:"
 
@@ -7866,7 +8045,7 @@ msgid "This form has already been processed."
 msgstr "Dieses Formular wurde bereits verarbeitet."
 
 #: framework/Kolab_Storage/lib/Horde/Kolab/Deprecated.php:589
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Folder.php:914
+#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Folder.php:1159
 #, php-format
 msgid ""
 "This is a Kolab Groupware object. To view this object you will need an email "
@@ -7888,14 +8067,15 @@ msgstr ""
 msgid "This number must be at least one."
 msgstr "Diese Zahl muss 1 oder größer sein."
 
-#: framework/Horde/Horde.php:334
+#: framework/Horde/Horde.php:335
 #, php-format
 msgid ""
 "This request cannot be completed because the link you followed or the form "
-"you submitted was only valid for %s minutes"
+"you submitted was only valid for %s minutes. Please try again now."
 msgstr ""
 "Diese Anfrage konnte nicht durchgeführt werden, weil der Link oder das "
-"Formular, das Sie abgeschickt haben, nur %s Minuten gültig war."
+"Formular, das Sie abgeschickt haben, nur %s Minuten gültig war. Bitte "
+"versuchen Sie es jetzt noch einmal."
 
 #: framework/Compress/Compress/gzip.php:44
 msgid "This server can't uncompress zip and gzip files."
@@ -7946,7 +8126,7 @@ msgstr "Zeitpunkte erfolgreicher Synchronisationssitzungen"
 msgid "Timor-Leste"
 msgstr "Timor-Leste"
 
-#: framework/MIME/MIME/Viewer/vcard.php:271 lib/Block/iframe.php:20
+#: framework/MIME/MIME/Viewer/vcard.php:277 lib/Block/iframe.php:20
 msgid "Title"
 msgstr "Titel"
 
@@ -7963,7 +8143,7 @@ msgstr ""
 "Zuordnung zu korrigieren, wählen Sie ein Feld in der untenstehenden Liste "
 "aus und drücken Sie \"Paar löschen\"."
 
-#: framework/UI/UI/VarRenderer/html.php:725
+#: framework/UI/UI/VarRenderer/html.php:734
 msgid ""
 "To select multiple items, hold down the Control (PC) or Command (Mac) key "
 "while clicking."
@@ -7994,7 +8174,7 @@ msgstr "Morgen"
 msgid "Tonga"
 msgstr "Tonga"
 
-#: framework/Auth/Auth/kolab.php:115
+#: framework/Auth/Auth/kolab.php:124
 msgid "Too many invalid logins during the last minutes."
 msgstr "Zu viele ungültige Anmeldeversuche in den letzten Minuten."
 
@@ -8056,11 +8236,11 @@ msgstr "U Zeichen"
 msgid "U.V. index: "
 msgstr "UV-Index: "
 
-#: framework/Kolab_Format/lib/Horde/Kolab/Format/XML.php:402
+#: framework/Kolab_Format/lib/Horde/Kolab/Format/XML.php:447
 msgid "UID not found in Kolab XML object"
 msgstr "UID im Kolab-XML-Objekt nicht gefunden"
 
-#: framework/MIME/MIME/Viewer/vcard.php:295 lib/Block/iframe.php:17
+#: framework/MIME/MIME/Viewer/vcard.php:301 lib/Block/iframe.php:17
 msgid "URL"
 msgstr "Homepage"
 
@@ -8078,17 +8258,22 @@ msgstr "Uganda"
 msgid "Ukraine"
 msgstr "Ukraine"
 
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:677
+#, php-format
+msgid "Unable to access %s's calendar:"
+msgstr "Zugriff auf %ss Kalender nicht möglich:"
+
 #: framework/VFS/lib/VFS/file.php:481
 msgid "Unable to access VFS directory."
 msgstr "Auf das VFS-Verzeichnis konnte nicht zugegriffen werden."
 
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/List.php:396
+#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/List.php:374
 #, php-format
 msgid "Unable to add %s: destination folder already exists"
 msgstr ""
 "%s konnte nicht hinzugefügt werden: Das Zielverzeichnis existiert bereits"
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:124
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:139
 #, php-format
 msgid "Unable to bind to the LDAP server as %s!"
 msgstr "Verbindung zum LDAP-Server als %s konnte nicht hergestellt werden!"
@@ -8145,7 +8330,7 @@ msgstr "Das VFS-Verzeichnis konnte nicht angelegt werden."
 msgid "Unable to create VFS file."
 msgstr "Die VFS-Datei konnte nicht angelegt werden."
 
-#: framework/VFS/lib/VFS/smb.php:354
+#: framework/VFS/lib/VFS/smb.php:369
 #, php-format
 msgid "Unable to create VFS folder \"%s\"."
 msgstr "Das VFS-Verzeichnis \"%s\" konnte nicht angelegt werden."
@@ -8183,8 +8368,9 @@ msgstr "\"%s\" konnte nicht gelöscht werden, das Verzeichnis ist nicht leer."
 msgid "Unable to delete \"%s\": %s."
 msgstr "\"%s\" kann nicht gelöscht werden: %s."
 
-#: framework/VFS/lib/VFS/file.php:400 framework/VFS/lib/VFS/sql.php:460
-#: framework/VFS/lib/VFS/musql.php:371 framework/VFS/lib/VFS/sql_file.php:358
+#: framework/VFS/lib/VFS/file.php:400 framework/VFS/lib/VFS/kolab.php:194
+#: framework/VFS/lib/VFS/sql.php:460 framework/VFS/lib/VFS/musql.php:371
+#: framework/VFS/lib/VFS/sql_file.php:358
 #, php-format
 msgid "Unable to delete %s, the directory is not empty"
 msgstr "%s konnte nicht gelöscht werden, das Verzeichnis ist nicht leer"
@@ -8210,9 +8396,10 @@ msgstr "Das VFS-Verzeichnis konnte nicht gelöscht werden: %s."
 msgid "Unable to delete VFS file \"%s\"."
 msgstr "Die VFS-Datei \"%s\" konnte nicht gelöscht werden."
 
-#: framework/VFS/lib/VFS/file.php:372 framework/VFS/lib/VFS/sql.php:344
-#: framework/VFS/lib/VFS/musql.php:178 framework/VFS/lib/VFS/musql.php:197
-#: framework/VFS/lib/VFS/musql.php:204 framework/VFS/lib/VFS/sql_file.php:407
+#: framework/VFS/lib/VFS/file.php:372 framework/VFS/lib/VFS/kolab.php:136
+#: framework/VFS/lib/VFS/sql.php:344 framework/VFS/lib/VFS/musql.php:178
+#: framework/VFS/lib/VFS/musql.php:197 framework/VFS/lib/VFS/musql.php:204
+#: framework/VFS/lib/VFS/sql_file.php:407
 #: framework/VFS/lib/VFS/sql_file.php:415
 msgid "Unable to delete VFS file."
 msgstr "Die VFS-Datei konnte nicht gelöscht werden."
@@ -8231,11 +8418,15 @@ msgstr "Das VFS konnte nicht rekursiv gelöscht werden: %s."
 msgid "Unable to determine current directory."
 msgstr "Das aktuelle Verzeichnis konnte nicht bestimmt werden."
 
+#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Access.php:391
+msgid "Unable to determine owner of the free/busy data!"
+msgstr "Besitzer der Frei-/Gebuchtdaten konnte nicht festgestellt werden!"
+
 #: framework/Auth/Auth/smbclient.php:88
 msgid "Unable to execute smbclient."
 msgstr "smbclient kann nicht ausgeführt werden."
 
-#: framework/Crypt/Crypt/smime.php:610
+#: framework/Crypt/Crypt/smime.php:607
 msgid "Unable to extract certificate details"
 msgstr "Die Zertifikatdetails konnten nicht ausgelesen werden"
 
@@ -8283,11 +8474,16 @@ msgstr "Die VFS-Datei konnte nicht gelesen werden (filesize() fehlgeschlagen)."
 msgid "Unable to read VFS file (size() failed)."
 msgstr "Die VFS-Datei konnte nicht gelesen werden (size() fehlgeschlagen)."
 
+#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Access.php:205
+#, php-format
+msgid "Unable to read free/busy information from %s"
+msgstr "Fehler beim Auslesen der Frei/Gebucht-Informationen von %s"
+
 #: framework/VFS/lib/VFS/file.php:759
 msgid "Unable to read the vfsroot directory."
 msgstr "Das vfsroot-Verzeichnis konnte nicht gelesen werden."
 
-#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/List.php:427
+#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/List.php:407
 #, php-format
 msgid "Unable to rename %s to %s: destination folder already exists"
 msgstr ""
@@ -8311,7 +8507,7 @@ msgstr "Das VFS-Verzeichnis konnte nicht umbenannt werden."
 msgid "Unable to rename VFS directory: %s."
 msgstr "Das VFS-Verzeichnis konnte nicht umbenannt werden: %s."
 
-#: framework/VFS/lib/VFS/smb.php:325 framework/VFS/lib/VFS/ftp.php:395
+#: framework/VFS/lib/VFS/smb.php:340 framework/VFS/lib/VFS/ftp.php:395
 #: framework/VFS/lib/VFS/ssh2.php:381
 #, php-format
 msgid "Unable to rename VFS file \"%s\"."
@@ -8321,6 +8517,10 @@ msgstr "Die VFS-Datei \"%s\" konnte nicht umbenannt werden."
 #, php-format
 msgid "Unable to rename VFS file %s/%s."
 msgstr "Die VFS-Datei %s/%s konnte nicht umbenannt werden."
+
+#: framework/VFS/lib/VFS/smb.php:324
+msgid "Unable to rename VFS file to same name."
+msgstr "Die VFS-Datei kann nicht auf den gleichen Namen umbenannt werden."
 
 #: framework/VFS/lib/VFS/sql.php:391 framework/VFS/lib/VFS/musql.php:235
 #: framework/VFS/lib/VFS/musql.php:531 framework/VFS/lib/VFS/sql_file.php:303
@@ -8344,12 +8544,10 @@ msgstr "Dieses Word-Dokument lässt sich nicht anzeigen"
 msgid "Unable to translate this WordPerfect document"
 msgstr "Dieses WordPerfect-Dokument lässt sich nicht anzeigen"
 
-#: framework/Kolab/Kolab.php:856
+#: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Folder.php:1272
 #, php-format
-msgid "Unable to trigger free/busy update for folder %s on URL %s"
-msgstr ""
-"Die Frei/Gebucht-Informationen für den Ordner %s und die Url %s konnten "
-"nicht aktualisiert werden"
+msgid "Unable to trigger URL %s. Response: %s"
+msgstr "Die URL %s konnte nicht angesprochen werden. Antwort: %s"
 
 #: framework/VFS/lib/VFS/ftp.php:223 framework/VFS/lib/VFS/ftp.php:226
 #: framework/VFS/lib/VFS/ssh2.php:212 framework/VFS/lib/VFS/ssh2.php:215
@@ -8376,6 +8574,10 @@ msgstr ""
 #: framework/VFS/lib/VFS.php:306
 msgid "Unable to write temporary file."
 msgstr "Temporäre Datei konnte nicht beschrieben werden."
+
+#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/View.php:237
+msgid "Unauthorized"
+msgstr "Nicht autorisiert"
 
 #: templates/prefs/end.inc:3
 msgid "Undo Changes"
@@ -8435,8 +8637,8 @@ msgstr "Kleinere Amerikanische Überseeinseln"
 msgid "Units"
 msgstr "Einheiten"
 
-#: framework/Crypt/Crypt/pgp.php:465 framework/Crypt/Crypt/pgp.php:466
-#: framework/Crypt/Crypt/pgp.php:467 framework/MIME/MIME/Viewer/tgz.php:68
+#: framework/Crypt/Crypt/pgp.php:476 framework/Crypt/Crypt/pgp.php:477
+#: framework/Crypt/Crypt/pgp.php:478 framework/MIME/MIME/Viewer/tgz.php:68
 msgid "Unknown"
 msgstr "Unbekannt"
 
@@ -8456,7 +8658,7 @@ msgstr "Es wurde ein unbekannter Ort angegeben."
 msgid "Unknown username or password."
 msgstr "Unbekannter Benutzername oder Passwort."
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:441
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:582
 #, php-format
 msgid "Unkown Kolab object type for DN %s."
 msgstr "Unbekannter Kolab-Objekttyp für DN %s."
@@ -8475,8 +8677,8 @@ msgstr "Unbenannt"
 msgid "Unsupported"
 msgstr "Nicht unterstützt"
 
-#: framework/Crypt/Crypt/smime.php:693 framework/Crypt/Crypt/smime.php:933
-#: framework/Crypt/Crypt/smime.php:939
+#: framework/Crypt/Crypt/smime.php:690 framework/Crypt/Crypt/smime.php:930
+#: framework/Crypt/Crypt/smime.php:936
 msgid "Unsupported Extension"
 msgstr "Erweiterung nicht unterstützt"
 
@@ -8575,10 +8777,6 @@ msgstr ""
 msgid "User account not found"
 msgstr "Benutzerkonto nicht gefunden"
 
-#: framework/Auth/Auth/kolab.php:162
-msgid "User is not a standard Kolab user."
-msgstr "Der Benutzer ist kein Standard-Kolab-Benutzer."
-
 #: templates/shares/edit.inc:217
 msgid "User to add:"
 msgstr "Hinzuzufügender Benutzer:"
@@ -8639,7 +8837,7 @@ msgstr "Das VFS-Verzeichnis existiert nicht."
 msgid "Vacation"
 msgstr "Abwesenheit"
 
-#: framework/Crypt/Crypt/smime.php:645
+#: framework/Crypt/Crypt/smime.php:642
 msgid "Validity"
 msgstr "Gültigkeit"
 
@@ -8677,16 +8875,16 @@ msgstr "Drehend"
 msgid "Venezuela"
 msgstr "Venezuela"
 
-#: framework/Crypt/Crypt/smime.php:218
+#: framework/Crypt/Crypt/smime.php:217
 msgid "Verification failed - an unknown error has occurred."
 msgstr "Überprüfung fehlgeschlagen - ein unbekannter Fehler ist aufgetreten."
 
-#: framework/Crypt/Crypt/smime.php:220
+#: framework/Crypt/Crypt/smime.php:219
 msgid "Verification failed - this message may have been tampered with."
 msgstr ""
 "Überprüfung fehlgeschlagen - diese Nachricht könnte manipuliert worden sein."
 
-#: framework/Crypt/Crypt/smime.php:707
+#: framework/Crypt/Crypt/smime.php:704
 msgid "Version"
 msgstr "Version"
 
@@ -8707,12 +8905,12 @@ msgstr "Vietnam"
 msgid "Vietnamese (VISCII)"
 msgstr "Vietnamesisch (VISCII)"
 
-#: framework/MIME/MIME/Contents.php:1121
+#: framework/MIME/MIME/Contents.php:1122
 #, php-format
 msgid "View %s"
 msgstr "%s anzeigen"
 
-#: framework/MIME/MIME/Contents.php:988
+#: framework/MIME/MIME/Contents.php:989
 #, php-format
 msgid "View %s [%s]"
 msgstr "%s [%s] anzeigen"
@@ -8773,14 +8971,15 @@ msgstr "Warnung"
 msgid "We"
 msgstr "Mi"
 
-#: framework/Horde/Horde.php:330
+#: framework/Horde/Horde.php:331
 msgid ""
 "We cannot verify that this request was really sent by you. It could be a "
-"malicious request."
+"malicious request. If you intended to perform this action, you can retry it "
+"now."
 msgstr ""
 "Es konnte nicht sichergestellt werden, dass diese Anfrage wirklich von Ihnen "
 "ausgelöst wurde. Es könnte sich möglicherweise um eine böswillige Anfrage "
-"handeln."
+"handeln. Bitte versuchen Sie es jetzt noch einmal."
 
 #: lib/Block/weatherdotcom.php:34
 msgid "Weather Forecast"
@@ -8804,6 +9003,7 @@ msgid "Welcome"
 msgstr "Willkommen"
 
 #: templates/login/mobile.inc:4 templates/login/login.inc:52
+#: templates/login/header.inc:8
 #, php-format
 msgid "Welcome to %s"
 msgstr "Willkommen bei %s"
@@ -8843,7 +9043,7 @@ msgstr "Welche Anführungszeichen werden verwendet?"
 msgid "What sequence do you want to create (_seq will be added automatically)?"
 msgstr "Welche Sequenz möchten Sie erzeugen (_seq wird automatisch angehängt)?"
 
-#: framework/UI/UI/VarRenderer/html.php:1218
+#: framework/UI/UI/VarRenderer/html.php:1227
 msgid "Whereis Australia map"
 msgstr "Whereis-Australia-Karte"
 
@@ -8912,12 +9112,12 @@ msgstr "Wunschzettel"
 msgid "Work"
 msgstr "Arbeit"
 
-#: framework/MIME/MIME/Viewer/vcard.php:125
-#: framework/MIME/MIME/Viewer/vcard.php:183
+#: framework/MIME/MIME/Viewer/vcard.php:131
+#: framework/MIME/MIME/Viewer/vcard.php:189
 msgid "Work Address"
 msgstr "Adresse geschäftlich"
 
-#: framework/MIME/MIME/Viewer/vcard.php:226
+#: framework/MIME/MIME/Viewer/vcard.php:232
 msgid "Work Phone"
 msgstr "Telefon geschäftlich"
 
@@ -8950,23 +9150,23 @@ msgstr "Falsche Versionsnummer gefunden: %s (sollte %d sein)"
 msgid "X-Ref"
 msgstr "Querverweise"
 
-#: framework/Crypt/Crypt/smime.php:600
+#: framework/Crypt/Crypt/smime.php:597
 msgid "X509v3 Basic Constraints"
 msgstr "X509v3 Generelle Einschränkung"
 
-#: framework/Crypt/Crypt/smime.php:599
+#: framework/Crypt/Crypt/smime.php:596
 msgid "X509v3 Extended Key Usage"
 msgstr "X509v3 Erweiterter Schlüsselzweck"
 
-#: framework/Crypt/Crypt/smime.php:601
+#: framework/Crypt/Crypt/smime.php:598
 msgid "X509v3 Subject Alternative Name"
 msgstr "X509v3 Alternativer Name des Zertifikatinhabers"
 
-#: framework/Crypt/Crypt/smime.php:602
+#: framework/Crypt/Crypt/smime.php:599
 msgid "X509v3 Subject Key Identifier"
 msgstr "X509v3 Identität des Zertifikatschlüssels"
 
-#: framework/Crypt/Crypt/smime.php:689
+#: framework/Crypt/Crypt/smime.php:686
 msgid "X509v3 extensions"
 msgstr "X509v3 Erweiterungen"
 
@@ -8982,7 +9182,7 @@ msgstr "JJ"
 msgid "YYYY"
 msgstr "JJJJ"
 
-#: framework/UI/UI/VarRenderer/html.php:1262
+#: framework/UI/UI/VarRenderer/html.php:1271
 msgid "Yahoo! map"
 msgstr "Yahoo! Karte"
 
@@ -8996,13 +9196,25 @@ msgstr "Jährlich"
 msgid "Yemen"
 msgstr "Jemen"
 
-#: framework/UI/UI/VarRenderer/html.php:1074
+#: framework/UI/UI/VarRenderer/html.php:1083
 msgid "Yes"
 msgstr "Ja"
 
 #: templates/maintenance/maintenance.html:56
 msgid "Yes, I Agree"
 msgstr "Ja, ich stimme zu"
+
+#: framework/Kolab_Server/lib/Horde/Kolab/Session.php:151
+msgid "You are member of a group that may not login on this server."
+msgstr ""
+"Sie sind Mitglied einer Gruppe, die sich nicht auf diesem Server anmelden "
+"darf."
+
+#: framework/Kolab_Server/lib/Horde/Kolab/Session.php:164
+msgid "You are no member of a group that may login on this server."
+msgstr ""
+"Sie sind kein Mitglied einer Gruppe, die sich auf diesem Server anmelden "
+"darf."
 
 #: lib/api.php:420
 msgid "You are not allowed to add groups."
@@ -9059,9 +9271,13 @@ msgstr "Sie dürfen die Benutzer eines Shares nicht anzeigen."
 msgid "You are not allowed to remove user data."
 msgstr "Sie dürfen keine Benutzerdaten löschen."
 
-#: framework/Horde/Horde.php:1630
+#: framework/Horde/Horde.php:1635
 msgid "You are not authenticated."
 msgstr "Sie sind nicht angemeldet."
+
+#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/View.php:238
+msgid "You are not authorized to access the requested URL."
+msgstr "Sie haben keinen Zugriff auf diese URL."
 
 #: framework/Prefs/Identity.php:336
 msgid "You cannot have the '\\' character in your full name."
@@ -9122,7 +9338,7 @@ msgstr ""
 "Sie müssen ein DataTree-Backend konfigurieren, um Registrierungen zu "
 "ermöglichen."
 
-#: framework/Horde/Horde.php:631
+#: framework/Horde/Horde.php:636
 msgid "You must configure a VFS backend."
 msgstr "Sie müssen ein VFS-Backend konfigurieren."
 
@@ -9354,11 +9570,16 @@ msgstr "[Keiner]"
 msgid "[Problem Report]"
 msgstr "[Problembericht]"
 
+#: framework/Text_Filter/Filter/highlightquotes.php:207
+#, php-format
+msgid "[Show Quoted Text - %d lines]"
+msgstr "[Zitattext anzeigen - %d Zeilen]"
+
 #: admin/sessions.php:55
 msgid "[Unknown]"
 msgstr "[Unbekannt]"
 
-#: framework/Horde/Horde.php:225
+#: framework/Horde/Horde.php:226
 #, php-format
 msgid "[line %d of %s]"
 msgstr "[Zeile %d von %s]"
@@ -9465,7 +9686,7 @@ msgstr "Eintrag nicht gefunden"
 msgid "falling"
 msgstr "fallend"
 
-#: framework/Browser/Browser.php:1029
+#: framework/Browser/Browser.php:1038
 msgid "file"
 msgstr "Datei"
 
@@ -9521,7 +9742,7 @@ msgstr "mm"
 msgid "no such option: %s"
 msgstr "keine solche Option: %s"
 
-#: framework/Crypt/Crypt/smime.php:1226
+#: framework/Crypt/Crypt/smime.php:1223
 msgid "not yet implemented"
 msgstr "Noch nicht implementiert"
 

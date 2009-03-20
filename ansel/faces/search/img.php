@@ -2,7 +2,7 @@
 /**
  * Process an single image (to be called by ajax)
  *
- * $Horde: ansel/faces/search/img.php,v 1.4.2.1 2009/01/06 15:22:23 jan Exp $
+ * $Horde: ansel/faces/search/img.php,v 1.4.2.2 2009/03/19 15:49:36 mrubinsk Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -21,7 +21,7 @@ if (!Auth::isauthenticated()) {
 
 $thumb = Util::getGet('thumb');
 $tmp = Horde::getTempDir();
-$path = $tmp . '/search_face_' . ($thumb ? 'thumb_' : '') .  Auth::getAuth() . Ansel_Face::getExtension();
+$path = $tmp . '/search_face_' . ($thumb ? 'thumb_' : '') .  Auth::getAuth() . Ansel_Faces::getExtension();
 
 header('Content-type: image/' . $conf['image']['type']);
 readfile($path);

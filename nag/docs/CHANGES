@@ -31,6 +31,7 @@ v2.3
       (Bug #7366).
 [jan] Fix displayed WebDAV subscription URLs in the task list manager.
 
+
 --------
 v2.3-RC1
 --------
@@ -49,7 +50,7 @@ v2.3-RC1
 [jan] Add options to export screen for choosing task lists and task states.
 [mjr] Remove user permissions on all shares when deleting a user.
 [mjr] Fix issue with removeUserData api that caused the deleted user's task list
-      to not be deleted.
+      to not be deleted (Bug #6969).
 
 
 ----

@@ -12,21 +12,21 @@
  * 8 - Minor security fixes
  * 9 - Major security fixes
  */
-$this->notes['fm']['focus'] = 6;
+$this->notes['fm']['focus'] = 5;
 
 /* Mailing list release notes. */
 $this->notes['ml']['changes'] = <<<ML
-The Horde Team is pleased to announce the second release candidate of the Passwd
-Horde password changing application version H3 (3.1).
+The Horde Team is pleased to announce the final release of the Passwd Horde
+password changing application version H3 (3.1).
 
 Passwd provides fairly complete support for changing passwords via Poppassd,
 LDAP, Unix expect scripts, the Unix smbpasswd command for SMB/CIFS passwords,
 Kolab, ADSI, Pine, Serv-U FTP, VMailMgr, vpopmail, and SQL passwords.
 
-The major changes compared to Passwd version H3 (3.1-RC1) are:
-    * Don't disclose the old password in LDAP error messages
+The major changes compared to Passwd version H3 (3.1-RC2) are:
+    * Fixed a bug in the procopen driver
 
-The major changes compared to Passwd version H3 (3.0) are:
+The major changes compared to Passwd H3 (3.0) versions are:
     * Added an HTTP web form driver
     * Added expect support for sudo and for the PECL expect extension
     * Added support for switching passwords from one encryption scheme
@@ -40,8 +40,7 @@ $this->notes['fm']['changes'] = <<<FM
 This release includes a new HTTP web form driver, support for sudo and the PECL
 expect extension in the expect driver, allows switching passwords from one
 encryption scheme to another, has better accessibility, and includes a new
-Turkish translation. It also fixes a minor password disclosure in the LDAP
-driver that was introcued in RC1.
+Turkish translation.
 FM;
 
 $this->notes['name'] = 'Passwd';

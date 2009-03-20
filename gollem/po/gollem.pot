@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright YEAR Horde Project
+# Copyright (C) YEAR Horde Project
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2008-09-18 11:24+0200\n"
+"POT-Creation-Date: 2009-03-19 10:37+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -152,7 +152,7 @@ msgstr ""
 msgid "Change Permissions"
 msgstr ""
 
-#: selectlist.php:109 lib/Gollem.php:852
+#: selectlist.php:109 lib/Gollem.php:853
 msgid "Change Server"
 msgstr ""
 
@@ -164,7 +164,7 @@ msgstr ""
 msgid "Change your file sorting options."
 msgstr ""
 
-#: lib/Gollem.php:827
+#: lib/Gollem.php:828
 msgid "Check Quota"
 msgstr ""
 
@@ -503,10 +503,6 @@ msgstr ""
 msgid "Reset"
 msgstr ""
 
-#: lib/Gollem.php:775 lib/Gollem.php:780
-msgid "Root"
-msgstr ""
-
 #: manager.php:284 templates/edit/edit.inc:11
 msgid "Save"
 msgstr ""
@@ -591,7 +587,7 @@ msgstr ""
 msgid "Unable to delete folder %s: %s"
 msgstr ""
 
-#: lib/Gollem.php:780 lib/Gollem.php:790
+#: lib/Gollem.php:781 lib/Gollem.php:791
 #, php-format
 msgid "Up to %s"
 msgstr ""
@@ -633,15 +629,15 @@ msgstr ""
 msgid "Your browser does not support inline display of this image type"
 msgstr ""
 
-#: lib/Gollem.php:850 lib/Gollem.php:853
+#: lib/Gollem.php:851 lib/Gollem.php:854
 msgid "_Change Server"
 msgstr ""
 
-#: lib/Gollem.php:811
+#: lib/Gollem.php:812
 msgid "_My Home"
 msgstr ""
 
-#: lib/Gollem.php:816
+#: lib/Gollem.php:817
 msgid "_Permissions"
 msgstr ""
 

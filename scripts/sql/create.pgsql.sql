@@ -1,4 +1,4 @@
--- $Horde: horde/scripts/sql/create.pgsql.sql,v 1.1.10.21 2009/02/14 04:43:47 chuck Exp $
+-- $Horde: horde/scripts/sql/create.pgsql.sql,v 1.1.10.22 2009/03/17 12:50:54 slusarz Exp $
 --
 -- Uncomment the ALTER line below and change the password.  Then run as:
 --
@@ -12,6 +12,8 @@ CREATE USER horde;
 GRANT CREATE on DATABASE horde to horde;
 
 \c horde horde;
+
+BEGIN;
 
 CREATE TABLE horde_users (
     user_uid                    VARCHAR(255) NOT NULL,
@@ -215,3 +217,5 @@ CREATE TABLE horde_locks (
 
     PRIMARY KEY (lock_id)
 );
+
+COMMIT;

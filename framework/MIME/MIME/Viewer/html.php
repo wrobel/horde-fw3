@@ -3,7 +3,7 @@
  * The MIME_Viewer_html class renders out HTML text with an effort to
  * remove potentially malicious code.
  *
- * $Horde: framework/MIME/MIME/Viewer/html.php,v 1.14.4.32 2009/01/06 15:23:21 jan Exp $
+ * $Horde: framework/MIME/MIME/Viewer/html.php,v 1.14.4.33 2009/03/18 22:40:24 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -113,7 +113,7 @@ class MIME_Viewer_html extends MIME_Viewer {
                          * domain is the same on both links (e.g.
                          * adtracking.example.com & www.example.com). */
                         preg_match('/\.?([^\.\/]+\.[^\.\/]+)[\/?]/', $link, $host1);
-                        preg_match('/\.?([^\.\/]+\.[^\.\/ ]+)([\/ ].*)?$/', $target, $host2);
+                        preg_match('/\.?([^\.\/]+\.[^\.\/ ]+)([\/ ].*)?$/s', $target, $host2);
                         if (!(count($host1) && count($host2)) ||
                             strcasecmp($host1[1], $host2[1]) !== 0) {
                             $data = preg_replace('/href\s*=\s*["\']?\s*(?:http|https|ftp):\/\/' . preg_quote($m[1][$i], '/') . '["\']?[^>]*>\s*(?:(?:http|https|ftp):\/\/)?' . preg_quote($m[2][$i], '/') . '<\/a/is', 'class="mimeStatusWarning" $0', $data);

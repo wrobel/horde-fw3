@@ -17,26 +17,33 @@ $this->notes['fm']['focus'] = 8;
 /* Mailing list release notes. */
 $this->notes['ml']['changes'] = <<<ML
 The Horde Team is pleased to announce the final release of the Internet
-Messaging Program (IMP) version H3 (4.3.3).
+Messaging Program (IMP) version H3 (4.3.4).
 
-This is a minor security release that fixes unescaped output in several
-scripts. All users are encouraged to upgrade to this release. Thanks to Gunnar
-Wrobel for finding these issues in a code audit.
+This is a bugfix and minor security release that fixes an issue with PGP
+messages sent or received from a user on the local server. All users are
+encouraged to upgrade to this release. Thanks to Peter Meier for reporting
+this issue.
 
 IMP, the Internet Messaging Program, is one of the most popular webmail
 applications available.  It allows universal, web-based access to IMAP and
 POP3 mail servers and provides a full range of features normally found only in
 desktop email clients.
 
-The major changes compared to IMP version H3 (4.3.2) are:
-    * SECURITY: Escape output in message.php, pgp.php and smime.php
-    * Several bugfixes and minor improvements
+The major changes compared to IMP version H3 (4.3.3) are:
+    * SECURITY: Don't cache local PGP public keys retrieved from the
+      address book.
+    * Fixed some URL escaping issue for certain links introduced with the
+      security fixes from 4.3.4.
+    * Fixed updating POP3 indices when deleting in mailbox view.
+    * Fixed some folder creation issues occasionally seen, most often during
+      maintenance tasks.
+    * Other minor bugfixes.
 ML;
 
 /* Freshmeat release notes, not more than 600 characters. */
 $this->notes['fm']['changes'] = <<<FM
-This release fixes unescaped output in several scripts. In addition, it includes
-several minor bugfixes and improvements.
+This release fixes an issue involving PGP public keys retrieved from the local
+address book. In addition, the release includes other bugfixes and improvements.
 FM;
 
 $this->notes['name'] = 'IMP';

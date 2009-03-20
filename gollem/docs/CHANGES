@@ -1,9 +1,20 @@
---------
-v1.1-cvs
---------
+----------
+v1.1.1-cvs
+----------
 
+
+
+
+----
+v1.1
+----
+
+[jan] Fix attachment dialog with only a single autologin backend (Bug #7096).
+[jan] Start with first page again when filter string is changed (Bug #7935).
 [mms] Navigation link now uses description from backends.php (Request #8037,
       Thomas Reifferscheid <thomas@reifferscheid.org>).
+[mjr] Fix issue that was causing the wrong backend to be selected when being
+      redirected to login.php.
 [mms] Fix autologin when switching backends on login page (Bug #7892,
       horde@smartsector.hu).
 
@@ -36,6 +47,18 @@ v1.1-RC1
       and make several links work without JavaScript.
 [jan] Add editing of text files.
 [mms] Add examples/checks for SSH2 VFS driver.
+[jan] Add Slovak translation (Martin Matuška <martin@matuska.org>).
+[cjh] Fix uploading files to non-empty directories when deletion is disabled
+      (Bug #5349).
+
+
+------
+v1.0.4
+------
+
+[jan] Add Estonian translation (Alar Sing <alar.sing@err.ee>).
+[jan] Add Basque translation (Euskal Herriko Unibertsitatea EHU/UPV
+      <xabier.arrieta@ehu.es>).
 [jan] Add Slovak translation (Martin Matuška <martin@matuska.org>).
 [cjh] Fix uploading files to non-empty directories when deletion is disabled
       (Bug #5349).

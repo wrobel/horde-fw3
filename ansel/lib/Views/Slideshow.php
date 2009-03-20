@@ -2,7 +2,7 @@
 /**
  * The Ansel_View_Slideshow:: class wraps display of the gallery slideshow.
  *
- * $Horde: ansel/lib/Views/Slideshow.php,v 1.10.2.2 2008/12/21 19:20:53 mrubinsk Exp $
+ * $Horde: ansel/lib/Views/Slideshow.php,v 1.10.2.3 2009/03/19 15:49:37 mrubinsk Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Michael J. Rubinsky <mrubinsk@horde.org>
@@ -50,6 +50,9 @@ class Ansel_View_Slideshow extends Ansel_View_Abstract {
             $view->_params = $params;
         }
         $view->gallery = $view->getGallery($image->gallery);
+        if (is_a($view->gallery, 'PEAR_Error')) {
+            return $view->gallery;
+        }
         $view->image = $image;
 
         // Check user age

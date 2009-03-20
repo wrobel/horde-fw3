@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mnemo 2.2-cvs\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2008-09-06 11:11+0200\n"
-"PO-Revision-Date: 2008-07-12 18:49+0200\n"
+"POT-Creation-Date: 2009-03-19 10:37+0100\n"
+"PO-Revision-Date: 2009-03-19 11:21+0100\n"
 "Last-Translator: Jan Schneider <jan@horde.org>\n"
 "Language-Team: German <dev@horde.org>\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgstr "%s Zeichen"
 msgid "%s file successfully imported"
 msgstr "Die %s-Datei wurde erfolgreich importiert"
 
-#: lib/Mnemo.php:451 lib/Forms/DeleteNotepad.php:86
+#: lib/Mnemo.php:457 lib/Forms/DeleteNotepad.php:86
 #, php-format
 msgid "%s's Notepad"
 msgstr "Notizblock von %s"
@@ -245,6 +245,11 @@ msgstr "Menüliste"
 msgid "More Options..."
 msgstr "Weitere Optionen..."
 
+#: lib/api.php:524
+msgid "Multiple iCalendar components found; only one vNote is supported."
+msgstr ""
+"Mehrere iCalendar-Komponenten gefunden; nur ein vNote wird unterstützt."
+
 #: templates/panel.inc:50
 msgid "My Notepads:"
 msgstr "Meine Notizblöcke:"
@@ -265,7 +270,7 @@ msgstr "Neue Notiz"
 msgid "Next"
 msgstr "Weiter"
 
-#: lib/api.php:337
+#: lib/api.php:337 lib/api.php:517
 msgid "No iCalendar data was found."
 msgstr "Es wurden keine iCalendar-Daten gefunden."
 
@@ -285,7 +290,7 @@ msgstr "Keine Notizen"
 msgid "No_te"
 msgstr "No_tiz"
 
-#: lib/Driver/sql.php:195
+#: lib/Driver/sql.php:198
 msgid "Not found"
 msgstr "Nicht gefunden"
 
@@ -309,7 +314,7 @@ msgstr "Notiz_text"
 msgid "Note not found."
 msgstr "Notiz nicht gefunden."
 
-#: templates/memo/memo.inc:59
+#: templates/memo/memo.inc:60
 msgid "Note_pad"
 msgstr "Notiz_block"
 
@@ -353,7 +358,7 @@ msgstr ""
 msgid "Really delete this note?"
 msgstr "Diese Notiz wirklich löschen?"
 
-#: templates/panel.inc:68 templates/memo/memo.inc:57
+#: templates/panel.inc:68 templates/memo/memo.inc:58
 #: lib/Forms/EditNotepad.php:46
 msgid "Save"
 msgstr "Speichern"
@@ -367,7 +372,7 @@ msgstr "Als PDF speichern"
 msgid "Search"
 msgstr "Suche"
 
-#: list.php:54
+#: list.php:54 notes/index.php:35
 msgid "Search Results"
 msgstr "Suchergebnisse"
 
@@ -473,13 +478,9 @@ msgstr "Der Notizblock \"%s\" wurde gespeichert."
 msgid "There was an error importing the data: %s"
 msgstr "Beim Importieren der Daten ist ein Fehler aufgetreten: %s"
 
-#: lib/api.php:331
+#: lib/api.php:331 lib/api.php:511
 msgid "There was an error importing the iCalendar data."
 msgstr "Beim Importieren der iCalendar Daten ist ein Fehler aufgetreten."
-
-#: lib/api.php:518
-msgid "There was an error importing the vNote data."
-msgstr "Beim Importieren der vNote-Daten ist ein Fehler aufgetreten."
 
 #: lib/api.php:168
 #, php-format
@@ -521,7 +522,7 @@ msgstr ""
 "Diese Notiz wurde verschlüsselt, bitte geben Sie unten das Passwort ein."
 
 #: view.php:100 view.php:108 memo.php:80 memo.php:88 lib/api.php:408
-#: lib/Driver/kolab.php:766 lib/Driver/sql.php:458
+#: lib/Driver/kolab.php:766 lib/Driver/sql.php:461
 msgid "This note has been encrypted."
 msgstr "Diese Notiz wurde verschlüsselt."
 
@@ -545,12 +546,12 @@ msgid "Unable to save notepad \"%s\": %s"
 msgstr "Der Notizblock \"%s\" kann nicht gespeichert werden: %s"
 
 #: templates/view/memo.inc:27 templates/list/memo_summaries.inc:17
-#: lib/Mnemo.php:267 lib/Mnemo.php:268 lib/Mnemo.php:282 lib/Mnemo.php:283
+#: lib/Mnemo.php:273 lib/Mnemo.php:274 lib/Mnemo.php:288 lib/Mnemo.php:289
 #: lib/Block/summary.php:107
 msgid "Unfiled"
 msgstr "Nicht zugeordnet"
 
-#: lib/api.php:367 lib/api.php:433 lib/api.php:526
+#: lib/api.php:367 lib/api.php:433 lib/api.php:533
 #, php-format
 msgid "Unsupported Content-Type: %s"
 msgstr "Nicht unterstützter Inhaltstyp: %s"
@@ -593,7 +594,7 @@ msgstr "[Notizblöcke verwalten]"
 msgid "_Body"
 msgstr "_Text"
 
-#: templates/memo/memo.inc:70 templates/list/memo_headers.inc:41
+#: templates/memo/memo.inc:71 templates/list/memo_headers.inc:41
 msgid "_Category"
 msgstr "_Kategorie"
 
@@ -605,7 +606,7 @@ msgstr "_Löschen"
 msgid "_Edit"
 msgstr "_Bearbeiten"
 
-#: templates/memo/memo.inc:74
+#: templates/memo/memo.inc:75
 msgid "_Encrypt?"
 msgstr "_Verschlüsseln?"
 
@@ -613,28 +614,28 @@ msgstr "_Verschlüsseln?"
 msgid "_For: "
 msgstr "_Nach: "
 
-#: lib/Mnemo.php:488
+#: lib/Mnemo.php:494
 msgid "_Import/Export"
 msgstr "_Import/Export"
 
-#: lib/Mnemo.php:475
+#: lib/Mnemo.php:481
 msgid "_List Notes"
 msgstr "Notizen _anzeigen"
 
-#: lib/Mnemo.php:480
+#: lib/Mnemo.php:486
 msgid "_New Note"
 msgstr "_Neue Notiz"
 
 #: templates/view/memo.inc:52 templates/memo/memo.inc:21
-#: templates/memo/memo.inc:79
+#: templates/memo/memo.inc:80
 msgid "_Password"
 msgstr "_Passwort"
 
-#: lib/Mnemo.php:493
+#: lib/Mnemo.php:499
 msgid "_Print"
 msgstr "_Drucken"
 
-#: lib/Mnemo.php:484
+#: lib/Mnemo.php:490
 msgid "_Search"
 msgstr "_Suche"
 

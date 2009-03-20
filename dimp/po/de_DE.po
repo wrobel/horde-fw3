@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DIMP H3 (1.0-cvs)\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2008-09-25 12:32+0200\n"
+"POT-Creation-Date: 2009-03-19 10:37+0100\n"
 "PO-Revision-Date: 2008-09-26 17:57+0200\n"
 "Last-Translator: Jan Schneider <jan@horde.org>\n"
 "Language-Team: i18n@lists.horde.org\n"
@@ -23,7 +23,7 @@ msgid_plural "%d Attachments"
 msgstr[0] "%d Anhang"
 msgstr[1] "%d Anhänge"
 
-#: imp.php:661
+#: imp.php:675
 #, php-format
 msgid "%s messages were purged from \"%s\"."
 msgstr "%s Nachrichten wurden aus \"%s\" gelöscht."
@@ -33,7 +33,7 @@ msgstr "%s Nachrichten wurden aus \"%s\" gelöscht."
 msgid "%s more unseen messages..."
 msgstr "%s weitere ungelesene Nachrichten..."
 
-#: imp.php:447
+#: imp.php:461
 #, php-format
 msgid "%s was successfully added to your address book."
 msgstr "%s wurde erfolgreich Ihrem Adressbuch hinzugefügt."
@@ -47,7 +47,7 @@ msgstr ""
 "%s löscht die aktuelle Nachricht und öffnet anschließend die nächste, falls "
 "nur eine Nachricht markiert ist."
 
-#: imp.php:659
+#: imp.php:673
 #, php-format
 msgid "1 message was purged from \"%s\"."
 msgstr "1 Nachricht wurde aus \"%s\" gelöscht."
@@ -63,7 +63,7 @@ msgstr ""
 "Ein Popup-Fenster konnte nicht geöffnet werden. Vielleicht haben Sie Ihren "
 "Browser so eingestellt, dass er Popup-Fenster blockiert?"
 
-#: templates/chunks/message.php:127 templates/index/index.inc:421
+#: templates/chunks/message.php:127 templates/index/index.inc:422
 msgid "Add to Address Book"
 msgstr "Zum Adressbuch hinzufügen"
 
@@ -152,7 +152,7 @@ msgstr ""
 msgid "Collapse Headers"
 msgstr "Nachrichtenkopf einklappen"
 
-#: templates/index/index.inc:62 templates/index/index.inc:183
+#: templates/index/index.inc:183
 msgid "Compose"
 msgstr "Neue Nachricht"
 
@@ -193,8 +193,7 @@ msgid "Del"
 msgstr "Entf"
 
 #: templates/chunks/message.php:49 templates/index/index.inc:185
-#: templates/index/index.inc:247 templates/index/index.inc:365
-#: templates/index/index.inc:377
+#: templates/index/index.inc:365 templates/index/index.inc:377
 msgid "Delete"
 msgstr "Löschen"
 
@@ -296,11 +295,11 @@ msgstr "Vorschau ausblenden"
 msgid "Hide Quoted Text"
 msgstr "Zitattext verstecken"
 
-#: templates/index/index.inc:426
+#: templates/index/index.inc:427
 msgid "High Priority"
 msgstr "Hohe Priorität"
 
-#: templates/index/index.inc:141 templates/index/index.inc:246
+#: templates/index/index.inc:246
 msgid "Home"
 msgstr "Pos1"
 
@@ -329,11 +328,11 @@ msgstr "Abmelden"
 msgid "Login Tasks"
 msgstr "Anmeldeaufgaben"
 
-#: templates/index/index.inc:427
+#: templates/index/index.inc:428
 msgid "Low Priority"
 msgstr "Niedrige Priorität"
 
-#: lib/Views/ListMessages.php:161
+#: lib/Views/ListMessages.php:160
 #, php-format
 msgid "Mailbox %s does not exist."
 msgstr "Ordner \"%s\" existiert nicht."
@@ -412,7 +411,7 @@ msgid "New Folder"
 msgstr "Neuer Ordner"
 
 #: compose.php:204 templates/chunks/message.php:126
-#: templates/index/index.inc:420
+#: templates/index/index.inc:62 templates/index/index.inc:421
 msgid "New Message"
 msgstr "Neue Nachricht"
 
@@ -476,7 +475,8 @@ msgstr "Bild &darr;"
 msgid "PgUp"
 msgstr "Bild &uarr;"
 
-#: templates/index/index.inc:69 lib/DIMP.php:188 config/prefs.php.dist:21
+#: templates/index/index.inc:69 templates/index/index.inc:141 lib/DIMP.php:188
+#: config/prefs.php.dist:21
 msgid "Portal"
 msgstr "Portal"
 
@@ -721,6 +721,7 @@ msgid "To: "
 msgstr "An: "
 
 #: templates/index/index.inc:367 templates/index/index.inc:379
+#: templates/index/index.inc:416
 msgid "Undelete"
 msgstr "Wiederherstellen"
 
@@ -760,7 +761,7 @@ msgstr ""
 msgid "[Hide Addresses]"
 msgstr "[Adressen verstecken]"
 
-#: lib/Views/ShowMessage.php:281 lib/Views/ListMessages.php:297
+#: lib/Views/ShowMessage.php:281 lib/Views/ListMessages.php:296
 #: lib/Block/newmail.php:58
 msgid "[No Subject]"
 msgstr "[Kein Betreff]"

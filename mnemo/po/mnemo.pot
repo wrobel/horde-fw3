@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright YEAR Horde Project
+# Copyright (C) YEAR Horde Project
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2008-09-06 11:11+0200\n"
+"POT-Creation-Date: 2009-03-19 10:37+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "%s file successfully imported"
 msgstr ""
 
-#: lib/Mnemo.php:451 lib/Forms/DeleteNotepad.php:86
+#: lib/Mnemo.php:457 lib/Forms/DeleteNotepad.php:86
 #, php-format
 msgid "%s's Notepad"
 msgstr ""
@@ -244,6 +244,10 @@ msgstr ""
 msgid "More Options..."
 msgstr ""
 
+#: lib/api.php:524
+msgid "Multiple iCalendar components found; only one vNote is supported."
+msgstr ""
+
 #: templates/panel.inc:50
 msgid "My Notepads:"
 msgstr ""
@@ -264,7 +268,7 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: lib/api.php:337
+#: lib/api.php:337 lib/api.php:517
 msgid "No iCalendar data was found."
 msgstr ""
 
@@ -284,7 +288,7 @@ msgstr ""
 msgid "No_te"
 msgstr ""
 
-#: lib/Driver/sql.php:195
+#: lib/Driver/sql.php:198
 msgid "Not found"
 msgstr ""
 
@@ -308,7 +312,7 @@ msgstr ""
 msgid "Note not found."
 msgstr ""
 
-#: templates/memo/memo.inc:59
+#: templates/memo/memo.inc:60
 msgid "Note_pad"
 msgstr ""
 
@@ -349,7 +353,7 @@ msgstr ""
 msgid "Really delete this note?"
 msgstr ""
 
-#: templates/panel.inc:68 templates/memo/memo.inc:57
+#: templates/panel.inc:68 templates/memo/memo.inc:58
 #: lib/Forms/EditNotepad.php:46
 msgid "Save"
 msgstr ""
@@ -363,7 +367,7 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: list.php:54
+#: list.php:54 notes/index.php:35
 msgid "Search Results"
 msgstr ""
 
@@ -467,12 +471,8 @@ msgstr ""
 msgid "There was an error importing the data: %s"
 msgstr ""
 
-#: lib/api.php:331
+#: lib/api.php:331 lib/api.php:511
 msgid "There was an error importing the iCalendar data."
-msgstr ""
-
-#: lib/api.php:518
-msgid "There was an error importing the vNote data."
 msgstr ""
 
 #: lib/api.php:168
@@ -512,7 +512,7 @@ msgid "This note has been encrypted, please provide the password below."
 msgstr ""
 
 #: view.php:100 view.php:108 memo.php:80 memo.php:88 lib/api.php:408
-#: lib/Driver/kolab.php:766 lib/Driver/sql.php:458
+#: lib/Driver/kolab.php:766 lib/Driver/sql.php:461
 msgid "This note has been encrypted."
 msgstr ""
 
@@ -536,12 +536,12 @@ msgid "Unable to save notepad \"%s\": %s"
 msgstr ""
 
 #: templates/view/memo.inc:27 templates/list/memo_summaries.inc:17
-#: lib/Mnemo.php:267 lib/Mnemo.php:268 lib/Mnemo.php:282 lib/Mnemo.php:283
+#: lib/Mnemo.php:273 lib/Mnemo.php:274 lib/Mnemo.php:288 lib/Mnemo.php:289
 #: lib/Block/summary.php:107
 msgid "Unfiled"
 msgstr ""
 
-#: lib/api.php:367 lib/api.php:433 lib/api.php:526
+#: lib/api.php:367 lib/api.php:433 lib/api.php:533
 #, php-format
 msgid "Unsupported Content-Type: %s"
 msgstr ""
@@ -584,7 +584,7 @@ msgstr ""
 msgid "_Body"
 msgstr ""
 
-#: templates/memo/memo.inc:70 templates/list/memo_headers.inc:41
+#: templates/memo/memo.inc:71 templates/list/memo_headers.inc:41
 msgid "_Category"
 msgstr ""
 
@@ -596,7 +596,7 @@ msgstr ""
 msgid "_Edit"
 msgstr ""
 
-#: templates/memo/memo.inc:74
+#: templates/memo/memo.inc:75
 msgid "_Encrypt?"
 msgstr ""
 
@@ -604,28 +604,28 @@ msgstr ""
 msgid "_For: "
 msgstr ""
 
-#: lib/Mnemo.php:488
+#: lib/Mnemo.php:494
 msgid "_Import/Export"
 msgstr ""
 
-#: lib/Mnemo.php:475
+#: lib/Mnemo.php:481
 msgid "_List Notes"
 msgstr ""
 
-#: lib/Mnemo.php:480
+#: lib/Mnemo.php:486
 msgid "_New Note"
 msgstr ""
 
 #: templates/view/memo.inc:52 templates/memo/memo.inc:21
-#: templates/memo/memo.inc:79
+#: templates/memo/memo.inc:80
 msgid "_Password"
 msgstr ""
 
-#: lib/Mnemo.php:493
+#: lib/Mnemo.php:499
 msgid "_Print"
 msgstr ""
 
-#: lib/Mnemo.php:484
+#: lib/Mnemo.php:490
 msgid "_Search"
 msgstr ""
 

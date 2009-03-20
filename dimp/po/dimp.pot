@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright YEAR Horde Project
+# Copyright (C) YEAR Horde Project
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2008-12-20 22:45-0700\n"
+"POT-Creation-Date: 2009-03-19 10:37+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,7 +60,7 @@ msgid ""
 "A popup window could not be opened. Your browser may be blocking popups."
 msgstr ""
 
-#: templates/index/index.inc:422 templates/chunks/message.php:127
+#: templates/chunks/message.php:127 templates/index/index.inc:422
 msgid "Add to Address Book"
 msgstr ""
 
@@ -72,7 +72,7 @@ msgstr ""
 msgid "Arrival"
 msgstr ""
 
-#: templates/index/index.inc:392 templates/chunks/message.php:122
+#: templates/chunks/message.php:122 templates/index/index.inc:392
 msgid "Attachments Only"
 msgstr ""
 
@@ -88,7 +88,7 @@ msgstr ""
 msgid "Blacklist"
 msgstr ""
 
-#: templates/index/index.inc:391 templates/chunks/message.php:121
+#: templates/chunks/message.php:121 templates/index/index.inc:391
 msgid "Body Text Only"
 msgstr ""
 
@@ -179,8 +179,8 @@ msgstr ""
 msgid "Del"
 msgstr ""
 
-#: templates/index/index.inc:185 templates/index/index.inc:365
-#: templates/index/index.inc:377 templates/chunks/message.php:49
+#: templates/chunks/message.php:49 templates/index/index.inc:185
+#: templates/index/index.inc:365 templates/index/index.inc:377
 msgid "Delete"
 msgstr ""
 
@@ -208,7 +208,7 @@ msgstr ""
 msgid "Enter"
 msgstr ""
 
-#: templates/index/index.inc:390 templates/chunks/message.php:120
+#: templates/chunks/message.php:120 templates/index/index.inc:390
 msgid "Entire Message"
 msgstr ""
 
@@ -229,7 +229,7 @@ msgstr ""
 msgid "Folders: "
 msgstr ""
 
-#: templates/index/index.inc:176 templates/chunks/message.php:42
+#: templates/chunks/message.php:42 templates/index/index.inc:176
 msgid "Forward"
 msgstr ""
 
@@ -302,7 +302,7 @@ msgstr ""
 msgid "Innocent"
 msgstr ""
 
-#: templates/index/index.inc:34 templates/chunks/compose.php:20
+#: templates/chunks/compose.php:20 templates/index/index.inc:34
 #: lib/DIMP.php:203
 msgid "Loading..."
 msgstr ""
@@ -397,8 +397,8 @@ msgstr ""
 msgid "New Folder"
 msgstr ""
 
-#: compose.php:204 templates/index/index.inc:62 templates/index/index.inc:421
-#: templates/chunks/message.php:126
+#: compose.php:204 templates/chunks/message.php:126
+#: templates/index/index.inc:62 templates/index/index.inc:421
 msgid "New Message"
 msgstr ""
 
@@ -467,7 +467,7 @@ msgstr ""
 msgid "Portal"
 msgstr ""
 
-#: templates/index/index.inc:265 templates/chunks/message.php:57
+#: templates/chunks/message.php:57 templates/index/index.inc:265
 msgid "Print"
 msgstr ""
 
@@ -492,7 +492,7 @@ msgstr ""
 msgid "Rename folder to:"
 msgstr ""
 
-#: templates/index/index.inc:175 templates/chunks/message.php:41
+#: templates/chunks/message.php:41 templates/index/index.inc:175
 msgid "Reply"
 msgstr ""
 
@@ -612,9 +612,9 @@ msgstr ""
 msgid "Special Characters"
 msgstr ""
 
-#: templates/index/index.inc:201 templates/index/index.inc:211
-#: templates/index/index.inc:215 templates/index/index.inc:276
-#: templates/chunks/message.php:67
+#: templates/chunks/message.php:67 templates/index/index.inc:201
+#: templates/index/index.inc:211 templates/index/index.inc:215
+#: templates/index/index.inc:276
 msgid "Subject"
 msgstr ""
 
@@ -672,15 +672,15 @@ msgstr ""
 msgid "To"
 msgstr ""
 
-#: templates/index/index.inc:385 templates/chunks/message.php:113
+#: templates/chunks/message.php:113 templates/index/index.inc:385
 msgid "To All"
 msgstr ""
 
-#: templates/index/index.inc:386 templates/chunks/message.php:115
+#: templates/chunks/message.php:115 templates/index/index.inc:386
 msgid "To List"
 msgstr ""
 
-#: templates/index/index.inc:384 templates/chunks/message.php:112
+#: templates/chunks/message.php:112 templates/index/index.inc:384
 msgid "To Sender"
 msgstr ""
 
@@ -715,7 +715,7 @@ msgstr ""
 msgid "User Options"
 msgstr ""
 
-#: templates/index/index.inc:268 templates/chunks/message.php:60
+#: templates/chunks/message.php:60 templates/index/index.inc:268
 msgid "View Message Source"
 msgstr ""
 
@@ -733,7 +733,7 @@ msgstr ""
 msgid "[Hide Addresses]"
 msgstr ""
 
-#: lib/Views/ListMessages.php:296 lib/Views/ShowMessage.php:281
+#: lib/Views/ShowMessage.php:281 lib/Views/ListMessages.php:296
 #: lib/Block/newmail.php:58
 msgid "[No Subject]"
 msgstr ""

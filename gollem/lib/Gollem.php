@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: gollem/lib/Gollem.php,v 1.172.2.27 2009/03/02 22:16:03 slusarz Exp $
+ * $Horde: gollem/lib/Gollem.php,v 1.172.2.28 2009/03/18 22:18:22 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -304,7 +304,7 @@ class Gollem {
             $cache = &Horde_Cache::singleton($conf['cache']['driver'], Horde::getDriverConfig('cache', $conf['cache']['driver']));
             $res = $cache->get($key, $conf['foldercache']['lifetime']);
             if ($res !== false) {
-                $res = Horde_Serialize::unserialize($res, Horde_Serialize::BASIC);
+                $res = Horde_Serialize::unserialize($res, SERIALIZE_BASIC);
                 if (is_array($res)) {
                     return $res;
                 }
@@ -324,7 +324,7 @@ class Gollem {
 
         if (isset($cache)) {
             require_once 'Horde/Serialize.php';
-            $cache->set($key, Horde_Serialize::serialize($files, Horde_Serialize::BASIC), $conf['foldercache']['lifetime']);
+            $cache->set($key, Horde_Serialize::serialize($files, SERIALIZE_BASIC), $conf['foldercache']['lifetime']);
         }
 
         return $files;

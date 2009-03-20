@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: gollem/manager.php,v 1.146.2.22 2009/01/06 15:23:53 jan Exp $
+ * $Horde: gollem/manager.php,v 1.146.2.23 2009/03/19 14:18:21 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -237,8 +237,13 @@ $folder_img = Horde::img('folder.png', _("folder"));
 $symlink_img = Horde::img('folder_symlink.png', _("symlink"));
 
 /* Init some form vars. */
-$filter = Util::getFormData('filter');
 $page = Util::getFormData('page', 0);
+$filter = Util::getFormData('filter', '');
+if (isset($_SESSION['gollem']['filter']) &&
+    $_SESSION['gollem']['filter'] != $filter) {
+    $page = 0;
+}
+$_SESSION['gollem']['filter'] = $filter;
 
 /* Commonly used URLs. */
 $view_url = Horde::applicationUrl('view.php');
@@ -355,7 +360,8 @@ if (is_array($list) && $numitem && $read_perms) {
 
     foreach ($list as $key => $val) {
         /* Check if a filter is not empty and filter matches filename. */
-        if (!empty($filter) && !preg_match('/' . preg_quote($filter) . '/', $val['name'])) {
+        if (strlen($filter) &&
+            !preg_match('/' . preg_quote($filter, '/') . '/', $val['name'])) {
             continue;
         }
 
@@ -459,8 +465,9 @@ if (is_array($list) && $numitem && $read_perms) {
 
         require_once 'Horde/Variables.php';
         require_once 'Horde/UI/Pager.php';
-        $vars = &Variables::getDefaultVariables();
-        $pager = &new Horde_UI_Pager('page', $vars, array('num' => $total, 'url' => $refresh_url, 'page_count' => 10, 'perpage' => $perpage));
+        $vars = Variables::getDefaultVariables();
+        $vars->set('page', $page);
+        $pager = new Horde_UI_Pager('page', $vars, array('num' => $total, 'url' => $refresh_url, 'page_count' => 10, 'perpage' => $perpage));
         $page_caption = $pager->render();
     }
 

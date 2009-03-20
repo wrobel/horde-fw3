@@ -2,7 +2,7 @@
 /**
  * Classes for dealing with tags within Ansel
  *
- * $Horde: ansel/lib/Tags.php,v 1.87.2.4 2009/03/02 23:02:35 mrubinsk Exp $
+ * $Horde: ansel/lib/Tags.php,v 1.87.2.5 2009/03/19 15:49:36 mrubinsk Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *
@@ -211,6 +211,9 @@ class Ansel_Tags {
                 $imgs = array();
                 foreach ($images as $id) {
                     $img = &$GLOBALS['ansel_storage']->getImage($id);
+                    if (is_a($img, 'PEAR_Error')) {
+                        break;
+                    }
                     $gal = $GLOBALS['ansel_storage']->getGallery($img->gallery);
                     if (!is_a($gal, 'PEAR_Error')) {
                         $owner = $gal->get('owner');

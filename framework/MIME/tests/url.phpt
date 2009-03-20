@@ -28,6 +28,7 @@ class Browser {
 $conf['server']['name'] = 'www.example.com';
 $conf['server']['port'] = 80;
 $conf['use_ssl'] = 0;
+$_GET[session_name()] = 'foo';
 $registry = new Registry();
 $browser = new Browser();
 $viewer = new MIME_Viewer_html($null);

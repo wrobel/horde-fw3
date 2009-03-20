@@ -38,7 +38,6 @@ Application Framework.
   <dir name="/">
    <dir name="Horde">
     <file name="Config.php" role="php" />
-    <file name="Exception.php" role="php" />
     <file name="Help.php" role="php" />
     <file name="Menu.php" role="php" />
     <file name="Release.php" role="php" />

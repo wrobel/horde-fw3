@@ -2,7 +2,7 @@
 /**
  * Login screen for Gollem.
  *
- * $Horde: gollem/login.php,v 1.94.2.16 2009/01/27 19:17:43 slusarz Exp $
+ * $Horde: gollem/login.php,v 1.94.2.17 2009/03/19 14:43:18 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -193,6 +193,9 @@ if (!$logout_reason && !$autologin_fail) {
 
 if (!empty($redirect_params)) {
     $redirect_params += array('actionID' => 'login', 'backend_key' => $backend_key);
+    if ($url_param) {
+        $redirect_params['url'] = $url_param;
+    }
     $url = Util::addParameter(Horde::applicationUrl('redirect.php', true), $redirect_params, null, false);
     header('Location: ' . $url);
     exit;

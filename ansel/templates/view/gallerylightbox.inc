@@ -146,7 +146,7 @@ function downloadSelected()
        </td><td align="right">
         <?php if ($option_delete || $option_move || $option_copy) echo _("Actions: ") ?>
           <?php if ($GLOBALS['conf']['gallery']['downloadzip']): ?>
-            <?php echo Horde::link('#', '', 'widget', '', 'downloadSelected(); return false;') . _("Download selected images") . '</a>';?>
+            <?php echo Horde::link('#', '', 'widget', '', 'downloadSelected(); return false;') . _("Download selected photos") . '</a>';?>
           <?php endif; ?>
           <?php if ($option_edit): ?>
             <?php echo Horde::link('#', _("Edit Dates"), 'widget', '', 'editDates(); return false;') . _("Edit Dates"); ?></a>

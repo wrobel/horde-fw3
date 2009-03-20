@@ -30,9 +30,9 @@ User-Agent: Horde Application Framework 3.2
 Date: %s, %d %s %d %d:%d:%d %s%d
 MIME-Version: 1.0
 Content-Type: text/plain;
-	charset=iso-8859-15;
-	DelSp="Yes";
-	format="flowed"
+ charset=iso-8859-15;
+ DelSp="Yes";
+ format="flowed"
 Content-Disposition: inline
 Content-Transfer-Encoding: 7bit
 
@@ -46,9 +46,9 @@ User-Agent: Horde Application Framework 3.2
 Date: %s, %d %s %d %d:%d:%d %s%d
 MIME-Version: 1.0
 Content-Type: text/plain;
-	charset=iso-8859-15;
-	DelSp="Yes";
-	format="flowed"
+ charset=iso-8859-15;
+ DelSp="Yes";
+ format="flowed"
 Content-Disposition: inline
 Content-Transfer-Encoding: 7bit
 To: =?utf-8?b?w4RuZGVydW5n?= <other@example.com>

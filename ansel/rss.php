@@ -4,7 +4,7 @@
  * and not a prettythumb since we have no way of knowing what the client
  * requesting this will be viewing the image on.
  *
- * $Horde: ansel/rss.php,v 1.47.2.1 2009/01/06 15:22:19 jan Exp $
+ * $Horde: ansel/rss.php,v 1.47.2.2 2009/03/19 15:49:35 mrubinsk Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -107,7 +107,9 @@ if (empty($rss)) {
                                               'gallery' => $id),
                                         true);
             $img = &$ansel_storage->getImage($gallery->getDefaultImage('ansel_default'));
-
+            if (is_a($img, 'PEAR_Error')) {
+                break;
+            }
             $params = array('last_modified' => $gallery->get('last_modified'),
                             'name' => sprintf(_("%s on %s"),
                                               $gallery->get('name'),

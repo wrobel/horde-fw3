@@ -2,7 +2,7 @@
 /**
  * @package Turba
  *
- * $Horde: turba/lib/Driver/kolab.php,v 1.5.10.24 2009/01/06 15:27:50 jan Exp $
+ * $Horde: turba/lib/Driver/kolab.php,v 1.5.10.25 2009/03/19 10:17:01 jan Exp $
  */
 
 /** Kolab support class. */
@@ -184,7 +184,7 @@ class Turba_Driver_kolab extends Turba_Driver {
 /**
  * Horde Turba wrapper to distinguish between both Kolab driver implementations.
  *
- * $Horde: turba/lib/Driver/kolab.php,v 1.5.10.24 2009/01/06 15:27:50 jan Exp $
+ * $Horde: turba/lib/Driver/kolab.php,v 1.5.10.25 2009/03/19 10:17:01 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *
@@ -1116,7 +1116,7 @@ class Turba_Driver_kolab_wrapper_new extends Turba_Driver_kolab_wrapper {
         }
 
         if ($object_key != 'uid') {
-            return PEAR::raiseError(sprintf(_("Key for saving must be \'uid\' not %s!"), $object_key));
+            return PEAR::raiseError(sprintf('Key for saving must be \'uid\' not %s!', $object_key));
         }
 
         return $this->_store($attributes, $object_id);
@@ -1200,7 +1200,7 @@ class Turba_Driver_kolab_wrapper_new extends Turba_Driver_kolab_wrapper {
         }
 
         if ($object_key != 'uid') {
-            return PEAR::raiseError(sprintf(_("Key for saving must be a UID not %s!"), $object_key));
+            return PEAR::raiseError(sprintf('Key for saving must be a UID not %s!', $object_key));
         }
 
         if (!in_array($object_id, array_keys($this->_contacts_cache))) {

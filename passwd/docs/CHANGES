@@ -1,16 +1,22 @@
---------
-v3.1-cvs
---------
+----------
+v3.1.1-cvs
+----------
 
 
+
+
+----
+v3.1
+----
+
+[cjh] Fix bad mode for STDERR in the procopen driver
+      (info@opensolutions.net, Bug #8022).
 
 
 --------
 v3.1-RC2
 --------
 
-[cjh] Fix bad mode for STDERR in the procopen driver
-      (info@opensolutions.net, Bug #8022).
 [cjh] Don't include the old password in LDAP driver error messages
       (Joffrey van Wageningen <joffrey-horde@coolhaven.info>).
 

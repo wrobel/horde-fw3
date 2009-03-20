@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright YEAR Horde Project
+# Copyright (C) YEAR Horde Project
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -8,13 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2008-04-01 14:58+0200\n"
+"POT-Creation-Date: 2009-03-19 10:37+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 #: lib/Driver/expect.php:34
 #, php-format
@@ -48,7 +49,7 @@ msgstr ""
 msgid "Cannot send command to server."
 msgstr ""
 
-#: main.php:263 templates/main/main.inc:141
+#: main.php:268 templates/main/main.inc:141
 msgid "Change Password"
 msgstr ""
 
@@ -113,7 +114,7 @@ msgstr ""
 msgid "Failed to verify old password."
 msgstr ""
 
-#: main.php:217 lib/Driver/composite.php:102
+#: main.php:222 lib/Driver/composite.php:102
 #, php-format
 msgid "Failure in changing password for %s: %s"
 msgstr ""
@@ -122,12 +123,9 @@ msgstr ""
 msgid "Full buffer."
 msgstr ""
 
-#: lib/Driver.php:72 lib/Driver/vmailmgr.php:42 lib/Driver/kolab.php:84
+#: lib/Driver.php:72 lib/Driver/ldap.php:131 lib/Driver/http.php:72
+#: lib/Driver/vmailmgr.php:42 lib/Driver/kolab.php:84
 #: lib/Driver/poppassd.php:120
-msgid "Incorrect Password"
-msgstr ""
-
-#: lib/Driver/ldap.php:131
 msgid "Incorrect old password."
 msgstr ""
 
@@ -152,10 +150,6 @@ msgstr ""
 msgid "No such backend \"%s\" found."
 msgstr ""
 
-#: lib/Driver/http.php:72
-msgid "Old password is incorrect."
-msgstr ""
-
 #: templates/main/main.inc:89
 msgid "Old password:"
 msgstr ""
@@ -164,7 +158,7 @@ msgstr ""
 msgid "Passwd is not properly configured."
 msgstr ""
 
-#: main.php:209
+#: main.php:214
 #, php-format
 msgid "Password changed on %s."
 msgstr ""
@@ -186,7 +180,7 @@ msgstr ""
 msgid "Password module is missing target parameter."
 msgstr ""
 
-#: main.php:183 lib/Driver/servuftp.php:71
+#: main.php:188 lib/Driver/servuftp.php:71
 msgid "Password module is not properly configured"
 msgstr ""
 
@@ -280,11 +274,11 @@ msgid ""
 "long!"
 msgstr ""
 
-#: main.php:172
+#: main.php:177
 msgid "Your new password is too simple to guess!  Not changed!"
 msgstr ""
 
-#: main.php:163
+#: main.php:168
 msgid "Your new password is too simple to guess. Not changed!"
 msgstr ""
 
@@ -299,13 +293,19 @@ msgstr ""
 
 #: main.php:133
 #, php-format
-msgid "Your new password must contain at least %d alphabetic characters."
-msgstr ""
+msgid "Your new password must contain at least %d alphabetic character."
+msgid_plural ""
+"Your new password must contain at least %d alphabetic characters."
+msgstr[0] ""
+msgstr[1] ""
 
 #: main.php:138
 #, php-format
-msgid "Your new password must contain at least %d alphanumeric characters."
-msgstr ""
+msgid "Your new password must contain at least %d alphanumeric character."
+msgid_plural ""
+"Your new password must contain at least %d alphanumeric characters."
+msgstr[0] ""
+msgstr[1] ""
 
 #: main.php:143
 #, php-format
@@ -316,18 +316,31 @@ msgstr ""
 
 #: main.php:123
 #, php-format
-msgid "Your new password must contain at least %d lowercase characters."
-msgstr ""
+msgid "Your new password must contain at least %d lowercase character."
+msgid_plural "Your new password must contain at least %d lowercase characters."
+msgstr[0] ""
+msgstr[1] ""
 
 #: main.php:128
 #, php-format
-msgid "Your new password must contain at least %d numeric characters."
-msgstr ""
+msgid "Your new password must contain at least %d numeric character."
+msgid_plural "Your new password must contain at least %d numeric characters."
+msgstr[0] ""
+msgstr[1] ""
+
+#: main.php:157
+#, php-format
+msgid "Your new password must contain at least %d symbol character."
+msgid_plural "Your new password must contain at least %d symbol characters."
+msgstr[0] ""
+msgstr[1] ""
 
 #: main.php:118
 #, php-format
-msgid "Your new password must contain at least %d uppercase characters."
-msgstr ""
+msgid "Your new password must contain at least %d uppercase character."
+msgid_plural "Your new password must contain at least %d uppercase characters."
+msgstr[0] ""
+msgstr[1] ""
 
 #: main.php:149
 #, php-format
