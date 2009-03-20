@@ -252,7 +252,8 @@ class Horde_Kolab_FreeBusy_Cache {
         }
         $c_file = str_replace("\0", '', str_replace('.', '^', $user . '/' . $owner));
 
-        $c_vcal = &new Horde_Kolab_FreeBusy_Cache_File_vcal($this->_cache_dir, $c_file);
+        $c_vcal = &new Horde_Kolab_FreeBusy_Cache_File_vcal($this->_cache_dir,
+							    $c_file, $extended);
 
         /* If the current vCal cache did not expire, we can deliver it */
         if (!$c_vcal->expired($files)) {
@@ -1141,6 +1142,19 @@ class Horde_Kolab_FreeBusy_Cache_File_vcal extends Horde_Kolab_FreeBusy_Cache_Fi
      * @var array
      */
     var $_data;
+
+    /**
+     * Construct the Horde_Kolab_FreeBusy_Cache_File_vcal instance.
+     *
+     * @param string  $cache_dir The path to the cache direcory.
+     * @param string  $filename  The file name of the cache file.
+     * @param boolean $extended  Does the cache hold extended data?
+     */
+    function Horde_Kolab_FreeBusy_Cache_File_vcal($cache_dir, $filename, $extended)
+    {
+        $extension = empty($extended) ? 'vc' : 'xvc';
+        parent::Horde_Kolab_FreeBusy_Cache_File($cache_dir, $filename, $extension);
+    }
 
     /**
      * Store free/busy infomation in the cache file.
