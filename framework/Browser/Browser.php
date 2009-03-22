@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Browser/Browser.php,v 1.153.2.67 2009/02/14 20:32:31 chuck Exp $
+ * $Horde: framework/Browser/Browser.php,v 1.153.2.68 2009/03/22 14:10:16 chuck Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -136,6 +136,7 @@ class Browser {
         'TurnitinBot',
         'Twiceler',
         'Ultraseek',
+        'Vagabondo/Kliksafe',
         'ViolaBot',
         'voyager',
         'W3C-checklink',

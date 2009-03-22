@@ -15,7 +15,7 @@ define('IMP_AGENT_HEADER', 'Internet Messaging Program (IMP) ' . IMP_VERSION);
  * The IMP_Headers:: class contains all functions related to handling the
  * headers of mail messages in IMP.
  *
- * $Horde: imp/lib/MIME/Headers.php,v 1.92.2.39 2009/01/06 15:24:09 jan Exp $
+ * $Horde: imp/lib/MIME/Headers.php,v 1.92.2.40 2009/03/22 14:56:44 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -256,7 +256,7 @@ class IMP_Headers extends MIME_Headers {
             /* Build the address line. */
             $addr_count = count($addr_array);
             $ret = '<span class="nowrap">' . implode(',</span> <span class="nowrap">', $addr_array) . '</span>';
-            if ($addr_count > 15) {
+            if ($link && $addr_count > 15) {
                 Horde::addScriptFile('prototype.js', 'imp', true);
 
                 $ret = '<span>' .
