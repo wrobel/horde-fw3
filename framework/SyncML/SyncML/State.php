@@ -10,7 +10,7 @@ require_once 'SyncML/Command/SyncElement.php';
 /**
  * The SyncML_State class provides a SyncML state object.
  *
- * $Horde: framework/SyncML/SyncML/State.php,v 1.17.2.17 2009/01/06 15:23:37 jan Exp $
+ * $Horde: framework/SyncML/SyncML/State.php,v 1.17.2.19 2009/04/07 11:12:54 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -301,7 +301,7 @@ class SyncML_State {
             } elseif (!empty($di->Man) &&
                       stristr($di->Man, 'nokia') !== false) {
                 $this->_deviceDriver = 'Nokia';
-            } elseif (stristr($si, 'fmz-thunderbird-plugin') !== false) {
+            } elseif (stristr($si, 'fmz-') !== false) {
                 $this->_deviceDriver = 'Sync4JMozilla';
             } else {
                 $this->_deviceDriver = 'default';
@@ -404,11 +404,11 @@ class SyncML_State {
      *
      * This allows the sync objects to determine if they are complete.
      */
-    function handleFinal(&$output)
+    function handleFinal(&$output, $debug = false)
     {
         if (is_array($this->_syncs)) {
             foreach (array_keys($this->_syncs) as $t) {
-                $this->_syncs[$t]->handleFinal($output);
+                $this->_syncs[$t]->handleFinal($output, $debug);
             }
         }
     }

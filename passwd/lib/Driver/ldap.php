@@ -3,7 +3,7 @@
  * The LDAP class attempts to change a user's password stored in an LDAP
  * directory service.
  *
- * $Horde: passwd/lib/Driver/ldap.php,v 1.41.2.7 2009/01/21 19:46:56 chuck Exp $
+ * $Horde: passwd/lib/Driver/ldap.php,v 1.41.2.8 2009/03/31 10:51:02 jan Exp $
  *
  * Copyright 2000-2009 The Horde Project (http://www.horde.org/)
  *
@@ -136,6 +136,13 @@ class Passwd_Driver_ldap extends Passwd_Driver {
             $username .= '@' . $this->_params['realm'];
         }
 
+        // Bind as current user. _connect will try as guest if no user realm
+        // is found or auth error.
+        $result = $this->_connect();
+        if (is_a($result, 'PEAR_Error')) {
+            return $result;
+        }
+
         // Get the user's dn.
         if ($GLOBALS['conf']['hooks']['userdn']) {
             $userdn = Horde::callHook('_passwd_hook_userdn',
@@ -221,13 +228,6 @@ class Passwd_Driver_ldap extends Passwd_Driver {
      */
     function _lookupdn($user)
     {
-        // Bind as current user. _connect will try as guest if no user realm
-        // is found or auth error.
-        $result = $this->_connect();
-        if (is_a($result, 'PEAR_Error')) {
-            return $result;
-        }
-
         // Search as an admin if so configured
         if (!empty($this->_params['admindn'])) {
             $this->_bind($this->_params['admindn'], $this->_params['adminpw']);
@@ -251,4 +251,5 @@ class Passwd_Driver_ldap extends Passwd_Driver {
 
         return ldap_get_dn($this->_ds, $entry);
     }
+
 }

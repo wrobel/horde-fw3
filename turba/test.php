@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: turba/test.php,v 1.9.10.10 2009/01/06 15:27:39 jan Exp $
+ * $Horde: turba/test.php,v 1.9.10.11 2009/03/25 23:06:04 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -84,6 +84,7 @@ $basedn = isset($_POST['basedn']) ? $_POST['basedn'] : ''; // 'dc=example,dc=com
 $user = isset($_POST['user']) ? $_POST['user'] : '';     // 'user';
 $passwd = isset($_POST['passwd']) ? $_POST['passwd'] : ''; // 'password';
 $filter = isset($_POST['filter']) ? $_POST['filter'] : ''; // 'cn=Babs Jensen';
+$proto = isset($_POST['version']) ? $_POST['version'] : ''; // 'LDAPv3';
 
 if (!empty($server) && !empty($basedn) && !empty($filter)) {
     if (empty($port)) {
@@ -97,6 +98,9 @@ if (!empty($server) && !empty($basedn) && !empty($filter)) {
     }
     $ldap = ldap_connect($server, $port);
     if ($ldap) {
+        if (!empty($proto) && ($proto == '3')) {
+            ldap_set_option($ldap, LDAP_OPT_PROTOCOL_VERSION, 3);
+        }
         if (!empty($user) && !ldap_bind($ldap, $user, $passwd)) {
             echo '<p>unable to bind as ' . htmlspecialchars($user) . ' to LDAP server</p>';
             ldap_close($ldap);
@@ -137,6 +141,7 @@ if (!empty($server) && !empty($basedn) && !empty($filter)) {
 <tr><td align="right"><label for="user">User</label></td><td><input type="text" id="user" name="user" /></td><td>(leave blank for anonymous)</td></tr>
 <tr><td align="right"><label for="passwd">Password</label></td><td><input type="password" id="passwd" name="passwd" /></td></tr>
 <tr><td align="right"><label for="filter">Filter</label></td><td><input type="text" id="filter" name="filter" /></td><td>(e.g. "cn=Babs Jensen")</td></tr>
+<tr><td align="right"><label for="proto">Protocol</label></td><td><select id="version" name="version"><option value="2">LDAPv2 (Deprecated)</option><option value="3" selected="selected">LDAPv3</option></td><td>(LDAP protocol version)</select></td></tr>
 <tr><td></td><td><input type="submit" name="f_submit" value="Submit" /><input type="reset" name="f_reset" value="Reset" /></td></tr>
 </table>
 </form>

@@ -19,7 +19,7 @@
  *   location exist. If so, the replace should replace this value rather than
  *   create a new one as a duplicate.
  *
- * $Horde: framework/SyncML/SyncML.php,v 1.21.10.18 2009/01/06 15:23:37 jan Exp $
+ * $Horde: framework/SyncML/SyncML.php,v 1.21.10.19 2009/04/05 20:24:42 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -37,6 +37,7 @@ require_once 'SyncML/Command.php';
 require_once 'SyncML/Command/SyncHdr.php';
 require_once 'SyncML/Sync.php';
 require_once 'SyncML/XMLOutput.php';
+require_once 'SyncML/Backend.php';
 
 /* PEAR_LOG_* constants */
 require_once 'Log.php';
@@ -81,6 +82,8 @@ class SyncML_ContentHandler {
      * @var string
      */
     var $_respURI;
+
+    var $debug = false;
 
     function SyncML_ContentHandler()
     {
@@ -303,6 +306,9 @@ class SyncML_ContentHandler {
             case 2:
                 // </SyncHdr> end of header
                 $this->handleHeader($this->_currentCommand);
+                if ($this->debug) {
+                    var_dump($this->_currentCommand);
+                }
                 unset($this->_currentCommand);
                 break;
             default:
@@ -321,6 +327,9 @@ class SyncML_ContentHandler {
                 // Command finished. Complete parsing and pass on to Handler
                 $this->_currentCommand->endElement($uri, $element);
                 $this->handleCommand($this->_currentCommand);
+                if ($this->debug) {
+                    var_dump($this->_currentCommand);
+                }
                 unset($this->_currentCommand);
                 break;
             default:
@@ -439,7 +448,7 @@ class SyncML_ContentHandler {
      */
     function handleCommand(&$cmd)
     {
-        $name= $cmd->getCommandName();
+        $name = $cmd->getCommandName();
         if ($name != 'Status' && $name != 'Map' && $name != 'Final' &&
             $name != 'Sync' && $name != 'Results') {
             /* We've got to do something! This can't be the last packet. */
@@ -449,7 +458,7 @@ class SyncML_ContentHandler {
             $this->_gotFinal = true;
         }
         /* Actual processing takes place here. */
-        $cmd->handleCommand();
+        $cmd->handleCommand($this->debug);
     }
 
     /**

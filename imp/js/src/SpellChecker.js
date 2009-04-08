@@ -3,7 +3,7 @@
  * was rewritten almost completely by Chuck Hagenbuch to use
  * Prototype/Scriptaculous.
  *
- * $Horde: imp/js/src/SpellChecker.js,v 1.36.2.11 2009/01/06 15:24:03 jan Exp $
+ * $Horde: imp/js/src/SpellChecker.js,v 1.36.2.12 2009/03/30 23:08:41 slusarz Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *
@@ -14,8 +14,8 @@
 var SpellChecker = Class.create({
     // Vars used and defaulting to null:
     //   bad, choices, choicesDiv, curWord, htmlArea, htmlAreaParent, locale,
-    //   localeChoices, onAfterSpellCheck, onBeforeSpellCheck, reviewDiv,
-    //   statusButton, statusClass, suggestions, target, url
+    //   localeChoices, onAfterSpellCheck, onBeforeSpellCheck, onNoError,
+    //   reviewDiv, statusButton, statusClass, suggestions, target, url
     options: {},
     resumeOnDblClick: true,
     state: 'CheckSpelling',
@@ -96,7 +96,10 @@ var SpellChecker = Class.create({
         e.stop();
     },
 
-    spellCheck: function()
+    // noerror - (function) A callback function to run if no errors are
+    //           identified. If not specified, will remain in spell check
+    //           mode even if no errors are present.
+    spellCheck: function(noerror)
     {
         if (this.onBeforeSpellCheck) {
             this.onBeforeSpellCheck();
@@ -108,6 +111,8 @@ var SpellChecker = Class.create({
 
         this.status('Checking');
         this.removeChoices();
+
+        this.onNoError = noerror;
 
         p.set(this.target, this.targetValue());
         opts.parameters = p.toQueryString();
@@ -162,13 +167,19 @@ var SpellChecker = Class.create({
         this.removeChoices();
 
         if (Object.isUndefined(result)) {
-            this.resume();
             this.status('Error');
             return;
         }
 
-        bad = result.bad || [];
         this.suggestions = result.suggestions || [];
+
+        if (this.onNoError && !this.suggestions.size()) {
+            this.status('CheckSpelling');
+            this.onNoError();
+            return;
+        }
+
+        bad = result.bad || [];
 
         content = this.targetValue();
         if (this.htmlAreaParent) {

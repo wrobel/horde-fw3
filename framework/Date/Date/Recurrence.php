@@ -2,7 +2,7 @@
 /**
  * This file contains the Horde_Date_Recurrence class and according constants.
  *
- * $Horde: framework/Date/Date/Recurrence.php,v 1.7.2.10 2009/01/06 15:23:02 jan Exp $
+ * $Horde: framework/Date/Date/Recurrence.php,v 1.7.2.11 2009/03/31 11:06:24 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *
@@ -950,14 +950,19 @@ class Horde_Date_Recurrence {
             return '';
         }
 
-        return $this->hasRecurEnd() ?
-            $rrule . ' ' . $calendar->_exportDate($this->recurEnd) :
-            $rrule . ' #' . (int)$this->getRecurCount();
+        if ($this->hasRecurEnd()) {
+            $recurEnd = new Horde_Date($this->recurEnd);
+            $recurEnd->mday++;
+            return $rrule . ' ' . $calendar->_exportDateTime($recurEnd);
+        }
+
+        return $rrule . ' #' . (int)$this->getRecurCount();
     }
 
     /**
      * Parses an iCalendar 2.0 recurrence rule.
      *
+     * @link http://rfc.net/rfc2445.html#s4.3.10
      * @link http://rfc.net/rfc2445.html#s4.8.5
      * @link http://www.shuchow.com/vCalAddendum.html
      *
@@ -1051,6 +1056,7 @@ class Horde_Date_Recurrence {
     /**
      * Creates an iCalendar 2.0 recurrence rule.
      *
+     * @link http://rfc.net/rfc2445.html#s4.3.10
      * @link http://rfc.net/rfc2445.html#s4.8.5
      * @link http://www.shuchow.com/vCalAddendum.html
      *
@@ -1127,7 +1133,9 @@ class Horde_Date_Recurrence {
         }
 
         if ($this->hasRecurEnd()) {
-            $rrule .= ';UNTIL=' . $calendar->_exportDate($this->recurEnd);
+            $recurEnd = new Horde_Date($this->recurEnd);
+            $recurEnd->mday++;
+            $rrule .= ';UNTIL=' . $calendar->_exportDateTime($recurEnd);
         }
         if ($count = $this->getRecurCount()) {
             $rrule .= ';COUNT=' . $count;

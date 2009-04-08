@@ -10,7 +10,7 @@ require_once 'SyncML/Command.php';
  * SyncHdr is not really a sync command, but this class takes advantage of the
  * XML parser in SyncML_Command.
  *
- * $Horde: framework/SyncML/SyncML/Command/SyncHdr.php,v 1.4.2.4 2009/01/06 15:23:38 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Command/SyncHdr.php,v 1.4.2.5 2009/04/05 21:38:48 jan Exp $
  *
  * Copyright 2006-2009 The Horde Project (http://www.horde.org/)
  *
@@ -213,6 +213,8 @@ class SyncML_Command_SyncHdr extends SyncML_Command {
         if (!empty($this->_maxMsgSize)) {
             $state->maxMsgSize = $this->_maxMsgSize;
         }
+
+        $GLOBALS['backend']->setupState($state);
     }
 
 }

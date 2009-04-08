@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ansel/lib/Ansel.php,v 1.517.2.42 2009/03/14 04:30:20 mrubinsk Exp $
+ * $Horde: ansel/lib/Ansel.php,v 1.517.2.45 2009/04/06 14:22:05 mrubinsk Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *
@@ -28,12 +28,12 @@ class Ansel {
      *
      * @return mixed MDB2 object || PEAR_Error
      */
-    function getDb()
+    function &getDb()
     {
         require_once 'MDB2.php';
         $config = $GLOBALS['conf']['sql'];
         unset($config['charset']);
-        $mdb = MDB2::factory($config);
+        $mdb = &MDB2::singleton($config);
         if (is_a($mdb, 'PEAR_Error')) {
             return $mdb;
         }
@@ -2233,6 +2233,16 @@ class Ansel_Image {
      */
     function createView($view, $style = null)
     {
+        // HACK: Need to replace the image object with a JPG typed image if
+        //       we are generating a screen image. Need to do the replacement (
+        //       and do it *here* for BC reasons with Horde_Image...and this
+        //       needs to be done FIRST, since the view might already be cached
+        //       in the VFS.
+        if ($view == 'screen' && $GLOBALS['conf']['image']['type'] != 'jpeg') {
+            $this->_image = Ansel::getImageObject(array('type' => 'jpeg'));
+            $this->_image->reset();
+        }
+
         /* Get the VFS info. */
         $vfspath = $this->getVFSPath($view, $style);
         if ($GLOBALS['ansel_vfs']->exists($vfspath, $this->getVFSName($view))) {
@@ -2246,13 +2256,6 @@ class Ansel_Image {
             return $data;
         }
 
-        // HACK: Need to replace the image object with a JPG typed image if
-        //       we are generating a screen image. Need to do the replacement (
-        //       and do it *here* for BC reasons with Horde_Image.
-        if ($view == 'screen' && $GLOBALS['conf']['image']['type'] != 'jpg') {
-            $this->_image = Ansel::getImageObject(array('type' => 'jpg'));
-            $this->_image->reset();
-        }
         if (is_a($result = $this->_image->loadString($this->getVFSPath('full') . '/' . $this->id, $data), 'PEAR_Error')) {
             return $result;
         }
@@ -3629,7 +3632,7 @@ class Ansel_Storage {
         }
         if (!empty($GLOBALS['conf']['gallery']['numlimit']) &&
             $perm == PERMS_SHOW && empty($attributes['owner'])) {
-            $attributes['images'] = array('>', $GLOBALS['conf']['gallery']['numlimit']);
+            $attributes['images'] = array('>=', $GLOBALS['conf']['gallery']['numlimit']);
         }
 
 
@@ -3674,7 +3677,7 @@ class Ansel_Storage {
     {
         if (!empty($GLOBALS['conf']['gallery']['numlimit']) &&
             $perm == PERMS_SHOW && empty($attributes['owner'])) {
-            $attributes['images'] = array('>', $GLOBALS['conf']['gallery']['numlimit']);
+            $attributes['images'] = array('>=', $GLOBALS['conf']['gallery']['numlimit']);
         }
 
 

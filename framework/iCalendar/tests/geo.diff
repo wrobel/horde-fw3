@@ -1,0 +1,9 @@
+001- array (
+001+ Fatal error: Cannot redeclare class Horde_iCalendar in /usr/share/php/Horde/iCalendar.php on line 26
+002-   'latitude' => -17.87,
+003-   'longitude' => 37.24,
+004- )
+005- array (
+006-   'latitude' => 37.386013,
+007-   'longitude' => -122.082932,
+008- )

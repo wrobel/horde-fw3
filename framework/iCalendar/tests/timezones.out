@@ -1,0 +1,4 @@
+AuthorChats.ics
+FAR Sexy Sunday Chat
+
+Fatal error: Call to undefined method Horde_Date::format() in /home/wrobel/usr/devel/gh/horde-glue/horde-fw3/framework/iCalendar/tests/timezones.php on line 22

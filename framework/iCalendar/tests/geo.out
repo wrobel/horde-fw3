@@ -1,0 +1,1 @@
+Fatal error: Cannot redeclare class Horde_iCalendar in /usr/share/php/Horde/iCalendar.php on line 26

@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/admin/sessions.php,v 1.2.2.7 2009/01/06 15:22:10 jan Exp $
+ * $Horde: horde/admin/sessions.php,v 1.2.2.8 2009/04/04 12:30:51 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *
@@ -47,6 +47,13 @@ if (is_a($session_info, 'PEAR_Error')) {
     $plus = Horde::img('tree/plusonly.png', _("Expand"), '', $GLOBALS['registry']->getImageDir('horde'));
     $minus = Horde::img('tree/minusonly.png', _("Collapse"), 'style="display:none"', $GLOBALS['registry']->getImageDir('horde'));
 
+    $have_netdns = @include_once 'Net/DNS.php';
+    if ($have_netdns) {
+        $resolver = new Net_DNS_Resolver();
+        $resolver->retry = isset($GLOBALS['conf']['dns']['retry']) ? $GLOBALS['conf']['dns']['retry'] : 1;
+        $resolver->retrans = isset($GLOBALS['conf']['dns']['retrans']) ? $GLOBALS['conf']['dns']['retrans'] : 1;
+    }
+
     foreach ($session_info as $id => $data) {
         $entry = array(
             _("Session Timestamp:") => date('r', $data['timestamp']),
@@ -56,7 +63,12 @@ if (is_a($session_info, 'PEAR_Error')) {
         );
 
         if (!empty($data['remote_addr'])) {
-            $host = @gethostbyaddr($data['remote_addr']);
+            if ($have_netdns) {
+                $response = $resolver->query($data['remote_addr'], 'PTR');
+                $host = $response ? $response->answer[0]->ptrdname : $data['remote_addr'];
+            } else {
+                $host = @gethostbyaddr($data['remote_addr']);
+            }
             $entry[_("Remote Host:")] = $host . ' [' . $data['remote_addr'] . '] ' . NLS::generateFlagImageByHost($host);
         }
 

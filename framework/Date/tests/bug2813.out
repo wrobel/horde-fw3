@@ -1,0 +1,29 @@
+object(Horde_Date)#12 (6) {
+  ["year"]=>
+  int(2006)
+  ["month"]=>
+  int(6)
+  ["mday"]=>
+  int(16)
+  ["hour"]=>
+  int(18)
+  ["min"]=>
+  int(0)
+  ["sec"]=>
+  int(0)
+}
+object(Horde_Date)#13 (6) {
+  ["year"]=>
+  int(2006)
+  ["month"]=>
+  int(6)
+  ["mday"]=>
+  int(17)
+  ["hour"]=>
+  int(18)
+  ["min"]=>
+  int(0)
+  ["sec"]=>
+  int(0)
+}
+bool(false)

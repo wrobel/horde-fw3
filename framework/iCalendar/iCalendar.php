@@ -12,7 +12,7 @@ include_once 'Horde/NLS.php';
 /**
  * Class representing iCalendar files.
  *
- * $Horde: framework/iCalendar/iCalendar.php,v 1.57.4.74 2009/01/07 13:57:13 jan Exp $
+ * $Horde: framework/iCalendar/iCalendar.php,v 1.57.4.75 2009/04/05 21:37:35 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -604,7 +604,7 @@ class Horde_iCalendar {
 
                 // Parse parameters.
                 if (!empty($parts[2])) {
-                    preg_match_all('/;(([^;=]*)(=([^;]*))?)/', $parts[2], $param_parts);
+                    preg_match_all('/;(([^;=]*)(=("[^"]*"|[^;]*))?)/', $parts[2], $param_parts);
                     foreach ($param_parts[2] as $key => $paramName) {
                         $paramName = String::upper($paramName);
                         $paramValue = $param_parts[4][$key];
@@ -613,6 +613,9 @@ class Horde_iCalendar {
                             if (count($paramValue) == 1) {
                                 $paramValue = $paramValue[0];
                             }
+                        }
+                        if (preg_match('/"([^"]*)"/', $paramValue, $parts)) {
+                            $paramValue = $parts[1];
                         }
                         $params[$paramName] = $paramValue;
                     }
@@ -838,7 +841,29 @@ class Horde_iCalendar {
                     if ($param_value === null) {
                         $params_str .= ";$param_name";
                     } else {
-                        $params_str .= ";$param_name=$param_value";
+                        $len = strlen($param_value);
+                        $safe_value = '';
+                        $quote = false;
+                        for ($i = 0; $i < $len; ++$i) {
+                            $ord = ord($param_value[$i]);
+                            // Accept only valid characters.
+                            if ($ord == 9 || $ord == 32 || $ord == 33 ||
+                                ($ord >= 35 && $ord <= 126) ||
+                                $ord >= 128) {
+                                $safe_value .= $param_value[$i];
+                                // Characters above 128 do not need to be
+                                // quoted as per RFC2445 but Outlook requires
+                                // this.
+                                if ($ord == 44 || $ord == 58 || $ord == 59 ||
+                                    $ord >= 128) {
+                                    $quote = true;
+                                }
+                            }
+                        }
+                        if ($quote) {
+                            $safe_value = '"' . $safe_value . '"';
+                        }
+                        $params_str .= ";$param_name=$safe_value";
                     }
                 }
             }

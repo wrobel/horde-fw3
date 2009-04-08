@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/SyncML/SyncML/Sync.php,v 1.8.4.20 2009/01/06 15:23:37 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Sync.php,v 1.8.4.21 2009/04/05 20:24:42 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -617,7 +617,7 @@ class SyncML_Sync {
      *    or finish if ONE_WAY_FROM_CLIENT sync
      * c) Maps finished, completly done.
      */
-    function handleFinal(&$output)
+    function handleFinal(&$output, $debug = false)
     {
         switch ($this->_state) {
         case STATE_INIT:
@@ -644,7 +644,9 @@ class SyncML_Sync {
         case STATE_SYNC:
             /* Received all client Sync data, now we are allowed to send
              * server sync data. */
-            $this->createSyncOutput($output);
+            if (!$debug) {
+                $this->createSyncOutput($output);
+            }
 
             // FROM_CLIENT_SYNC doeesn't require a MAP package:
             if ($this->_syncType == ALERT_ONE_WAY_FROM_CLIENT ||

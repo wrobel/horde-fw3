@@ -65,7 +65,7 @@ define('AUTH_REASON_SESSIONIP', 'sessionip');
  * The Auth:: class provides a common abstracted interface into the various
  * backends for the Horde authentication system.
  *
- * $Horde: framework/Auth/Auth.php,v 1.142.10.34 2009/01/06 15:22:49 jan Exp $
+ * $Horde: framework/Auth/Auth.php,v 1.142.10.35 2009/04/04 12:30:50 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -732,12 +732,23 @@ class Auth {
             }
         }
 
-        // Set the user's last_login information.
+        /* Set the user's last_login information. */
         $host = empty($_SERVER['HTTP_X_FORWARDED_FOR'])
             ? $_SERVER['REMOTE_ADDR']
             : $_SERVER['HTTP_X_FORWARDED_FOR'];
+
+	if ((@include_once 'Net/DNS.php')) {
+	    $resolver = new Net_DNS_Resolver();
+	    $resolver->retry = isset($GLOBALS['conf']['dns']['retry']) ? $GLOBALS['conf']['dns']['retry'] : 1;
+	    $resolver->retrans = isset($GLOBALS['conf']['dns']['retrans']) ? $GLOBALS['conf']['dns']['retrans'] : 1;
+	    $response = $resolver->query($host, 'PTR');
+	    $ptrdname = $response ? $response->answer[0]->ptrdname : $host;
+	} else {
+	    $ptrdname = @gethostbyaddr($host);
+	}
+
         $last_login = array('time' => time(),
-                            'host' => @gethostbyaddr($host));
+                            'host' => $ptrdname);
         $GLOBALS['prefs']->setValue('last_login', serialize($last_login));
 
         if ($changeRequested) {

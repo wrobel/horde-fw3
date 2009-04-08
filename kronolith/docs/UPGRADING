@@ -2,14 +2,21 @@
  Upgrading Kronolith
 =====================
 
-:Last update:   $Date: 2009/01/27 00:43:18 $
-:Revision:      $Revision: 1.1.8.14 $
+:Last update:   $Date: 2009/03/23 16:35:43 $
+:Revision:      $Revision: 1.1.8.15 $
 :Contact:       kronolith@lists.horde.org
 
 
 These are instructions to upgrade from earlier Kronolith versions. Please
 backup your existing data before running any of the steps described below. You
 can't use the updated data with your old Kronolith version anymore.
+
+
+Upgrading Kronolith from 2.3 to 2.3.x
+=====================================
+
+If you want to use the holidays feature, at least version 0.21.0 of
+Date_Holidays is required now.
 
 
 Upgrading Kronolith from 2.2 to 2.3.x

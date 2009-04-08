@@ -1,0 +1,9 @@
+001- array(0) {
+001+ Warning: require_once(Horde/Kolab/Test.php): failed to open stream: No such file or directory in /home/wrobel/usr/devel/gh/horde-glue/horde-fw3/kronolith/lib/tests/bug6031.php on line 3
+002- }
+002+ 
+003- array(1) {
+003+ Fatal error: require_once(): Failed opening required 'Horde/Kolab/Test.php' (include_path='.:/usr/share/php5:/usr/share/php') in /home/wrobel/usr/devel/gh/horde-glue/horde-fw3/kronolith/lib/tests/bug6031.php on line 3
+004-   [1]=>
+005-   string(1) "1"
+006- }

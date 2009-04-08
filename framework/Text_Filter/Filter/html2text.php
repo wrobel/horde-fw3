@@ -12,7 +12,7 @@ require_once 'Horde/String.php';
  * wrap    -- Whether to wrap the text or not.
  * </pre>
  *
- * $Horde: framework/Text_Filter/Filter/html2text.php,v 1.4.10.23 2009/01/06 15:23:42 jan Exp $
+ * $Horde: framework/Text_Filter/Filter/html2text.php,v 1.4.10.25 2009/04/02 14:37:19 jan Exp $
  *
  * Copyright 2003-2004 Jon Abernathy <jon@chuggnutt.com>
  * Original source: http://www.chuggnutt.com/html2text.php
@@ -163,7 +163,13 @@ class Text_Filter_html2text extends Text_Filter {
         global $_html2text_state;
 
         /* Convert blockquote tags. */
-        $text = $this->_blockQuote($text);
+        $text = preg_replace(array('/<blockquote [^>]*(type="?cite"?|class="?gmail_quote"?)[^>]*>\n?/',
+                                   '/\n?<\/blockquote>\n?/is'),
+                             array(chr(0), chr(1)),
+                             $text);
+        if (strpos($text, chr(0)) !== false) {
+            $text = $this->_blockQuote($text);
+        }
 
         /* Strip any other HTML tags. */
         $text = strip_tags($text);
@@ -201,19 +207,10 @@ class Text_Filter_html2text extends Text_Filter {
      */
     function _blockQuote($text)
     {
-        while (preg_match_all('/<blockquote [^>]*type="?cite"?/i', $text,
-                              $matches, PREG_SET_ORDER | PREG_OFFSET_CAPTURE)) {
-            if (count($matches) > 1) {
-                $last = count($matches) - 1;
-                $text = substr($text, 0, $matches[$last][0][1]) .
-                    $this->_blockQuote(substr($text, $matches[$last][0][1]));
-            } else {
-                $text = preg_replace('/<blockquote [^>]*type="?cite"?[^>]*>\n?(.*?)\n?<\/blockquote>\n?/ies',
-                                     "\"\n\n\" . \$this->_quote(strip_tags('$1', '<blockquote>')) . \"\n\n\"",
-                                     $text);
-            }
-        }
-        return $text;
+        return preg_replace(
+            '/([^\x00\x01]*)\x00(((?>[^\x00\x01]*)|(?R))*)\x01([^\x00\x01]*)/se',
+            "stripslashes('$1') . \"\n\n\" . \$this->_quote('$2') . \"\n\n\" . stripslashes('$4')",
+            $text);
     }
 
     /**
@@ -225,10 +222,16 @@ class Text_Filter_html2text extends Text_Filter {
      */
     function _quote($text)
     {
-        $text = trim(stripslashes($text));
+        $text = stripslashes($text);
+        if (strpos($text, chr(0)) !== false) {
+            $text = stripslashes($this->_blockQuote($text));
+        }
+
+        $text = trim(strip_tags($text));
         if ($this->_params['wrap']) {
             $text = wordwrap($text, $this->_params['width'] - 2);
         }
+
         return preg_replace(array('/^/m', '/(\n>\s*$){3,}/m', '/^>\s+$/m'),
                             array('> ', "\n> ", '>'),
                             $text);

@@ -128,7 +128,7 @@ define('IMP_IDX_SEP', "\1");
 /**
  * IMP Base Class.
  *
- * $Horde: imp/lib/IMP.php,v 1.449.4.124 2009/01/06 15:24:04 jan Exp $
+ * $Horde: imp/lib/IMP.php,v 1.449.4.125 2009/04/07 04:56:37 slusarz Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -2166,8 +2166,12 @@ class IMP {
         $browser_css = array();
         if ($GLOBALS['browser']->isBrowser('msie')) {
             $ie_major = $GLOBALS['browser']->getMajor();
-            if ($ie_major == 7) {
-                $browser_css[] = 'ie7.css';
+            if ($ie_major >= 7) {
+                if (($ie_major == 7) ||
+                    // IE 8 uses IE 7 compatibility mode for dimp
+                    in_array('dimp', $apps)) {
+                    $browser_css[] = 'ie7.css';
+                }
             } elseif ($ie_major < 7) {
                 $browser_css[] = 'ie6_or_less.css';
                 if ($GLOBALS['browser']->getPlatform() == 'mac') {

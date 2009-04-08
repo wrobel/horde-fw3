@@ -2,7 +2,7 @@
 v3.1.1-cvs
 ----------
 
-
+[jan] Fix binding to LDAP server if using the userdn hook.
 
 
 ----

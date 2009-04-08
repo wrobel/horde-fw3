@@ -7,7 +7,7 @@
  * All methods not explicitly set below are passed through as-is to the imagick
  * object.
  *
- * $Horde: framework/Image/Image/imagick.php,v 1.8.2.3 2009/01/06 15:23:12 jan Exp $
+ * $Horde: framework/Image/Image/imagick.php,v 1.8.2.4 2009/03/23 18:15:47 mrubinsk Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *
@@ -111,8 +111,10 @@ class Horde_Image_ImagickProxy {
             $pixel = new ImagickPixel($color);
             $draw = new ImagickDraw();
             $draw->setFillColor($pixel);
-            $draw->setFont($font);
-            $draw->setFontSize($this->_getFontSize($fontsize));
+            if (!empty($font)) {
+                $draw->setFont($font);
+            }
+            $draw->setFontSize($fontsize);
             $draw->setGravity(Imagick::GRAVITY_NORTHWEST);
             $res = $this->_imagick->annotateImage($draw, $x, $y, $direction, $string);
             $draw->destroy();
@@ -195,6 +197,22 @@ class Horde_Image_ImagickProxy {
     }
 
     /**
+     * Rounded Rectangle
+     *
+     *
+     */
+    function roundedRectangle($x, $y, $width, $height, $round, $color, $fill)
+    {
+        $draw = new ImagickDraw();
+        $draw->setStrokeColor(new ImagickPixel($color));
+        $draw->setFillColor(new ImagickPixel($fill));
+        $draw->roundRectangle($x, $y, $x + $width, $y + $height, $round, $round);
+        $res = $this->_imagick->drawImage($draw);
+
+
+    }
+
+    /**
      * @TODO
      *
      * @return mixed  true || PEAR_Error
@@ -252,6 +270,7 @@ class Horde_Image_ImagickProxy {
             $draw = new ImagickDraw();
             $draw->setStrokeColor(new ImagickPixel($color));
             $draw->setStrokeWidth($width);
+            $draw->setFillColor(new ImagickPixel('none'));
             $draw->polyline($verts);
             $res = $this->_imagick->drawImage($draw);
             $draw->destroy();
@@ -293,7 +312,7 @@ class Horde_Image_ImagickProxy {
             $res = $this->_imagick->compositeImage($imagickProxy->getIMObject(),
                                                    $constant,
                                                    $x,
-                                                   $y);
+                                                   $y, $channel);
             if (!$res) {
                 return PEAR::raiseError(sprintf("Call to Imagick::compositeImage failed on line %s of %s", __LINE__, __FILE__));
             }
@@ -334,13 +353,17 @@ class Horde_Image_ImagickProxy {
      function borderImage($color, $width, $height)
      {
          try {
-             $res = $this->_imagick->borderImage(new ImagickPixel($color),
-                                                 $width,
-                                                 $height);
-             if (!$res) {
-                 return PEAR::raiseError(sprintf("Call to Imagick::borderImage failed on line %s of %s", __LINE__, __FILE__));
-             }
-             return true;
+             // Jump through all there hoops to preserve any transparency.
+             $border = $this->_imagick->clone();
+             $border->borderImage(new ImagickPixel($color),
+                                  $width, $height);
+             $border->compositeImage($this->_imagick,
+                                    constant('Imagick::COMPOSITE_COPY'),
+                                    $width, $height);
+            $this->_imagick->clear();
+            $this->_imagick->addImage($border);
+            $border->destroy();
+            return true;
          } catch (ImagickException $e) {
              return PEAR::raiseError($e->getMessage());
          }

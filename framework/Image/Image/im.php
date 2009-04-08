@@ -10,7 +10,7 @@ require_once 'Horde/Image.php';
  * 'type' - What type of image should be generated.
  * </pre>
  *
- * $Horde: framework/Image/Image/im.php,v 1.34.10.25 2009/01/06 15:23:12 jan Exp $
+ * $Horde: framework/Image/Image/im.php,v 1.34.10.26 2009/03/23 18:15:47 mrubinsk Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -40,13 +40,6 @@ class Horde_Image_im extends Horde_Image {
                                'sepia',
                                'canvas'
                          );
-
-    /**
-     * What kind of images should ImageMagick generate? Defaults to 'png'.
-     *
-     * @var string
-     */
-    var $_type = 'png';
 
     /**
      * Operations to be performed. These are added before the source filename
@@ -120,19 +113,36 @@ class Horde_Image_im extends Horde_Image {
             require_once 'Horde/Image/imagick.php';
             $this->_width = max(array($this->_width, 1));
             $this->_height = max(array($this->_height, 1));
-
             // Use a proxy for the Imagick calls to keep exception catching
             // code out of PHP4 compliant code.
             $this->_imagick = new Horde_Image_ImagickProxy($this->_width,
                                                            $this->_height,
                                                            $this->_background,
                                                            $this->_type);
-            $this->_data = $this->_imagick->getImageBlob();
+            // Yea, it's wasteful to create the proxy (which creates a blank
+            // image) then overwrite it if we're passing in an image, but this
+            // will be fixed in Horde 4 when imagick is broken out into it's own
+            // proper driver.
+            if (!empty($params['filename'])) {
+                $this->loadFile($params['filename']);
+            } elseif(!empty($params['data'])) {
+                $this->loadString(md5($params['data']), $params['data']);
+            } else {
+                $this->_data = $this->_imagick->getImageBlob();
+            }
+
+            $this->_imagick->setImageFormat($this->_type);
+        } else {
+            if (!empty($params['filename'])) {
+                $this->loadFile($params['filename']);
+            } elseif (!empty($params['data'])) {
+                $this->loadString(md5($params['data']), $params['data']);
+            } else {
+                $cmd = "-size {$this->_width}x{$this->_height} xc:{$this->_background} +profile \"*\" {$this->_type}:__FILEOUT__";
+                $this->executeConvertCmd($cmd);
+            }
         }
-
-        $this->rectangle(0, 0, $this->_width, $this->_height, $this->_background, $this->_background);
     }
-
 
     /**
      * Load the image data from a string. Need to override this method
@@ -212,12 +222,6 @@ class Horde_Image_im extends Horde_Image {
             }
 
             $tmpin = $this->toFile($this->_data);
-        } else {
-            // Create an empty PPM file to load.
-            $tmpin = Util::getTempFile('img', false, $this->_tmpdir);
-            $fp = fopen($tmpin, 'wb');
-            fwrite($fp, sprintf("P3\n%d %d\n255\n ", $this->_width, $this->_height));
-            fclose($fp);
         }
 
         // Perform convert command if needed
@@ -273,7 +277,7 @@ class Horde_Image_im extends Horde_Image {
     }
 
     /**
-     * Resize the current image.
+     * Resize the current image. This operation takes place immediately.
      *
      * @param integer $width   The new width.
      * @param integer $height  The new height.
@@ -428,20 +432,23 @@ class Horde_Image_im extends Horde_Image {
      * @param integer $x          The left x coordinate of the start of the text string.
      * @param integer $y          The top y coordinate of the start of the text string.
      * @param string  $font       The font identifier you want to use for the text.
+     * @TODO: Need to differentiate between the stroke (border) and the fill color,
+     *        but this is a BC break, since we were just not providing a border.
+     *
      * @param string  $color      The color that you want the text displayed in.
      * @param integer $direction  An integer that specifies the orientation of the text.
      * @param string  $fontsize   Size of the font (small, medium, large, giant)
      */
-    function text($string, $x, $y, $font = 'ariel', $color = 'black', $direction = 0, $fontsize = 'small')
+    function text($string, $x, $y, $font = '', $color = 'black', $direction = 0, $fontsize = 'small')
     {
         if (!is_null($this->_imagick)) {
-            return $this->_imagick->text($string, $x, $y, $font, $color, $direction,
-                                         $fontsize);
+            $fontsize = $this->_getFontSize($fontsize);
+
+            return $this->_imagick->text($string, $x, $y, $font, $color, $direction, $fontsize);
         } else {
-            $this->setFillColor($color);
             $string = addslashes('"' . $string . '"');
             $fontsize = $this->_getFontSize($fontsize);
-            $this->_operations[] = "-font $font -pointsize $fontsize -gravity northwest -draw \"text $x,$y $string\"";
+            $this->_postSrcOperations[] = "-fill $color " . (!empty($font) ? "-font $font" : '') . " -pointsize $fontsize -gravity northwest -draw \"text $x,$y $string\" -fill none";
         }
     }
 
@@ -459,10 +466,8 @@ class Horde_Image_im extends Horde_Image {
         if (!is_null($this->_imagick)) {
             return $this->_imagick->circle($x, $y, $r, $color, $fill);
         } else {
-            $this->setStrokeColor($color);
-            $this->setFillColor($fill);
             $xMax = $x + $r;
-            $this->_operations[] = "-draw \"circle $x,$y $xMax,$y\"";
+            $this->_postSrcOperations[] = "-stroke $color -fill $fill -draw \"circle $x,$y $xMax,$y\" -stroke none -fill none";
         }
     }
 
@@ -476,18 +481,17 @@ class Horde_Image_im extends Horde_Image {
      */
     function polygon($verts, $color, $fill = 'none')
     {
-        if (!is_null($this->_imagick)) {
-            return $this->_imagick->polygon($verts, $color, $fill);
-        } else {
-            $this->setStrokeColor($color);
-            $this->setFillColor($fill);
-
+        // TODO: For now, use only convert since ::polygon is called from other
+        // methods that are convert-only for now.
+        //if (!is_null($this->_imagick)) {
+            //return $this->_imagick->polygon($verts, $color, $fill);
+        //} else {
             $command = '';
             foreach ($verts as $vert) {
                 $command .= sprintf(' %d,%d', $vert['x'], $vert['y']);
             }
-            $this->_operations[] = "-draw \"polygon $command\"";
-        }
+            $this->_postSrcOperations[] = "-stroke $color -fill $fill -draw \"polygon $command\" -stroke none -fill none";
+        //}
     }
 
     /**
@@ -505,11 +509,9 @@ class Horde_Image_im extends Horde_Image {
         if (!is_null($this->_imagick)) {
             $this->_imagick->rectangle($x, $y, $width, $height, $color, $fill);
         } else {
-            $this->setStrokeColor($color);
-            $this->setFillColor($fill);
             $xMax = $x + $width;
             $yMax = $y + $height;
-            $this->_operations[] = "-draw \"rectangle $x,$y $xMax,$yMax\"";
+            $this->_postSrcOperations[] = "-stroke $color -fill $fill -draw \"rectangle $x,$y $xMax,$yMax\" -stroke none -fill none";
         }
     }
 
@@ -526,12 +528,14 @@ class Horde_Image_im extends Horde_Image {
      */
     function roundedRectangle($x, $y, $width, $height, $round, $color, $fill)
     {
-        $this->setStrokeColor($color);
-        $this->setFillColor($fill);
+        if (!is_null($this->_imagick)) {
+            $this->_imagick->roundedRectangle($x, $y, $width, $height, $round, $color, $fill);
+        } else {
+            $x1 = $x + $width;
+            $y1 = $y + $height;
+            $this->_postSrcOperations[] = "-stroke $color -fill $fill -draw \"roundRectangle $x,$y $x1,$y1 $round,$round\" -stroke none -fill none";
 
-        $x1 = $x + $width;
-        $y1 = $y + $height;
-        $this->_operations[] = "-draw \"roundRectangle $x,$y $x1,$y1, $round,$round\"";
+        }
     }
 
     /**
@@ -549,9 +553,7 @@ class Horde_Image_im extends Horde_Image {
         if (!is_null($this->_imagick)) {
             return $this->_imagick->line($x0, $y0, $x1, $y1, $color, $width);
         } else {
-            $this->setStrokeColor($color);
-            $this->setStrokeWidth($width);
-            $this->_operations[] = "-draw \"line $x0,$y0 $x1,$y1\"";
+            $this->_operations[] = "-stroke $color -strokewidth $width -draw \"line $x0,$y0 $x1,$y1\"";
         }
     }
 
@@ -574,9 +576,7 @@ class Horde_Image_im extends Horde_Image {
                                                $width, $dash_length,
                                                $dash_space);
         } else {
-            $this->setStrokeColor($color);
-            $this->setStrokeWidth($width);
-            $this->_operations[] = "-draw \"line $x0,$y0 $x1,$y1\"";
+            $this->_operations[] = "-stroke $color -strokewidth $width -draw \"line $x0,$y0 $x1,$y1\"";
         }
     }
 
@@ -594,15 +594,11 @@ class Horde_Image_im extends Horde_Image {
         if (!is_null($this->_imagick)) {
             return $this->_imagick->polyline($verts, $color, $width);
         } else {
-            $this->setStrokeColor($color);
-            $this->setStrokeWidth($width);
-            $this->setFillColor('none');
-
             $command = '';
             foreach ($verts as $vert) {
                 $command .= sprintf(' %d,%d', $vert['x'], $vert['y']);
             }
-            $this->_operations[] = "-draw \"polyline $command\"";
+            $this->_operations[] = "-stroke $color -strokewidth $width -fill none -draw \"polyline $command\" -strokewidth 1 -stroke none -fill none";
         }
     }
 
@@ -619,19 +615,17 @@ class Horde_Image_im extends Horde_Image {
      */
     function arc($x, $y, $r, $start, $end, $color = 'black', $fill = 'none')
     {
-        $this->setStrokeColor($color);
-        $this->setFillColor($fill);
-
         // Split up arcs greater than 180 degrees into two pieces.
+        $this->_postSrcOperations[] = "-stroke $color -fill $fill";
         $mid = round(($start + $end) / 2);
         $x = round($x);
         $y = round($y);
         $r = round($r);
         if ($mid > 90) {
-            $this->_operations[] = "-draw \"ellipse $x,$y $r,$r $start,$mid\"";
-            $this->_operations[] = "-draw \"ellipse $x,$y $r,$r $mid,$end\"";
+            $this->_postSrcOperations[] = "-draw \"ellipse $x,$y $r,$r $start,$mid\"";
+            $this->_postSrcOperations[] = "-draw \"ellipse $x,$y $r,$r $mid,$end\"";
         } else {
-            $this->_operations[] = "-draw \"ellipse $x,$y $r,$r $start,$end\"";
+            $this->_postSrcOperations[] = "-draw \"ellipse $x,$y $r,$r $start,$end\"";
         }
 
         // If filled, draw the outline.
@@ -664,42 +658,8 @@ class Horde_Image_im extends Horde_Image {
             }
 
             $this->polyline($verts, $color);
-        }
-    }
 
-    /**
-     * Change the current stroke color. Will only affect the command
-     * string if $stroke is different from the previous stroke color
-     * (stored in $this->_strokeColor).
-     *
-     * @access private
-     * @see $_strokeColor
-     *
-     * @param string $color  The new stroke color.
-     */
-    function setStrokeColor($color)
-    {
-        if ($color != $this->_strokeColor) {
-            $this->_operations[] = "-stroke $color";
-            $this->_strokeColor = $color;
-        }
-    }
-
-    /**
-     * Change the current stroke width. Will only affect the command
-     * string if $width is different from the previous stroke width
-     * (stored in $this->_strokeWidth).
-     *
-     * @access private
-     * @see $_stroke
-     *
-     * @param string $width  The new stroke width.
-     */
-    function setStrokeWidth($width)
-    {
-        if ($width != $this->_strokeWidth) {
-            $this->_operations[] = "-strokewidth $width";
-            $this->_strokeWidth = $width;
+            $this->_postSrcOperations[] = '-stroke none -fill none';
         }
     }
 
@@ -727,6 +687,51 @@ class Horde_Image_im extends Horde_Image {
         foreach ($this->_toClean as $tempfile) {
             @unlink($tempfile);
         }
+    }
+
+    /**
+     * Method to execute a raw command directly in convert.
+     *
+     * The input and output files are quoted and substituted for __FILEIN__ and
+     * __FILEOUT__ respectfully. In order to support piped convert commands, the
+     * path to the convert command is substitued for __CONVERT__ (but the
+     * initial convert command is added automatically).
+     *
+     * @param string $cmd    The command string, with substitutable tokens
+     * @param array $values  Any values that should be substituted for tokens.
+     *
+     * @return
+     */
+    function executeConvertCmd($cmd, $values = array())
+    {
+        // First, get a temporary file for the input
+        if (strpos($cmd, '__FILEIN__') !== false) {
+            $tmpin = $this->toFile($this->_data);
+        } else {
+            $tmpin = '';
+        }
+
+        // Now an output file
+        $tmpout = Util::getTempFile('img', false, $this->_tmpdir);
+
+        // Substitue them in the cmd string
+        $cmd = str_replace(array('__FILEIN__', '__FILEOUT__', '__CONVERT__'),
+                           array('"' . $tmpin . '"', '"' . $tmpout . '"', $GLOBALS['conf']['image']['convert']),
+                           $cmd);
+
+        //TODO: See what else needs to be replaced.
+        $cmd = $GLOBALS['conf']['image']['convert'] . ' ' . $cmd . ' 2>&1';
+
+        // Log it
+        Horde::logMessage('convert command executed by Horde_Image_im::executeConvertCmd(): ' . $cmd, __FILE__, __LINE__, PEAR_LOG_DEBUG);
+        exec($cmd, $output, $retval);
+        if ($retval) {
+            Horde::logMessage('Error running command: ' . $cmd . "\n" . implode("\n", $output), __FILE__, __LINE__, PEAR_LOG_WARNING);
+        }
+        $this->_data = file_get_contents($tmpout);
+
+        @unlink($tmpin);
+        @unlink($tmpout);
     }
 
 

@@ -1,0 +1,13 @@
+
+---- EXPECTED OUTPUT
+array (
+  'latitude' => -17.87,
+  'longitude' => 37.24,
+)
+array (
+  'latitude' => 37.386013,
+  'longitude' => -122.082932,
+)
+---- ACTUAL OUTPUT
+Fatal error: Cannot redeclare class Horde_iCalendar in /usr/share/php/Horde/iCalendar.php on line 26
+---- FAILED

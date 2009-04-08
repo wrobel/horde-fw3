@@ -1,0 +1,6 @@
+001- array(1) {
+001+ Fatal error: Class 'Horde' not found in /usr/share/php/Horde/Auth/passwd.php on line 93
+002-   [0]=>
+003-   string(4) "user"
+004- }
+005- bool(true)

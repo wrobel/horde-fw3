@@ -1,0 +1,11 @@
+
+---- EXPECTED OUTPUT
+array(2) {
+  [0]=>
+  string(15) "My Organization"
+  [1]=>
+  string(7) "My Unit"
+}
+---- ACTUAL OUTPUT
+Fatal error: Cannot redeclare class Horde_iCalendar in /usr/share/php/Horde/iCalendar.php on line 26
+---- FAILED

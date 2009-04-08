@@ -1,0 +1,9 @@
+Warning: include_once(/home/wrobel/usr/devel/gh/horde-glue/horde-fw3/kronolith/lib/Driver/.php): failed to open stream: No such file or directory in /home/wrobel/usr/devel/gh/horde-glue/horde-fw3/kronolith/lib/Driver.php on line 198
+
+Warning: include_once(): Failed opening '/home/wrobel/usr/devel/gh/horde-glue/horde-fw3/kronolith/lib/Driver/.php' for inclusion (include_path='.:/usr/share/php5:/usr/share/php') in /home/wrobel/usr/devel/gh/horde-glue/horde-fw3/kronolith/lib/Driver.php on line 198
+
+A fatal error has occurred
+
+You must configure a DataTree backend to use Shares.
+
+Details have been logged for the administrator.

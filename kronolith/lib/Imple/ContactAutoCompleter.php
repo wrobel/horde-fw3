@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: kronolith/lib/Imple/ContactAutoCompleter.php,v 1.3.2.3 2009/01/06 15:24:46 jan Exp $
+ * $Horde: kronolith/lib/Imple/ContactAutoCompleter.php,v 1.3.2.4 2009/03/30 17:24:03 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *
@@ -24,7 +24,7 @@ class Imple_ContactAutoCompleter extends Imple {
      *
      * @var string
      */
-    var $_onshow = ', onShow: function(e, u){ if(!u.style.position || u.style.position==\'absolute\') { u.style.position = \'absolute\'; Position.clone(e, u, { setHeight: false, offsetTop: e.offsetHeight }); } Effect.Appear(u,{duration:0.15, beforeSetup:function(effect) { effect.element.setOpacity(effect.options.from); effect.element.show(); u.style.height = Math.min(u.offsetHeight, ((window.innerHeight ? window.innerHeight : document.body.clientHeight) - Position.page(e)[1] - e.offsetHeight - 10)) + \'px\'; u.style.overflow = \'auto\'; } }); }';
+    var $_onshow = ', onShow: function(e, u){ if(!u.style.position || u.style.position==\'absolute\') { u.style.position = \'absolute\'; Position.clone(e, u, { setHeight: false, offsetTop: e.offsetHeight }); } u.style.zIndex = 2; Effect.Appear(u,{duration:0.15, beforeSetup:function(effect) { effect.element.setOpacity(effect.options.from); effect.element.show(); u.style.height = Math.min(u.offsetHeight, ((window.innerHeight ? window.innerHeight : document.body.clientHeight) - Position.page(e)[1] - e.offsetHeight - 10)) + \'px\'; u.style.overflow = \'auto\'; } }); }';
 
     /**
      * Constructor.

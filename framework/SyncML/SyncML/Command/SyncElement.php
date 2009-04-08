@@ -6,7 +6,7 @@
  * Instances of this class are created during the XML parsing by
  * SyncML_Command_Sync.
  *
- * $Horde: framework/SyncML/SyncML/Command/SyncElement.php,v 1.3.2.9 2009/01/06 15:23:38 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Command/SyncElement.php,v 1.3.2.10 2009/04/05 20:24:43 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *
@@ -33,7 +33,7 @@ class SyncML_SyncElement {
      *
      * @var string
      */
-    var $contentFormat = 'chr';
+    var $contentFormat;
 
     /**
      * The actual data content of the sync command.

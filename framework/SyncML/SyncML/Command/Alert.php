@@ -12,7 +12,7 @@ require_once 'SyncML/Command.php';
  * information, such as state information or notifications to an application
  * on the recipient device.
  *
- * $Horde: framework/SyncML/SyncML/Command/Alert.php,v 1.18.10.15 2009/01/06 15:23:38 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Command/Alert.php,v 1.18.10.17 2009/04/07 11:13:05 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -118,7 +118,7 @@ class SyncML_Command_Alert extends SyncML_Command {
     /**
      * Implements the actual business logic of the Alert command.
      */
-    function handleCommand()
+    function handleCommand($debug = false)
     {
         $state = &$_SESSION['SyncML.state'];
         // Handle unauthenticated first.
@@ -149,15 +149,17 @@ class SyncML_Command_Alert extends SyncML_Command {
 
         $database = $this->_targetLocURI;
         if (!$GLOBALS['backend']->isValidDatabaseURI($database)) {
-            // @TODO: proper error handling!
+            $this->_outputHandler->outputStatus($this->_cmdID, $this->_cmdName,
+                                                RESPONSE_NOT_FOUND);
             return;
         }
 
         $clientAnchorNext = $this->_metaAnchorNext;
 
-        if ($this->_alert == ALERT_TWO_WAY ||
-            $this->_alert == ALERT_ONE_WAY_FROM_CLIENT ||
-            $this->_alert == ALERT_ONE_WAY_FROM_SERVER) {
+        if (!$debug &&
+            ($this->_alert == ALERT_TWO_WAY ||
+             $this->_alert == ALERT_ONE_WAY_FROM_CLIENT ||
+             $this->_alert == ALERT_ONE_WAY_FROM_SERVER)) {
             // Check if we have information about previous sync.
             $r = $GLOBALS['backend']->readSyncAnchors($this->_targetLocURI);
             if (is_array($r)) {
@@ -271,14 +273,15 @@ class SyncML_Command_Alert extends SyncML_Command {
             $synctype != ALERT_ONE_WAY_FROM_SERVER) {
             $serverAnchorLast = 0;
             // Erase existing map:
-            if (($anchormatch &&
-                 CONFIG_DELETE_MAP_ON_REQUESTED_SLOWSYNC) ||
-                (!$anchormatch &&
-                 CONFIG_DELETE_MAP_ON_ANCHOR_MISMATCH_SLOWSYNC)) {
+            if (!$debug &&
+                (($anchormatch &&
+                  CONFIG_DELETE_MAP_ON_REQUESTED_SLOWSYNC) ||
+                 (!$anchormatch &&
+                  CONFIG_DELETE_MAP_ON_ANCHOR_MISMATCH_SLOWSYNC))) {
                 $GLOBALS['backend']->eraseMap($this->_targetLocURI);
             }
         }
-        $serverAnchorNext = $GLOBALS['backend']->getCurrentTimeStamp();
+        $serverAnchorNext = $debug ? time() : $GLOBALS['backend']->getCurrentTimeStamp();
 
         // Now create the actual SyncML_Sync object, if it doesn't exist yet.
         $sync = &$state->getSync($this->_targetLocURI);

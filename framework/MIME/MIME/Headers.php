@@ -12,7 +12,7 @@ define('HORDE_AGENT_HEADER', 'Horde Application Framework 3.2');
  * variable $GLOBALS['mime_headers']['default_charset'] (defaults to US-ASCII
  * per RFC 2045).
  *
- * $Horde: framework/MIME/MIME/Headers.php,v 1.29.10.28 2009/01/06 15:23:20 jan Exp $
+ * $Horde: framework/MIME/MIME/Headers.php,v 1.29.10.30 2009/04/08 16:26:35 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -200,15 +200,32 @@ class MIME_Headers {
      */
     function addReceivedHeader()
     {
+        $have_netdns = @include_once 'Net/DNS.php';
+        if ($have_netdns) {
+            $resolver = new Net_DNS_Resolver();
+            $resolver->retry = isset($GLOBALS['conf']['dns']['retry']) ? $GLOBALS['conf']['dns']['retry'] : 1;
+            $resolver->retrans = isset($GLOBALS['conf']['dns']['retrans']) ? $GLOBALS['conf']['dns']['retrans'] : 1;
+        }
+
         if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
             /* This indicates the user is connecting through a proxy. */
             $remote_path = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
             $remote_addr = $remote_path[0];
-            $remote = @gethostbyaddr($remote_addr);
+            if ($have_netdns) {
+                $response = $resolver->query($remote_addr, 'PTR');
+                $remote = $response ? $response->answer[0]->ptrdname : $remote_addr;
+            } else {
+                $remote = @gethostbyaddr($remote_addr);
+            }
         } else {
             $remote_addr = $_SERVER['REMOTE_ADDR'];
             if (empty($_SERVER['REMOTE_HOST'])) {
-                $remote = @gethostbyaddr($remote_addr);
+                if ($have_netdns) {
+                    $response = $resolver->query($remote_addr, 'PTR');
+                    $remote = $response ? $response->answer[0]->ptrdname : $remote_addr;
+                } else {
+                    $remote = @gethostbyaddr($remote_addr);
+                }
             } else {
                 $remote = $_SERVER['REMOTE_HOST'];
             }

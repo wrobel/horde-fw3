@@ -1,1 +1,1 @@
-<?php define('KRONOLITH_VERSION', 'H3 (2.3.1-cvs)') ?>
+<?php define('KRONOLITH_VERSION', 'H3 (2.3.2-cvs)') ?>

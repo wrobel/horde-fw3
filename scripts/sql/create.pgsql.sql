@@ -1,15 +1,13 @@
--- $Horde: horde/scripts/sql/create.pgsql.sql,v 1.1.10.22 2009/03/17 12:50:54 slusarz Exp $
+-- $Horde: horde/scripts/sql/create.pgsql.sql,v 1.1.10.23 2009/03/26 04:44:48 slusarz Exp $
 --
 -- Uncomment the ALTER line below and change the password.  Then run as:
 --
 -- $ psql -d template1 -f create.pgsql.sql
 
-CREATE DATABASE horde;
-
 CREATE USER horde;
 -- ALTER USER horde WITH PASSWORD 'pass';
 
-GRANT CREATE on DATABASE horde to horde;
+CREATE DATABASE horde OWNER horde;
 
 \c horde horde;
 

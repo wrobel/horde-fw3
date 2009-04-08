@@ -19,7 +19,7 @@ require_once 'SyncML/Command/SyncElement.php';
  * Then the server modifications are sent back to the client by the
  * handleSync() method which is called from within the output method.
  *
- * $Horde: framework/SyncML/SyncML/Command/Sync.php,v 1.17.10.17 2009/01/06 15:23:38 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Command/Sync.php,v 1.17.10.18 2009/04/05 20:24:43 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *
@@ -31,7 +31,7 @@ require_once 'SyncML/Command/SyncElement.php';
  * @since   Horde 3.0
  * @package SyncML
  */
-class SyncML_Command_Sync extends Syncml_Command {
+class SyncML_Command_Sync extends SyncML_Command {
 
     /**
      * Name of the command.
@@ -217,7 +217,9 @@ class SyncML_Command_Sync extends Syncml_Command {
                 }
                 break;
             case 'Type':
-                $this->_contentType = trim($this->_chars);
+                if ($this->_stack[2] == 'Meta') {
+                    $this->_contentType = trim($this->_chars);
+                }
                 break;
             case 'Data':
                 $this->_curItem->content .= trim($this->_chars);
@@ -248,7 +250,7 @@ class SyncML_Command_Sync extends Syncml_Command {
                 break;
 
             case 'Type':
-                $this->_contentType = trim($this->_chars);
+                $this->_curItem->contentType = trim($this->_chars);
                 break;
             }
             break;
@@ -264,9 +266,9 @@ class SyncML_Command_Sync extends Syncml_Command {
     }
 
     /**
-     * Implements the actual business logic of the Alert command.
+     * Implements the actual business logic of the Sync command.
      */
-    function handleCommand()
+    function handleCommand($debug = false)
     {
         $state = &$_SESSION['SyncML.state'];
 
@@ -274,17 +276,25 @@ class SyncML_Command_Sync extends Syncml_Command {
         if (!$state->authenticated) {
             $this->_outputHandler->outputStatus($this->_cmdID, $this->_cmdName,
                                                 RESPONSE_INVALID_CREDENTIALS);
-                return;
+            return;
         }
 
-        $sync = &$state->getSync($this->_targetURI);
-        $sync->addSyncReceived();
+        if ($debug) {
+            $sync = &$state->getSync($this->_targetURI);
+            $sync = new SyncML_Sync(ALERT_TWO_WAY,
+                                    $this->_targetURI,
+                                    $this->_sourceURI,
+                                    0, 0, 0);
+        } else {
+            $sync = &$state->getSync($this->_targetURI);
+            $sync->addSyncReceived();
 
-        if (!is_object($sync)) {
-            $GLOBALS['backend']->logMessage(
-                'No sync object found for URI ' . $this->_targetURI,
-                __FILE__, __LINE__, PEAR_LOG_ERR);
-            // @todo: create meaningful status code here.
+            if (!is_object($sync)) {
+                $GLOBALS['backend']->logMessage(
+                    'No sync object found for URI ' . $this->_targetURI,
+                    __FILE__, __LINE__, PEAR_LOG_ERR);
+                // @todo: create meaningful status code here.
+            }
         }
 
         /* @todo: Check: do we send a status for every sync or only once after

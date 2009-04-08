@@ -2,7 +2,7 @@
 /**
  * The Kolab implementation of free/busy.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy.php,v 1.10.2.1 2009/03/06 18:12:01 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy.php,v 1.10.2.2 2009/04/02 18:37:57 wrobel Exp $
  *
  * @package Kolab_FreeBusy
  */
@@ -29,7 +29,7 @@ require_once 'Horde/Kolab/FreeBusy/Access.php';
  *
  * $fb->fetch();
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy.php,v 1.10.2.1 2009/03/06 18:12:01 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy.php,v 1.10.2.2 2009/04/02 18:37:57 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *
@@ -236,7 +236,7 @@ class Horde_Kolab_FreeBusy {
     /**
      * Regenerate the free/busy cache.
      */
-    function &regenerate()
+    function &regenerate($reporter)
     {
         $access = &new Horde_Kolab_FreeBusy_Access();
         $result = $access->authenticated();
@@ -285,8 +285,7 @@ class Horde_Kolab_FreeBusy {
             /* Validate folder access */
             $result = $access->parseFolder($trigger);
             if (is_a($result, 'PEAR_Error')) {
-                $lines[] = sprintf(_("Failed regenerating calendar %s: %s"),
-                                   $calendar->name, $result->getMessage());
+                $reporter->failure($calendar->name, $result->getMessage());
                 continue;
             }
 
@@ -296,14 +295,12 @@ class Horde_Kolab_FreeBusy {
                                                       $GLOBALS['conf']['kolab']['imap']['port']);
                 $result = $imapc->connect($access->user, Auth::getCredential('password'));
                 if (is_a($result, 'PEAR_Error')) {
-                    $lines[] = sprintf(_("Failed regenerating calendar %s: %s"),
-                                       $calendar->name, $result->getMessage());
+                    $reporter->failure($calendar->name, $result->getMessage());
                     continue;
                 }
                 $acl = $imapc->getACL($calendar->name);
                 if (is_a($acl, 'PEAR_Error')) {
-                    $lines[] = sprintf(_("Failed regenerating calendar %s: %s"),
-                                       $calendar->name, $acl->getMessage());
+                    $reporter->failure($calendar->name, $result->getMessage());
                     continue;
                 }
                 $oldacl = '';
@@ -312,8 +309,7 @@ class Horde_Kolab_FreeBusy {
                 }
                 $result = $imapc->setACL($calendar->name, 'manager', 'lrs');
                 if (is_a($result, 'PEAR_Error')) {
-                    $lines[] = sprintf(_("Failed regenerating calendar %s: %s"),
-                                       $calendar->name, $result->getMessage());
+                    $reporter->failure($calendar->name, $result->getMessage());
                     continue;
                 }
             }
@@ -321,8 +317,7 @@ class Horde_Kolab_FreeBusy {
             /* Update the cache */
             $result = $this->_cache->store($access);
             if (is_a($result, 'PEAR_Error')) {
-                $lines[] = sprintf(_("Failed regenerating calendar %s: %s"),
-                                   $calendar->name, $result->getMessage());
+                $reporter->failure($calendar->name, $result->getMessage());
                 continue;
             }
 
@@ -330,13 +325,12 @@ class Horde_Kolab_FreeBusy {
             if ($access->user == 'manager' && $oldacl) {
                 $result = $imapc->setACL($calendar->name, 'manager', $oldacl);
                 if (is_a($result, 'PEAR_Error')) {
-                    $lines[] = sprintf(_("Failed regenerating calendar %s: %s"),
-                                       $calendar->name, $result->getMessage());
+                    $reporter->failure($calendar->name, $result->getMessage());
                     continue;
                 }
             }
 
-            $lines[] = "Regenerated calendar \"" . $calendar->name . "\"!\n";
+            $reporter->success($calendar->name);
 
         }
         return $lines;

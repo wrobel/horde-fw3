@@ -1,0 +1,102 @@
+001- BEGIN:VCALENDAR
+001+ Fatal error: Call to undefined method String::wordwrap() in /home/wrobel/usr/devel/gh/horde-glue/horde-fw3/framework/iCalendar/iCalendar.php on line 1030
+002- VERSION:2.0
+003- PRODID:-//The Horde Project//Horde_iCalendar Library//EN
+004- METHOD:PUBLISH
+005- BEGIN:VEVENT
+006- UID:XXX
+007- DTSTART;VALUE=DATE:20080101
+008- DTSTAMP;VALUE=DATE:20080101
+009- DESCRIPTION:Lorem ipsum dolor sit amet\, consectetuer adipiscing elit.
+010-   Aliquam sollicitudin faucibus mauris amet.
+011- SUMMARY:
+012- END:VEVENT
+013- END:VCALENDAR
+014- 
+015- BEGIN:VCALENDAR
+016- VERSION:1.0
+017- PRODID:-//The Horde Project//Horde_iCalendar Library//EN
+018- METHOD:PUBLISH
+019- BEGIN:VEVENT
+020- UID:XXX
+021- DTSTART:20080101T000000
+022- DTSTAMP:20080101T000000
+023- DESCRIPTION:Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam sollicitudin faucibus mauris amet.
+024- SUMMARY:
+025- END:VEVENT
+026- END:VCALENDAR
+027- 
+028- BEGIN:VCALENDAR
+029- VERSION:2.0
+030- PRODID:-//The Horde Project//Horde_iCalendar Library//EN
+031- METHOD:PUBLISH
+032- BEGIN:VEVENT
+033- UID:XXX
+034- DTSTART;VALUE=DATE:20080101
+035- DTSTAMP;VALUE=DATE:20080101
+036- DESCRIPTION:Lörem ipsüm dölör sit ämet\, cönsectetüer ädipiscing elit.
+037-   Aliqüäm söllicitüdin fäücibüs mäüris ämet.
+038- SUMMARY:
+039- END:VEVENT
+040- END:VCALENDAR
+041- 
+042- BEGIN:VCALENDAR
+043- VERSION:1.0
+044- PRODID:-//The Horde Project//Horde_iCalendar Library//EN
+045- METHOD:PUBLISH
+046- BEGIN:VEVENT
+047- UID:XXX
+048- DTSTART:20080101T000000
+049- DTSTAMP:20080101T000000
+050- DESCRIPTION;CHARSET=UTF-8;ENCODING=QUOTED-PRINTABLE:L=C3=B6rem ips=C3=BCm d=C3=B6l=C3=B6r sit =C3=A4met,=
+051-  c=C3=B6nsectet=C3=BCer =C3=A4dipiscing elit. Aliq=C3=BC=C3=A4m=
+052-  s=C3=B6llicit=C3=BCdin f=C3=A4=C3=BCcib=C3=BCs m=C3=A4=C3=BCris =C3=A4met.
+053- SUMMARY:
+054- END:VEVENT
+055- END:VCALENDAR
+056- 
+057- BEGIN:VCALENDAR
+058- VERSION:1.0
+059- PRODID:-//The Horde Project//Horde_iCalendar Library//EN
+060- METHOD:PUBLISH
+061- BEGIN:VEVENT
+062- UID:XXX
+063- DTSTART:20080101T000000
+064- DTSTAMP:20080101T000000
+065- DESCRIPTION;CHARSET=UTF-8;ENCODING=QUOTED-PRINTABLE:L=C3=B6remips=C3=BCmd=C3=B6l=C3=B6rsit=C3=A4met,c=C3=B6nsectet=C3=BCer=C3=A=
+066- 4dipiscingelit.Aliq=C3=BC=C3=A4ms=C3=B6llicit=C3=BCdinf=C3=A4=C3=BCcib=C3=B=
+067- Csm=C3=A4=C3=BCris=C3=A4met.=
+068-  L=C3=B6remips=C3=BCmd=C3=B6l=C3=B6rsit=C3=A4met,c=C3=B6nsectet=C3=BCer=C3==
+069- A4dipiscingelit.Aliq=C3=BC=C3=A4ms=C3=B6llicit=C3=BCdinf=C3=A4=C3=BCcib=C3==
+070- BCsm=C3=A4=C3=BCris=C3=A4met.
+071- SUMMARY:
+072- END:VEVENT
+073- END:VCALENDAR
+074- 
+075- BEGIN:VCALENDAR
+076- VERSION:2.0
+077- PRODID:-//The Horde Project//Horde_iCalendar Library//EN
+078- METHOD:PUBLISH
+079- BEGIN:VEVENT
+080- UID:XXX
+081- DTSTART;VALUE=DATE:20080101
+082- DTSTAMP;VALUE=DATE:20080101
+083- DESCRIPTION:SYLVIE DAGORNE a écrit :\n\nBonjour\,\n\nsuite à mon appel
+084-   téléphonique auprès de Jacques Benzerara\, il m'a renvoyé vers vous. En
+085-   effet\, je souhaiterais vous rencontrer car:\n1°) au niveau de
+086-   l'observatoire local nous devons lancer une enquête sur un suivi de
+087-   cohorte à la rentrée prochaine qui concernera tous les étudiants de L1.
+088-   Nous souhaiterons faire un questionnaire en ligne ce questionnaire devra
+089-   être hébergé sur un serveur.\n\n2°) dans le cadre de l'observatoire
+090-   régional\, nos partenaires nous demande également de faire des
+091-   questionnaires en ligne. Nous disposons du logiciel Modalisa qui permet
+092-   de le réaliser mais du point de vu technique\, nous avons besoin de voir
+093-   avec vous\,  les difficultés et les limites d'un tel dispositif afin de
+094-   voir les démarches à suivre et pouvoir évoquer tous ces problèmes
+095-   techniques\, je souhaiterais vous rencontrer. Merci de me précisez vos
+096-   disponibilités?\n...\nJe serai accompagné d'un collègue pour
+097-   l'observatoire local (David Le foll) et de la chargée d'études de
+098-   l'observatoire régional (Amélie Gicquel) pour la partie régionale.
+099- SUMMARY:
+100- END:VEVENT
+101- END:VCALENDAR

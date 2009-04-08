@@ -1,5 +1,14 @@
+----------
+v1.0.1-cvs
+----------
+
+[mjr] Fix issue that caused screen image creation to fail when using gd 
+      Horde_Image driver.
+[mjr] Fix issue with screen images being generated as PNGs if not using VFS 
+      Direct serving.
+
 --------
-v1.0-cvs
+v1.0
 --------
 
 [mjr] Force screen images to be jpegs to reduce image size.

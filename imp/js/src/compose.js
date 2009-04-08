@@ -1,7 +1,7 @@
 /**
  * Provides the javascript for the compose.php script.
  *
- * $Horde: imp/js/src/compose.js,v 1.15.2.14 2008/09/17 15:31:48 jan Exp $
+ * $Horde: imp/js/src/compose.js,v 1.15.2.15 2009/03/30 23:08:41 slusarz Exp $
  *
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.
@@ -14,7 +14,8 @@
  */
 
 var display_unload_warning = true,
-    textarea_ready = true;
+    textarea_ready = true,
+    skip_spellcheck = false;
 
 /**
  * Retrieve the editor object.
@@ -217,13 +218,16 @@ function uniqSubmit(actionID, event)
             return;
         }
 
-        if (compose_spellcheck &&
+        if (!skip_spellcheck &&
+            compose_spellcheck &&
             IMP.SpellCheckerObject &&
             !IMP.SpellCheckerObject.isActive()) {
-            IMP.SpellCheckerObject.spellCheck();
+            IMP.SpellCheckerObject.spellCheck(onNoSpellError.curry(actionID, event));
             return;
         }
     }
+
+    skip_spellcheck = false;
 
     if (IMP.SpellCheckerObject) {
         IMP.SpellCheckerObject.resume();
@@ -245,6 +249,12 @@ function _uniqSubmit()
     } else {
         _uniqSubmit.defer();
     }
+}
+
+function onNoSpellError(actionID, e)
+{
+    skip_spellcheck = true;
+    uniqSubmit(actionID, e);
 }
 
 function attachmentChanged()

@@ -3,7 +3,7 @@
  * Horde_Share_sql:: provides the sql backend for the horde share
  * driver.
  *
- * $Horde: framework/Share/Share/sql.php,v 1.1.2.54 2009/01/12 17:05:42 chuck Exp $
+ * $Horde: framework/Share/Share/sql.php,v 1.1.2.55 2009/03/24 17:47:15 mrubinsk Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -133,7 +133,6 @@ class Horde_Share_sql extends Horde_Share {
             $result->free();
         }
     }
-
     /**
      * Get groups permissions
      *
@@ -646,6 +645,8 @@ class Horde_Share_sql extends Horde_Share {
      */
     function _getShareCriteria($userid, $perm = PERMS_SHOW, $attributes = null)
     {
+        require_once 'Horde/SQL.php';
+
         $query = ' FROM ' . $this->_table . ' s ';
         $where = '';
 
@@ -654,15 +655,15 @@ class Horde_Share_sql extends Horde_Share {
             $where .= 's.share_owner = ' . $this->_write_db->quote($userid);
 
             // (name == perm_creator and val & $perm)
-            $where .= ' OR (s.perm_creator & ' . $perm . ') != 0';
+            $where .= ' OR (' . Horde_SQL::buildClause($this->_db, 's.perm_creator', '&', $perm) . ')';
 
             // (name == perm_creator and val & $perm)
-            $where .= ' OR (s.perm_default & ' . $perm . ') != 0';
+            $where .= ' OR (' . Horde_SQL::buildClause($this->_db, 's.perm_default',  '&', $perm) . ')';
 
             // (name == perm_users and key == $userid and val & $perm)
             $query .= ' LEFT JOIN ' . $this->_table . '_users AS u ON u.share_id = s.share_id';
             $where .= ' OR ( u.user_uid = ' .  $this->_write_db->quote($userid)
-                . ' AND (u.perm & ' . $perm . ') != 0)';
+                . ' AND (' . Horde_SQL::buildClause($this->_db, 'u.perm', '&', $perm) . '))';
 
             // If the user has any group memberships, check for those also.
             require_once 'Horde/Group.php';
@@ -677,12 +678,12 @@ class Horde_Share_sql extends Horde_Share {
                 }
                 $query .= ' LEFT JOIN ' . $this->_table . '_groups AS g ON g.share_id = s.share_id';
                 $where .= ' OR (g.group_uid IN (' . implode(',', $group_ids) . ')'
-                    . ' AND (g.perm & ' . $perm .') != 0)';
+                    . ' AND (' . Horde_SQL::buildClause($this->_db, 'g.perm', '&', $perm) . '))';
             } elseif (is_a($groups, 'PEAR_Error')) {
                 Horde::logMessage($groups, __FILE__, __LINE__, PEAR_LOG_ERR);
             }
         } else {
-            $where = '(s.perm_guest & ' . $perm . ') != 0';
+            $where = '(' . Horde_SQL::buildClause($this->_db, 's.perm_guest', '&', $perm) . ')';
         }
 
         $attributes = $this->_toDriverKeys($attributes);

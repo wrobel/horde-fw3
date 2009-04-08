@@ -19,7 +19,7 @@
  *                  DEFAULT: NONE (system default will be used)</pre>
  *
  *
- * $Horde: framework/Auth/Auth/ldap.php,v 1.47.10.29 2009/01/06 15:22:49 jan Exp $
+ * $Horde: framework/Auth/Auth/ldap.php,v 1.47.10.31 2009/04/04 10:10:54 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -110,9 +110,20 @@ class Auth_ldap extends Auth {
             }
         }
 
-        // Work around Active Directory quirk
-        if (isset($this->_params['ad']) && $this->_params['ad']) {
-            if(!ldap_set_option($this->_ds, LDAP_OPT_REFERRALS, false)) {
+        /* Start TLS if we're using it. */
+        if (!empty($this->_params['tls'])) {
+            if (!@ldap_start_tls($this->_ds)) {
+                Horde::logMessage(
+                    sprintf('STARTTLS failed: [%d] %s',
+                            @ldap_errno($this->_ds),
+                            @ldap_error($this->_ds)),
+                    __FILE__, __LINE__, PEAR_LOG_ERR);
+            }
+        }
+
+        /* Work around Active Directory quirk. */
+        if (!empty($this->_params['ad'])) {
+            if (!ldap_set_option($this->_ds, LDAP_OPT_REFERRALS, false)) {
                 Horde::logMessage(
                     sprintf('Unable to disable directory referrals on this connection to Active Directory: [%d] %s',
                             @ldap_errno($this->_ds),
@@ -150,8 +161,15 @@ class Auth_ldap extends Auth {
         $filter = $this->_getParamFilter();
         $filter = '(&(' . $this->_params['uid'] . '=' . $userId . ')' .
                   $filter . ')';
-        $search = @ldap_search($this->_ds, $this->_params['basedn'],
-                               $filter, array($this->_params['uid']));
+
+        if ($this->_params['scope'] == 'one') {
+            $func = 'ldap_list';
+        } else {
+            $func = 'ldap_search';
+        }
+
+        $search = @$func($this->_ds, $this->_params['basedn'], $filter,
+                         array($this->_params['uid']));
         if (!$search) {
             Horde::logMessage(ldap_error($this->_ds), __FILE__, __LINE__, PEAR_LOG_ERR);
             return PEAR::raiseError(_("Could not search the LDAP server."));
@@ -557,8 +575,18 @@ class Auth_ldap extends Auth {
 
         $filter = $this->_getParamFilter();
 
-        $search = @ldap_search($this->_ds, $this->_params['basedn'], $filter,
-                               array($this->_params['uid']));
+        if ($this->_params['scope'] == 'one') {
+            $func = 'ldap_list';
+        } else {
+            $func = 'ldap_search';
+        }
+
+        /* Add a sizelimit, if specified. Default is 0, which means no limit.
+         * Note: You cannot override a server-side limit with this. */
+        $sizelimit = isset($this->_params['sizelimit']) ? $this->_params['sizelimit'] : 0;
+        $search = @$func($this->_ds, $this->_params['basedn'], $filter,
+                         array($this->_params['uid']), 0, $sizelimit);
+
         $entries = @ldap_get_entries($this->_ds, $search);
         $userlist = array();
         $uid = String::lower($this->_params['uid']);

@@ -1,0 +1,8 @@
+array(1) {
+  [0]=>
+  string(114) "There is a comma (escaped with a baskslash) in this sentence and some important words after it, see anything here?"
+}
+array(1) {
+  [0]=>
+  string(85) "There are important words after this dash - see anything here or have the words gone?"
+}

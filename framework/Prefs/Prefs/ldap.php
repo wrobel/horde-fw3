@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Prefs/Prefs/ldap.php,v 1.85.10.31 2009/01/06 15:23:31 jan Exp $
+ * $Horde: framework/Prefs/Prefs/ldap.php,v 1.85.10.32 2009/04/04 10:10:54 jan Exp $
  *
  * @package Horde_Prefs
  */
@@ -11,43 +11,43 @@ require_once 'Horde/String.php';
 /**
  * Preferences storage implementation for PHP's LDAP extention.
  *
- * Required parameters:<pre>
- *   'basedn'    The base DN for the LDAP server.
- *   'hostspec'  The hostname of the LDAP server.
- *   'uid'       The username search key.</pre>
- *   'writedn'   One of "user", "admin", or "searchdn"
+ * Required parameters:
+ * - 'basedn'    The base DN for the LDAP server.
+ * - 'hostspec'  The hostname of the LDAP server.
+ * - 'uid'       The username search key.
+ * - 'writedn'   One of "user", "admin", or "searchdn"
  *
- * Optional parameters:<pre>
- *   'searchdn'  The DN of a user with search permissions on the directory
- *   'searchpw'  'searchdn's password for binding
- *   'admindn'   The DN of the administrative account to bind for
- *               write operations.
- *   'adminpw'  'admindn's password for bind authentication.
- *   'port'      The port of the LDAP server.
- *               DEFAULT: 389
- *   'version'   The version of the LDAP protocol to use.
- *               DEFAULT: NONE (system default will be used)</pre>
- *
+ * Optional parameters:
+ * - 'searchdn'  The DN of a user with search permissions on the directory
+ * - 'searchpw'  'searchdn's password for binding
+ * - 'admindn'   The DN of the administrative account to bind for
+ * -             write operations.
+ * - 'adminpw'  'admindn's password for bind authentication.
+ * - 'port'      The port of the LDAP server.
+ * -             DEFAULT: 389
+ * - 'version'   The version of the LDAP protocol to use.
+ * -             DEFAULT: NONE (system default will be used)
+ * - 'tls'       Whether to use TLS connections. DEFAULT: false
  *
  * If setting up as the Horde preference handler in conf.php, the following
  * is an example configuration.
  * The schemas needed for ldap are in horde/scripts/ldap.
  *
- * <pre>
- *   $conf['prefs']['driver'] = 'ldap';
- *   $conf['prefs']['params']['hostspec'] = 'localhost';
- *   $conf['prefs']['params']['port'] = '389';
- *   $conf['prefs']['params']['basedn'] = 'dc=example,dc=org';
- *   $conf['prefs']['params']['uid'] = 'mail';
- * </pre>
+ * <code>
+ * $conf['prefs']['driver'] = 'ldap';
+ * $conf['prefs']['params']['hostspec'] = 'localhost';
+ * $conf['prefs']['params']['port'] = '389';
+ * $conf['prefs']['params']['basedn'] = 'dc=example,dc=org';
+ * $conf['prefs']['params']['uid'] = 'mail';
+ * </code>
  *
- * The following is valid but would only be necessary if users
- * do NOT have permission to modify their own LDAP accounts.
+ * The following is valid but would only be necessary if users do NOT have
+ * permission to modify their own LDAP accounts.
  *
- * <pre>
- *   $conf['prefs']['params']['admindn'] = 'cn=Manager,dc=example,dc=org';
- *   $conf['prefs']['params']['adminpw'] = 'password';
- * </pre>
+ * <code>
+ * $conf['prefs']['params']['admindn'] = 'cn=Manager,dc=example,dc=org';
+ * $conf['prefs']['params']['adminpw'] = 'password';
+ * </code>
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -165,6 +165,17 @@ class Prefs_ldap extends Prefs {
                             @ldap_error($conn)),
                     __FILE__, __LINE__, PEAR_LOG_WARNING);
                 return PEAR::raiseError(_("Internal LDAP error.  Details have been logged for the administrator."));
+            }
+        }
+
+        /* Start TLS if we're using it. */
+        if (!empty($this->_params['tls'])) {
+            if (!@ldap_start_tls($conn)) {
+                Horde::logMessage(
+                    sprintf('STARTTLS failed: [%d] %s',
+                            @ldap_errno($this->_ds),
+                            @ldap_error($this->_ds)),
+                    __FILE__, __LINE__, PEAR_LOG_ERR);
             }
         }
 

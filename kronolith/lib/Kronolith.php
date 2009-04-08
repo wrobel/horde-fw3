@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: kronolith/lib/Kronolith.php,v 1.263.2.80 2009/01/13 15:46:33 chuck Exp $
+ * $Horde: kronolith/lib/Kronolith.php,v 1.263.2.81 2009/03/25 23:49:29 jan Exp $
  *
  * @package Kronolith
  */
@@ -989,7 +989,7 @@ class Kronolith {
                     } else {
                         $addEvent->start = new Horde_Date(array(
                             'hour' => 0, 'min' => 0, 'sec' => 0,
-                            'month' => $eventStart->month, 'mday' => $eventStart->mday, 'year' => $eventStart->year));
+                            'month' => $loopDate->month, 'mday' => $loopDate->mday, 'year' => $loopDate->year));
                     }
 
                     /* If this is the end day, set the end time to the
@@ -999,7 +999,7 @@ class Kronolith {
                     } else {
                         $addEvent->end = new Horde_Date(array(
                             'hour' => 23, 'min' => 59, 'sec' => 59,
-                            'month' => $eventEnd->month, 'mday' => $eventEnd->mday, 'year' => $eventEnd->year));
+                            'month' => $loopDate->month, 'mday' => $loopDate->mday, 'year' => $loopDate->year));
                     }
 
                     $results[$loopDate->timestamp()][$addEvent->getId()] = $addEvent;

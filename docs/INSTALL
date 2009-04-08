@@ -2,8 +2,8 @@
  Installing the Horde 3.3 Framework
 ====================================
 
-:Last update:   $Date: 2008/09/05 14:09:06 $
-:Revision:      $Revision: 1.90.6.22 $
+:Last update:   $Date: 2009/04/04 12:30:52 $
+:Revision:      $Revision: 1.90.6.23 $
 :Contact:       horde@lists.horde.org
 
 .. contents:: Contents
@@ -359,6 +359,16 @@ The following prerequisites are **REQUIRED** for Horde to function properly.
       To install, enter the following at the command prompt::
 
         pear install HTTP_WebDAV_Server-beta
+
+   f. Net_DNS
+
+      If installed, it will be used instead of the built-in PHP function
+      gethostbyaddr() for host name lookups. This has the advantage that
+      Net_DNS has configurable timeouts and retries. Net_DNS requires the
+      ``mhash`` PHP extension.
+      To install, enter the following at the command prompt::
+
+        pear install Net_DNS
 
    This method of installing PEAR modules requires that you have a PHP version
    that has been compiled as a static binary.  All versions of PHP 4.3.0+

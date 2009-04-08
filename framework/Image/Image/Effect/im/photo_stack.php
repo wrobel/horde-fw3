@@ -5,7 +5,7 @@
  * The technique for the Polaroid-like stack using the Imagick extension is
 *  credited to Mikko Koppanen and is documented at http://valokuva.org
  *
- * $Horde: framework/Image/Image/Effect/im/photo_stack.php,v 1.33.2.3 2009/01/07 01:29:56 mrubinsk Exp $
+ * $Horde: framework/Image/Image/Effect/im/photo_stack.php,v 1.33.2.4 2009/03/23 18:15:48 mrubinsk Exp $
  *
  * @author  Michael J. Rubinsky <mrubinsk@horde.org>
  * @since   Horde 3.2
@@ -182,7 +182,23 @@ class Horde_Image_Effect_im_photo_stack extends Horde_Image_Effect {
                 $image->removeImage();
                 $image->destroy();
             }
+            // If we have a background other than 'none' we need to
+            // compose two images together to make sure we *have* a background.
+            if ($this->_params['background'] != 'none') {
+                $size = $this->_image->getDimensions();
+                $new = new Horde_Image_ImagickProxy($length * 1.5 + 20,
+                                                    $length * 1.5 + 20,
+                                                    $this->_params['background'],
+                                                    $this->_image->_type);
 
+
+
+                $new->compositeImage($this->_image->_imagick,
+                                     constant('Imagick::COMPOSITE_OVER'), 0, 0);
+                $this->_image->_imagick->clear();
+                $this->_image->_imagick->addImage($new);
+                $new->destroy();
+            }
             // Trim the canvas before resizing to keep the thumbnails as large
             // as possible.
             $this->_image->_imagick->trimImage(0);
@@ -191,11 +207,13 @@ class Horde_Image_Effect_im_photo_stack extends Horde_Image_Effect {
                                                      $this->_params['padding'],
                                                      $this->_params['padding']);
             }
+
         } else {
             // No Imagick installed - use im, but make sure we don't mix imagick
             // and convert.
             $this->_image->_imagick = null;
             $this->_image->raw();
+
             switch ($this->_params['type']) {
             case 'plain':
             case 'rounded':
@@ -205,6 +223,10 @@ class Horde_Image_Effect_im_photo_stack extends Horde_Image_Effect {
                                                            $this->_params['resize_height'],
                                                            true);
                 $size = $this->_params['images'][$cnt - 1]->getDimensions();
+                //$this->_image->resize(2 * $this->_params['resize_height'], 2 * $this->_params['resize_height']);
+                for ($i = 0; $i < $cnt; $i++) {
+                    $this->_params['images'][$i]->resize($size['height'], $size['width'], false);
+                }
                 $xo = $yo = (count($this->_params['images']) + 1) * $this->_params['offset'];
                 $ops = '';
                 $haveBottom = false;
@@ -218,11 +240,15 @@ class Horde_Image_Effect_im_photo_stack extends Horde_Image_Effect {
                         $temp = $image->toFile();
                     }
                     $this->_image->_toClean[] = $temp;
-                    $ops .= ' \( ' . $temp . ' -thumbnail ' . $size['width'] . 'x' . $size['height'] . '! -repage +' . $xo . '+' . $yo . ' -bordercolor "#333" -border 1 ' . ((!$haveBottom) ? '\( +clone -shadow 80x4+0+0 \) +swap -mosaic' : '') . ' \) ';
+                    $ops .= ' \( ' . $temp . ' -background none -thumbnail ' . $size['width'] . 'x' . $size['height'] . '! -repage +' . $xo . '+' . $yo . ($this->_params['type'] == 'plain' ? ' -bordercolor "#333" -border 1 ' : ' ' ) . ((!$haveBottom) ? '\( +clone -shadow 80x4+0+0 \) +swap -mosaic' : '') . ' \) ';
                     $haveBottom = true;
                 }
 
-                $this->_image->_postSrcOperations[] = '-background none' . $ops . '-mosaic -bordercolor ' . $this->_params['background'] . ' -border ' . $this->_params['padding'];
+                // The first -background none option below is only honored in
+                // convert versions before 6.4 it seems. Without it specified as
+                // none here, all stacks come out with a white background.
+                $this->_image->_postSrcOperations[] = $ops . ' -background ' . $this->_params['background'] . ' -mosaic -bordercolor ' . $this->_params['background'] . ' -border ' . $this->_params['padding'];
+
                 break;
 
             case 'polaroid':
@@ -293,10 +319,10 @@ class Horde_Image_Effect_im_photo_stack extends Horde_Image_Effect {
             return $return;
         } else {
             $size = $image->getDimensions();
-            $params = array('temp' => $this->_image->_tmpdir);
+            $params = array('temp' => $this->_image->_tmpdir,
+                            'data' => $image->raw());
             $new = Horde_Image::factory('im', $params);
-            $new->loadString('somestring', $image->raw());
-            $new->addEffect('round_corners', array('border' => 2, 'bordercolor' => '#111'));
+            $new->addEffect('round_corners', array('border' => 2, 'bordercolor' => '#111', 'background' => 'none'));
             $new->applyEffects();
             return $new->toFile();
         }

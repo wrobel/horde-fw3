@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/NLS/NLS.php,v 1.82.4.22 2009/01/06 15:23:26 jan Exp $
+ * $Horde: framework/NLS/NLS.php,v 1.82.4.23 2009/04/04 12:30:50 jan Exp $
  *
  * @package Horde_NLS
  */
@@ -500,7 +500,15 @@ class NLS {
 
         $checkHost = $host;
         if (preg_match('/^\d+\.\d+\.\d+\.\d+$/', $host)) {
-            $checkHost = @gethostbyaddr($host);
+            if ((@include_once 'Net/DNS.php')) {
+                $resolver = new Net_DNS_Resolver();
+                $resolver->retry = isset($GLOBALS['conf']['dns']['retry']) ? $GLOBALS['conf']['dns']['retry'] : 1;
+                $resolver->retrans = isset($GLOBALS['conf']['dns']['retrans']) ? $GLOBALS['conf']['dns']['retrans'] : 1;
+                $response = $resolver->query($host, 'PTR');
+                $checkHost = $response ? $response->answer[0]->ptrdname : $host;
+            } else {
+                $checkHost = @gethostbyaddr($host);
+            }
         }
 
         /* Get the TLD of the hostname. */

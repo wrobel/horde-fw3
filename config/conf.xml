@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- $Horde: horde/config/conf.xml,v 1.74.2.81 2008/11/27 05:29:45 chuck Exp $ -->
+<!-- $Horde: horde/config/conf.xml,v 1.74.2.84 2009/04/04 12:30:51 jan Exp $ -->
 <configuration>
  <configtab name="general" desc="General">
   <configheader>General Horde Settings</configheader>
@@ -302,17 +302,27 @@
       to the LDAP server"/>
       <configstring name="password" required="false" desc="The password used
       to bind to the LDAP server"/>
-      <configenum name="version" desc="LDAP Protocol Version">3
+      <configenum name="version" desc="LDAP protocol version">3
        <values>
-        <value desc="LDAPv2 (Deprecated)">2</value>
+        <value desc="LDAPv2 (deprecated)">2</value>
         <value desc="LDAPv3">3</value>
        </values>
       </configenum>
+      <configboolean name="tls" desc="Enable TLS?">false</configboolean>
+      <configenum name="scope" desc="Search scope">sub
+       <values>
+        <value desc="Subtree search">sub</value>
+        <value desc="One level">one</value>
+       </values>
+      </configenum>
+      <configstring name="sizelimit" required="false" desc="Size limit for
+      listing users on large directories"/>
       <configboolean name="ad" desc="Is this an AD server?">
       false</configboolean>
       <configstring name="uid" desc="The username search key (set to
       samaccountname for AD)"/>
-      <configenum name="encryption" desc="The password hashing algorithm to use">ssha
+      <configenum name="encryption" desc="The password hashing algorithm to
+      use">ssha
        <values>
         <value>aprmd5</value>
         <value>crypt</value>
@@ -888,12 +898,13 @@
        localhost</configstring>
        <configinteger name="port" desc="The port of the LDAP server">
        389</configinteger>
-       <configenum name="version" desc="LDAP Protocol Version">3
+       <configenum name="version" desc="LDAP protocol version">3
         <values>
-         <value desc="LDAPv2 (Deprecated)">2</value>
+         <value desc="LDAPv2 (deprecated)">2</value>
          <value desc="LDAPv3">3</value>
         </values>
        </configenum>
+       <configboolean name="tls" desc="Enable TLS?">false</configboolean>
        <configstring name="basedn" desc="The base DN for LDAP preference
        searches"/>
        <configstring name="searchdn" required="false" desc="DN with which to
@@ -985,17 +996,19 @@
         to the LDAP server"/>
         <configstring name="password" required="false" desc="The password used
         to bind to the LDAP server"/>
-        <configenum name="version" desc="LDAP Protocol Version">3
+        <configenum name="version" desc="LDAP protocol version">3
          <values>
-          <value desc="LDAPv2 (Deprecated)">2</value>
+          <value desc="LDAPv2 (deprecated)">2</value>
           <value desc="LDAPv3">3</value>
          </values>
         </configenum>
+        <configboolean name="tls" desc="Enable TLS?">false</configboolean>
         <configstring name="gid" desc="The group search key">cn</configstring>
         <configstring name="memberuid" desc="Group membership field">
         memberUid</configstring>
         <configboolean name="attrisdn" required="false"
-         desc="If checked, the user member attributes returned from LDAP are expected to be fully qualified DNs"/>
+         desc="If checked, the user member attributes returned from LDAP are
+        expected to be fully qualified DNs"/>
         <configlist name="newgroup_objectclass" desc="What objectclasses should
         a new group be member of? These objectclasses should cover the mail and
         gidnumber attributes as well as the group search key">
@@ -1467,6 +1480,20 @@
   </configsection>
  </configtab>
 
+ <configtab name="dns" desc="DNS Lookups">
+  <configsection name="dns">
+   <configheader>DNS Lookup Settings</configheader>
+   <configinteger name="retrans" required="false" desc="If installed, Horde
+   can use the PEAR Net_DNS module for DNS lookups. Set the amount of time
+   in seconds the resolver will wait for a response from a remote name server
+   before retrying the query. Defaults to 1."/>
+   <configinteger name="retry" required="false" desc="If installed, Horde
+   can use the PEAR Net_DNS module for DNS lookups. Set the number of times
+   the resolver will send a query to its name servers before giving
+   up. Defaults to 1."/>
+  </configsection>
+ </configtab>
+ 
  <configtab name="problems" desc="Problem Reporting">
   <configsection name="problems">
    <configheader>Problem Reporting Settings</configheader>

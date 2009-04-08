@@ -2,9 +2,9 @@
 /**
  * A script for fetching the Kolab Free/Busy information.
  *
- * $Horde: framework/Kolab_FreeBusy/www/Horde/Kolab/FreeBusy/freebusy.php,v 1.4.2.1 2009/03/06 18:12:02 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/www/Horde/Kolab/FreeBusy/freebusy.php,v 1.4.2.2 2009/04/02 18:37:58 wrobel Exp $
  *
- * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
+ * Copyright 2004-2009 Klarälvdalens Datakonsult AB
  *
  * @author  Steffen Hansen <steffen@klaralvdalens-datakonsult.se>
  * @author  Gunnar Wrobel <p@rdus.de>

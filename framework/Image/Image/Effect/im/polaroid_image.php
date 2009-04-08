@@ -2,7 +2,7 @@
 /**
  * Effect for creating a polaroid looking image.
  *
- * $Horde: framework/Image/Image/Effect/im/polaroid_image.php,v 1.7.2.1 2007/12/20 13:49:11 jan Exp $
+ * $Horde: framework/Image/Image/Effect/im/polaroid_image.php,v 1.7.2.2 2009/03/23 18:15:48 mrubinsk Exp $
  *
  * @author  Michael J. Rubinsky <mrubinsk@horde.org>
  * @since   Horde 3.2
@@ -49,32 +49,31 @@ class Horde_Image_Effect_im_polaroid_image extends Horde_Image_Effect {
                 return $result;
             }
 
-            // If we want a background color we need to create a new image
-            // to composite the polaroid over.
-            if ($this->_params['background'] != 'none') {
-                $size = $this->_image->getDimensions();
-                $imk = new Horde_Image_ImagickProxy($size['width'],
-                                                    $size['height'],
-                                                    $this->_params['background'],
-                                                    $this->_image->_type);
+            // We need to create a new image to composite the polaroid over.
+            // (yes, even if it's a transparent background evidently)
+            $size = $this->_image->getDimensions();
+            $imk = new Horde_Image_ImagickProxy($size['width'],
+                                                $size['height'],
+                                                $this->_params['background'],
+                                                $this->_image->_type);
 
-                $result = $imk->compositeImage($this->_image->_imagick,
-                                           constant('Imagick::COMPOSITE_OVER'),
-                                           0, 0);
-                if (is_a($result, 'PEAR_Error')) {
-                    return $result;
-                }
-                $this->_image->_imagick->clear();
-                $this->_image->_imagick->addImage($imk);
-                $imk->destroy();
+            $result = $imk->compositeImage($this->_image->_imagick,
+                                       constant('Imagick::COMPOSITE_OVER'),
+                                       0, 0);
+            if (is_a($result, 'PEAR_Error')) {
+                return $result;
             }
+            $this->_image->_imagick->clear();
+            $this->_image->_imagick->addImage($imk);
+            $imk->destroy();
+
 
         } else {
             // Check for im version > 6.3.2
             $this->_image->_imagick = null;
             $ver = $this->_image->_getIMVersion();
             if (is_array($ver) && version_compare($ver[0], '6.3.2') >= 0) {
-                $this->_image->_postSrcOperations[] = sprintf("-bordercolor \"#eee\" -background black -polaroid %s \( +clone -fill %s -draw 'color 0,0 reset' \) +swap +flatten",
+                $this->_image->_postSrcOperations[] = sprintf("-bordercolor \"#eee\" -background none -polaroid %s \( +clone -fill %s -draw 'color 0,0 reset' \) +swap +flatten",
                                                               $this->_params['angle'], $this->_params['background']);
             } else {
                 $size = $this->_image->getDimensions();

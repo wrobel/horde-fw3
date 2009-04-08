@@ -8,7 +8,7 @@ require_once 'Horde/Form/Renderer.php';
  * new users sign themselves up into the horde installation, depending
  * on how the admin has configured Horde.
  *
- * $Horde: framework/Auth/Auth/Signup.php,v 1.38.2.18 2009/01/06 15:22:49 jan Exp $
+ * $Horde: framework/Auth/Auth/Signup.php,v 1.38.2.19 2009/04/07 12:11:26 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -80,6 +80,12 @@ class Auth_Signup {
             if (is_a($info, 'PEAR_Error')) {
                 return $info;
             }
+        }
+
+        // Check to see if the username already exists.
+        if ($auth->exists($info['user_name']) ||
+            $this->exists($info['user_name'])) {
+            return PEAR::raiseError(sprintf(_("Username \"%s\" already exists."), $info['user_name']));
         }
 
         // Attempt to add the user to the system.

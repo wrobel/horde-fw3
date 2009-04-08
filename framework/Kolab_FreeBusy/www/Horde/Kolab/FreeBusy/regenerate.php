@@ -2,9 +2,9 @@
 /**
  * A script for regenerating the Kolab Free/Busy cache.
  *
- * $Horde: framework/Kolab_FreeBusy/www/Horde/Kolab/FreeBusy/regenerate.php,v 1.3.2.2 2009/03/06 20:47:40 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/www/Horde/Kolab/FreeBusy/regenerate.php,v 1.3.2.3 2009/04/02 18:37:58 wrobel Exp $
  *
- * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
+ * Copyright 2004-2009 Klarälvdalens Datakonsult AB
  *
  * @author  Gunnar Wrobel <p@rdus.de>
  * @author  Thomas Arendsen Hein <thomas@intevation.de>
@@ -22,6 +22,7 @@ ini_set('memory_limit', -1);
  * Util:: as well as the PEAR constants
  */ 
 require_once 'Horde/Kolab/FreeBusy.php';
+require_once 'Horde/Kolab/FreeBusy/Report.php';
 
 /** Load the configuration */ 
 require_once 'config.php';
@@ -32,24 +33,18 @@ if (empty($_SERVER['SERVER_NAME'])) {
     $_SERVER['SERVER_NAME'] = $conf['kolab']['imap']['server'];
 }
 
+$fb_reporter = &new Horde_Kolab_FreeBusy_Report();
+
+$fb_reporter->start();
+
 $fb = &new Horde_Kolab_FreeBusy();
-$result = $fb->regenerate();
+$result = $fb->regenerate($fb_reporter);
 if (is_a($result, 'PEAR_Error')) {
     echo $result->getMessage();
     exit(1);
 }
-
-if (!is_array($result)) {
-    $result = array($result);
-}
-
-if (PHP_SAPI == 'cli') {
-    $break = "";
-} else {
-    $break = '<br/>';
-}
-
-foreach ($result as $line) {
-    echo $line . $break;
+$result = $fb_reporter->stop();
+if ($result === false) {
+    exit(1);
 }
 exit(0);

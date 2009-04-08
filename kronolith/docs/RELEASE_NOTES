@@ -12,12 +12,12 @@
  * 8 - Minor security fixes
  * 9 - Major security fixes
  */
-$this->notes['fm']['focus'] = 5;
+$this->notes['fm']['focus'] = 6;
 
 /* Mailing list release notes. */
 $this->notes['ml']['changes'] = <<<ML
 The Horde Team is pleased to announce the final release of the Kronolith
-Calendar Application version H3 (2.3).
+Calendar Application version H3 (2.3.1).
 
 Kronolith is the Horde calendar application.  It provides web-based calendars
 backed by a SQL database or a Kolab server.  Supported features include shared
@@ -25,22 +25,18 @@ calendars, remote calendars, meeting management, alarms, recurring events, and
 a sophisticated day/week view which handles arbitrary numbers of overlapping
 events.
 
-Kronolith version H3 (2.3) is a major upgrade in the 2.x release series,
-including these enhancements:
-    * Added maintenance task for purging old events.
-    * Added calendar feeds.
-    * Added calendar widgets embeddable into external websites.
-    * Changed year view to highlight days with busy events.
-    * Improved deleting user data.
-    * Added Basque and Estonian translations.
+The major changes compared to the Kronolith version H3 (2.3) are:
+    * Added script to import events from SquirrelMail calendars.
+    * Added option to manually change attendee responses.
+    * Improved holidays support.
+    * Many minor bug fixes.
 ML;
 
 /* Freshmeat release notes, not more than 600 characters. */
 $this->notes['fm']['changes'] = <<<FM
-A maintenance task for purging old events, calendar feeds, and calendar widgets that can be embedded into external websites, have been added.
-The year view highlights days with busy events now.
-Deleting user data and WebDAV support have been improved.
-Basque and Estonian translations have been added.
+A script to import events from SquirrelMail calendars has been added.
+An option to manually change attendee responses has been added.
+Holidays support has been improved and many minor bug fixes have been made.
 FM;
 
 $this->notes['name'] = 'Kronolith';

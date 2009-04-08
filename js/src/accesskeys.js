@@ -17,7 +17,7 @@ var AccessKeys = {
     keydownHandler: function(e)
     {
         if ((this.macos && e.ctrlKey) ||
-            (e.altKey && !e.ctrlKey)) {
+            (!this.macos && e.altKey && !e.ctrlKey)) {
             var kc = String.fromCharCode(e.keyCode || e.charCode).toUpperCase();
             if (this.elements[kc]) {
                 this.execute(this.elements[kc], e);

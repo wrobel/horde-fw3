@@ -2,7 +2,7 @@
 /**
  * @package SyncML
  *
- * $Horde: framework/SyncML/SyncML/Device/Sync4j.php,v 1.8.2.24 2009/01/06 15:23:39 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Device/Sync4j.php,v 1.8.2.25 2009/04/05 21:38:49 jan Exp $
  */
 
 /** Horde_Date */
@@ -372,6 +372,9 @@ class SyncML_Device_sync4j extends SyncML_Device {
         }
 
         if ($a['AllDayEvent'] == 1) {
+            // Not exactly correct, we ignore the start and end time of
+            // all-day events and simple assume that the client had set them
+            // correctly to 0:00.
             $startTime = $iCal->_parseDateTime($a['Start']);
             $vEvent->setAttribute('DTSTART',
                                   array('year' => date('Y', $startTime),
@@ -840,7 +843,7 @@ class SyncML_Device_sync4j extends SyncML_Device {
                 if (!empty($item['params']['VALUE']) &&
                     $item['params']['VALUE'] == 'DATE') {
                     $hash['AllDayEvent'] = 1;
-                    $hash['Start'] = sprintf('%04d-%02d-%02d',
+                    $hash['Start'] = sprintf('%04d-%02d-%02dT00:00:00Z',
                                              $item['value']['year'],
                                              $item['value']['month'],
                                              $item['value']['mday']);
@@ -858,9 +861,9 @@ class SyncML_Device_sync4j extends SyncML_Device {
 
             case 'DTEND':
                 if (!empty($item['params']['VALUE']) &&
-                    $item['params']['VALUE'] == "DATE") {
+                    $item['params']['VALUE'] == 'DATE') {
                     $hash['AllDayEvent'] = 1;
-                    $hash['End'] = sprintf('%04d-%02d-%02d',
+                    $hash['End'] = sprintf('%04d-%02d-%02dT00:00:00Z',
                                            $item['value']['year'],
                                            $item['value']['month'],
                                            $item['value']['mday']);

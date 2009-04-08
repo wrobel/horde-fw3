@@ -3,7 +3,7 @@
  * Kronolith_Driver defines an API for implementing storage backends for
  * Kronolith.
  *
- * $Horde: kronolith/lib/Driver.php,v 1.116.2.80 2008/09/03 20:26:37 mrubinsk Exp $
+ * $Horde: kronolith/lib/Driver.php,v 1.116.2.81 2009/03/30 16:59:16 jan Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Jan Schneider <jan@horde.org>
@@ -1916,6 +1916,14 @@ class Kronolith_Event {
             case HORDE_DATE_RECUR_YEARLY_WEEKDAY:
                 $this->recurrence->setRecurInterval(Util::getFormData('recur_yearly_weekday_interval', 1));
                 break;
+            }
+
+            if ($exceptions = Util::getFormData('exceptions')) {
+                foreach ($exceptions as $exception) {
+                    $this->recurrence->addException((int)substr($exception, 0, 4),
+                                                    (int)substr($exception, 4, 2),
+                                                    (int)substr($exception, 6, 2));
+                }
             }
         }
 

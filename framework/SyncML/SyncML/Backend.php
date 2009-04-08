@@ -165,7 +165,7 @@
  *    testTearDown() to create a clean (empty) enviroment for the test user
  *    "syncmltest".  See the SyncML_Backend_Sql implementation for details.
  *
- * $Horde: framework/SyncML/SyncML/Backend.php,v 1.8.2.15 2009/01/06 15:23:37 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Backend.php,v 1.8.2.17 2009/04/05 21:38:48 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *
@@ -194,7 +194,7 @@ class SyncML_Backend {
      *
      * @var string
      */
-    var $_logtext;
+    var $_logtext = '';
 
     /**
      * The directory where debugging information is stored.
@@ -219,7 +219,7 @@ class SyncML_Backend {
      * @see SyncML_Backend()
      * @var integer
      */
-    var $_logLevel;
+    var $_logLevel = PEAR_LOG_INFO;
 
     /**
      * The charset used in the SyncML messages.
@@ -277,16 +277,11 @@ class SyncML_Backend {
     {
         if (!empty($params['debug_dir']) && is_dir($params['debug_dir'])) {
             $this->_debugDir = $params['debug_dir'];
-            $this->_logtext = '';
-        } else {
-            $this->_debugDir = null;
-            $this->_logtext = null;
         }
-
         $this->_debugFiles = !empty($params['debug_files']);
-        $this->_logLevel = isset($params['log_level'])
-            ? $params['log_level']
-            : PEAR_LOG_INFO;
+        if (isset($params['log_level'])) {
+            $this->_logLevel = $params['log_level'];
+        }
 
         $this->logMessage('Backend of class ' . get_class($this) . ' created',
                           __FILE__, __LINE__, PEAR_LOG_DEBUG);
@@ -395,6 +390,16 @@ class SyncML_Backend {
     }
 
     /**
+     * Is called after the SyncML_State object has been set up, either
+     * restored from the session, or freshly created.
+     *
+     * @param SyncML_State  The current state object.
+     */
+    function setupState(&$state)
+    {
+    }
+
+    /**
      * Starts a PHP session.
      *
      * @param string $syncDeviceID  The device ID.
@@ -484,7 +489,7 @@ class SyncML_Backend {
     function getServerChanges($databaseURI, $from_ts, $to_ts, &$adds, &$mods,
                               &$dels)
     {
-        die('Not implemented!');
+        die('getServerChanges() not implemented!');
     }
 
     /**
@@ -505,7 +510,7 @@ class SyncML_Backend {
      */
     function retrieveEntry($databaseURI, $suid, $contentType)
     {
-        die('Not implemented!');
+        die('retrieveEntry() not implemented!');
     }
 
     /**
@@ -525,7 +530,7 @@ class SyncML_Backend {
      */
     function addEntry($databaseURI, $content, $contentType, $cuid)
     {
-        die('Not implemented!');
+        die('addEntry() not implemented!');
     }
 
     /**
@@ -545,7 +550,7 @@ class SyncML_Backend {
      */
     function replaceEntry($databaseURI, $content, $contentType, $cuid)
     {
-        die('Not implemented!');
+        die('replaceEntry() not implemented!');
     }
 
     /**
@@ -563,7 +568,7 @@ class SyncML_Backend {
      */
     function deleteEntry($databaseURI, $cuid)
     {
-        die('Not implemented!');
+        die('deleteEntry() not implemented!');
     }
 
     /**
@@ -575,8 +580,6 @@ class SyncML_Backend {
      * username that is used for the session, overriding any username
      * specified in <LocName>.
      *
-     * @abstract
-     *
      * @param string $username    Username as provided in the <SyncHdr>.
      *                            May be overwritten by $credData.
      * @param string $credData    Authentication data provided by <Cred><Data>
@@ -587,11 +590,87 @@ class SyncML_Backend {
      *                            in the <SyncHdr>. Typically
      *                            'syncml:auth-basic'.
      *
-     * @return boolean  True if authentication succeeded.
+     * @return boolean|string  The user name if authentication succeeded, false
+     *                         otherwise.
      */
     function checkAuthentication(&$username, $credData, $credFormat, $credType)
     {
-        die('Not implemented!');
+        if (empty($credData) || empty($credType)) {
+            return false;
+        }
+
+        switch ($credType) {
+        case 'syncml:auth-basic':
+            list($username, $pwd) = explode(':', base64_decode($credData), 2);
+            $this->logMessage('Checking authentication for user ' . $username,
+                              __FILE__, __LINE__, PEAR_LOG_DEBUG);
+            return $this->_checkAuthentication($username, $pwd);
+
+        case 'syncml:auth-md5':
+            /* syncml:auth-md5 only transfers hash values of passwords.
+             * Currently the syncml:auth-md5 hash scheme is not supported
+             * by the authentication backend. So we can't use Horde to do
+             * authentication. Instead here is a very crude direct manual hook:
+             * To allow authentication for a user 'dummy' with password 'sync',
+             * run
+             * php -r 'print base64_encode(pack("H*",md5("dummy:sync")));'
+             * from the command line. Then create an entry like
+             *  'dummy' => 'ZD1ZeisPeQs0qipHc9tEsw==' in the users array below,
+             * where the value is the command line output.
+             * This user/password combination is then accepted for md5-auth.
+             */
+            $users = array(
+                  // example for user dummy with pass pass:
+                  // 'dummy' => 'ZD1ZeisPeQs0qipHc9tEsw=='
+                          );
+            if (empty($users[$username])) {
+                return false;
+            }
+
+            // @todo: nonce may be specified by client. Use it then.
+            $nonce = '';
+            if (base64_encode(pack('H*', md5($users[$username] . ':' . $nonce))) === $credData) {
+                return $this->_setAuthenticated($username, $credData);
+            }
+            return false;
+
+        default:
+            $this->logMessage('Unsupported authentication type ' . $credType,
+                              __FILE__, __LINE__, PEAR_LOG_ERR);
+            return false;
+        }
+    }
+
+    /**
+     * Authenticates the user at the backend.
+     *
+     * @abstract
+     *
+     * @param string $username    A user name.
+     * @param string $password    A password.
+     *
+     * @return boolean|string  The user name if authentication succeeded, false
+     *                         otherwise.
+     */
+    function _checkAuthentication($username, $password)
+    {
+        die('_checkAuthentication() not implemented!');
+    }
+
+    /**
+     * Sets a user as being authenticated at the backend.
+     *
+     * @abstract
+     *
+     * @param string $username    A user name.
+     * @param string $credData    Authentication data provided by <Cred><Data>
+     *                            in the <SyncHdr>.
+     *
+     * @return string  The user name.
+     */
+    function setAuthenticated($username, $credData)
+    {
+        die('setAuthenticated() not implemented!');
     }
 
     /**
@@ -699,6 +778,7 @@ class SyncML_Backend {
     function logMessage($message, $file, $line, $priority = PEAR_LOG_INFO)
     {
         if ($priority > $this->_logLevel)  {
+            var_dump($priority);
             return;
         }
 
@@ -875,7 +955,7 @@ class SyncML_Backend {
      */
     function testSetup($user, $pwd)
     {
-        die('Not implemented!');
+        die('testSetup() not implemented!');
     }
 
     /**
@@ -885,7 +965,7 @@ class SyncML_Backend {
      */
     function testStart($user)
     {
-        die('Not implemented!');
+        die('testStart() not implemented!');
     }
 
     /**
@@ -897,7 +977,7 @@ class SyncML_Backend {
      */
     function testTearDown()
     {
-        die('Not implemented!');
+        die('testTearDown() not implemented!');
     }
 
     /**

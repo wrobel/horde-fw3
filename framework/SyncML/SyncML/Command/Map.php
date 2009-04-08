@@ -9,7 +9,7 @@ require_once 'SyncML/Command.php';
  *
  * The Map command is used to update identifier maps.
  *
- * $Horde: framework/SyncML/SyncML/Command/Map.php,v 1.1.10.11 2009/01/06 15:23:38 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Command/Map.php,v 1.1.10.12 2009/04/05 20:24:43 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *
@@ -59,6 +59,13 @@ class SyncML_Command_Map extends SyncML_Command {
     var $_mapSource;
 
     /**
+     * Whether we have seen a MapItem element.
+     *
+     * @var boolean
+     */
+    var $_mapItem = false;
+
+    /**
      * Start element handler for the XML parser, delegated from
      * SyncML_ContentHandler::startElement().
      *
@@ -72,6 +79,7 @@ class SyncML_Command_Map extends SyncML_Command {
 
         if (count($this->_stack) == 2 &&
             $element == 'MapItem') {
+            $this->_mapItem = true;
             unset($this->_mapTarget);
             unset($this->_mapSource);
         }
@@ -86,25 +94,7 @@ class SyncML_Command_Map extends SyncML_Command {
      */
     function endElement($uri, $element)
     {
-        $state = &$_SESSION['SyncML.state'];
-
         switch (count($this->_stack)) {
-        case 2:
-            if ($element == 'MapItem') {
-                $sync = &$state->getSync($this->_targetLocURI);
-                if (!$state->authenticated) {
-                    $GLOBALS['backend']->logMessage(
-                        'Not authenticated while processing MapItem',
-                        __FILE__, __LINE__, PEAR_LOG_ERR);
-                } else {
-                    // @todo: move business logic to handleCommand().
-                    $sync->createUidMap($this->_targetLocURI,
-                                        $this->_mapSource,
-                                        $this->_mapTarget);
-                }
-            }
-            break;
-
         case 3:
             if ($element == 'LocURI') {
                 if ($this->_stack[1] == 'Source') {
@@ -131,9 +121,25 @@ class SyncML_Command_Map extends SyncML_Command {
 
     /**
      * Implements the actual business logic of the Alert command.
+     *
+     * @todo No OK response on error.
      */
-    function handleCommand()
+    function handleCommand($debug = false)
     {
+        if (!$debug && $this->_mapItem) {
+            $state = &$_SESSION['SyncML.state'];
+            $sync = &$state->getSync($this->_targetLocURI);
+            if (!$state->authenticated) {
+                $GLOBALS['backend']->logMessage(
+                    'Not authenticated while processing MapItem',
+                    __FILE__, __LINE__, PEAR_LOG_ERR);
+            } else {
+                $sync->createUidMap($this->_targetLocURI,
+                                    $this->_mapSource,
+                                    $this->_mapTarget);
+            }
+        }
+
         // Create status response.
         $this->_outputHandler->outputStatus($this->_cmdID,$this->_cmdName,
                                             RESPONSE_OK,

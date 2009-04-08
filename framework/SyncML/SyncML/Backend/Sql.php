@@ -4,7 +4,7 @@
  *
  * This can be used as a starting point for a custom backend implementation.
  *
- * $Horde: framework/SyncML/SyncML/Backend/Sql.php,v 1.6.2.6 2009/01/06 15:23:38 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Backend/Sql.php,v 1.6.2.7 2009/04/05 20:24:43 jan Exp $
  *
  * Copyright 2006-2009 The Horde Project (http://www.horde.org/)
  *
@@ -450,36 +450,14 @@ class SyncML_Backend_Sql extends SyncML_Backend {
     /**
      * Authenticates the user at the backend.
      *
-     * For some types of authentications (notably auth:basic) the username
-     * gets extracted from the authentication data and is then stored in
-     * username.  For security reasons the caller must ensure that this is the
-     * username that is used for the session, overriding any username
-     * specified in <LocName>.
-     *
-     * @param string $username    Username as provided in the <SyncHdr>.
-     *                            May be overwritten by $credData.
-     * @param string $credData    Authentication data provided by <Cred><Data>
-     *                            in the <SyncHdr>.
-     * @param string $credFormat  Format of data as <Cread><Meta><Format> in
-     *                            the <SyncHdr>. Typically 'b64'.
-     * @param string $credType    Auth type as provided by <Cred><Meta><Type>
-     *                            in the <SyncHdr>. Typically
-     *                            'syncml:auth-basic'.
+     * @param string $username    A user name.
+     * @param string $password    A password.
      *
      * @return boolean|string  The user name if authentication succeeded, false
      *                         otherwise.
      */
-    function checkAuthentication(&$username, $credData, $credFormat, $credType)
+    function _checkAuthentication($username, $password)
     {
-        if (empty($credData) || empty($credType)) {
-            return false;
-        }
-
-        switch ($credType) {
-        case 'syncml:auth-basic':
-            list($username, $pwd) = explode(':', base64_decode($credData), 2);
-            $this->logMessage('Checking authentication for user ' . $username,
-                              __FILE__, __LINE__, PEAR_LOG_DEBUG);
             // Empty passwords result in errors for some authentication
             // backends, don't call the backend in this case.
             if ($pwd === '') {
@@ -497,40 +475,22 @@ class SyncML_Backend_Sql extends SyncML_Backend {
                 return $username;
             }
             return false;
+    }
 
-        case 'syncml:auth-md5':
-            /* syncml:auth-md5 only transfers hash values of passwords.
-             * This is currently not supported by the SQL backend.
-             * So we can't use the table to do authentication. Instead here
-             * is a very crude direct manual hook to illustrate how it works:
-             * To allow authentication for a user 'dummy' with password 'sync',
-             * run
-             * php -r 'print base64_encode(pack("H*",md5("dummy:sync")));'
-             * from the command line. Then create an entry like
-             *  'dummy' => 'ZD1ZeisPeQs0qipHc9tEsw==' in the users array below,
-             * where the value is the command line output.
-             * This user/password combination is then accepted for md5-auth.
-             */
-            $users = array(
-                  // example for user dummy with pass pass:
-                  // 'dummy' => 'ZD1ZeisPeQs0qipHc9tEsw=='
-                          );
-            if (empty($users[$username])) {
-                return false;
-            }
-
-            //@TODO: nonce may be specified by client. Use it then.
-            $nonce = '';
-            if (base64_encode(pack('H*',md5($users[$username] . ':' . $nonce))) === $credData) {
-                return $username;
-            }
-            return false;
-
-        default:
-            $this->logMessage('Unsupported authentication type ' . $credType,
-                              __FILE__, __LINE__, PEAR_LOG_ERR);
-            return false;
-        }
+    /**
+     * Sets a user as being authenticated at the backend.
+     *
+     * @abstract
+     *
+     * @param string $username    A user name.
+     * @param string $credData    Authentication data provided by <Cred><Data>
+     *                            in the <SyncHdr>.
+     *
+     * @return string  The user name.
+     */
+    function setAuthenticated($username, $credData)
+    {
+        return $username;
     }
 
     /**

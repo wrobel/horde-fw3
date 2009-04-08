@@ -3,7 +3,7 @@
  * The Group_ldap class provides an LDAP backend for the Horde groups
  * system.
  *
- * $Horde: framework/Group/Group/ldap.php,v 1.18.2.14 2009/01/06 15:23:08 jan Exp $
+ * $Horde: framework/Group/Group/ldap.php,v 1.18.2.15 2009/04/04 10:10:54 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *
@@ -82,6 +82,17 @@ class Group_ldap extends Group {
                         ldap_errno($conn),
                         ldap_error($conn),
                         __FILE__, __LINE__));
+        }
+
+        /* Start TLS if we're using it. */
+        if (!empty($this->_params['tls'])) {
+            if (!@ldap_start_tls($this->_ds)) {
+                Horde::logMessage(
+                    sprintf('STARTTLS failed: [%d] %s',
+                            @ldap_errno($this->_ds),
+                            @ldap_error($this->_ds)),
+                    __FILE__, __LINE__, PEAR_LOG_ERR);
+            }
         }
 
         if (isset($this->_params['binddn'])) {

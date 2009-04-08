@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
-<!-- $Horde: ansel/config/conf.xml,v 1.49.2.3 2009/03/14 04:30:20 mrubinsk Exp $ -->
+<!-- $Horde: ansel/config/conf.xml,v 1.49.2.4 2009/04/06 14:22:05 mrubinsk Exp $ -->
 <configuration>
 
  <configtab name="menu" desc="General Settings and Menu">
   <configheader>User Interface</configheader>
   <configsection name="gallery">
    <configstring name="listlimit"
-       description="On installations with large
+       desc="On installations with large
    numbers of galleries, it can be useful to disallow using select lists for
    gallery selection in blocks. Set this to the maximum number of galleries
    that can be displayed in a gallery drop down list. If more than this number
@@ -15,12 +15,12 @@
        30
    </configstring>
    <configstring name="numlimit"
-       description="On installations with large
+       desc="On installations with large
    numbers of galleries, it can be useful when displaying gallery lists to guest
-   users to display only galleries with a certain number of images. For example
-   to avoid listing empty galleries. Enter the minimum number of images you 
+   users to display only galleries with a certain number of photos. For example
+   to avoid listing empty galleries. Enter the minimum number of photos you
    would like to require to be displayed in guest gallery lists. Note that this
-   setting will be ignored when specifically requesting all of a particular 
+   setting will be ignored when specifically requesting all of a particular
    user's galleries."
        required="false">
        1

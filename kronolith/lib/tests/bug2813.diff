@@ -1,0 +1,40 @@
+001- array(7) {
+001+ array(6) {
+014-   ["_supportedSpecs"]=>
+014+ }
+015-   string(21) "%CdDeHImMnRStTyYbBpxX"
+015+ array(6) {
+016- }
+016+   ["year"]=>
+017- array(7) {
+017+   int(2006)
+018-   ["year"]=>
+018+   ["month"]=>
+019-   int(2006)
+019+   int(6)
+020-   ["month"]=>
+020+   ["mday"]=>
+021-   int(6)
+021+   int(17)
+022-   ["mday"]=>
+022+   ["hour"]=>
+023-   int(17)
+023+   int(18)
+024-   ["hour"]=>
+024+   ["min"]=>
+025-   int(18)
+025+   int(0)
+026-   ["min"]=>
+026+   ["sec"]=>
+028-   ["sec"]=>
+028+ }
+029-   int(0)
+029+ array(1) {
+030-   ["_supportedSpecs"]=>
+030+   [0]=>
+031-   string(21) "%CdDeHImMnRStTyYbBpxX"
+031+   bool(false)
+033- array(1) {
+034-   [0]=>
+035-   bool(false)
+036- }

@@ -6,7 +6,7 @@ require_once 'Horde/Util.php';
  * This class defines the Horde_Image:: API, and also provides some
  * utility functions, such as generating highlights of a color.
  *
- * $Horde: framework/Image/Image.php,v 1.39.10.19 2009/01/27 14:41:28 chuck Exp $
+ * $Horde: framework/Image/Image.php,v 1.39.10.20 2009/03/23 18:15:47 mrubinsk Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -88,6 +88,13 @@ class Horde_Image {
      * @var array
      */
     var $_loadedEffects = array();
+
+    /**
+     * What kind of images should ImageMagick generate? Defaults to 'png'.
+     *
+     * @var string
+     */
+    var $_type = 'png';
 
     /**
      * Constructor.
@@ -360,12 +367,12 @@ class Horde_Image {
         if ($filename != $this->_id) {
             $this->reset();
             if (!file_exists($filename)) {
-                return PEAR::raiseError('The image file ' . $image . ' does not exist.');
+                return PEAR::raiseError('The image file ' . $filename . ' does not exist.');
             }
             if ($this->_data = file_get_contents($filename)) {
                 $this->_id = $filename;
             } else {
-                return PEAR::raiseError('Could not load the image file ' . $image);
+                return PEAR::raiseError('Could not load the image file ' . $filename);
             }
         }
     }

@@ -1,0 +1,72 @@
+
+---- EXPECTED OUTPUT
+array(7) {
+  ["year"]=>
+  int(2006)
+  ["month"]=>
+  int(6)
+  ["mday"]=>
+  int(16)
+  ["hour"]=>
+  int(18)
+  ["min"]=>
+  int(0)
+  ["sec"]=>
+  int(0)
+  ["_supportedSpecs"]=>
+  string(21) "%CdDeHImMnRStTyYbBpxX"
+}
+array(7) {
+  ["year"]=>
+  int(2006)
+  ["month"]=>
+  int(6)
+  ["mday"]=>
+  int(17)
+  ["hour"]=>
+  int(18)
+  ["min"]=>
+  int(0)
+  ["sec"]=>
+  int(0)
+  ["_supportedSpecs"]=>
+  string(21) "%CdDeHImMnRStTyYbBpxX"
+}
+array(1) {
+  [0]=>
+  bool(false)
+}
+---- ACTUAL OUTPUT
+array(6) {
+  ["year"]=>
+  int(2006)
+  ["month"]=>
+  int(6)
+  ["mday"]=>
+  int(16)
+  ["hour"]=>
+  int(18)
+  ["min"]=>
+  int(0)
+  ["sec"]=>
+  int(0)
+}
+array(6) {
+  ["year"]=>
+  int(2006)
+  ["month"]=>
+  int(6)
+  ["mday"]=>
+  int(17)
+  ["hour"]=>
+  int(18)
+  ["min"]=>
+  int(0)
+  ["sec"]=>
+  int(0)
+}
+array(1) {
+  [0]=>
+  bool(false)
+}
+---- FAILED

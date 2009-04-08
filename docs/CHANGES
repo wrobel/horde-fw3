@@ -2,6 +2,26 @@
 v3.3.4-cvs
 ----------
 
+[jan] Properly handle synchronization requests to non-existant databases.
+[jan] Fix exporting all-day events to Funambol clients (Bug #6847).
+[jan] Quote parameter values in iCalendar data if necessary (Gunnar Wrobel,
+      Bug #7758).
+[jan] Detect base64 encoded synchronization data from Blackberry devices
+      (Bugs #6995, #6949).
+[jan] Optionally use Net_DNS for host name lookups (adrieder@sbox.tugraz.at,
+      Request #7374).
+[jan] Add TLS support to LDAP drivers (web@marlboro.edu, Request #7958).
+[jan] Add scope and sizelimit parameters to LDAP authentication driver
+      (dom.lalot@gmail.com, Request #7839).
+[jan] Futher improve HTML to text filter.
+[jan] Export recurrence end dates as date-time values in iCalendar data to
+      improve compatibility with external clients (Bug #7846).
+[jan] Silence errors messages from iconv_substr() (jens@peino.de, Bug #8128).
+[jan] Don't catch Alt key combinations for access keys on Mac OS.
+[mjr] Fix bitwise clause generation in the sql and hierarchical sql driver. This
+      fixes issues with Oracle and possibly other RDBMS.
+[mjr] Correct numerous bugs in Horde_Image dealing with ImageMagick version
+      inconsistencies.
 [jan] Fix charset conversion in preference hooks (Bug #7489).
 [cjh] Proactively disable allow_url_include in core.php.
 [cjh] Add an index on session_lastmodified to the Horde sessionhandler tables.

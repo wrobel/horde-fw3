@@ -2,7 +2,7 @@
 /**
  * This file contains all Horde_Form extensions required for editing tasks.
  *
- * $Horde: nag/lib/Forms/task.php,v 1.11.2.9 2009/02/03 15:56:49 jan Exp $
+ * $Horde: nag/lib/Forms/task.php,v 1.11.2.10 2009/03/31 14:51:04 chuck Exp $
  *
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.
@@ -120,7 +120,7 @@ class Nag_TaskForm extends Horde_Form {
         $this->addVariable(_("Estimated Time"), 'estimate', 'number', false);
         $this->addVariable(_("Completed?"), 'completed', 'boolean', false);
         $this->addVariable(_("Description"), 'desc', 'longtext', false, false,
-            Horde::callHook('_nag_hook_description_help', null, 'nag', ''));
+                           Horde::callHook('_nag_hook_description_help', array(), 'nag', ''));
 
         $buttons = array(_("Save"));
         if ($delete) {

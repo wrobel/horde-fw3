@@ -1,5 +1,5 @@
 /**
- * $Horde: dimp/themes/ie7.css,v 1.14.2.8 2008/06/18 16:22:21 slusarz Exp $
+ * $Horde: dimp/themes/ie7.css,v 1.14.2.9 2009/03/26 04:34:55 slusarz Exp $
  *
  * CSS corrections for IE 7.
  */
@@ -30,12 +30,8 @@ div.msgSize {
 form#compose {
     margin-top: -13px;
 }
-#to, #cc, #bcc {
+#to, #cc, #bcc, .msgBody {
     overflow: auto;
-}
-
-.msgBody {
-    width: expression(document.body.clientWidth-220);
 }
 
 #alerts {

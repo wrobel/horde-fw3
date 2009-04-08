@@ -1,0 +1,3 @@
+string(9) "vFreebusy"
+
+Fatal error: Call to undefined method String::wordwrap() in /home/wrobel/usr/devel/gh/horde-glue/horde-fw3/framework/iCalendar/iCalendar.php on line 1030

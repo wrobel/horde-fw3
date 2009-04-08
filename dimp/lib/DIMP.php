@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: dimp/lib/DIMP.php,v 1.110.2.33 2009/01/06 15:22:38 jan Exp $
+ * $Horde: dimp/lib/DIMP.php,v 1.110.2.38 2009/04/07 04:52:58 slusarz Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *
@@ -94,8 +94,15 @@ class DIMP {
 
         echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">' . "\n" .
              (!empty($GLOBALS['language']) ? '<html lang="' . strtr($GLOBALS['language'], '_', '-') . '"' : '<html') . ">\n".
-             "<head>\n" .
-             '<title>' . htmlspecialchars($page_title) . "</title>\n" .
+             "<head>\n";
+
+        // TODO: Make dimp work with IE 8 standards mode
+        if ($GLOBALS['browser']->isBrowser('msie') &&
+            ($GLOBALS['browser']->getMajor() == 8)) {
+            echo '<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />' . "\n";
+        }
+
+        echo '<title>' . htmlspecialchars($page_title) . "</title>\n" .
              '<link href="' . $GLOBALS['registry']->getImageDir() . "/favicon.ico\" rel=\"SHORTCUT ICON\" />\n".
              IMP::wrapInlineScript(DIMP::_includeDIMPJSVars());
 
@@ -131,6 +138,16 @@ class DIMP {
 
         foreach (DIMP::menuList() as $app) {
             $app_urls[$app] = Horde::url($registry->getInitialPage($app), true);
+        }
+
+        require DIMP_BASE . '/config/portal.php';
+        foreach ($dimp_block_list as $block) {
+            if (is_a($block['ob'], 'Horde_Block')) {
+                $app = $block['ob']->getApp();
+                if (empty($app_urls[$app])) {
+                    $app_urls[$app] = Horde::url($registry->getInitialPage($app), true);
+                }
+            }
         }
 
         /* Variables used in core javascript files. */
@@ -236,6 +253,7 @@ class DIMP {
             /* Gettext strings used in compose page. */
             $code['text_compose'] = array_map('addslashes', array(
                 'cancel' => _("Cancelling this message will permanently discard its contents and will delete auto-saved drafts.\nAre you sure you want to do this?"),
+                'nosubject' => _("The message does not have a Subject entered.") . "\n" . _("Send message without a Subject?"),
                 'fillform' => _("You have already changed the message body, are you sure you want to drop the changes?"),
                 'remove' => _("remove"),
                 'uploading' => _("Uploading..."),

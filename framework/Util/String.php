@@ -6,7 +6,7 @@ $GLOBALS['_HORDE_STRING_CHARSET'] = 'iso-8859-1';
  * The String:: class provides static methods for charset and locale safe
  * string manipulation.
  *
- * $Horde: framework/Util/String.php,v 1.43.6.36 2009/01/27 19:24:22 slusarz Exp $
+ * $Horde: framework/Util/String.php,v 1.43.6.37 2009/03/30 15:31:38 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -323,20 +323,22 @@ class String {
             return '';
         }
 
-        /* Try iconv with transliteration. */
+        /* Try iconv. */
         if (function_exists('iconv_substr')) {
             if (is_null($charset)) {
                 $charset = $GLOBALS['_HORDE_STRING_CHARSET'];
             }
+
+            $old_error = error_reporting(0);
             $ret = iconv_substr($string, $start, $length, $charset);
-            if ($ret === false) {
-                return $string;
-            } else {
+            error_reporting($old_error);
+            /* iconv_substr() returns false on failure. */
+            if ($ret !== false) {
                 return $ret;
             }
         }
 
-        /* Try mbstring with transliteration. */
+        /* Try mbstring. */
         if (String::extensionExists('mbstring')) {
             if (is_null($charset)) {
                 $charset = $GLOBALS['_HORDE_STRING_CHARSET'];
@@ -344,7 +346,8 @@ class String {
             $old_error = error_reporting(0);
             $ret = mb_substr($string, $start, $length, String::_mbstringCharset($charset));
             error_reporting($old_error);
-            if (!empty($ret)) {
+            /* mb_substr() returns empty string on failure. */
+            if (strlen($ret)) {
                 return $ret;
             }
         }

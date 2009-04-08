@@ -2,7 +2,7 @@
 /**
  * Image border decorator for the Horde_Image package.
  *
- * $Horde: framework/Image/Image/Effect/im/border.php,v 1.2.2.1 2007/12/20 13:49:11 jan Exp $
+ * $Horde: framework/Image/Image/Effect/im/border.php,v 1.2.2.2 2009/03/23 18:15:48 mrubinsk Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @package Horde_Image
@@ -14,12 +14,13 @@ class Horde_Image_Effect_im_border extends Horde_Image_Effect {
      *
      *   bordercolor     - Border color. Defaults to black.
      *   borderwidth     - Border thickness, defaults to 1 pixel.
-     *   roundwidth      - Width of the corner rounding. Defaults to none.
+     *   preserve        - Preserves the alpha transparency layer (if present)
      *
      * @var array
      */
     var $_params = array('bordercolor' => 'black',
-                         'borderwidth' => 1);
+                         'borderwidth' => 1,
+                         'preserve' => true);
 
     /**
      * Draw the border.
@@ -37,8 +38,9 @@ class Horde_Image_Effect_im_border extends Horde_Image_Effect {
                 $this->_params['borderwidth']);
         } else {
             $this->_image->_postSrcOperations[] = sprintf(
-                "-bordercolor \"%s\" -border %s",
+                "   -bordercolor \"%s\" %s -border %s",
                 $this->_params['bordercolor'],
+                (!empty($this->_params['preserve']) ? '-compose Copy' : ''),
                 $this->_params['borderwidth']);
         }
         return true;

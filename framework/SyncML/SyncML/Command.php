@@ -12,7 +12,7 @@
  * executed for a single SyncML command are handled by these objects, by means
  * of the handleCommand() method.
  *
- * $Horde: framework/SyncML/SyncML/Command.php,v 1.4.10.12 2009/01/06 15:23:37 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Command.php,v 1.4.10.13 2009/04/05 20:24:42 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -135,7 +135,7 @@ class SyncML_Command {
      *
      * @abstract
      */
-    function handleCommand()
+    function handleCommand($debug = false)
     {
     }
 

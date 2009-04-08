@@ -5,7 +5,7 @@ Timezone handling
 
 require_once dirname(dirname(__FILE__)) . '/iCalendar.php';
 require_once 'Horde/Date.php';
-date_default_timezone_set('UTC');
+putenv('TZ=UTC');
 
 $test_files = glob(dirname(__FILE__) . '/fixtures/vTimezone/*.???');
 foreach ($test_files as $file) {

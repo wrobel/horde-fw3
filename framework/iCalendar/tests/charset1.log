@@ -1,0 +1,8 @@
+
+---- EXPECTED OUTPUT
+string(6) "möchen"
+string(6) "möchen"
+---- ACTUAL OUTPUT
+string(6) "möchen"
+string(7) "mÃ¶chen"
+---- FAILED

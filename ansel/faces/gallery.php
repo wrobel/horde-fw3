@@ -4,7 +4,7 @@
  *
  * TODO: Turn this into an Ansel_View::
  *
- * $Horde: ansel/faces/gallery.php,v 1.10.2.1 2009/01/06 15:22:20 jan Exp $
+ * $Horde: ansel/faces/gallery.php,v 1.10.2.2 2009/03/25 16:25:00 mrubinsk Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -53,7 +53,7 @@ $pager = new Horde_UI_Pager(
           'perpage' => $perpage));
 $pager->preserve('gallery',  $gallery_id);
 
-$title = sprintf(_("Searching for faces in %s"), $gallery->get('name'));
+$title = sprintf(_("Searching for faces in %s"), Horde::link(Ansel::getUrlFor('view', array('gallery' => $gallery_id))) . $gallery->get('name') . '</a>');
 Horde::addScriptFile('prototype.js', 'horde', true);
 Horde::addScriptFile('stripe.js', 'horde', true);
 require ANSEL_TEMPLATES . '/common-header.inc';

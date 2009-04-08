@@ -10,7 +10,7 @@ require_once 'SyncML/Command.php';
  * The Final command is an indicator that the SyncML message is the last
  * message in the current SyncML package.
  *
- * $Horde: framework/SyncML/SyncML/Command/Final.php,v 1.10.10.10 2009/01/06 15:23:38 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Command/Final.php,v 1.10.10.11 2009/04/05 20:24:43 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -34,7 +34,7 @@ class SyncML_Command_Final extends SyncML_Command {
     /**
      * Implements the actual business logic of the Alert command.
      */
-    function handleCommand()
+    function handleCommand($debug = false)
     {
         $state = &$_SESSION['SyncML.state'];
 
@@ -49,7 +49,7 @@ class SyncML_Command_Final extends SyncML_Command {
         $GLOBALS['backend']->logMessage('Received <Final> from client.',
                                         __FILE__, __LINE__, PEAR_LOG_DEBUG);
 
-        $state->handleFinal($this->_outputHandler);
+        $state->handleFinal($this->_outputHandler, $debug);
     }
 
 }

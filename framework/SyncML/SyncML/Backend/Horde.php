@@ -7,7 +7,7 @@
  * See the enclosed file COPYING for license information (LGPL). If you did not
  * receive this file, see http://www.fsf.org/copyleft/lgpl.html.
  *
- * $Horde: framework/SyncML/SyncML/Backend/Horde.php,v 1.8.2.16 2009/01/06 15:23:38 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Backend/Horde.php,v 1.8.2.17 2009/04/05 20:24:43 jan Exp $
  *
  * @author  Karsten Fourmont <karsten@horde.org>
  * @package SyncML
@@ -516,81 +516,36 @@ class SyncML_Backend_Horde extends SyncML_Backend {
     /**
      * Authenticates the user at the backend.
      *
-     * For some types of authentications (notably auth:basic) the username
-     * gets extracted from the authentication data and is then stored in
-     * username.  For security reasons the caller must ensure that this is the
-     * username that is used for the session, overriding any username
-     * specified in <LocName>.
-     *
-     * @param string $username    Username as provided in the <SyncHdr>.
-     *                            May be overwritten by $credData.
-     * @param string $credData    Authentication data provided by <Cred><Data>
-     *                            in the <SyncHdr>.
-     * @param string $credFormat  Format of data as <Cread><Meta><Format> in
-     *                            the <SyncHdr>. Typically 'b64'.
-     * @param string $credType    Auth type as provided by <Cred><Meta><Type>
-     *                            in the <SyncHdr>. Typically
-     *                            'syncml:auth-basic'.
+     * @param string $username    A user name.
+     * @param string $password    A password.
      *
      * @return boolean|string  The user name if authentication succeeded, false
      *                         otherwise.
      */
-    function checkAuthentication(&$username, $credData, $credFormat, $credType)
+    function _checkAuthentication($username, $password)
     {
-        if (empty($credData) || empty($credType)) {
-            return false;
-        }
+        $auth = &Auth::singleton($GLOBALS['conf']['auth']['driver']);
+        return $auth->authenticate($username, array('password' => $password))
+            ? Auth::getAuth()
+            : false;
+    }
 
-        switch ($credType) {
-        case 'syncml:auth-basic':
-            list($username, $pwd) = explode(':', base64_decode($credData), 2);
-            $this->logMessage('Checking authentication for user ' . $username,
-                              __FILE__, __LINE__, PEAR_LOG_DEBUG);
-            // Empty passwords result in errors for some authentication
-            // backends, don't call the backend in this case.
-            if ($pwd === '') {
-                return false;
-            }
-            $auth = &Auth::singleton($GLOBALS['conf']['auth']['driver']);
-            return $auth->authenticate($username, array('password' => $pwd))
-                ? Auth::getAuth()
-                : false;
-
-        case 'syncml:auth-md5':
-            /* syncml:auth-md5 only transfers hash values of passwords.
-             * Currently the syncml:auth-md5 hash scheme is not supported
-             * by the authentication backend. So we can't use Horde to do
-             * authentication. Instead here is a very crude direct manual hook:
-             * To allow authentication for a user 'dummy' with password 'sync',
-             * run
-             * php -r 'print base64_encode(pack("H*",md5("dummy:sync")));'
-             * from the command line. Then create an entry like
-             *  'dummy' => 'ZD1ZeisPeQs0qipHc9tEsw==' in the users array below,
-             * where the value is the command line output.
-             * This user/password combination is then accepted for md5-auth.
-             */
-            $users = array(
-                  // example for user dummy with pass pass:
-                  // 'dummy' => 'ZD1ZeisPeQs0qipHc9tEsw=='
-                          );
-            if (empty($users[$username])) {
-                return false;
-            }
-
-            // @todo: nonce may be specified by client. Use it then.
-            $nonce = '';
-            if (base64_encode(pack('H*', md5($users[$username] . ':' . $nonce))) === $credData) {
-                $auth = &Auth::singleton($GLOBALS['conf']['auth']['driver']);
-                $auth->setAuth($username, $credData);
-                return Auth::getAuth();
-            }
-            return false;
-
-        default:
-            $this->logMessage('Unsupported authentication type ' . $credType,
-                              __FILE__, __LINE__, PEAR_LOG_ERR);
-            return false;
-        }
+    /**
+     * Sets a user as being authenticated at the backend.
+     *
+     * @abstract
+     *
+     * @param string $username    A user name.
+     * @param string $credData    Authentication data provided by <Cred><Data>
+     *                            in the <SyncHdr>.
+     *
+     * @return string  The user name.
+     */
+    function setAuthenticated($username, $credData)
+    {
+        $auth = &Auth::singleton($GLOBALS['conf']['auth']['driver']);
+        $auth->setAuth($username, $credData);
+        return Auth::getAuth();
     }
 
     /**

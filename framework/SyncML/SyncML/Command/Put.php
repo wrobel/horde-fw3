@@ -14,7 +14,7 @@ require_once 'SyncML/Command.php';
  * The data is stored in a SyncML_DeviceInfo object which is defined in
  * Device.php and then stored in SyncML_Device as an attribute.
  *
- * $Horde: framework/SyncML/SyncML/Command/Put.php,v 1.12.10.12 2009/01/06 15:23:38 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Command/Put.php,v 1.12.10.13 2009/04/05 20:24:43 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *
@@ -285,7 +285,7 @@ class SyncML_Command_Put extends SyncML_Command {
     /**
      * Implements the actual business logic of the Alert command.
      */
-    function handleCommand()
+    function handleCommand($debug = false)
     {
         $state = &$_SESSION['SyncML.state'];
 

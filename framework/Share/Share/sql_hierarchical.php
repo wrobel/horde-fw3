@@ -3,7 +3,7 @@
  * Implementation of Horde_Share class for shared objects that are hierarchical
  * in nature.
  *
- * $Horde: framework/Share/Share/sql_hierarchical.php,v 1.17.2.26 2008/10/25 16:41:23 mrubinsk Exp $
+ * $Horde: framework/Share/Share/sql_hierarchical.php,v 1.17.2.27 2009/03/24 17:47:15 mrubinsk Exp $
  *
  * @author  Duck <duck@obala.net>
  * @author  Michael J. Rubinsky <mrubinsk@horde.org>
@@ -184,6 +184,8 @@ class Horde_Share_sql_hierarchical extends Horde_Share_sql {
                                $parent = null, $allLevels = true,
                                $ignorePerms = false)
     {
+        require_once 'Horde/SQL.php';
+
         static $criteria;
 
         if (is_a($parent, 'Horde_Share_Object')) {
@@ -206,15 +208,15 @@ class Horde_Share_sql_hierarchical extends Horde_Share_sql {
             $where = 's.share_owner = ' . $this->_db->quote($userid);
 
             // (name == perm_creator and val & $perm)
-            $where .= ' OR (s.perm_creator & ' . $perm . ') != 0';
+            $where .= ' OR (' . Horde_SQL::buildClause($this->_db, 's.perm_creator', '&', $perm) . ')';
 
             // (name == perm_creator and val & $perm)
-            $where .= ' OR (s.perm_default & ' . $perm . ') != 0';
+            $where .= ' OR (' . Horde_SQL::buildClause($this->_db, 's.perm_default',  '&', $perm) . ')';
 
             // (name == perm_users and key == $userid and val & $perm)
             $query .= ' LEFT JOIN ' . $this->_table . '_users AS u ON u.share_id = s.share_id';
-            $where .= ' OR ( u.user_uid = ' .  $this->_db->quote($userid)
-                    . ' AND (u.perm & ' . $perm . ') != 0)';
+            $where .= ' OR ( u.user_uid = ' .  $this->_write_db->quote($userid)
+            . ' AND (' . Horde_SQL::buildClause($this->_db, 'u.perm', '&', $perm) . '))';
 
             // If the user has any group memberships, check for those also.
             require_once 'Horde/Group.php';
@@ -229,10 +231,10 @@ class Horde_Share_sql_hierarchical extends Horde_Share_sql {
                 }
                 $query .= ' LEFT JOIN ' . $this->_table . '_groups AS g ON g.share_id = s.share_id';
                 $where .= ' OR (g.group_uid IN (' . implode(',', $group_ids) . ')'
-                    . ' AND (g.perm & ' . $perm .') != 0)';
+                    . ' AND (' . Horde_SQL::buildClause($this->_db, 'g.perm', '&', $perm) . '))';
             }
         } elseif (!$ignorePerms) {
-            $where = '(s.perm_guest & ' . $perm . ') != 0';
+            $where = '(' . Horde_SQL::buildClause($this->_db, 's.perm_guest', '&', $perm) . ')';
         }
 
         /* Convert to driver's keys */

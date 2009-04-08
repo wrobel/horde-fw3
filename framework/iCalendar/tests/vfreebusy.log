@@ -1,0 +1,126 @@
+
+---- EXPECTED OUTPUT
+string(9) "vFreebusy"
+string(334) "BEGIN:VFREEBUSY
+ORGANIZER;CN=GunnarWrobel:MAILTO:wrobel@demo2.pardus.de
+DTSTAMP:20061122T230929Z
+DTSTART:20061122T230000Z
+DTEND:20070121T230000Z
+FREEBUSY;X-UID=MmZlNWU3NDRmMGFjNjZkNjRjZjFkZmFmYTE4NGFiZTQ=;X-SUMMARY=dGVzd
+ HRlcm1pbg==:20061123T050000Z/20061123T060000Z
+FREEBUSY:20061123T080000Z/20061123T100000Z
+END:VFREEBUSY
+"
+string(12) "GunnarWrobel"
+string(22) "wrobel@demo2.pardus.de"
+array(2) {
+  [1164258000]=>
+  int(1164261600)
+  [1164268800]=>
+  int(1164276000)
+}
+string(10) "testtermin"
+array(1) {
+  [1164261600]=>
+  int(1164268800)
+}
+int(1164236400)
+int(1169420400)
+array(2) {
+  [1164258000]=>
+  int(1164261600)
+  [1164268800]=>
+  int(1164276000)
+}
+array(4) {
+  [1164258000]=>
+  int(1164261600)
+  [1164268800]=>
+  int(1164276000)
+  [1164279600]=>
+  int(1164283200)
+  [1164290400]=>
+  int(1164297600)
+}
+array(4) {
+  [1164258000]=>
+  array(2) {
+    ["X-UID"]=>
+    string(44) "MmZlNWU3NDRmMGFjNjZkNjRjZjFkZmFmYTE4NGFiZTQ="
+    ["X-SUMMARY"]=>
+    string(16) "dGVzdHRlcm1pbg=="
+  }
+  [1164268800]=>
+  array(0) {
+  }
+  [1164279600]=>
+  array(0) {
+  }
+  [1164290400]=>
+  array(1) {
+    ["X-SUMMARY"]=>
+    string(8) "dGVzdA=="
+  }
+}
+array(9) {
+  [1164254100]=>
+  int(1164254700)
+  [1164254400]=>
+  int(1164258300)
+  [1164261300]=>
+  int(1164261900)
+  [1164268500]=>
+  int(1164269100)
+  [1164275700]=>
+  int(1164276300)
+  [1164279600]=>
+  int(1164294000)
+  [1164290400]=>
+  int(1164290520)
+  [1164292200]=>
+  int(1164292500)
+  [1164297300]=>
+  int(1164297600)
+}
+int(1004297300)
+int(1169420400)
+array(11) {
+  [1164258000]=>
+  int(1164261600)
+  [1164268800]=>
+  int(1164276000)
+  [1164279600]=>
+  int(1164294000)
+  [1164290400]=>
+  int(1164297600)
+  [1164254100]=>
+  int(1164254700)
+  [1164254400]=>
+  int(1164258300)
+  [1164261300]=>
+  int(1164261900)
+  [1164268500]=>
+  int(1164269100)
+  [1164275700]=>
+  int(1164276300)
+  [1164292200]=>
+  int(1164292500)
+  [1164297300]=>
+  int(1164297600)
+}
+int(14400)
+string(5) "test2"
+int(7200)
+string(4) "test"
+Start:20061123T035500Z End:20061123T040500Z Summary:test4
+Start:20061123T040500Z End:20061123T050500Z Summary:test3
+Start:20061123T050500Z End:20061123T060000Z Summary:testtermin
+Start:20061123T060000Z End:20061123T060500Z Summary:test5
+Start:20061123T075500Z End:20061123T100500Z Summary:
+Start:20061123T110000Z End:20061123T150000Z Summary:test2
+Start:20061123T150000Z End:20061123T160000Z Summary:test
+---- ACTUAL OUTPUT
+string(9) "vFreebusy"
+
+Fatal error: Call to undefined method String::wordwrap() in /home/wrobel/usr/devel/gh/horde-glue/horde-fw3/framework/iCalendar/iCalendar.php on line 1030
+---- FAILED

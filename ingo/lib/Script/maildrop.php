@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ingo/lib/Script/maildrop.php,v 1.7.2.13 2008/11/09 04:13:19 chuck Exp $
+ * $Horde: ingo/lib/Script/maildrop.php,v 1.7.2.14 2009/03/23 21:38:21 jan Exp $
  *
  * Copyright 2005-2007 Matt Weyland <mathias@weyland.ch>
  *
@@ -669,18 +669,19 @@ class Maildrop_Recipe {
             return '';
         }
 
-        $text[] = "if( \\";
+        if (count($this->_conditions) > 0) {
 
-        if (count($this->_conditions > 1)) {
+            $text[] = "if( \\";
+
             $nest = false;
             foreach ($this->_conditions as $condition) {
                 $cond = $nest ? $this->_combine : '   ';
                 $text[] = $cond . $condition['condition'] . $condition['flags'] . $condition['extra'] . " \\";
                 $nest = true;
             }
-        }
 
-        $text[] = ')';
+            $text[] = ')';
+        }
 
         foreach ($this->_action as $val) {
             $text[] = $val;

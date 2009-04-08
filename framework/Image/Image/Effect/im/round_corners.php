@@ -2,7 +2,7 @@
 /**
  * Image effect for rounding image corners.
  *
- * $Horde: framework/Image/Image/Effect/im/round_corners.php,v 1.13.2.1 2007/12/20 13:49:11 jan Exp $
+ * $Horde: framework/Image/Image/Effect/im/round_corners.php,v 1.13.2.2 2009/03/23 18:15:48 mrubinsk Exp $
  *
  * @author  Michael J. Rubinsky <mrubinsk@horde.org>
  * @since   Horde 3.2
@@ -84,7 +84,9 @@ class Horde_Image_Effect_im_round_corners extends Horde_Image_Effect {
             // to make sure we do them in the proper order.
             $this->_image->_imagick = null;
 
-            $this->_image->_operations[] = "-size {$width}x{$height} xc:none ";
+            $this->_image->_operations[] = "-size {$width}x{$height} xc:{$this->_params['background']} "
+                . "-fill {$this->_params['background']} -draw \"matte 0,0 reset\" -tile";
+
             $this->_image->roundedRectangle(round($round / 2),
                                     round($round / 2),
                                     $width - round($round / 2) - 2,
@@ -92,9 +94,6 @@ class Horde_Image_Effect_im_round_corners extends Horde_Image_Effect {
                                     $round + 2,
                                     'none',
                                     'white');
-
-            $this->_image->_postSrcOperations[] = sprintf("-compose SrcIn -composite -size %sx%s xc:%s +swap -composite", $width, $height, $this->_params['background']);
-
         }
 
         // Reset width/height since these might have changed

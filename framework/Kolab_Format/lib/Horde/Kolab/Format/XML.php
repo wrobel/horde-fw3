@@ -2,7 +2,7 @@
 /**
  * Implementation of the Kolab XML format.
  *
- * $Horde: framework/Kolab_Format/lib/Horde/Kolab/Format/XML.php,v 1.5.2.10 2008/12/12 11:39:04 wrobel Exp $
+ * $Horde: framework/Kolab_Format/lib/Horde/Kolab/Format/XML.php,v 1.5.2.12 2009/04/08 18:34:39 wrobel Exp $
  *
  * @package Kolab_Format
  */
@@ -95,7 +95,7 @@ define('HORDE_KOLAB_XML_TYPE_MULTIPLE', 8);
  * For implementing a new format type you will have to inherit this
  * class and provide a _load/_save function.
  *
- * $Horde: framework/Kolab_Format/lib/Horde/Kolab/Format/XML.php,v 1.5.2.10 2008/12/12 11:39:04 wrobel Exp $
+ * $Horde: framework/Kolab_Format/lib/Horde/Kolab/Format/XML.php,v 1.5.2.12 2009/04/08 18:34:39 wrobel Exp $
  *
  * Copyright 2007-2008 Klarälvdalens Datakonsult AB
  *
@@ -409,6 +409,9 @@ class Horde_Kolab_Format_XML
     /**
      * Load an object based on the given XML string.
      *
+     * @todo Check encoding of the returned array. It seems to be ISO-8859-1 at
+     * the moment and UTF-8 would seem more appropriate.
+     *
      * @param string $xmltext  The XML of the message as string.
      *
      * @return array|PEAR_Error The data array representing the object.
@@ -416,7 +419,24 @@ class Horde_Kolab_Format_XML
     function load(&$xmltext)
     {
         $noderoot = $this->_parseXml($xmltext);
-        if ($noderoot === false) {
+        if (is_a($noderoot, 'PEAR_Error') || empty($noderoot)) {
+            /**
+             * If the first call does not return successfully this might mean we
+             * got an attachment with broken encoding. There are some Kolab
+             * client versions in the wild that might have done that. So the
+             * next section starts a second attempt by guessing the encoding and
+             * trying again.
+             */
+            if (strcasecmp(mb_detect_encoding($xmltext, 'UTF-8, ISO-8859-1'), 'UTF-8') !== 0) {
+                $xmltext = mb_convert_encoding($xmltext, 'UTF-8', 'ISO-8859-1');
+            }
+            $noderoot = $this->_parseXml($xmltext);
+        }
+
+        if (is_a($noderoot, 'PEAR_Error')) {
+            return $noderoot;
+        }
+        if (empty($noderoot)) {
             return false;
         }
 

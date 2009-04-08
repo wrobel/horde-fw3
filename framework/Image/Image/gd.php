@@ -7,7 +7,7 @@ require_once dirname(__FILE__) . '/../Image.php';
  * extension. It mainly provides some utility functions, such as the
  * ability to make pixels, for now.
  *
- * $Horde: framework/Image/Image/gd.php,v 1.48.10.20 2009/01/06 15:23:12 jan Exp $
+ * $Horde: framework/Image/Image/gd.php,v 1.48.10.22 2009/04/06 16:36:42 mrubinsk Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -35,13 +35,6 @@ class Horde_Image_gd extends Horde_Image {
                                'yellowize',
                                'canvas',
                          );
-
-    /**
-     * What kind of images should GD generate? Defaults to 'png'.
-     *
-     * @var string
-     */
-    var $_type = 'png';
 
     /**
      * GD Image resource for the current image data.
@@ -1089,11 +1082,12 @@ class Horde_Image_gd extends Horde_Image {
         $result = call_user_func_array($function, $params);
         if ($track !== false) {
             ini_set('track_errors', $track);
+            $error_msg = $php_errormsg;
         }
         error_reporting($GLOBALS['conf']['debug_level']);
         if (!empty($php_errormsg)) {
             require_once 'PEAR.php';
-            $result = PEAR::raiseError($function . ': ' . $php_errormsg);
+            $result = PEAR::raiseError($function . ': ' . $error_msg);
         }
         return $result;
     }

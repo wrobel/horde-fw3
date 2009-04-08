@@ -1,0 +1,7 @@
+001- array(2) {
+001+ Fatal error: Cannot redeclare class Horde_iCalendar in /usr/share/php/Horde/iCalendar.php on line 26
+002-   [0]=>
+003-   string(15) "My Organization"
+004-   [1]=>
+005-   string(7) "My Unit"
+006- }

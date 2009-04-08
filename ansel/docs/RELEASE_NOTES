@@ -17,25 +17,18 @@ $this->notes['fm']['focus'] = 1;
 /* Mailing list release notes. */
 $this->notes['ml']['changes'] = <<<ML
 
-The Horde Team is pleased to announce the first release candidate of the Ansel
-Photo Management and Web Gallery application version H3 (1.0-RC1).
+The Horde Team is pleased to announce the final release of the Ansel Photo
+Management and Web Gallery application version H3 (1.0).
 
 Ansel is a full featured photo management application. With it, you can organize
 your photos in any number of galleries and subgalleries, share galleries among
 other Horde users or even make them public. Ansel supports a wide range of
 features. See http://www.horde.org/ansel/ for more information.
-
-This is a preview version. It is considered feature complete but there might
-still be a few bugs.
-
-We encourage widespread testing and feedback via the mailing lists or our bug
-tracking system. Updated and new translations are very welcome, though some
-strings might still change before the final release.
 ML;
 
 /* Freshmeat release notes, not more than 600 characters. */
 $this->notes['fm']['changes'] = <<<FM
-This is the first release candidate.
+This is the first stable release.
 FM;
 
 $this->notes['name'] = 'Ansel';

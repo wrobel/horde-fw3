@@ -1,7 +1,7 @@
 /**
  * compose.js - Javascript code used in the DIMP compose view.
  *
- * $Horde: dimp/js/src/compose.js,v 1.84.2.33 2009/01/06 15:22:37 jan Exp $
+ * $Horde: dimp/js/src/compose.js,v 1.84.2.34 2009/03/30 22:19:52 slusarz Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *
@@ -161,6 +161,11 @@ var DimpCompose = {
 
             switch (action) {
             case 'send_message':
+                if (($F('subject') == '') &&
+                    !window.confirm(DIMP.text_compose.nosubject)) {
+                    return;
+                }
+
                 if (!this.sbtext) {
                     sb = $('send_button');
                     this.sbtext = sb.getText();
