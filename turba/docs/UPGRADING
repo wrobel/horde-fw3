@@ -2,8 +2,8 @@
  Upgrading Turba
 =================
 
-:Last update:   $Date: 2008/11/14 17:27:39 $
-:Revision:      $Revision: 1.3.6.27 $
+:Last update:   $Date: 2009/04/16 21:57:35 $
+:Revision:      $Revision: 1.3.6.28 $
 :Contact:       turba@lists.horde.org
 
 
@@ -23,7 +23,7 @@ Some fields in the SQL share driver tables have been changed. Execute the
 provided SQL script to update your database if you are using the native SQL
 share driver.
 
-   mysql --user=root --password=<MySQL-root-password>  <db name> < scripts/upgrade/2.2.1_to_2.3.sql
+   mysql --user=root --password=<MySQL-root-password>  <db name> < scripts/upgrades/2.2.1_to_2.3.sql
 
 
 New fields
@@ -66,7 +66,7 @@ variables at the top of the script ``$db_user``, ``$db_pass`` and
 ``$db_table`` to fit your current Turba installation. You can then run the
 script to see how the data //would// be changed::
 
-   php scripts/upgrade/2.1_to_2.2_sql_schema.php
+   php scripts/upgrades/2.1_to_2.2_sql_schema.php
 
 If you are happy with the results, you can edit the script again and change
 the ``$for_real`` variable::

@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: mimp/compose.php,v 1.75.2.7 2009/01/06 15:24:53 jan Exp $
+ * $Horde: mimp/compose.php,v 1.75.2.8 2009/04/17 06:21:02 slusarz Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -188,10 +188,10 @@ case _("Send"):
     $imp_ui = new IMP_UI_Compose();
 
     $header['to'] = $imp_ui->getAddressList(Util::getFormData('to'));
-    if ($conf['compose']['allow_cc']) {
+    if ($prefs->getValue('compose_cc')) {
         $header['cc'] = $imp_ui->getAddressList(Util::getFormData('cc'));
     }
-    if ($conf['compose']['allow_bcc']) {
+    if ($prefs->getValue('compose_bcc')) {
         $header['bcc'] = $imp_ui->getAddressList(Util::getFormData('bcc'));
     }
 

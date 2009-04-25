@@ -3,7 +3,7 @@
  * The base class representing Kolab objects stored in the server
  * database.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object.php,v 1.2.2.8 2009/01/08 21:07:32 wrobel Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object.php,v 1.2.2.9 2009/04/25 08:56:34 wrobel Exp $
  *
  * PHP version 4
  *
@@ -26,6 +26,7 @@ define('KOLAB_OBJECT_USER',             'Horde_Kolab_Server_Object_user');
 define('KOLAB_OBJECT_SERVER',           'Horde_Kolab_Server_Object_server');
 
 /** Define the possible Kolab object attributes */
+define('KOLAB_ATTR_OC',           'objectClass');
 define('KOLAB_ATTR_UID',          'dn');
 define('KOLAB_ATTR_ID',           'id');
 define('KOLAB_ATTR_SN',           'sn');
@@ -35,6 +36,7 @@ define('KOLAB_ATTR_FN',           'fn');
 define('KOLAB_ATTR_LNFN',         'lnfn');
 define('KOLAB_ATTR_FNLN',         'fnln');
 define('KOLAB_ATTR_MAIL',         'mail');
+define('KOLAB_ATTR_ALIAS',        'alias');
 define('KOLAB_ATTR_SID',          'uid');
 define('KOLAB_ATTR_ACL',          'acl');
 define('KOLAB_ATTR_MEMBER',       'member');
@@ -71,7 +73,7 @@ define('KOLAB_UT_RESOURCE',           3);
  * This class provides methods to deal with Kolab objects stored in
  * the Kolab db.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object.php,v 1.2.2.8 2009/01/08 21:07:32 wrobel Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object.php,v 1.2.2.9 2009/04/25 08:56:34 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

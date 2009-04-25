@@ -2,7 +2,7 @@
 /**
  * A driver for simulating a Kolab user database stored in LDAP.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/test.php,v 1.2.2.7 2009/01/06 15:23:15 jan Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/test.php,v 1.2.2.8 2009/04/25 08:56:34 wrobel Exp $
  *
  * PHP version 4
  *
@@ -19,7 +19,7 @@ require_once 'Horde/Kolab/Server/ldap.php';
 /**
  * This class provides a class for testing the Kolab Server DB.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/test.php,v 1.2.2.7 2009/01/06 15:23:15 jan Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/test.php,v 1.2.2.8 2009/04/25 08:56:34 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -247,6 +247,10 @@ class Horde_Kolab_Server_test extends Horde_Kolab_Server_ldap {
             }
         }
 
+        if (!empty($attributes)) {
+            $this->mapKeys($attributes);
+        }
+
         $filter = $this->_parse($filter);
         if (is_a($filter, 'PEAR_Error')) {
             return $filter;
@@ -264,6 +268,8 @@ class Horde_Kolab_Server_test extends Horde_Kolab_Server_ldap {
             }
             $result = $subtree;
         }
+
+        $this->unmapAttributes($result);
 
         return $result;
     }
@@ -286,7 +292,8 @@ class Horde_Kolab_Server_test extends Horde_Kolab_Server_ldap {
                     switch ($filter['log']) {
                     case '=':
                         $value = $element['data'][$filter['att']];
-                        if (($filter['val'] == '*' && !empty($value))
+                        if ((($filter['val'] == '*'  || $filter['val'] == '\2a')
+                             && !empty($value))
                             || $value == $filter['val']
                             || (is_array($value)
                                 && in_array($filter['val'], $value))) {
@@ -390,8 +397,12 @@ class Horde_Kolab_Server_test extends Horde_Kolab_Server_ldap {
                                             $dn));
         }
         if (empty($attrs)) {
-            return $GLOBALS['KOLAB_SERVER_TEST_DATA'][$dn]['data'];
+            $data = $GLOBALS['KOLAB_SERVER_TEST_DATA'][$dn]['data'];
+            $this->unmapAttributes($data);
+            return $data;
         } else {
+            $this->mapKeys($attrs);
+
             $result = array();
             $data   = $GLOBALS['KOLAB_SERVER_TEST_DATA'][$dn]['data'];
 
@@ -401,6 +412,9 @@ class Horde_Kolab_Server_test extends Horde_Kolab_Server_ldap {
                     array_push($result, $attr);
                 }
             }
+
+            $this->unmapAttributes($result);
+
             $result['count'] = 1;
             return $result;
         }
@@ -422,6 +436,8 @@ class Horde_Kolab_Server_test extends Horde_Kolab_Server_ldap {
                 return $result;
             }
         }
+
+        $this->mapAttributes($data);
 
         $ldap_data = array();
         foreach ($data as $key => $val) {

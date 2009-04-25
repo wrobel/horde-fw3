@@ -2,14 +2,18 @@
 v1.0.1-cvs
 ----------
 
+[mjr] Remove broken implementation of the 'numlimit' configuration option
+      (See Bug: 8139).
+[jan] Fix icon URLs if cookies are turned off.
+[jan] Fix ansel_shares table definition for PostgreSQL.
 [mjr] Fix issue that caused screen image creation to fail when using gd 
       Horde_Image driver.
 [mjr] Fix issue with screen images being generated as PNGs if not using VFS 
       Direct serving.
 
---------
+----
 v1.0
---------
+----
 
 [mjr] Force screen images to be jpegs to reduce image size.
 [mjr] Add a new api method for obtaining the available gallery styles.

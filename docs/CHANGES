@@ -1,9 +1,21 @@
+------
+v3.3.4
+------
+
+[jan] Fix rendering of addresslink form fields (Bug #8053).
+[mjr] Fix a botched merge in Horde_Image_gd that was causing an undefined
+      variable notice to be output in the image data.
+
+
+
 ----------
-v3.3.4-cvs
+v3.3.4-RC1
 ----------
 
+[mjr] Fix an issue that causing users with expired passwords to be allowed to
+      log in with the LDAP Auth driver.
 [jan] Properly handle synchronization requests to non-existant databases.
-[jan] Fix exporting all-day events to Funambol clients (Bug #6847).
+[jan] Fix exporting all-day events to Funambol clients (Bugs #4487, #6847).
 [jan] Quote parameter values in iCalendar data if necessary (Gunnar Wrobel,
       Bug #7758).
 [jan] Detect base64 encoded synchronization data from Blackberry devices
@@ -13,7 +25,7 @@ v3.3.4-cvs
 [jan] Add TLS support to LDAP drivers (web@marlboro.edu, Request #7958).
 [jan] Add scope and sizelimit parameters to LDAP authentication driver
       (dom.lalot@gmail.com, Request #7839).
-[jan] Futher improve HTML to text filter.
+[jan] Further improve HTML-to-text filter.
 [jan] Export recurrence end dates as date-time values in iCalendar data to
       improve compatibility with external clients (Bug #7846).
 [jan] Silence errors messages from iconv_substr() (jens@peino.de, Bug #8128).
@@ -28,10 +40,10 @@ v3.3.4-cvs
 [mjr] Force the use of REQUEST_URI instead of PATH_INFO in Util::getPathInfo()
       when being served by lighttpd due to issues with case insensitive
       file systems.
-[cjh] Add support for SSL connections to MySQL databases
-      (BryanRJ@gmail.com, Request #7972).
-[cjh] Fix storing of unlocked preferences set by hooks
-      (manuel@mausz.at, Bug #6822).
+[cjh] Add support for SSL connections to MySQL databases (BryanRJ@gmail.com,
+      Request #7972).
+[cjh] Fix storing of unlocked preferences set by hooks (manuel@mausz.at,
+      Bug #6822).
 [jan] Highlight color input fields with the color from the picker.
 [jan] Fix importing vCards that have the charset specified in a MIME part
       (Bug #7816).

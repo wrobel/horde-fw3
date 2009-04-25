@@ -1,30 +1,16 @@
 <?xml version="1.0"?>
-<!-- $Horde: ansel/config/conf.xml,v 1.49.2.4 2009/04/06 14:22:05 mrubinsk Exp $ -->
+<!-- $Horde: ansel/config/conf.xml,v 1.49.2.6 2009/04/16 21:40:29 mrubinsk Exp $ -->
 <configuration>
 
  <configtab name="menu" desc="General Settings and Menu">
   <configheader>User Interface</configheader>
   <configsection name="gallery">
-   <configstring name="listlimit"
-       desc="On installations with large
+   <configinteger name="listlimit" desc="On installations with large
    numbers of galleries, it can be useful to disallow using select lists for
    gallery selection in blocks. Set this to the maximum number of galleries
    that can be displayed in a gallery drop down list. If more than this number
    of galleries would appear, then selection list will be disabled."
-       required="false">
-       30
-   </configstring>
-   <configstring name="numlimit"
-       desc="On installations with large
-   numbers of galleries, it can be useful when displaying gallery lists to guest
-   users to display only galleries with a certain number of photos. For example
-   to avoid listing empty galleries. Enter the minimum number of photos you
-   would like to require to be displayed in guest gallery lists. Note that this
-   setting will be ignored when specifically requesting all of a particular
-   user's galleries."
-       required="false">
-       1
-   </configstring>
+   required="false">30</configinteger>
    <configboolean name="downloadzip" desc="Allow the ability to download an
    entire gallery as a .zip file? This is a potential performance hit, and will
    likely require a larger memory_limit value.">false</configboolean>

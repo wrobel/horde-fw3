@@ -2,7 +2,7 @@
 /**
  * A standard Kolab user.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/user.php,v 1.2.2.10 2009/01/08 21:07:32 wrobel Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/user.php,v 1.2.2.11 2009/04/25 08:56:33 wrobel Exp $
  *
  * PHP version 4
  *
@@ -17,7 +17,7 @@
  * This class provides methods to deal with Kolab users stored in
  * the Kolab db.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/user.php,v 1.2.2.10 2009/01/08 21:07:32 wrobel Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/user.php,v 1.2.2.11 2009/04/25 08:56:33 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -31,13 +31,6 @@
  * @link     http://pear.horde.org/index.php?package=Kolab_Server
  */
 class Horde_Kolab_Server_Object_user extends Horde_Kolab_Server_Object {
-
-    /**
-     * The LDAP filter to retrieve this object type
-     *
-     * @var string
-     */
-    var $filter = '(&(objectClass=kolabInetOrgPerson)(uid=*)(mail=*)(sn=*))';
 
     /**
      * The attributes supported by this class
@@ -151,6 +144,31 @@ class Horde_Kolab_Server_Object_user extends Horde_Kolab_Server_Object {
         default:
             return parent::_derive($attr);
         }
+    }
+
+    /**
+     * The LDAP filter to retrieve this object type
+     *
+     * @return string
+     */
+    function getFilter()
+    {
+        $criteria = array('AND' => array(
+                              array('field' => KOLAB_ATTR_SN,
+                                    'op'    => '=',
+                                    'test'  => '*'),
+                              array('field' => KOLAB_ATTR_MAIL,
+                                    'op'    => '=',
+                                    'test'  => '*'),
+                              array('field' => KOLAB_ATTR_SID,
+                                    'op'    => '=',
+                                    'test'  => '*'),
+                              array('field' => KOLAB_ATTR_OC,
+                                    'op'    => '=',
+                                    'test'  => KOLAB_OC_KOLABINETORGPERSON),
+                          ),
+        );
+        return $criteria;
     }
 
     /**

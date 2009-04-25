@@ -29,7 +29,7 @@ require_once KRONOLITH_BASE . '/lib/Recurrence.php';
  *
  * Act on alarms in events and send emails/pages/etc. to users.
  *
- * $Horde: kronolith/lib/Scheduler/kronolith.php,v 1.25.6.22 2008/10/14 17:17:09 jan Exp $
+ * $Horde: kronolith/lib/Scheduler/kronolith.php,v 1.25.6.23 2009/04/21 13:36:12 jan Exp $
  *
  * @package Horde_Scheduler
  */
@@ -426,7 +426,7 @@ class Horde_Scheduler_kronolith extends Horde_Scheduler {
             $msg_headers->addMessageIdHeader();
             $msg_headers->addAgentHeader();
             $msg_headers->addHeader('Date', date('r'));
-            $msg_headers->addHeader('To', 'CalendarReminders:;');
+            $msg_headers->addHeader('To', $email);
             $msg_headers->addHeader('From', $GLOBALS['conf']['reminder']['from_addr']);
 
             $mail_driver = $GLOBALS['conf']['mailer']['type'];

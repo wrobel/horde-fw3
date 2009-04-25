@@ -1,7 +1,7 @@
 002- string(334) "BEGIN:VFREEBUSY
 002+ 
 003- ORGANIZER;CN=GunnarWrobel:MAILTO:wrobel@demo2.pardus.de
-003+ Fatal error: Call to undefined method String::wordwrap() in /home/wrobel/usr/devel/gh/horde-glue/horde-fw3/framework/iCalendar/iCalendar.php on line 1030
+003+ Fatal error: Call to undefined method String::wordwrap() in /home/wrobel/usr/devel/gh/horde-glue/horde-fw3/framework/iCalendar/iCalendar.php on line 1055
 004- DTSTAMP:20061122T230929Z
 005- DTSTART:20061122T230000Z
 006- DTEND:20070121T230000Z

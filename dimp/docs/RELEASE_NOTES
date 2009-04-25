@@ -17,7 +17,7 @@ $this->notes['fm']['focus'] = 6;
 /* Mailing list release notes. */
 $this->notes['ml']['changes'] = <<<ML
 The Horde Team is pleased to announce the final release of the Dynamic
-Internet Messaging Program (DIMP) version H3 (1.1.1).
+Internet Messaging Program (DIMP) version H3 (1.1.2).
 
 DIMP (Dynamic Internet Messaging Program, or Dynamic IMP) is a PHP-based
 webmail system and a component of the Horde project.  DIMP is a version of the
@@ -29,23 +29,18 @@ Although not required to upgrade either Horde or IMP, it is STRONGLY
 RECOMMENDED you do as any bugfixes to core functionality will occur in
 these applications.
 
-DIMP version H3 (1.1.1) is a minot upgrade in the 1.x release series,
+DIMP version H3 (1.1.2) is a minor upgrade in the 1.x release series,
 including these enhancements:
-    * Shift-Delete on multiple messages will move selection to next message.
-    * Fix occasional buggy behavior when drag/drop folders.
-    * The UP key will start at the bottom of the mailbox, if no current
-      message is selected.
-    * Add 'undelete' to Other Actions menu.
-    * Correctly display quota on startup.
-    * Fix some portal display issues.
-    * Correctly show 'To' header when doing searches in sentmail and drafts
-      mailboxes.
-    * Various other bugfixes and performance/stability improvements.
+    * Allow dimp to work with IE 8 (uses IE 7 compatibility mode). Requires
+      IMP 4.3.4+.
+    * Add confirmation box if attempting to send message without subject.
+    * Fix address autocomplete display on IE.
+    * Other bugfixes and performance/stability improvements.
 ML;
 
 /* Freshmeat release notes. */
 $this->notes['fm']['changes'] = <<<FM
-Shift-Delete on multiple messages will move selection to next message. Fix occasional buggy behavior when drag/drop folders. The UP key will start at the bottom of the mailbox, if no current message is selected. Add 'undelete' to Other Actions menu. Correctly display quota on startup. Fix some portal display issues. Correctly show 'To' header when doing searches in sentmail and drafts mailboxes. Various other bugfixes and performance/stability improvements.
+Allow dimp to work with IE 8. Add confirmation box if attempting to send message without subject. Fix address autocomplete display on IE. Various other bugfixes and performance/stability improvements.
 FM;
 
 $this->notes['name'] = 'DIMP';

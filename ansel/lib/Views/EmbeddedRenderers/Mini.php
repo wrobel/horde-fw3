@@ -6,7 +6,7 @@ require_once ANSEL_BASE . '/lib/Views/Gallery.php';
 /**
  * Ansel_View_EmbeddedRenderer_Mini
  *
- * $Horde: ansel/lib/Views/EmbeddedRenderers/Mini.php,v 1.8.2.5 2009/02/09 19:20:25 mrubinsk Exp $
+ * $Horde: ansel/lib/Views/EmbeddedRenderers/Mini.php,v 1.8.2.6 2009/04/14 21:35:01 jan Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -146,7 +146,7 @@ class Ansel_View_EmbeddedRenderer_Mini extends Ansel_View_Gallery {
 EOT;
             /* Special requirements for lightbox */
             if (!empty($lbjsurl)) {
-                $graphic_dir = Horde::applicationUrl($GLOBALS['registry']->getImageDir(), true);
+                $graphic_dir = Horde::applicationUrl($GLOBALS['registry']->getImageDir(), true, -1);
                 $imageText = _("Photo");
                 $labelOf = _("of");
                 $html .= <<<EOT

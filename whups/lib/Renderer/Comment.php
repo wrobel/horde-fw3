@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: whups/lib/Renderer/Comment.php,v 1.16.2.2 2009/01/24 16:01:49 chuck Exp $
+ * $Horde: whups/lib/Renderer/Comment.php,v 1.16.2.3 2009/04/23 08:40:32 jan Exp $
  *
  * Copyright 2001-2002 Robert E. Coyle <robertecoyle@hotmail.com>
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
@@ -144,9 +144,9 @@ class Horde_Form_Renderer_Comment extends Horde_Form_Renderer {
             $flowed->setDelSp(true);
             $comment = $flowed->toFlowed(false);
             $comment = Text_Filter::filter(
-                $comment, array('text2html', 'highlightquotes'),
+                $comment, array('text2html', 'simplemarkup', 'highlightquotes'),
                 array(array('parselevel' => TEXT_HTML_MICRO, 'class' => null),
-                      array()));
+                      array(), array()));
             if ($prefs->getValue('autolink_tickets') &&
                 $conf['prefs']['autolink_terms']) {
                 $term_regex = '/(' . $conf['prefs']['autolink_terms']

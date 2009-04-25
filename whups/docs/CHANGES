@@ -2,6 +2,7 @@
 v1.0.1-cvs
 ----------
 
+[jan] Apply simple markup highlighting on comments.
 [jan] Save queue email addresses when editing queues (horde@hatzidakis.org,
       Bug #7905).
 [jan] Fix charset conversion of comments added with mail-filter.php

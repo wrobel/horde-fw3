@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ansel/lib/Ansel.php,v 1.517.2.45 2009/04/06 14:22:05 mrubinsk Exp $
+ * $Horde: ansel/lib/Ansel.php,v 1.517.2.48 2009/04/24 03:33:13 mrubinsk Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *
@@ -114,13 +114,22 @@ class Ansel {
            }
         }
         foreach ($galleries as $gallery_id => $gallery) {
-            $parents = $gallery->getParents();
-            $indents = count($gallery->getParents());
-            $len = String::length($gallery->get('name'));
-            if ($len > 30) {
-                $label = String::substr($gallery->get('name'), 0, 30) . '...';
+            // We don't use $gallery->getParents() on purpose since we
+            // only need the count of parents. This potentially saves a number
+            // of DB queries.
+            $parents = $gallery->get('parents');
+            if (empty($parents)) {
+                $indents = 0;
             } else {
-                $label = $gallery->get('name');
+                $indents = substr_count($parents, ':') + 1;
+            }
+
+            $gallery_name = $gallery->get('name');
+            $len = String::length($gallery_name);
+            if ($len > 30) {
+                $label = String::substr($gallery_name, 0, 30) . '...';
+            } else {
+                $label = $gallery_name;
             }
 
             $params['selected'] = ($gallery_id == $selected);
@@ -3625,16 +3634,10 @@ class Ansel_Storage {
         }
 
         $key = "$userid,$perm,$parent_id,$allLevels"
-               . (is_array($attributes)
-                 ? implode(',', $attributes) : $attributes);
+               . serialize($attributes);
         if (isset($counts[$key])) {
             return $counts[$key];
         }
-        if (!empty($GLOBALS['conf']['gallery']['numlimit']) &&
-            $perm == PERMS_SHOW && empty($attributes['owner'])) {
-            $attributes['images'] = array('>=', $GLOBALS['conf']['gallery']['numlimit']);
-        }
-
 
         $count = $this->shares->countShares($userid, $perm, $attributes,
                                             $parent, $allLevels);
@@ -3675,16 +3678,9 @@ class Ansel_Storage {
                            $sort_by = null,
                            $direction = 0)
     {
-        if (!empty($GLOBALS['conf']['gallery']['numlimit']) &&
-            $perm == PERMS_SHOW && empty($attributes['owner'])) {
-            $attributes['images'] = array('>=', $GLOBALS['conf']['gallery']['numlimit']);
-        }
-
-
         return $this->shares->listShares(Auth::getAuth(), $perm, $attributes,
                                          $from, $count, $sort_by, $direction,
                                          $parent, $allLevels);
-
     }
 
     /**

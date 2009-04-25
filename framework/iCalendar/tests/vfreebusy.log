@@ -122,5 +122,5 @@ Start:20061123T150000Z End:20061123T160000Z Summary:test
 ---- ACTUAL OUTPUT
 string(9) "vFreebusy"
 
-Fatal error: Call to undefined method String::wordwrap() in /home/wrobel/usr/devel/gh/horde-glue/horde-fw3/framework/iCalendar/iCalendar.php on line 1030
+Fatal error: Call to undefined method String::wordwrap() in /home/wrobel/usr/devel/gh/horde-glue/horde-fw3/framework/iCalendar/iCalendar.php on line 1055
 ---- FAILED

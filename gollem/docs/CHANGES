@@ -2,7 +2,7 @@
 v1.1.1-cvs
 ----------
 
-
+[jan] Don't redirect to browse view if viewing a file fails.
 
 
 ----

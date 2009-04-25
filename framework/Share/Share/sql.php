@@ -3,7 +3,7 @@
  * Horde_Share_sql:: provides the sql backend for the horde share
  * driver.
  *
- * $Horde: framework/Share/Share/sql.php,v 1.1.2.55 2009/03/24 17:47:15 mrubinsk Exp $
+ * $Horde: framework/Share/Share/sql.php,v 1.1.2.56 2009/04/20 21:04:35 jan Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -73,6 +73,20 @@ class Horde_Share_sql extends Horde_Share {
         }
 
         parent::__wakeup();
+    }
+
+    /**
+     * Returns the properties that need to be serialized.
+     *
+     * @return array  List of serializable properties.
+     */
+    function __sleep()
+    {
+        $properties = get_object_vars($this);
+        unset($properties['_sortList'],
+              $properties['_db'],
+              $properties['_write_db']);
+        return array_keys($properties);
     }
 
     /**

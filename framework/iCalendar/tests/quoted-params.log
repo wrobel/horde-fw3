@@ -11,16 +11,10 @@ DTSTAMP;VALUE=DATE:20041120
 SUMMARY:Escaped Comma in Description Field
 DESCRIPTION:There is a comma (escaped with a baskslash) in this sentence
   and some important words after it\, see anything here?
-END:VEVENT
-BEGIN:VEVENT
-UID:20041120-8549-innerjoin-org
-DTSTART;VALUE=DATE:20050504
-DTSTAMP;VALUE=DATE:20041120
-SUMMARY:Dash (rather than Comma) in the Description Field
-DESCRIPTION:There are important words after this dash - see anything here
-  or have the words gone?
+ORGANIZER;CN="Klä,rchen; Mül:ler":mailto:mueller@example.org
 END:VEVENT
 END:VCALENDAR
+Klä,rchen; Mül:ler
 ---- ACTUAL OUTPUT
 Fatal error: Call to undefined method String::wordwrap() in /home/wrobel/usr/devel/gh/horde-glue/horde-fw3/framework/iCalendar/iCalendar.php on line 1055
 ---- FAILED

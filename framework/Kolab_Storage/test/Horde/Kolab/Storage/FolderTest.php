@@ -2,7 +2,7 @@
 /**
  * Test the Kolab folder handler.
  *
- * $Horde: framework/Kolab_Storage/test/Horde/Kolab/Storage/FolderTest.php,v 1.2.2.8 2009/01/06 15:23:18 jan Exp $
+ * $Horde: framework/Kolab_Storage/test/Horde/Kolab/Storage/FolderTest.php,v 1.2.2.9 2009/04/24 07:51:59 wrobel Exp $
  *
  * @package Kolab_Storage
  */
@@ -21,7 +21,7 @@ require_once 'Horde/Kolab/IMAP/test.php';
 /**
  * Test the Kolab folder handler.
  *
- * $Horde: framework/Kolab_Storage/test/Horde/Kolab/Storage/FolderTest.php,v 1.2.2.8 2009/01/06 15:23:18 jan Exp $
+ * $Horde: framework/Kolab_Storage/test/Horde/Kolab/Storage/FolderTest.php,v 1.2.2.9 2009/04/24 07:51:59 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -162,7 +162,7 @@ class Horde_Kolab_Storage_FolderTest extends Horde_Kolab_Test_Storage
      */
     public function testGetImapFailNoServer()
     {
-        $session = &new Horde_Kolab_Session();
+        $session = Horde_Kolab_Session::singleton('anonymous', null, true);
         $imap = $session->getImapParams();
         $this->assertEquals('localhost', $imap['hostspec']);
     }

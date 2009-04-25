@@ -1,5 +1,5 @@
 001- BEGIN:VCALENDAR
-001+ Fatal error: Call to undefined method String::wordwrap() in /home/wrobel/usr/devel/gh/horde-glue/horde-fw3/framework/iCalendar/iCalendar.php on line 1030
+001+ Fatal error: Call to undefined method String::wordwrap() in /home/wrobel/usr/devel/gh/horde-glue/horde-fw3/framework/iCalendar/iCalendar.php on line 1055
 002- VERSION:2.0
 003- PRODID:-//The Horde Project//Horde_iCalendar Library//EN
 004- METHOD:PUBLISH

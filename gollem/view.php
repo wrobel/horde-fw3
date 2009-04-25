@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: gollem/view.php,v 1.51.2.5 2009/01/06 15:23:53 jan Exp $
+ * $Horde: gollem/view.php,v 1.51.2.6 2009/04/17 11:10:44 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -32,15 +32,15 @@ $data = '';
 if (is_callable(array($GLOBALS['gollem_vfs'], 'readStream'))) {
     $stream = $GLOBALS['gollem_vfs']->readStream($filedir, $filename);
     if (is_a($stream, 'PEAR_Error')) {
-        $notification->push(sprintf(_("Access denied to %s"), $filename), 'horde.error');
-        header('Location: ' . Util::addParameter(Horde::applicationUrl('manager.php', true), 'actionID', $actionID));
+        Horde::logMessage($stream, __FILE__, __LINE__, PEAR_LOG_NOTICE);
+        printf(_("Access denied to %s"), $filename);
         exit;
     }
 } else {
     $data = $GLOBALS['gollem_vfs']->read($filedir, $filename);
     if (is_a($data, 'PEAR_Error')) {
-        $notification->push(sprintf(_("Access denied to %s"), $filename), 'horde.error');
-        header('Location: ' . Util::addParameter(Horde::applicationUrl('manager.php', true), 'actionID', $actionID));
+        Horde::logMessage($data, __FILE__, __LINE__, PEAR_LOG_NOTICE);
+        printf(_("Access denied to %s"), $filename);
         exit;
     }
 }

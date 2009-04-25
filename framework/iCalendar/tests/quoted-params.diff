@@ -10,13 +10,7 @@
 009- SUMMARY:Escaped Comma in Description Field
 010- DESCRIPTION:There is a comma (escaped with a baskslash) in this sentence
 011-   and some important words after it\, see anything here?
-012- END:VEVENT
-013- BEGIN:VEVENT
-014- UID:20041120-8549-innerjoin-org
-015- DTSTART;VALUE=DATE:20050504
-016- DTSTAMP;VALUE=DATE:20041120
-017- SUMMARY:Dash (rather than Comma) in the Description Field
-018- DESCRIPTION:There are important words after this dash - see anything here
-019-   or have the words gone?
-020- END:VEVENT
-021- END:VCALENDAR
+012- ORGANIZER;CN="Klä,rchen; Mül:ler":mailto:mueller@example.org
+013- END:VEVENT
+014- END:VCALENDAR
+015- Klä,rchen; Mül:ler

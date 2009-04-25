@@ -12,7 +12,7 @@ include_once 'Horde/String.php';
  * The Horde_Form:: package provides form rendering, validation, and
  * other functionality for the Horde Application Framework.
  *
- * $Horde: framework/Form/Form.php,v 1.306.2.74 2009/01/24 16:22:22 chuck Exp $
+ * $Horde: framework/Form/Form.php,v 1.306.2.75 2009/04/22 08:39:46 jan Exp $
  *
  * Copyright 2001-2007 Robert E. Coyle <robertecoyle@hotmail.com>
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
@@ -1563,11 +1563,19 @@ class Horde_Form_Type_address extends Horde_Form_Type_longtext {
 
 }
 
-class Horde_Form_Type_addresslink extends Horde_Form_Type {
+class Horde_Form_Type_addresslink extends Horde_Form_Type_address {
 
     function isValid(&$var, &$vars, $value, &$message)
     {
         return true;
+    }
+
+    /**
+     * Return info about field type.
+     */
+    function about()
+    {
+        return array('name' => _("Address Link"));
     }
 
 }

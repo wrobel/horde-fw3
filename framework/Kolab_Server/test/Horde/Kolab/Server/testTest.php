@@ -2,7 +2,7 @@
 /**
  * Test the test driver.
  *
- * $Horde: framework/Kolab_Server/test/Horde/Kolab/Server/testTest.php,v 1.3.2.10 2009/01/06 15:23:17 jan Exp $
+ * $Horde: framework/Kolab_Server/test/Horde/Kolab/Server/testTest.php,v 1.3.2.11 2009/04/25 08:56:33 wrobel Exp $
  *
  * PHP version 5
  *
@@ -21,7 +21,7 @@ require_once 'Horde/Kolab/Test/Server.php';
 /**
  * Test the test backend.
  *
- * $Horde: framework/Kolab_Server/test/Horde/Kolab/Server/testTest.php,v 1.3.2.10 2009/01/06 15:23:17 jan Exp $
+ * $Horde: framework/Kolab_Server/test/Horde/Kolab/Server/testTest.php,v 1.3.2.11 2009/04/25 08:56:33 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -359,9 +359,17 @@ class Horde_Kolab_Server_testTest extends Horde_Kolab_Test_Server {
         $this->assertNoError($groups);
         $this->assertContains('cn=group@example.org,dc=example,dc=org', $groups);
 
+        $groups = $this->ldap->getGroupAddresses($this->ldap->uidForMailAddress('g.wrobel@example.org'));
+        $this->assertNoError($groups);
+        $this->assertContains('group@example.org', $groups);
+
         $groups = $this->ldap->getGroups($this->ldap->uidForMailAddress('test@example.org'));
         $this->assertNoError($groups);
         $this->assertContains('cn=group@example.org,dc=example,dc=org', $groups);
+
+        $groups = $this->ldap->getGroupAddresses($this->ldap->uidForMailAddress('test@example.org'));
+        $this->assertNoError($groups);
+        $this->assertContains('group@example.org', $groups);
 
         $groups = $this->ldap->getGroups('nobody');
         $this->assertNoError($groups);

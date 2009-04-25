@@ -2,7 +2,7 @@
 /**
  * Representation of a Kolab user group.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/group.php,v 1.2.2.4 2009/01/06 15:23:15 jan Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/group.php,v 1.2.2.5 2009/04/25 08:56:33 wrobel Exp $
  *
  * PHP version 4
  *
@@ -16,7 +16,7 @@
 /**
  * This class provides methods to deal with groups for Kolab.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/group.php,v 1.2.2.4 2009/01/06 15:23:15 jan Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/group.php,v 1.2.2.5 2009/04/25 08:56:33 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -30,13 +30,6 @@
  * @link     http://pear.horde.org/index.php?package=Kolab_Server
  */
 class Horde_Kolab_Server_Object_group extends Horde_Kolab_Server_Object {
-
-    /**
-     * The LDAP filter to retrieve this object type
-     *
-     * @var string
-     */
-    var $filter = '(objectClass=kolabGroupOfNames)';
 
     /**
      * The attributes supported by this class
@@ -101,6 +94,22 @@ class Horde_Kolab_Server_Object_group extends Horde_Kolab_Server_Object {
         default:
             return parent::_derive($attr);
         }
+    }
+
+    /**
+     * Return the filter string to retrieve this object type.
+     *
+     * @return string The filter to retrieve this object type from the server
+     *                database.
+     */
+    public static function getFilter()
+    {
+        $criteria = array('AND' => array(array('field' => KOLAB_ATTR_OC,
+                                               'op'    => '=',
+                                               'test'  => KOLAB_OC_KOLABGROUPOFNAMES),
+                          ),
+        );
+        return $criteria;
     }
 
     /**

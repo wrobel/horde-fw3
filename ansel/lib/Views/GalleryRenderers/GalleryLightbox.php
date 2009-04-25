@@ -3,7 +3,7 @@
  * Ansel_View_GalleryRenderer_GalleryLightbox:: Class wraps display of the lightbox
  * style gallery views.
  *
- * $Horde: ansel/lib/Views/GalleryRenderers/GalleryLightbox.php,v 1.20.2.8 2009/01/14 23:37:04 mrubinsk Exp $
+ * $Horde: ansel/lib/Views/GalleryRenderers/GalleryLightbox.php,v 1.20.2.9 2009/04/14 21:35:02 jan Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -125,7 +125,7 @@ class Ansel_View_GalleryRenderer_GalleryLightbox extends Ansel_View_GalleryRende
         ob_start();
 
         /* Create the js variables to pass to the lightbox script */
-        $jsvars = array('graphics_dir' => Horde::applicationUrl($registry->getImageDir(), true),
+        $jsvars = array('graphics_dir' => Horde::applicationUrl($registry->getImageDir(), true, -1),
                         'image_text' => _("Photo"),
                         'of_text' => _("of"),
                         'start_page' => $page);

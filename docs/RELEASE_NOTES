@@ -12,39 +12,25 @@
  * 8 - Minor security fixes
  * 9 - Major security fixes
  */
-$this->notes['fm']['focus'] = 8;
+$this->notes['fm']['focus'] = 6;
 
 /* Mailing list release notes. */
 $this->notes['ml']['changes'] = <<<ML
-The Horde Team is pleased to announce the final release of the Horde
-Application Framework version 3.3.3.
-
-This is a minor security release that fixes unescaped output in the tag cloud
-search script, and validates the Horde_Image driver name to prevent a possible
-local file inclusion vulnerability. All users are encouraged to upgrade to this
-release. Thanks to Gunnar Wrobel for finding these issues in a code audit.
+The Horde Team is pleased to announce the first release candidate of the Horde
+Application Framework version 3.3.4.
 
 The Horde Application Framework is a modular, general-purpose web application
 framework written in PHP.  It provides an extensive array of classes that are
 targeted at the common problems and tasks involved in developing modern web
 applications.
 
-The major changes compared to Horde version 3.3.2 are:
-    * SECURITY: Fix unescaped output in the tag cloud block
-    * SECURITY: Fix unvalidated Horde_Image driver name
-    * Restore backwards compatibility with older Kronolith and Whups
-      releases
-    * Fix problems with SQL Shares and PostgreSQL
-    * Support Mozilla Sunbird snooze properties
+The major changes compared to Horde version 3.3.3 are:
+    * Large variety of small bug fixes and improvements all over the place.
 ML;
 
 /* Freshmeat release notes, not more than 600 characters. */
 $this->notes['fm']['changes'] = <<<FM
-This is a security release that fixes unescaped output in the tag cloud block
-and closes a potential local file inclusion vulnerability. In addition, this
-release restores backwards compatibility with older Kronolith and Whups
-releases, fixes the SQL share driver with PostgreSQL, and adds support for
-Mozilla Sunbird snooze properties.
+Bug fixes and improvements have been made all over the place.
 FM;
 
 $this->notes['name'] = 'Horde';

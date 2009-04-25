@@ -2,7 +2,7 @@
 /**
  * Representation of a Kolab distribution list.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/distlist.php,v 1.1.2.2 2009/01/06 15:23:15 jan Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/distlist.php,v 1.1.2.3 2009/04/25 08:56:33 wrobel Exp $
  *
  * PHP version 4
  *
@@ -18,7 +18,7 @@ require_once 'Horde/Kolab/Server/Object/group.php';
 /**
  * This class provides methods to deal with distribution lists for Kolab.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/distlist.php,v 1.1.2.2 2009/01/06 15:23:15 jan Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/distlist.php,v 1.1.2.3 2009/04/25 08:56:33 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -34,14 +34,6 @@ require_once 'Horde/Kolab/Server/Object/group.php';
 class Horde_Kolab_Server_Object_distlist extends Horde_Kolab_Server_Object_group {
 
     /**
-     * The LDAP filter to retrieve this object type
-     *
-     * @var string
-     */
-    var $filter = '(&(objectClass=kolabGroupOfNames)(mail=*))';
-
-
-    /**
      * The attributes required when creating an object of this class.
      *
      * @var array
@@ -49,4 +41,26 @@ class Horde_Kolab_Server_Object_distlist extends Horde_Kolab_Server_Object_group
     var $_required_attributes = array(
         KOLAB_ATTR_MAIL,
     );
+
+    /**
+     * Return the filter string to retrieve this object type.
+     *
+     * @static
+     *
+     * @return string The filter to retrieve this object type from the server
+     *                database.
+     */
+    public static function getFilter()
+    {
+        $criteria = array('AND' => array(
+                              array('field' => KOLAB_ATTR_MAIL,
+                                    'op'    => '=',
+                                    'test'  => '*'),
+                              array('field' => KOLAB_ATTR_OC,
+                                    'op'    => '=',
+                                    'test'  => KOLAB_OC_KOLABGROUPOFNAMES),
+                          ),
+        );
+        return $criteria;
+    }
 };

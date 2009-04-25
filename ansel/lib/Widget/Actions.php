@@ -2,7 +2,7 @@
 /**
  * Ansel_Widget_Actions:: class to wrap the display of gallery actions
  *
- * $Horde: ansel/lib/Widget/Actions.php,v 1.26.2.22 2009/01/13 16:09:12 mrubinsk Exp $
+ * $Horde: ansel/lib/Widget/Actions.php,v 1.26.2.23 2009/04/14 21:35:03 jan Exp $
  *
  * @author Michael J. Rubinsky <mrubinsk@horde.org>
  * @package Ansel
@@ -46,7 +46,7 @@ class Ansel_Widget_Actions extends Ansel_Widget {
                                              'view' => 'Slideshow'),
                                        $date)));
             }
-            $html .= '<li>' . Horde::link($slideshow_url, '', 'widget') . Horde::img('slideshow_play.png', _("Start Slideshow"), '', Horde::url($registry->getImageDir(), true)) . ' ' . _("Start Slideshow") . '</a></li>';
+            $html .= '<li>' . Horde::link($slideshow_url, '', 'widget') . Horde::img('slideshow_play.png', _("Start Slideshow"), '', Horde::url($registry->getImageDir(), true, -1)) . ' ' . _("Start Slideshow") . '</a></li>';
         }
         if (!empty($uploadurl) && $this->_view->gallery->hasPermission(Auth::getAuth(), PERMS_EDIT)) {
             $html .= '<li>' . Horde::link($uploadurl, '', 'widget') . Horde::img('image_add.png') . ' ' . _("Upload photos") . '</a></li>';

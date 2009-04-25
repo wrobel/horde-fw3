@@ -3,7 +3,7 @@
  * Possible strings from weather.com, just to have them in the source for
  * localization reasons.
  *
- * $Horde: horde/lib/Block/weatherdotcom_strings.php,v 1.1.2.11 2009/04/07 11:21:05 jan Exp $
+ * $Horde: horde/lib/Block/weatherdotcom_strings.php,v 1.1.2.12 2009/04/16 23:02:22 jan Exp $
  */
 
 _("AM Clouds");
@@ -47,6 +47,7 @@ _("Light Snow");
 _("Light Snow Early");
 _("Light Snow Late");
 _("Light Snow Shower");
+_("Mist");
 _("Mostly Clear");
 _("Mostly Cloudy");
 _("Mostly Cloudy and Windy");

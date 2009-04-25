@@ -1,6 +1,13 @@
 ----------
-v2.3.2-cvs
+v2.3.3-cvs
 ----------
+
+
+
+
+------
+v2.3.2
+------
 
 [jan] Don't allow to set alarms if no due date has been set.
 [cjh] Work around BC break with Horde versions before 3.2 (Bug #7820).

@@ -1,4 +1,4 @@
--- $Horde: ansel/scripts/sql/ansel.pgsql.sql,v 1.5.2.3 2008/12/08 20:38:18 mrubinsk Exp $
+-- $Horde: ansel/scripts/sql/ansel.pgsql.sql,v 1.5.2.4 2009/04/14 21:25:38 jan Exp $
 
 CREATE TABLE ansel_images (
     image_id             INT NOT NULL,
@@ -74,7 +74,7 @@ CREATE TABLE ansel_shares (
     attribute_download VARCHAR(255),
     attribute_passwd VARCHAR(255),
     attribute_faces INT DEFAULT 0 NOT NULL,
-    attribute_view_mode INT DEFAULT 0 NOT NULL,
+    attribute_view_mode VARCHAR(255) DEFAULT 'Normal' NOT NULL,
 --
     PRIMARY KEY (share_id)
 );

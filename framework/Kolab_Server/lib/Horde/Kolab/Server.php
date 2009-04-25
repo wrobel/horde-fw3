@@ -2,7 +2,7 @@
 /**
  * A library for accessing the Kolab user database.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server.php,v 1.2.2.8 2009/01/08 09:33:35 wrobel Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server.php,v 1.2.2.9 2009/04/25 08:56:34 wrobel Exp $
  *
  * PHP version 4
  *
@@ -28,7 +28,7 @@ define('KOLAB_SERVER_RESULT_MANY',   3);
  * This class provides methods to deal with Kolab objects stored in
  * the Kolab object db.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server.php,v 1.2.2.8 2009/01/08 09:33:35 wrobel Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server.php,v 1.2.2.9 2009/04/25 08:56:34 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -159,9 +159,12 @@ class Horde_Kolab_Server {
             $driver = 'ldap';
 
             $server_params = array('server'  => $conf['kolab']['ldap']['server'],
-                                  'base_dn' => $conf['kolab']['ldap']['basedn'],
-                                  'uid'     => $conf['kolab']['ldap']['phpdn'],
-                                  'pass'    => $conf['kolab']['ldap']['phppw']);
+                                   'base_dn' => $conf['kolab']['ldap']['basedn'],
+                                   'uid'     => $conf['kolab']['ldap']['phpdn'],
+                                   'pass'    => $conf['kolab']['ldap']['phppw']);
+            if (isset($conf['kolab']['ldap']['map'])) {
+                $server_params['map'] = $conf['kolab']['ldap']['map'];
+            }
         } else {
             $driver        = null;
             $server_params = array();
@@ -473,7 +476,7 @@ class Horde_Kolab_Server {
     function uidForId($id,
                       $restrict = KOLAB_SERVER_RESULT_SINGLE)
     {
-        return $this->uidForAttr('uid', $id);
+        return $this->uidForAttr(KOLAB_ATTR_SID, $id);
     }
 
     /**
@@ -513,7 +516,7 @@ class Horde_Kolab_Server {
      */
     function uidForIdOrMail($id)
     {
-        $uid = $this->uidForAttr('uid', $id);
+        $uid = $this->uidForAttr(KOLAB_ATTR_SID, $id);
         if (!$uid) {
             $uid = $this->uidForAttr('mail', $id);
         }
@@ -562,7 +565,7 @@ class Horde_Kolab_Server {
      */
     function uidForMailOrIdOrAlias($id)
     {
-        $uid = $this->uidForAttr('uid', $id);
+        $uid = $this->uidForAttr(KOLAB_ATTR_SID, $id);
         if (!$uid) {
             $uid = $this->uidForAttr('mail', $id);
             if (!$uid) {

@@ -19,7 +19,7 @@
  *                  DEFAULT: NONE (system default will be used)</pre>
  *
  *
- * $Horde: framework/Auth/Auth/ldap.php,v 1.47.10.31 2009/04/04 10:10:54 jan Exp $
+ * $Horde: framework/Auth/Auth/ldap.php,v 1.47.10.32 2009/04/10 21:03:55 mrubinsk Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -319,7 +319,7 @@ class Auth_ldap extends Auth {
                     if ($today >= $warnday) {
                         $GLOBALS['notification']->push(sprintf(ngettext("%d day until your password expires.", "%d days until your password expires.", $toexpire), $toexpire), 'horde.warning');
                     }
-                    if ($toexpire = 0) {
+                    if ($toexpire == 0) {
                         $this->_authCredentials['changeRequested'] = true;
                     }
                     if ($toexpire < 0) {

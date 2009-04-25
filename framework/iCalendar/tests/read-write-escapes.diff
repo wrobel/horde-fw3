@@ -1,5 +1,5 @@
 001- array(1) {
-001+ Fatal error: Call to undefined method String::wordwrap() in /home/wrobel/usr/devel/gh/horde-glue/horde-fw3/framework/iCalendar/iCalendar.php on line 1030
+001+ Fatal error: Call to undefined method String::wordwrap() in /home/wrobel/usr/devel/gh/horde-glue/horde-fw3/framework/iCalendar/iCalendar.php on line 1055
 002-   [0]=>
 003-   string(114) "There is a comma (escaped with a baskslash) in this sentence and some important words after it, see anything here?"
 004- }

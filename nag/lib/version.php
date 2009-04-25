@@ -1,1 +1,1 @@
-<?php define('NAG_VERSION', 'H3 (2.3.2-cvs)') ?>
+<?php define('NAG_VERSION', 'H3 (2.3.3-cvs)') ?>

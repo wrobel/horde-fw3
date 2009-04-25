@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/compose.php,v 2.800.2.122 2009/01/30 00:07:13 jan Exp $
+ * $Horde: imp/compose.php,v 2.800.2.124 2009/04/13 20:45:39 slusarz Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -1099,8 +1099,7 @@ if ($redirect) {
     }
     if ($_SESSION['imp']['file_upload']) {
         $compose_options[] = array(
-            'url' => Horde::link('#attachments', '', 'widget', null,
-                                 'Field.focus(\'upload_1\');return false;'),
+            'url' => Horde::link('#attachments', '', 'widget'),
             'img' => Horde::img('manage_attachments.png'),
             'label' => $show_text ? _("Attachments") : '');
     }

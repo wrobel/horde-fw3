@@ -2,7 +2,7 @@
 /**
  * An entry in the global addressbook.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/address.php,v 1.2.2.5 2009/01/08 21:07:32 wrobel Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/address.php,v 1.2.2.6 2009/04/25 08:56:33 wrobel Exp $
  *
  * PHP version 4
  *
@@ -17,7 +17,7 @@
  * This class provides methods to deal with global address book
  * entries for Kolab.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/address.php,v 1.2.2.5 2009/01/08 21:07:32 wrobel Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/address.php,v 1.2.2.6 2009/04/25 08:56:33 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -31,13 +31,6 @@
  * @link     http://pear.horde.org/index.php?package=Kolab_Server
  */
 class Horde_Kolab_Server_Object_address extends Horde_Kolab_Server_Object {
-
-    /**
-     * The LDAP filter to retrieve this object type
-     *
-     * @var string
-     */
-    var $filter = '(&(objectclass=inetOrgPerson)(!(uid=*))(sn=*))';
 
     /**
      * The attributes supported by this class
@@ -84,6 +77,32 @@ class Horde_Kolab_Server_Object_address extends Horde_Kolab_Server_Object {
         KOLAB_OC_INETORGPERSON,
         KOLAB_OC_KOLABINETORGPERSON,
     );
+
+    /**
+     * The LDAP filter to retrieve this object type
+     *
+     * @return string
+     */
+    function getFilter()
+    {
+        $criteria = array('AND' => array(
+                              array('field' => KOLAB_ATTR_SN,
+                                    'op'    => '=',
+                                    'test'  => '*'),
+                              array('field' => KOLAB_ATTR_OC,
+                                    'op'    => '=',
+                                    'test'  => KOLAB_OC_INETORGPERSON),
+                              array('NOT' => array(
+                                        array('field' => KOLAB_ATTR_SID,
+                                              'op'    => '=',
+                                              'test'  => '*'),
+                                    ),
+                              ),
+                          ),
+        );
+        return $criteria;
+    }
+
 
     /**
      * Convert the object attributes to a hash.
