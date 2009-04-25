@@ -2,7 +2,7 @@
 /**
  * A standard Kolab user.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/user.php,v 1.2.2.11 2009/04/25 08:56:33 wrobel Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/user.php,v 1.2.2.12 2009/04/25 12:34:52 wrobel Exp $
  *
  * PHP version 4
  *
@@ -17,7 +17,7 @@
  * This class provides methods to deal with Kolab users stored in
  * the Kolab db.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/user.php,v 1.2.2.11 2009/04/25 08:56:33 wrobel Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/user.php,v 1.2.2.12 2009/04/25 12:34:52 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -200,6 +200,17 @@ class Horde_Kolab_Server_Object_user extends Horde_Kolab_Server_Object {
     function getGroups()
     {
         return $this->_db->getGroups($this->_uid);
+    }
+
+    /**
+     * Get the group mail addresses for this object
+     *
+     * @return mixed|PEAR_Error An array of group addresses, false if no groups were
+     *                          found.
+     */
+    function getGroupAddresses()
+    {
+        return $this->_db->getGroupAddresses($this->_uid);
     }
 
     /**

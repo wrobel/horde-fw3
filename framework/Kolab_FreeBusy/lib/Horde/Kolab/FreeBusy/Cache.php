@@ -2,7 +2,7 @@
 /**
  * Caching for the Kolab free/busy data.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.4 2009/04/24 20:26:34 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.5 2009/04/25 19:16:42 wrobel Exp $
  *
  * @package Kolab_FreeBusy
  */
@@ -15,7 +15,7 @@ require_once 'Horde/iCalendar/vfreebusy.php';
  * The Horde_Kolab_FreeBusy_Cache:: class provides functionality to store
  * prepared free/busy data for quick retrieval.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.4 2009/04/24 20:26:34 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.5 2009/04/25 19:16:42 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *
@@ -276,7 +276,17 @@ class Horde_Kolab_FreeBusy_Cache {
         $vFb->setAttribute('ORGANIZER', 'MAILTO:' . $access->owner, $params);
 
         $vFb->setAttribute('DTSTAMP', time());
-        $vFb->setAttribute('URL', 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']);
+        if (isset($_SERVER['SERVER_NAME'])) {
+            $host = $_SERVER['SERVER_NAME'];
+        } else {
+            $host = 'localhost';
+        }
+        if (isset($_SERVER['REQUEST_URI'])) {
+            $uri = $_SERVER['REQUEST_URI'];
+        } else {
+            $uri = '/';
+        }
+        $vFb->setAttribute('URL', 'http://' . $host . $uri);
 
         $mtimes = array();
         foreach ($files as $file) {
@@ -364,7 +374,7 @@ class Horde_Kolab_FreeBusy_Cache {
         /* Check if the calling user has access to the extended information of
          * the folder we are about to integrate into the free/busy data.
          */
-        $groups = $access->user_object->getGroups();
+        $groups = $access->user_object->getGroupAddresses();
         if (is_a($groups, 'PEAR_Error')) {
             return $groups;
         }
@@ -481,7 +491,7 @@ class Horde_Kolab_FreeBusy_Cache {
 /**
  * A berkeley db based cache for free/busy data.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.4 2009/04/24 20:26:34 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.5 2009/04/25 19:16:42 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *
@@ -506,7 +516,7 @@ class Horde_Kolab_FreeBusy_Cache_DB {
      *
      * @var resource
      */
-    var $_db;
+    var $_db = false;
 
     /**
      * The format of the database.
@@ -556,12 +566,12 @@ class Horde_Kolab_FreeBusy_Cache_DB {
      */
     function _open()
     {
-        if ($this->_db) {
+        if ($this->_db !== false) {
             return true;
         }
 
         $dbfile = $this->_cache_dir . '/' . $this->_type . 'cache.db';
-        $this->_db = @dba_open($dbfile, 'cd', $this->_dbformat);
+        $this->_db = dba_open($dbfile, 'cd', $this->_dbformat);
         if ($this->_db === false) {
             return PEAR::raiseError(sprintf("Unable to open freebusy cache db %s", $dbfile));
         }
@@ -573,8 +583,10 @@ class Horde_Kolab_FreeBusy_Cache_DB {
      */
     function _close()
     {
-        @dba_close($this->_db);
-        $this->_db = null;
+        if ($this->_db !== false) {
+            dba_close($this->_db);
+        }
+        $this->_db = false;
     }
 
     /**
@@ -598,10 +610,12 @@ class Horde_Kolab_FreeBusy_Cache_DB {
             $lst = array_diff($lst, array($filename));
             $result = dba_replace($uid, join(',', $lst), $this->_db);
             if ($result === false) {
-                return PEAR::raiseError(sprintf("Unable to set db value for uid %s", $uid));
+                $result = PEAR::raiseError(sprintf("Unable to set db value for uid %s", $uid));
             }
         }
-        return true;
+        $this->_close();
+
+        return $result;
     }
 
     /**
@@ -629,15 +643,17 @@ class Horde_Kolab_FreeBusy_Cache_DB {
             $lst[] = $filename;
             $result = dba_replace($uid, join(',', array_keys(array_flip($lst))), $this->_db);
             if ($result === false) {
-                return PEAR::raiseError(sprintf("Unable to set db value for uid %s", $uid));
+                $result = PEAR::raiseError(sprintf("Unable to set db value for uid %s", $uid));
             }
         } else {
             $result = dba_insert($uid, $filename, $this->_db);
             if ($result === false) {
-                return PEAR::raiseError(sprintf("Unable to set db value for uid %s", $uid));
+                $result = PEAR::raiseError(sprintf("Unable to set db value for uid %s", $uid));
             }
         }
-        return true;
+        $this->_close();
+
+        return $result;
     }
 
     /**
@@ -651,17 +667,19 @@ class Horde_Kolab_FreeBusy_Cache_DB {
     function has($filename, $uid)
     {
         $result = $this->_open();
-
         if (is_a($result, 'PEAR_Error')) {
             return $result;
         }
 
+        $result = false;
         if (dba_exists($uid, $this->_db)) {
             $lst = dba_fetch($uid, $this->_db);
             $lst = split(',', $lst);
-            return in_array($filename, $lst);
+            $result = in_array($filename, $lst);
         }
-        return false;
+        $this->_close();
+
+        return $result;
     }
 
     /**
@@ -678,12 +696,15 @@ class Horde_Kolab_FreeBusy_Cache_DB {
             return $result;
         }
 
+        $result = array();
         if (dba_exists($uid, $this->_db)) {
             $lst = dba_fetch($uid, $this->_db);
             $lst = split(',', $lst);
-            return array_filter($lst, array($this, '_notEmpty'));
+            $result = array_filter($lst, array($this, '_notEmpty'));
         }
-        return array();
+        $this->_close();
+
+        return $result;
     }
 
     /**
@@ -733,7 +754,7 @@ class Horde_Kolab_FreeBusy_Cache_DB {
  * A berkeley db based cache for free/busy data that holds relevant
  * cache files based on folder ACLs.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.4 2009/04/24 20:26:34 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.5 2009/04/25 19:16:42 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *
@@ -789,7 +810,6 @@ class Horde_Kolab_FreeBusy_Cache_DB_acl extends Horde_Kolab_FreeBusy_Cache_DB {
             }
         }
 
-        $this->_close();
         return true;
     }
 }
@@ -798,7 +818,7 @@ class Horde_Kolab_FreeBusy_Cache_DB_acl extends Horde_Kolab_FreeBusy_Cache_DB {
  * A berkeley db based cache for free/busy data that holds relevant
  * cache files based on extended folder ACLs.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.4 2009/04/24 20:26:34 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.5 2009/04/25 19:16:42 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *
@@ -853,7 +873,6 @@ class Horde_Kolab_FreeBusy_Cache_DB_xacl extends Horde_Kolab_FreeBusy_Cache_DB {
             }
         }
 
-        $this->_close();
         return true;
     }
 }
@@ -861,7 +880,7 @@ class Horde_Kolab_FreeBusy_Cache_DB_xacl extends Horde_Kolab_FreeBusy_Cache_DB {
 /**
  * A representation of a cache file.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.4 2009/04/24 20:26:34 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.5 2009/04/25 19:16:42 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *
@@ -1040,7 +1059,7 @@ class Horde_Kolab_FreeBusy_Cache_File {
 /**
  * A cache file for partial free/busy information.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.4 2009/04/24 20:26:34 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.5 2009/04/25 19:16:42 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *
@@ -1110,7 +1129,7 @@ class Horde_Kolab_FreeBusy_Cache_File_pvcal extends Horde_Kolab_FreeBusy_Cache_F
 /**
  * A cache file for complete free/busy information.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.4 2009/04/24 20:26:34 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.5 2009/04/25 19:16:42 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *
@@ -1252,7 +1271,7 @@ class Horde_Kolab_FreeBusy_Cache_File_vcal extends Horde_Kolab_FreeBusy_Cache_Fi
  * ACL storage and is required to hold the old ACL list for updates to
  * the DB based cache.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.4 2009/04/24 20:26:34 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.5 2009/04/25 19:16:42 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *
@@ -1363,7 +1382,7 @@ class Horde_Kolab_FreeBusy_Cache_File_acl extends Horde_Kolab_FreeBusy_Cache_Fil
  * DB based ACL storage and is required to hold the old ACL list for
  * updates to the DB based cache.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.4 2009/04/24 20:26:34 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Cache.php,v 1.17.2.5 2009/04/25 19:16:42 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *

@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: passwd/config/backends.php.dist,v 1.41.2.3 2008/10/09 17:12:03 jan Exp $
+ * $Horde: passwd/config/backends.php.dist,v 1.41.2.4 2009/04/25 15:53:07 jan Exp $
  *
  * This file is where you specify what backends people use to change
  * their passwords. There are a number of properties that you can set
@@ -473,5 +473,48 @@ $backends['http'] = array (
             'badPass' => 'Bad old password',
             'badUser' => 'Mailbox not found'
             )
+    )
+);
+
+// This is an example configuration for Postfix.admin 2.3.
+// Set the 'password_policy' section as you wish.
+// In most installations you probably only need to change the 
+// hostspec and /or  password fields.
+$backends['postfixadmin'] = array (
+    'name' => 'Postfix Admin server',
+    'preferred' => 'true',
+    'password policy' => array(
+        'minLength' => 6,
+        'maxLength' => 20,
+        'maxSpace' => 0,
+        'minUpper' => 1,
+        'minLower' => 1,
+        'minNumeric' => 1,
+        'minSymbols' => 0
+    ),
+    'driver' => 'sql',
+    'params' => array(
+        'phptype'    => 'mysql',
+        'hostspec'   => 'localhost',
+        'username'   => 'postfix',
+        'password'   => 'PASSWORD',
+        'encryption' => 'crypt-md5',
+        'database'   => 'postfix',
+        'table'      => 'mailbox',
+        'user_col'   => 'username',
+        'pass_col'   => 'password',
+        'show_encryption' => false,
+        // The following two settings allow you to specify custom queries for
+        // lookup and modify functions if special functions need to be
+        // performed.  In places where a username or a password needs to be
+        // used, refer to this placeholder reference:
+        //    %d -> gets substituted with the domain
+        //    %u -> gets substituted with the user
+        //    %U -> gets substituted with the user without a domain part
+        //    %p -> gets substituted with the plaintext password
+        //    %e -> gets substituted with the encrypted password
+        //
+        'query_lookup' => 'SELECT password FROM mailbox WHERE username = %u and active = 1', 
+        'query_modify' => 'UPDATE mailbox SET password = %e WHERE username = %u'
     )
 );

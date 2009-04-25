@@ -38,9 +38,9 @@ http://pear.php.net/dtd/package-2.0.xsd">
   <email>jan@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2009-04-02</date>
+ <date>2009-04-25</date>
  <version>
-  <release>0.1.4</release>
+  <release>0.1.5</release>
   <api>0.1.0</api>
  </version>
  <stability>
@@ -49,10 +49,9 @@ http://pear.php.net/dtd/package-2.0.xsd">
  </stability>
  <license uri="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">LGPL</license>
  <notes>
-  * kolab/issue3450 (freebusy/user@example.com.ifb returns extended
-    free/busy information)
-  * kolab/issue3527 (no immediately printing of folders during
-    freebusy cache regeneration)
+  * kolab/issue3537 (Allowing xfb access to groups does not work)
+  * Improved handling of dba access.
+  * Extended support for more complex scenario testing.
  </notes>
  <contents>
   <dir name="/">
@@ -80,6 +79,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
       <dir name="FreeBusy">
        <file name="AllTests.php" role="test" />
        <file name="FreeBusyTest.php" role="test" />
+       <file name="FreeBusyScenarioTest.php" role="test" />
       </dir> <!-- /test/Horde/Kolab/FreeBusy -->
      </dir> <!-- /test/Horde/Kolab -->
     </dir> <!-- /test/Horde -->
@@ -114,7 +114,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
    <package>
     <name>Kolab_Server</name>
     <channel>pear.horde.org</channel>
-    <min>0.2.0</min>
+    <min>0.5.0</min>
    </package>
    <package>
     <name>Kolab_Storage</name>
@@ -141,6 +141,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
    <install name="lib/Horde/Kolab/Test/FreeBusy.php" as="Horde/Kolab/Test/FreeBusy.php" />
    <install name="test/Horde/Kolab/FreeBusy/AllTests.php" as="Horde/Kolab/FreeBusy/AllTests.php" />
    <install name="test/Horde/Kolab/FreeBusy/FreeBusyTest.php" as="Horde/Kolab/FreeBusy/FreeBusyTest.php" />
+   <install name="test/Horde/Kolab/FreeBusy/FreeBusyScenarioTest.php" as="Horde/Kolab/FreeBusy/FreeBusyScenarioTest.php" />
    <install name="www/Horde/Kolab/FreeBusy/config.php" as="config.php" />
    <install name="www/Horde/Kolab/FreeBusy/freebusy.php" as="freebusy.php" />
    <install name="www/Horde/Kolab/FreeBusy/pfb.php" as="pfb.php" />
@@ -148,6 +149,24 @@ http://pear.php.net/dtd/package-2.0.xsd">
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <date>2009-04-02</date>
+   <version>
+    <release>0.1.4</release>
+    <api>0.1.0</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <license uri="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">LGPL</license>
+   <notes>
+    * kolab/issue3450 (freebusy/user@example.com.ifb returns extended
+      free/busy information)
+    * kolab/issue3527 (no immediately printing of folders during
+      freebusy cache regeneration)
+   </notes>
+  </release>
   <release>
    <date>2009-03-06</date>
    <version>

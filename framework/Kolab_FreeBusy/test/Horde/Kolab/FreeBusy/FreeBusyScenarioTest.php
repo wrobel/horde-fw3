@@ -2,7 +2,7 @@
 /**
  * Checks for the Kolab Free/Busy system.
  *
- * $Horde: framework/Kolab_FreeBusy/test/Horde/Kolab/FreeBusy/FreeBusyScenarioTest.php,v 1.2.2.2 2009/03/06 20:47:40 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/test/Horde/Kolab/FreeBusy/FreeBusyScenarioTest.php,v 1.2.2.3 2009/04/25 19:16:42 wrobel Exp $
  *
  * PHP version 5
  *
@@ -22,7 +22,7 @@ require_once 'Horde/Kolab/Test/FreeBusy.php';
 /**
  * Checks for the Kolab Free/Busy system.
  *
- * $Horde: framework/Kolab_FreeBusy/test/Horde/Kolab/FreeBusy/FreeBusyScenarioTest.php,v 1.2.2.2 2009/03/06 20:47:40 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/test/Horde/Kolab/FreeBusy/FreeBusyScenarioTest.php,v 1.2.2.3 2009/04/25 19:16:42 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -53,5 +53,94 @@ class Horde_Kolab_FreeBusy_FreeBusyScenarioTest extends Horde_Kolab_Test_FreeBus
             ->then('the login was successful')
             ->and('the creation of the folder was successful')
             ->and('the result should be an object of type', 'Horde_Kolab_FreeBusy_View_vfb');
+    }
+
+    /**
+     * Test fetching free/busy data.
+     *
+     * @scenario
+     *
+     * @return NULL
+     */
+    public function fetching()
+    {
+        $now = time();
+        $event = array(
+            'uid' => 1,
+            'summary' => 'hello',
+            'start-date' => $now,
+            'end-date' => $now + 120,
+        );
+
+        $this->given('a populated Kolab setup')
+            ->when('logging in as a user with a password', 'wrobel', 'none')
+            ->and('create a Kolab default calendar with name', 'Calendar')
+            ->and('adding an event to a folder', $event, 'INBOX/Calendar')
+            ->and('triggering the folder', 'wrobel@example.org/Calendar')
+            ->and('fetching the free/busy information for', 'wrobel@example.org')
+            ->then('the login was successful')
+            ->and('the creation of the folder was successful')
+            ->and('the fetch result should contain a free/busy time with summary', 'hello');
+    }
+
+    /**
+     * Test fetching free/busy data as a foreign user should not contain
+     * extended information.
+     *
+     * @scenario
+     *
+     * @return NULL
+     */
+    public function fetchingAsForeignUser()
+    {
+        $now = time();
+        $event = array(
+            'uid' => 1,
+            'summary' => 'hello',
+            'start-date' => $now,
+            'end-date' => $now + 120,
+        );
+
+        $this->given('a populated Kolab setup')
+            ->when('logging in as a user with a password', 'wrobel', 'none')
+            ->and('create a Kolab default calendar with name', 'Calendar')
+            ->and('adding an event to a folder', $event, 'INBOX/Calendar')
+            ->and('triggering the folder', 'wrobel@example.org/Calendar')
+            ->and('logging in as a user with a password', 'test', 'test')
+            ->and('fetching the free/busy information for', 'wrobel@example.org')
+            ->then('the login was successful')
+            ->and('the creation of the folder was successful')
+            ->and('the fetch result should not contain a free/busy time with summary', 'hello');
+    }
+
+    /**
+     * Test fetching free/busy data as a foreign user in group with read access
+     * should contain extended information.
+     *
+     * @scenario
+     *
+     * @return NULL
+     */
+    public function fetchingAsForeignUserInSameGroup()
+    {
+        $now = time();
+        $event = array(
+            'uid' => 1,
+            'summary' => 'hello',
+            'start-date' => $now,
+            'end-date' => $now + 120,
+        );
+
+        $this->given('a populated Kolab setup')
+            ->when('logging in as a user with a password', 'wrobel', 'none')
+            ->and('create a Kolab default calendar with name', 'Calendar')
+            ->and('allow a group full access to a folder', 'group@example.org', 'INBOX/Calendar')
+            ->and('adding an event to a folder', $event, 'INBOX/Calendar')
+            ->and('triggering the folder', 'wrobel@example.org/Calendar')
+            ->and('logging in as a user with a password', 'test', 'test')
+            ->and('fetching the free/busy information for', 'wrobel@example.org')
+            ->then('the login was successful')
+            ->and('the creation of the folder was successful')
+            ->and('the fetch result should contain a free/busy time with summary', 'hello');
     }
 }

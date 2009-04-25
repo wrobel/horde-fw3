@@ -2,7 +2,7 @@
 /**
  * Test the Kolab free/busy system.
  *
- * $Horde: framework/Kolab_FreeBusy/test/Horde/Kolab/FreeBusy/FreeBusyTest.php,v 1.8.2.2 2009/03/06 20:47:40 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/test/Horde/Kolab/FreeBusy/FreeBusyTest.php,v 1.8.2.3 2009/04/25 19:16:42 wrobel Exp $
  *
  * @category Kolab
  * @package  Kolab_FreeBusy
@@ -21,7 +21,7 @@ require_once 'Horde/Kolab/FreeBusy.php';
 /**
  * Test the Kolab free/busy system.
  *
- * $Horde: framework/Kolab_FreeBusy/test/Horde/Kolab/FreeBusy/FreeBusyTest.php,v 1.8.2.2 2009/03/06 20:47:40 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/test/Horde/Kolab/FreeBusy/FreeBusyTest.php,v 1.8.2.3 2009/04/25 19:16:42 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -34,7 +34,7 @@ require_once 'Horde/Kolab/FreeBusy.php';
  * @license  http://www.fsf.org/copyleft/lgpl.html LGPL
  * @link     http://pear.horde.org/index.php?package=Kolab_FreeBusy
  */
-class Horde_Kolab_FreeBusy_FreeBusyTest extends Horde_Kolab_Test_Storage
+class Horde_Kolab_FreeBusy_FreeBusyTest extends Horde_Kolab_Test_FreeBusy
 {
 
     /**

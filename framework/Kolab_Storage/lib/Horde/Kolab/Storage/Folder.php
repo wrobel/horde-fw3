@@ -2,7 +2,7 @@
 /**
  * @package Kolab_Storage
  *
- * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Folder.php,v 1.7.2.19 2009/02/24 07:40:40 wrobel Exp $
+ * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Folder.php,v 1.7.2.20 2009/04/25 18:42:27 wrobel Exp $
  */
 
 /** We need the current user session. */
@@ -59,7 +59,7 @@ define('HORDE_ANNOT_SHARE_ATTR', '/vendor/horde/share-');
  * The Kolab_Folder class represents an IMAP folder on the Kolab
  * server.
  *
- * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Folder.php,v 1.7.2.19 2009/02/24 07:40:40 wrobel Exp $
+ * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Folder.php,v 1.7.2.20 2009/04/25 18:42:27 wrobel Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *
@@ -1420,6 +1420,11 @@ class Kolab_Folder {
         $iresult = $imap->setACL($this->name, $user, $acl);
         if (is_a($iresult, 'PEAR_Error')) {
             return $iresult;
+        }
+
+        if (!empty($this->_perms)) {
+            /** Refresh the cache after changing the permissions */
+            $this->_perms->getPerm();
         }
 
         $result = $this->trigger();

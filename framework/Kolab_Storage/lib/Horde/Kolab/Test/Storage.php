@@ -2,7 +2,7 @@
 /**
  * Base for PHPUnit scenarios.
  *
- * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Test/Storage.php,v 1.1.2.4 2009/02/24 07:40:40 wrobel Exp $
+ * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Test/Storage.php,v 1.1.2.5 2009/04/25 18:43:40 wrobel Exp $
  *
  * PHP version 5
  *
@@ -26,7 +26,7 @@ require_once 'Horde/Kolab/Storage/List.php';
 /**
  * Base for PHPUnit scenarios.
  *
- * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Test/Storage.php,v 1.1.2.4 2009/02/24 07:40:40 wrobel Exp $
+ * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Test/Storage.php,v 1.1.2.5 2009/04/25 18:43:40 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -92,6 +92,11 @@ class Horde_Kolab_Test_Storage extends Horde_Kolab_Test_Server
             $folder->setName($arguments[0]);
             $world['folder_creation'] = $folder->save(array('type' => 'event',
                                                             'default' => true));
+            $folder->setACL(Auth::getAuth(), 'alrid');
+            break;
+        case 'allow a group full access to a folder':
+            $folder = $world['storage']->getFolder($arguments[1]);
+            $folder->setACL($arguments[0], 'alrid');
             break;
         case 'retrieving the list of shares for the application':
             require_once 'Horde/Share.php';
@@ -100,6 +105,11 @@ class Horde_Kolab_Test_Storage extends Horde_Kolab_Test_Server
 
             $world['list'] = $shares->listShares(Auth::getAuth());
             break;
+        case 'logging in as a user with a password':
+            $world['login'] = $world['auth']->authenticate($arguments[0],
+                                                           array('password' => $arguments[1]));
+            $world['storage'] = &$this->prepareEmptyKolabStorage();
+            return parent::runWhen($world, $action, $arguments);
         default:
             return parent::runWhen($world, $action, $arguments);
         }
@@ -153,7 +163,7 @@ class Horde_Kolab_Test_Storage extends Horde_Kolab_Test_Server
         $GLOBALS['KOLAB_TESTING'] = array();
 
         /** Prepare a Kolab test storage */
-        $storage = Kolab_List::singleton();
+        $storage = Kolab_List::singleton(true);
         return $storage;
     }
 

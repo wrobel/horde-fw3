@@ -2,6 +2,8 @@
 v3.1.1-cvs
 ----------
 
+[jan] Add example configuration for Postfix Admin (Michael Brennen
+      <michael@fishnet.us>).
 [jan] Fix binding to LDAP server if using the userdn hook.
 
 
