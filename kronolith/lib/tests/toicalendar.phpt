@@ -73,7 +73,7 @@ echo $ical->exportvCalendar() . "\n";
 --EXPECTF--
 BEGIN:VCALENDAR
 VERSION:1.0
-PRODID:-//The Horde Project//Horde_iCalendar Library//EN
+PRODID:-//The Horde Project//Horde_iCalendar Library, Horde 3.3.4-cvs//EN
 METHOD:PUBLISH
 BEGIN:VEVENT
 DTSTART:20070315T121020Z
@@ -97,7 +97,7 @@ END:VCALENDAR
 
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//The Horde Project//Horde_iCalendar Library//EN
+PRODID:-//The Horde Project//Horde_iCalendar Library\, Horde 3.3.4-cvs//EN
 METHOD:PUBLISH
 BEGIN:VEVENT
 DTSTART:20070315T121020Z
@@ -123,7 +123,7 @@ END:VCALENDAR
 
 BEGIN:VCALENDAR
 VERSION:1.0
-PRODID:-//The Horde Project//Horde_iCalendar Library//EN
+PRODID:-//The Horde Project//Horde_iCalendar Library, Horde 3.3.4-cvs//EN
 METHOD:PUBLISH
 BEGIN:VEVENT
 DTSTART:20070315T121020Z
@@ -147,7 +147,7 @@ END:VCALENDAR
 
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//The Horde Project//Horde_iCalendar Library//EN
+PRODID:-//The Horde Project//Horde_iCalendar Library\, Horde 3.3.4-cvs//EN
 METHOD:PUBLISH
 BEGIN:VEVENT
 DTSTART:20070315T121020Z
@@ -159,8 +159,8 @@ ORGANIZER;CN=joe:mailto:joe
 CLASS:PRIVATE
 STATUS:TENTATIVE
 TRANSP:OPAQUE
-ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=Jürgen
-  Doe:mailto:juergen@example.com
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN="Jürgen
+  Doe":mailto:juergen@example.com
 ATTENDEE;ROLE=OPT-PARTICIPANT;PARTSTAT=ACCEPTED;CN=Jane Doe:
 ATTENDEE;ROLE=NON-PARTICIPANT;PARTSTAT=DECLINED;CN=Jack
   Doe:mailto:jack@example.com

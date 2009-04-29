@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: kronolith/new.php,v 1.7.2.3 2009/01/06 15:24:43 jan Exp $
+ * $Horde: kronolith/new.php,v 1.7.2.4 2009/04/29 14:57:10 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -48,8 +48,14 @@ if (!$timestamp = Util::getFormData('timestamp')) {
 $url = Util::getFormData('url');
 
 $event->start = new Horde_Date($timestamp);
-// Default to a 1 hour duration.
-$event->end = new Horde_Date($timestamp + 3600);
+$event->end = new Horde_Date($event->start);
+if (Util::getFormData('allday')) {
+    $event->end->mday++;
+    $event->end->correct();
+} else {
+    // Default to a 1 hour duration.
+    $event->end->hour++;
+}
 $month = $event->start->month;
 $year = $event->start->year;
 

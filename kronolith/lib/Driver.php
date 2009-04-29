@@ -3,7 +3,7 @@
  * Kronolith_Driver defines an API for implementing storage backends for
  * Kronolith.
  *
- * $Horde: kronolith/lib/Driver.php,v 1.116.2.81 2009/03/30 16:59:16 jan Exp $
+ * $Horde: kronolith/lib/Driver.php,v 1.116.2.83 2009/04/29 14:57:10 jan Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Jan Schneider <jan@horde.org>
@@ -1703,11 +1703,11 @@ class Kronolith_Event {
     function isAllDay()
     {
         return ($this->start->hour == 0 && $this->start->min == 0 && $this->start->sec == 0 &&
-                (($this->end->hour == 0 && $this->end->min == 0 && $this->end->sec == 0) ||
-                 ($this->end->hour == 23 && $this->end->min == 59)) &&
-                ($this->end->mday > $this->start->mday ||
-                 $this->end->month > $this->start->month ||
-                 $this->end->year > $this->start->year));
+                (($this->end->hour == 23 && $this->end->min == 59) ||
+                 ($this->end->hour == 0 && $this->end->min == 0 && $this->end->sec == 0 &&
+                  ($this->end->mday > $this->start->mday ||
+                   $this->end->month > $this->start->month ||
+                   $this->end->year > $this->start->year))));
     }
 
     function getAlarm()
@@ -1992,7 +1992,7 @@ class Kronolith_Event {
                 '" id="' . $this->_formIDEncode($property) . '" size="4" maxlength="4" />';
 
         case 'end[month]':
-            $sel = $this->isInitialized() ? $this->end->month : $this->start->month;
+            $sel = $this->end ? $this->end->month : $this->start->month;
             for ($i = 1; $i < 13; ++$i) {
                 $options[$i] = strftime('%b', mktime(1, 1, 1, $i, 1));
             }
@@ -2001,7 +2001,7 @@ class Kronolith_Event {
             break;
 
         case 'end[day]':
-            $sel = $this->isInitialized() ? $this->end->mday : $this->start->mday;
+            $sel = $this->end ? $this->end->mday : $this->start->mday;
             for ($i = 1; $i < 32; ++$i) {
                 $options[$i] = $i;
             }
@@ -2010,9 +2010,9 @@ class Kronolith_Event {
             break;
 
         case 'end_hour':
-            $sel = $this->isInitialized() ?
-                (int)date($prefs->getValue('twentyFour') ? 'G' : 'g', $this->end->timestamp()) :
-                (int)date($prefs->getValue('twentyFour') ? 'G' : 'g', $this->start->timestamp()) + 1;
+            $sel = $this->end
+                ? (int)date($prefs->getValue('twentyFour') ? 'G' : 'g', $this->end->timestamp())
+                : (int)date($prefs->getValue('twentyFour') ? 'G' : 'g', $this->start->timestamp()) + 1;
             $hour_min = $prefs->getValue('twentyFour') ? 0 : 1;
             $hour_max = $prefs->getValue('twentyFour') ? 24 : 13;
             for ($i = $hour_min; $i < $hour_max; ++$i) {
@@ -2023,7 +2023,7 @@ class Kronolith_Event {
             break;
 
         case 'end_min':
-            $sel = $this->isInitialized() ? $this->end->min : $this->start->min;
+            $sel = $this->end ? $this->end->min : $this->start->min;
             $sel = sprintf('%02d', $sel);
             for ($i = 0; $i < 12; ++$i) {
                 $min = sprintf('%02d', $i * 5);
@@ -2062,7 +2062,7 @@ class Kronolith_Event {
             break;
 
         case 'recur_enddate[year]':
-            if ($this->isInitialized()) {
+            if ($this->end) {
                 $end = ($this->recurs() && $this->recurrence->hasRecurEnd())
                         ? $this->recurrence->recurEnd->year
                         : $this->end->year;
@@ -2075,7 +2075,7 @@ class Kronolith_Event {
                 '" id="' . $this->_formIDEncode($property) . '" size="4" maxlength="4" />';
 
         case 'recur_enddate[month]':
-            if ($this->isInitialized()) {
+            if ($this->end) {
                 $sel = ($this->recurs() && $this->recurrence->hasRecurEnd())
                     ? $this->recurrence->recurEnd->month
                     : $this->end->month;
@@ -2090,7 +2090,7 @@ class Kronolith_Event {
             break;
 
         case 'recur_enddate[day]':
-            if ($this->isInitialized()) {
+            if ($this->end) {
                 $sel = ($this->recurs() && $this->recurrence->hasRecurEnd())
                     ? $this->recurrence->recurEnd->mday
                     : $this->end->mday;
