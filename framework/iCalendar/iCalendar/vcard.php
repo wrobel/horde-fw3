@@ -26,7 +26,7 @@ define('VCARD_GEO_LON',      1);
 /**
  * Class representing vCard entries.
  *
- * $Horde: framework/iCalendar/iCalendar/vcard.php,v 1.3.10.18 2009/01/06 15:23:53 jan Exp $
+ * $Horde: framework/iCalendar/iCalendar/vcard.php,v 1.3.10.19 2009/04/30 17:31:43 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -54,9 +54,9 @@ class Horde_iCalendar_vcard extends Horde_iCalendar {
      */
     function exportvCalendar()
     {
-        $requiredAttributes['VERSION'] = $this->version;
+        $requiredAttributes['VERSION'] = $this->_version;
         $requiredAttributes['N'] = ';;;;;;';
-        if ($this->version == '3.0') {
+        if ($this->_version == '3.0') {
             $requiredAttributes['FN'] = '';
         }
 

@@ -16,7 +16,7 @@ $this->notes['fm']['focus'] = 6;
 
 /* Mailing list release notes. */
 $this->notes['ml']['changes'] = <<<ML
-The Horde Team is pleased to announce the first release candidate of the Horde
+The Horde Team is pleased to announce the final release of the Horde
 Application Framework version 3.3.4.
 
 The Horde Application Framework is a modular, general-purpose web application
@@ -25,11 +25,14 @@ targeted at the common problems and tasks involved in developing modern web
 applications.
 
 The major changes compared to Horde version 3.3.3 are:
+    * Improved synchronization.
+    * Improved LDAP configuration.
     * Large variety of small bug fixes and improvements all over the place.
 ML;
 
 /* Freshmeat release notes, not more than 600 characters. */
 $this->notes['fm']['changes'] = <<<FM
+Synchronization and LDAP configuration have been improved.
 Bug fixes and improvements have been made all over the place.
 FM;
 

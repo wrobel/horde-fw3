@@ -2,7 +2,7 @@
 /**
  * The Ingo_Script_sieve class represents a Sieve Script.
  *
- * $Horde: ingo/lib/Script/sieve.php,v 1.63.10.36 2008/07/17 22:55:30 jan Exp $
+ * $Horde: ingo/lib/Script/sieve.php,v 1.63.10.37 2009/05/01 17:49:40 selsky Exp $
  *
  * See the enclosed file LICENSE for license information (ASL).  If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.
@@ -597,7 +597,7 @@ class Ingo_Script_sieve extends Ingo_Script {
             foreach ($filter['conditions'] as $condition) {
                 $tmp = '';
                 switch ($condition['match']) {
-                case 'equal to':
+                case 'equal':
                     $tmp = new Sieve_Test_Relational(array('comparison' => 'eq', 'headers' => $condition['field'], 'value' => $condition['value']));
                     $test->addTest($tmp);
                     break;

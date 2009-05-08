@@ -33,7 +33,7 @@ Event.observe(window, 'load', function() {
             (function() {
                 var jx = j;
                 var ix = i;
-                var imgContainer = mainNode.appendChild(new Element('span', {className: 'anselGalleryWidget'}));
+                var imgContainer = new Element('span', {className: 'anselGalleryWidget'});
                 if (!anseljson[jx]['hideLinks']) {
                     if (anseljson[jx]['linkToGallery']) {
                         var idx = 6;
@@ -58,6 +58,8 @@ Event.observe(window, 'load', function() {
                         imgLink.observe('click', function(e) {ansel_lb.start(lb_data.image); e.stop();});
                     }
                 }
+
+                mainNode.appendChild(imgContainer);
             })();
         }
 

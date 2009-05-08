@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/test.php,v 1.122.6.29 2009/01/14 04:00:21 chuck Exp $
+ * $Horde: horde/test.php,v 1.122.6.31 2009/05/05 15:27:28 selsky Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -76,6 +76,11 @@ $module_list = array(
     'imap' => array(
         'descrip' => 'IMAP Support',
         'error' => 'The IMAP extension is required if you want to authenticate against an IMAP server.'),
+    'imagick' => array(
+        'descrip' => 'Imagick Library',
+        'required' => false,
+        'error' => 'Horde can make use of the Imagick Library, if it is installed on your system.  It is highly recommended to use either ImageMagick\'s convert utility or the Imagick php library for faster results.'
+    ),
     'json' => array(
         'descrip' => 'JSON Support',
         'error' => 'Horde can optionally use the JSON extension to provide faster Javascript generation for rich GUI applications.'),
@@ -242,6 +247,10 @@ $pear_list = array(
     'XML_Serializer' => array(
         'path' => 'XML/Serializer.php',
         'error' => 'XML_Serializer is used by the Services_Weather module on the weather applet/block on the portal page.'
+    ),
+    'Net_DNS' => array(
+        'path' => 'Net/DNS.php',
+        'error' => 'Net_DNS can speed up hostname lookups against broken DNS servers.'
     )
 );
 

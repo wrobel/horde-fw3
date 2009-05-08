@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Horde 3.2-cvs\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2009-03-19 10:36+0100\n"
-"PO-Revision-Date: 2009-03-19 11:55+0100\n"
+"POT-Creation-Date: 2009-04-30 18:33+0200\n"
+"PO-Revision-Date: 2009-04-30 18:42+0200\n"
 "Last-Translator: Jan Schneider <jan@horde.org>\n"
 "Language-Team: German <dev@lists.horde.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8-bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: framework/Form/Form.php:3063
+#: framework/Form/Form.php:3071
 #, php-format
 msgid " (%s days ago)"
 msgstr " (vor %s Tagen)"
@@ -30,20 +30,20 @@ msgstr " (vor %s Tagen)"
 msgid " (Accesskey %s)"
 msgstr " (Zugriffstaste %s)"
 
-#: framework/Form/Form.php:3071
+#: framework/Form/Form.php:3079
 #, php-format
 msgid " (in %s days)"
 msgstr " (in %s Tagen)"
 
-#: framework/Form/Form.php:3067
+#: framework/Form/Form.php:3075
 msgid " (today)"
 msgstr " (heute)"
 
-#: framework/Form/Form.php:3069
+#: framework/Form/Form.php:3077
 msgid " (tomorrow)"
 msgstr " (morgen)"
 
-#: framework/Form/Form.php:3065
+#: framework/Form/Form.php:3073
 msgid " (yesterday)"
 msgstr " (gestern)"
 
@@ -67,7 +67,7 @@ msgstr "\"%s\" ist kein Verzeichnis."
 msgid "\"%s\" is not a valid choice."
 msgstr "\"%s\" ist keine gültige Auswahl."
 
-#: framework/Form/Form.php:2192
+#: framework/Form/Form.php:2200
 #, php-format
 msgid "\"%s\" is not a valid email address."
 msgstr "\"%s\" ist keine gültige E-Mail-Adresse."
@@ -120,7 +120,7 @@ msgid_plural "%d contacts were successfully added to your address book."
 msgstr[0] "%d Kontakt wurde erfolgreich Ihrem Adressbuch hinzugefügt."
 msgstr[1] "%d Kontakte wurden erfolgreich Ihrem Adressbuch hinzugefügt."
 
-#: framework/Auth/Auth/ldap.php:302
+#: framework/Auth/Auth/ldap.php:320
 #, php-format
 msgid "%d day until your password expires."
 msgid_plural "%d days until your password expires."
@@ -177,7 +177,7 @@ msgstr "%s Wartungsarbeiten - Bestätigung"
 msgid "%s Setup"
 msgstr "%s-Konfiguration"
 
-#: framework/Auth/Auth/Signup.php:185
+#: framework/Auth/Auth/Signup.php:191
 #, php-format
 msgid "%s Sign Up"
 msgstr "%s Registrierung"
@@ -261,7 +261,7 @@ msgstr ""
 "%s wird die Wartungsarbeiten durchführen, die unten markiert sind. Markieren "
 "Sie alle Aufgaben, die jetzt durchgeführt werden sollen."
 
-#: framework/Form/Form.php:3018
+#: framework/Form/Form.php:3026
 #, php-format
 msgid "%s is required"
 msgstr "%s ist notwendig"
@@ -323,7 +323,7 @@ msgid ", variable from %s to %s"
 msgstr ", schwankend von %s bis %s"
 
 #: framework/Perms/Perms/UI.php:341 framework/Perms/Perms/UI.php:400
-#: framework/Form/Form.php:2730 framework/Form/Form.php:2796
+#: framework/Form/Form.php:2738 framework/Form/Form.php:2804
 #: framework/UI/UI/VarRenderer/html.php:833
 msgid "-- select --"
 msgstr "-- Auswählen --"
@@ -450,7 +450,7 @@ msgstr ""
 "Ein öffentlicher und ein privater S/MIME-Schlüssel sowie ein Passwort wird "
 "für die Unterzeichnung einer Nachricht benötigt."
 
-#: framework/Form/Form.php:1621 framework/Form/Form.php:1667
+#: framework/Form/Form.php:1629 framework/Form/Form.php:1675
 msgid "A temporary directory"
 msgstr "Ein temporäres Verzeichnis"
 
@@ -459,8 +459,8 @@ msgid "AM Clouds"
 msgstr "Vormittags Wolken"
 
 #: lib/Block/weatherdotcom_strings.php:10
-msgid "AM Dizzle"
-msgstr "Vormittags Sprühregen"
+msgid "AM Drizzle"
+msgstr "Vormittags Nieselregen"
 
 #: lib/Block/weatherdotcom_strings.php:11
 msgid "AM Fog"
@@ -642,6 +642,10 @@ msgstr "Adresse"
 msgid "Address Book"
 msgstr "Adressbuch"
 
+#: framework/Form/Form.php:1578
+msgid "Address Link"
+msgstr "Adresslink"
+
 #: framework/IMAP/IMAP/ACL/rfc4314.php:70
 #: framework/IMAP/IMAP/ACL/rfc2086.php:106
 msgid "Administer"
@@ -735,7 +739,7 @@ msgstr "Alle Rechte"
 msgid "All synchronization sessions deleted."
 msgstr "Alle Synchronisationssitzungen gelöscht."
 
-#: framework/Form/Form.php:2380
+#: framework/Form/Form.php:2388
 msgid "Allow multiple addresses?"
 msgstr "Mehrere Adressen erlauben?"
 
@@ -911,7 +915,7 @@ msgstr "Asien/Pazifische Region"
 msgid "Ask for confirmation before doing maintenance operations?"
 msgstr "Anstehende Wartungsarbeiten bestätigen lassen?"
 
-#: framework/Form/Form.php:4021
+#: framework/Form/Form.php:4029
 msgid "Assignment columns"
 msgstr "Zuordnungsfelder"
 
@@ -935,7 +939,7 @@ msgstr "Es wurde versucht, ein nicht existierendes Recht zu bearbeiten."
 msgid "Attempt to edit a non-existent share."
 msgstr "Es wurde versucht, ein nicht existierendes Recht zu bearbeiten."
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/Object.php:289
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/Object.php:291
 #, php-format
 msgid "Attribute \"%s\" not supported!"
 msgstr "Dat Attribut \"%s\" wird nicht unterstützt!"
@@ -989,13 +993,13 @@ msgstr "Auth_imap: Die benötigte IMAP-Erweiterung wurde nicht gefunden."
 msgid "Auth_krb5: Required krb5 extension not found."
 msgstr "Auth_krb5: Die benötigte Kerberos-Erweiterung wurde nicht gefunden."
 
-#: framework/Auth/Auth/ldap.php:334
+#: framework/Auth/Auth/ldap.php:352
 msgid "Auth_ldap: Adding users is not supported for Active Directory"
 msgstr ""
 "Auth_ldap: Das Hinzufügen von Benutzern wird für Active Directory nicht "
 "unterstützt"
 
-#: framework/Auth/Auth/ldap.php:393
+#: framework/Auth/Auth/ldap.php:411
 msgid "Auth_ldap: Removing users is not supported for Active Directory"
 msgstr ""
 "Auth_ldap: Das Löschen von Benutzern wird für Active Directory nicht "
@@ -1005,24 +1009,24 @@ msgstr ""
 msgid "Auth_ldap: Required LDAP extension not found."
 msgstr "Auth_ldap: Die benötigte LDAP-Erweiterung wurde nicht gefunden."
 
-#: framework/Auth/Auth/ldap.php:375
+#: framework/Auth/Auth/ldap.php:393
 #, php-format
 msgid "Auth_ldap: Unable to add user \"%s\". This is what the server said: "
 msgstr ""
 "Auth_ldap: Der Benutzer \"%s\" konnte nicht hinzugefügt werden. Meldung des "
 "Servers: "
 
-#: framework/Auth/Auth/ldap.php:420
+#: framework/Auth/Auth/ldap.php:438
 #, php-format
 msgid "Auth_ldap: Unable to remove user \"%s\""
 msgstr "Auth_ldap: Benutzer \"%s\" konnte nicht gelöscht werden"
 
-#: framework/Auth/Auth/ldap.php:537
+#: framework/Auth/Auth/ldap.php:555
 #, php-format
 msgid "Auth_ldap: Unable to update user \"%s\""
 msgstr "Auth_ldap: Benutzer \"%s\" konnte nicht aktualisiert werden"
 
-#: framework/Auth/Auth/ldap.php:440
+#: framework/Auth/Auth/ldap.php:458
 msgid "Auth_ldap: Updating users is not supported for Active Directory."
 msgstr ""
 "Auth_ldap: Das Aktualisieren von Benutzern wird für Active Directory nicht "
@@ -1242,7 +1246,7 @@ msgstr "Britisches Territorium im Indischen Ozean"
 msgid "Brown"
 msgstr "Braun"
 
-#: admin/sessions.php:53
+#: admin/sessions.php:60
 msgid "Browser:"
 msgstr "Browser:"
 
@@ -1434,7 +1438,7 @@ msgstr "Provider"
 msgid "Categories and Labels"
 msgstr "Kategorien und Beschriftungen"
 
-#: framework/Form/Form.php:4297
+#: framework/Form/Form.php:4305
 msgid "Category"
 msgstr "Kategorie"
 
@@ -1505,7 +1509,7 @@ msgstr ""
 "Das Ändern Ihres Passworts wird von diesem System zur Zeit nicht "
 "unterstützt. Bitte wenden Sie sich an Ihren Administrator."
 
-#: framework/Form/Form.php:2392
+#: framework/Form/Form.php:2400
 msgid "Character to split multiple addresses with"
 msgstr "Zeichen, durch das mehrere E-Mail-Adressen getrenn werden sollen"
 
@@ -1552,11 +1556,11 @@ msgstr "%s auswählen"
 msgid "Choose Application:"
 msgstr "Anwendung auswählen:"
 
-#: framework/Auth/Auth/Signup.php:198 framework/Auth/Auth/Signup.php:212
+#: framework/Auth/Auth/Signup.php:204 framework/Auth/Auth/Signup.php:218
 msgid "Choose a password"
 msgstr "Wählen Sie ein Passwort"
 
-#: framework/Auth/Auth/Signup.php:195 framework/Auth/Auth/Signup.php:211
+#: framework/Auth/Auth/Signup.php:201 framework/Auth/Auth/Signup.php:217
 msgid "Choose a username"
 msgstr "Wählen Sie einen Benutzernamen"
 
@@ -1661,11 +1665,11 @@ msgstr "Kolumbien"
 msgid "Color Picker"
 msgstr "Farbauswahl"
 
-#: framework/Form/Form.php:3707
+#: framework/Form/Form.php:3715
 msgid "Colour selection"
 msgstr "Farbwahl"
 
-#: framework/Form/Form.php:2611
+#: framework/Form/Form.php:2619
 msgid "Column titles"
 msgstr "Spaltenüberschriften"
 
@@ -1855,11 +1859,11 @@ msgstr "Die Nachricht konnte nicht mit S/MIME unterzeichnet werden."
 msgid "Could not add contact. %s"
 msgstr "Kontakt konnte nicht gespeichert werden. %s"
 
-#: framework/Group/Group/ldap.php:95
+#: framework/Group/Group/ldap.php:106
 msgid "Could not bind to LDAP server"
 msgstr "Anbindung im LDAP-Server fehlgeschlagen."
 
-#: framework/Auth/Auth/ldap.php:132 lib/Block/account.php:487
+#: framework/Auth/Auth/ldap.php:143 lib/Block/account.php:487
 msgid "Could not bind to LDAP server."
 msgstr "Anbindung an LDAP-Server fehlgeschlagen."
 
@@ -1968,16 +1972,16 @@ msgstr "Das Maintenance_Task Modul %s konnte nicht geöffnet werden"
 msgid "Could not open directory \"%s\"."
 msgstr "Verzeichnis \"%s\" konnte nicht geöffnet werden."
 
-#: framework/Group/Group/ldap.php:74 framework/Group/Group/ldap.php:110
-#: framework/Group/Group/ldap.php:143 framework/Group/Group/ldap.php:231
-#: framework/Group/Group/ldap.php:442 framework/Group/Group/ldap.php:585
-#: framework/Group/Group/ldap.php:679 framework/Group/Group/kolab.php:154
+#: framework/Group/Group/ldap.php:74 framework/Group/Group/ldap.php:121
+#: framework/Group/Group/ldap.php:154 framework/Group/Group/ldap.php:242
+#: framework/Group/Group/ldap.php:453 framework/Group/Group/ldap.php:596
+#: framework/Group/Group/ldap.php:690 framework/Group/Group/kolab.php:154
 #: framework/Group/Group/kolab.php:215 framework/Group/Group/kolab.php:279
 #: framework/Group/Group/kolab.php:324
 msgid "Could not reach the LDAP server"
 msgstr "Verbindung zum LDAP-Server konnte nicht hergestellt werden"
 
-#: framework/Group/Group/ldap.php:625
+#: framework/Group/Group/ldap.php:636
 #, php-format
 msgid "Could not reach the LDAP server: %s"
 msgstr "Verbindung zum LDAP-Server konnte nicht hergestellt werden: %s"
@@ -2080,7 +2084,7 @@ msgstr ""
 "eine der Möglichkeiten unter %s verwenden, um den Code zu speichern, oder "
 "den untenstehenden Code manuell nach %s kopieren."
 
-#: framework/Auth/Auth/ldap.php:157
+#: framework/Auth/Auth/ldap.php:175
 msgid "Could not search the LDAP server."
 msgstr "Der LDAP-Server konnte nicht durchsucht werden."
 
@@ -2130,7 +2134,7 @@ msgstr "Gezählter Text"
 msgid "Country"
 msgstr "Land"
 
-#: framework/Form/Form.php:1694
+#: framework/Form/Form.php:1702
 msgid "Country drop down list"
 msgstr "Länder-Auswahlliste"
 
@@ -2160,7 +2164,7 @@ msgstr "Unterordner erstellen"
 msgid "Creator Permissions"
 msgstr "Erstellerrechte"
 
-#: framework/Form/Form.php:4136
+#: framework/Form/Form.php:4144
 msgid "Credit card number"
 msgstr "Kreditkartennummer"
 
@@ -2238,7 +2242,7 @@ msgstr "Tschechische Republik"
 msgid "DD"
 msgstr "TT"
 
-#: framework/Form/Form.php:4192
+#: framework/Form/Form.php:4200
 msgid ""
 "DSN (see http://pear.php.net/manual/en/package.database.db.intro-dsn.php)"
 msgstr ""
@@ -2253,8 +2257,8 @@ msgstr "Täglich"
 msgid "Data"
 msgstr "Daten"
 
-#: framework/Kolab_Format/lib/Horde/Kolab/Format/XML.php:528
-#: framework/Kolab_Format/lib/Horde/Kolab/Format/XML.php:714
+#: framework/Kolab_Format/lib/Horde/Kolab/Format/XML.php:548
+#: framework/Kolab_Format/lib/Horde/Kolab/Format/XML.php:734
 #, php-format
 msgid "Data value for %s is empty in Kolab XML object!"
 msgstr "Der Datenwert für %s ist leer im Kolab-XML-Objekt!"
@@ -2271,11 +2275,11 @@ msgstr "DataTree Browser"
 msgid "Database"
 msgstr "Datenbank"
 
-#: framework/Form/Form.php:4190
+#: framework/Form/Form.php:4198
 msgid "Database lookup"
 msgstr "Datenbankabfrage"
 
-#: framework/MIME/MIME/Viewer/rfc822.php:75 framework/Form/Form.php:3092
+#: framework/MIME/MIME/Viewer/rfc822.php:75 framework/Form/Form.php:3100
 #: lib/Block/vatid.php:95
 msgid "Date"
 msgstr "Datum"
@@ -2284,11 +2288,11 @@ msgstr "Datum"
 msgid "Date Received"
 msgstr "Empfangsdatum"
 
-#: framework/Form/Form.php:3667
+#: framework/Form/Form.php:3675
 msgid "Date and time selection"
 msgstr "Datums- und Zeitauswahl"
 
-#: framework/Form/Form.php:3501
+#: framework/Form/Form.php:3509
 msgid "Date selection"
 msgstr "Datumsauswahl"
 
@@ -2491,7 +2495,7 @@ msgstr "Detailierte Vorhersage anzeigen"
 msgid "Display forecast (TAF)"
 msgstr "Vorhersage (TAF) anzeigen"
 
-#: framework/Form/Form.php:3511 framework/Form/Form.php:3677
+#: framework/Form/Form.php:3519 framework/Form/Form.php:3685
 msgid "Display format"
 msgstr "Anzeigeformat"
 
@@ -2551,7 +2555,7 @@ msgstr "Erzeugte Konfiguration als PHP-Skript herunterladen."
 msgid "Drizzle"
 msgstr "Nieselregen"
 
-#: framework/Form/Form.php:2776
+#: framework/Form/Form.php:2784
 msgid "Drop down list"
 msgstr "Auswahlliste"
 
@@ -2644,7 +2648,7 @@ msgstr "Ägypten"
 msgid "El Salvador"
 msgstr "El Salvador"
 
-#: framework/MIME/MIME/Viewer/vcard.php:272 framework/Form/Form.php:2377
+#: framework/MIME/MIME/Viewer/vcard.php:272 framework/Form/Form.php:2385
 msgid "Email"
 msgstr "E-Mail-Adresse"
 
@@ -2661,7 +2665,7 @@ msgstr "E-Mail-Benachrichtigung"
 msgid "Email address (optional)"
 msgstr "E-Mail-Adresse (optional)"
 
-#: framework/Form/Form.php:2627
+#: framework/Form/Form.php:2635
 msgid "Email addresses must match."
 msgstr "Die E-Mail-Adressen müssen gleich sein."
 
@@ -2669,7 +2673,7 @@ msgstr "Die E-Mail-Adressen müssen gleich sein."
 msgid "Email addresses to confirm not found."
 msgstr "Zu bestätigende E-Mail-Adressen nicht gefunden."
 
-#: framework/Form/Form.php:2655
+#: framework/Form/Form.php:2663
 msgid "Email with confirmation"
 msgstr "E-Mail-Adresse mit Bestätigung"
 
@@ -2685,17 +2689,17 @@ msgstr "Smileys"
 msgid "Empty message."
 msgstr "Leere Nachricht."
 
-#: framework/Group/Group/ldap.php:237 framework/Group/Group/ldap.php:448
+#: framework/Group/Group/ldap.php:248 framework/Group/Group/ldap.php:459
 #: framework/Group/Group/kolab.php:160 framework/Group/Group/kolab.php:221
 msgid "Empty result"
 msgstr "Leeres Ergebnis"
 
-#: framework/Auth/Auth/ldap.php:164 framework/Auth/Auth/msad.php:381
+#: framework/Auth/Auth/ldap.php:182 framework/Auth/Auth/msad.php:381
 msgid "Empty result."
 msgstr "Leeres Ergebnis."
 
-#: framework/Form/Form.php:3289 framework/Form/Form.php:3505
-#: framework/Form/Form.php:3671
+#: framework/Form/Form.php:3297 framework/Form/Form.php:3513
+#: framework/Form/Form.php:3679
 msgid "End year"
 msgstr "Endjahr"
 
@@ -2743,7 +2747,7 @@ msgstr "Fehler"
 msgid "Error connecting to LDAP server %s!"
 msgstr "Verbindung zum LDAP-Server %s kann nicht hergestellt werden!"
 
-#: framework/SyncML/SyncML/Device/Sync4j.php:574
+#: framework/SyncML/SyncML/Device/Sync4j.php:577
 msgid "Error converting notes."
 msgstr "Fehler beim Umwandeln der Notizen."
 
@@ -2796,6 +2800,10 @@ msgstr "Fehler in der E-Mail-Nachricht."
 #, php-format
 msgid "Error writing \"%s\"."
 msgstr "Fehler beim Schreiben von \"%s\"."
+
+#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Report.php:55
+msgid "Errors:"
+msgstr "Fehler:"
 
 #: framework/NLS/NLS/tld.php:77 framework/NLS/NLS/countries.php:77
 #: framework/NLS/NLS/GeoIP.php:70
@@ -2906,19 +2914,14 @@ msgstr ""
 "Lesen der Kopfeinträge der IMAP-Nachricht %s fehlgeschlagen. Die "
 "Fehlermeldung lautete %s"
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server.php:176
+#: framework/Kolab_Server/lib/Horde/Kolab/Server.php:179
 #, php-format
 msgid "Failed identifying the UID of the Kolab user %s. Error was: %s"
 msgstr ""
 "Die UID des Kolab-Benutzers %s konnte nicht festgestellt werden. "
 "Fehlermeldung des Servers: %s"
 
-#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy.php:288
-#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy.php:299
-#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy.php:305
-#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy.php:315
-#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy.php:324
-#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy.php:333
+#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Report.php:47
 #, php-format
 msgid "Failed regenerating calendar %s: %s"
 msgstr "Der Kalender %s konnte nicht neu geladen werden: %s"
@@ -2931,7 +2934,7 @@ msgstr ""
 "Lesen der Nachricht mit der ID %s fehlgeschlagen. Fehlermeldung des Servers: "
 "%s"
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:991
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:1116
 #, php-format
 msgid "Failed saving object. Error was: %s"
 msgstr "Fehler beim Speichern des Objekts. Fehlermeldung des Servers: %s"
@@ -3045,15 +3048,15 @@ msgstr "Vereinzelte Schauer"
 msgid "Few Snow Showers"
 msgstr "Vereinzelte Schneeschauer"
 
-#: framework/Form/Form.php:2609
+#: framework/Form/Form.php:2617
 msgid "Field matrix"
 msgstr "Feldmatrix"
 
-#: framework/Form/Form.php:4245
+#: framework/Form/Form.php:4253
 msgid "Figlet CAPTCHA"
 msgstr "Figlet CAPTCHA"
 
-#: framework/Form/Form.php:4249
+#: framework/Form/Form.php:4257
 msgid "Figlet font"
 msgstr "Figlet-Font"
 
@@ -3079,15 +3082,15 @@ msgstr "Dateimanager"
 msgid "File Name"
 msgstr "Dateiname"
 
-#: framework/Form/Form.php:3895
+#: framework/Form/Form.php:3903
 msgid "File selection"
 msgstr "Dateiauswahl"
 
-#: framework/Form/Form.php:1736
+#: framework/Form/Form.php:1744
 msgid "File upload"
 msgstr "Datei-Hochladen"
 
-#: framework/Browser/Browser.php:1042
+#: framework/Browser/Browser.php:1043
 msgid "File uploads not supported."
 msgstr "Das Hochladen von Dateien wird nicht unterstützt."
 
@@ -3152,7 +3155,7 @@ msgstr "Der Order %s existiert nicht!"
 msgid "Folder %s has type \"%s\" not \"event\"!"
 msgstr "Der Ordner %s hat den Typ \"%s\" nicht \"event\"!"
 
-#: framework/Form/Form.php:4268
+#: framework/Form/Form.php:4276
 msgid "Font"
 msgstr "Schriftart"
 
@@ -3204,8 +3207,8 @@ msgstr "Foren"
 msgid "Forwards"
 msgstr "Weiterleitung"
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:449
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:502
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:455
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:508
 #, php-format
 msgid "Found %s results when expecting only one!"
 msgstr "%s Ergebnisse erhalten, nur eines erwartet!"
@@ -3366,7 +3369,7 @@ msgstr "Grau"
 msgid "Group Administration"
 msgstr "Gruppenverwaltung"
 
-#: framework/Group/Group.php:151 framework/Group/Group/ldap.php:174
+#: framework/Group/Group.php:151 framework/Group/Group/ldap.php:185
 #: framework/Group/Group/sql.php:94
 msgid "Group names must be non-empty"
 msgstr "Gruppennamen dürfen nicht leer sein"
@@ -3376,15 +3379,15 @@ msgstr "Gruppennamen dürfen nicht leer sein"
 msgid "Group was not created: %s."
 msgstr "Gruppe wurde nicht erstellt: %s."
 
-#: framework/Group/Group/ldap.php:302
+#: framework/Group/Group/ldap.php:313
 #, php-format
 msgid "Group_ldap: Unable to add group \"%s\". This is what the server said: "
 msgstr ""
 "Group_ldap: Die Gruppe \"%s\" konnte nicht hinzugefügt werden. Meldung des "
 "Servers: "
 
-#: framework/Group/Group/ldap.php:117 framework/Group/Group/ldap.php:123
-#: framework/Group/Group/ldap.php:381
+#: framework/Group/Group/ldap.php:128 framework/Group/Group/ldap.php:134
+#: framework/Group/Group/ldap.php:392
 #, php-format
 msgid ""
 "Group_ldap: Unable to delete group \"%s\". This is what the server said: %s"
@@ -3392,7 +3395,7 @@ msgstr ""
 "Group_ldap: Die Gruppe \"%s\" konnte nicht hinzugefügt werden. Meldung des "
 "Servers: %s"
 
-#: framework/Group/Group/ldap.php:336
+#: framework/Group/Group/ldap.php:347
 #, php-format
 msgid ""
 "Group_ldap: Unable to update group \"%s\". This is what the server said: %s"
@@ -3472,7 +3475,7 @@ msgstr "Hash-Algorithmus"
 msgid "Haze"
 msgstr "Diesig"
 
-#: framework/Form/Form.php:922 framework/Form/Form.php:3833
+#: framework/Form/Form.php:922 framework/Form/Form.php:3841
 msgid "Header"
 msgstr "Überschrift"
 
@@ -3534,7 +3537,7 @@ msgstr "Hoher Kontrast"
 msgid "Hide Results"
 msgstr "Ergebnisse ausblenden"
 
-#: lib/Block/weatherdotcom_strings.php:101
+#: lib/Block/weatherdotcom_strings.php:102
 msgid "High"
 msgstr "Hoch"
 
@@ -3712,7 +3715,7 @@ msgstr "Icons für %s"
 msgid "Icons with text"
 msgstr "Bilder und Text"
 
-#: framework/Form/Form.php:3897
+#: framework/Form/Form.php:3905
 msgid "Id"
 msgstr "Id"
 
@@ -3743,11 +3746,11 @@ msgstr ""
 msgid "Image"
 msgstr "Bild"
 
-#: framework/Form/Form.php:4264
+#: framework/Form/Form.php:4272
 msgid "Image CAPTCHA"
 msgstr "Bilder CAPTCHA"
 
-#: framework/Form/Form.php:2024
+#: framework/Form/Form.php:2032
 msgid "Image upload"
 msgstr "Bild-Hochladen"
 
@@ -3865,15 +3868,15 @@ msgstr "Ganzzahl"
 msgid "Integer list"
 msgstr "Liste von Ganzzahlen"
 
-#: framework/Group/Group/ldap.php:479
+#: framework/Group/Group/ldap.php:490
 #, php-format
 msgid "Internal Error: An attribute must ALWAYS match itself: %s"
 msgstr "Interner Fehler: Ein Attribut muss IMMER sich selbst entsprechen: %s"
 
 #: framework/Prefs/Prefs/ldap.php:153 framework/Prefs/Prefs/ldap.php:167
-#: framework/Prefs/Prefs/ldap.php:185 framework/Prefs/Prefs/ldap.php:198
-#: framework/Prefs/Prefs/ldap.php:214 framework/Prefs/Prefs/ldap.php:224
-#: framework/Prefs/Prefs/ldap.php:231 framework/Prefs/Prefs/ldap.php:260
+#: framework/Prefs/Prefs/ldap.php:196 framework/Prefs/Prefs/ldap.php:209
+#: framework/Prefs/Prefs/ldap.php:225 framework/Prefs/Prefs/ldap.php:235
+#: framework/Prefs/Prefs/ldap.php:242 framework/Prefs/Prefs/ldap.php:271
 msgid "Internal LDAP error.  Details have been logged for the administrator."
 msgstr "Interner LDAP-Fehler. Details wurden für den Administrator mitgeloggt."
 
@@ -3890,10 +3893,10 @@ msgstr ""
 msgid "International Address"
 msgstr "Internationale Adresse"
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server.php:237
-#: framework/Kolab_Server/lib/Horde/Kolab/Server.php:259
-#: framework/Kolab_Server/lib/Horde/Kolab/Server.php:297
-#: framework/Kolab_Server/lib/Horde/Kolab/Server.php:615
+#: framework/Kolab_Server/lib/Horde/Kolab/Server.php:240
+#: framework/Kolab_Server/lib/Horde/Kolab/Server.php:262
+#: framework/Kolab_Server/lib/Horde/Kolab/Server.php:300
+#: framework/Kolab_Server/lib/Horde/Kolab/Server.php:618
 #, php-format
 msgid "Invalid Kolab object type \"%s\"."
 msgstr "Ungültiger Kolab-Objekttyp \"%s\"."
@@ -3921,7 +3924,7 @@ msgstr "Ungültige Anwendung."
 msgid "Invalid authentication for user %s!"
 msgstr "Ungültige Anmeldung für Benutzer %s!"
 
-#: framework/Group/Group/ldap.php:713
+#: framework/Group/Group/ldap.php:724
 msgid "Invalid basedn configured"
 msgstr "Ungültige basedn angegeben"
 
@@ -3934,8 +3937,8 @@ msgstr "Ungültige Batch-ID."
 msgid "Invalid character in e-mail address: %s."
 msgstr "Ungültiges Zeichen in der E-Mail-Adresse: %s."
 
-#: framework/Form/Form.php:2748 framework/Form/Form.php:2826
-#: framework/Form/Form.php:2899 framework/Form/Form.php:2978
+#: framework/Form/Form.php:2756 framework/Form/Form.php:2834
+#: framework/Form/Form.php:2907 framework/Form/Form.php:2986
 #: framework/Form/Form/Type/tableset.php:37
 msgid "Invalid data submitted."
 msgstr "Ungültige Daten eingegeben."
@@ -3950,8 +3953,8 @@ msgstr "Ungültige Zieladresse."
 msgid "Invalid file format"
 msgstr "Ungültiges Dateiformat"
 
-#: framework/Group/Group/ldap.php:398 framework/Group/Group/ldap.php:517
-#: framework/Group/Group/ldap.php:544 framework/Group/Group/ldap.php:718
+#: framework/Group/Group/ldap.php:409 framework/Group/Group/ldap.php:528
+#: framework/Group/Group/ldap.php:555 framework/Group/Group/ldap.php:729
 msgid "Invalid group ID passed (bad DN syntax)"
 msgstr "Ungültige Gruppen-ID (Falsche DN-Syntax)"
 
@@ -4193,7 +4196,7 @@ msgstr "Kuwait"
 msgid "Kyrgyzstan"
 msgstr "Kirgisistan"
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:224
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:225
 #, php-format
 msgid "LDAP Error: Empty result for: %s."
 msgstr "LDAP-Fehler: Kein Resultat für: %s"
@@ -4203,12 +4206,12 @@ msgstr "LDAP-Fehler: Kein Resultat für: %s"
 msgid "LDAP Error: Failed to search using filter %s. Error was: %s"
 msgstr "LDAP-Fehler: Suche mit dem Filter %s fehlgeschlagen. Fehlermeldung: %s"
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:229
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:230
 #, php-format
 msgid "LDAP Error: No such dn: %s: %s"
 msgstr "LDAP-Fehler: DN %s nicht gefunden: %s"
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:218
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:219
 #, php-format
 msgid "LDAP Error: No such object: %s: %s"
 msgstr "LDAP-Fehler: Objekt %s nicht gefunden: %s"
@@ -4274,11 +4277,11 @@ msgstr "Gesetz"
 msgid "Lebanon"
 msgstr "Libanon"
 
-#: framework/Form/Form.php:4027
+#: framework/Form/Form.php:4035
 msgid "Left header"
 msgstr "Linke Überschrift"
 
-#: framework/Form/Form.php:4023
+#: framework/Form/Form.php:4031
 msgid "Left values"
 msgstr "Linke Werte"
 
@@ -4350,41 +4353,41 @@ msgstr "Leichte Schneeschauer"
 msgid "Limerick"
 msgstr "Limerick"
 
-#: framework/Form/Form.php:2084
+#: framework/Form/Form.php:2092
 msgid "Link"
 msgstr "Link"
 
-#: framework/Form/Form.php:2087
+#: framework/Form/Form.php:2095
 msgid "Link URL"
 msgstr "Link-URL"
 
-#: framework/Form/Form.php:2102
+#: framework/Form/Form.php:2110
 msgid "Link access key"
 msgstr "Link-Zugriffstaste"
 
-#: framework/Form/Form.php:3901
+#: framework/Form/Form.php:3909
 msgid "Link style"
 msgstr "Link-Stil"
 
-#: framework/Form/Form.php:2093
+#: framework/Form/Form.php:2101
 msgid "Link target"
 msgstr "Link-Ziel"
 
-#: framework/Form/Form.php:2090 framework/Form/Form.php:3899
+#: framework/Form/Form.php:2098 framework/Form/Form.php:3907
 msgid "Link text"
 msgstr "Link-Text"
 
-#: framework/Form/Form.php:2386
+#: framework/Form/Form.php:2394
 msgid "Link the email address to the compose page when displaying?"
 msgstr ""
 "E-Mail-Adresse beim Anzeigen zum Fenster für neue Nachrichten verlinken?"
 
-#: framework/Form/Form.php:2099
+#: framework/Form/Form.php:2107
 msgid "Link title attribute"
 msgstr "Link-Title-Attribut"
 
-#: framework/Text_Filter/Filter/html2text.php:187
-#: framework/Text_Filter/Filter/html2text.php:188
+#: framework/Text_Filter/Filter/html2text.php:193
+#: framework/Text_Filter/Filter/html2text.php:194
 msgid "Links"
 msgstr "Links"
 
@@ -4410,31 +4413,31 @@ msgstr "Datenbanken anzeigen"
 msgid "List Tables"
 msgstr "Tabellen anzeigen"
 
-#: framework/MIME/MIME/Headers.php:511
+#: framework/MIME/MIME/Headers.php:528
 msgid "List-Archive"
 msgstr "Listen-Archiv"
 
-#: framework/MIME/MIME/Headers.php:506
+#: framework/MIME/MIME/Headers.php:523
 msgid "List-Help"
 msgstr "Listen-Hilfe"
 
-#: framework/MIME/MIME/Headers.php:513
+#: framework/MIME/MIME/Headers.php:530
 msgid "List-Id"
 msgstr "Listen-Id"
 
-#: framework/MIME/MIME/Headers.php:509
+#: framework/MIME/MIME/Headers.php:526
 msgid "List-Owner"
 msgstr "Listen-Besitzer"
 
-#: framework/MIME/MIME/Headers.php:510
+#: framework/MIME/MIME/Headers.php:527
 msgid "List-Post"
 msgstr "Listen-Adresse"
 
-#: framework/MIME/MIME/Headers.php:508
+#: framework/MIME/MIME/Headers.php:525
 msgid "List-Subscribe"
 msgstr "Listen-Anmeldung"
 
-#: framework/MIME/MIME/Headers.php:507
+#: framework/MIME/MIME/Headers.php:524
 msgid "List-Unsubscribe"
 msgstr "Listen-Abmeldung"
 
@@ -4495,13 +4498,13 @@ msgstr "Anmelden"
 msgid "Login Tasks"
 msgstr "Anmeldeaufgaben"
 
-#: framework/Auth/Auth.php:1011
+#: framework/Auth/Auth.php:1022
 msgid "Login failed because your username or password was entered incorrectly."
 msgstr ""
 "Die Anmeldung ist fehlgeschlagen, weil Sie Ihren Benutzernamen oder Ihr "
 "Passwort falsch eingegeben haben."
 
-#: framework/Auth/Auth.php:1007
+#: framework/Auth/Auth.php:1018
 msgid "Login failed."
 msgstr "Anmeldung fehlgeschlagen."
 
@@ -4513,7 +4516,7 @@ msgstr "Langer Text"
 msgid "Love"
 msgstr "Liebe"
 
-#: lib/Block/weatherdotcom_strings.php:99
+#: lib/Block/weatherdotcom_strings.php:100
 msgid "Low"
 msgstr "Niedrig"
 
@@ -4686,7 +4689,7 @@ msgstr "Höchsttemperatur der letzten 6 Stunden: "
 msgid "Maximum Number of Portal Blocks"
 msgstr "Maximale Anzahl an Portalblöcken"
 
-#: framework/Form/Form.php:2030
+#: framework/Form/Form.php:2038
 msgid "Maximum file size in bytes"
 msgstr "Maximale Dateigröße in Bytes"
 
@@ -4804,7 +4807,7 @@ msgstr "Tiefsttemperatur der letzten 24 Stunden: "
 msgid "Min temp last 6 hours: "
 msgstr "Tiefsttemperatur der letzten 6 Stunden: "
 
-#: framework/Auth/Auth/ldap.php:475
+#: framework/Auth/Auth/ldap.php:493
 msgid "Minimum password age has not yet expired"
 msgstr "Das minimale Passwortalter ist noch nicht abgelaufen"
 
@@ -4831,6 +4834,10 @@ msgstr "Fehlende Nachrichten-ID."
 msgid "Missing session ID."
 msgstr "Fehlende Sitzungs-ID."
 
+#: lib/Block/weatherdotcom_strings.php:50
+msgid "Mist"
+msgstr "Diesig"
+
 #: templates/javascript/open_calendar.js:48
 msgid "Mo"
 msgstr "Mo"
@@ -4843,7 +4850,7 @@ msgstr "Webmail Mobil"
 msgid "Mobile phone number"
 msgstr "Mobiltelefonnummer"
 
-#: lib/Block/weatherdotcom_strings.php:100
+#: lib/Block/weatherdotcom_strings.php:101
 msgid "Moderate"
 msgstr "Mäßig"
 
@@ -4879,7 +4886,7 @@ msgstr "Mongolei"
 msgid "Montenegro"
 msgstr "Montenegro"
 
-#: framework/Form/Form.php:3285
+#: framework/Form/Form.php:3293
 msgid "Month and year"
 msgstr "Monat und Jahr"
 
@@ -4907,19 +4914,19 @@ msgstr "Mehr Felder in Zeile %d als die erwarteten %d gefunden."
 msgid "Morocco"
 msgstr "Marokko"
 
-#: lib/Block/weatherdotcom_strings.php:50
+#: lib/Block/weatherdotcom_strings.php:51
 msgid "Mostly Clear"
 msgstr "Überwiegend heiter"
 
-#: lib/Block/weatherdotcom_strings.php:51
+#: lib/Block/weatherdotcom_strings.php:52
 msgid "Mostly Cloudy"
 msgstr "Überwiegend bewölkt"
 
-#: lib/Block/weatherdotcom_strings.php:52
+#: lib/Block/weatherdotcom_strings.php:53
 msgid "Mostly Cloudy and Windy"
 msgstr "Überwiegend bewölkt und windig"
 
-#: lib/Block/weatherdotcom_strings.php:53
+#: lib/Block/weatherdotcom_strings.php:54
 msgid "Mostly Sunny"
 msgstr "Überwiegend sonnig"
 
@@ -4957,7 +4964,7 @@ msgstr "Mosambik"
 msgid "Mozilla"
 msgstr "Mozilla"
 
-#: framework/Form/Form.php:2852
+#: framework/Form/Form.php:2860
 msgid "Multi-level drop down lists"
 msgstr "Auswahlliste in mehreren Ebenen"
 
@@ -4965,7 +4972,7 @@ msgstr "Auswahlliste in mehreren Ebenen"
 msgid "Multimap UK map"
 msgstr "Multimap-UK-Karte"
 
-#: framework/Form/Form.php:2909
+#: framework/Form/Form.php:2917
 msgid "Multiple selection"
 msgstr "Mehrfachauswahl"
 
@@ -5230,7 +5237,7 @@ msgstr "Kein Kredit mehr übrig."
 msgid "No destination supplied."
 msgstr "Kein Empfänger angegeben."
 
-#: framework/Browser/Browser.php:1060
+#: framework/Browser/Browser.php:1061
 msgid "No file uploaded"
 msgstr "Keine Datei hochgeladen"
 
@@ -5274,7 +5281,7 @@ msgstr "Keine Nummer angegeben."
 msgid "No offensive fortunes"
 msgstr "Keine anstößigen Glückskekse"
 
-#: framework/Kolab_Format/lib/Horde/Kolab/Format/XML.php:424
+#: framework/Kolab_Format/lib/Horde/Kolab/Format/XML.php:444
 msgid "No or unreadable content in Kolab XML object"
 msgstr "Kein oder nicht lesbarer Inhalt im Kolab-XML-Objekt"
 
@@ -5406,11 +5413,11 @@ msgstr "Kein Verzeichnis"
 msgid "Not found"
 msgstr "Nicht gefunden"
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server.php:347
-#: framework/Kolab_Server/lib/Horde/Kolab/Server.php:360
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:975
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/test.php:307
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/test.php:366
+#: framework/Kolab_Server/lib/Horde/Kolab/Server.php:350
+#: framework/Kolab_Server/lib/Horde/Kolab/Server.php:363
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:1100
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/test.php:314
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/test.php:373
 msgid "Not implemented!"
 msgstr "Nicht implementiert!"
 
@@ -5465,14 +5472,14 @@ msgid "Number of characters"
 msgstr "Anzahl der Zeichen"
 
 #: framework/Form/Form.php:1398 framework/Form/Form.php:1449
-#: framework/Form/Form.php:1560 framework/Form/Form.php:1625
-#: framework/Form/Form.php:1671
+#: framework/Form/Form.php:1560 framework/Form/Form.php:1633
+#: framework/Form/Form.php:1679
 msgid "Number of columns"
 msgstr "Anzahl der Spalten"
 
 #: framework/Form/Form.php:1396 framework/Form/Form.php:1447
-#: framework/Form/Form.php:1558 framework/Form/Form.php:1623
-#: framework/Form/Form.php:1669
+#: framework/Form/Form.php:1558 framework/Form/Form.php:1631
+#: framework/Form/Form.php:1677
 msgid "Number of rows"
 msgstr "Anzahl der Zeilen"
 
@@ -5546,7 +5553,7 @@ msgstr "Falsches altes Passwort."
 msgid "Oman"
 msgstr "Oman"
 
-#: framework/Form/Form.php:2096
+#: framework/Form/Form.php:2104
 msgid "Onclick event"
 msgstr "Onclick-Event"
 
@@ -5558,11 +5565,11 @@ msgstr "Nur IMAP-Server unterstützen gemeinsame Ordner."
 msgid "Only offensive fortunes"
 msgstr "Nur anstößige Glückskekse"
 
-#: framework/Form/Form.php:2638
+#: framework/Form/Form.php:2646
 msgid "Only one email address allowed."
 msgstr "Nur eine E-Mail-Adresse erlaubt."
 
-#: framework/Form/Form.php:2181
+#: framework/Form/Form.php:2189
 msgid "Only one email address is allowed."
 msgstr "Nur eine E-Mail-Adresse ist erlaubt."
 
@@ -5652,7 +5659,7 @@ msgstr "Digitale PGP-Unterschrift"
 msgid "PGP Encrypted Data"
 msgstr "PGP-verschlüsselte Daten"
 
-#: framework/Form/Form.php:1617
+#: framework/Form/Form.php:1625
 msgid "PGP Key"
 msgstr "PGP-Schlüssel"
 
@@ -5681,51 +5688,51 @@ msgstr "PHP Shell"
 msgid "PHP does not support imap_myrights."
 msgstr "PHP unterstützt nicht imap_myrights()."
 
-#: lib/Block/weatherdotcom_strings.php:55
+#: lib/Block/weatherdotcom_strings.php:56
 msgid "PM Clouds"
 msgstr "Nachmittags Wolken"
 
-#: lib/Block/weatherdotcom_strings.php:56
-msgid "PM Dizzle"
-msgstr "Nachmittags Sprühregen"
-
 #: lib/Block/weatherdotcom_strings.php:57
+msgid "PM Drizzle"
+msgstr "Nachmittags Nieselregen"
+
+#: lib/Block/weatherdotcom_strings.php:58
 msgid "PM Fog"
 msgstr "Nachmittags Nebel"
 
-#: lib/Block/weatherdotcom_strings.php:58
+#: lib/Block/weatherdotcom_strings.php:59
 msgid "PM Light Rain"
 msgstr "Nachmittags leichter Regen"
 
-#: lib/Block/weatherdotcom_strings.php:59
+#: lib/Block/weatherdotcom_strings.php:60
 msgid "PM Light Snow"
 msgstr "Nachmittags leichter Schneefall"
 
-#: lib/Block/weatherdotcom_strings.php:60
+#: lib/Block/weatherdotcom_strings.php:61
 msgid "PM Rain"
 msgstr "Nachmittags Regen"
 
-#: lib/Block/weatherdotcom_strings.php:61
+#: lib/Block/weatherdotcom_strings.php:62
 msgid "PM Showers"
 msgstr "Nachmittags Schauer"
 
-#: lib/Block/weatherdotcom_strings.php:62
+#: lib/Block/weatherdotcom_strings.php:63
 msgid "PM Snow"
 msgstr "Nachmittags Schnee"
 
-#: lib/Block/weatherdotcom_strings.php:63
+#: lib/Block/weatherdotcom_strings.php:64
 msgid "PM Snow Showers"
 msgstr "Nachmittags Schneeschauer"
 
-#: lib/Block/weatherdotcom_strings.php:64
+#: lib/Block/weatherdotcom_strings.php:65
 msgid "PM Sun"
 msgstr "Nachmittags Sonne"
 
-#: lib/Block/weatherdotcom_strings.php:65
+#: lib/Block/weatherdotcom_strings.php:66
 msgid "PM T-Showers"
 msgstr "Nachmittags Gewitterschauer"
 
-#: lib/Block/weatherdotcom_strings.php:66
+#: lib/Block/weatherdotcom_strings.php:67
 msgid "PM T-Storms"
 msgstr "Nachmittags Gewitter"
 
@@ -5772,14 +5779,14 @@ msgstr "Paraguay"
 msgid "Parcel Address"
 msgstr "Paketadresse"
 
-#: lib/Block/weatherdotcom_strings.php:54
+#: lib/Block/weatherdotcom_strings.php:55
 msgid "Partly Cloudy"
 msgstr "Teilweise bewölkt"
 
 #: admin/user.php:44 admin/user.php:55 admin/setup/index.php:244
 #: framework/Net_SMS/SMS/sms2email_http.php:546
 #: framework/Net_SMS/SMS/clickatell_http.php:208
-#: framework/Net_SMS/SMS/win_http.php:160 framework/Form/Form.php:2682
+#: framework/Net_SMS/SMS/win_http.php:160 framework/Form/Form.php:2690
 #: templates/login/login.inc:64 templates/admin/user/update.inc:44
 #: config/registry.php.dist:402
 msgid "Password"
@@ -5797,7 +5804,7 @@ msgstr "Falsches Passwort"
 msgid "Password required for RADIUS authentication."
 msgstr "Kein Passwort für die RADIUS-Authentifizierung angegeben."
 
-#: framework/Form/Form.php:2715
+#: framework/Form/Form.php:2723
 msgid "Password with confirmation"
 msgstr "Passwort mit Bestätigung"
 
@@ -5809,7 +5816,7 @@ msgstr "Passwort:"
 msgid "Password: "
 msgstr "Passwort: "
 
-#: admin/user.php:167 framework/Form/Form.php:2697
+#: admin/user.php:167 framework/Form/Form.php:2705
 #: templates/admin/user/update.inc:15
 msgid "Passwords must match."
 msgstr "Die Passwörter müssen gleich sein."
@@ -5818,7 +5825,7 @@ msgstr "Die Passwörter müssen gleich sein."
 msgid "Paste"
 msgstr "Einfügen"
 
-#: framework/Form/Form.php:1619
+#: framework/Form/Form.php:1627
 msgid "Path to the GnuPG binary"
 msgstr "Pfad zum GnuPG-Programm"
 
@@ -5918,11 +5925,11 @@ msgstr "Einen Klang abspielen?"
 msgid "Please authenticate!"
 msgstr "Bitte melden Sie sich an!"
 
-#: framework/Form/Form.php:3739
+#: framework/Form/Form.php:3747
 msgid "Please choose a sound."
 msgstr "Bitte wählen Sie einen Klang aus:"
 
-#: framework/Form/Form.php:3263
+#: framework/Form/Form.php:3271
 msgid "Please enter a month and a year."
 msgstr "Bitte einen Monat und ein Jahr angeben."
 
@@ -5934,13 +5941,13 @@ msgstr "Bitte geben Sie einen Namen für die neue Kategorie an:"
 msgid "Please enter a valid IP address."
 msgstr "Bitte eine gültige IP-Adresse eingeben."
 
-#: framework/Form/Form.php:3343
+#: framework/Form/Form.php:3351
 msgid "Please enter a valid date, check the number of days in the month."
 msgstr ""
 "Bitte geben Sie ein gültiges Datum an; überprüfen Sie die Zahl der Tage in "
 "dem Monat."
 
-#: framework/Form/Form.php:3141
+#: framework/Form/Form.php:3149
 msgid "Please enter a valid time."
 msgstr "Bitte einen gültigen Zeitwert eingeben."
 
@@ -6076,12 +6083,12 @@ msgstr "Probleme"
 msgid "Problem Description"
 msgstr "Problembeschreibung"
 
-#: framework/Form/Form.php:1696 framework/Form/Form.php:2780
-#: framework/Form/Form.php:2856 framework/Form/Form.php:4196
+#: framework/Form/Form.php:1704 framework/Form/Form.php:2788
+#: framework/Form/Form.php:2864 framework/Form/Form.php:4204
 msgid "Prompt text"
 msgstr "Nachfragetext"
 
-#: framework/Form/Form.php:2383
+#: framework/Form/Form.php:2391
 msgid "Protect address from spammers?"
 msgstr "Adresse vor Spammern schützen?"
 
@@ -6136,31 +6143,31 @@ msgstr "Speicherplatz-Kontingent"
 msgid "RSA Public Key (%d bit)"
 msgstr "Öffentlicher RSA Schlüssel (%d Bit)"
 
-#: framework/Form/Form.php:2944
+#: framework/Form/Form.php:2952
 msgid "Radio selection"
 msgstr "Auswahlknopf"
 
-#: lib/Block/weatherdotcom_strings.php:67
+#: lib/Block/weatherdotcom_strings.php:68
 msgid "Rain"
 msgstr "Regen"
 
-#: lib/Block/weatherdotcom_strings.php:68
+#: lib/Block/weatherdotcom_strings.php:69
 msgid "Rain Early"
 msgstr "Anfangs Regen"
 
-#: lib/Block/weatherdotcom_strings.php:69
+#: lib/Block/weatherdotcom_strings.php:70
 msgid "Rain Late"
 msgstr "Später Regen"
 
-#: lib/Block/weatherdotcom_strings.php:70
+#: lib/Block/weatherdotcom_strings.php:71
 msgid "Rain Shower"
 msgstr "Regenschauer"
 
-#: lib/Block/weatherdotcom_strings.php:71
+#: lib/Block/weatherdotcom_strings.php:72
 msgid "Rain and Snow"
 msgstr "Schneeregen"
 
-#: lib/Block/weatherdotcom_strings.php:72
+#: lib/Block/weatherdotcom_strings.php:73
 msgid "Rain to Snow"
 msgstr "Regen in Schnee übergehend"
 
@@ -6206,7 +6213,7 @@ msgstr ""
 "Daten des Benutzers \"%s\" wirklich löschen? Dieser Vorgang kann nicht "
 "rückgängig gemacht werden."
 
-#: admin/sessions.php:54
+#: admin/sessions.php:61
 msgid "Realm:"
 msgstr "Realm:"
 
@@ -6227,7 +6234,7 @@ msgstr "Aktualisierungsrhythmus:"
 msgid "Regex"
 msgstr "Regulärer Ausdruck"
 
-#: framework/Form/Form.php:4153
+#: framework/Form/Form.php:4161
 msgid "Relationship browser"
 msgstr "Verbindungs-Browser"
 
@@ -6235,7 +6242,7 @@ msgstr "Verbindungs-Browser"
 msgid "Remarks"
 msgstr "Bemerkungen"
 
-#: admin/sessions.php:55 admin/sessions.php:60
+#: admin/sessions.php:62 admin/sessions.php:72
 msgid "Remote Host:"
 msgstr "Entfernter Rechner:"
 
@@ -6337,12 +6344,12 @@ msgstr "Ergebnisse"
 msgid "Results for %s"
 msgstr "Ergebnisse für %s"
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:463
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:469
 #, php-format
 msgid "Retrieving DN failed. Error was: %s"
 msgstr "Lesen der DN fehlgeschlagen. Fehlermeldung: %s"
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:516
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:522
 #, php-format
 msgid "Retrieving attributes failed. Error was: %s"
 msgstr "Lesen der Attribute fehlgeschlagen. Fehlermeldung: %s"
@@ -6388,11 +6395,11 @@ msgstr "Rätsel"
 msgid "Right click context menu"
 msgstr "Kontextmenü bei Rechtsklick"
 
-#: framework/Form/Form.php:4029
+#: framework/Form/Form.php:4037
 msgid "Right header"
 msgstr "Rechte Überschrift"
 
-#: framework/Form/Form.php:4025
+#: framework/Form/Form.php:4033
 msgid "Right values"
 msgstr "Rechte Werte"
 
@@ -6439,7 +6446,7 @@ msgstr "S/MIME krytographische Unterschrift"
 msgid "S/MIME Encrypted Message"
 msgstr "Mit S/MIME verschlüsselte Nachricht"
 
-#: framework/Form/Form.php:1665
+#: framework/Form/Form.php:1673
 msgid "S/MIME Key"
 msgstr "S/MIME-Schlüssel"
 
@@ -6455,7 +6462,7 @@ msgstr "SMPP-Gateway"
 msgid "SQL Shell"
 msgstr "SQL Shell"
 
-#: framework/Form/Form.php:4194
+#: framework/Form/Form.php:4202
 msgid "SQL statement for value lookups"
 msgstr "SQL-Anweisung zur Abfrage der Werte"
 
@@ -6559,11 +6566,11 @@ msgstr "%s-Konfiguration gespeichert."
 msgid "Saved setup upgrade script to: \"%s\"."
 msgstr "Das Aktualisierungsskript wurde in \"%s\" gespeichert."
 
-#: lib/Block/weatherdotcom_strings.php:73
+#: lib/Block/weatherdotcom_strings.php:74
 msgid "Scattered Showers"
 msgstr "Vereinzelt Schauer"
 
-#: lib/Block/weatherdotcom_strings.php:74
+#: lib/Block/weatherdotcom_strings.php:75
 msgid "Scattered T-Storms"
 msgstr "Vereinzelt Gewitter"
 
@@ -6583,11 +6590,11 @@ msgstr "Suche"
 msgid "Search Engines"
 msgstr "Suchmaschinen"
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:455
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:470
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:508
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:531
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:910
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:461
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:476
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:514
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:537
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:1035
 #, php-format
 msgid "Search failed. Error was: %s"
 msgstr "Suche fehlgeschlagen: Fehlermeldung: %s"
@@ -6596,7 +6603,7 @@ msgstr "Suche fehlgeschlagen: Fehlermeldung: %s"
 msgid "Search:"
 msgstr "Suche:"
 
-#: framework/Form/Form.php:3874
+#: framework/Form/Form.php:3882
 msgid "Select Files"
 msgstr "Dateien auswählen"
 
@@ -6625,7 +6632,7 @@ msgstr "Hinzuzufügenden Benutzer auswählen:"
 msgid "Select all"
 msgstr "Alle auswählen"
 
-#: framework/Form/Form.php:3346
+#: framework/Form/Form.php:3354
 msgid "Select all date components."
 msgstr "Legen Sie alle Datumskomponenten fest."
 
@@ -6750,7 +6757,7 @@ msgstr "Sesssionverwaltung"
 msgid "Session ID expired."
 msgstr "Session-ID abgelaufen."
 
-#: admin/sessions.php:52
+#: admin/sessions.php:59
 msgid "Session Timestamp:"
 msgstr "Sitzungs-Zeitstempel:"
 
@@ -6758,7 +6765,7 @@ msgstr "Sitzungs-Zeitstempel:"
 msgid "Sessions"
 msgstr "Sitzungen"
 
-#: framework/Form/Form.php:2993
+#: framework/Form/Form.php:3001
 msgid "Set"
 msgstr "Auswahl-Satz"
 
@@ -6812,17 +6819,17 @@ msgstr "Mehrere passende Orte mit diesem Parameter: "
 msgid "Seychelles"
 msgstr "Seychellen"
 
-#: framework/Share/Share/kolab.php:102 framework/Share/Share/sql.php:190
+#: framework/Share/Share/kolab.php:102 framework/Share/Share/sql.php:203
 #, php-format
 msgid "Share \"%s\" does not exist."
 msgstr "Share \"%s\" existiert nicht."
 
-#: framework/Share/Share/sql.php:251
+#: framework/Share/Share/sql.php:264
 #, php-format
 msgid "Share ID %d does not exist."
 msgstr "Share-ID %d existiert nicht."
 
-#: framework/Share/Share/sql_hierarchical.php:556
+#: framework/Share/Share/sql_hierarchical.php:558
 msgid "Share names are not supported in this driver"
 msgstr "Sharenamen werden von diesem Treiber nicht unterstützt"
 
@@ -6864,7 +6871,7 @@ msgstr ""
 msgid "Show extra detail?"
 msgstr "Weitere Details anzeigen?"
 
-#: framework/Form/Form.php:3903
+#: framework/Form/Form.php:3911
 msgid "Show icon?"
 msgstr "Symbol anzeigen?"
 
@@ -6872,15 +6879,15 @@ msgstr "Symbol anzeigen?"
 msgid "Show last login time when logging in?"
 msgstr "Anzeigen, wann die letzte Anmeldung erfolgt ist?"
 
-#: framework/Form/Form.php:2028
+#: framework/Form/Form.php:2036
 msgid "Show option to keep original?"
 msgstr "Erhalten des Originals ermöglichen?"
 
-#: framework/Form/Form.php:3507 framework/Form/Form.php:3673
+#: framework/Form/Form.php:3515 framework/Form/Form.php:3681
 msgid "Show picker?"
 msgstr "Auswähler anzeigen?"
 
-#: framework/Form/Form.php:3231 framework/Form/Form.php:3679
+#: framework/Form/Form.php:3239 framework/Form/Form.php:3687
 msgid "Show seconds?"
 msgstr "Sekunden anzeigen?"
 
@@ -6889,23 +6896,23 @@ msgstr "Sekunden anzeigen?"
 msgid "Show the %s Menu on the left?"
 msgstr "Das %s-Menü auf der linken Seite anzeigen?"
 
-#: framework/Form/Form.php:2026
+#: framework/Form/Form.php:2034
 msgid "Show upload?"
 msgstr "Hochladen ermöglichen?"
 
-#: lib/Block/weatherdotcom_strings.php:75
+#: lib/Block/weatherdotcom_strings.php:76
 msgid "Showers"
 msgstr "Schauer"
 
-#: lib/Block/weatherdotcom_strings.php:76
+#: lib/Block/weatherdotcom_strings.php:77
 msgid "Showers Early"
 msgstr "Anfangs Schauer"
 
-#: lib/Block/weatherdotcom_strings.php:77
+#: lib/Block/weatherdotcom_strings.php:78
 msgid "Showers Late"
 msgstr "Später Schauer"
 
-#: lib/Block/weatherdotcom_strings.php:78
+#: lib/Block/weatherdotcom_strings.php:79
 msgid "Showers in the Vicinity"
 msgstr "Schauer in der Umgebung"
 
@@ -6929,7 +6936,7 @@ msgstr "Verkleinern oder verschieben Sie erst die benachbarten Blöcke"
 msgid "Sierra Leone"
 msgstr "Sierra Leone"
 
-#: framework/Auth/Auth/Signup.php:187
+#: framework/Auth/Auth/Signup.php:193
 msgid "Sign up"
 msgstr "Registrieren"
 
@@ -6953,8 +6960,8 @@ msgstr "Singapur"
 #: framework/MIME/MIME/Viewer/rar.php:63 framework/MIME/MIME/Viewer/zip.php:86
 #: framework/MIME/MIME/Viewer/tgz.php:90 framework/Form/Form.php:1205
 #: framework/Form/Form.php:1225 framework/Form/Form.php:1254
-#: framework/Form/Form.php:2913 framework/Form/Form.php:3831
-#: framework/Form/Form.php:4031
+#: framework/Form/Form.php:2921 framework/Form/Form.php:3839
+#: framework/Form/Form.php:4039
 msgid "Size"
 msgstr "Größe"
 
@@ -6980,31 +6987,31 @@ msgstr "Klein"
 msgid "Snooze..."
 msgstr "Erinnern in..."
 
-#: lib/Block/weatherdotcom_strings.php:79
+#: lib/Block/weatherdotcom_strings.php:80
 msgid "Snow"
 msgstr "Schnee"
 
-#: lib/Block/weatherdotcom_strings.php:80
+#: lib/Block/weatherdotcom_strings.php:81
 msgid "Snow Early"
 msgstr "Anfangs Schnee"
 
-#: lib/Block/weatherdotcom_strings.php:81
+#: lib/Block/weatherdotcom_strings.php:82
 msgid "Snow Late"
 msgstr "Später Schnee"
 
-#: lib/Block/weatherdotcom_strings.php:82
+#: lib/Block/weatherdotcom_strings.php:83
 msgid "Snow Shower"
 msgstr "Schneeschauer"
 
-#: lib/Block/weatherdotcom_strings.php:83
+#: lib/Block/weatherdotcom_strings.php:84
 msgid "Snow Showers"
 msgstr "Schneeschauer"
 
-#: lib/Block/weatherdotcom_strings.php:84
+#: lib/Block/weatherdotcom_strings.php:85
 msgid "Snow Showers Early"
 msgstr "Anfangs Schneeschauer"
 
-#: lib/Block/weatherdotcom_strings.php:85
+#: lib/Block/weatherdotcom_strings.php:86
 msgid "Snow Showers Late"
 msgstr "Später Schneeschauer"
 
@@ -7030,11 +7037,11 @@ msgstr "Somalien"
 msgid "Songs & Poems"
 msgstr "Lieder & Gedichte"
 
-#: framework/Form/Form.php:3827
+#: framework/Form/Form.php:3835
 msgid "Sort order selection"
 msgstr "Auswahl der Sortierreihenfolge"
 
-#: framework/Form/Form.php:3748
+#: framework/Form/Form.php:3756
 msgid "Sound selection"
 msgstr "Klangauswahl"
 
@@ -7090,7 +7097,7 @@ msgstr "Sonderzeichen-Eingabe"
 msgid "Special characters"
 msgstr "Sonderzeichen"
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/Object.php:179
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/Object.php:181
 msgid "Specify either the UID or a search result!"
 msgstr "Angabe der UID oder eines Suchergebnisses ist notwendig!"
 
@@ -7113,10 +7120,14 @@ msgstr "Standard"
 msgid "Star Trek"
 msgstr "Star Trek"
 
-#: framework/Form/Form.php:3287 framework/Form/Form.php:3503
-#: framework/Form/Form.php:3669
+#: framework/Form/Form.php:3295 framework/Form/Form.php:3511
+#: framework/Form/Form.php:3677
 msgid "Start year"
 msgstr "Startjahr"
+
+#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Report.php:34
+msgid "Starting to regenerate the free/busy cache..."
+msgstr "Der Frei/Gebucht-Zwischenspeicher wird neu erzeugt..."
 
 #: framework/Crypt/Crypt/smime.php:574
 msgid "State or Province"
@@ -7126,7 +7137,7 @@ msgstr "Bundesstaat oder Provinz"
 msgid "Status"
 msgstr "Status"
 
-#: framework/Form/Form.php:3509 framework/Form/Form.php:3675
+#: framework/Form/Form.php:3517 framework/Form/Form.php:3683
 msgid "Storage format"
 msgstr "Speicherformat"
 
@@ -7193,6 +7204,15 @@ msgstr "Daten des Benutzers \"%s\" wurde erfolgreich gelöscht."
 msgid "Successfully deleted \"%s\"."
 msgstr "\"%s\" wurde erfolgreich gelöscht."
 
+#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Report.php:63
+msgid "Successfully regenerated all calendar caches!"
+msgstr "Alle Kalender-Zwischenspeicher erfolgreich gefüllt!"
+
+#: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Report.php:40
+#, php-format
+msgid "Successfully regenerated calendar \"%s\"!"
+msgstr "Der Kalender \"%s\" wurde erfolgreich neu erzeugt!"
+
 #: admin/user.php:121
 #, php-format
 msgid "Successfully removed \"%s\" from the system."
@@ -7240,7 +7260,7 @@ msgstr "Sonnenuntergang"
 msgid "Sunday"
 msgstr "Sonntag"
 
-#: lib/Block/weatherdotcom_strings.php:86
+#: lib/Block/weatherdotcom_strings.php:87
 msgid "Sunny"
 msgstr "Sonnig"
 
@@ -7309,35 +7329,35 @@ msgstr "Ausgelieferter Feed"
 msgid "Syrian Arab Republic"
 msgstr "Arabische Republik Syrien"
 
-#: lib/Block/weatherdotcom_strings.php:87
+#: lib/Block/weatherdotcom_strings.php:88
 msgid "T-Showers"
 msgstr "Gewitterschauer"
 
-#: lib/Block/weatherdotcom_strings.php:88
+#: lib/Block/weatherdotcom_strings.php:89
 msgid "T-Showers Early"
 msgstr "Anfangs Gewitterschauer"
 
-#: lib/Block/weatherdotcom_strings.php:89
+#: lib/Block/weatherdotcom_strings.php:90
 msgid "T-Showers Late"
 msgstr "Später Gewitterschauer"
 
-#: lib/Block/weatherdotcom_strings.php:90
+#: lib/Block/weatherdotcom_strings.php:91
 msgid "T-Storm"
 msgstr "Gewitter"
 
-#: lib/Block/weatherdotcom_strings.php:91
+#: lib/Block/weatherdotcom_strings.php:92
 msgid "T-Storm and Windy"
 msgstr "Gewitter und windig"
 
-#: lib/Block/weatherdotcom_strings.php:92
+#: lib/Block/weatherdotcom_strings.php:93
 msgid "T-Storms"
 msgstr "Gewitter"
 
-#: lib/Block/weatherdotcom_strings.php:93
+#: lib/Block/weatherdotcom_strings.php:94
 msgid "T-Storms Early"
 msgstr "Anfangs Gewitter"
 
-#: lib/Block/weatherdotcom_strings.php:94
+#: lib/Block/weatherdotcom_strings.php:95
 msgid "T-Storms Late"
 msgstr "Später Gewitter"
 
@@ -7418,8 +7438,8 @@ msgstr "Vorlage \"%s\" nicht gefunden."
 msgid "Tentative: "
 msgstr "Unter Vorbehalt: "
 
-#: framework/Form/Form.php:1201 framework/Form/Form.php:4247
-#: framework/Form/Form.php:4266
+#: framework/Form/Form.php:1201 framework/Form/Form.php:4255
+#: framework/Form/Form.php:4274
 msgid "Text"
 msgstr "Text"
 
@@ -7477,12 +7497,12 @@ msgstr "Die Maintenance:: Klasse konnte nicht geladen werden"
 msgid "The SSH2 PECL extension is not available."
 msgstr "Die SSH2-PECL-Extension ist nicht verfügbar."
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/group.php:188
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/group.php:197
 #, php-format
 msgid "The UID %s is already a member of the group %s!"
 msgstr "Die UID %s ist bereits in Mitglied der Gruppe %s!"
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/group.php:211
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/group.php:220
 #, php-format
 msgid "The UID %s is no member of the group %s!"
 msgstr "Die UID %s ist kein Mitglied der Gruppe %s!"
@@ -7600,7 +7620,7 @@ msgstr ""
 msgid "The identity \"%s\" has been deleted."
 msgstr "Die Identität \"%s\" wurde gelöscht."
 
-#: framework/Form/Form.php:1826
+#: framework/Form/Form.php:1834
 msgid ""
 "The image file size could not be determined or it was 0 bytes. The upload "
 "may have been interrupted."
@@ -7608,7 +7628,7 @@ msgstr ""
 "Die Dateigröße des Bildes konnte nicht bestimmt werden, oder das Bild war "
 "leer. Vielleicht wurde der Hochladevorgang unterbrochen."
 
-#: framework/Form/Form.php:1830
+#: framework/Form/Form.php:1838
 #, php-format
 msgid "The image file was larger than the maximum allowed size (%d bytes)."
 msgstr "Das Bild war größer als die maximal erlaubte Größe (%d Bytes)."
@@ -7668,7 +7688,7 @@ msgstr ""
 "dass dieses Kolab-Object von jemand anderem verändert wurde, während Sie es "
 "bearbeitet haben. Ihre Änderungen sind verloren."
 
-#: framework/Form/Form.php:2389
+#: framework/Form/Form.php:2397
 msgid "The name to use when linking to the compose page"
 msgstr "Name für den Link zur Nachrichtenerstellung"
 
@@ -7695,7 +7715,7 @@ msgstr ""
 "Die Benutzereinstellung \"%s\" konnte nicht gespeichert werden, weil ihre "
 "Daten die maximal erlaubte Größe überschreiten"
 
-#: framework/Prefs/Prefs/ldap.php:335 framework/Prefs/Prefs/file.php:80
+#: framework/Prefs/Prefs/ldap.php:346 framework/Prefs/Prefs/file.php:80
 #: framework/Prefs/Prefs/sql.php:135 framework/Prefs/Prefs/kolab_imap.php:108
 #: framework/Prefs/Prefs/imsp.php:90
 msgid ""
@@ -7772,7 +7792,7 @@ msgstr "Die Registrierungsanfrage von \"%s\" wurde entfernt."
 msgid "The specified row (%d) does not exist."
 msgstr "Die angegebene Zeile (%d) existiert nicht."
 
-#: framework/Form/Form.php:4222
+#: framework/Form/Form.php:4230
 msgid "The text you entered did not match the text on the screen."
 msgstr ""
 "Der Text, den Sie angegeben haben, entspricht nicht dem Text auf dem "
@@ -7845,14 +7865,14 @@ msgstr "Beim Löschen von \"%s\" aus dem System ist ein Problem aufgetreten: "
 msgid "There was a problem updating \"%s\": %s"
 msgstr "Beim Aktualisieren von \"%s\" ist ein Problem aufgetreten: %s"
 
-#: framework/Browser/Browser.php:1067
+#: framework/Browser/Browser.php:1068
 #, php-format
 msgid "There was a problem with the file upload: No %s was uploaded."
 msgstr ""
 "Beim Hochladen der Datei ist ein Fehler aufgetreten. %s wurde nicht "
 "hochgeladen."
 
-#: framework/Browser/Browser.php:1072
+#: framework/Browser/Browser.php:1073
 #, php-format
 msgid ""
 "There was a problem with the file upload: The %s was larger than the maximum "
@@ -7861,7 +7881,7 @@ msgstr ""
 "Beim Hochladen der Datei ist ein Fehler aufgetreten. %s war größer als die "
 "maximal erlaubte Größe (%d Bytes)."
 
-#: framework/Browser/Browser.php:1074
+#: framework/Browser/Browser.php:1075
 #, php-format
 msgid ""
 "There was a problem with the file upload: The %s was only partially uploaded."
@@ -7942,7 +7962,7 @@ msgstr "Dies scheint kein gültiges RAR-Archiv zu sein."
 msgid "This does not appear to be a valid zip file."
 msgstr "Dies scheint kein gültiges ZIP-Archiv zu sein."
 
-#: framework/Form/Form.php:4052
+#: framework/Form/Form.php:4060
 msgid "This does not seem to be a valid card number."
 msgstr "Dies scheint keine gültige Kartennummer zu sein."
 
@@ -7998,15 +8018,15 @@ msgstr ""
 #: framework/Form/Form.php:1080 framework/Form/Form.php:1107
 #: framework/Form/Form.php:1172 framework/Form/Form.php:1272
 #: framework/Form/Form.php:1330 framework/Form/Form.php:1424
-#: framework/Form/Form.php:1815 framework/Form/Form.php:2622
-#: framework/Form/Form.php:2670 framework/Form/Form.php:2692
-#: framework/Form/Form.php:2739 framework/Form/Form.php:2817
-#: framework/Form/Form.php:2888 framework/Form/Form.php:3102
-#: framework/Form/Form.php:3144 framework/Form/Form.php:3338
-#: framework/Form/Form.php:3690 framework/Form/Form.php:3731
-#: framework/Form/Form.php:4044 framework/Form/Form.php:4217
-#: framework/Form/Form.php:4303 framework/Form/Form.php:4780
-#: framework/Form/Form.php:4788
+#: framework/Form/Form.php:1823 framework/Form/Form.php:2630
+#: framework/Form/Form.php:2678 framework/Form/Form.php:2700
+#: framework/Form/Form.php:2747 framework/Form/Form.php:2825
+#: framework/Form/Form.php:2896 framework/Form/Form.php:3110
+#: framework/Form/Form.php:3152 framework/Form/Form.php:3346
+#: framework/Form/Form.php:3698 framework/Form/Form.php:3739
+#: framework/Form/Form.php:4052 framework/Form/Form.php:4225
+#: framework/Form/Form.php:4311 framework/Form/Form.php:4788
+#: framework/Form/Form.php:4796
 msgid "This field is required."
 msgstr "Dieses Feld ist notwendig."
 
@@ -8014,7 +8034,7 @@ msgstr "Dieses Feld ist notwendig."
 msgid "This field may only contain integers."
 msgstr "Dieses Feld darf nur ganze Zahlen enthalten."
 
-#: framework/Form/Form.php:3110
+#: framework/Form/Form.php:3118
 msgid "This field may only contain numbers and the colon."
 msgstr "Dieses Feld darf nur Zahlen und einen Punkt enthalten."
 
@@ -8032,7 +8052,7 @@ msgstr ""
 msgid "This field must be a valid number."
 msgstr "Dieses Feld muss eine gültige Zahl enthalten."
 
-#: framework/Form/Form.php:3698
+#: framework/Form/Form.php:3706
 msgid ""
 "This field must contain a color code in the RGB Hex format, for example "
 "'#1234af'."
@@ -8089,7 +8109,7 @@ msgstr "Dieses System ist zur Zeit deaktiviert."
 msgid "This value must be a number."
 msgstr "Dieser Wert muss eine Zahl sein."
 
-#: lib/Block/weatherdotcom_strings.php:95
+#: lib/Block/weatherdotcom_strings.php:96
 msgid "Thunder"
 msgstr "Gewitter"
 
@@ -8097,7 +8117,7 @@ msgstr "Gewitter"
 msgid "Tickets"
 msgstr "Tickets"
 
-#: framework/Form/Form.php:3119
+#: framework/Form/Form.php:3127
 msgid "Time"
 msgstr "Zeit"
 
@@ -8109,7 +8129,7 @@ msgstr "Zeiterfassung"
 msgid "Time format"
 msgstr "Zeitformat"
 
-#: framework/Form/Form.php:3229
+#: framework/Form/Form.php:3237
 msgid "Time selection"
 msgstr "Zeitauswahl"
 
@@ -8187,7 +8207,7 @@ msgstr "Übersetzungen"
 msgid "Trinidad and Tobago"
 msgstr "Trinidad und Tobago"
 
-#: framework/Form/Form.php:2053
+#: framework/Form/Form.php:2061
 msgid "True or false"
 msgstr "Wahr oder falsch"
 
@@ -8236,7 +8256,7 @@ msgstr "U Zeichen"
 msgid "U.V. index: "
 msgstr "UV-Index: "
 
-#: framework/Kolab_Format/lib/Horde/Kolab/Format/XML.php:447
+#: framework/Kolab_Format/lib/Horde/Kolab/Format/XML.php:467
 msgid "UID not found in Kolab XML object"
 msgstr "UID im Kolab-XML-Objekt nicht gefunden"
 
@@ -8658,7 +8678,7 @@ msgstr "Es wurde ein unbekannter Ort angegeben."
 msgid "Unknown username or password."
 msgstr "Unbekannter Benutzername oder Passwort."
 
-#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:582
+#: framework/Kolab_Server/lib/Horde/Kolab/Server/ldap.php:588
 #, php-format
 msgid "Unkown Kolab object type for DN %s."
 msgstr "Unbekannter Kolab-Objekttyp für DN %s."
@@ -8790,7 +8810,7 @@ msgstr "Hinzuzufügender Benutzer:"
 msgid "Username"
 msgstr "Benutzername"
 
-#: framework/Auth/Auth/Signup/sql.php:76
+#: framework/Auth/Auth/Signup.php:88 framework/Auth/Auth/Signup/sql.php:76
 #: framework/Auth/Auth/Signup/datatree.php:67
 #, php-format
 msgid "Username \"%s\" already exists."
@@ -8851,13 +8871,13 @@ msgstr "Wert in Minuten von jetzt an."
 msgid "Value is over the maximum length of %d."
 msgstr "Der Wert ist über der maximalen Länge von %d."
 
-#: framework/Form/Form.php:2911 framework/Form/Form.php:2946
-#: framework/Form/Form.php:2995 framework/Form/Form.php:3829
+#: framework/Form/Form.php:2919 framework/Form/Form.php:2954
+#: framework/Form/Form.php:3003 framework/Form/Form.php:3837
 #: framework/Form/Form/Type/tableset.php:59
 msgid "Values"
 msgstr "Werte"
 
-#: framework/Form/Form.php:2778 framework/Form/Form.php:2854
+#: framework/Form/Form.php:2786 framework/Form/Form.php:2862
 msgid "Values to select from"
 msgstr "Werte, aus denen ausgewählt werden kann"
 
@@ -8892,7 +8912,7 @@ msgstr "Version"
 msgid "Version Control"
 msgstr "Versionskontrolle"
 
-#: lib/Block/weatherdotcom_strings.php:102
+#: lib/Block/weatherdotcom_strings.php:103
 msgid "Very High"
 msgstr "Sehr Hoch"
 
@@ -9059,7 +9079,7 @@ msgstr "Welche Phasen"
 msgid "Which plugins to enable for the Rich Text editor."
 msgstr "Welche Plugins für den WYSIWYG-Editor sollen aktiviert werden?"
 
-#: framework/Form/Form.php:4033
+#: framework/Form/Form.php:4041
 msgid "Width in CSS units"
 msgstr "Breite in CSS-Einheiten"
 
@@ -9072,15 +9092,15 @@ msgstr "Breite des %s-Menüs links:"
 msgid "Wiki"
 msgstr "Wiki"
 
-#: lib/Block/weatherdotcom.php:306 lib/Block/weatherdotcom_strings.php:96
+#: lib/Block/weatherdotcom.php:306 lib/Block/weatherdotcom_strings.php:97
 msgid "Wind"
 msgstr "Wind"
 
-#: lib/Block/weatherdotcom_strings.php:97
+#: lib/Block/weatherdotcom_strings.php:98
 msgid "Wind Early"
 msgstr "Anfangs windig"
 
-#: lib/Block/weatherdotcom_strings.php:98
+#: lib/Block/weatherdotcom_strings.php:99
 msgid "Wind Late"
 msgstr "Später windig"
 
@@ -9287,7 +9307,7 @@ msgstr "Sie dürfen das Zeichen '\\' nicht in Ihrem Namen verwenden."
 msgid "You did not authenticate."
 msgstr "Sie sind nicht angemeldet."
 
-#: framework/Form/Form.php:2642
+#: framework/Form/Form.php:2650
 msgid "You did not enter a valid email address."
 msgstr "Sie haben keine gültige E-Mail-Adresse angegeben."
 
@@ -9300,7 +9320,7 @@ msgstr ""
 "Sie haben keine Felder aus den importierten Daten den entsprechenden Feldern "
 "in %s zugeordnet."
 
-#: framework/Auth/Auth.php:1003
+#: framework/Auth/Auth.php:1014
 msgid "You have been logged out."
 msgstr "Sie wurden abgemeldet."
 
@@ -9324,11 +9344,11 @@ msgstr ""
 "\n"
 "Wenn Sie mit diese Nachricht nichts anfangen können, bitte löschen."
 
-#: framework/Form/Form.php:3574
+#: framework/Form/Form.php:3582
 msgid "You must choose a date."
 msgstr "Sie müssen ein Datum auswählen."
 
-#: framework/Form/Form.php:3572
+#: framework/Form/Form.php:3580
 msgid "You must choose a time."
 msgstr "Sie müssen eine Uhrzeit auswählen."
 
@@ -9363,11 +9383,11 @@ msgstr ""
 msgid "You must enter a valid value."
 msgstr "Sie müssen einen gültigen Wert angegeben."
 
-#: framework/Form/Form.php:2202
+#: framework/Form/Form.php:2210
 msgid "You must enter an email address."
 msgstr "Sie müssen eine E-Mail-Adresse angeben."
 
-#: framework/Form/Form.php:2200
+#: framework/Form/Form.php:2208
 msgid "You must enter at least one email address."
 msgstr "Sie müssen mindestens eine E-Mail-Adresse angeben."
 
@@ -9409,7 +9429,7 @@ msgstr "Sie müssen einen neuen Kategorienamen angeben."
 msgid "You need to provide an Italian phone number"
 msgstr "Sie müssen eine Italienische Telefonnummer angeben"
 
-#: framework/Auth/Auth.php:991
+#: framework/Auth/Auth.php:1002
 #, php-format
 msgid "Your %s session has expired. Please login again."
 msgstr "Ihre %s-Session ist abgelaufen. Bitte melden Sie sich erneut an."
@@ -9427,7 +9447,7 @@ msgstr "Ihre Von: Adresse:"
 msgid "Your Information"
 msgstr "Ihre Angaben"
 
-#: framework/Auth/Auth.php:995
+#: framework/Auth/Auth.php:1006
 #, php-format
 msgid ""
 "Your Internet Address has changed since the beginning of your %s session. To "
@@ -9458,7 +9478,7 @@ msgstr ""
 "Ihr Authentifizierungssystem erlaubt das Anzeigen der Benutzer nicht, oder "
 "diese Möglichkeit wurde ausgeschaltet."
 
-#: framework/Auth/Auth.php:999
+#: framework/Auth/Auth.php:1010
 #, php-format
 msgid ""
 "Your browser appears to have changed since the beginning of your %s session. "
@@ -9495,7 +9515,7 @@ msgstr "Ihre Standardidentität:"
 msgid "Your full name:"
 msgstr "Ihr vollständiger Name:"
 
-#: framework/Auth/Auth.php:1015
+#: framework/Auth/Auth.php:1026
 msgid "Your login has expired."
 msgstr "Ihr Zugang ist abgelaufen."
 
@@ -9528,7 +9548,7 @@ msgstr ""
 msgid "Your password has expired"
 msgstr "Ihr Passwort ist abgelaufen"
 
-#: framework/Auth/Auth.php:744
+#: framework/Auth/Auth.php:755
 msgid "Your password has expired."
 msgstr "Ihr Passwort ist abgelaufen."
 
@@ -9562,7 +9582,7 @@ msgstr "Zippy"
 msgid "[Hide Quoted Text]"
 msgstr "[Zitattext verstecken]"
 
-#: admin/sessions.php:54
+#: admin/sessions.php:61
 msgid "[None]"
 msgstr "[Keiner]"
 
@@ -9575,7 +9595,7 @@ msgstr "[Problembericht]"
 msgid "[Show Quoted Text - %d lines]"
 msgstr "[Zitattext anzeigen - %d Zeilen]"
 
-#: admin/sessions.php:55
+#: admin/sessions.php:62
 msgid "[Unknown]"
 msgstr "[Unbekannt]"
 
@@ -9682,11 +9702,11 @@ msgstr "Datenformatfehler"
 msgid "entry not found"
 msgstr "Eintrag nicht gefunden"
 
-#: lib/Block/weatherdotcom_strings.php:103
+#: lib/Block/weatherdotcom_strings.php:104
 msgid "falling"
 msgstr "fallend"
 
-#: framework/Browser/Browser.php:1038
+#: framework/Browser/Browser.php:1039
 msgid "file"
 msgstr "Datei"
 
@@ -9779,7 +9799,7 @@ msgstr "Zugriff verweigert"
 msgid "remote error in protocol"
 msgstr "Remotefehler im Protokoll"
 
-#: lib/Block/weatherdotcom_strings.php:105
+#: lib/Block/weatherdotcom_strings.php:106
 msgid "rising"
 msgstr "steigend"
 
@@ -9807,7 +9827,7 @@ msgstr "sms2email per HTTP"
 msgid "ss"
 msgstr "ss"
 
-#: lib/Block/weatherdotcom_strings.php:104
+#: lib/Block/weatherdotcom_strings.php:105
 msgid "steady"
 msgstr "gleichbleibend"
 
@@ -9819,8 +9839,8 @@ msgstr "Systemfehler"
 msgid "temporary failure"
 msgstr "Vorübergehender Fehler"
 
-#: admin/user.php:44 admin/user.php:55 framework/Auth/Auth/Signup.php:198
-#: framework/Auth/Auth/Signup.php:212
+#: admin/user.php:44 admin/user.php:55 framework/Auth/Auth/Signup.php:204
+#: framework/Auth/Auth/Signup.php:218
 msgid "type the password twice to confirm"
 msgstr "Geben Sie das Passwort ein zweites Mal zur Bestätigung ein"
 

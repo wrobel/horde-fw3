@@ -2,7 +2,7 @@
 /**
  * Nag external API interface.
  *
- * $Horde: nag/lib/api.php,v 1.100.10.42 2008/08/18 22:38:51 jan Exp $
+ * $Horde: nag/lib/api.php,v 1.100.10.43 2009/05/05 13:11:06 jan Exp $
  *
  * This file defines Nag's external API interface. Other applications can
  * interact with Nag through this API.
@@ -1201,16 +1201,18 @@ function _nag_replace($uid, $content, $contentType)
             }
 
             $components = $iCal->getComponents();
-            switch (count($components)) {
-            case 0:
+            $component = null;
+            foreach ($components as $content) {
+                if (is_a($content, 'Horde_iCalendar_vtodo')) {
+                    if ($component !== null) {
+                        return PEAR::raiseError(_("Multiple iCalendar components found; only one vTodo is supported."));
+                    }
+                    $component = $content;
+                }
+
+            }
+            if ($component === null) {
                 return PEAR::raiseError(_("No iCalendar data was found."));
-
-            case 1:
-                $content = $components[0];
-                break;
-
-            default:
-                return PEAR::raiseError(_("Multiple iCalendar components found; only one vTodo is supported."));
             }
         }
 

@@ -2,6 +2,7 @@
 v2.3.2-cvs
 ----------
 
+[jan] Don't overwrite the compositing fields, when importing composite fields.
 [cjh] Fix searches for multiple strict fields and at least one non-strict field
       (tinu@humbapa.ch, Bug #7876).
 [mjr] Specific timeobject categories are now only advertised when they are
