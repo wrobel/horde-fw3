@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Base.php,v 1.6.2.3 2009/03/06 08:43:13 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Base.php,v 1.6.2.4 2009/05/08 09:04:10 wrobel Exp $
  *
  * @package Kolab_Filter
  */
@@ -28,7 +28,7 @@ require_once 'Horde/Argv/Parser.php';
 /**
  * A basic definition for a PHP based postfix filter.
  *
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Base.php,v 1.6.2.3 2009/03/06 08:43:13 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Base.php,v 1.6.2.4 2009/05/08 09:04:10 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *
@@ -243,9 +243,11 @@ class Horde_Kolab_Filter_Base
         Horde::logMessage(sprintf("Arguments: %s", print_r($values, true)),
                           __FILE__, __LINE__, PEAR_LOG_DEBUG);
 
+        require_once 'Horde/NLS.php';
+        NLS::setCharset('utf-8');
+
         if (!empty($conf['kolab']['filter']['locale_path'])
             && !empty($conf['kolab']['filter']['locale'])) {
-            require_once 'Horde/NLS.php';
             NLS::setTextdomain('Kolab_Filter', $conf['kolab']['filter']['locale_path'], NLS::getCharset());
             setlocale(LC_ALL, $conf['kolab']['filter']['locale']);
         }

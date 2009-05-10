@@ -2,7 +2,7 @@
 /**
  * IMAP access for Kolab free/busy.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Imap.php,v 1.9.2.1 2009/03/06 18:12:01 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Imap.php,v 1.9.2.2 2009/05/09 20:30:56 mrubinsk Exp $
  *
  * @package Kolab_FreeBusy
  */
@@ -30,7 +30,7 @@ define('KRONOLITH_STATUS_FREE', 4);
  * This class is a merged result from the Kolab free/busy package and
  * the Horde::Kronolith free/busy driver.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Imap.php,v 1.9.2.1 2009/03/06 18:12:01 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Imap.php,v 1.9.2.2 2009/05/09 20:30:56 mrubinsk Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
@@ -408,7 +408,7 @@ class Horde_Kolab_FreeBusy_Imap {
  * A reduced event representation derived from the Kronolith event
  * representation.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Imap.php,v 1.9.2.1 2009/03/06 18:12:01 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Imap.php,v 1.9.2.2 2009/05/09 20:30:56 mrubinsk Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *
@@ -516,7 +516,7 @@ class Kolab_Event {
     function recurs()
     {
         return isset($this->recurrence) &&
-            !$this->recurrence->hasRecurType(Horde_Date_Recurrence::RECUR_NONE);
+            !$this->recurrence->hasRecurType(HORDE_DATE_RECUR_NONE);
     }
 
     /**

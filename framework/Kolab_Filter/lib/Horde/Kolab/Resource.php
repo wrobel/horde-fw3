@@ -2,7 +2,7 @@
 /**
  * Resource management for the Kolab server.
  *
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php,v 1.15.2.4 2009/03/06 08:43:12 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php,v 1.15.2.6 2009/05/09 22:05:59 wrobel Exp $
  *
  * PHP version 4
  *
@@ -42,7 +42,7 @@ define('RM_ITIP_TENTATIVE',                 3);
 /**
  * Provides Kolab resource handling
  *
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php,v 1.15.2.4 2009/03/06 08:43:12 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php,v 1.15.2.6 2009/05/09 22:05:59 wrobel Exp $
  *
  * Copyright 2004-2009 Klarälvdalens Datakonsult AB
  *
@@ -247,8 +247,12 @@ class Kolab_Resource
         $object['summary'] = $itip->getAttributeDefault('SUMMARY', '');
         $object['location'] = $itip->getAttributeDefault('LOCATION', '');
         $object['body'] = $itip->getAttributeDefault('DESCRIPTION', '');
-        $object['start-date'] = $itip->getAttributeDefault('DTSTART', '');
-        $object['end-date'] = $itip->getAttributeDefault('DTEND', '');
+        $dtend = $itip->getAttributeDefault('DTEND', '');
+        if (is_array($dtend)) {
+            $object['_is_all_day'] = true;
+        }
+        $object['start-date'] = $this->convert2epoch($itip->getAttributeDefault('DTSTART', ''));
+        $object['end-date'] = $this->convert2epoch($dtend);
 
         $attendees = $itip->getAttribute('ATTENDEE');
         if (!is_a( $attendees, 'PEAR_Error')) {
@@ -546,20 +550,20 @@ class Kolab_Resource
                             break;
                         }
                     }
-                }
 
-                if ($conflict) {
-                    if ($action == RM_ACT_MANUAL_IF_CONFLICTS) {
-                        //sendITipReply(RM_ITIP_TENTATIVE);
-                        Horde::logMessage('Conflict detected; Passing mail through',
-                                          __FILE__, __LINE__, PEAR_LOG_INFO);
-                        return true;
-                    } else if ($action == RM_ACT_REJECT_IF_CONFLICTS) {
-                        Horde::logMessage('Conflict detected; rejecting',
-                                          __FILE__, __LINE__, PEAR_LOG_INFO);
-                        $this->sendITipReply($cn, $id, $itip, RM_ITIP_DECLINE,
-                                             $organiser, $uid, $is_update);
-                        return false;
+                    if ($conflict) {
+                        if ($action == RM_ACT_MANUAL_IF_CONFLICTS) {
+                            //sendITipReply(RM_ITIP_TENTATIVE);
+                            Horde::logMessage('Conflict detected; Passing mail through',
+                                              __FILE__, __LINE__, PEAR_LOG_INFO);
+                            return true;
+                        } else if ($action == RM_ACT_REJECT_IF_CONFLICTS) {
+                            Horde::logMessage('Conflict detected; rejecting',
+                                              __FILE__, __LINE__, PEAR_LOG_INFO);
+                            $this->sendITipReply($cn, $id, $itip, RM_ITIP_DECLINE,
+                                                 $organiser, $uid, $is_update);
+                            return false;
+                        }
                     }
                 }
             }

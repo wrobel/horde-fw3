@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Incoming.php,v 1.6.2.2 2009/03/06 08:43:13 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Incoming.php,v 1.6.2.3 2009/05/09 21:56:03 wrobel Exp $
  *
  * @package Kolab_Filter
  */
@@ -15,7 +15,7 @@ require_once dirname(__FILE__) . '/Transport.php';
  * A Kolab Server filter for incoming mails that are parsed for iCal
  * contents.
  *
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Incoming.php,v 1.6.2.2 2009/03/06 08:43:13 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Incoming.php,v 1.6.2.3 2009/05/09 21:56:03 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *
@@ -132,18 +132,25 @@ class Horde_Kolab_Filter_Incoming extends Horde_Kolab_Filter_Base
             require_once 'Horde/Kolab/Resource.php';
             $newrecips = array();
             foreach ($this->_recipients as $recip) {
+                if (strpos($recip, '+')) {
+                    list($local, $rest)  = explode('+', $recip, 2);
+                    list($rest, $domain) = explode('@', $recip, 2);
+                    $resource = $local . '@' . $domain;
+                } else {
+                    $resource = $recip;
+                }
                 Horde::logMessage(sprintf("Calling resmgr_filter(%s, %s, %s, %s)",
                                           $this->_fqhostname, $this->_sender,
-                                          $recip, $this->_tmpfile), __FILE__, __LINE__,
+                                          $resource, $this->_tmpfile), __FILE__, __LINE__,
                                   PEAR_LOG_DEBUG);
                 $r = &new Kolab_Resource();
                 $rc = $r->handleMessage($this->_fqhostname, $this->_sender,
-                                        $recip, $this->_tmpfile);
+                                        $resource, $this->_tmpfile);
                 $r->cleanup();
                 if (is_a($rc, 'PEAR_Error')) {
                     return $rc;
                 } else if ($rc === true) {
-                    $newrecips[] = $recip;
+                    $newrecips[] = $resource;
                 }
             }
             $this->_recipients = $newrecips;
@@ -201,12 +208,19 @@ class Horde_Kolab_Filter_Incoming extends Horde_Kolab_Filter_Base
 
         $hosts = array();
         foreach ($this->_recipients as $recipient) {
-            $dn = $server->uidForIdOrMail($recipient);
+            if (strpos($recipient, '+')) {
+                list($local, $rest)  = explode('+', $recipient, 2);
+                list($rest, $domain) = explode('@', $recipient, 2);
+                $real_recipient = $local . '@' . $domain;
+            } else {
+                $real_recipient = $recipient;
+            }
+            $dn = $server->uidForIdOrMail($real_recipient);
             if (is_a($dn, 'PEAR_Error')) {
                 return $dn;
             }
             if (!$dn) {
-                Horde::logMessage(sprintf('User %s does not exist!', $recipient), 
+                Horde::logMessage(sprintf('User %s does not exist!', $real_recipient), 
                                   __FILE__, __LINE__, PEAR_LOG_DEBUG);
             }
             $user = $server->fetch($dn, KOLAB_OBJECT_USER);

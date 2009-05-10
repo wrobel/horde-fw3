@@ -2,7 +2,7 @@
 /**
  * @package IMP
  *
- * $Horde: imp/lib/Crypt/PGP.php,v 1.90.2.25 2009/03/03 21:26:24 slusarz Exp $
+ * $Horde: imp/lib/Crypt/PGP.php,v 1.90.2.26 2009/05/09 12:31:20 jan Exp $
  */
 
 /** Horde_Crypt_pgp */
@@ -354,6 +354,7 @@ class IMP_PGP extends Horde_Crypt_pgp {
         }
 
         $text = '';
+        $charset = $part->getCharset();
 
         require_once 'Horde/MIME/Message.php';
 
@@ -362,6 +363,7 @@ class IMP_PGP extends Horde_Crypt_pgp {
 
         $message = new MIME_Message();
         foreach ($parts as $val) {
+            $val->setCharset($charset);
             $message->addPart($val);
         }
 

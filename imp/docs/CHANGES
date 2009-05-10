@@ -2,7 +2,7 @@
 v4.3.5-cvs
 ----------
 
-
+[jan] Use correct charset when rendering inline PGP data.
 
 
 ------

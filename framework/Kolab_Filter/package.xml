@@ -28,9 +28,9 @@ http://pear.php.net/dtd/package-2.0.xsd">
   <email>jan@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2009-03-06</date>
+ <date>2009-05-08</date>
  <version>
-  <release>0.1.5</release>
+  <release>0.1.6</release>
   <api>0.1.0</api>
  </version>
  <stability>
@@ -39,19 +39,15 @@ http://pear.php.net/dtd/package-2.0.xsd">
  </stability>
  <license uri="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">LGPL</license>
  <notes>
-  * Resources with policy "always accept" do not work if domain != kolabhost
-    (kolab/issue3441, https://www.intevation.de/roundup/kolab/issue3441)
-  * Resource booking fails if TRANSP:TRANSPARENT in the invitation
-    (kolab/issue1336, https://www.intevation.de/roundup/kolab/issue1336)
-  * Implemented simple resource locking (kolab/issue1382,
-    https://www.intevation.de/roundup/kolab/issue1382)
-  * Kolab_Filter dies when it should accept but has no Calender folder access
-    (kolab/issue3289, https://www.intevation.de/roundup/kolab/issue3289)
-  * Delivery of invitations fails with no kolabInvitationPolicy is in ldap,
-    (kolab/issue3435, https://www.intevation.de/roundup/kolab/issue3435)
-  * Ensure that the Outlook iCal handler adds the ORGANIZER of an
-    event and fix reinjection port for rewritten invitations
-    (kolab/issue3192, https://www.intevation.de/roundup/kolab/issue3192)
+  * Whole-day events broken for resources (kolab/issue3558,
+    https://www.intevation.de/roundup/kolab/issue3558)
+  * Umlauts broken in automatically accepted events (kolab/issue3568,
+    https://www.intevation.de/roundup/kolab/issue3568)
+  * kolabmailboxfilter does not accept mail for
+    user+extension@example.com (kolab/issue3521,
+    https://www.intevation.de/roundup/kolab/issue3521)
+  * php error when inviting outside of free/busy interval
+    (kolab/issue3560, https://www.intevation.de/roundup/kolab/issue3560)
  </notes>
  <contents>
   <dir name="/">
@@ -258,6 +254,33 @@ http://pear.php.net/dtd/package-2.0.xsd">
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <date>2009-03-06</date>
+   <version>
+    <release>0.1.5</release>
+    <api>0.1.0</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <license uri="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">LGPL</license>
+   <notes>
+    * Resources with policy "always accept" do not work if domain != kolabhost
+      (kolab/issue3441, https://www.intevation.de/roundup/kolab/issue3441)
+    * Resource booking fails if TRANSP:TRANSPARENT in the invitation
+      (kolab/issue1336, https://www.intevation.de/roundup/kolab/issue1336)
+    * Implemented simple resource locking (kolab/issue1382,
+      https://www.intevation.de/roundup/kolab/issue1382)
+    * Kolab_Filter dies when it should accept but has no Calender folder access
+      (kolab/issue3289, https://www.intevation.de/roundup/kolab/issue3289)
+    * Delivery of invitations fails with no kolabInvitationPolicy is in ldap,
+      (kolab/issue3435, https://www.intevation.de/roundup/kolab/issue3435)
+    * Ensure that the Outlook iCal handler adds the ORGANIZER of an
+      event and fix reinjection port for rewritten invitations
+      (kolab/issue3192, https://www.intevation.de/roundup/kolab/issue3192)
+ </notes>
+  </release>
   <release>
    <date>2009-02-24</date>
    <version>
