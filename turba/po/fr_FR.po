@@ -1,26 +1,26 @@
 # translation of fr_FR.po to french
 # French translation of Turba 2.2-cvs
 # Turba french translation.
-# Copyright 2001-2002.
+# Copyright (C) 2001-2002.
 #
 # First author: <samp@arial-concept.com>, 2001.
 # Updates and fixes: Ronnie Garcia <ronnie@mk2.net>, 2002.
 # Pierre Lachance <pl@pierrelachance.net> et Benoit St-André <ben@benoitst-andre.net>, 2003, 2004.
 # Benoit St-André <ben@benoitst-andre.net>, 2004.
 # Thierry Thomas <thierry@pompo.net>, 2002, 2003, 2005, 2006, 2007.
-# Yannick Sebastia <yannick.sebastia@ecole-navale.fr>, 2008, 2009.
+# Yannick Sebastia <yannick.sebastia@ecole-navale.fr>, 2008.
+# Yannick Sebastia, Benoit Poulet <yannick.sebastia@ecole-navale.fr, benoit.poulet@businessdecision.com>, 2008, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: fr_FR\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2009-01-13 10:23+0100\n"
-"PO-Revision-Date: 2009-01-13 10:24+0100\n"
+"POT-Creation-Date: 2009-05-22 08:31+0200\n"
+"PO-Revision-Date: 2009-05-22 08:32+0200\n"
 "Last-Translator: Yannick Sebastia <yannick.sebastia@ecole-navale.fr>\n"
 "Language-Team: Français <i18n@lists.horde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
-"<ben@benoitst-andre.net>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: KBabel 1.11.4\n"
 
@@ -669,7 +669,7 @@ msgstr "Tél. domicile"
 
 #: config/attributes.php.dist:147
 msgid "Home Post Office Box"
-msgstr "Boîte postale"
+msgstr "Boite postale"
 
 #: config/attributes.php.dist:165
 msgid "Home Postal Code"
@@ -751,7 +751,7 @@ msgstr "Fonction"
 #: lib/Driver/kolab.php:1119
 #, php-format
 msgid "Key for saving must be \\'uid\\' not %s!"
-msgstr "La clé de sauvegarde doit être un UID pas %s!"
+msgstr "La clé de sauvegarde doit être un \\'UID\\' pas %s!"
 
 #: lib/Driver/kolab.php:1203
 #, php-format
@@ -783,7 +783,7 @@ msgstr "Dernière modification"
 
 #: config/attributes.php.dist:59
 msgid "Last Name"
-msgstr "Nom"
+msgstr "Nom de famille"
 
 #: config/attributes.php.dist:448
 msgid "Latitude"
@@ -815,7 +815,7 @@ msgstr "Requête mal formée."
 
 #: templates/addressbook_list.php:2 addressbooks/index.php:46
 msgid "Manage Address Books"
-msgstr "Gérer mes annuaires"
+msgstr "Gérer les annuaires"
 
 #: config/attributes.php.dist:424
 msgid "Manager"
@@ -897,7 +897,7 @@ msgstr "Mon annuaire"
 #: lib/Forms/CreateAddressBook.php:36 lib/Forms/EditAddressBook.php:43
 #: config/attributes.php.dist:47
 msgid "Name"
-msgstr "Nom"
+msgstr "Nom complet"
 
 #: config/prefs.php.dist:31
 msgid "Name Format"
@@ -937,8 +937,8 @@ msgstr "Aucune entrée %s trouvée pour %s. "
 msgid ""
 "No Address Books are currently available. Import and Export is disabled."
 msgstr ""
-"Aucun carnet d'adresses disponible actuellement. L'importation et "
-"l'exportation sont désactivés."
+"Aucun carnet d'adresses disponible actuellement. L'import et l'export sont "
+"désactivés."
 
 #: search.php:92
 msgid "No Address Books are currently available. Searching is disabled."
@@ -1130,7 +1130,7 @@ msgstr "Sujet non trouvé."
 
 #: templates/browse/search.inc:120
 msgid "Reset to Defaults"
-msgstr "Remettre à la configuration par défaut"
+msgstr "Réinitialiser le formulaire"
 
 #: config/attributes.php.dist:362
 msgid "S/MIME Public Certificate"
@@ -1186,7 +1186,7 @@ msgstr "Sélectionnez un contact"
 
 #: templates/data/export.inc:33
 msgid "Select the address book to export from:"
-msgstr "Sélectionnez le carnet d'adresses pour l'exportation :"
+msgstr "Sélectionnez le carnet d'adresses à exporter :"
 
 #: templates/data/import.inc:27
 msgid "Select the address book to import to:"
@@ -1601,7 +1601,7 @@ msgstr "Tél. bureau"
 
 #: config/attributes.php.dist:197
 msgid "Work Post Office Box"
-msgstr "Code postal du bureau"
+msgstr "Boite postale professionnelle"
 
 #: config/attributes.php.dist:215
 msgid "Work Postal Code"
@@ -1698,7 +1698,7 @@ msgstr "Il faut d'abord sélectionner un carnet d'adresse cible."
 
 #: templates/browse/javascript.inc:22
 msgid "You must select a target contact list."
-msgstr "Vous devez d'abord sélectionner une liste cible."
+msgstr "Vous devez sélectionner une liste de contact cible."
 
 #: edit.php:31 templates/browse/javascript.inc:16
 #: templates/browse/javascript.inc:48 templates/browse/javascript.inc:71

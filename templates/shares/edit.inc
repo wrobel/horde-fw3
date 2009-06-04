@@ -196,12 +196,13 @@ foreach ($userperms as $user => $uperm) {
   </td>
 </tr>
 <?php } } ?>
-<!-- New user row -->
+
+<!-- New user rows -->
+<?php if ($auth->hasCapability('list') && ($GLOBALS['conf']['auth']['list_users'] == 'list' || $GLOBALS['conf']['auth']['list_users'] == 'both')): ?>
 <tr>
-<?php if ($auth->hasCapability('list')): ?>
   <td class="light">
     <label for="u_names_new" class="hidden"><?php echo _("Select a user to add:") ?></label>
-    <select id="u_names_new" name="u_names[||new]">
+    <select id="u_names_new" name="u_names[||new_select]">
       <option value=""><?php echo _("Select a user to add:") ?></option>
 <?php
 foreach ($userList as $user) {
@@ -212,29 +213,51 @@ foreach ($userList as $user) {
 <?php } } ?>
     </select>
   </td>
-<?php else: ?>
-  <td class="light">
-    <label for="u_names_new" class="hidden"><?php echo _("User to add:") ?></label>
-    <input type="text" id="u_names_new" name="u_names[||new]" />
-  </td>
-<?php endif; ?>
   <td align="center">
-    <input type="checkbox" id="u_show_new" name="u_show[||new]" />
+    <input type="checkbox" id="u_show_new" name="u_show[||new_select]" />
     <label for="u_show_new" class="hidden"><?php echo _("Show") ?></label>
   </td>
   <td align="center">
-    <input type="checkbox" id="u_read_new" name="u_read[||new]" />
+    <input type="checkbox" id="u_read_new" name="u_read[||new_select]" />
     <label for="u_read_new" class="hidden"><?php echo _("Read") ?></label>
   </td>
   <td align="center">
-    <input type="checkbox" id="u_edit_new" name="u_edit[||new]" />
+    <input type="checkbox" id="u_edit_new" name="u_edit[||new_select]" />
     <label for="u_edit_new" class="hidden"><?php echo _("Edit") ?></label>
   </td>
   <td align="center">
-    <input type="checkbox" id="u_delete_new" name="u_delete[||new]" />
+    <input type="checkbox" id="u_delete_new" name="u_delete[||new_select]" />
     <label for="u_delete_new" class="hidden"><?php echo _("Delete") ?></label>
   </td>
 </tr>
+<?php endif; ?>
+<?php if (!$auth->hasCapability('list') || ($GLOBALS['conf']['auth']['list_users'] == 'input' || $GLOBALS['conf']['auth']['list_users'] == 'both')): ?>
+<tr>
+  <td class="light">
+<?php if ($auth->hasCapability('list') && $GLOBALS['conf']['auth']['list_users'] == 'both'): ?>
+    <?php echo _("Or enter a user name:") ?>
+<?php endif; ?>
+    <label for="u_names_new" class="hidden"><?php echo _("User to add:") ?></label>
+    <input type="text" id="u_names_new" name="u_names[||new_input]" />
+  </td>
+  <td align="center">
+    <input type="checkbox" id="u_show_new" name="u_show[||new_input]" />
+    <label for="u_show_new" class="hidden"><?php echo _("Show") ?></label>
+  </td>
+  <td align="center">
+    <input type="checkbox" id="u_read_new" name="u_read[||new_input]" />
+    <label for="u_read_new" class="hidden"><?php echo _("Read") ?></label>
+  </td>
+  <td align="center">
+    <input type="checkbox" id="u_edit_new" name="u_edit[||new_input]" />
+    <label for="u_edit_new" class="hidden"><?php echo _("Edit") ?></label>
+  </td>
+  <td align="center">
+    <input type="checkbox" id="u_delete_new" name="u_delete[||new_input]" />
+    <label for="u_delete_new" class="hidden"><?php echo _("Delete") ?></label>
+  </td>
+</tr>
+<?php endif; ?>
 
 <!-- Spacer -->
 <tr><td>&nbsp;</td></tr>

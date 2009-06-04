@@ -15,7 +15,7 @@ require_once IMP_BASE . '/lib/Crypt/PGP.php';
  *   'pgp_verify_msg' -- Do verification of PGP signed data.
  *   'rawpgpkey' -- Display the PGP Public Key in raw, text format
  *
- * $Horde: imp/lib/MIME/Viewer/pgp.php,v 1.96.6.24 2009/01/06 15:24:09 jan Exp $
+ * $Horde: imp/lib/MIME/Viewer/pgp.php,v 1.96.6.25 2009/05/27 15:47:08 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -287,7 +287,11 @@ class IMP_MIME_Viewer_pgp extends MIME_Viewer {
         $mc = new MIME_Contents($mime_message, array('download' => 'download_attach', 'view' => 'view_attach'), array(&$this->_contents));
         $mc->buildMessage();
 
-        return $text . '<table cellspacing="0">' . $mc->getMessage(true) . '</table>';
+        return $text . '<table cellspacing="0"'
+            . ($this->getConfigParam('highlight')
+               ? ' class="' . (is_a($sig_result, 'PEAR_Error') ? 'signedinvalid' : 'signedvalid') . '"'
+               : '')
+            . '>' . $mc->getMessage(true) . '</table>';
     }
 
     /**

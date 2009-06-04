@@ -1,7 +1,7 @@
 # translation of fr_FR.po to french
 # French translations for Mimp package
 # Traduction française du package Mimp.
-# Copyright 2005-2009 The Horde Project
+# Copyright (C) 2005 Horde Project
 # This file is distributed under the same license as the Mimp package.
 #
 # Automatically generated, 2005.
@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr_FR\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2009-01-13 10:19+0100\n"
-"PO-Revision-Date: 2009-01-13 10:19+0100\n"
+"POT-Creation-Date: 2009-05-22 08:15+0200\n"
+"PO-Revision-Date: 2009-05-22 08:14+0200\n"
 "Last-Translator: Yannick Sebastia <yannick.sebastia@ecole-navale.fr>\n"
 "Language-Team: French <i18n@lists.horde.org>\n"
 "MIME-Version: 1.0\n"
@@ -55,7 +55,7 @@ msgstr "Afficher initialement que les 250 premiers caractères d'un message?"
 
 #: mailbox.php:189
 msgid "Do Not Sort by Thread"
-msgstr "Ne pas trier par fil de discussion"
+msgstr "Ne pas Trier par fil de discussion"
 
 #: lib/MIME/Viewer/status.php:69
 msgid "ERROR: Your message could not be delivered."

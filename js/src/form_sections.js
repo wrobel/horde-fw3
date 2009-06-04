@@ -8,7 +8,7 @@
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.
  *
- * $Horde: horde/js/src/form_sections.js,v 1.6.2.3 2009/01/06 15:24:43 jan Exp $
+ * $Horde: horde/js/src/form_sections.js,v 1.6.2.4 2009/05/12 07:12:58 jan Exp $
  *
  * @author  Marko Djukic <marko@oblo.com>
  * @package Horde_Form
@@ -56,7 +56,7 @@ function Horde_Form_Sections(instanceName, openSection)
         var form = document.getElementById(this._instanceName);
         if (form != null &&
             typeof form.__formOpenSection != 'undefined') {
-            form.__formOpenSection.value = escape(sectionId);
+            form.__formOpenSection.value = sectionId;
         }
         this._openSection = sectionId;
     }

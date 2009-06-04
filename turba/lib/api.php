@@ -2,7 +2,7 @@
 /**
  * Turba external API interface.
  *
- * $Horde: turba/lib/api.php,v 1.120.2.63 2009/01/17 17:49:41 mrubinsk Exp $
+ * $Horde: turba/lib/api.php,v 1.120.2.64 2009/05/14 22:12:32 jan Exp $
  *
  * This file defines Turba's external API interface. Other applications can
  * interact with Turba through this API.
@@ -55,7 +55,7 @@ $_services['listBy'] = array(
 );
 
 $_services['getActionTimestamp'] = array(
-    'args' => array('uid' => 'string', 'timestamp' => 'int'),
+    'args' => array('uid' => 'string', 'action' => 'string', 'sources' => '{urn:horde}stringArray'),
     'type' => 'int',
 );
 

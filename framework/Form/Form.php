@@ -12,7 +12,7 @@ include_once 'Horde/String.php';
  * The Horde_Form:: package provides form rendering, validation, and
  * other functionality for the Horde Application Framework.
  *
- * $Horde: framework/Form/Form.php,v 1.306.2.75 2009/04/22 08:39:46 jan Exp $
+ * $Horde: framework/Form/Form.php,v 1.306.2.76 2009/05/14 22:13:07 jan Exp $
  *
  * Copyright 2001-2007 Robert E. Coyle <robertecoyle@hotmail.com>
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
@@ -1799,6 +1799,9 @@ class Horde_Form_Type_image extends Horde_Form_Type {
          * value of the form. */
         if ($vars->get('_do_' . $var->getVarName())) {
             $var->form->setSubmitted(false);
+            if (is_a($this->_uploaded, 'PEAR_Error')) {
+                $vars->set($var->getVarName(), array('img' => serialize(array('error' => $this->_uploaded->getMessage()))));
+            }
         }
     }
 
@@ -1823,6 +1826,11 @@ class Horde_Form_Type_image extends Horde_Form_Type {
                 $message = _("This field is required.");
                 return false;
             } elseif (!empty($field['img'])) {
+                $img = @unserialize($field['img']);
+                if ($img && isset($img['error'])) {
+                    $message = $img['error'];
+                    return false;
+                }
                 /* Nothing uploaded but older upload present. */
                 return true;
             } else {
@@ -1946,6 +1954,9 @@ class Horde_Form_Type_image extends Horde_Form_Type {
             $upload = $vars->get($var->getVarName());
             if ($this->_uploaded->getCode() == 4 && !empty($upload['img'])) {
                 $this->_img = @unserialize($upload['img']);
+                if (isset($this->_img['error'])) {
+                    $this->_uploaded = PEAR::raiseError($this->_img['error']);
+                }
             }
         }
     }

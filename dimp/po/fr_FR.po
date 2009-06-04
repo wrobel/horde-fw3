@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr_FR\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2009-01-13 10:14+0100\n"
+"POT-Creation-Date: 2009-05-22 09:05+0200\n"
 "PO-Revision-Date: 2009-01-13 10:15+0100\n"
 "Last-Translator: Yannick Sebastia <yannick.sebastia@ecole-navale.fr>\n"
 "Language-Team: French <i18n@lists.horde.org>\n"
@@ -26,7 +26,7 @@ msgid_plural "%d Attachments"
 msgstr[0] "%d pièce jointe"
 msgstr[1] "%d pièces jointes"
 
-#: imp.php:661
+#: imp.php:675
 #, php-format
 msgid "%s messages were purged from \"%s\"."
 msgstr "%s messages ont été effacés de « %s »."
@@ -36,7 +36,7 @@ msgstr "%s messages ont été effacés de « %s »."
 msgid "%s more unseen messages..."
 msgstr "encore %s messages non lus..."
 
-#: imp.php:447
+#: imp.php:461
 #, php-format
 msgid "%s was successfully added to your address book."
 msgstr "%s a bien été ajouté à votre carnet d'adresses."
@@ -50,7 +50,7 @@ msgstr ""
 "%s upprimera le(s) message(s) sélectionné(s) et se placera sur le suivant si "
 "un seul message est sélectionné."
 
-#: imp.php:659
+#: imp.php:673
 #, php-format
 msgid "1 message was purged from \"%s\"."
 msgstr "1 message a été effacé de « %s »."
@@ -59,14 +59,14 @@ msgstr "1 message a été effacé de « %s »."
 msgid "1 more unseen message..."
 msgstr "encore 1 message non lu..."
 
-#: lib/DIMP.php:210
+#: lib/DIMP.php:227
 msgid ""
 "A popup window could not be opened. Your browser may be blocking popups."
 msgstr ""
 "Une fenêtre surgissante ne peut pas être ouverte ; votre navigateur doit les "
 "bloquer."
 
-#: templates/chunks/message.php:127 templates/index/index.inc:421
+#: templates/chunks/message.php:127 templates/index/index.inc:422
 msgid "Add to Address Book"
 msgstr "Ajouter au carnet d'adresses"
 
@@ -98,11 +98,11 @@ msgstr "Liste noire"
 msgid "Body Text Only"
 msgstr "Corps du texte seul"
 
-#: lib/DIMP.php:202
+#: lib/DIMP.php:219
 msgid "Cancel"
 msgstr "Annuler"
 
-#: lib/DIMP.php:238
+#: lib/DIMP.php:255
 msgid ""
 "Cancelling this message will permanently discard its contents and will "
 "delete auto-saved drafts.\n"
@@ -128,7 +128,7 @@ msgstr "Vérifier l'orthographe"
 msgid "Check for New Mail"
 msgstr "Vérifier les nouveaux messages"
 
-#: lib/DIMP.php:204
+#: lib/DIMP.php:221
 msgid "Checking..."
 msgstr "Vérification..."
 
@@ -154,7 +154,7 @@ msgstr ""
 msgid "Collapse Headers"
 msgstr "Replier les en-têtes"
 
-#: templates/index/index.inc:62 templates/index/index.inc:183
+#: templates/index/index.inc:183
 msgid "Compose"
 msgstr "Nouveau message"
 
@@ -162,7 +162,7 @@ msgstr "Nouveau message"
 msgid "Could not get message list from server"
 msgstr "Impossible d'obtenir une liste de messages du serveur"
 
-#: lib/DIMP.php:214
+#: lib/DIMP.php:231
 msgid "Create folder:"
 msgstr "Créer un dossier"
 
@@ -170,7 +170,7 @@ msgstr "Créer un dossier"
 msgid "Create subfolder"
 msgstr "Créer un sous-dossier"
 
-#: lib/DIMP.php:215
+#: lib/DIMP.php:232
 msgid "Create subfolder:"
 msgstr "Créer un sous-dossier :"
 
@@ -193,8 +193,7 @@ msgid "Del"
 msgstr "Suppr"
 
 #: templates/chunks/message.php:49 templates/index/index.inc:185
-#: templates/index/index.inc:247 templates/index/index.inc:365
-#: templates/index/index.inc:377
+#: templates/index/index.inc:365 templates/index/index.inc:377
 msgid "Delete"
 msgstr "Supprimer"
 
@@ -272,7 +271,7 @@ msgstr "De : "
 msgid "General Options"
 msgstr "Options générales"
 
-#: lib/DIMP.php:205 templates/index/index.inc:63 templates/index/index.inc:184
+#: lib/DIMP.php:222 templates/index/index.inc:63 templates/index/index.inc:184
 msgid "Get Mail"
 msgstr "Récupérer le courrier"
 
@@ -288,19 +287,19 @@ msgstr "ICI"
 msgid "HTML composition"
 msgstr "Rédaction en HTML"
 
-#: lib/DIMP.php:211 templates/index/index.inc:396
+#: lib/DIMP.php:228 templates/index/index.inc:396
 msgid "Hide Preview"
 msgstr "Cacher la pré-visualisation"
 
-#: lib/DIMP.php:196
+#: lib/DIMP.php:213
 msgid "Hide Quoted Text"
 msgstr "Cacher les citations"
 
-#: templates/index/index.inc:426
+#: templates/index/index.inc:427
 msgid "High Priority"
 msgstr "Priorité élevée"
 
-#: templates/index/index.inc:141 templates/index/index.inc:246
+#: templates/index/index.inc:246
 msgid "Home"
 msgstr "Accueil"
 
@@ -316,7 +315,7 @@ msgstr "Boîte de réception"
 msgid "Innocent"
 msgstr "Légitime"
 
-#: lib/DIMP.php:203 templates/chunks/compose.php:20
+#: lib/DIMP.php:220 templates/chunks/compose.php:20
 #: templates/index/index.inc:34
 msgid "Loading..."
 msgstr "Chargement..."
@@ -329,11 +328,11 @@ msgstr "Déconnexion"
 msgid "Login Tasks"
 msgstr "Tâches de connexion"
 
-#: templates/index/index.inc:427
+#: templates/index/index.inc:428
 msgid "Low Priority"
 msgstr "Priorité faible"
 
-#: lib/Views/ListMessages.php:161
+#: lib/Views/ListMessages.php:160
 #, php-format
 msgid "Mailbox %s does not exist."
 msgstr "La boîte « %s » n'existe pas."
@@ -362,7 +361,7 @@ msgstr "Marquer comme Lu"
 msgid "Mark as Spam"
 msgstr "Marquer comme Pourriel"
 
-#: lib/DIMP.php:192
+#: lib/DIMP.php:209
 msgid "Message"
 msgstr "Message"
 
@@ -382,11 +381,11 @@ msgstr "Message :"
 msgid "Message: "
 msgstr "Message : "
 
-#: lib/DIMP.php:193
+#: lib/DIMP.php:210
 msgid "Messages"
 msgstr "Messages"
 
-#: lib/DIMP.php:200
+#: lib/DIMP.php:217
 #, php-format
 msgid "Move %s to %s"
 msgstr "Déplacer %s vers %s"
@@ -414,11 +413,11 @@ msgid "New Folder"
 msgstr "Nouveau dossier"
 
 #: compose.php:204 templates/chunks/message.php:126
-#: templates/index/index.inc:420
+#: templates/index/index.inc:62 templates/index/index.inc:421
 msgid "New Message"
 msgstr "Nouveau message"
 
-#: lib/DIMP.php:195
+#: lib/DIMP.php:212
 msgid "No Messages"
 msgstr "Pas de messages"
 
@@ -442,7 +441,7 @@ msgstr "Aucun message à afficher"
 msgid "No unread messages"
 msgstr "Aucun message non lu"
 
-#: lib/DIMP.php:199
+#: lib/DIMP.php:216
 msgid "Ok"
 msgstr "Ok"
 
@@ -462,11 +461,11 @@ msgstr "Options"
 msgid "Other Actions"
 msgstr "Autres actions"
 
-#: lib/DIMP.php:216
+#: lib/DIMP.php:233
 msgid "Permanently delete all messages?"
 msgstr "Effacer tous les messages définitivement ?"
 
-#: lib/DIMP.php:217
+#: lib/DIMP.php:234
 msgid "Permanently delete this folder?"
 msgstr "Effacer ce dossier définitivement ?"
 
@@ -478,7 +477,8 @@ msgstr "Vers le bas"
 msgid "PgUp"
 msgstr "Vers le haut"
 
-#: lib/DIMP.php:188 templates/index/index.inc:69 config/prefs.php.dist:21
+#: lib/DIMP.php:205 templates/index/index.inc:69 templates/index/index.inc:141
+#: config/prefs.php.dist:21
 msgid "Portal"
 msgstr "Portail"
 
@@ -494,7 +494,7 @@ msgstr "Vider la corbeille"
 msgid "Read Receipt"
 msgstr "Accusé de lecture"
 
-#: lib/DIMP.php:245
+#: lib/DIMP.php:263
 msgid ""
 "Really discard all formatting information? This operation cannot be undone."
 msgstr ""
@@ -505,7 +505,7 @@ msgstr ""
 msgid "Rename Folder"
 msgstr "Changer le nom du dossier"
 
-#: lib/DIMP.php:213
+#: lib/DIMP.php:230
 msgid "Rename folder to:"
 msgstr "Changer le nom du dossier :"
 
@@ -569,11 +569,11 @@ msgstr "Enregistrer en tant que brouillon"
 msgid "Save in "
 msgstr "Enregistrer dans "
 
-#: lib/DIMP.php:244
+#: lib/DIMP.php:262
 msgid "Saving..."
 msgstr "Enregistrement..."
 
-#: lib/DIMP.php:190
+#: lib/DIMP.php:207
 msgid "Search"
 msgstr "Rechercher"
 
@@ -593,7 +593,11 @@ msgstr "Sélectionner tous les messages de la boîte en cours."
 msgid "Send"
 msgstr "Envoyer"
 
-#: lib/DIMP.php:243
+#: lib/DIMP.php:256
+msgid "Send message without a Subject?"
+msgstr "Envoyer le message sans objet ?"
+
+#: lib/DIMP.php:261
 msgid "Sending..."
 msgstr "Envoi en cours..."
 
@@ -609,11 +613,11 @@ msgstr "Montrer les Cci"
 msgid "Show Cc"
 msgstr "Montrer les Cc"
 
-#: lib/DIMP.php:212 templates/index/index.inc:396
+#: lib/DIMP.php:229 templates/index/index.inc:396
 msgid "Show Preview"
 msgstr "Pré-visualisation"
 
-#: lib/DIMP.php:197
+#: lib/DIMP.php:214
 msgid "Show Quoted Text"
 msgstr "Afficher le texte cité"
 
@@ -639,17 +643,21 @@ msgstr "Objet"
 msgid "Subject: "
 msgstr "Objet : "
 
-#: lib/DIMP.php:242
+#: lib/DIMP.php:260
 msgid "The attachment limit has been reached."
 msgstr "Limite des pièces-jointes atteinte."
 
-#: lib/DIMP.php:207
+#: lib/DIMP.php:224
 msgid "The connection to the remote server has been restored."
 msgstr "La connexion au serveur distant a été rétablie."
 
 #: templates/index/index.inc:243
 msgid "The following keyboard shortcuts are available:"
 msgstr "Les raccourcis-clavier suivants sont activés :"
+
+#: lib/DIMP.php:256
+msgid "The message does not have a Subject entered."
+msgstr "Le message ne comporte pas d'objet."
 
 #: config/prefs.php.dist:23
 msgid "The page to view immediately after login."
@@ -665,18 +673,18 @@ msgstr ""
 "L'expéditeur de ce message vous demande un avis de réception lorsque vous "
 "aurez lu ce message. Cliquez %s pour envoyer l'avis de réception."
 
-#: lib/DIMP.php:208
+#: lib/DIMP.php:225
 msgid "The server is still generating the message list."
 msgstr "Le serveur est encore en train de générer la liste des messages."
 
-#: lib/DIMP.php:209
+#: lib/DIMP.php:226
 msgid ""
 "The server was unable to generate the message list. Please try again later."
 msgstr ""
 "Le serveur n'a pas pu générer la liste des messages. Veuillez réessayer plus "
 "tard."
 
-#: lib/DIMP.php:206
+#: lib/DIMP.php:223
 msgid ""
 "There has been no contact with the remote server for several minutes. The "
 "server may be temporarily unavailable or network problems may be "
@@ -723,6 +731,7 @@ msgid "To: "
 msgstr "À : "
 
 #: templates/index/index.inc:367 templates/index/index.inc:379
+#: templates/index/index.inc:416
 msgid "Undelete"
 msgstr "Restaurer"
 
@@ -734,11 +743,11 @@ msgstr "Destinataires cachés"
 msgid "Unknown Date"
 msgstr "Date inconnue"
 
-#: lib/DIMP.php:241
+#: lib/DIMP.php:259
 msgid "Uploading..."
 msgstr "Chargement..."
 
-#: lib/DIMP.php:189
+#: lib/DIMP.php:206
 msgid "User Options"
 msgstr "Options personnelles"
 
@@ -750,7 +759,7 @@ msgstr "Voir le message brut"
 msgid "Whitelist"
 msgstr "Liste blanche"
 
-#: lib/DIMP.php:239
+#: lib/DIMP.php:257
 msgid ""
 "You have already changed the message body, are you sure you want to drop the "
 "changes?"
@@ -762,12 +771,12 @@ msgstr ""
 msgid "[Hide Addresses]"
 msgstr "[Cacher les adresses]"
 
-#: lib/Block/newmail.php:58 lib/Views/ListMessages.php:297
+#: lib/Block/newmail.php:58 lib/Views/ListMessages.php:296
 #: lib/Views/ShowMessage.php:281
 msgid "[No Subject]"
 msgstr "[Pas d'objet]"
 
-#: lib/DIMP.php:201
+#: lib/DIMP.php:218
 msgid "base level of the folder tree"
 msgstr "Racine de l'arborescence"
 
@@ -775,18 +784,18 @@ msgstr "Racine de l'arborescence"
 msgid "from"
 msgstr "de"
 
-#: lib/DIMP.php:198
+#: lib/DIMP.php:215
 msgid "lines"
 msgstr "lignes"
 
-#: lib/DIMP.php:194
+#: lib/DIMP.php:211
 msgid "of"
 msgstr "de"
 
-#: lib/DIMP.php:240
+#: lib/DIMP.php:258
 msgid "remove"
 msgstr "retirer"
 
-#: lib/DIMP.php:191
+#: lib/DIMP.php:208
 msgid "results found"
 msgstr "résultats trouvés"

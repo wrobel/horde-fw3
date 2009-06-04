@@ -2,7 +2,7 @@
 /**
  * Functions required to start an IMP session.
  *
- * $Horde: imp/lib/Session.php,v 1.74.2.43 2009/01/06 15:24:04 jan Exp $
+ * $Horde: imp/lib/Session.php,v 1.74.2.44 2009/05/29 22:36:50 slusarz Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -188,9 +188,7 @@ class IMP_Session {
                 }
             }
 
-            /* Set the maildomain. */
-            $maildomain = $GLOBALS['prefs']->getValue('mail_domain');
-            $_SESSION['imp']['maildomain'] = ($maildomain) ? $maildomain : $args['maildomain'];
+            $_SESSION['imp']['maildomain'] = $args['maildomain'];
         }
 
         /* Determine the base protocol. */
@@ -296,6 +294,11 @@ class IMP_Session {
             }
         } else {
             $_SESSION['imp']['namespace'] = null;
+        }
+
+        /* Set the maildomain. */
+        if ($maildomain = $GLOBALS['prefs']->getValue('mail_domain')) {
+            $_SESSION['imp']['maildomain'] = $maildomain;
         }
 
         /* Set up search information for the session. */

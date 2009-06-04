@@ -4,7 +4,7 @@
  * and provides an option to import the data into a calendar source,
  * if one is available.
  *
- * $Horde: imp/lib/MIME/Viewer/itip.php,v 1.37.2.46 2009/04/30 09:44:23 jan Exp $
+ * $Horde: imp/lib/MIME/Viewer/itip.php,v 1.37.2.47 2009/05/14 10:12:26 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -772,18 +772,18 @@ class IMP_MIME_Viewer_itip extends MIME_Viewer {
         $start = $vevent->getAttribute('DTSTART');
         if (!is_a($start, 'PEAR_Error')) {
             if (is_array($start)) {
-                $html .= '<p><strong>' . _("Start") . ':</strong> ' . strftime($prefs->getValue('date_format'), mktime(0, 0, 0, $start['month'], $start['mday'], $start['year'])) . '</p>';
+                $html .= '<p><strong>' . _("Start:") . '</strong> ' . strftime($prefs->getValue('date_format'), mktime(0, 0, 0, $start['month'], $start['mday'], $start['year'])) . '</p>';
             } else {
-                $html .= '<p><strong>' . _("Start") . ':</strong> ' . strftime($prefs->getValue('date_format'), $start) . ' ' . date($prefs->getValue('twentyFour') ? ' G:i' : ' g:i a', $start) . '</p>';
+                $html .= '<p><strong>' . _("Start:") . '</strong> ' . strftime($prefs->getValue('date_format'), $start) . ' ' . date($prefs->getValue('twentyFour') ? ' G:i' : ' g:i a', $start) . '</p>';
             }
         }
 
         $end = $vevent->getAttribute('DTEND');
         if (!is_a($end, 'PEAR_Error')) {
             if (is_array($end)) {
-                $html .= '<p><strong>' . _("End") . ':</strong> ' . strftime($prefs->getValue('date_format'), mktime(0, 0, 0, $end['month'], $end['mday'], $end['year'])) . '</p>';
+                $html .= '<p><strong>' . _("End:") . '</strong> ' . strftime($prefs->getValue('date_format'), mktime(0, 0, 0, $end['month'], $end['mday'], $end['year'])) . '</p>';
             } else {
-                $html .= '<p><strong>' . _("End") . ':</strong> ' . strftime($prefs->getValue('date_format'), $end) . ' ' . date($prefs->getValue('twentyFour') ? ' G:i' : ' g:i a', $end) . '</p>';
+                $html .= '<p><strong>' . _("End:") . '</strong> ' . strftime($prefs->getValue('date_format'), $end) . ' ' . date($prefs->getValue('twentyFour') ? ' G:i' : ' g:i a', $end) . '</p>';
             }
         }
 

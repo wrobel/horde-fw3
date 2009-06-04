@@ -2,7 +2,7 @@
 if ($group == Auth::getAuth()) {
     $owner_title = _("My Galleries");
     $custom = '';
-} else {
+} elseif (!empty($GLOBALS['conf']['gallery']['customlabel'])) {
     $uprefs = &Prefs::singleton($GLOBALS['conf']['prefs']['driver'],
                                 'ansel',
                                 $group, '', null, false);
@@ -17,6 +17,8 @@ if ($group == Auth::getAuth()) {
     } else {
         $owner_title = $custom;
     }
+} else {
+    $owner_title = sprintf(_("%s's Galleries"), $group);
 }
 
 $link = Horde::link(Ansel::getUrlFor('view', array('groupby' => $groupby,

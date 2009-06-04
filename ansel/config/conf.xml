@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- $Horde: ansel/config/conf.xml,v 1.49.2.6 2009/04/16 21:40:29 mrubinsk Exp $ -->
+<!-- $Horde: ansel/config/conf.xml,v 1.49.2.10 2009/05/29 14:10:39 mrubinsk Exp $ -->
 <configuration>
 
  <configtab name="menu" desc="General Settings and Menu">
@@ -10,10 +10,20 @@
    gallery selection in blocks. Set this to the maximum number of galleries
    that can be displayed in a gallery drop down list. If more than this number
    of galleries would appear, then selection list will be disabled."
-   required="false">30</configinteger>
+   required="false"/>
    <configboolean name="downloadzip" desc="Allow the ability to download an
    entire gallery as a .zip file? This is a potential performance hit, and will
    likely require a larger memory_limit value.">false</configboolean>
+   <configboolean name="customlabel" desc="Allow the ability to query the
+   preference backend for other user's identities? This is a performance hit,
+   but will allow for displaying something like
+   &quot;John Smith's Galleries&quot; instead of &quot;jsmith's Galleries&quot;.
+   It also allows a user to specify a custom description to be displayed. So,
+   for example instead of &quot;John Smith's Galleries&quot;, the user could use
+   &quot;John's Family Photos&quot;. This requires a preference backend that
+   doesn't require an explicit login by the user whose preferences we are
+   trying to read. If you are getting errors regarding unloadable preferences
+   when loading Ansel, try turning this off.">true</configboolean>
   </configsection>
   <configsection name="menu">
    <configheader>Menu Settings</configheader>
@@ -110,7 +120,8 @@
  <configtab name="comments" desc="Photo Comments">
   <configsection name="comments">
    <configheader>Photo Comments</configheader>
-    <configenum name="allow" desc="Can users comment on photos?">authenticated
+    <configenum name="allow" desc="Can users comment on photos? Note that this
+    functionality requires Agora to be installed.">never
      <values>
       <value desc="Authenticated users">authenticated</value>
       <value desc="No one">never</value>

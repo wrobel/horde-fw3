@@ -18,16 +18,16 @@ if (!is_executable('/usr/bin/wbxml2xml')) {
 }
 
 include_once dirname(__FILE__) . '/../WBXML/Decoder.php';
+$decoder = new XML_WBXML_Decoder();
 
-if (is_array($argv)) {
-    for ($i = 1; $i < count($argv); ++$i) {
+$files = array();
+if ($argc > 1) {
+    for ($i = 1; $i <= $argc; ++$i) {
         if (is_readable($argv[$i])) {
             $files[] = $argv[$i];
         }
     }
-}
-
-if (!isset($files) || !is_array($files)) {
+} else {
     $dir = dirname(__FILE__) . '/../docs/examples/';
     $d = dir($dir);
     while (false !== ($entry = $d->read())) {
@@ -38,13 +38,16 @@ if (!isset($files) || !is_array($files)) {
     $d->close();
 }
 
-$decoder = &new XML_WBXML_Decoder();
-
 foreach ($files as $file) {
     $xml_ref = shell_exec('/usr/bin/wbxml2xml' . ' -m 0 -o - "' . $file . '" 2>/dev/null');
-
-    // Ignore <?xml and <!DOCTYPE stuff:
-    $xml_ref = preg_replace('/<\?xml version=\"1\.0\"\?><!DOCTYPE [^>]*>/', '', $xml_ref);
+    $xml_ref = preg_replace(
+        array(
+            // Ignore <?xml and <!DOCTYPE stuff:
+            '/<\?xml version=\"1\.0\"\?><!DOCTYPE [^>]*>/',
+            // Normalize empty tags.
+            '|<([^>]+)/>|'),
+        array('', '<$1></$1>'),
+        $xml_ref);
 
     $wbxml_in = file_get_contents($file, 'rb');
 
@@ -55,28 +58,24 @@ foreach ($files as $file) {
         $xml = preg_replace('/<\?xml version=\"1\.0\"\?><!DOCTYPE [^>]*>/', '', $xml);
 
         // Hack to fix wrong mimetype.
-        $xml = str_replace('application/vnd.syncml-devinf+wbxml',
-                           'application/vnd.syncml-devinf+xml',
-                           $xml);
-        $xml = preg_replace('/xmlns=\"syncml:metinf1\.0\"/i',
-                            'xmlns="syncml:metinf"',
-                            $xml);
-        $xml = preg_replace('/xmlns=\"syncml:devinf1\.0\"/i',
-                            'xmlns="syncml:devinf"',
-                            $xml);
-
-        $xml = preg_replace('/xmlns=\"syncml:metinf1\.1\"/i',
-                            'xmlns="syncml:metinf"',
-                            $xml);
-        $xml = preg_replace('/xmlns=\"syncml:devinf1\.1\"/i',
-                            'xmlns="syncml:devinf"',
-                            $xml);
+        $xml = str_replace(
+            array('application/vnd.syncml-devinf+wbxml',
+                  'xmlns="syncml:metinf1.0"',
+                  'xmlns="syncml:devinf1.0"',
+                  'xmlns="syncml:metinf1.1"',
+                  'xmlns="syncml:devinf1.1"'),
+            array('application/vnd.syncml-devinf+xml',
+                  'xmlns="syncml:metinf"',
+                  'xmlns="syncml:devinf"',
+                  'xmlns="syncml:metinf"',
+                  'xmlns="syncml:devinf"'),
+            $xml);
     }
 
     if (is_string($xml) && strcasecmp($xml, $xml_ref) === 0) {
         echo "decode ok: $file\n";
     } else {
-        echo "\ndecode FAILED: $file\nlibwbxml: $xml_ref\n";
+        echo "\ndecode FAILED: $file\nlibwbxml:  $xml_ref\n";
         if (is_string($xml)) {
             echo "XML_WBXML: $xml\n";
         } elseif (is_a($xml, 'PEAR_Error')) {

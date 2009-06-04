@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/config/mime_drivers.php.dist,v 1.97.6.12 2008/07/07 16:24:24 jan Exp $
+ * $Horde: horde/config/mime_drivers.php.dist,v 1.97.6.13 2009/05/29 05:59:25 slusarz Exp $
  *
  * Decide which output drivers you want to activate for all Horde
  * applications. Individual Horde applications can override these settings
@@ -124,7 +124,7 @@ $mime_drivers['horde']['default']['icons'] = array(
  * Default text driver settings
  */
 $mime_drivers['horde']['simple'] = array(
-    'inline' => true,
+    'inline' => false,
     'handles' => array(
         'text/*'
     ),

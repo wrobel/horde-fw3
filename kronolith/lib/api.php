@@ -2,7 +2,7 @@
 /**
  * Kronolith external API interface.
  *
- * $Horde: kronolith/lib/api.php,v 1.126.2.58 2009/02/25 17:29:33 jan Exp $
+ * $Horde: kronolith/lib/api.php,v 1.126.2.60 2009/06/04 02:23:15 chuck Exp $
  *
  * This file defines Kronolith's external API interface. Other applications
  * can interact with Kronolith through this API.
@@ -75,13 +75,13 @@ $_services['listBy'] = array(
 );
 
 $_services['getActionTimestamp'] = array(
-    'args' => array('uid' => 'string', 'timestamp' => 'int'),
+    'args' => array('uid' => 'string', 'action' => 'string', 'calendar' => 'string'),
     'type' => 'int',
 );
 
 $_services['import'] = array(
     'args' => array('content' => 'string', 'contentType' => 'string', 'calendar' => 'string'),
-    'type' => 'int'
+    'type' => 'string'
 );
 
 $_services['export'] = array(

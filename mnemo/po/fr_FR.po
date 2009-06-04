@@ -1,6 +1,6 @@
 # translation of fr_FR.po to french
 # Mnemo French translation.
-# Copyright 2002 Thierry Thomas <thierry@pompo.net>.
+# Copyright (C) 2002 Thierry Thomas <thierry@pompo.net>.
 # This file is distributed under the same license as the Mnemo package.
 #
 # Thierry Thomas <thierry@pompo.net>, 2002.
@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr_FR\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2009-01-13 11:07+0100\n"
-"PO-Revision-Date: 2009-01-13 11:09+0100\n"
+"POT-Creation-Date: 2009-05-22 08:29+0200\n"
+"PO-Revision-Date: 2009-05-22 08:29+0200\n"
 "Last-Translator: Yannick Sebastia <yannick.sebastia@ecole-navale.fr>\n"
 "Language-Team: Francais <i18n@lists.horde.org>\n"
 "MIME-Version: 1.0\n"
@@ -491,8 +491,8 @@ msgstr "Une erreur s'est produite lors de l'importation des données vNote."
 #, php-format
 msgid "There was an error removing notes for %s. Details have been logged."
 msgstr ""
-"Une erreur est apparue lors du retrait de la note pour %s. Les détails ont "
-"été journalisés."
+"Une erreur est apparue lors de la suppression de la note pour %s. Les "
+"détails ont été journalisés."
 
 #: memo.php:195
 #, php-format

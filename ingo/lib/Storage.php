@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ingo/lib/Storage.php,v 1.43.8.20 2008/12/12 17:54:00 jan Exp $
+ * $Horde: ingo/lib/Storage.php,v 1.43.8.21 2009/05/14 13:46:20 jan Exp $
  *
  * See the enclosed file LICENSE for license information (ASL).  If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.
@@ -774,21 +774,6 @@ class Ingo_Storage_spam extends Ingo_Storage_rule {
 
     var $_folder = null;
     var $_level = 5;
-
-    function Ingo_Storage_spam()
-    {
-        // Attempt to get the default Spam folder from imp
-        if (in_array('imp', $GLOBALS['registry']->listApps())) {
-            $prefs = Prefs::factory($GLOBALS['conf']['prefs']['driver'],
-                                    'imp', Ingo::getUser(), '', null, false);
-            $prefs->retrieve();
-
-            $folder = $prefs->getValue('spam_folder', false);
-            if ($folder !== false) {
-                $this->_folder = $folder;
-            }
-        }
-    }
 
     function setSpamFolder($folder)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/NLS/NLS.php,v 1.82.4.23 2009/04/04 12:30:50 jan Exp $
+ * $Horde: framework/NLS/NLS.php,v 1.82.4.24 2009/05/31 17:13:50 jan Exp $
  *
  * @package Horde_NLS
  */
@@ -133,6 +133,7 @@ class NLS {
             }
         }
 
+        @putenv('LC_ALL=' . $lang_charset);
         @putenv('LANG=' . $lang_charset);
         @putenv('LANGUAGE=' . $lang_charset);
     }

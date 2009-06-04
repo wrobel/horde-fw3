@@ -1,7 +1,7 @@
 /**
  * DimpBase.js - Javascript used in the base DIMP page.
  *
- * $Horde: dimp/js/src/DimpBase.js,v 1.1.2.117 2009/01/06 15:22:37 jan Exp $
+ * $Horde: dimp/js/src/DimpBase.js,v 1.1.2.118 2009/05/20 18:27:51 slusarz Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *
@@ -1708,6 +1708,8 @@ var DimpBase = {
                     break;
                 }
                 vs.set({ isdel: true });
+            } else if (action == 'undeleted') {
+                vs.set({ isdel: false });
             }
 
             args = this.viewport.addRequestParams({});

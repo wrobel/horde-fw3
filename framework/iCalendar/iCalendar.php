@@ -12,7 +12,7 @@ include_once 'Horde/NLS.php';
 /**
  * Class representing iCalendar files.
  *
- * $Horde: framework/iCalendar/iCalendar.php,v 1.57.4.75 2009/04/05 21:37:35 jan Exp $
+ * $Horde: framework/iCalendar/iCalendar.php,v 1.57.4.76 2009/05/14 10:47:29 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -592,7 +592,11 @@ class Horde_iCalendar {
         }
 
         // Unfold any folded lines.
-        $vCal = preg_replace('/[\r\n]+[ \t]/', '', $vCal);
+        if ($this->isOldFormat()) {
+            $vCal = preg_replace('/[\r\n]+([ \t])/', '$1', $vCal);
+        } else {
+            $vCal = preg_replace('/[\r\n]+[ \t]/', '', $vCal);
+        }
 
         // Parse the remaining attributes.
         if (preg_match_all('/^((?:[^":]+|(?:"[^"]*")+)*):([^\r\n]*)\r?$/m', $vCal, $matches)) {

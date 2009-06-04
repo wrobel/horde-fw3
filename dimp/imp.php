@@ -3,7 +3,7 @@
  * imp.php - performs an AJAX-requested action and returns the DIMP-specific
  * JSON object
  *
- * $Horde: dimp/imp.php,v 1.194.2.37 2009/01/06 15:22:36 jan Exp $
+ * $Horde: dimp/imp.php,v 1.194.2.38 2009/05/18 22:48:32 slusarz Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *
@@ -237,6 +237,9 @@ case 'RenameFolder':
         break;
     }
 
+    require_once 'Horde/String.php';
+    $new = String::convertCharset($new, NLS::getCharset(), 'UTF7-IMAP');
+
     require_once IMP_BASE . '/lib/IMAP/Tree.php';
     $imptree = &IMP_Tree::singleton();
     $imptree->eltDiffStart();
@@ -248,14 +251,10 @@ case 'RenameFolder':
     if (is_a($new, 'PEAR_Error')) {
         $notification->push($new, 'horde.error');
         $result = false;
-    } else {
-        require_once 'Horde/String.php';
-        $new = String::convertCharset($new, NLS::getCharset(), 'UTF7-IMAP');
-        if ($old != $new) {
-            $result = $imp_folder->rename($old, $new);
-            if ($result) {
-                $result = DIMP::getFolderResponse($imptree);
-            }
+    } elseif ($old != $new) {
+        $result = $imp_folder->rename($old, $new);
+        if ($result) {
+            $result = DIMP::getFolderResponse($imptree);
         }
     }
     break;

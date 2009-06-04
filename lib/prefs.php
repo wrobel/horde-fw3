@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/lib/prefs.php,v 1.19.4.20 2009/01/06 15:24:51 jan Exp $
+ * $Horde: horde/lib/prefs.php,v 1.19.4.21 2009/05/19 10:09:07 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -113,7 +113,8 @@ function prefs_callback()
             $url .= '/';
         }
         $url = addslashes(Horde::url(Util::addParameter($url . 'index.php', 'url', Horde::selfUrl(true, false, true)), true));
-        $notification->push("if (window.parent.frames && window.parent.frames.horde_menu) window.parent.frames.location = '$url'; else window.location = '$url';", 'javascript');
+        // @todo: Fix crude DIMP check.
+        $notification->push("if (typeof window.parent.DimpCore == 'undefined') if (window.parent.frames && window.parent.frames.horde_menu) window.parent.frames.location = '$url'; else window.location = '$url';", 'javascript');
         $reloaded = true;
     }
 

@@ -1,6 +1,6 @@
 # translation of fr_FR.po to french
 # French translation for Ingo
-# Copyright 2003-2009 The Horde Project
+# Copyright (C) 2003 Horde Project
 # This file is distributed under the same license as the ingo package.
 #
 # AIDE Florent <faide@alphacent.com>, 2003.
@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr_FR\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2009-01-13 11:33+0100\n"
-"PO-Revision-Date: 2009-01-13 11:33+0100\n"
+"POT-Creation-Date: 2009-05-22 08:18+0200\n"
+"PO-Revision-Date: 2009-05-22 08:18+0200\n"
 "Last-Translator: Yannick Sebastia <yannick.sebastia@ecole-navale.fr>\n"
 "Language-Team: Francais <i18n@lists.horde.org>\n"
 "MIME-Version: 1.0\n"
@@ -46,7 +46,7 @@ msgstr "Options supplémentaires"
 
 #: forward.php:43
 msgid "Address(es) to forward to:"
-msgstr "Adresse(s) vers où rediriger:"
+msgstr "Adresse(s) de redirection :"
 
 #: vacation.php:56
 msgid "Addresses to not send responses to:"
@@ -190,15 +190,15 @@ msgstr "Effacé"
 
 #: lib/Storage.php:278
 msgid "Deliver into my Inbox"
-msgstr "Déposer ce message dans ma boite de réception"
+msgstr "Déposer dans ma boite de réception"
 
 #: lib/Storage.php:304
 msgid "Deliver into my Inbox and copy to"
-msgstr "Déposer dans ma Boite de réception et copier dans"
+msgstr "Déposer dans ma boite de réception et copier dans"
 
 #: lib/Storage.php:299
 msgid "Deliver into my Inbox and redirect to"
-msgstr "Déposer dans ma Boite de réception et rediriger vers"
+msgstr "Déposer dans ma boite de réception et rediriger vers"
 
 #: lib/Storage.php:284
 msgid "Deliver to folder"
@@ -974,7 +974,7 @@ msgstr "Vous avez reçu un nouveau message"
 
 #: lib/Script/imap.php:309 lib/Script/imap.php:334 lib/Script/imap.php:352
 msgid "[No Sender]"
-msgstr "[pas d'émetteur]"
+msgstr "[Pas d'expéditeur]"
 
 #: lib/Script/imap.php:308 lib/Script/imap.php:333 lib/Script/imap.php:351
 msgid "[No Subject]"

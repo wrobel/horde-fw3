@@ -2,6 +2,8 @@
 v1.0.1-cvs
 ----------
 
+[mjr] Add configuration switch to disallow querying the preference backend for
+      other user's identities and preferences (Bug: 8269).
 [mjr] Remove broken implementation of the 'numlimit' configuration option
       (See Bug: 8139).
 [jan] Fix icon URLs if cookies are turned off.

@@ -250,6 +250,9 @@ Event.observe(window, 'load', function() {
 function toggleSection(section)
 {
     var dir = '<?php echo $GLOBALS['registry']->getImageDir() ?>';
+    if (!$('section_' + section)) {
+        return;
+    }
     $('section_' + section).toggle();
     if ($('section_' + section).visible()) {
         $('toggle_' + section).src = dir + '/minus.png';

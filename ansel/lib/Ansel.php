@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ansel/lib/Ansel.php,v 1.517.2.48 2009/04/24 03:33:13 mrubinsk Exp $
+ * $Horde: ansel/lib/Ansel.php,v 1.517.2.49 2009/05/15 19:55:29 mrubinsk Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *
@@ -693,7 +693,7 @@ class Ansel {
         if (!empty($owner)) {
             if ($owner == Auth::getAuth()) {
                 $owner_title = _("My Galleries");
-            } else {
+            } elseif (!empty($GLOBALS['conf']['gallery']['customlabel'])) {
                 $uprefs = &Prefs::singleton($GLOBALS['conf']['prefs']['driver'],
                                             'ansel',
                                             $owner, '', null, false);
@@ -709,6 +709,8 @@ class Ansel {
                 } else {
                     $owner_title = $fullname;
                 }
+            } else {
+                $owner_title = sprintf(_("%s's Galleries"), $owner);
             }
         }
 

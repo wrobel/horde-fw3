@@ -2,7 +2,9 @@
 v3.3.5
 ------
 
-
+[mms] SECURITY: Don't display unknown text parts inline (Bug #8311).
+[jan] Export current locale to the environment.
+[jan] Fix unfolding of vCard 2.1/vCalendar 1.0 data.
 
 
 ------

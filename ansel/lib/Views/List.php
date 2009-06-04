@@ -2,7 +2,7 @@
 /**
  * @package Ansel
  *
- * $Horde: ansel/lib/Views/List.php,v 1.33.2.2 2008/11/18 04:05:51 chuck Exp $
+ * $Horde: ansel/lib/Views/List.php,v 1.33.2.3 2009/05/15 19:55:29 mrubinsk Exp $
  */
 
 /** Ansel_View_Abstract */
@@ -153,7 +153,7 @@ class Ansel_View_List extends Ansel_View_Abstract {
             if ($owner) {
                 if ($owner == Auth::getAuth() && empty($this->_params['api'])) {
                     $list_title = _("My Galleries");
-                } else {
+                } elseif (!empty($GLOBALS['conf']['gallery']['customlabel'])) {
                     $uprefs = &Prefs::singleton($GLOBALS['conf']['prefs']['driver'],
                                                 'ansel', $owner, '', null, false);
                     $fullname = $uprefs->getValue('grouptitle');
@@ -168,6 +168,8 @@ class Ansel_View_List extends Ansel_View_Abstract {
                     } else {
                         $list_title = $fullname;
                     }
+                } else {
+                    $list_title = sprintf(_("%s's Galleries"), $owner);
                 }
             } elseif ($category || ($groupby == 'category' && $special)) {
                 if ($special == 'unfiled') {

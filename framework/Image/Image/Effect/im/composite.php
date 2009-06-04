@@ -3,7 +3,7 @@
  * Simple composite effect for composing multiple images. This effect assumes
  * that all images being passed in are already the desired size.
  *
- * $Horde: framework/Image/Image/Effect/im/composite.php,v 1.2.2.2 2009/01/07 01:30:47 mrubinsk Exp $
+ * $Horde: framework/Image/Image/Effect/im/composite.php,v 1.2.2.3 2009/05/27 22:42:05 mrubinsk Exp $
  *
  * Copyright 2009 The Horde Project (http://www.horde.org)
  *
@@ -38,7 +38,6 @@ class Horde_Image_Effect_im_composite extends Horde_Image_Effect {
      */
     function apply()
     {
-        $this->_image->_imagick = null;
         if (!is_null($this->_image->_imagick)) {
             foreach ($this->_params['images'] as $image) {
                 $topimg = new Horde_Image_ImagickProxy();

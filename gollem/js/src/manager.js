@@ -1,7 +1,7 @@
 /**
  * Provides the javascript for the manager.php script.
  *
- * $Horde: gollem/js/src/manager.js,v 1.11.2.1 2008/10/09 20:54:41 jan Exp $
+ * $Horde: gollem/js/src/manager.js,v 1.11.2.2 2009/05/19 14:41:27 slusarz Exp $
  *
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.
@@ -91,29 +91,6 @@ var Gollem = {
             }
             break;
         }
-    },
-
-    changeDirectory: function(e)
-    {
-        this._prepPopup('changeDirectory', e.element());
-        $('cdfrm_fname').focus();
-        e.stop();
-    },
-
-    createFolder: function(e)
-    {
-        this._prepPopup('createFolder', e.element());
-        $('createfrm_fname').focus();
-        e.stop();
-    },
-
-    _prepPopup: function(elt, elt2)
-    {
-        this.getChecked().each(function(e) {
-            e.checked = false;
-        });
-
-        $(elt).clonePosition(elt2, { setWidth: false, setHeight: false, offsetTop: elt2.getHeight() }).show();
     },
 
     renameItems: function()
@@ -367,6 +344,41 @@ var Gollem = {
             new Ajax.Request(GollemVar.prefs_api, { parameters: { app: 'gollem', pref: 'sortby', value: column.substring(1) } });
             new Ajax.Request(GollemVar.prefs_api, { parameters: { app: 'gollem', pref: 'sortdir', value: sortDown } });
         } catch (e) {}
+    },
+
+    clickHandler: function(e)
+    {
+        if (e.isRightClick()) {
+            return;
+        }
+
+        var elt = e.element();
+
+        while (Object.isElement(elt)) {
+            switch (elt.readAttribute('id')) {
+            case 'createfolder':
+                this._prepPopup('createFolder', elt);
+                $('createfrm_fname').focus();
+                return;
+
+            case 'changefolder':
+                this._prepPopup('changeDirectory', elt);
+                $('cdfrm_fname').focus();
+                return;
+            }
+
+            elt = elt.up();
+        }
+
+    },
+
+    _prepPopup: function(elt, elt2)
+    {
+        this.getChecked().each(function(e) {
+            e.checked = false;
+        });
+
+        $(elt).clonePosition(elt2, { setWidth: false, setHeight: false, offsetTop: elt2.getHeight() }).show();
     }
 };
 
@@ -379,12 +391,6 @@ function table_sortCallback(tableId, column, sortDown)
 }
 
 document.observe('dom:loaded', function() {
-    var tmp;
     Gollem.toggleRow()
-    if (tmp = $('createfolder')) {
-        tmp.observe('click', Gollem.createFolder.bindAsEventListener(Gollem));
-    }
-    if (tmp = $('changefolder')) {
-        tmp.observe('click', Gollem.changeDirectory.bindAsEventListener(Gollem));
-    }
+    document.observe('click', Gollem.clickHandler.bindAsEventListener(Gollem));
 });

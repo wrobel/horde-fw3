@@ -20,7 +20,7 @@
  * The table structure can be created by the scripts/drivers/sql/ingo.sql
  * script.
  *
- * $Horde: ingo/lib/Storage/sql.php,v 1.21.2.4 2009/02/17 18:52:42 chuck Exp $
+ * $Horde: ingo/lib/Storage/sql.php,v 1.21.2.5 2009/05/14 13:48:15 jan Exp $
  *
  * See the enclosed file LICENSE for license information (ASL).  If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.
@@ -188,6 +188,9 @@ class Ingo_Storage_sql extends Ingo_Storage {
                 $ob->setForwardAddresses(explode("\n", $data['forward_addresses']), false);
                 $ob->setForwardKeep((bool)$data['forward_keep']);
                 $ob->setSaved(true);
+            } elseif ($data = @unserialize($GLOBALS['prefs']->getDefault('vacation'))) {
+                $ob->setForwardAddresses($data['a'], false);
+                $ob->setForwardKeep($data['k']);
             }
             break;
 
@@ -210,6 +213,19 @@ class Ingo_Storage_sql extends Ingo_Storage {
                 $ob->setVacationReason(String::convertCharset($data['vacation_reason'], $this->_params['charset']));
                 $ob->setVacationSubject(String::convertCharset($data['vacation_subject'], $this->_params['charset']));
                 $ob->setSaved(true);
+            } elseif ($data = @unserialize($GLOBALS['prefs']->getDefault('vacation'))) {
+                $ob->setVacationAddresses($data['addresses'], false);
+                $ob->setVacationDays($data['days']);
+                $ob->setVacationExcludes($data['excludes'], false);
+                $ob->setVacationIgnorelist($data['ignorelist']);
+                $ob->setVacationReason($data['reason']);
+                $ob->setVacationSubject($data['subject']);
+                if (isset($data['start'])) {
+                    $ob->setVacationStart($data['start']);
+                }
+                if (isset($data['end'])) {
+                    $ob->setVacationEnd($data['end']);
+                }
             }
             break;
 
@@ -226,6 +242,9 @@ class Ingo_Storage_sql extends Ingo_Storage {
                 $ob->setSpamFolder($data['spam_folder']);
                 $ob->setSpamLevel((int)$data['spam_level']);
                 $ob->setSaved(true);
+            } elseif ($data = @unserialize($GLOBALS['prefs']->getDefault('spam'))) {
+                $ob->setSpamFolder($data['folder']);
+                $ob->setSpamLevel($data['level']);
             }
             break;
 

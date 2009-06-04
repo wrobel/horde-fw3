@@ -8,7 +8,7 @@ require_once 'Horde/Serialize.php';
  * query information about individual mailboxes.
  * In IMP, folders = IMAP mailboxes so the two terms are used interchangably.
  *
- * $Horde: imp/lib/IMAP/Tree.php,v 1.25.2.69 2009/03/10 21:11:31 slusarz Exp $
+ * $Horde: imp/lib/IMAP/Tree.php,v 1.25.2.70 2009/05/15 21:40:01 slusarz Exp $
  *
  * Copyright 2000-2009 The Horde Project (http://www.horde.org/)
  *
@@ -1522,9 +1522,10 @@ class IMP_Tree {
      */
     function _activeElt($elt)
     {
-        return ($this->_showunsub ||
-                ($this->isSubscribed($elt) && !$this->isContainer($elt)) ||
-                $this->hasChildren($elt));
+        return (!$this->isInvisible($elt) &&
+                ($this->_showunsub ||
+                 ($this->isSubscribed($elt) && !$this->isContainer($elt)) ||
+                 $this->hasChildren($elt)));
     }
 
     /**

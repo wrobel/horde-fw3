@@ -3,7 +3,7 @@
  * Ingo_Storage_prefs:: implements the Ingo_Storage:: API to save Ingo data
  * via the Horde preferences system.
  *
- * $Horde: ingo/lib/Storage/prefs.php,v 1.14.12.13 2008/02/28 18:40:28 jan Exp $
+ * $Horde: ingo/lib/Storage/prefs.php,v 1.14.12.14 2009/05/14 13:48:15 jan Exp $
  *
  * See the enclosed file LICENSE for license information (ASL).  If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.
@@ -47,6 +47,14 @@ class Ingo_Storage_prefs extends Ingo_Storage {
             if ($data) {
                 $ob->setBlacklist($data['a'], false);
                 $ob->setBlacklistFolder($data['f']);
+            }
+            break;
+
+        case INGO_STORAGE_ACTION_WHITELIST:
+            $ob = new Ingo_Storage_whitelist();
+            $data = @unserialize($prefs->getValue('whitelist'));
+            if ($data) {
+                $ob->setWhitelist($data, false);
             }
             break;
 
@@ -95,14 +103,6 @@ class Ingo_Storage_prefs extends Ingo_Storage {
                 if (isset($data['end'])) {
                     $ob->setVacationEnd($data['end']);
                 }
-            }
-            break;
-
-        case INGO_STORAGE_ACTION_WHITELIST:
-            $ob = new Ingo_Storage_whitelist();
-            $data = @unserialize($prefs->getValue('whitelist'));
-            if ($data) {
-                $ob->setWhitelist($data, false);
             }
             break;
 

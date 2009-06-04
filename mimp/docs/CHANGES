@@ -2,6 +2,7 @@
 v1.1.2-cvs
 ----------
 
+[mms] Fix showing Cc and Bcc fields (Bug #8167).
 [cjh] Implement custom menu items (Bug #7630).
 
 

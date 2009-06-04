@@ -5,7 +5,7 @@
  * This file defines Mnemo's external API interface.  Other applications can
  * interact with Mnemo through this API.
  *
- * $Horde: mnemo/lib/api.php,v 1.53.2.32 2009/01/13 15:47:33 chuck Exp $
+ * $Horde: mnemo/lib/api.php,v 1.53.2.33 2009/05/14 22:12:32 jan Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *
@@ -46,7 +46,7 @@ $_services['listBy'] = array(
 );
 
 $_services['getActionTimestamp'] = array(
-    'args' => array('uid' => 'string', 'timestamp' => 'int'),
+    'args' => array('uid' => 'string', 'action' => 'string', 'notepad' => 'string'),
     'type' => 'int',
 );
 
