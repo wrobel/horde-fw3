@@ -7,7 +7,7 @@ require_once 'MDB2.php';
  * new users sign themselves up into the horde installation, depending
  * on how the admin has configured Horde.
  *
- * $Horde: framework/Auth/Auth/Signup/sql.php,v 1.3.2.2 2009/01/06 15:22:52 jan Exp $
+ * $Horde: framework/Auth/Auth/Signup/sql.php,v 1.3.2.3 2009/06/10 16:45:27 jan Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -95,19 +95,11 @@ class Auth_Signup_sql extends Auth_Signup {
             }
         }
 
-        $email = '';
-        if (isset($info['email'])) {
-            $email = $info['email'];
-        } elseif (isset($info['extra']['email'])) {
-            $email = $info['extra']['email'];
-        }
-
         $query = 'INSERT INTO ' . $this->_params['table']
-            . ' (user_name, signup_date, signup_host, signup_email, signup_data) VALUES (?, ?, ?, ?, ?) ';
+            . ' (user_name, signup_date, signup_host, signup_data) VALUES (?, ?, ?, ?) ';
         $params = array($info['user_name'],
                         time(),
                         $_SERVER['REMOTE_ADDR'],
-                        $email,
                         serialize($signup->data));
 
         $stmt = $this->_write_db->prepare($query, null, MDB2_PREPARE_MANIP);

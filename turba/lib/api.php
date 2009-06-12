@@ -2,7 +2,7 @@
 /**
  * Turba external API interface.
  *
- * $Horde: turba/lib/api.php,v 1.120.2.64 2009/05/14 22:12:32 jan Exp $
+ * $Horde: turba/lib/api.php,v 1.120.2.65 2009/06/04 19:00:36 mrubinsk Exp $
  *
  * This file defines Turba's external API interface. Other applications can
  * interact with Turba through this API.
@@ -186,6 +186,11 @@ $_services['commentCallback'] = array(
 $_services['hasComments'] = array(
     'args' => array(),
     'type' => 'boolean'
+);
+
+$_services['getDefaultShare'] = array(
+    'args' => array(),
+    'type' => 'string'
 );
 
 /**
@@ -383,6 +388,42 @@ function _turba_fields($source = null)
 
 /**
  * Browses through Turba's object tree.
+ * Retrieve the UID for the current user's default Turba share.
+ *
+ */
+function _turba_getDefaultShare()
+{
+    global $prefs;
+
+    // Bring in turba's base and a clean copy of sources.
+    require_once dirname(__FILE__) . '/base.php';
+    require TURBA_BASE . '/config/sources.php';
+
+    if (!empty($_SESSION['turba']['has_share'])) {
+        $shares = Turba::listShares(true);
+        if (is_a($shares, 'PEAR_Error')) {
+            return false;
+        }
+        foreach ($shares as $uid => $share) {
+            $params = @unserialize($share->get('params'));
+            if (empty($params['source'])) {
+                return false;
+            }
+            $driver = &Turba_Driver::factory($params['source'], $cfgSources[$params['source']]);
+            if (is_a($driver, 'PEAR_Error')) {
+                return false;
+            }
+            if ($driver->checkDefaultShare($share, $cfgSources[$params['source']])) {
+                return $uid;
+            }
+        }
+    }
+
+    // Return Turba's default_dir as default
+    return $prefs->getValue('default_dir');
+}
+
+/**
  *
  * @param string $path       The path of the tree to browse.
  * @param array $properties  The item properties to return. Defaults to 'name',

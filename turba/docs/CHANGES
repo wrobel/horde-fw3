@@ -2,6 +2,7 @@
 v2.3.2-cvs
 ----------
 
+[mjr] Add new API method for retrieving the default share for a source.
 [jan] Don't overwrite the compositing fields, when importing composite fields.
 [cjh] Fix searches for multiple strict fields and at least one non-strict field
       (tinu@humbapa.ch, Bug #7876).

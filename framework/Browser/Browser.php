@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Browser/Browser.php,v 1.153.2.68 2009/03/22 14:10:16 chuck Exp $
+ * $Horde: framework/Browser/Browser.php,v 1.153.2.70 2009/06/07 10:42:51 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -227,6 +227,7 @@ class Browser {
         'xmlhttpreq' => false,
         'cite'       => false,
         'issafari'   => false,
+        'dataurl'    => false,
     );
 
     /**
@@ -366,11 +367,13 @@ class Browser {
                     $this->setFeature('xmlhttpreq');
                     $this->setFeature('javascript', 1.5);
                 }
-                if (($this->_majorVersion >= 9) &&
-                    ($this->_minorVersion >= 5)) {
-                    // Xinha supports (somewhat) 9.2, but fckeditor supports
-                    // only 9.5+.
-                    $this->setFeature('rte');
+                if ($this->_majorVersion >= 9) {
+                    $this->setFeature('dataurl');
+                    if ($this->_minorVersion >= 5) {
+                        // Xinha supports (somewhat) 9.2, but fckeditor supports
+                        // only 9.5+.
+                        $this->setFeature('rte');
+                    }
                 }
                 $this->setFeature('dom');
                 $this->setFeature('iframes');
@@ -454,6 +457,7 @@ class Browser {
                 $this->setFeature('accesskey');
                 $this->setFeature('optgroup');
                 $this->setFeature('xmlhttpreq');
+                $this->setFeature('dataurl', 32768);
                 break;
 
             case 7:
@@ -532,6 +536,7 @@ class Browser {
             // Konqueror and Apple's Safari both use the KHTML
             // rendering engine.
             $this->setBrowser('konqueror');
+            $this->setFeature('dataurl');
             $this->setQuirk('empty_file_input_value');
             $this->setQuirk('no_hidden_overflow_tables');
 
@@ -624,6 +629,9 @@ class Browser {
                     }
                     if ($revision[1] >= 1.3) {
                         $this->setFeature('rte');
+                    }
+                    if (version_compare($revision[1], '1.8.1', '>=')) {
+                        $this->setFeature('dataurl');
                     }
                 }
                 break;

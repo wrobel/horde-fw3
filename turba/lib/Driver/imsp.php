@@ -5,7 +5,7 @@ require_once 'Horde/Cache.php';
 /**
  * Turba directory driver implementation for an IMSP server.
  *
- * $Horde: turba/lib/Driver/imsp.php,v 1.21.4.21 2008/04/09 20:30:53 mrubinsk Exp $
+ * $Horde: turba/lib/Driver/imsp.php,v 1.21.4.22 2009/06/04 19:00:36 mrubinsk Exp $
  *
  * @author  Michael Rubinsky <mrubinsk@horde.org>
  * @package Turba
@@ -677,6 +677,11 @@ class Turba_Driver_imsp extends Turba_Driver {
        return $this->params['name'];
     }
 
+    /**
+     * Check if the passed in share is the default share for this source.
+     *
+     * @see turba/lib/Turba_Driver#checkDefaultShare($share, $srcconfig)
+     */
     function checkDefaultShare(&$share, $srcConfig)
     {
         $params = @unserialize($share->get('params'));

@@ -539,17 +539,18 @@
    </field>
 
    <field>
-    <name>signup_email</name>
-    <type>text</type>
-    <notnull>true</notnull>
-    <length>255</length>
-   </field>
-
-   <field>
     <name>signup_data</name>
     <type>clob</type>
     <notnull>true</notnull>
    </field>
+
+   <index>
+    <name>signup_primary</name>
+    <primary>true</primary>
+    <field>
+     <name>user_name</name>
+    </field>
+   </index>
 
   </declaration>
 

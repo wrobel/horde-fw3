@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: passwd/test.php,v 1.2.2.6 2009/01/06 15:25:15 jan Exp $
+ * $Horde: passwd/test.php,v 1.2.2.7 2009/06/10 08:20:38 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *
@@ -40,13 +40,21 @@ require TEST_TEMPLATES . 'version.inc';
 /* PHP module capabilities. */
 $module_list = array(
     'ctype' => 'Ctype Support',
+    'ldap' => array(
+        'descrip' => 'LDAP Support',
+        'error' => 'If you will be using the any of the LDAP drivers for password changes, PHP must have ldap support. Compile PHP <code>--with-ldap</code> before continuing.'
+    ),
     'mcrypt' => array(
-        'descrip' => 'mcrypt',
+        'descrip' => 'Mcrypt Support',
         'error' => 'If you will be using the smbldap driver for password changes, PHP must have mcrypt support. Compile PHP <code>--with-mcrypt</code> before continuing.'
     ),
     'mhash' => array(
-        'descrip' => 'mhash',
+        'descrip' => 'Mhash Support',
         'error' => 'If you will be using the smbldap driver for password changes, PHP must have mhash support. Compile PHP <code>--with-mhash</code> before continuing.'
+    ),
+    'soap' => array(
+        'descrip' => 'SOAP Support',
+        'error' => 'If you will be using the SOAP driver for password changes, PHP must have soap support. Compile PHP with <code>--enable-soap</code> before continuing.'
     ),
 );
 

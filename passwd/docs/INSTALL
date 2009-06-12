@@ -2,8 +2,8 @@
  Installing Passwd 3.0
 =======================
 
-:Last update:   $Date: 2008/10/09 17:12:04 $
-:Revision:      $Revision: 1.31.2.3 $
+:Last update:   $Date: 2009/06/10 08:20:39 $
+:Revision:      $Revision: 1.31.2.4 $
 :Contact:       sork@lists.horde.org
 
 .. contents:: Contents
@@ -82,6 +82,10 @@ To function properly, Passwd **requires** the following:
       Mcrypt support is necessary for the smbldap driver.  See `LDAP
       Implementation Information`_ for details.
 
+   e. SOAP support ``--enable-soap`` [OPTIONAL]
+
+      SOAP support is necessary for the soap driver.
+
 3. The following PEAR modules:
    (See `horde/docs/INSTALL`_ for instructions on installing PEAR modules)
 
@@ -103,6 +107,8 @@ use:
 
 5. Expect installed, and access to telnet or ssh to the machine where
    passwords are stored/set (could be localhost).
+
+6. A SOAP service endpoint.
 
 
 Installing Passwd

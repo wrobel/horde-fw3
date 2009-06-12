@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Prefs/Prefs.php,v 1.137.10.41 2009/03/16 12:01:38 jan Exp $
+ * $Horde: framework/Prefs/Prefs.php,v 1.137.10.42 2009/06/04 19:00:36 mrubinsk Exp $
  */
 
 /** Preference is administratively locked. */
@@ -758,10 +758,10 @@ class Prefs {
                 }
 
                 if (!empty($pref['hook'])) {
-                    if (!isset($this->_hooks[$pref_scope])) {
-                        $this->_hooks[$pref_scope] = array();
+                    if (!isset($this->_hooks[$scope])) {
+                        $this->_hooks[$scope] = array();
                     }
-                    $this->_hooks[$pref_scope][] = $name;
+                    $this->_hooks[$scope][$name] = $pref_scope;
                 }
             }
         }
@@ -781,10 +781,10 @@ class Prefs {
             return;
         }
 
-        foreach ($this->_hooks[$scope] as $name) {
-            if ($this->_scopes[$scope][$name]['m'] & _PREF_LOCKED ||
-                empty($this->_scopes[$scope][$name]['v']) ||
-                $this->_scopes[$scope][$name]['m'] & _PREF_DEFAULT) {
+        foreach ($this->_hooks[$scope] as $name => $pref_scope) {
+            if ($this->_scopes[$pref_scope][$name]['m'] & _PREF_LOCKED ||
+                empty($this->_scopes[$pref_scope][$name]['v']) ||
+                $this->_scopes[$pref_scope][$name]['m'] & _PREF_DEFAULT) {
 
                 $val = Horde::callHook('_prefs_hook_' . $name, array($this->_user), $scope, $name);
                 if (is_a($val, 'PEAR_Error')) {
@@ -792,13 +792,13 @@ class Prefs {
                     continue;
                 }
 
-                if ($this->_scopes[$scope][$name]['m'] & _PREF_DEFAULT) {
-                    $this->_scopes[$scope][$name]['v'] = $val;
+                if ($this->_scopes[$pref_scope][$name]['m'] & _PREF_DEFAULT) {
+                    $this->_scopes[$pref_scope][$name]['v'] = $val;
                 } else {
-                    $this->_scopes[$scope][$name]['v'] = $this->convertToDriver($val, NLS::getCharset());
+                    $this->_scopes[$pref_scope][$name]['v'] = $this->convertToDriver($val, NLS::getCharset());
                 }
-                if (!($this->_scopes[$scope][$name]['m'] & _PREF_LOCKED)) {
-                    $this->_scopes[$scope][$name]['m'] |= _PREF_DIRTY;
+                if (!($this->_scopes[$pref_scope][$name]['m'] & _PREF_LOCKED)) {
+                    $this->_scopes[$pref_scope][$name]['m'] |= _PREF_DIRTY;
                 }
             }
         }

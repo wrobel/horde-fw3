@@ -1,4 +1,4 @@
--- $Horde: horde/scripts/sql/create.mysql.sql,v 1.4.6.23 2009/02/14 04:43:47 chuck Exp $
+-- $Horde: horde/scripts/sql/create.mysql.sql,v 1.4.6.24 2009/06/10 16:45:28 jan Exp $
 --
 -- If you are installing Horde for the first time, you can simply
 -- direct this file to mysql as STDIN:
@@ -62,10 +62,8 @@ CREATE TABLE horde_signups (
     user_name VARCHAR(255) NOT NULL,
     signup_date VARCHAR(255) NOT NULL,
     signup_host VARCHAR(255) NOT NULL,
-    signup_email VARCHAR(255) NOT NULL,
     signup_data TEXT NOT NULL,
-    UNIQUE KEY user_name (user_name),
-    UNIQUE KEY signup_email (signup_email)
+    PRIMARY KEY user_name (user_name),
 );
 
 CREATE TABLE horde_groups (

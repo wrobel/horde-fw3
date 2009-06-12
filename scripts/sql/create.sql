@@ -1,4 +1,4 @@
--- $Horde: horde/scripts/sql/create.sql,v 1.1.2.19 2009/02/14 04:43:47 chuck Exp $
+-- $Horde: horde/scripts/sql/create.sql,v 1.1.2.20 2009/06/10 16:45:28 jan Exp $
 
 CREATE TABLE horde_users (
     user_uid                    VARCHAR(255) NOT NULL,
@@ -13,7 +13,6 @@ CREATE TABLE horde_signups (
     user_name VARCHAR(255) NOT NULL,
     signup_date INTEGER NOT NULL,
     signup_host VARCHAR(255) NOT NULL,
-    signup_email VARCHAR(255) NOT NULL,
     signup_data TEXT NOT NULL,
     PRIMARY KEY (user_name)
 );

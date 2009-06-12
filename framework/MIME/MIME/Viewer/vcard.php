@@ -2,7 +2,7 @@
 /**
  * The MIME_Viewer_vcard class renders out vCards in HTML format.
  *
- * $Horde: framework/MIME/MIME/Viewer/vcard.php,v 1.34.10.24 2009/01/29 11:53:59 jan Exp $
+ * $Horde: framework/MIME/MIME/Viewer/vcard.php,v 1.34.10.26 2009/06/07 10:42:51 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -103,13 +103,20 @@ class MIME_Viewer_vcard extends MIME_Viewer {
 
             $photos = $vc->getAllAttributes('PHOTO');
             foreach ($photos as $photo) {
-                if (!isset($photo['params']['VALUE']) ||
-                    String::upper($photo['params']['VALUE']) != 'URI') {
-                    continue;
+                if (isset($photo['params']['VALUE']) &&
+                    String::upper($photo['params']['VALUE']) == 'URI') {
+                    $html .= $this->_row(_("Photo"),
+                                         '<img src="' . htmlspecialchars($photo['value']) . '" />',
+                                         false);
+                } elseif (isset($photo['params']['ENCODING']) &&
+                          String::upper($photo['params']['ENCODING']) == 'B' &&
+                          isset($photo['params']['TYPE']) &&
+                          ($GLOBALS['browser']->hasFeature('dataurl') === true ||
+                           $GLOBALS['browser']->hasFeature('dataurl') >= strlen($photo['value']))) {
+                    $html .= $this->_row(_("Photo"),
+                                         '<img src="data:' . htmlspecialchars($photo['params']['TYPE'] . ';base64,' . $photo['value']) . '" />',
+                                         false);
                 }
-                $html .= $this->_row(_("Photo"),
-                                     '<img src="' . htmlspecialchars($photo['value']) . '" />',
-                                     false);
             }
 
             $labels = $vc->getAllAttributes('LABEL');

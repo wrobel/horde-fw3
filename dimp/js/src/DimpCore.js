@@ -2,7 +2,7 @@
  * DimpCore.js - Dimp UI application logic.
  * NOTE: ContextSensitive.js must be loaded before this file.
  *
- * $Horde: dimp/js/src/DimpCore.js,v 1.369.2.61 2009/01/06 15:22:37 jan Exp $
+ * $Horde: dimp/js/src/DimpCore.js,v 1.369.2.62 2009/06/08 20:43:13 slusarz Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *
@@ -517,3 +517,8 @@ if (Prototype.Browser.Opera && opera.version() >= 9.5) {
         return { width: document.documentElement['clientWidth'], height: document.documentElement['clientHeight'] };
     };
 }
+
+/* The SelectorsAPI seems to be broken (at least w/Prototype 1.6.0.3 and
+ * certain versions of Webkit). Just disable and fallback to methods that
+ * work. */
+Prototype.BrowserFeatures.SelectorsAPI = false;

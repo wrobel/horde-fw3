@@ -4,7 +4,7 @@ $block_name = _("Menu List");
 $block_type = 'tree';
 
 /**
- * $Horde: turba/lib/Block/tree_menu.php,v 1.5.2.5 2008/08/11 08:29:21 jan Exp $
+ * $Horde: turba/lib/Block/tree_menu.php,v 1.5.2.6 2009/06/04 19:00:36 mrubinsk Exp $
  *
  * @package Horde_Block
  */
@@ -22,7 +22,7 @@ class Horde_Block_turba_tree_menu extends Horde_Block {
         $add = Horde::applicationUrl('add.php');
         $icondir = $registry->getImageDir() . '/menu';
 
-        if ($addSources) {
+        if ($GLOBALS['addSources']) {
             $tree->addNode($parent . '__new',
                            $parent,
                            _("New Contact"),
@@ -32,7 +32,7 @@ class Horde_Block_turba_tree_menu extends Horde_Block {
                                  'icondir' => $icondir,
                                  'url' => $add));
 
-            foreach ($addSources as $addressbook => $config) {
+            foreach ($GLOBALS['addSources'] as $addressbook => $config) {
                 $tree->addNode($parent . $addressbook . '__new',
                                $parent . '__new',
                                sprintf(_("in %s"), $config['title']),

@@ -4,7 +4,7 @@
  * various directory search drivers.  It includes functions for searching,
  * adding, removing, and modifying directory entries.
  *
- * $Horde: turba/lib/Driver.php,v 1.57.2.85 2009/05/05 13:43:38 jan Exp $
+ * $Horde: turba/lib/Driver.php,v 1.57.2.86 2009/06/04 19:00:36 mrubinsk Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Jon Parise <jon@csh.rit.edu>
@@ -2151,6 +2151,15 @@ class Turba_Driver {
 
     function checkDefaultShare(&$share, $srcconfig)
     {
+    /**
+     * Check if the passed in share is the default share for this source.
+     *
+     * @param Horde_Share $share  The share object e
+     * @param array $srcconfig    The cfgSource entry for the share (not used in
+     *                            this method, but a child class may need it).
+     *
+     * @return boolean
+     */
         $params = @unserialize($share->get('params'));
         if (!isset($params['default'])) {
             $params['default'] = ($params['name'] == Auth::getAuth());

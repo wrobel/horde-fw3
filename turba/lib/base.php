@@ -2,7 +2,7 @@
 /**
  * Turba base inclusion file.
  *
- * $Horde: turba/lib/base.php,v 1.62.10.20 2008/05/25 17:40:02 chuck Exp $
+ * $Horde: turba/lib/base.php,v 1.62.10.21 2009/06/04 19:00:36 mrubinsk Exp $
  *
  * This file brings in all of the dependencies that every Turba script will
  * need, and sets up objects that all scripts use.
@@ -114,6 +114,7 @@ foreach ($copymoveSources as $key => $curSource) {
             htmlspecialchars($curSource['title']) . '</option>';
     }
 }
+$GLOBALS['addSources'] = $addSources;
 
 // Start compression, if requested.
 Horde::compressOutput();

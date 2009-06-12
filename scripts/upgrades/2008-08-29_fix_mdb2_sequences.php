@@ -5,7 +5,7 @@
  * default of 'sequence' to 'id' to be consistent with all horde apps, and to
  * allow automated upgrade scripts to use MDB2_Schema in the future.
  *
- * $Horde: horde/scripts/upgrades/2008-08-29_fix_mdb2_sequences.php,v 1.1.2.5 2008/09/04 19:25:22 mrubinsk Exp $
+ * $Horde: horde/scripts/upgrades/2008-08-29_fix_mdb2_sequences.php,v 1.1.2.6 2009/06/07 08:56:34 jan Exp $
  *
  * @author Michael J. Rubinsky <mrubinsk@horde.org>
  * @since Horde 3.2.2
@@ -51,7 +51,9 @@ if (is_a($db, 'PEAR_Error')) {
     $cli->fatal($db->getMessage());
 }
 
-$db->loadModule('Manager');
+if (is_a($result = $db->loadModule('Manager'), 'PEAR_Error')) {
+    $cli->fatal($result->getMessage());
+}
 $tables = $db->manager->listTables();
 if (is_a($tables, 'PEAR_Error')) {
     $cli->fatal($tables->getMessage());

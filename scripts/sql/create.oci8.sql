@@ -4,7 +4,7 @@ set sqlblanklines on;
 /**
  * Oracle Table Creation Scripts.
  * 
- * $Horde: horde/scripts/sql/create.oci8.sql,v 1.4.8.22 2009/02/14 04:43:47 chuck Exp $
+ * $Horde: horde/scripts/sql/create.oci8.sql,v 1.4.8.23 2009/06/10 16:45:28 jan Exp $
  * 
  * @author Miguel Ward <mward@aluar.com.ar>
  * 
@@ -61,7 +61,6 @@ CREATE TABLE horde_signups (
     user_name VARCHAR2(255) NOT NULL,
     signup_date NUMBER(16) NOT NULL,
     signup_host VARCHAR2(255) NOT NULL,
-    signup_email VARCHAR2(255) NOT NULL,
     signup_data CLOB NOT NULL,
     PRIMARY KEY (user_name)
 );

@@ -15,7 +15,7 @@ require_once IMP_BASE . '/lib/Crypt/PGP.php';
  *   'pgp_verify_msg' -- Do verification of PGP signed data.
  *   'rawpgpkey' -- Display the PGP Public Key in raw, text format
  *
- * $Horde: imp/lib/MIME/Viewer/pgp.php,v 1.96.6.25 2009/05/27 15:47:08 jan Exp $
+ * $Horde: imp/lib/MIME/Viewer/pgp.php,v 1.96.6.26 2009/06/07 10:38:31 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -249,7 +249,7 @@ class IMP_MIME_Viewer_pgp extends MIME_Viewer {
                     }
                 }
             } else {
-                $this->_status[] = _("The message below does not appear to be in the correct PGP format (according to RFC 2015).");
+                $sig_result = PEAR::raiseError(_("The message below does not appear to be in the correct PGP format (according to RFC 2015)."));
             }
         } elseif ($mimetype == 'application/pgp-signature') {
             /* Get the signed message to output. */
@@ -278,20 +278,21 @@ class IMP_MIME_Viewer_pgp extends MIME_Viewer {
         }
 
         $text = $this->_outputStatus();
+        $class = '';
 
         if ($sig_result !== null) {
             $text .= $this->_outputPGPSignatureTest($sig_result);
+            if ($this->getConfigParam('highlight')) {
+                $class = ' class="' . (is_a($sig_result, 'PEAR_Error') ? 'signedinvalid' : 'signedvalid') . '"';
+            }
         }
 
         /* We need to stick the output into a MIME_Contents object. */
         $mc = new MIME_Contents($mime_message, array('download' => 'download_attach', 'view' => 'view_attach'), array(&$this->_contents));
         $mc->buildMessage();
 
-        return $text . '<table cellspacing="0"'
-            . ($this->getConfigParam('highlight')
-               ? ' class="' . (is_a($sig_result, 'PEAR_Error') ? 'signedinvalid' : 'signedvalid') . '"'
-               : '')
-            . '>' . $mc->getMessage(true) . '</table>';
+        return $text . '<table cellspacing="0"' . $class . '>'
+            . $mc->getMessage(true) . '</table>';
     }
 
     /**

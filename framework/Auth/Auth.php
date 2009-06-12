@@ -18,6 +18,7 @@ define('AUTH_REASON_MSG_PARAM', 'logout_msg');
  *   'badlogin'   --  Bad username and/or password
  *   'browser'    --  A browser change was detected
  *   'failed'     --  Login failed
+ *   'expired'    --  Password has expired
  *   'logout'     --  Logout due to user request
  *   'message'    --  Logout with custom message in AUTH_REASON_MSG_PARAM
  *   'session'    --  Logout due to session expiration
@@ -65,7 +66,7 @@ define('AUTH_REASON_SESSIONIP', 'sessionip');
  * The Auth:: class provides a common abstracted interface into the various
  * backends for the Horde authentication system.
  *
- * $Horde: framework/Auth/Auth.php,v 1.142.10.35 2009/04/04 12:30:50 jan Exp $
+ * $Horde: framework/Auth/Auth.php,v 1.142.10.36 2009/06/10 16:43:29 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

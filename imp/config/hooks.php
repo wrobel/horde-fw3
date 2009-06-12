@@ -8,7 +8,7 @@
  *
  * For more information please see the horde/config/hooks.php.dist file.
  *
- * $Horde: imp/config/hooks.php.dist,v 1.3.2.6 2009/02/05 21:05:39 slusarz Exp $
+ * $Horde: imp/config/hooks.php.dist,v 1.3.2.7 2009/06/04 18:43:32 mrubinsk Exp $
  */
 
 // Here is an example signature hook function to set the signature from the
@@ -30,6 +30,28 @@
 //         return $sig;
 //     }
 // }
+
+// Example hook to set the value of the add_source pref. Useful when using
+// a turba source with shares enabled (i.e. the example localsql configuration)
+// This requires Horde >= 3.3.5 to work correctly.
+//if (!function_exists('_prefs_hook_add_source')) {
+//    function _prefs_hook_add_source($username = null) {
+//
+//        /** If you have Turba >= 2.3.2 you can simply do this: **/
+//        // return $GLOBALS['registry']->call('contacts/getDefaultShare');
+//
+//        /** Otherwise, need to be a bit more hackish **/
+//        $shares = &Horde_Share::singleton('turba');
+//        $sources = $shares->listShares(
+//            Auth::getAuth(), PERMS_EDIT, Auth::getAuth());
+//        foreach ($sources as $uid => $share) {
+//            $params = @unserialize($share->get('params'));
+//            if ($params['default']) {
+//                return $uid;
+//            }
+//        }
+//    }
+//}
 
 // Here is an example _imp_hook_postlogin function to redirect to a
 // custom server after login.

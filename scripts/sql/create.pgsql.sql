@@ -1,4 +1,4 @@
--- $Horde: horde/scripts/sql/create.pgsql.sql,v 1.1.10.23 2009/03/26 04:44:48 slusarz Exp $
+-- $Horde: horde/scripts/sql/create.pgsql.sql,v 1.1.10.24 2009/06/10 16:45:28 jan Exp $
 --
 -- Uncomment the ALTER line below and change the password.  Then run as:
 --
@@ -26,7 +26,6 @@ CREATE TABLE horde_signups (
     user_name VARCHAR(255) NOT NULL,
     signup_date INTEGER NOT NULL,
     signup_host VARCHAR(255) NOT NULL,
-    signup_email VARCHAR(255) NOT NULL,
     signup_data TEXT NOT NULL,
     PRIMARY KEY (user_name)
 );

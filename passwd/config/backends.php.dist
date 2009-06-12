@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: passwd/config/backends.php.dist,v 1.41.2.4 2009/04/25 15:53:07 jan Exp $
+ * $Horde: passwd/config/backends.php.dist,v 1.41.2.5 2009/06/10 08:20:39 jan Exp $
  *
  * This file is where you specify what backends people use to change
  * their passwords. There are a number of properties that you can set
@@ -369,53 +369,6 @@ $backends['pine'] = array(
     )
 );
 
-// This is an example configuration for chaining multiple drivers to allow for
-// syncing of passwords across many backends using the composite driver as a
-// wrapper.
-//
-// Each of the subdrivers may contain an optional parameter called 'required'
-// that, when set to true, will cause the rest of the drivers be skipped if a
-// particular one fails.
-$backends['composite'] = array(
-   'name' => 'Example All Services',
-   'preferred' => '',
-   'password policy' => array(
-       'minLength' => 3,
-       'maxLength' => 8,
-       'minClasses' => 2,
-   ),
-   'driver' => 'composite',
-   'params' => array('drivers' => array(
-       'sql' => array(
-           'name' => 'Horde Authentication',
-           'driver' => 'sql',
-           'required' => true,
-           'params' => array(
-               'phptype'    => 'mysql',
-               'hostspec'   => 'localhost',
-               'username'   => 'horde',
-               'password'   => '',
-               'encryption' => 'md5-hex',
-               'database'   => 'horde',
-               'table'      => 'horde_users',
-               'user_col'   => 'user_uid',
-               'pass_col'   => 'user_pass',
-               'show_encryption' => false
-               // 'query_lookup' => '',
-               // 'query_modify' => '',
-           ),
-       ),
-       'smbpasswd' => array(
-           'name' => 'Samba Server',
-           'driver' => 'smbpasswd',
-           'params' => array(
-               'program' => '/usr/bin/smbpasswd',
-               'host' => 'localhost',
-           ),
-       ),
-   )),
-);
-
 $backends['kolab'] = array(
     'name' => 'Local Kolab Server',
     'preferred' => '',
@@ -476,6 +429,28 @@ $backends['http'] = array (
     )
 );
 
+$backends['soap'] = array(
+    'name' => 'Example SOAP Server',
+    'preferred' => '',
+    'password policy' => array(),
+    'driver' => 'soap',
+    'params' => array(
+        // If this service doesn't have a WSDL, the 'location' and 'uri'
+        // parameters below must be specified instead.
+        'wsdl' => 'http://www.example.com/service.wsdl',
+        'method' => 'changePassword',
+        // This is the order of the arguments to the method specified above.
+        'arguments' => array('username', 'oldpassword', 'newpassword'),
+        // These parameters are directly passed to the SoapClient object, see
+        // http://ww.php.net/manual/en/soapclient.soapclient.php for a
+        // complete list of possible parameters.
+        'soap_params' => array(
+            'location' => '',
+            'uri' => '',
+         ),
+    )
+);
+
 // This is an example configuration for Postfix.admin 2.3.
 // Set the 'password_policy' section as you wish.
 // In most installations you probably only need to change the 
@@ -517,4 +492,51 @@ $backends['postfixadmin'] = array (
         'query_lookup' => 'SELECT password FROM mailbox WHERE username = %u and active = 1', 
         'query_modify' => 'UPDATE mailbox SET password = %e WHERE username = %u'
     )
+);
+
+// This is an example configuration for chaining multiple drivers to allow for
+// syncing of passwords across many backends using the composite driver as a
+// wrapper.
+//
+// Each of the subdrivers may contain an optional parameter called 'required'
+// that, when set to true, will cause the rest of the drivers be skipped if a
+// particular one fails.
+$backends['composite'] = array(
+   'name' => 'Example All Services',
+   'preferred' => '',
+   'password policy' => array(
+       'minLength' => 3,
+       'maxLength' => 8,
+       'minClasses' => 2,
+   ),
+   'driver' => 'composite',
+   'params' => array('drivers' => array(
+       'sql' => array(
+           'name' => 'Horde Authentication',
+           'driver' => 'sql',
+           'required' => true,
+           'params' => array(
+               'phptype'    => 'mysql',
+               'hostspec'   => 'localhost',
+               'username'   => 'horde',
+               'password'   => '',
+               'encryption' => 'md5-hex',
+               'database'   => 'horde',
+               'table'      => 'horde_users',
+               'user_col'   => 'user_uid',
+               'pass_col'   => 'user_pass',
+               'show_encryption' => false
+               // 'query_lookup' => '',
+               // 'query_modify' => '',
+           ),
+       ),
+       'smbpasswd' => array(
+           'name' => 'Samba Server',
+           'driver' => 'smbpasswd',
+           'params' => array(
+               'program' => '/usr/bin/smbpasswd',
+               'host' => 'localhost',
+           ),
+       ),
+   )),
 );

@@ -1,4 +1,4 @@
--- $Horde: horde/scripts/sql/create.sybase.sql,v 1.1.10.17 2009/02/14 04:43:47 chuck Exp $
+-- $Horde: horde/scripts/sql/create.sybase.sql,v 1.1.10.18 2009/06/10 16:45:28 jan Exp $
 --
 -- horde tables definitions : sql script
 -- 01/22/2003 - F. Helly <francois.helly@wanadoo.fr>
@@ -56,7 +56,6 @@ CREATE TABLE horde_signups (
     user_name VARCHAR(255) NOT NULL,
     signup_date NUMERIC(10,0) NOT NULL,
     signup_host VARCHAR(255) NOT NULL,
-    signup_email VARCHAR(255) NOT NULL,
     signup_data TEXT NOT NULL,
     PRIMARY KEY (user_name)
 )

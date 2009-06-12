@@ -2,7 +2,7 @@
 /**
  * Kronolith external API interface.
  *
- * $Horde: kronolith/lib/api.php,v 1.126.2.60 2009/06/04 02:23:15 chuck Exp $
+ * $Horde: kronolith/lib/api.php,v 1.126.2.61 2009/06/11 03:52:49 chuck Exp $
  *
  * This file defines Kronolith's external API interface. Other applications
  * can interact with Kronolith through this API.
@@ -30,7 +30,7 @@ $_services['show'] = array(
 );
 
 $_services['browse'] = array(
-    'args' => array('path' => 'string'),
+    'args' => array('path' => 'string', 'properties' => '{urn:horde}stringArray'),
     'type' => '{urn:horde}hashHash',
 );
 
