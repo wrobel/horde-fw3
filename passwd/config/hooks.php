@@ -8,7 +8,7 @@
  *
  * For more information please see the horde/config/hooks.php.dist file.
  *
- * $Horde: passwd/config/hooks.php.dist,v 1.1.2.1 2008/10/09 17:12:03 jan Exp $
+ * $Horde: passwd/config/hooks.php.dist,v 1.1.2.2 2009/06/12 08:43:47 jan Exp $
  */
 
 // Here is an example _passwd_hook_username function to translate what the
@@ -68,5 +68,12 @@
 //     function _passwd_hook_userdn($auth)
 //     {
 //         return 'uid=' . $auth . ',o=example.com';
+//     }
+// }
+
+// if (!function_exists('_passwd_password_changed')) {
+//     function _passwd_password_changed($user, $oldpassword, $newpassword)
+//     {
+//         Horde::logMessage(sprintf('User %s has changed his password.', $user), __FILE__, __LINE__, PEAR_LOG_NOTICE);
 //     }
 // }

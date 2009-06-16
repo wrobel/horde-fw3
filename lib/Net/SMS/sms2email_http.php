@@ -1,1 +1,0 @@
-../../../framework/Net_SMS/SMS/sms2email_http.php

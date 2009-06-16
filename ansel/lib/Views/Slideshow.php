@@ -2,7 +2,7 @@
 /**
  * The Ansel_View_Slideshow:: class wraps display of the gallery slideshow.
  *
- * $Horde: ansel/lib/Views/Slideshow.php,v 1.10.2.3 2009/03/19 15:49:37 mrubinsk Exp $
+ * $Horde: ansel/lib/Views/Slideshow.php,v 1.10.2.4 2009/06/16 00:38:23 mrubinsk Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Michael J. Rubinsky <mrubinsk@horde.org>
@@ -175,6 +175,11 @@ class Ansel_View_Slideshow extends Ansel_View_Abstract {
 
         ob_start();
         require ANSEL_TEMPLATES . '/view/slideshow.inc';
+    function viewType()
+    {
+        return 'Slideshow';
+    }
+
         return ob_get_clean();
     }
 

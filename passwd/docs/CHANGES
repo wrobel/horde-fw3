@@ -2,6 +2,7 @@
 v3.1.1-cvs
 ----------
 
+[jan] Add hook that's called after successfully changing the password.
 [jan] Add SOAP driver.
 [jan] Add example configuration for Postfix Admin (Michael Brennen
       <michael@fishnet.us>).

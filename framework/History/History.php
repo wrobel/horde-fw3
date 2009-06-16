@@ -3,7 +3,7 @@
  * The History:: class provides a method of tracking changes in Horde
  * objects, stored in a SQL table.
  *
- * $Horde: framework/History/History.php,v 1.28.2.22 2009/01/12 10:57:35 jan Exp $
+ * $Horde: framework/History/History.php,v 1.28.2.23 2009/06/16 12:58:33 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -318,7 +318,7 @@ class Horde_History {
             }
         }
 
-        return $last;
+        return (int)$last;
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/compose.php,v 2.800.2.124 2009/04/13 20:45:39 slusarz Exp $
+ * $Horde: imp/compose.php,v 2.800.2.125 2009/06/15 22:57:25 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -435,7 +435,7 @@ case 'send_message':
         'save_attachments' => Util::getFormData('save_attachments_select'),
         'reply_type' => Util::getFormData('reply_type'),
         'reply_index' => (empty($reply_index) ? null : $reply_index . IMP_IDX_SEP . $thismailbox),
-        'encrypt' => Util::getFormData('encrypt_options'),
+        'encrypt' => $prefs->isLocked('default_encrypt') ? $prefs->getValue('default_encrypt') : Util::getFormData('encrypt_options'),
         'priority' => Util::getFormData('x_priority'),
         'readreceipt' => Util::getFormData('request_read_receipt')
     );
@@ -716,9 +716,10 @@ if ($pgp_passphrase_dialog || $pgp_symmetric_passphrase_dialog) {
 
 /* If PGP encryption is set by default, and we have a recipient list on first
  * load, make sure we have public keys for all recipients. */
-$encrypt_options = Util::getFormData('encrypt_options');
-$use_pgp = $prefs->getValue('use_pgp');
-if ($use_pgp) {
+$encrypt_options = $prefs->isLocked('default_encrypt')
+      ? $prefs->getValue('default_encrypt')
+      : Util::getFormData('encrypt_options');
+if ($prefs->getValue('use_pgp') && !$prefs->isLocked('default_encrypt')) {
     $default_encrypt = $prefs->getValue('default_encrypt');
     if (!$reloaded &&
         in_array($default_encrypt, array(IMP_PGP_ENCRYPT, IMP_PGP_SIGNENC))) {
@@ -1146,9 +1147,13 @@ if ($redirect) {
 
     $t->set('use_encrypt', ($prefs->getValue('use_pgp') || $prefs->getValue('use_smime')));
     if ($t->get('use_encrypt')) {
-        $t->set('encrypt_label', Horde::label('encrypt_options', _("Encr_yption Options")));
-        $t->set('encrypt_options', IMP::encryptList($encrypt_options));
-        $t->set('help-encrypt', Help::link('imp', 'compose-options-encrypt'));
+        if ($prefs->isLocked('default_encrypt')) {
+            $t->set('use_encrypt', false);
+        } else {
+            $t->set('encrypt_label', Horde::label('encrypt_options', _("Encr_yption Options")));
+            $t->set('encrypt_options', IMP::encryptList($encrypt_options));
+            $t->set('help-encrypt', Help::link('imp', 'compose-options-encrypt'));
+        }
         $t->set('pgp_options', ($prefs->getValue('use_pgp') && $prefs->getValue('pgp_public_key')));
         if ($t->get('pgp_options')) {
             $t->set('pgp_attach_pubkey', Util::getFormData('pgp_attach_pubkey', $prefs->getValue('pgp_attach_pubkey')));

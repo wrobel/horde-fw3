@@ -1,12 +1,17 @@
-------
-v3.3.5
-------
+----------
+v3.3.5-cvs
+----------
 
 [mms] SECURITY: Don't display unknown text parts inline (Bug #8311).
+[cjh] Use streams for file transfers in VFS_ssh2 (jives@jives.ixum.net,
+      Request #8323).
+[jan] Send notification messages about new signups with confirmation links.
 [jan] Drop signup_email column from sign-up table.
 [jan] Show photo in vCard viewer if provided as inline vCard data.
 [mjr] Fix issue where pref hooks would not be called for preferences marked as
       shared and defined outside of the Horde scope.
+[jan] Add configuration whether to show user drop down list or text field in
+      permissions dialog.
 [jan] Export current locale to the environment.
 [jan] Fix unfolding of vCard 2.1/vCalendar 1.0 data.
 
@@ -18,7 +23,6 @@ v3.3.4
 [jan] Fix rendering of addresslink form fields (Bug #8053).
 [mjr] Fix a botched merge in Horde_Image_gd that was causing an undefined
       variable notice to be output in the image data.
-
 
 
 ----------

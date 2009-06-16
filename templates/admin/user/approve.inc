@@ -13,8 +13,8 @@
  <tr>
   <th>&nbsp;</th>
   <th>&nbsp;</th>
-  <th><?php echo _("Username") ?></th>
-  <th width="100%"><?php echo _("Date Received") ?></th>
+  <th class="leftAlign"><?php echo _("Username") ?></th>
+  <th class="leftAlign"><?php echo _("Date Received") ?></th>
  </tr>
 </thead>
 <tbody>

@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ansel/lib/Ansel.php,v 1.517.2.49 2009/05/15 19:55:29 mrubinsk Exp $
+ * $Horde: ansel/lib/Ansel.php,v 1.517.2.51 2009/06/15 19:42:32 mrubinsk Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *
@@ -3837,6 +3837,24 @@ class Ansel_Storage {
         } else {
             return $results->fetchCol();
         }
+    }
+
+    function getImagesGeodata($image_ids)
+    {
+        if (!is_array($image_ids) || count($image_ids) == 0) {
+            return array();
+        }
+
+        $sql = 'SELECT image_id, image_latitude, image_longitude FROM ansel_images_geolocation WHERE image_id IN('
+            .   implode(',', $image_ids) . ');';
+
+        $results = $this->_db->query($sql);
+        if (is_a($results, 'PEAR_Error')) {
+            var_dump($results);
+        }
+        $geodata = $results->fetchAll(MDB2_FETCHMODE_ASSOC, true, true, false);
+
+        return $geodata;
     }
 
 }

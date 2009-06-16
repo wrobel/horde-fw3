@@ -1,1 +1,0 @@
-../../framework/SpellChecker/SpellChecker.php

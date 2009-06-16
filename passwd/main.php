@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: passwd/main.php,v 1.67.2.8 2009/01/06 15:25:15 jan Exp $
+ * $Horde: passwd/main.php,v 1.67.2.9 2009/06/12 08:43:47 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -213,6 +213,11 @@ do {
 
         $notification->push(sprintf(_("Password changed on %s."),
                                     $backends[$backend_key]['name']), 'horde.success');
+
+        Horde::callHook('_passwd_password_changed',
+                        array($backend_userid, $old_password, $new_password0),
+                        'passwd');
+
         $return_to = Util::getFormData('return_to');
         if (!empty($return_to)) {
             header('Location: ' . $return_to);

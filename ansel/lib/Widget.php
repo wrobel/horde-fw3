@@ -3,7 +3,7 @@
  * Ansel_Widget:: class wraps the display of widgets to be displayed in various
  * Ansel_Views.
  *
- * $Horde: ansel/lib/Widget.php,v 1.7.2.1 2009/01/06 15:22:28 jan Exp $
+ * $Horde: ansel/lib/Widget.php,v 1.7.2.2 2009/06/15 17:16:48 mrubinsk Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -83,7 +83,7 @@ class Ansel_Widget {
      */
     function Ansel_Widget($params)
     {
-        $this->_params = $params;
+        $this->_params = array_merge($params, $this->_params);
         if (!empty($params['render'])) {
             $this->_render = $params['render'];
         }

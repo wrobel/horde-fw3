@@ -8,7 +8,7 @@ require_once 'Horde/Form/Renderer.php';
  * new users sign themselves up into the horde installation, depending
  * on how the admin has configured Horde.
  *
- * $Horde: framework/Auth/Auth/Signup.php,v 1.38.2.19 2009/04/07 12:11:26 jan Exp $
+ * $Horde: framework/Auth/Auth/Signup.php,v 1.38.2.21 2009/06/15 16:01:22 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -117,7 +117,80 @@ class Auth_Signup {
      *
      * @return mixed  PEAR_Error if any errors, otherwise true.
      */
-    function &queueSignup(&$info)
+    function queueSignup(&$info)
+    {
+        global $auth, $conf;
+
+        // Perform any preprocessing if requested.
+        if ($conf['signup']['preprocess']) {
+            $info = Horde::callHook('_horde_hook_signup_preprocess',
+                                    array($info));
+            if (is_a($info, 'PEAR_Error')) {
+                return $info;
+            }
+        }
+
+        // Check to see if the username already exists.
+        if ($auth->exists($info['user_name']) ||
+            $this->exists($info['user_name'])) {
+            return PEAR::raiseError(sprintf(_("Username \"%s\" already exists."), $info['user_name']));
+        }
+
+        // If it's a unique username, go ahead and queue the request.
+        $signup = $this->newSignup($info['user_name']);
+        if (!empty($info['extra'])) {
+            $signup->data = array_merge($info['extra'],
+                                        array('password' => $info['password'],
+                                              'dateReceived' => time()));
+        } else {
+            $signup->data = array('password' => $info['password'],
+                                  'dateReceived' => time());
+        }
+
+        $result = $this->_queueSignup($signup);
+        if (is_a($result, 'PEAR_Error')) {
+            return $result;
+        }
+
+        if ($conf['signup']['queue']) {
+            $result = Horde::callHook('_horde_hook_signup_queued',
+                                      array($info['user_name'], $info));
+        }
+
+        if (!empty($conf['signup']['email'])) {
+            require_once 'Horde/MIME/Mail.php';
+            $link = Util::addParameter(Horde::url($GLOBALS['registry']->get('webroot', 'horde') . '/admin/signup_confirm.php', true, -1),
+                                       array('u' => $signup->name,
+                                             'h' => Util::hmac($signup->name, $conf['secret_key'])),
+                                       null, false);
+            $message = sprintf(_("A new account for the user \"%s\" has been requested through the signup form."), $signup->name)
+                . "\n\n"
+                . _("Approve the account:")
+                . "\n" . Util::addParameter($link, 'a', 'approve') . "\n"
+                . _("Deny the account:")
+                . "\n" . Util::addParameter($link, 'a', 'deny');
+            $mail = new MIME_Mail(
+                sprintf(_("Account signup request for \"%s\""), $signup->name),
+                $message,
+                $conf['signup']['email'],
+                $conf['signup']['email'],
+                NLS::getCharset());
+            $result = $mail->send($conf['mailer']['type'], $conf['mailer']['params']);
+            if (is_a($result, 'PEAR_Error')) {
+                Horde::logMessage($result, __FILE__, __LINE__, PEAR_LOG_ERR);
+            }
+        }
+    }
+
+    /**
+     * Queues the user's submitted registration info for later admin approval.
+     *
+     * @params mixed $info  Reference to array of parameteres to be passed
+     *                      to hook
+     *
+     * @return mixed  PEAR_Error if any errors, otherwise true.
+     */
+    function &_queueSignup(&$info)
     {
         return PEAR::raiseError('Not implemented');
     }
@@ -161,7 +234,7 @@ class Auth_Signup {
      *
      * @return object  A new signup object.
      */
-    function &newSignup($name)
+    function newSignup($name)
     {
         return PEAR::raiseError('Not implemented');
     }

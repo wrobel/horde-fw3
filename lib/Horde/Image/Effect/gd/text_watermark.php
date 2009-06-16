@@ -1,1 +1,0 @@
-../../../../../framework/Image/Image/Effect/gd/text_watermark.php

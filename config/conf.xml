@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- $Horde: horde/config/conf.xml,v 1.74.2.85 2009/05/13 16:01:07 jan Exp $ -->
+<!-- $Horde: horde/config/conf.xml,v 1.74.2.86 2009/06/15 16:01:22 jan Exp $ -->
 <configuration>
  <configtab name="general" desc="General">
   <configheader>General Horde Settings</configheader>
@@ -703,26 +703,31 @@
    <configswitch name="allow" desc="Allow non-registered users to register and
    provide a link on the login screen?">false
     <case name="true" desc="Yes">
-     <configswitch name="driver" desc="What signup driver should we use?">session
+     <configswitch name="driver" desc="What signup driver should we
+     use?">session
       <case name="sql" desc="SQL Database">
        <configsection name="params">
         <configsql switchname="driverconfig">
-         <configstring name="table" required="false" desc="The name of the signup table in the database [horde_signups]"/>
+         <configstring name="table" required="false" desc="The name of the
+         signup table in the database [horde_signups]"/>
         </configsql>
        </configsection>
       </case>
       <case name="datatree" desc="DataTree" />
      </configswitch>
+     <configstring name="email" desc="Specify an email address, if a message
+     should be send to notify about new signups, including links for approving
+     and denying." required="false"/>
      <configboolean name="approve" desc="Admin has to approve any user
      submitted registration requests? (WARNING: Setting to false would mean
      that every user who signs up would have automatic access to your horde
-     system.)">true</configboolean>
+     system.)" required="false">true</configboolean>
      <configboolean name="preprocess" desc="Pass the user submitted information
      through the _horde_hook_signup_preprocess function in hooks.php before
-     processing the request?">false</configboolean>
+     processing the request?" required="false">false</configboolean>
      <configboolean name="queue" desc="Pass the user submitted information
      through the _horde_hook_signup_queue function in hooks.php after
-     processing the request but before actually queueing it?">
+     processing the request but before actually queueing it?" required="false">
      false</configboolean>
     </case>
     <case name="false" desc="No" />

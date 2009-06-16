@@ -2,12 +2,14 @@
 /**
  * Ansel_Widget_Actions:: class to wrap the display of gallery actions
  *
- * $Horde: ansel/lib/Widget/Actions.php,v 1.26.2.23 2009/04/14 21:35:03 jan Exp $
+ * $Horde: ansel/lib/Widget/Actions.php,v 1.26.2.24 2009/06/15 17:16:49 mrubinsk Exp $
  *
  * @author Michael J. Rubinsky <mrubinsk@horde.org>
  * @package Ansel
  */
 class Ansel_Widget_Actions extends Ansel_Widget {
+
+    var $_supported_views = array('Gallery');
 
     function Ansel_Widget_Actions($params)
     {

@@ -1,1 +1,0 @@
-../../../framework/Image/Image/gd.php

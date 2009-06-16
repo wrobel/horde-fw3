@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- $Horde: imp/config/conf.xml,v 1.53.2.40 2009/02/05 21:05:39 slusarz Exp $ -->
+<!-- $Horde: imp/config/conf.xml,v 1.53.2.41 2009/06/13 17:19:18 jan Exp $ -->
 <configuration>
  <configtab name="utils" desc="External Utilities and Menu">
   <configsection name="spell">
@@ -416,7 +416,7 @@
    hooks.php.dist.">false</configboolean>
    <configboolean name="signature" required="false" desc="Should we use a
    custom signature hook? If so, make sure you define _imp_hook_signature() in
-   hooks.php. The hook will be used to set $_SESSION['imp']['user'] when
+   hooks.php. The hook will be used to dyncamically set the signature when
    composing a message. There is an example in
    hooks.php.dist.">false</configboolean>
    <configboolean name="trailer" required="false" desc="Should we use a custom

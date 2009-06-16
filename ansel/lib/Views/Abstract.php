@@ -2,7 +2,7 @@
 /**
  * The Ansel_View_Abstract:: Parent class for the various Ansel_View classes
  *
- * $Horde: ansel/lib/Views/Abstract.php,v 1.35.2.4 2008/12/31 19:46:47 mrubinsk Exp $
+ * $Horde: ansel/lib/Views/Abstract.php,v 1.35.2.5 2009/06/16 00:38:23 mrubinsk Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Michael J. Rubinsky <mrubinsk@horde.org>
@@ -176,6 +176,14 @@ class Ansel_View_Abstract {
 
         require_once 'Horde/Serialize.php';
         return Horde_Serialize::serialize($json, SERIALIZE_JSON, NLS::getCharset());
+    }
+
+    /**
+     * @abstract
+     * @return unknown_type
+     */
+    function viewType()
+    {
     }
 
 }

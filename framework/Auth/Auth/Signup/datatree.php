@@ -7,7 +7,7 @@ require_once 'Horde/DataTree.php';
  * new users sign themselves up into the horde installation, depending
  * on how the admin has configured Horde.
  *
- * $Horde: framework/Auth/Auth/Signup/datatree.php,v 1.1.2.2 2009/01/06 15:22:52 jan Exp $
+ * $Horde: framework/Auth/Auth/Signup/datatree.php,v 1.1.2.3 2009/06/15 15:01:00 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -41,51 +41,12 @@ class Auth_Signup_datatree extends Auth_Signup {
     }
 
     /**
-     * Queues the user's submitted registration info for later admin approval.
+     * Stores the signup data in the backend.
      *
-     * @params mixed $info  Reference to array of parameteres to be passed
-     *                      to hook
-     *
-     * @return mixed  PEAR_Error if any errors, otherwise true.
+     * @params DataTreeObject_Signup $signup  Signup data.
      */
-    function &queueSignup(&$info)
+    function _queueSignup($signup)
     {
-        global $auth,$conf;
-
-        // Perform any preprocessing if requested.
-        if ($conf['signup']['preprocess']) {
-            $info = Horde::callHook('_horde_hook_signup_preprocess',
-                                    array($info));
-            if (is_a($info, 'PEAR_Error')) {
-                return $info;
-            }
-        }
-
-        // Check to see if the username already exists.
-        if ($auth->exists($info['user_name']) ||
-            $this->_datatree->exists($info['user_name'])) {
-            return PEAR::raiseError(sprintf(_("Username \"%s\" already exists."), $info['user_name']));
-        }
-
-        // If it's a unique username, go ahead and queue the request.
-        $signup = $this->newSignup($info['user_name']);
-        if (!empty($info['extra'])) {
-            $signup->data = array_merge($info['extra'],
-                                        array('password' => $info['password'],
-                                              'dateReceived' => time()));
-        } else {
-            $signup->data = array('password' => $info['password'],
-                                  'dateReceived' => time());
-        }
-
-        if ($conf['signup']['queue']) {
-            $result = Horde::callHook('_horde_hook_signup_queued',
-                                      array($info['user_name'], $info));
-            if (is_a($result, 'PEAR_Error')) {
-                return $result;
-            }
-        }
-
         return $this->_datatree->add($signup);
     }
 
@@ -136,13 +97,12 @@ class Auth_Signup_datatree extends Auth_Signup {
      *
      * @return DataTreeObject_Signup  A new signup object.
      */
-    function &newSignup($name)
+    function newSignup($name)
     {
         if (empty($name)) {
             return PEAR::raiseError('Signup names must be non-empty');
         }
-        $signup = &new DataTreeObject_Signup($name);
-        return $signup;
+        return new DataTreeObject_Signup($name);
     }
 
 }

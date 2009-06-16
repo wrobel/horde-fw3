@@ -2,7 +2,7 @@
 /**
  * The Ansel_View_Image:: class wraps display of individual images.
  *
- * $Horde: ansel/lib/Views/Image.php,v 1.68.2.8 2009/02/06 18:29:54 mrubinsk Exp $
+ * $Horde: ansel/lib/Views/Image.php,v 1.68.2.12 2009/06/16 10:10:52 mrubinsk Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @package Ansel
@@ -337,6 +337,7 @@ class Ansel_View_Image extends Ansel_View_Abstract {
             $exifHtml = '';
         }
 
+        //@TODO: Refactor styles to allow dynamic inclusion/exclusion of widgets.
         /* Buffer the template file and return the html */
         ob_start();
 
@@ -346,20 +347,22 @@ class Ansel_View_Image extends Ansel_View_Abstract {
             require_once ANSEL_BASE . '/lib/Widget.php';
 
             // Tag widget
-            $tagwidget = Ansel_Widget::factory('Tags', array('view' => 'image'));
-            $this->addWidget($tagwidget);
+            $this->addWidget(Ansel_Widget::factory('Tags', array('view' => 'image')));
+
+           // Geolocation
+           $this->addWidget(Ansel_Widget::factory('Geodata', array('images' => array($this->resource->id))));
 
             // Similar photos
-            $widget = Ansel_Widget::factory('SimilarPhotos');
-            $this->addWidget($widget);
+            $this->addWidget(Ansel_Widget::factory('SimilarPhotos'));
 
             // Faces
             if ($conf['faces']['driver']) {
-                $widget = Ansel_Widget::factory('ImageFaces', array('selfUrl' => $selfUrl));
-                $this->addWidget($widget);
+                $this->addWidget(Ansel_Widget::factory('ImageFaces', array('selfUrl' => $selfUrl)));
             }
 
+            // Links
             $this->addWidget(Ansel_Widget::factory('Links', array()));
+
             /* In line caption editing */
             if ($this->gallery->hasPermission(Auth::getAuth(), PERMS_EDIT)) {
                 require_once ANSEL_BASE . '/lib/XRequest.php';
@@ -405,7 +408,13 @@ class Ansel_View_Image extends Ansel_View_Abstract {
             }
             $html .= '</table>';
         }
+
         return $html;
+    }
+
+    function viewType()
+    {
+        return 'Image';
     }
 
 }

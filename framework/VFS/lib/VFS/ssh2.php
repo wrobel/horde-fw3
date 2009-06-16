@@ -12,7 +12,7 @@
  *      'port'           The port used to connect to the ssh2 server if other
  *                       than 22.</pre>
  *
- * $Horde: framework/VFS/lib/VFS/ssh2.php,v 1.1.2.12 2009/01/06 15:23:47 jan Exp $
+ * $Horde: framework/VFS/lib/VFS/ssh2.php,v 1.1.2.13 2009/06/15 14:22:32 chuck Exp $
  *
  * Copyright 2006-2009 The Horde Project (http://www.horde.org/)
  *
@@ -153,7 +153,7 @@ class VFS_ssh2 extends VFS {
         }
         register_shutdown_function(create_function('', 'unlink(\'' . addslashes($localFile) . '\');'));
 
-        if (!@ssh2_scp_recv($this->_stream, escapeshellarg($this->_getPath($path, $name)), $localFile)) {
+        if (!$this->_recv($this->_getPath($path, $name), $localFile)) {
             return PEAR::raiseError(sprintf(_("Unable to open VFS file \"%s\"."), $this->_getPath($path, $name)));
         }
 
@@ -202,13 +202,13 @@ class VFS_ssh2 extends VFS {
             return $res;
         }
 
-        if (!@ssh2_scp_send($this->_stream, $tmpFile, escapeshellarg($this->_getPath($path, $name)))) {
+        if (!$this->_send($tmpFile, $this->_getPath($path, $name)))  {
             if ($autocreate) {
                 $result = $this->autocreatePath($path);
                 if (is_a($result, 'PEAR_Error')) {
                     return $result;
                 }
-                if (!@ssh2_scp_send($this->_stream, $tmpFile, escapeshellarg($this->_getPath($path, $name)))) {
+                if (!$this->_send($tmpFile, $this->_getPath($path, $name))) {
                     return PEAR::raiseError(sprintf(_("Unable to write VFS file \"%s\"."), $this->_getPath($path, $name)));
                 }
             } else {
@@ -758,13 +758,13 @@ class VFS_ssh2 extends VFS {
             }
         } else {
             $tmpFile = $this->_getTempFile();
-            $fetch = @ssh2_scp_recv($this->_stream, escapeshellarg($orig), $tmpFile);
+            $fetch = $this->_recv($orig, $tmpFile);
             if (!$fetch) {
                 unlink($tmpFile);
                 return PEAR::raiseError(sprintf(_("Failed to copy from \"%s\"."), $orig));
             }
 
-            if (!@ssh2_scp_send($this->_stream, $tmpFile, escapeshellarg($this->_getPath($dest, $name)))) {
+            if (!$this->_send($tmpFile, $this->_getPath($dest, $name))) {
                 unlink($tmpFile);
                 return PEAR::raiseError(sprintf(_("Failed to copy to \"%s\"."), $this->_getPath($dest, $name)));
             }
@@ -948,6 +948,53 @@ class VFS_ssh2 extends VFS {
         }
 
         return true;
+    }
+
+    /**
+     * Sends local file to remote host.
+     * This function exists because the php_scp_* functions doesn't seem to work on some hosts.
+     *
+     * @access private
+     *
+     * @param string $local   Full path to the local file.
+     * @param string $remote  Full path to the remote location.
+     *
+     * @return boolean TRUE on success, FALSE on failure.
+     */
+    function _send($local, $remote)
+    {
+        return copy($local, $this->_wrap($remote));
+    }
+
+    /**
+     * Receives file from remote host.
+     * This function exists because the php_scp_* functions doesn't seem to work on some hosts.
+     *
+     * @access private
+     *
+     * @param string $local  Full path to the local file.
+     * @param string $remote Full path to the remote location.
+     *
+     * @return boolean TRUE on success, FALSE on failure.
+     */
+    function _recv($remote, $local)
+    {
+        return copy($this->_wrap($remote), $local);
+    }
+
+    /**
+     * Generate a stream wrapper file spec for a remote file path
+     *
+     * @access private
+     *
+     * @param string $remote  Full path to the remote location
+     *
+     * @return string  A full stream wrapper path to the remote location
+     */
+    function _wrap($remote)
+    {
+        return 'ssh2.sftp://' . $this->_params['username'] . ':' . $this->_params['password']
+            . '@' . $this->_params['hostspec'] . ':' . $this->_params['port'] . $remote;
     }
 
 }

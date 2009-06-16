@@ -5,7 +5,7 @@
  * Works equally well with either the built in php exif functions (if PHP
  * compiled with exif support) or the (slower) bundled exif library.
  *
- * $Horde: ansel/lib/Exif.php,v 1.41.2.8 2009/01/06 15:22:28 jan Exp $
+ * $Horde: ansel/lib/Exif.php,v 1.41.2.9 2009/06/15 17:12:48 mrubinsk Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -96,7 +96,10 @@ class Ansel_ImageData {
                 }
 
                 if ($data['type'] == 'gps') {
-                    $value = Ansel_ImageData::_parseGPSData($exif[$field]) . !empty($exif[$field . 'Ref']) ? $exif[$field . 'Ref'] : '';
+                    $value = Ansel_ImageData::_parseGPSData($exif[$field]); // . (!empty($exif[$field . 'Ref']) ? $exif[$field . 'Ref'] : '');
+                    if (!empty($exif[$field . 'Ref']) && ($exif[$field . 'Ref'] == 'S' || $exif[$field . 'Ref'] == 'W')) {
+                        $value = '-' . $value;
+                    }
                 }
                 // If the field is a date field, convert the value to a
                 // timestamp.

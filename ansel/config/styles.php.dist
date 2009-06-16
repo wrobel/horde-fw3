@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ansel/config/styles.php.dist,v 1.6.2.1 2009/02/10 01:23:27 mrubinsk Exp $
+ * $Horde: ansel/config/styles.php.dist,v 1.6.2.2 2009/06/15 17:16:48 mrubinsk Exp $
  *
  * Configuration for the available gallery style
  *
@@ -48,6 +48,7 @@
 $widgets = array('Actions' => array(),
                  'Tags' => array('view' => 'gallery'),
                  'OtherGalleries' => array(),
+                 'Geodata' => array(),
                  'Links' => array(),
                  'GalleryFaces' => array(),
                  'OwnerFaces' => array());

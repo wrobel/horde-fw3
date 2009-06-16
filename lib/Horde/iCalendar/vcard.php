@@ -1,1 +1,0 @@
-../../../framework/iCalendar/iCalendar/vcard.php

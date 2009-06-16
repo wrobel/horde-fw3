@@ -2,7 +2,7 @@
 /**
  * Ansel_View_GalleryRenderer::  Base class for all gallery renderers.
  *
- * $Horde: ansel/lib/Views/GalleryRenderer.php,v 1.4.2.5 2009/01/06 15:22:30 jan Exp $
+ * $Horde: ansel/lib/Views/GalleryRenderer.php,v 1.4.2.6 2009/06/15 17:16:48 mrubinsk Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -156,14 +156,23 @@ class Ansel_View_GalleryRenderer {
                     (($conf['report_content']['allow'] == 'authenticated' && Auth::isAuthenticated()) ||
                      $conf['report_content']['allow'] == 'all')) {
 
-                    $actionWidget = Ansel_Widget::factory('Actions');
-                    $this->view->addWidget($actionWidget);
+                    $this->view->addWidget(Ansel_Widget::factory('Actions'));
                 }
                 unset($this->style['widgets']['Actions']);
             }
+
+            // I *think* this is more efficient, iterate over the children
+            // since we already have them instead of calling listImages.
+            //$image_ids = $this->view->gallery->listImages($this->pagestart, $this->pagestart + $this->perpage);
+            $ids = array();
+            foreach ($this->children as $child) {
+                $ids[] = $child->id;
+            }
+            // Gallery widgets always receive an array of image ids for
+            // the current page.
             foreach ($this->style['widgets'] as $wname => $wparams) {
-                $widget = Ansel_Widget::factory($wname, $wparams);
-                $this->view->addWidget($widget);
+                $wparams = array_merge($wparams, array('images' => $ids));
+                $this->view->addWidget(Ansel_Widget::factory($wname, $wparams));
             }
         }
 
@@ -207,6 +216,5 @@ class Ansel_View_GalleryRenderer {
 
         return $this->_html();
     }
-
 
 }

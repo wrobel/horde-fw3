@@ -2,6 +2,8 @@
 v1.0.1-cvs
 ----------
 
+[mjr] Display a Google Map with markers for image location(s) if location data
+      is available.
 [mjr] Add configuration switch to disallow querying the preference backend for
       other user's identities and preferences (Bug: 8269).
 [mjr] Remove broken implementation of the 'numlimit' configuration option

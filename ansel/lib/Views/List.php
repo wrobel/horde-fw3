@@ -2,7 +2,7 @@
 /**
  * @package Ansel
  *
- * $Horde: ansel/lib/Views/List.php,v 1.33.2.3 2009/05/15 19:55:29 mrubinsk Exp $
+ * $Horde: ansel/lib/Views/List.php,v 1.33.2.4 2009/06/16 10:10:52 mrubinsk Exp $
  */
 
 /** Ansel_View_Abstract */
@@ -277,6 +277,11 @@ class Ansel_View_List extends Ansel_View_Abstract {
             return $html;
         }
         return '';
+    }
+
+    function viewType()
+    {
+        return 'List';
     }
 
 }

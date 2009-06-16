@@ -7,7 +7,7 @@
  * @author Michael J. Rubinsky (mrubinsk@horde.org)
  * @package Ansel
  *
- * $Horde: ansel/lib/Views/Results.php,v 1.34.2.1 2009/01/06 15:22:30 jan Exp $
+ * $Horde: ansel/lib/Views/Results.php,v 1.34.2.2 2009/06/16 00:38:23 mrubinsk Exp $
  */
 
 /** Ansel_View_Abstract */
@@ -313,6 +313,11 @@ class Ansel_View_Results extends Ansel_View_Abstract {
         ob_start();
         include ANSEL_TEMPLATES . '/view/results.inc';
         return ob_get_clean();
+    }
+
+    function viewType()
+    {
+        return 'Results';
     }
 
 }

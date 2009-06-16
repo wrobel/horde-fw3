@@ -7,7 +7,7 @@ require_once 'MDB2.php';
  * new users sign themselves up into the horde installation, depending
  * on how the admin has configured Horde.
  *
- * $Horde: framework/Auth/Auth/Signup/sql.php,v 1.3.2.3 2009/06/10 16:45:27 jan Exp $
+ * $Horde: framework/Auth/Auth/Signup/sql.php,v 1.3.2.5 2009/06/15 15:23:29 jan Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -50,71 +50,31 @@ class Auth_Signup_sql extends Auth_Signup {
     }
 
     /**
-     * Queues the user's submitted registration info for later admin approval.
+     * Stores the signup data in the backend.
      *
-     * @params mixed $info  Reference to array of parameteres to be passed
-     *                      to hook
-     *
-     * @return mixed  PEAR_Error if any errors, otherwise true.
+     * @params SQLObject_Signup $signup  Signup data.
      */
-    function &queueSignup(&$info)
+    function _queueSignup($signup)
     {
-        global $auth, $conf;
-
-        // Perform any preprocessing if requested.
-        if ($conf['signup']['preprocess']) {
-            $info = Horde::callHook('_horde_hook_signup_preprocess',
-                                    array($info));
-            if (is_a($info, 'PEAR_Error')) {
-                return $info;
-            }
-        }
-
-        // Check to see if the username already exists.
-        if ($auth->exists($info['user_name']) ||
-            $this->exists($info['user_name'])) {
-            return PEAR::raiseError(sprintf(_("Username \"%s\" already exists."), $info['user_name']));
-        }
-
-        // If it's a unique username, go ahead and queue the request.
-        $signup = $this->newSignup($info['user_name']);
-        if (!empty($info['extra'])) {
-            $signup->data = array_merge($info['extra'],
-                                        array('password' => $info['password'],
-                                              'dateReceived' => time()));
-        } else {
-            $signup->data = array('password' => $info['password'],
-                                  'dateReceived' => time());
-        }
-
-        if ($conf['signup']['queue']) {
-            $result = Horde::callHook('_horde_hook_signup_queued',
-                                      array($info['user_name'], $info));
-            if (is_a($result, 'PEAR_Error')) {
-                return $result;
-            }
-        }
-
         $query = 'INSERT INTO ' . $this->_params['table']
             . ' (user_name, signup_date, signup_host, signup_data) VALUES (?, ?, ?, ?) ';
-        $params = array($info['user_name'],
+        $values = array($signup->name,
                         time(),
                         $_SERVER['REMOTE_ADDR'],
                         serialize($signup->data));
-
+        Horde::logMessage('SQL query by Auth_Signup_sql::_queueSignup(): ' . $query,
+                          __FILE__, __LINE__, PEAR_LOG_DEBUG);
         $stmt = $this->_write_db->prepare($query, null, MDB2_PREPARE_MANIP);
         if (is_a($stmt, 'PEAR_Error')) {
             Horde::logMessage($stmt, __FILE__, __LINE__, PEAR_LOG_ERR);
             return $stmt;
         }
-        $result = $stmt->execute($params);
+        $result = $stmt->execute($values);
         if (is_a($result, 'PEAR_Error')) {
             Horde::logMessage($result, __FILE__, __LINE__, PEAR_LOG_ERR);
             return $result;
         }
         $stmt->free();
-
-        return $signup;
     }
 
     /**
@@ -240,13 +200,12 @@ class Auth_Signup_sql extends Auth_Signup {
      *
      * @return SQLObject_Signup  A new signup object.
      */
-    function &newSignup($name)
+    function newSignup($name)
     {
         if (empty($name)) {
             return PEAR::raiseError('Signup names must be non-empty');
         }
-        $signup = &new SQLObject_Signup($name);
-        return $signup;
+        return new SQLObject_Signup($name);
     }
 
     /**

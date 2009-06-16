@@ -1,1 +1,0 @@
-../../../framework/Image/Image/rgb.php

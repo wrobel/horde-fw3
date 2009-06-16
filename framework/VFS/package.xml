@@ -49,6 +49,7 @@ Reading, writing and listing of files are all supported, and there are both obje
 * Add readStream() support to backends that can get a stream resource efficiently
 * Add delete() as a shorter name for deleteFile()
 * Add a Kolab VFS driver.
+* Use streams for file transfers in VFS_ssh2 (jives@jives.ixum.net, Request #8323)
 </notes>
  <contents>
   <dir name="/">

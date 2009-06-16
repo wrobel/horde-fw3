@@ -2,13 +2,18 @@
 /**
  * Kronolith external API interface.
  *
- * $Horde: kronolith/lib/api.php,v 1.126.2.61 2009/06/11 03:52:49 chuck Exp $
+ * $Horde: kronolith/lib/api.php,v 1.126.2.62 2009/06/16 12:54:48 jan Exp $
  *
  * This file defines Kronolith's external API interface. Other applications
  * can interact with Kronolith through this API.
  *
  * @package Kronolith
  */
+
+$_services['show'] = array(
+    'link' => '%application%/event.php?calendar=|calendar|' .
+              '&eventID=|event|&uid=|uid|'
+);
 
 $_services['perms'] = array(
     'args' => array(),
@@ -24,9 +29,9 @@ $_services['shareHelp'] = array(
     'args' => array(),
     'type' => 'string');
 
-$_services['show'] = array(
-    'link' => '%application%/event.php?calendar=|calendar|' .
-              '&eventID=|event|&uid=|uid|'
+$_services['modified'] = array(
+    'args' => array('uid' => 'string'),
+    'type' => 'int',
 );
 
 $_services['browse'] = array(
@@ -222,7 +227,7 @@ function _kronolith_shareHelp()
  *
  * @return integer  The timestamp for the last modification of $uid.
  */
-function __kronolith_modified($uid)
+function _kronolith_modified($uid)
 {
     $modified = _kronolith_getActionTimestamp($uid, 'modify');
     if (empty($modified)) {
@@ -390,7 +395,7 @@ function _kronolith_browse($path = '', $properties = array())
                 $results[$key]['contentlength'] = 1;
             }
             if (in_array('modified', $properties)) {
-                $results[$key]['modified'] = __kronolith_modified($uid);
+                $results[$key]['modified'] = _kronolith_modified($uid);
             }
             if (in_array('created', $properties)) {
                 $results[$key]['created'] = _kronolith_getActionTimestamp($uid, 'add');
@@ -420,7 +425,7 @@ function _kronolith_browse($path = '', $properties = array())
             $result = array(
                 'data' => _kronolith_export($event->getUID(), 'text/calendar'),
                 'mimetype' => 'text/calendar');
-            $modified = __kronolith_modified($event->getUID());
+            $modified = _kronolith_modified($event->getUID());
             if (!empty($modified)) {
                 $result['mtime'] = $modified;
             }

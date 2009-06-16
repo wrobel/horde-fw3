@@ -128,7 +128,7 @@ define('IMP_IDX_SEP', "\1");
 /**
  * IMP Base Class.
  *
- * $Horde: imp/lib/IMP.php,v 1.449.4.125 2009/04/07 04:56:37 slusarz Exp $
+ * $Horde: imp/lib/IMP.php,v 1.449.4.126 2009/06/15 22:57:26 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -1435,11 +1435,13 @@ class IMP {
      *
      * @since IMP 4.2
      *
-     * @param string $default  The default encrypt option.
+     * @param string $default      The default encrypt option.
+     * @param boolean $returnList  Whether to return a hash with options
+     *                             instead of the options tag.
      *
      * @return string  The list of option tags.
      */
-    function encryptList($default = null)
+    function encryptList($default = null, $returnList = false)
     {
         if (empty($default)) {
             $default = $GLOBALS['prefs']->getValue('default_encrypt');
@@ -1460,6 +1462,10 @@ class IMP {
             $enc_options[IMP_SMIME_ENCRYPT] = _("S/MIME Encrypt Message");
             $enc_options[IMP_SMIME_SIGN] = _("S/MIME Sign Message");
             $enc_options[IMP_SMIME_SIGNENC] = _("S/MIME Sign/Encrypt Message");
+        }
+
+        if ($returnList) {
+            return $enc_options;
         }
 
         $output = '';

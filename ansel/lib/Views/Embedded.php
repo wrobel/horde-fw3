@@ -7,7 +7,7 @@
  * EmbeddedRenderers/*.php files which are called from the XRequest_Embedded
  * class when it handles the request.
  *
- * $Horde: ansel/lib/Views/Embedded.php,v 1.12.2.2 2009/01/06 15:22:30 jan Exp $
+ * $Horde: ansel/lib/Views/Embedded.php,v 1.12.2.3 2009/06/16 00:38:23 mrubinsk Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -124,4 +124,8 @@ class Ansel_View_Embedded {
         return $html;
     }
 
+    function viewType()
+    {
+        return 'Embedded';
+    }
 }

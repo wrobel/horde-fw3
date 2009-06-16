@@ -2,7 +2,7 @@
 /**
  * @package Ansel
  *
- * $Horde: ansel/lib/Views/Gallery.php,v 1.119.2.5 2009/01/27 15:57:19 mrubinsk Exp $
+ * $Horde: ansel/lib/Views/Gallery.php,v 1.119.2.7 2009/06/16 10:10:51 mrubinsk Exp $
  */
 
 /** Ansel_View_Abstract */
@@ -202,8 +202,12 @@ class Ansel_View_Gallery extends Ansel_View_Abstract {
      * Return the HTML representing this view.
      *
      * @return string  The HTML.
-     *
      */
+    function viewType()
+    {
+        return 'Gallery';
+    }
+
     function html()
     {
         return $this->_renderer->html();
