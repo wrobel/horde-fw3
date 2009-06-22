@@ -17,7 +17,7 @@
  *                                      'pass' => Auth::getCredential('password')));
  * </code>
  *
- * $Horde: framework/RPC/RPC.php,v 1.7.10.17 2009/01/06 15:23:32 jan Exp $
+ * $Horde: framework/RPC/RPC.php,v 1.7.10.18 2009/06/16 15:28:04 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -206,10 +206,6 @@ class Horde_RPC {
     function factory($driver, $params = null)
     {
         $driver = basename($driver);
-        if ($driver == 'soap' && class_exists('SoapServer')) {
-            $driver = 'PhpSoap';
-        }
-
         $class = 'Horde_RPC_' . $driver;
         if (!class_exists($class)) {
             include 'Horde/RPC/' . $driver . '.php';

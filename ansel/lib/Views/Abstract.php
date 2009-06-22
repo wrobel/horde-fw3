@@ -2,7 +2,7 @@
 /**
  * The Ansel_View_Abstract:: Parent class for the various Ansel_View classes
  *
- * $Horde: ansel/lib/Views/Abstract.php,v 1.35.2.5 2009/06/16 00:38:23 mrubinsk Exp $
+ * $Horde: ansel/lib/Views/Abstract.php,v 1.35.2.6 2009/06/19 22:45:19 mrubinsk Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Michael J. Rubinsky <mrubinsk@horde.org>
@@ -77,8 +77,10 @@ class Ansel_View_Abstract {
      */
     function addWidget($widget)
     {
-        $widget->attach($this);
-        $this->_widgets[] = $widget;
+        $result = $widget->attach($this);
+        if (!empty($result)) {
+            $this->_widgets[] = $widget;
+        }
     }
 
 

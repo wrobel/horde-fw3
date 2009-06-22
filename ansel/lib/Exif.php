@@ -5,7 +5,7 @@
  * Works equally well with either the built in php exif functions (if PHP
  * compiled with exif support) or the (slower) bundled exif library.
  *
- * $Horde: ansel/lib/Exif.php,v 1.41.2.9 2009/06/15 17:12:48 mrubinsk Exp $
+ * $Horde: ansel/lib/Exif.php,v 1.41.2.10 2009/06/17 16:53:30 mrubinsk Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -466,7 +466,7 @@ class Ansel_ImageData {
         case 'DateTime':
         case 'DateTimeOriginal':
         case 'DateTimeDigitized':
-            return date('m/d/Y h:i:s O', $data);
+            return date('m/d/Y H:i:s O', $data);
 
         default:
             return $data;

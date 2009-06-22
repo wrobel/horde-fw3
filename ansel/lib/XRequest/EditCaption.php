@@ -3,7 +3,7 @@
  * Ansel_XRequest_EditCaption:: class for performing Ajax setting of image
  * captions
  *
- * $Horde: ansel/lib/XRequest/EditCaption.php,v 1.12.2.3 2009/01/17 16:50:29 mrubinsk Exp $
+ * $Horde: ansel/lib/XRequest/EditCaption.php,v 1.12.2.4 2009/06/19 17:03:11 mrubinsk Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -40,6 +40,7 @@ class Ansel_XRequest_EditCaption extends Ansel_XRequest {
                 . "   loadTextURL: '". $url . "?requestType=EditCaption/action=load/id=" . $this->_params['id'] . "',"
                 . "   rows:" . $this->_params['rows'] . ","
                 . "   cols:" . $this->_params['cols'] . ","
+                . "   highlightcolor:'none',"
                 . "   emptyText: '" . _("Click to add caption...") . "',"
                 . "   onComplete: function(transport, element) {tileExit(this);}"
                 . "  });});";

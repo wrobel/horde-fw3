@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: kronolith/config/prefs.php.dist,v 1.66.2.12 2008/07/17 00:21:57 mrubinsk Exp $
+ * $Horde: kronolith/config/prefs.php.dist,v 1.66.2.14 2009/06/19 17:06:22 jan Exp $
  *
  * See horde/config/prefs.php for documentation on the structure of this file.
  */
@@ -13,7 +13,7 @@ $prefGroups['view'] = array(
                        'time_between_days', 'week_start_monday',
                        'day_hour_start', 'day_hour_end', 'day_hour_force',
                        'slots_per_hour', 'show_icons', 'show_time', 'show_location',
-                       'show_legend', 'show_panel', 'show_fb_legend', 'show_shared_side_by_side', 'show_external_colors'),
+                       'show_legend', 'show_fb_legend', 'show_shared_side_by_side', 'show_external_colors'),
 );
 
 $prefGroups['summary'] = array(
@@ -210,8 +210,7 @@ $_prefs['show_panel'] = array(
     'value' => 1,
     'locked' => false,
     'shared' => false,
-    'type' => 'checkbox',
-    'desc' => _("Show calendar options panel?"),
+    'type' => 'implicit',
 );
 
 // show Free/Busy legend?

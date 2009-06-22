@@ -17,14 +17,21 @@ class Ansel_Widget_Geodata extends Ansel_Widget {
         $this->_title = _("Location");
     }
 
+    function attach($view)
+    {
+         // Don't even try if we don't have an api key
+        if (empty($GLOBALS['conf']['api']['googlemaps'])) {
+            return false;
+        }
+        parent::attach($view);
+        Horde::addScriptFile('googlemap.js');
+
+        return true;
+    }
+
     function html()
     {
         global $registry;
-
-        // Don't even try if we don't have an api key
-        if (empty($GLOBALS['conf']['api']['googlemaps'])) {
-            return '';
-        }
 
         // For now, center map on the first available data set. Need to figure
         // out how to display the map when multiple points exist in very distant
@@ -34,73 +41,37 @@ class Ansel_Widget_Geodata extends Ansel_Widget {
             return '';
         }
 
+        $type = $this->_view->viewType();
         $html = $this->_htmlBegin();
-        $html .= '<script src="http://maps.google.com/maps?file=api&sensor=false&v=2&key=' . $GLOBALS['conf']['api']['googlemaps'] . '" type="text/javascript"></script>';
-        $html .= '<div id="map" style="width:100%; height: 200px; float:left;overflow:hidden;"></div><div class="clearer">&nbsp;</div><div id="ansel_locationtext"><br /></div>';
+        $html .= '<script src="http://maps.google.com/maps?file=api&v=2&sensor=false&key=' . $GLOBALS['conf']['api']['googlemaps'] . '" type="text/javascript"></script>';
+        $html .= '<div id="ansel_map"></div><div class="clear"></div><div id="ansel_locationtext"><br /></div>';
+        if ($this->_view->viewType() == 'Image') {
+            $html .= '<div id="ansel_latlong"></div><div id="ansel_relocate"></div>';
+        }
+        $html .= '<div id="ansel_map_small"></div><div class="clear"></div>';
         $html .= <<<EOT
         <script type="text/javascript">
-        function doGeoCode(points, marker, image_id)
-        {
-            for (var i = 0; i < points.Placemark.length; i++) {
-                var place = points.Placemark[i];
-                // We are at a low enough accuracy to use as-is.
-                if (place.AddressDetails.Accuracy <= 4) {
-                    if (viewType == 'Gallery') {
-                        GEvent.addListener(marker, "mouseover", function() {
-                            $('ansel_locationtext').update(place.address);
-                            //$(image_id + 'caption').toggleClassName('image-tile-hilite');
-                            new Effect.Highlight('imagetile_' + image_id);
-                        });
-                        GEvent.addListener(marker, "click", function() {
-                            a = $$('#imagetile_' + image_id + ' a')[0];
-                            if (!a.onclick || a.onclick() != false) {
-                                location.href = $$('#imagetile_' + image_id + ' a')[0].href;
-                            }
-                        });
-                        GEvent.addListener(marker, "mouseout", function() {
-                            $('ansel_locationtext').update('<br />');
-                            //$(image_id + 'caption').toggleClassName('image-tile-hilite');
-                        });
-                    } else {
-                        //$('ansel_locationtext').update(place.address);
-                    }
-                    return;
-                } else {
-                    // Need to exclude street-level detail or maybe just use
-                    // the next returned Placemark?
-                }
-            }
-        }
+            options = {
+                smallMap: 'ansel_map_small',
+                mainMap:  'ansel_map',
+                viewType: '{$type}'
+            };
 
-        function addPoint(ll, image_id)
-        {
-            var marker = new GMarker(ll, {draggable: false});
-            map.addOverlay(marker, {draggable: false});
-            geo.getLocations(ll, function(address) {doGeoCode(address, marker, image_id)});
-        }
-
-        var map = new GMap2($('map'));
-        map.setUIToDefault();
-        map.setMapType(G_HYBRID_MAP);
-        var latlngbounds = new GLatLngBounds();
-        var geo = new GClientGeocoder();
+            map = new Ansel_GMap(options);
+            Event.observe(window, 'dom:loaded', function() {
 EOT;
-        $html .= 'var viewType = "' . $this->_view->viewType() . '";';
         foreach ($geodata as $id => $loc) {
+            $miniurl = Ansel::getImageUrl($id, 'mini', true);
             if (!empty($loc['image_latitude']) && !empty($loc['image_longitude'])) {
-                $html .= 'var latlng = new GLatLng(' . $loc['image_latitude'] . ', ' . $loc['image_longitude'] . ');';
-                $html .= 'latlngbounds.extend(latlng);';
-                $html .= 'addPoint(latlng, ' . $id . ');';
+                $options = '{' . ($this->_view->viewType() == 'Image' ? 'markerOnly:true' : '') . '}';
+                $html .= 'map.addPoint(' . $loc['image_latitude'] . ', '
+                                         . $loc['image_longitude'] . ', '
+                                         . '{id:'. $id . ', icon: "' . $miniurl . '"}' . ','
+                                         . $options . ');';
             }
         }
-
-        if (count($geodata) > 1) {
-            $html .= 'map.setCenter(latlngbounds.getCenter(), Math.min(map.getBoundsZoomLevel(latlngbounds), ' . $this->_params["max_auto_zoom"] . '));';
-        } elseif (count($geodata) == 1) {
-            $html .= 'map.setCenter(latlng, ' . $this->_params['default_zoom'] . ');';
-        }
-        
-        $html .= 'document.observe("unload", function() {GUnload();});';
+        $html .= 'map.display();';
+        $html .= '});';
         $html .= '</script>';
         $html .= $this->_htmlEnd();
 
@@ -108,4 +79,3 @@ EOT;
     }
 
 }
-?>

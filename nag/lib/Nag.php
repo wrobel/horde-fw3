@@ -53,7 +53,7 @@ define('NAG_SORT_DESCEND', 1);
 /**
  * Nag Base Class.
  *
- * $Horde: nag/lib/Nag.php,v 1.124.2.33 2009/01/13 15:46:34 chuck Exp $
+ * $Horde: nag/lib/Nag.php,v 1.124.2.34 2009/06/19 17:20:13 jan Exp $
  *
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.
@@ -174,6 +174,8 @@ class Nag {
                             Horde::logMessage($newtasks, __FILE__, __LINE__, PEAR_LOG_ERR);
                         } else {
                             foreach ($newtasks as $task) {
+                                $task['tasklist_id'] = '**EXTERNAL**';
+                                $task['tasklist_name'] = $registry->get('name', $app);
                                 $tasks->add(new Nag_Task($task));
                             }
                         }

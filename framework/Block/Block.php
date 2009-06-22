@@ -3,7 +3,7 @@
  * The abstract Horde_Block:: class represents a single block within
  * the Blocks framework.
  *
- * $Horde: framework/Block/Block.php,v 1.33.10.9 2009/01/06 15:22:53 jan Exp $
+ * $Horde: framework/Block/Block.php,v 1.33.10.11 2009/06/20 23:16:42 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -62,6 +62,9 @@ class Horde_Block {
      */
     function Horde_Block($params = array(), $row = null, $col = null)
     {
+        // @todo: we can't simply merge the default values and stored values
+        // because empty parameter values are not stored at all, so they would
+        // always be overwritten by the defaults.
         if ($params === false) {
             $params = $this->getParams();
             foreach ($params as $name => $param) {

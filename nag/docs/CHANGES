@@ -2,6 +2,7 @@
 v2.3.3-cvs
 ----------
 
+[jan] Show application name as task list name when listing external tasks.
 [jan] Fix importing vTodo data including more iCalendar components.
 
 

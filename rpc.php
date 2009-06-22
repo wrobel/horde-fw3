@@ -9,7 +9,7 @@
  *
  *   'wsdl' -- TODO
  *
- * $Horde: horde/rpc.php,v 1.30.10.11 2009/01/06 15:13:50 jan Exp $
+ * $Horde: horde/rpc.php,v 1.30.10.12 2009/06/16 15:30:42 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -63,15 +63,18 @@ if (!empty($_SERVER['PATH_INFO']) ||
     $serverType = 'soap';
 }
 
-if ($serverType == 'soap' &&
-    (!isset($_SERVER['REQUEST_METHOD']) ||
-     $_SERVER['REQUEST_METHOD'] != 'POST')) {
-    $session_control = 'none';
-    $params['requireAuthorization'] = false;
-    if (Util::getGet('wsdl') !== null) {
-        $input = 'wsdl';
-    } else {
-        $input = 'disco';
+if ($serverType == 'soap') {
+    if (!isset($_SERVER['REQUEST_METHOD']) ||
+        $_SERVER['REQUEST_METHOD'] != 'POST') {
+        $session_control = 'none';
+        $params['requireAuthorization'] = false;
+        if (Util::getGet('wsdl') !== null) {
+            $input = 'wsdl';
+        } else {
+            $input = 'disco';
+        }
+    } elseif (class_exists('SoapServer')) {
+        $serverType = 'PhpSoap';
     }
 }
 

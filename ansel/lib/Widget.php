@@ -3,7 +3,7 @@
  * Ansel_Widget:: class wraps the display of widgets to be displayed in various
  * Ansel_Views.
  *
- * $Horde: ansel/lib/Widget.php,v 1.7.2.2 2009/06/15 17:16:48 mrubinsk Exp $
+ * $Horde: ansel/lib/Widget.php,v 1.7.2.3 2009/06/19 22:45:19 mrubinsk Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -104,6 +104,8 @@ class Ansel_Widget {
         } else {
             $this->_style = $view->gallery->getStyle();
         }
+
+        return true;
     }
 
     /**

@@ -3,6 +3,7 @@ v3.3.5-cvs
 ----------
 
 [mms] SECURITY: Don't display unknown text parts inline (Bug #8311).
+[mjr] Fix weatherdotcom block always displaying a 5 day forecast (Bug #8357).
 [cjh] Use streams for file transfers in VFS_ssh2 (jives@jives.ixum.net,
       Request #8323).
 [jan] Send notification messages about new signups with confirmation links.

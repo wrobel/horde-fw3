@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kronolith 2.2-cvs\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2009-03-19 10:37+0100\n"
-"PO-Revision-Date: 2009-03-19 10:44+0100\n"
+"POT-Creation-Date: 2009-06-19 17:28+0200\n"
+"PO-Revision-Date: 2009-06-19 17:22+0200\n"
 "Last-Translator: Jan Schneider <jan@horde.org>\n"
 "Language-Team: German <i18n@lists.horde.org>\n"
 "MIME-Version: 1.0\n"
@@ -46,7 +46,7 @@ msgstr "%d mal"
 msgid "%s Day(s) %s Hour(s) %s Minutes"
 msgstr "%s Tag(e) %s Stunde(n) %s Minuten"
 
-#: lib/Driver.php:2294
+#: lib/Driver.php:2302
 #, php-format
 msgid "%s attendees"
 msgstr "%s Teilnehmer"
@@ -74,7 +74,7 @@ msgstr "* Bitte Adresse(n) auswählen *"
 msgid ", %d times"
 msgstr ", %d mal"
 
-#: lib/Driver.php:2293
+#: lib/Driver.php:2301
 msgid "1 attendee"
 msgstr "1 Teilnehmer"
 
@@ -106,7 +106,7 @@ msgstr "AM"
 msgid "Accepted"
 msgstr "Angenommen"
 
-#: templates/search/search.inc:10
+#: templates/search/search.inc:9
 msgid "Ad_vanced Search"
 msgstr "E_rweiterte Suche"
 
@@ -118,7 +118,7 @@ msgstr "Hinzufügen"
 msgid "Add Event"
 msgstr "Termin hinzufügen"
 
-#: new.php:65
+#: new.php:71
 msgid "Add a new event"
 msgstr "Einen neuen Termin hinzufügen"
 
@@ -143,7 +143,7 @@ msgstr "Adressbuch"
 msgid "Address Books"
 msgstr "Adressbücher"
 
-#: templates/search/search_advanced.inc:11 templates/search/search.inc:10
+#: templates/search/search_advanced.inc:12 templates/search/search.inc:9
 msgid "Advanced Search"
 msgstr "Erweiterte Suche"
 
@@ -151,39 +151,39 @@ msgstr "Erweiterte Suche"
 msgid "Alarm"
 msgstr "Alarm"
 
-#: lib/Driver.php:2257
+#: lib/Driver.php:2265
 #, php-format
 msgid "Alarm %d days before"
 msgstr "Alarm %d Tage vorher"
 
-#: lib/Driver.php:2262
+#: lib/Driver.php:2270
 #, php-format
 msgid "Alarm %d hours before"
 msgstr "Alarm %d Stunden vorher"
 
-#: lib/Driver.php:2267
+#: lib/Driver.php:2275
 #, php-format
 msgid "Alarm %d minutes before"
 msgstr "Alarm %d Minuten vorher"
 
-#: lib/Driver.php:2252
+#: lib/Driver.php:2260
 #, php-format
 msgid "Alarm %d weeks before"
 msgstr "Alarm %d Wochen vorher"
 
-#: lib/Driver.php:2256
+#: lib/Driver.php:2264
 msgid "Alarm 1 day before"
 msgstr "Alarm 1 Tag vorher"
 
-#: lib/Driver.php:2261
+#: lib/Driver.php:2269
 msgid "Alarm 1 hour before"
 msgstr "Alarm 1 Stunde vorher"
 
-#: lib/Driver.php:2266
+#: lib/Driver.php:2274
 msgid "Alarm 1 minute before"
 msgstr "Alarm 1 Minute vorher"
 
-#: lib/Driver.php:2251
+#: lib/Driver.php:2259
 msgid "Alarm 1 week before"
 msgstr "Alarm 1 Woche vorher"
 
@@ -227,11 +227,11 @@ msgstr "Angemeldete Benutzer"
 msgid "All Calendars"
 msgstr "Alle Kalender"
 
-#: templates/search/search.inc:58
+#: templates/search/search.inc:57
 msgid "All Future"
 msgstr "Alle zukünftigen"
 
-#: templates/search/search.inc:52
+#: templates/search/search.inc:51
 msgid "All Past"
 msgstr "Alle vergangenen"
 
@@ -240,7 +240,7 @@ msgstr "Alle vergangenen"
 msgid "All Visible"
 msgstr "Alle sichtbaren"
 
-#: templates/edit/edit_timespan.inc:119 lib/Driver.php:2364
+#: templates/edit/edit_timespan.inc:119 lib/Driver.php:2372
 #: lib/Scheduler/kronolith.php:445 lib/Scheduler/kronolith.php:458
 #: lib/Views/Day.php:99 lib/Views/Day.php:102 lib/Views/Week.php:149
 #: lib/Views/Week.php:156 lib/Views/Year.php:158 lib/Block/month.php:184
@@ -261,7 +261,7 @@ msgid "All of your events older than %d days will be permanently deleted."
 msgstr ""
 "Alle Ihre Termine, die älter als %d Tage sind, werden endgültig gelöscht."
 
-#: lib/api.php:809 lib/api.php:821
+#: lib/api.php:814 lib/api.php:826
 msgid "Already Exists"
 msgstr "Existiert bereits"
 
@@ -319,7 +319,7 @@ msgstr "August"
 msgid "Available Address books:"
 msgstr "Verfügbare Adressbücher:"
 
-#: templates/search/search_advanced.inc:9 templates/search/search.inc:12
+#: templates/search/search_advanced.inc:10 templates/search/search.inc:11
 msgid "Basic Search"
 msgstr "Einfache Suche"
 
@@ -374,7 +374,7 @@ msgid "Can't create a new event."
 msgstr "Ein neuer Termin konnte nicht erstellt werden."
 
 #: templates/delete/one.inc:25 templates/delete/delete.inc:28
-#: templates/edit/edit.inc:51 templates/edit/edit.inc:382
+#: templates/edit/edit.inc:51 templates/edit/edit.inc:384
 #: lib/Forms/UnsubscribeRemoteCalendar.php:39
 #: lib/Forms/UnsubscribeRemoteCalendar.php:45 lib/Forms/DeleteCalendar.php:45
 #: lib/Forms/DeleteCalendar.php:51
@@ -615,12 +615,12 @@ msgstr "Delegieren"
 #: templates/perms/perms.inc:179 templates/perms/perms.inc:204
 #: templates/perms/perms.inc:249 templates/perms/perms.inc:269
 #: templates/perms/perms.inc:290 templates/perms/perms.inc:324
-#: calendars/index.php:70 lib/Driver.php:1343 lib/Driver.php:2323
+#: calendars/index.php:70 lib/Driver.php:1343 lib/Driver.php:2331
 #: lib/Forms/DeleteCalendar.php:45
 msgid "Delete"
 msgstr "Löschen"
 
-#: lib/Driver.php:2322 lib/Views/DeleteEvent.php:29
+#: lib/Driver.php:2330 lib/Views/DeleteEvent.php:29
 #: lib/Forms/DeleteCalendar.php:40
 #, php-format
 msgid "Delete %s"
@@ -638,7 +638,7 @@ msgid_plural "Deleted %d events older than %d days."
 msgstr[0] "%d Termin älter als %d Tage wurde gelöscht."
 msgstr[1] "%d Termine älter als %d Tage wurden gelöscht."
 
-#: templates/search/search_advanced.inc:101 templates/search/search.inc:27
+#: templates/search/search_advanced.inc:101 templates/search/search.inc:26
 #: templates/edit/edit.inc:180
 msgid "Descri_ption"
 msgstr "_Beschreibung"
@@ -658,7 +658,7 @@ msgstr "Anzeige-Einstellungen"
 
 #: templates/calendar_list.php:26
 msgid "Display URL"
-msgstr "Angezeigt-Adresse"
+msgstr "Anzeige-Adresse"
 
 #: lib/Kronolith.php:1156
 msgid "Does not recur"
@@ -680,15 +680,15 @@ msgstr "Fällig: %s"
 msgid "Duration"
 msgstr "_Dauer"
 
-#: lib/Driver.php:2030
+#: lib/Driver.php:2038
 msgid "Duration Day"
 msgstr "Dauer Tage"
 
-#: lib/Driver.php:2042
+#: lib/Driver.php:2050
 msgid "Duration Hour"
 msgstr "Dauer Stunden"
 
-#: lib/Driver.php:2053
+#: lib/Driver.php:2061
 msgid "Duration Minute"
 msgstr "Dauer Minuten"
 
@@ -699,11 +699,11 @@ msgstr "Dauer Minuten"
 #: templates/perms/perms.inc:178 templates/perms/perms.inc:200
 #: templates/perms/perms.inc:245 templates/perms/perms.inc:268
 #: templates/perms/perms.inc:286 templates/perms/perms.inc:320
-#: calendars/index.php:68 lib/Driver.php:2316
+#: calendars/index.php:68 lib/Driver.php:2324
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: templates/attendees/attendees.inc:57 lib/Driver.php:2315
+#: templates/attendees/attendees.inc:57 lib/Driver.php:2323
 #: lib/Views/EditEvent.php:29 lib/Forms/EditRemoteCalendar.php:34
 #: lib/Forms/EditCalendar.php:40
 #, php-format
@@ -752,19 +752,19 @@ msgstr "En_de"
 msgid "End Date"
 msgstr "Enddatum"
 
-#: templates/data/export.inc:161 lib/Driver.php:2001
+#: templates/data/export.inc:161 lib/Driver.php:2009
 msgid "End Day"
 msgstr "Enddatum"
 
-#: templates/data/export.inc:178 lib/Driver.php:2014
+#: templates/data/export.inc:178 lib/Driver.php:2022
 msgid "End Hour"
 msgstr "Endstunde"
 
-#: templates/data/export.inc:190 lib/Driver.php:2025
+#: templates/data/export.inc:190 lib/Driver.php:2033
 msgid "End Minute"
 msgstr "Endminute"
 
-#: templates/data/export.inc:148 lib/Driver.php:1992
+#: templates/data/export.inc:148 lib/Driver.php:2000
 msgid "End Month"
 msgstr "Endmonat"
 
@@ -777,7 +777,7 @@ msgstr "endet am"
 msgid "End Time"
 msgstr "Endzeit"
 
-#: templates/data/export.inc:134 lib/Driver.php:1981
+#: templates/data/export.inc:134 lib/Driver.php:1989
 msgid "End Year"
 msgstr "Endjahr"
 
@@ -830,7 +830,7 @@ msgstr "Termin nicht gefunden: %s"
 msgid "Events"
 msgstr "Termine"
 
-#: lib/api.php:310
+#: lib/api.php:315
 #, php-format
 msgid "Events from %s"
 msgstr "Termine aus %s"
@@ -897,7 +897,7 @@ msgstr "Zukünftige"
 msgid "Game"
 msgstr "Spiel"
 
-#: templates/search/search_advanced.inc:18
+#: templates/search/search_advanced.inc:19
 msgid "General"
 msgstr "Allgemeines"
 
@@ -914,7 +914,7 @@ msgstr "Gruppen"
 msgid "Guest Permissions"
 msgstr "Gastrechte"
 
-#: templates/edit/javascript.inc:256
+#: templates/edit/javascript.inc:259
 msgid "Hide"
 msgstr "Ausblenden"
 
@@ -988,7 +988,7 @@ msgstr "Juli"
 msgid "June"
 msgstr "Juni"
 
-#: data.php:66 templates/view/view.inc:140 templates/edit/edit.inc:336
+#: data.php:66 templates/view/view.inc:140 templates/edit/edit.inc:338
 msgid "Keywords"
 msgstr "Stichwörter"
 
@@ -996,7 +996,7 @@ msgstr "Stichwörter"
 msgid "Kind"
 msgstr "Art"
 
-#: templates/search/search.inc:54
+#: templates/search/search.inc:53
 msgid "Last 24 hours"
 msgstr "Letzte 24 Stunden"
 
@@ -1012,7 +1012,7 @@ msgstr "Letzter Monat"
 msgid "Last Year"
 msgstr "Letztes Jahr"
 
-#: templates/search/search.inc:53 templates/week/head.inc:6
+#: templates/search/search.inc:52 templates/week/head.inc:6
 msgid "Last week"
 msgstr "Letzte Woche"
 
@@ -1054,7 +1054,7 @@ msgid "Local calendar owned by %s."
 msgstr "Dieser lokale Kalender gehört %s."
 
 #: data.php:65 templates/search/event_headers.inc:5 templates/view/view.inc:14
-#: lib/Driver.php:2346
+#: lib/Driver.php:2354
 msgid "Location"
 msgstr "Ort"
 
@@ -1080,7 +1080,7 @@ msgstr "Kalender-Verwaltung"
 msgid "March"
 msgstr "März"
 
-#: lib/api.php:138
+#: lib/api.php:143
 msgid "Maximum Number of Events"
 msgstr "Maximale Anzahl an Terminen"
 
@@ -1092,7 +1092,7 @@ msgstr "Maximale Anzahl der anzuzeigenden Termine (0 = keine Begrenzung)"
 msgid "May"
 msgstr "Mai"
 
-#: lib/Driver.php:2342
+#: lib/Driver.php:2350
 msgid "Me"
 msgstr "Ich"
 
@@ -1157,7 +1157,7 @@ msgstr "Nach unten"
 msgid "Move up"
 msgstr "Nach oben"
 
-#: lib/api.php:1064
+#: lib/api.php:1069
 msgid "Multiple iCalendar components found; only one vEvent is supported."
 msgstr ""
 "Mehrere iCalendar-Komponenten gefunden; nur ein vEvent wird unterstützt."
@@ -1194,7 +1194,7 @@ msgstr ""
 msgid "Next"
 msgstr "Weiter"
 
-#: templates/search/search.inc:56
+#: templates/search/search.inc:55
 msgid "Next 24 hours"
 msgstr "Nächste 24 Stunden"
 
@@ -1219,7 +1219,7 @@ msgstr "Nächstes Jahr"
 msgid "Next day"
 msgstr "Nächster Tag"
 
-#: templates/search/search.inc:57 templates/week/head.inc:8
+#: templates/search/search.inc:56 templates/week/head.inc:8
 msgid "Next week"
 msgstr "Nächste Woche"
 
@@ -1240,7 +1240,7 @@ msgstr "Kein Alarm"
 msgid "No attendees"
 msgstr "Keine Teilnehmer"
 
-#: lib/api.php:1202
+#: lib/api.php:1207
 msgid ""
 "No attendees have been updated because none of the provided email addresses "
 "have been found in the event's attendees list."
@@ -1282,7 +1282,7 @@ msgstr "Keine Frei/Gebucht-Informationen für %s verfügbar"
 msgid "No free/busy url found for %s."
 msgstr "Keine Frei/Gebucht-Adresse für %s gefunden."
 
-#: lib/api.php:794 lib/api.php:834 lib/api.php:1071
+#: lib/api.php:799 lib/api.php:839 lib/api.php:1076
 msgid "No iCalendar data was found."
 msgstr "Es wurden keine iCalendar-Daten gefunden."
 
@@ -1316,7 +1316,7 @@ msgstr "Benachrichtigungen"
 msgid "November"
 msgstr "November"
 
-#: templates/search/search.inc:55
+#: templates/search/search.inc:54
 msgid "Now"
 msgstr "Jetzt"
 
@@ -1379,7 +1379,7 @@ msgstr "Besitzer"
 msgid "Owner:"
 msgstr "Besitzer:"
 
-#: lib/Driver.php:2341
+#: lib/Driver.php:2349
 #, php-format
 msgid "Owner: %s"
 msgstr "Besitzer: %s"
@@ -1401,9 +1401,9 @@ msgstr "Rhythmus"
 msgid "Permanently delete this event?"
 msgstr "Diesen Termin unwiederbringlich löschen?"
 
-#: lib/api.php:676 lib/api.php:712 lib/api.php:744 lib/api.php:775
-#: lib/api.php:869 lib/api.php:916 lib/api.php:1011 lib/api.php:1043
-#: lib/api.php:1132 lib/api.php:1192 lib/api.php:1258 lib/api.php:1280
+#: lib/api.php:681 lib/api.php:717 lib/api.php:749 lib/api.php:780
+#: lib/api.php:874 lib/api.php:921 lib/api.php:1016 lib/api.php:1048
+#: lib/api.php:1137 lib/api.php:1197 lib/api.php:1263 lib/api.php:1285
 #: lib/Kronolith.php:1997 lib/Kronolith.php:2016 lib/Kronolith.php:2029
 #: lib/Kronolith.php:2050 lib/Block/prevmonthlist.php:75
 #: lib/Block/month.php:73 lib/Block/monthlist.php:79 lib/Block/summary.php:79
@@ -1461,7 +1461,7 @@ msgstr "Vergangene Termine"
 msgid "Private Event from %s to %s"
 msgstr "Privater Termin von %s bis %s"
 
-#: lib/Driver.php:2284
+#: lib/Driver.php:2292
 msgid "Private event"
 msgstr "Privater Termin"
 
@@ -1520,15 +1520,15 @@ msgstr "Wiederholungsmuster"
 msgid "Recurrence End Date"
 msgstr "Wiederholungsende"
 
-#: lib/Driver.php:2096
+#: lib/Driver.php:2104
 msgid "Recurrence End Day"
 msgstr "Wiederholungsendtag"
 
-#: lib/Driver.php:2081
+#: lib/Driver.php:2089
 msgid "Recurrence End Month"
 msgstr "Wiederholungsendmonat"
 
-#: lib/Driver.php:2064
+#: lib/Driver.php:2072
 msgid "Recurrence End Year"
 msgstr "Wiederholungsendjahr"
 
@@ -1614,7 +1614,7 @@ msgstr "Notwendig"
 msgid "Required Attendees"
 msgstr "Notwendige Teilnehmer"
 
-#: templates/edit/edit.inc:52 templates/edit/edit.inc:383
+#: templates/edit/edit.inc:52 templates/edit/edit.inc:385
 msgid "Reset to Defaults"
 msgstr "Zurücksetzen"
 
@@ -1659,7 +1659,7 @@ msgstr "Als Kopie speichern"
 msgid "Save Attendees"
 msgstr "Teilnehmer speichern"
 
-#: new.php:56 lib/Views/EditEvent.php:82
+#: new.php:62 lib/Views/EditEvent.php:82
 msgid "Save Event"
 msgstr "Termin speichern"
 
@@ -1668,7 +1668,7 @@ msgid "Save and Finish"
 msgstr "Speichern und Beenden"
 
 #: search.php:91 templates/search/search_advanced.inc:113
-#: templates/search/search.inc:66 templates/contacts/contacts.inc:155
+#: templates/search/search.inc:65 templates/contacts/contacts.inc:155
 #: lib/Block/tree_menu.php:26
 msgid "Search"
 msgstr "Suche"
@@ -1784,11 +1784,11 @@ msgstr ""
 msgid "Send an email to %s"
 msgstr "E-Mail-Nachricht an %s schreiben"
 
-#: templates/edit/edit.inc:375
+#: templates/edit/edit.inc:377
 msgid "Send invitations to all attendees?"
 msgstr "Einladungen an alle Teilnehmer schicken?"
 
-#: templates/edit/edit.inc:375
+#: templates/edit/edit.inc:377
 msgid "Send updates to all attendees?"
 msgstr "Aktualisierungen an alle Teilnehmer schicken?"
 
@@ -1833,7 +1833,7 @@ msgstr "Gemeinsame Kalender:"
 #: templates/perms/perms.inc:176 templates/perms/perms.inc:192
 #: templates/perms/perms.inc:237 templates/perms/perms.inc:266
 #: templates/perms/perms.inc:278 templates/perms/perms.inc:312
-#: templates/edit/javascript.inc:262
+#: templates/edit/javascript.inc:265
 msgid "Show"
 msgstr "Zeigen"
 
@@ -1878,19 +1878,19 @@ msgstr "_Beginn"
 msgid "Start Date"
 msgstr "Startdatum"
 
-#: templates/data/export.inc:68 lib/Driver.php:1956
+#: templates/data/export.inc:68 lib/Driver.php:1964
 msgid "Start Day"
 msgstr "Starttag"
 
-#: templates/data/export.inc:87 lib/Driver.php:1967
+#: templates/data/export.inc:87 lib/Driver.php:1975
 msgid "Start Hour"
 msgstr "Startstunde"
 
-#: templates/data/export.inc:102 lib/Driver.php:1977
+#: templates/data/export.inc:102 lib/Driver.php:1985
 msgid "Start Minute"
 msgstr "Startminute"
 
-#: templates/data/export.inc:54 lib/Driver.php:1947
+#: templates/data/export.inc:54 lib/Driver.php:1955
 msgid "Start Month"
 msgstr "Startmonat"
 
@@ -1903,7 +1903,7 @@ msgstr "Beginn"
 msgid "Start Time"
 msgstr "Startzeit"
 
-#: templates/data/export.inc:39 lib/Driver.php:1936
+#: templates/data/export.inc:39 lib/Driver.php:1944
 msgid "Start Year"
 msgstr "Startjahr"
 
@@ -1970,7 +1970,7 @@ msgstr "Der Kalenderserver ist zur Zeit nicht verfügbar: %s"
 msgid "The Edit Attendees screen is no longer present. Exiting."
 msgstr "Die Teilnehmeransicht ist nicht mehr geladen. Abbruch."
 
-#: lib/api.php:1212
+#: lib/api.php:1217
 msgid ""
 "The attendee hasn't been updated because the update was not sent from the "
 "attendee."
@@ -2087,7 +2087,7 @@ msgstr "Beim Hinzufügen des Termins ist ein Fehler aufgetreten: %s."
 msgid "There was an error editing the event: %s"
 msgstr "Beim Bearbeiten des Termins ist ein Fehler aufgetreten: %s."
 
-#: lib/api.php:514 lib/api.php:786 lib/api.php:1056
+#: lib/api.php:519 lib/api.php:791 lib/api.php:1061
 msgid "There was an error importing the iCalendar data."
 msgstr "Beim Importieren der iCalendar Daten ist ein Fehler aufgetreten."
 
@@ -2146,7 +2146,7 @@ msgstr "Meldung des Servers: %s"
 msgid "Thursday"
 msgstr "Donnerstag"
 
-#: templates/search/search.inc:36
+#: templates/search/search.inc:35
 msgid "Time Sp_an"
 msgstr "Zeits_panne"
 
@@ -2158,7 +2158,7 @@ msgstr "Zeitspanne"
 msgid "Tit_le"
 msgstr "Tite_l"
 
-#: data.php:55 templates/search/search.inc:19
+#: data.php:55 templates/search/search.inc:18
 #: templates/search/event_headers.inc:3
 msgid "Title"
 msgstr "Titel"
@@ -2228,7 +2228,7 @@ msgstr "Verbindung zum SQL Server kann nicht hergestellt werden."
 msgid "Unable to delete \"%s\": %s"
 msgstr "\"%s\" kann nicht gelöscht werden: %s"
 
-#: lib/api.php:627
+#: lib/api.php:632
 #, php-format
 msgid "Unable to delete calendar \"%s\": %s"
 msgstr "Der Kalender \"%s\" kann nicht gelöscht werden: %s"
@@ -2262,7 +2262,7 @@ msgstr "Der Kalender \"%s\" kann nicht gespeichert werden: %s"
 msgid "Unfiled"
 msgstr "Nicht zugeordnet"
 
-#: lib/api.php:1349 lib/api.php:1385
+#: lib/api.php:1354 lib/api.php:1390
 msgid "Unknown calendar protocol"
 msgstr "Unbekanntes Kalender-Protokoll."
 
@@ -2275,8 +2275,8 @@ msgstr "Ausblenden"
 msgid "Unsubscribe from %s"
 msgstr "Von %s abmelden"
 
-#: lib/api.php:578 lib/api.php:841 lib/api.php:891 lib/api.php:948
-#: lib/api.php:1076
+#: lib/api.php:583 lib/api.php:846 lib/api.php:896 lib/api.php:953
+#: lib/api.php:1081
 #, php-format
 msgid "Unsupported Content-Type: %s"
 msgstr "Nicht unterstützter Inhaltstyp: %s"
@@ -2433,7 +2433,7 @@ msgstr "Sie dürfen nicht mehr als %d Termine erstellen."
 msgid "You are not allowed to delete this calendar."
 msgstr "Sie dürfen diesen Kalender nicht löschen."
 
-#: lib/api.php:154
+#: lib/api.php:159
 msgid "You are not allowed to remove user data."
 msgstr "Sie dürfen keine Benutzerdaten löschen."
 
@@ -2553,7 +2553,7 @@ msgstr "[Unbenannter Termin]"
 msgid "_Alarm"
 msgstr "_Alarm"
 
-#: templates/search/search_advanced.inc:9
+#: templates/search/search_advanced.inc:10
 msgid "_Basic Search"
 msgstr "Ein_fache Suche"
 

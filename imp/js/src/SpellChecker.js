@@ -3,7 +3,7 @@
  * was rewritten almost completely by Chuck Hagenbuch to use
  * Prototype/Scriptaculous.
  *
- * $Horde: imp/js/src/SpellChecker.js,v 1.36.2.12 2009/03/30 23:08:41 slusarz Exp $
+ * $Horde: imp/js/src/SpellChecker.js,v 1.36.2.13 2009/06/22 04:03:25 slusarz Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *
@@ -159,7 +159,7 @@ var SpellChecker = Class.create({
 
     onComplete: function(request)
     {
-        var bad, content, d, re, re_text,
+        var bad, content, d,
             i = 0,
             input = $(this.target),
             result = request.responseText.evalJSON(true);
@@ -182,20 +182,18 @@ var SpellChecker = Class.create({
         bad = result.bad || [];
 
         content = this.targetValue();
-        if (this.htmlAreaParent) {
-            content = content.replace(/\r?\n/g, '');
-        } else {
-            content = content.replace(/\r?\n/g, '~~~').escapeHTML();
-        }
+        content = this.htmlAreaParent
+            ? content.replace(/\r?\n/g, '')
+            : content.replace(/\r?\n/g, '~~~').escapeHTML();
 
         $A(bad).each(function(node) {
-            re = new RegExp("(?:^|\\b)" + RegExp.escape(node) + "(?:\\b|$)", 'g');
-            re_text = '<span index="' + (i++) + '" name="incorrect" class="incorrect">' + node + '</span>';
-            content = content.replace(re, re_text);
-            // Go through and see if we matched anything inside a tag.
-            if (this.htmlAreaParent) {
-                content = content.replace(new RegExp("(<[^>]*)" + RegExp.escape(re_text) + "([^>]*>)", 'g'), '\$1' + node + '\$2');
-            }
+            var re_text = '<span index="' + (i++) + '" name="incorrect" class="incorrect">' + node + '</span>';
+            content = content.replace(new RegExp("(?:^|\\b)" + RegExp.escape(node) + "(?:\\b|$)", 'g'), re_text);
+
+            // Go through and see if we matched anything inside a tag (i.e.
+            // class/name/incorrect is often matched if using a non-English
+            // lang).
+            content = content.replace(new RegExp("(<[^>]*)" + RegExp.escape(re_text) + "([^>]*>)", 'g'), '\$1' + node + '\$2');
         }, this);
 
         if (!this.reviewDiv) {

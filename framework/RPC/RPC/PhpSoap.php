@@ -3,7 +3,7 @@
  * The Horde_RPC_PhpSoap class provides a PHP 5 Soap implementation
  * of the Horde RPC system.
  *
- * $Horde: framework/RPC/RPC/PhpSoap.php,v 1.1.2.3 2009/06/11 10:35:25 jan Exp $
+ * $Horde: framework/RPC/RPC/PhpSoap.php,v 1.1.2.4 2009/06/16 15:28:05 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -65,7 +65,7 @@ class Horde_RPC_PhpSoap extends Horde_RPC {
             $this->_serviceName = $params['serviceName'];
         }
 
-        $this->_server = new SoapServer(null, array('uri' => Horde::url($GLOBALS['registry']->get('webroot', 'horde') . '/rpc.php', true, false)));
+        $this->_server = new SoapServer(Horde::url($registry->get('webroot', 'horde') . '/rpc.php?wsdl', true, false));
         $this->_server->addFunction(SOAP_FUNCTIONS_ALL);
         $this->_server->setClass('Horde_RPC_PhpSoap_Caller', $params);
     }
@@ -79,16 +79,6 @@ class Horde_RPC_PhpSoap extends Horde_RPC {
      */
     function getResponse($request)
     {
-        if ($request == 'disco' || $request == 'wsdl') {
-            /* TODO - replace PEAR here? For now fall back to the PEAR
-             * server. */
-            if (!class_exists('Horde_RPC_soap')) {
-                include dirname(__FILE__) . '/soap.php';
-            }
-            $handler = new Horde_RPC_soap($this->_params);
-            return $handler->getResponse($request);
-        }
-
         /* We can't use Util::bufferOutput() here for some reason. */
         $beginTime = time();
         ob_start();

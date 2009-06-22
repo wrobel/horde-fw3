@@ -1,5 +1,5 @@
 /**
- * $Horde: ansel/themes/screen.css,v 1.60.2.8 2009/02/12 16:50:35 mrubinsk Exp $
+ * $Horde: ansel/themes/screen.css,v 1.60.2.10 2009/06/19 22:45:20 mrubinsk Exp $
  */
 
 /* Table CSS. */
@@ -205,12 +205,12 @@ a.latest:link, a.latest:visited, a.latest:hover, a.latest:active {
     position:absolute;
 }
 .face-div-name {
-	text-align: center;
-	background: grey;
-	color: white;
+    text-align: center;
+    background: grey;
+    color: white;
 }
 .shown {
-	border: medium solid white;
+    border: medium solid white;
 }
 
 .similarity-high {
@@ -259,6 +259,12 @@ a.latest:link, a.latest:visited, a.latest:hover, a.latest:active {
     display: block;
     font-size: 90%;
     padding: .2em;
+}
+.ansel-tile img {
+    padding: 3px;
+}
+.image-tile-highlight {
+    background-color: red;
 }
 
 /* Actions */
@@ -325,4 +331,20 @@ form.inplaceeditor-form a {
     position: absolute;
     width: 18px;
     height: 18px;
+ }
+
+ /* Google Map stuff */
+ #ansel_map {
+    width:100%;
+    height:250px;
+    float:left;
+    overflow:hidden;
+ }
+
+ #ansel_map_small {
+    width:100%;
+    height:80px;
+    margin-top:10px;
+    float:left;
+    overflow:hidden;
  }

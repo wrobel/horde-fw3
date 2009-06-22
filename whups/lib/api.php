@@ -5,7 +5,7 @@
  * This file defines Whups' external API interface. Other applications
  * can interact with Whups through this API.
  *
- * $Horde: whups/lib/api.php,v 1.148 2008/08/26 04:39:28 chuck Exp $
+ * $Horde: whups/lib/api.php,v 1.148.2.1 2009/06/19 17:09:56 jan Exp $
  *
  * @package Whups
  */
@@ -596,7 +596,7 @@ function _whups_listAs($type)
                 'priority'          => $ticket['priority_name'],
                 'tasklist_id'       => '**EXTERNAL**',
                 'completed'         => ($ticket['state_category'] == 'resolved'),
-                'name'              => '[ #' . $ticket['id'] . '] ' . $ticket['summary'],
+                'name'              => '[#' . $ticket['id'] . '] ' . $ticket['summary'],
                 'desc'              => null,
                 'due'               => null,
                 'category'          => null,

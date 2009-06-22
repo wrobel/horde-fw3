@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/config/mime_drivers.php.dist,v 1.35.10.6 2008/07/07 16:26:53 jan Exp $
+ * $Horde: imp/config/mime_drivers.php.dist,v 1.35.10.7 2009/06/20 21:37:43 jan Exp $
  *
  * Decide which output drivers you want to activate for the IMP application.
  * Settings in this file override settings in horde/config/mime_drivers.php.
@@ -154,7 +154,10 @@ $mime_drivers['imp']['pgp'] = array(
     ),
     'icons' => array(
         'default' => 'encryption.png'
-    )
+    ),
+    /* Turn background green or red depending on whether a signature could
+     * be verified? */
+    'highlight' => true
 );
 
 /**
@@ -168,7 +171,10 @@ $mime_drivers['imp']['pkcs7'] = array(
     ),
     'icons' => array(
         'default' => 'encryption.png'
-    )
+    ),
+    /* Turn background green or red depending on whether a signature could
+     * be verified? */
+    'highlight' => true
 );
 
 /**

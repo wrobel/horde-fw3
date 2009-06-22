@@ -11,7 +11,7 @@ if (!empty($GLOBALS['conf']['weatherdotcom']['partner_id']) &&
  * portal screen to display weather and forecast data from weather.com
  * for a specified location.
  *
- * $Horde: horde/lib/Block/weatherdotcom.php,v 1.37.4.16 2008/05/19 14:58:32 jan Exp $
+ * $Horde: horde/lib/Block/weatherdotcom.php,v 1.37.4.17 2009/06/17 21:19:16 mrubinsk Exp $
  *
  * @package Horde_Block
  */
@@ -75,13 +75,13 @@ class Horde_Block_Horde_weatherdotcom extends Horde_Block {
                 'days' => array(
                     'type' => 'enum',
                     'name' => _("Forecast Days (note that the returned forecast returns both day and night; a large number here could result in a wide block)"),
-                    'default' => '3',
+                    'default' => 3,
                     'values' => array(
-                        '1' => '1',
-                        '2' => '2',
-                        '3' => '3',
-                        '4' => '4',
-                        '5' => '5',
+                        '1' => 1,
+                        '2' => 2,
+                        '3' => 3,
+                        '4' => 4,
+                        '5' => 5,
                     )
                 ),
                 'detailedForecast' => array(
@@ -208,7 +208,7 @@ class Horde_Block_Horde_weatherdotcom extends Horde_Block {
         if (is_a($weather, 'PEAR_Error')) {
             return $weather->getMessage();
         }
-        $forecast = $weatherDotCom->getForecast($search, $this->_params['days']);
+        $forecast = $weatherDotCom->getForecast($search, (integer)$this->_params['days']);
         if (is_a($forecast, 'PEAR_Error')) {
             return $forecast->getMessage();
         }

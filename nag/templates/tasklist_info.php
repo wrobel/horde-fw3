@@ -4,6 +4,8 @@
 <?php endif; ?>
 <p>
  <?php printf(_("Task List owned by %s."), $owner_name) ?>
- <?php echo _("To subscribe to this task list from another program, use this URL: ") ?><br />
- <small><?php echo htmlspecialchars($subscribe_url) ?></small>
+ <?php echo _("To subscribe to this task list from another program, use this URL: ") ?>
+</p>
+<p class="tasklist-info-url">
+ <?php echo htmlspecialchars($subscribe_url) ?>
 </p>

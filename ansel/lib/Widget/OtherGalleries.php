@@ -26,6 +26,8 @@ class Ansel_Widget_OtherGalleries extends Ansel_Widget {
             $name = $this->_view->gallery->get('owner');
         }
         $this->_title = sprintf(_("%s's Galleries"), $name);
+
+        return true;
     }
 
     /**

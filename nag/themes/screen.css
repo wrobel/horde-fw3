@@ -1,5 +1,5 @@
 /**
- * $Horde: nag/themes/screen.css,v 1.1.4.6 2008/05/21 19:02:13 jan Exp $
+ * $Horde: nag/themes/screen.css,v 1.1.4.7 2009/06/19 17:30:39 jan Exp $
  */
 
 /* Menu bottom margin, added for BC. */
@@ -221,6 +221,14 @@ table#tasklist-list th.sortdown {
 
 .tasklist-info {
     cursor: pointer;
+}
+.tasklist-info-url {
+    background-color: #fff;
+    color: #000;
+    overflow: auto;
+    padding: 2px;
+    font-size: 90%;
+    word-wrap: break-word;
 }
 
 /* Redbox styles. */

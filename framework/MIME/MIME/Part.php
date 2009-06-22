@@ -40,7 +40,7 @@ define('MIME_DEFAULT_ENCODING', '7bit');
  * The MIME_Part:: class provides a wrapper around MIME parts and methods
  * for dealing with them.
  *
- * $Horde: framework/MIME/MIME/Part.php,v 1.177.4.26 2009/01/06 15:23:20 jan Exp $
+ * $Horde: framework/MIME/MIME/Part.php,v 1.177.4.27 2009/06/17 19:49:13 slusarz Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -890,7 +890,8 @@ class MIME_Part {
              * parameter.  See:
              *   http://lists.horde.org/archives/dev/Week-of-Mon-20040426/014240.html */
             if (!empty($GLOBALS['conf']['mailformat']['brokenrfc2231']) &&
-                (strpos($encode_2231, '*=') !== false)) {
+                ((strpos($encode_2231, '*=') !== false) ||
+                 (strpos($encode_2231, '*0=') !== false))) {
                 $ctype .= '; ' . $key . '="' . MIME::encode($value, $charset) . '"';
             }
             $ctype .= '; ' . $encode_2231;
@@ -918,7 +919,8 @@ class MIME_Part {
                 $encode_2231 = MIME::encodeRFC2231('filename', $name, $charset);
                 /* Same broken RFC 2231 workaround as above. */
                 if (!empty($GLOBALS['conf']['mailformat']['brokenrfc2231']) &&
-                    (strpos($encode_2231, '*=') !== false)) {
+                    ((strpos($encode_2231, '*=') !== false) ||
+                     (strpos($encode_2231, '*0=') !== false))) {
                     $disp .= '; filename="' . MIME::encode($name, $charset) . '"';
                 }
                 $disp .= '; ' . $encode_2231;

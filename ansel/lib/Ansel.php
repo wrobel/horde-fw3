@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ansel/lib/Ansel.php,v 1.517.2.51 2009/06/15 19:42:32 mrubinsk Exp $
+ * $Horde: ansel/lib/Ansel.php,v 1.517.2.52 2009/06/19 22:45:19 mrubinsk Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *
@@ -2534,12 +2534,9 @@ class Ansel_Image {
 
             /* Save any geo data to a seperate table as well */
             if (!empty($exif_fields['GPSLatitude'])) {
-                $insert = $GLOBALS['ansel_db']->prepare('INSERT INTO ansel_images_geolocation (image_id, image_latitude, image_longitude) VALUES(?, ?, ?)');
-                $result = $insert->execute(array($this->id, $exif_fields['GPSLatitude'], $exif_fields['GPSLongitude']));
-                if (is_a($result, 'PEAR_Error')) {
-                    return $result;
-                }
-                $insert->free();
+                $GLOBALS['ansel_storage']->updateImageGeodata(array('image_id' => $this->id,
+                                                                    'lat' => $exif_fields['GPSLatitude'],
+                                                                    'lng' => $exif_fields['GPSLongitude']));
             }
         }
     }
@@ -3839,6 +3836,13 @@ class Ansel_Storage {
         }
     }
 
+    /**
+     * Return images' data from the geolocation table.
+     *
+     * @param array $image_ids  An array of image_ids to look up.
+     *
+     * @return mixed An array of geodata || PEAR_Error
+     */
     function getImagesGeodata($image_ids)
     {
         if (!is_array($image_ids) || count($image_ids) == 0) {
@@ -3855,6 +3859,40 @@ class Ansel_Storage {
         $geodata = $results->fetchAll(MDB2_FETCHMODE_ASSOC, true, true, false);
 
         return $geodata;
+    }
+
+    /**
+     * Add/Update an image's entry in the ansel_images_geolocation table
+     *
+     * @param array $params  A hash of 'image_id', 'lat', 'lng', and optionally
+     *                                 'location'
+     * @return mixed
+     */
+    function updateImageGeodata($params)
+    {
+        global $ansel_db;
+
+        // See if it's an existing entry:
+        $sql = 'SELECT COUNT(image_id) FROM ansel_images_geolocation WHERE image_id = ' . $params['image_id'];
+        $result = $ansel_db->queryOne($sql);
+        if ($result) {
+            // Updating an existing entry
+            // $params['location'] is optional.
+            $sql = $ansel_db->prepare('UPDATE ansel_images_geolocation SET image_latitude = ?, image_longitude = ?, image_location = ? WHERE image_id = ?');
+            if (is_a($sql, 'PEAR_Error')) {
+                return $sql;
+            }
+            $results = $sql->execute(array($params['lat'], $params['lng'], (!empty($params['location']) ? $params['location'] : ''), $params['image_id']));
+        } else {
+            // New entry. I don't think there is any way reverse geocode data would be present?
+            $sql = $GLOBALS['ansel_db']->prepare('INSERT INTO ansel_images_geolocation (image_id, image_latitude, image_longitude) VALUES(?, ?, ?)');
+            if (is_a($sql, 'PEAR_Error')) {
+                return $sql;
+            }
+            $results = $sql->execute(array($params['image_id'], $params['lat'], $params['lng']));
+        }
+        $sql->free();
+        return $results;
     }
 
 }

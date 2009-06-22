@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: nag/config/prefs.php.dist,v 1.42.2.11 2008/11/25 20:56:00 chuck Exp $
+ * $Horde: nag/config/prefs.php.dist,v 1.42.2.12 2009/06/19 17:06:22 jan Exp $
  *
  * See horde/config/prefs.php for documentation on the structure of this file.
  */
@@ -12,8 +12,7 @@ $prefGroups['display'] = array(
     'column' => _("General Options"),
     'label' => _("Display Options"),
     'desc' => _("Change your task sorting and display options."),
-    'members' => array('tasklist_columns', 'show_panel', 'sortby', 'altsortby',
-                       'sortdir'),
+    'members' => array('tasklist_columns', 'sortby', 'altsortby', 'sortdir'),
 );
 
 $prefGroups['deletion'] = array(
@@ -81,8 +80,7 @@ $_prefs['show_panel'] = array(
     'value' => 1,
     'locked' => false,
     'shared' => false,
-    'type' => 'checkbox',
-    'desc' => _("Show task list options panel?"),
+    'type' => 'implicit',
 );
 
 // user preferred sorting column

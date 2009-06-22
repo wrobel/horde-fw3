@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: mnemo/config/prefs.php.dist,v 1.24.2.4 2008/06/13 14:44:04 jan Exp $
+ * $Horde: mnemo/config/prefs.php.dist,v 1.24.2.5 2009/06/19 17:06:22 jan Exp $
  *
  * See horde/config/prefs.php for documentation on the structure of this file.
  */
@@ -12,7 +12,7 @@ $prefGroups['display'] = array(
     'column' => _("General Options"),
     'label' => _("Display Options"),
     'desc' => _("Change your note sorting and display options."),
-    'members' => array('show_notepad', 'show_panel', 'sortby', 'sortdir')
+    'members' => array('show_notepad', 'sortby', 'sortdir')
 );
 
 $prefGroups['share'] = array(
@@ -45,8 +45,7 @@ $_prefs['show_panel'] = array(
     'value' => 1,
     'locked' => false,
     'shared' => false,
-    'type' => 'checkbox',
-    'desc' => _("Show notepad options panel?")
+    'type' => 'implicit',
 );
 
 // user preferred sorting column

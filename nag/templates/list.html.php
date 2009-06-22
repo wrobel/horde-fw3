@@ -38,13 +38,10 @@ if ($tasks->hasTasks()) {
             // Just use a new share that this user owns for tasks from
             // external calls - if the API gives them back, we'll trust it.
             $share = $GLOBALS['nag_shares']->newShare('**EXTERNAL**');
+            $owner = $task->tasklist_name;
         } else {
             $share = $GLOBALS['nag_shares']->getShare($task->tasklist);
-        }
-
-        $owner = $task->tasklist;
-        if (!is_a($share, 'PEAR_Error')) {
-            $owner = $share->get('name');
+            $owner = is_a($share, 'PEAR_Error') ? $task->tasklist : $share->get('name');
         }
 
         require NAG_TEMPLATES . '/list/task_summaries.inc';
