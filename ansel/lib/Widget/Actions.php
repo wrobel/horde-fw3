@@ -2,7 +2,7 @@
 /**
  * Ansel_Widget_Actions:: class to wrap the display of gallery actions
  *
- * $Horde: ansel/lib/Widget/Actions.php,v 1.26.2.24 2009/06/15 17:16:49 mrubinsk Exp $
+ * $Horde: ansel/lib/Widget/Actions.php,v 1.26.2.26 2009/06/30 16:07:25 mrubinsk Exp $
  *
  * @author Michael J. Rubinsky <mrubinsk@horde.org>
  * @package Ansel
@@ -48,14 +48,14 @@ class Ansel_Widget_Actions extends Ansel_Widget {
                                              'view' => 'Slideshow'),
                                        $date)));
             }
-            $html .= '<li>' . Horde::link($slideshow_url, '', 'widget') . Horde::img('slideshow_play.png', _("Start Slideshow"), '', Horde::url($registry->getImageDir(), true, -1)) . ' ' . _("Start Slideshow") . '</a></li>';
+            $html .= '<li>' . Horde::link($slideshow_url, '', 'widget') . Horde::img('slideshow_play.png', _("Start Slideshow")) . ' ' . _("Start Slideshow") . '</a></li>';
         }
         if (!empty($uploadurl) && $this->_view->gallery->hasPermission(Auth::getAuth(), PERMS_EDIT)) {
             $html .= '<li>' . Horde::link($uploadurl, '', 'widget') . Horde::img('image_add.png') . ' ' . _("Upload photos") . '</a></li>';
 
             /* Subgalleries */
             if ($this->_view->gallery->hasFeature('subgalleries')) {
-                $html .= '<li>' . Horde::link(Util::addParameter($galleryurl, 'actionID', 'addchild'), '', 'widget') . Horde::img('add.png', '', '', $GLOBALS['registry']->getImageDir()) . ' ' . _("Create a subgallery") . '</a></li>';
+                $html .= '<li>' . Horde::link(Util::addParameter($galleryurl, 'actionID', 'addchild'), '', 'widget') . Horde::img('add.png') . ' ' . _("Create a subgallery") . '</a></li>';
             }
         }
         $html .= '</ul>';
@@ -134,7 +134,7 @@ class Ansel_Widget_Actions extends Ansel_Widget {
             $this->_view->gallery->hasFeature('zipdownload')) {
 
             $zip_params = array_merge(array('actionID' => 'downloadzip'), $date);
-            $html .= '<li>' . Horde::link(Horde::applicationUrl(Util::addParameter($galleryurl, $zip_params)), '', 'widget') . Horde::img('compressed.png', '', '', $GLOBALS['registry']->getImageDir('horde') . '/mime') . ' ' .  _("Download as zip file") . '</a></li>';
+            $html .= '<li>' . Horde::link(Horde::applicationUrl(Util::addParameter($galleryurl, $zip_params)), '', 'widget') . Horde::img('mime/compressed.png', '', '', $GLOBALS['registry']->getImageDir('horde')) . ' ' .  _("Download as zip file") . '</a></li>';
         }
 
         /* Image upload, subgalleries, captions etc... */

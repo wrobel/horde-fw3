@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ansel/lib/GalleryMode/Date.php,v 1.5.2.19 2009/01/12 20:08:11 mrubinsk Exp $
+ * $Horde: ansel/lib/GalleryMode/Date.php,v 1.5.2.20 2009/07/05 17:35:25 mrubinsk Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -795,8 +795,7 @@ class Ansel_Gallery_Date {
             $style = Ansel::getStyleDefinition($style);
         }
 
-        return Ansel_Tile_DateGallery::getTile($this, $parent, $style, $mini,
-                                           $params);
+        return Ansel_Tile_DateGallery::getTile($this, $style, $mini, $params);
     }
 
     /**

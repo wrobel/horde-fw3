@@ -35,7 +35,7 @@ echo Horde::link(Horde::applicationUrl(Util::addParameter($selfUrl, array('actio
 </div>
 <br />
 <div style="text-align: center;">
-  <?php echo Horde::img($image_src, '', 'id = "edit_image"', '') ?>
+  <?php echo '<img src="' . $image_src . '" id="edit_image" />' ?>
   <br />
   <?php $caption = $image->caption ? $image->caption : $image->filename; echo Text_Filter::filter($caption, 'text2html', array('parselevel' => TEXT_HTML_MICRO)) ?>
 </div>

@@ -6,7 +6,7 @@ require_once 'Horde/MIME/Viewer/html.php';
  * The MIME_Viewer_html class renders out HTML text with an effort to
  * remove potentially malicious code.
  *
- * $Horde: imp/lib/MIME/Viewer/html.php,v 1.75.2.39 2009/03/12 19:10:48 slusarz Exp $
+ * $Horde: imp/lib/MIME/Viewer/html.php,v 1.75.2.40 2009/07/07 22:04:51 slusarz Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -30,13 +30,13 @@ class IMP_MIME_Viewer_html extends MIME_Viewer_html {
         # match 1
         (
             # <img> tags
-            <img[^>]+src=
+            <img[^>]+?src=
             # <input> tags
-            |<input[^>]*src=
+            |<input[^>]+?src=
             # "background" attributes
-            |<body[^>]*background=|<td[^>]*background=|<table[^>]*background=
+            |<body[^>]+?background=|<td[^>]*background=|<table[^>]*background=
             # "style" attributes; match 2; quotes: match 3
-            |(style=\s*("|\')?[^>]*background(?:-image)?:(?(3)[^"\']|[^>])*?url\s*\()
+            |(style=\s*("|\')?[^>]*?background(?:-image)?:(?(3)[^"\']|[^>])*?url\s*\()
         )
         # whitespace
         \s*
@@ -55,7 +55,7 @@ class IMP_MIME_Viewer_html extends MIME_Viewer_html {
         (?(2)
             # closing parenthesis
             \s*\)
-            # remainder of the "style" attribute; match 5
+            # remainder of the "style" attribute; match 6
             ((?(3)[^"\'>]*|[^\s>]*))
         )
         /isx';

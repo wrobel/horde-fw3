@@ -2,7 +2,7 @@
 /**
  * Ansel external API interface.
  *
- * $Horde: ansel/lib/api.php,v 1.122.2.9 2009/03/02 23:31:16 mrubinsk Exp $
+ * $Horde: ansel/lib/api.php,v 1.122.2.10 2009/06/27 17:56:54 chuck Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *
@@ -1092,7 +1092,7 @@ function _ansel_getRecentImages($app = null, $galleries = array(),
     if (!is_null($app)) {
         $GLOBALS['ansel_storage'] = new Ansel_Storage($app);
     }
-    $images =  $GLOBALS['ansel_storage']->getRecentImages($galleries, $limit, $slugs);
+    $images = $GLOBALS['ansel_storage']->getRecentImages($galleries, $limit, $slugs);
     $imagelist = array();
     foreach ($images as $image) {
         $id = $image->id;

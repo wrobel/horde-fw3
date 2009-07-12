@@ -3,7 +3,7 @@
  * Ansel_XRequest_ToggleOtherGalleries:: class for performing Ajax setting of
  * the gallery show_actions user pref.
  *
- * $Horde: ansel/lib/XRequest/ToggleOtherGalleries.php,v 1.1.2.2 2009/01/06 15:22:32 jan Exp $
+ * $Horde: ansel/lib/XRequest/ToggleOtherGalleries.php,v 1.1.2.3 2009/06/29 04:17:09 mrubinsk Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -28,7 +28,7 @@ class Ansel_XRequest_ToggleOtherGalleries extends Ansel_XRequest {
         Horde::addScriptFile('togglewidget.js');
 
         $js = array();
-        $js[] = "document.observe('dom:loaded', function() {Event.observe(otherGalleriesWidget.bindTo + '-toggle', 'click', function(event) {doActionToggle('" . $this->_params['bindTo']  . "','ToggleOtherGalleries'); Event.stop(event)});});";
+        $js[] = "Event.observe(window, 'load', function() {Event.observe(otherGalleriesWidget.bindTo + '-toggle', 'click', function(event) {doActionToggle('" . $this->_params['bindTo']  . "','ToggleOtherGalleries'); Event.stop(event)});});";
         $js[] = "if (typeof anselToggleUrl == 'undefined') { anselToggleUrl = '" . Horde::url('xrequest.php', true) . "';}";
         $this->_outputJS($js);
     }

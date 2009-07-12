@@ -25,7 +25,7 @@ Object.extend(Ajax.InPlaceEditor.prototype, {
     },
 
     getText: function() {
-        document.getElementsByClassName(this.options.emptyClassName,this.element).each(function(child) {
+        $(this.element).select('.' + this.options.emptyClassName).each(function(child) {
             this.element.removeChild(child);
         }.bind(this));
         return this.__getText();

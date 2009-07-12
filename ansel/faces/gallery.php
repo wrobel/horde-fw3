@@ -4,7 +4,7 @@
  *
  * TODO: Turn this into an Ansel_View::
  *
- * $Horde: ansel/faces/gallery.php,v 1.10.2.2 2009/03/25 16:25:00 mrubinsk Exp $
+ * $Horde: ansel/faces/gallery.php,v 1.10.2.3 2009/07/06 15:58:55 mrubinsk Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -42,7 +42,7 @@ $images = $gallery->getImages($page * $perpage, $perpage);
 
 $reloadimage = $registry->getImageDir('horde') . '/reload.png';
 $customimage = $registry->getImageDir('horde') . '/layout.png';
-$customurl = Horde::applicationUrl('faces/custom.php');
+$customurl = Util::addParameter(Horde::applicationUrl('faces/custom.php'), 'page', $page);
 $autogenerate = Ansel_Faces::autogenerate();
 
 $vars = Variables::getDefaultVariables();

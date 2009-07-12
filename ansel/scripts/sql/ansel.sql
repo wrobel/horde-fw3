@@ -1,4 +1,4 @@
--- $Horde: ansel/scripts/sql/ansel.sql,v 1.29.2.5 2009/06/15 17:12:48 mrubinsk Exp $
+-- $Horde: ansel/scripts/sql/ansel.sql,v 1.29.2.8 2009/07/07 03:08:29 mrubinsk Exp $
 
 CREATE TABLE ansel_images (
     image_id             INT NOT NULL,
@@ -10,6 +10,10 @@ CREATE TABLE ansel_images (
     image_sort           INT NOT NULL,
     image_faces          INT NOT NULL,
     image_original_date  INT NOT NULL,
+    image_latitude VARCHAR(32),
+    image_longitude VARCHAR(32),
+    image_location VARCHAR(256),
+    image_geotag_date   INT,
 --
     PRIMARY KEY (image_id)
 );
@@ -131,8 +135,8 @@ CREATE TABLE ansel_images_geolocation (
     image_id INT NOT NULL,
     image_latitude VARCHAR(32),
     image_longitude VARCHAR(32),
-    image_location VARCHAR(256)
-
+    image_location VARCHAR(256),
+--
     PRIMARY KEY (image_id)
 );
 

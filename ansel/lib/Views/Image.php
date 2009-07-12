@@ -2,7 +2,7 @@
 /**
  * The Ansel_View_Image:: class wraps display of individual images.
  *
- * $Horde: ansel/lib/Views/Image.php,v 1.68.2.12 2009/06/16 10:10:52 mrubinsk Exp $
+ * $Horde: ansel/lib/Views/Image.php,v 1.68.2.14 2009/06/30 17:19:54 mrubinsk Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @package Ansel

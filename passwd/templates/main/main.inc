@@ -53,14 +53,14 @@ $item = 1;
 <form method="post" action="<?php echo Horde::url('main.php', false, -1, true) ?>" name="passwd">
 <?php echo Util::formInput() ?>
 <?php if ($conf['backend']['backend_list'] == 'hidden'): ?>
-<input type="hidden" name="backend" value="<?php echo $backend_key ?>" />
+<input type="hidden" name="backend" value="<?php echo htmlspecialchars($backend_key) ?>" />
 <?php endif; if ($conf['user']['change'] !== true): ?>
 <input type="hidden" name="userid" value="<?php echo htmlspecialchars($userid) ?>" />
 <?php endif; ?>
 <input type="hidden" name="return_to" value="<?php echo htmlspecialchars(Util::getFormData('return_to')) ?>" />
 
 <h1 class="header">
-<?php 
+<?php
 if ($conf['backend']['backend_list'] == 'hidden') {
     printf(_("Changing password for %s"), htmlspecialchars($backends[$backend_key]['name']));
 } else {

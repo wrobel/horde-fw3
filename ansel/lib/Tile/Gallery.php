@@ -3,7 +3,7 @@
  * Ansel_Tile_Gallery:: class wraps display of thumbnail 'tiles' displayed
  * for a gallery on the Ansel_View_Gallery view.
  *
- * $Horde: ansel/lib/Tile/Gallery.php,v 1.36.2.1 2008/12/21 19:20:53 mrubinsk Exp $
+ * $Horde: ansel/lib/Tile/Gallery.php,v 1.36.2.3 2009/07/05 17:35:25 mrubinsk Exp $
  *
  * @author Michael Rubinsky <mrubinsk@horde.org>
  * @package Ansel
@@ -14,7 +14,6 @@ class Ansel_Tile_Gallery {
      * Outputs the html for a gallery tile.
      *
      * @param Ansel_Gallery $gallery  The Ansel_Gallery we are displaying.
-     * @param Ansel_Gallery $parent   The parent Ansel_Gallery (if any).
      * @param array $style            A style definition array.
      * @param boolean $mini           Force the use of a mini thumbail?
      * @param array $params           An array containing additional parameters.
@@ -26,7 +25,7 @@ class Ansel_Tile_Gallery {
      *
      * @return  Outputs the HTML for the tile.
      */
-    function getTile($gallery, $parent = null, $style = null, $mini = false,
+    function getTile($gallery, $style = null, $mini = false,
                      $params = array())
     {
         /*
@@ -56,7 +55,7 @@ class Ansel_Tile_Gallery {
             $gallery_image = Ansel::getImageUrl(
                 $gallery->getDefaultImage($style['name']),
                 $thumbstyle, true, $style['name']);
-                $gallery_image = Horde::img($gallery_image, $gallery->get('name'), '', '');
+                $gallery_image = '<img src="' . $gallery_image . '" alt="' . $gallery->get('name') . '" />';
             }
         } else {
             $gallery_image = Horde::img(

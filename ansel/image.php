@@ -3,7 +3,7 @@
  * Responsible for making changes to image properties as well as making,
  * previewing and saving changes to the image.
  *
- * $Horde: ansel/image.php,v 1.160.2.8 2009/01/19 15:55:00 mrubinsk Exp $
+ * $Horde: ansel/image.php,v 1.160.2.9 2009/07/07 02:34:07 mrubinsk Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -371,11 +371,8 @@ case 'watermark':
         exit;
     } else {
         $image = &$ansel_storage->getImage($image_id);
-        $image->watermark('screen', $watermark, $watermark_halign,
-                                $watermark_valign, $watermark_font);
-        $ansel_vfs->writeData($image->getVFSPath('screen'),
-                                $image->getVFSName('screen'),
-                                $image->_image->raw(), true);
+        $image->watermark('screen', $watermark, $watermark_halign, $watermark_valign, $watermark_font);
+        $image->updateData($image->raw('screen'), 'screen');
         $imageurl = Util::addParameter('image.php',array_merge(
                                        array('gallery' => $gallery_id,
                                              'image' => $image_id,

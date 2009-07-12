@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/lib/prefs.php,v 1.19.4.21 2009/05/19 10:09:07 jan Exp $
+ * $Horde: horde/lib/prefs.php,v 1.19.4.22 2009/07/11 23:35:26 chuck Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -119,7 +119,7 @@ function prefs_callback()
     }
 
     if (!$reloaded && $prefs->isDirty('sidebar_width')) {
-        $notification->push('if (window.parent && window.parent.document.getElementById(\'hf\') && window.parent.horde_menu && window.parent.horde_menu.document.getElementById(\'expandedSidebar\').style.display != \'hidden\') window.parent.document.getElementById(\'hf\').cols = window.parent.horde_menu.rtl ? \'*,' . $prefs->getValue('sidebar_width') . '\' : \'' . $prefs->getValue('sidebar_width') . ',*\';', 'javascript');
+        $notification->push('if (window.parent && window.parent.document.getElementById(\'hf\') && window.parent.horde_menu && window.parent.horde_menu.document.getElementById(\'expandedSidebar\').style.display != \'hidden\') window.parent.document.getElementById(\'hf\').cols = window.parent.horde_menu.rtl ? \'*,' . (int)$prefs->getValue('sidebar_width') . '\' : \'' . (int)$prefs->getValue('sidebar_width') . ',*\';', 'javascript');
     }
 
     if (!$reloaded &&

@@ -17,8 +17,8 @@
   <?php foreach($imgs as $image): ?>
   <item>
    <title><?php echo $image['filename'] ?></title>
-   <description><?php echo htmlspecialchars(Horde::img($image['url'], '', '', '')) . $image['caption'] ?></description>
-   <link><?php echo $image['link'] ?></link>
+   <description><?php echo htmlspecialchars('<img src="' . $image['url'] . '" />') . $image['caption'] ?></description>
+   <link><?php echo htmlspecialchars($image['link']) ?></link>
   </item>
   <?php endforeach; ?>
  </channel>

@@ -54,12 +54,15 @@ class Ansel_Widget_OwnerFaces extends Ansel_Widget {
         }
 
         $results = $this->_faces->ownerFaces($this->_owner, 0, 12, true);
+        $html .= '<div style="display: block'
+            . ';background:' . $this->_style['background']
+            . ';width:100%;max-height:300px;overflow:auto;" id="faces_widget_content" >';
         foreach ($results as $face_id => $face) {
             $html .= '<a href="' . $this->_faces->getLink($face) . '" title="' . $face['face_name'] . '">'
                     . '<img src="' . $this->_faces->getFaceUrl($face['image_id'], $face_id, 'mini')
                     . '" style="padding-bottom: 5px; padding-left: 5px" /></a>';
         }
 
-        return $html . $this->_htmlEnd();
+        return $html . '</div>' . $this->_htmlEnd();
     }
 }

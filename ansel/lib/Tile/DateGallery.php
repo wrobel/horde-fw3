@@ -3,7 +3,7 @@
  * Ansel_Tile_DateGallery:: class wraps display of thumbnail tile for the
  * DateGallery psuedo gallery.
  *
- * $Horde: ansel/lib/Tile/DateGallery.php,v 1.7.2.2 2008/10/17 17:02:35 mrubinsk Exp $
+ * $Horde: ansel/lib/Tile/DateGallery.php,v 1.7.2.4 2009/07/05 17:35:25 mrubinsk Exp $
  *
  * @author Michael Rubinsky <mrubinsk@horde.org>
  * @package Ansel
@@ -19,7 +19,6 @@ class Ansel_Tile_DateGallery {
      *
      * @param Ansel_DateGallery $dgallery  The Ansel_Gallery_Date we are
      *                                    displaying.
-     * @param Ansel_Gallery $parent       The parent Ansel_Gallery (if any).
      * @param array $style                A style definition array.
      * @param boolean $mini               Force the use of a mini thumbail?
      * @param array $params               An array containing additional
@@ -32,7 +31,7 @@ class Ansel_Tile_DateGallery {
      *
      * @return  Outputs the HTML for the tile.
      */
-    function getTile($dgallery, $parent = null, $style = null, $mini = false,
+    function getTile($dgallery, $style = null, $mini = false,
                      $params = array())
     {
         /* User's preferred date format */
@@ -88,11 +87,9 @@ class Ansel_Tile_DateGallery {
                 $dgallery->getDefaultImage(),
                 $thumbstyle, true, $style['name']);
 
-            $gallery_image = Horde::img($gallery_image, $caption, '', '');
+            $gallery_image = '<img src="' . $gallery_image . '" alt="' . $caption . '" />' ;
         } else {
-            $gallery_image = Horde::img(
-                $GLOBALS['registry']->getImageDir() . '/thumb-error.png', '',
-                '', '');
+            $gallery_image = Horde::img($GLOBALS['registry']->getImageDir() . '/thumb-error.png', '', '', '');
         }
 
         /* Check for being called via the api and generate correct view links */

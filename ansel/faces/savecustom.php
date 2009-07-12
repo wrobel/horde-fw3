@@ -2,7 +2,7 @@
 /**
  * Process an single image (to be called by ajax)
  *
- * $Horde: ansel/faces/savecustom.php,v 1.7.2.1 2009/01/06 15:22:20 jan Exp $
+ * $Horde: ansel/faces/savecustom.php,v 1.7.2.2 2009/07/06 15:58:55 mrubinsk Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -18,10 +18,12 @@ $image_id = (int)Util::getFormData('image_id');
 $gallery_id = (int)Util::getFormData('gallery_id');
 $face_id = (int)Util::getFormData('face_id');
 $url = Util::getFormData('url');
+$page = Util::getFormData('page', 0);
 
 $back_url = empty($url) ?
     Util::addParameter(Horde::applicationUrl('faces/gallery.php'),
-                      'gallery', $gallery_id) :
+                             array('gallery' => $gallery_id,
+                                   'page' => $page), null, false) :
     $url;
 
 if (Util::getPost('submit') == _("Cancel")) {

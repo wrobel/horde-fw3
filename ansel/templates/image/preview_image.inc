@@ -13,7 +13,7 @@ $base_url = Util::addParameter('image.php', array_merge(
 $edit_url = Util::addParameter($base_url, 'actionID', 'editimage');
 $save_url = Util::addParameter($base_url, 'actionID', $action);
 $image_url = Horde::applicationUrl(Util::addParameter($base_url, array('actionID' => 'image' . $action,
-                                                                       'view' => 'screen')));
+                                                                             'view' => 'screen')));
 ?>
 <div class="control anselActions" style="text-align:center;">
 <?php
@@ -29,7 +29,7 @@ if ($gallery->hasPermission(Auth::getAuth(), PERMS_EDIT)) {
 </div>
 <br />
 <div align="center">
-<?php echo Horde::img($image_url, '', '', '') ?>
+<?php echo '<img src="' . $image_url . '" />' ?>
 <br />
 <?php $caption = $image->caption ? $image->caption : $image->filename; echo Text_Filter::filter($caption, 'text2html', array('parselevel' => TEXT_HTML_MICRO)) ?>
 </div>

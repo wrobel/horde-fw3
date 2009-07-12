@@ -2,6 +2,7 @@
 v3.3.5-cvs
 ----------
 
+[cjh] SECURITY: Fix validation of "number" type preferences (Bug #8399).
 [mms] SECURITY: Don't display unknown text parts inline (Bug #8311).
 [mjr] Fix weatherdotcom block always displaying a 5 day forecast (Bug #8357).
 [cjh] Use streams for file transfers in VFS_ssh2 (jives@jives.ixum.net,

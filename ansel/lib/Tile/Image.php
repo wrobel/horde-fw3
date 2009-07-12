@@ -3,7 +3,7 @@
  * Ansel_Tile_Image:: class wraps display of thumbnails displayed
  * for a image on the Ansel_View_Gallery view.
  *
- * $Horde: ansel/lib/Tile/Image.php,v 1.49.2.1 2008/10/27 21:34:26 mrubinsk Exp $
+ * $Horde: ansel/lib/Tile/Image.php,v 1.49.2.2 2009/07/05 17:35:25 mrubinsk Exp $
  *
  * @author Michael Rubinsky <mrubinsk@horde.org>
  * @package Ansel
@@ -30,15 +30,11 @@ class Ansel_Tile_Image {
      *
      * @return  Outputs the HTML for the image tile.
      */
-    function getTile($image, $parent = null, $style = null, $mini = false,
-                     $params = array())
+    function getTile($image, $style = null, $mini = false, $params = array())
     {
         global $conf, $registry;
 
-        if (is_null($parent)) {
-            $parent = $GLOBALS['ansel_storage']->getGallery($image->gallery);
-        }
-
+        $parent = $GLOBALS['ansel_storage']->getGallery($image->gallery);
         if (is_null($style)) {
             $style = $parent->getStyle();
         }

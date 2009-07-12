@@ -1,10 +1,13 @@
 <script type="text/javascript">
 document.observe('dom:loaded', function() {
         <?php if (empty($this->_params['hide_slideshow'])): ?>
-        Element.show('ssPlay');
+        $$('.ssPlay').each(function(n) {n.show();});
         <?php endif; ?>
         Event.observe($('photodiv'), 'load', function() {
-                new Effect.Appear($('photodiv'), { duration: 0.5, afterFinish: function() {$('imgloading').setStyle({visibility: 'hidden'}); new Effect.Appear($('Caption'), { duration: 0.5 }); } });
+               new Effect.Appear($('photodiv'), { duration: 0.5,
+                                                   afterFinish: function() {$$('.imgloading').each(function(n) { n.setStyle({visibility: 'hidden'});});
+                                                                            new Effect.Appear($('Caption'), { duration: 0.5 });
+                                                                            }});
                 nextImg = new Image();
                 prvImg = new Image();
                 nextImg.src = "<?php echo $nextImgUrl ?>";
@@ -47,7 +50,7 @@ function arrowHandler(e)
 <h1 class="header" id="PhotoName"><?php echo Ansel::getBreadCrumbs(); ?></h1>
 <table style="width: 100%; border-collapse: collapse">
  <tr>
-  <td style="background-color:<?php echo $style['background']; ?>;">
+  <td valign="top" style="background-color:<?php echo $style['background']; ?>;">
     <?php
         $needSeperator = false;
         $actionHTML = '';
@@ -82,44 +85,40 @@ function arrowHandler(e)
         }
 ?>
     <div class="slideControls">
-     <?php echo Horde::img('loading.gif', '', array('id' => 'imgloading'), Horde::url($registry->getImageDir('horde'), true, -1));?>
+     <?php echo '<img src="' . Horde::url($registry->getImageDir('horde'), true, -1) . '/loading.gif" class="imgloading" />' ?>
      <?php
      if (empty($this->_params['hide_slideshow'])) {
-         echo '<a style="display:none;" href="' . $slideshow_url . '" id="ssPlay" title="' . _("Start Slideshow") . '">' .
-               Horde::img('slideshow_play.png', _("Play"), '', Horde::url($registry->getImageDir(), true, -1)) . '</a>';
+         echo '<a style="display:none;" href="' . $slideshow_url . '" class="ssPlay" title="' . _("Start Slideshow") . '">' .
+               '<img src="' . Horde::url($registry->getImageDir(), true, -1) . '/slideshow_play.png" alt="' . _("Play") . '" /></a>';
      }
      echo '<a href="' . $prev_url . '" alt="<" id="PrevLink" title="' . _("Previous") . '">' .
-           Horde::img('slideshow_prev.png', _("Previous"), '', Horde::url($registry->getImageDir(), true, -1)) . '</a>';
+           '<img src="' . Horde::url($registry->getImageDir(), true, -1) . '/slideshow_prev.png" alt="' . _("Previous") . '" /></a>';
      echo '<a href="' . $next_url . '" alt=">" id="NextLink"  title="' . _("Next") . '">' .
-           Horde::img('slideshow_next.png', _("Next"), '', Horde::url($registry->getImageDir(), true, -1)) . '</a>';
+           '<img src="' . Horde::url($registry->getImageDir(), true, -1) . '/slideshow_next.png" alt="' . _("Next") . '" /></a>';
      echo '<a href="' . $galleryurl . '" id="GalleryLink" title="' . _("Back to gallery") . '">' .
-           Horde::img('galleries.png', _("Back to gallery"), '', Horde::url($registry->getImageDir(), true, -1)) . '</a>';
+           '<img src="' . Horde::url($registry->getImageDir(), true, -1) . '/galleries.png" alt="' .  _("Back to gallery") . '" /></a>';
      ?>
 
     </div>
     <div id="Container">
      <noscript>
-      <?php echo Horde::img($imageUrl, '', array(), '') ?>
+      <?php echo '<img src="' . $imageUrl . '" />' ?>
      </noscript>
      <?php echo Horde::img('blank.gif', '', array('id' => 'photodiv', 'width' => $geometry['width'], 'height' => $geometry['height']), $registry->getImageDir('horde')) ?>
      <div id="CaptionContainer" style="width:<?php echo $geometry['width']?>px;">
      <p id="Caption" style="display:none;">
        <?php echo Text_Filter::filter($this->resource->caption, 'text2html', array('parselevel' => TEXT_HTML_MICRO)) ?>
-      </p>
+     </p>
      </div>
     </div>
     <div class="slideControls">
-     <?php
-     echo Horde::img('loading.gif', '', array('id' => 'imgloading', 'style' => 'display:none;'), $registry->getImageDir('horde'));
+     <?php echo '<img src="' . Horde::url($registry->getImageDir('horde'), true, -1) . '/loading.gif" class="imgloading" />';
      if (empty($this->_params['hide_slideshow'])) {
-         echo '<a style="display:none;" href="' . Horde::applicationUrl($slideshow_url) . '" id="ssPlay" title="' . _("Start Slideshow") . '">' . Horde::img('slideshow_play.png', _("Play"), '', Horde::url($registry->getImageDir(), true, -1)) . '</a>';
+         echo '<a style="display:none;" href="' . Horde::applicationUrl($slideshow_url) . '" class="ssPlay" title="' . _("Start Slideshow") . '"><img src="' . Horde::url($registry->getImageDir(), true, -1) . '/slideshow_play.png" alt="' . _("Play") . '" /></a>';
      }
-     echo '<a href="' . $prev_url . '" id="PrevLink" title="' . _("Previous") . '">' .
-           Horde::img('slideshow_prev.png', _("Previous"), '', Horde::url($registry->getImageDir(), true, -1)) . '</a>';
-     echo '<a href="' . $next_url . '" id="NextLink"  title="' . _("Next") . '">' .
-           Horde::img('slideshow_next.png', _("Next"), '', Horde::url($registry->getImageDir(), true, -1)) . '</a>';
-     echo '<a href="' . $galleryurl . '" id="GalleryLink" title="' . _("Back to gallery") . '">' .
-           Horde::img('galleries.png', _("Back to gallery"), '', Horde::url($registry->getImageDir(), true, -1)) . '</a>';
+     echo '<a href="' . $prev_url . '" id="PrevLink" title="' . _("Previous") . '"><img src="' . Horde::url($registry->getImageDir(), true, -1) . '/slideshow_prev.png" alt="' . _("Previous") . '" /></a>';
+     echo '<a href="' . $next_url . '" id="NextLink"  title="' . _("Next") . '"><img src="' . Horde::url($registry->getImageDir(), true, -1) . '/slideshow_next.png" alt="' . _("Next") . '" /></a>';
+     echo '<a href="' . $galleryurl . '" id="GalleryLink" title="' . _("Back to gallery") . '"><img src="' . Horde::url($registry->getImageDir(), true, -1) . '/galleries.png" alt="' .  _("Back to gallery") . '" /></a>';
      ?>
     </div>
     <?php

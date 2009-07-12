@@ -4,7 +4,7 @@
  * various directory search drivers.  It includes functions for searching,
  * adding, removing, and modifying directory entries.
  *
- * $Horde: turba/lib/Driver.php,v 1.57.2.86 2009/06/04 19:00:36 mrubinsk Exp $
+ * $Horde: turba/lib/Driver.php,v 1.57.2.87 2009/07/10 00:37:32 mrubinsk Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Jon Parise <jon@csh.rit.edu>
@@ -342,6 +342,14 @@ class Turba_Driver {
                                         'approximate' => !empty($this->approximate[$field]),
                                     );
                                 }
+                                $atomsearch[] = array(
+                                    'field' => $field,
+                                    'op' => '=',
+                                    'test' => '',
+                                    'begin' => $match_begin,
+                                    'approximate' => !empty($this->approximate[$field])
+                                );
+
                                 $subsearch[] = array('OR' => $atomsearch);
                                 unset($atomsearch);
                                 $glue = 'AND';

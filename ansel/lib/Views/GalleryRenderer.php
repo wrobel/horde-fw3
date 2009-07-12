@@ -2,7 +2,7 @@
 /**
  * Ansel_View_GalleryRenderer::  Base class for all gallery renderers.
  *
- * $Horde: ansel/lib/Views/GalleryRenderer.php,v 1.4.2.6 2009/06/15 17:16:48 mrubinsk Exp $
+ * $Horde: ansel/lib/Views/GalleryRenderer.php,v 1.4.2.7 2009/06/22 17:00:19 mrubinsk Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -87,7 +87,8 @@ class Ansel_View_GalleryRenderer {
     var $numTiles;
 
     /**
-     * The Ansel_Image or Ansel_DateGallery objects for the current view.
+     * The Ansel_Image or Ansel_DateGallery objects that appear on the current
+     * page in the current view.
      *
      * @var array of Ansel_Image or Ansel_DateGallery objects.
      */
@@ -166,7 +167,9 @@ class Ansel_View_GalleryRenderer {
             //$image_ids = $this->view->gallery->listImages($this->pagestart, $this->pagestart + $this->perpage);
             $ids = array();
             foreach ($this->children as $child) {
-                $ids[] = $child->id;
+                if (is_a($child, 'Ansel_Image')) {
+                    $ids[] = $child->id;
+                }
             }
             // Gallery widgets always receive an array of image ids for
             // the current page.

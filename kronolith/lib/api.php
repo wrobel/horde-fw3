@@ -2,7 +2,7 @@
 /**
  * Kronolith external API interface.
  *
- * $Horde: kronolith/lib/api.php,v 1.126.2.62 2009/06/16 12:54:48 jan Exp $
+ * $Horde: kronolith/lib/api.php,v 1.126.2.63 2009/06/26 14:00:00 chuck Exp $
  *
  * This file defines Kronolith's external API interface. Other applications
  * can interact with Kronolith through this API.
@@ -465,9 +465,6 @@ function _kronolith_browse($path = '', $properties = array())
  */
 function _kronolith_put($path, $content, $content_type)
 {
-    $f = fopen('/tmp/kronolith_put.ics', 'w');
-    fwrite($f, $content);
-    fclose($f);
     require_once dirname(__FILE__) . '/base.php';
     global $kronolith_driver;
 

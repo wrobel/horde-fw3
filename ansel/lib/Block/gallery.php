@@ -6,7 +6,7 @@ $block_name = _("Gallery");
  * This file provides a selected Ansel gallery through the Horde_Blocks, by
  * extending the Horde_Blocks class.
  *
- * $Horde: ansel/lib/Block/gallery.php,v 1.45.2.5 2009/01/06 15:22:29 jan Exp $
+ * $Horde: ansel/lib/Block/gallery.php,v 1.45.2.7 2009/06/30 16:09:09 mrubinsk Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *
@@ -108,13 +108,9 @@ class Horde_Block_ansel_gallery extends Horde_Block {
         if ($iid = $gallery->getDefaultImage('ansel_default') &&
             $gallery->hasPermission(Auth::getAuth(), PERMS_READ)) {
 
-            $html .= Horde::img(Ansel::getImageUrl(
-                $gallery->getDefaultImage('ansel_default'), 'thumb', true), '',
-                 '', '');
+            $html .= '<img src="' . Ansel::getImageUrl($gallery->getDefaultImage('ansel_default'), 'thumb', true) . '" />';
         } else {
-            $html .= Horde::img(
-                $GLOBALS['registry']->getImageDir() . '/thumb-error.png', '',
-                '', '');
+            $html .= Horde::img('thumb-error.png');
         }
 
         return $html . '</a></noscript>';

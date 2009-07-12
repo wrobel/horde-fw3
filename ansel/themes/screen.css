@@ -1,5 +1,5 @@
 /**
- * $Horde: ansel/themes/screen.css,v 1.60.2.10 2009/06/19 22:45:20 mrubinsk Exp $
+ * $Horde: ansel/themes/screen.css,v 1.60.2.15 2009/07/11 00:32:46 mrubinsk Exp $
  */
 
 /* Table CSS. */
@@ -312,7 +312,6 @@ form.inplaceeditor-form a {
 .inplaceeditor-empty {
     font-style: italic;
     color: #999;
-
 }
 
 /* Image resizer/slider */
@@ -331,20 +330,68 @@ form.inplaceeditor-form a {
     position: absolute;
     width: 18px;
     height: 18px;
- }
+}
 
  /* Google Map stuff */
- #ansel_map {
+#ansel_map {
     width:100%;
     height:250px;
-    float:left;
     overflow:hidden;
- }
-
- #ansel_map_small {
+    border-bottom: 1px solid #ccc;
+}
+#ansel_map_small {
     width:100%;
     height:80px;
     margin-top:10px;
-    float:left;
     overflow:hidden;
- }
+    border-top: 1px solid #ccc;
+}
+.ansel_location_sameas {
+    background-color: #979797;
+    width: 100%;
+}
+.ansel_location_sameas img {
+    border: 1px solid white;
+    margin: 5px;
+}
+.ansel_geolocation {
+    background: url(http://maps.gstatic.com/intl/en_us/mapfiles/marker.png) center left no-repeat;
+    margin:10px 0 6px;
+    padding:0 0 6px 30px;
+    min-height: 37px;
+}
+#ansel_latlng {
+    color:#666666;
+    font-size:90%;
+    white-space: nowrap;
+    margin-right: 5px;
+}
+
+#ansel_locationtext {
+    margin: 0;
+    font-size: 80%;
+}
+/* Autocomplete styles. */
+.autocomplete {
+    background: #f4f4f4;
+    border: 1px solid #d4d4d4;
+    position: absolute;
+    padding: 2px 2px 2px 2px;
+}
+.autocomplete ul {
+    margin: 1px;
+    padding: 1px;
+    list-style-type: none;
+}
+.autocomplete ul li {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 90%;
+    color: #000;
+}
+.autocomplete ul .selected {
+    background: gray;
+    color: #fff;
+}

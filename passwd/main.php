@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: passwd/main.php,v 1.67.2.9 2009/06/12 08:43:47 jan Exp $
+ * $Horde: passwd/main.php,v 1.67.2.10 2009/07/05 17:13:32 chuck Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -15,8 +15,18 @@
 require_once PASSWD_BASE . '/lib/base.php';
 require PASSWD_BASE . '/config/backends.php';
 
+// Get the backend details.
+$backend_key = Util::getFormData('backend', false);
+if (!isset($backends[$backend_key])) {
+    $backend_key = null;
+}
+
 // Use a do-while to allow easy breaking if an error is found.
 do {
+    if (!$backend_key) {
+        break;
+    }
+
     // Has the user submitted the form yet?
     $submit = Util::getFormData('submit', false);
     if (!$submit) {
@@ -24,8 +34,6 @@ do {
         break;
     }
 
-    // Get the backend details.
-    $backend_key = Util::getFormData('backend', false);
     $driver = $backends[$backend_key]['driver'];
     $params = $backends[$backend_key]['params'];
     $password_policy = isset($backends[$backend_key]['password policy'])
@@ -247,8 +255,8 @@ if ($conf['backend']['backend_list'] == 'shown') {
 
     foreach ($backends as $key => $current_backend) {
         $sel = ($key == $backend_key) ? ' selected="selected"' : '';
-        $backends_list .= "<option value=\"$key\"$sel>";
-        $backends_list .= $current_backend['name'] . '</option>';
+        $backends_list .= '<option value="' . htmlspecialchars($key) . '"' . $sel . '>' .
+            htmlspecialchars($current_backend['name']) . '</option>';
     }
 }
 

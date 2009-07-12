@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ansel/edit_dates.php,v 1.2.2.4 2009/01/06 15:22:18 jan Exp $
+ * $Horde: ansel/edit_dates.php,v 1.2.2.5 2009/06/30 15:48:08 mrubinsk Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -81,7 +81,7 @@ if ($actionID == 'edit_dates') {
 $keys = array_keys($images);
 $html = '';
 foreach ($keys as $key) {
-    $html .= Horde::img(Ansel::getImageUrl($key, 'mini', false), '', array('style' => 'margin:2px;'), '');
+    $html .= '<img src="' . Ansel::getImageUrl($key, 'mini', false) . '" style="margin:2px;" />';
 }
 $image = $ansel_storage->getImage(array_pop($keys));
 /* Display the form */

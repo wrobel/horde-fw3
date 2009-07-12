@@ -1,9 +1,15 @@
 ----------
-v1.0.1-cvs
+v1.1-cvs
 ----------
 
-[mjr] Display a Google Map with markers for image location(s) if location data
-      is available.
+[mjr] Return to the previously viewed page number when manually selecting
+      face ranges (Bug: 8402).
+[mjr] Significantly reduce the number of javascript errors due to IE issues.
+[mjr] Allow the addition of geolocation data on images that do not contain any
+      and allow the relocating of images that do have the data.
+[mjr] Fix display of EXIF date values (Bug: 8352).
+[mjr] Display a Google Map with thumbnail markers for image location(s) if 
+      location data is available.
 [mjr] Add configuration switch to disallow querying the preference backend for
       other user's identities and preferences (Bug: 8269).
 [mjr] Remove broken implementation of the 'numlimit' configuration option

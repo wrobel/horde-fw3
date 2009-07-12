@@ -1,7 +1,16 @@
 ----------
-v3.1.1-cvs
+v3.1.2-cvs
 ----------
 
+
+
+
+------
+v3.1.1
+------
+
+[cjh] SECURITY: Fix XSS when specifying an invalid backend key
+      (security@davidwharton.us, #8398).
 [jan] Add hook that's called after successfully changing the password.
 [jan] Add SOAP driver.
 [jan] Add example configuration for Postfix Admin (Michael Brennen

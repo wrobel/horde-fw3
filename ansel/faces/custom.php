@@ -2,7 +2,7 @@
 /**
  * Explicitly add/edit a face range to an image.
  *
- * $Horde: ansel/faces/custom.php,v 1.10.2.1 2009/01/06 15:22:20 jan Exp $
+ * $Horde: ansel/faces/custom.php,v 1.10.2.2 2009/07/06 15:58:55 mrubinsk Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -15,7 +15,13 @@ require_once dirname(__FILE__) . '/../lib/base.php';
 
 $image_id = (int)Util::getFormData('image');
 $face_id = (int)Util::getFormData('face');
+$page = Util::getFormData('page', 0);
 $url = Util::getFormData('url');
+$urlparams = array('page' => $page);
+if (!empty($url)) {
+    $urlparams['url'] = $url;
+}
+$form_post = Util::addParameter(Horde::applicationUrl('faces/savecustom.php'), $urlparams);
 
 $image = &$ansel_storage->getImage($image_id);
 if (is_a($image, 'PEAR_Error')) {

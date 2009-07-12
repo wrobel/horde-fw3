@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ansel/lib/Ansel.php,v 1.517.2.52 2009/06/19 22:45:19 mrubinsk Exp $
+ * $Horde: ansel/lib/Ansel.php,v 1.517.2.65 2009/07/12 00:06:37 mrubinsk Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *
@@ -257,7 +257,6 @@ class Ansel {
                            : 'id/' . (int)$data['gallery'])
                         . '/';
 
-
                     // See comments below about lightbox
                     if ($data['view'] == 'Image' &&
                         (empty($data['gallery_view']) ||
@@ -415,8 +414,7 @@ class Ansel {
 
     /**
      * Return a link to an image, suitable for use in an <img/> tag
-     * (or a Horde::img() call, with the path parameter set to
-     * ''). Takes into account $conf['vfs']['direct'] and other
+     * Takes into account $conf['vfs']['direct'] and other
      * factors.
      *
      * @param string $imageId  The id of the image.
@@ -1106,13 +1104,11 @@ class Ansel_Gallery extends Horde_Share_Object_sql_hierarchical {
      */
     function hasFeature($feature)
     {
-
         // First check for purely Ansel_Gallery features
         // Currently we have none of these.
 
         // Delegate to the modeHelper
         return $this->_modeHelper->hasFeature($feature);
-
     }
 
     /**
@@ -1185,6 +1181,7 @@ class Ansel_Gallery extends Horde_Share_Object_sql_hierarchical {
         if ($GLOBALS['conf']['ansel_cache']['usecache']) {
             $GLOBALS['cache']->expire('Ansel_Gallery' . $this->id);
         }
+
         return parent::_save();
     }
 
@@ -1221,7 +1218,6 @@ class Ansel_Gallery extends Horde_Share_Object_sql_hierarchical {
         }
 
         return $this->_shareOb->_write_db->exec($sql);
-
     }
 
     /**
@@ -1257,49 +1253,6 @@ class Ansel_Gallery extends Horde_Share_Object_sql_hierarchical {
                 $resetStack = true;
             }
         }
-
-        // Do we need this conditional??
-        if (!empty($image_data['data'])) {
-            $result = $image->writeData();
-            if (is_a($result, 'PEAR_Error')) {
-                return $result;
-            }
-        }
-
-        // Should get exif data, add any to tags then save tags all at once...
-
-        /* Update the metadata */
-        $image->_updateExif();
-
-        if (isset($image_data['tags']) && is_array($image_data['tags']) &&
-            count($image_data['tags'])) {
-
-            $image->setTags($image_data['tags']);
-        }
-
-        /* Create tags from exif data if desired */
-        $fields = @unserialize($GLOBALS['prefs']->getValue('exif_tags'));
-        if ($fields) {
-            $image->exifToTags($fields);
-        }
-
-        /*
-         * Put orginal date into image object. Need to set the property directly
-         * instead of passing value to c'tor since we won't have the exif data
-         * until after the image is instantiated.
-         */
-        if (!empty($image->_exif['DateTimeOriginal'])) {
-            $image->originalDate = strtotime($image->_exif['DateTimeOriginal']);
-        } else {
-            $image->originalDate = $image->uploaded;
-        }
-
-        /* Save the image again, now that we have the exif data we want
-         * @FIXME: This needs to be refactored to allow writing all the data
-         * out at once. (exif code requires an image_id to save the data
-         * to the attributes table)
-         */
-        $image->save();
 
         /* Change the default image if it's set to automatic. */
         if ($this->data['attribute_default_type'] == 'auto') {
@@ -1497,8 +1450,7 @@ class Ansel_Gallery extends Horde_Share_Object_sql_hierarchical {
      * @param array $params          Any additional parameters the Ansel_Tile
      *                               object may need.
      */
-    function getTile($parent = null, $style = null, $mini = false,
-                     $params = array())
+    function getTile($parent = null, $style = null, $mini = false, $params = array())
     {
         require_once ANSEL_BASE . '/lib/Tile/Gallery.php';
 
@@ -1512,8 +1464,7 @@ class Ansel_Gallery extends Horde_Share_Object_sql_hierarchical {
             $view_url = str_replace('%g', $this->id, $view_url);
         }
 
-        return Ansel_Tile_Gallery::getTile($this, $parent, $style, $mini,
-                                           $params);
+        return Ansel_Tile_Gallery::getTile($this, $style, $mini, $params);
     }
 
     /**
@@ -1678,7 +1629,6 @@ class Ansel_Gallery extends Horde_Share_Object_sql_hierarchical {
                                       'gallery_id' => -$this->id);
                      $newImg = new Ansel_Image($iparams);
                      $newImg->save();
-                     $newImg->writeData();
                      $prettyData = serialize(
                          array_merge($thumbs,
                                      array($styleHash => $newImg->id)));
@@ -1728,6 +1678,7 @@ class Ansel_Gallery extends Horde_Share_Object_sql_hierarchical {
                 }
             }
         }
+
         return false;
     }
 
@@ -1773,6 +1724,7 @@ class Ansel_Gallery extends Horde_Share_Object_sql_hierarchical {
         } else {
             $style = $this->data['attribute_style'];
         }
+
         return Ansel::getStyleDefinition($style);
 
     }
@@ -1797,6 +1749,7 @@ class Ansel_Gallery extends Horde_Share_Object_sql_hierarchical {
 
             $view = md5($style['thumbstyle'] . '.' . $style['background']);
         }
+
         return $view;
     }
     /**
@@ -1815,7 +1768,6 @@ class Ansel_Gallery extends Horde_Share_Object_sql_hierarchical {
 
             return true;
         }
-
 
         return $GLOBALS['perms']->hasPermission($this->getPermission(),
                                                 $userid, $permission, $creator);
@@ -1873,8 +1825,6 @@ class Ansel_Gallery extends Horde_Share_Object_sql_hierarchical {
 
         return true;
     }
-
-
 
     /**
      * Sets this gallery's parent gallery.
@@ -1967,8 +1917,10 @@ class Ansel_Gallery extends Horde_Share_Object_sql_hierarchical {
             }
             $result = $query->execute(array($data[$driver_key], $this->id));
             $query->free();
+
             return $result;
         }
+
         return true;
     }
 
@@ -2029,7 +1981,13 @@ class Ansel_Image {
     var $sort;
     var $commentCount;
     var $facesCount;
+    var $lat;
+    var $lng;
+    var $location;
+    var $geotag_timestamp;
+
     var $_dirty;
+
 
     /**
      * Timestamp of original date.
@@ -2042,7 +2000,7 @@ class Ansel_Image {
      * Holds an array of tags for this image
      * @var array
      */
-    var $_tags = null;
+    var $_tags = array();
 
     var $_loaded = array();
     var $_data = array();
@@ -2053,7 +2011,6 @@ class Ansel_Image {
      * @var array
      */
     var $_exif = array();
-
 
     /**
      * TODO: refactor Ansel_Image to use a ::get() method like Ansel_Gallery
@@ -2070,22 +2027,23 @@ class Ansel_Image {
             $this->sort = $image['image_sort'];
             $this->gallery = $image['gallery_id'];
 
+            // New image?
+            if (!empty($image['image_id'])) {
+                $this->id = $image['image_id'];
+            }
+
+            if (!empty($image['data'])) {
+                $this->_data['full'] = $image['data'];
+            }
+
             if (!empty($image['image_uploaded_date'])) {
                 $this->uploaded = $image['image_uploaded_date'];
             } else {
                 $this->uploaded = time();
             }
 
-            if (!empty($image['image_id'])) {
-                $this->id = $image['image_id'];
-            }
-
             if (!empty($image['image_type'])) {
                 $this->type = $image['image_type'];
-            }
-
-            if (!empty($image['data'])) {
-                $this->_data['full'] = $image['data'];
             }
 
             if (!empty($image['tags'])) {
@@ -2096,11 +2054,19 @@ class Ansel_Image {
                $this->facesCount = $image['image_faces'];
             }
 
+            $this->location = !empty($image['image_location']) ? $image['image_location'] : '';
+
+            // The following may have to be rewritten by EXIF.
+            // EXIF requires both an image id and a stream, so we can't
+            // get EXIF data before we save the image to the VFS.
             if (!empty($image['image_original_date'])) {
                 $this->originalDate = $image['image_original_date'];
             } else {
                 $this->originalDate = $this->uploaded;
             }
+            $this->lat = !empty($image['image_latitude']) ? $image['image_latitude'] : '';
+            $this->lng = !empty($image['image_longitude']) ? $image['image_longitude'] : '';
+            $this->geotag_timestamp = !empty($image['image_geotag_date']) ? $image['image_geotag_date'] : '0';
         }
 
         $this->_image = Ansel::getImageObject();
@@ -2157,6 +2123,15 @@ class Ansel_Image {
      */
     function load($view = 'full', $style = null)
     {
+        // If this is a new image that hasn't been saved yet, we will
+        // already have the full data loaded. If we auto-rotate the image
+        // then there is no need to save it just to load it again.
+        if ($view == 'full' && !empty($this->_data['full'])) {
+            $this->_image->loadString('original', $this->_data['full']);
+            $this->_loaded['full'] = true;
+            return true;
+        }
+
         $viewHash = $this->_getViewHash($view, $style);
         /* If we've already loaded the data, just return now. */
         if (!empty($this->_loaded[$viewHash])) {
@@ -2245,7 +2220,7 @@ class Ansel_Image {
     function createView($view, $style = null)
     {
         // HACK: Need to replace the image object with a JPG typed image if
-        //       we are generating a screen image. Need to do the replacement (
+        //       we are generating a screen image. Need to do the replacement
         //       and do it *here* for BC reasons with Horde_Image...and this
         //       needs to be done FIRST, since the view might already be cached
         //       in the VFS.
@@ -2320,37 +2295,79 @@ class Ansel_Image {
         }
 
         return true;
-
     }
 
     /**
-     * Writes the current data to vfs.  Any cached images are deleted
-     * so they can be regenerated from the new data when necessary.
+     * Writes the current data to vfs, used when creating a new image
      */
-    function writeData()
+    function _writeData()
     {
-        /* Delete cache and write data. */
-        //$this->deleteCache();
         $this->_dirty = false;
-
         return $GLOBALS['ansel_vfs']->writeData($this->getVFSPath('full'),
                                                 $this->getVFSName('full'),
                                                 $this->_data['full'], true);
     }
 
     /**
+     * Change the image data. Deletes old cache and writes the new
+     * data to the VFS. Used when updating an image
+     *
+     * @param string $data  The new data for this image.
+     * @param string $view  If specified, the $data represents only this
+     *                      particular view. Cache will not be deleted.
+     */
+    function updateData($data, $view = 'full')
+    {
+        if (is_a($data, 'PEAR_Error')) {
+            return $data;
+        }
+
+        /* Delete old cached data if we are replacing the full image */
+        if ($view == 'full') {
+            $this->deleteCache();
+        }
+
+        return $GLOBALS['ansel_vfs']->writeData($this->getVFSPath($view),
+                                                $this->getVFSName($view),
+                                                $data, true);
+    }
+
+    /**
+     * Update the geotag data
+     */
+    function geotag($lat, $lng, $location = '')
+    {
+        $this->lat = $lat;
+        $this->lng = $lng;
+        $this->location = $location;
+        $this->geotag_timestamp = time();
+        $this->save();
+    }
+
+    /**
      * Save basic image details
+     *
+     * @TODO: Move all SQL queries to Ansel_Storage::?
      */
     function save()
     {
+        /* If we have an id, then it's an existing image.*/
         if ($this->id) {
-            // Update an existing image.
-            $update = $GLOBALS['ansel_db']->prepare('UPDATE ansel_images SET image_filename = ?, image_type = ?, image_caption = ?, image_sort = ?, image_original_date = ? WHERE image_id = ?');
+            $update = $GLOBALS['ansel_db']->prepare('UPDATE ansel_images SET image_filename = ?, image_type = ?, image_caption = ?, image_sort = ?, image_original_date = ?, image_latitude = ?, image_longitude = ?, image_location = ?, image_geotag_date = ? WHERE image_id = ?');
             if (is_a($update, 'PEAR_Error')) {
                 Horde::logMessage($update, __FILE__, __LINE__, PEAR_LOG_ERR);
                 return $update;
             }
-            $result = $update->execute(array(String::convertCharset($this->filename, NLS::getCharset(), $GLOBALS['conf']['sql']['charset']), $this->type, String::convertCharset($this->caption, NLS::getCharset(), $GLOBALS['conf']['sql']['charset']), $this->sort, $this->originalDate, $this->id));
+            $result = $update->execute(array(String::convertCharset($this->filename, NLS::getCharset(), $GLOBALS['conf']['sql']['charset']),
+                                             $this->type,
+                                             String::convertCharset($this->caption, NLS::getCharset(), $GLOBALS['conf']['sql']['charset']),
+                                             $this->sort,
+                                             $this->originalDate,
+                                             $this->lat,
+                                             $this->lng,
+                                             $this->location,
+                                             $this->geotag_timestamp,
+                                             $this->id));
             if (is_a($result, 'PEAR_Error')) {
                 Horde::logMessage($update, __FILE__, __LINE__, PEAR_LOG_ERR);
             } else {
@@ -2359,37 +2376,61 @@ class Ansel_Image {
             return $result;
         }
 
+        /* Saving a new Image */
         if (!$this->gallery || !strlen($this->filename) || !$this->type) {
             $error = PEAR::raiseError(_("Incomplete photo"));
             Horde::logMessage($error, __FILE__, __LINE__, PEAR_LOG_ERR);
         }
 
-        // Saving a new image.
+        /* Get the next image_id */
         $image_id = $GLOBALS['ansel_db']->nextId('ansel_images');
         if (is_a($image_id, 'PEAR_Error')) {
             return $image_id;
         }
 
-        // Prepare statement
-        $insert = $GLOBALS['ansel_db']->prepare('INSERT INTO ansel_images (image_id, gallery_id, image_filename, image_type, image_caption, image_uploaded_date, image_sort, image_original_date) VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
+        /* Prepare the SQL statement */
+        $insert = $GLOBALS['ansel_db']->prepare('INSERT INTO ansel_images (image_id, gallery_id, image_filename, image_type, image_caption, image_uploaded_date, image_sort, image_original_date, image_latitude, image_longitude, image_location, image_geotag_date) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
         if (is_a($insert, 'PEAR_Error')) {
             Horde::logMessage($insert, __FILE__, __LINE__, PEAR_LOG_ERR);
             return $insert;
         }
 
-        // Perform the INSERT
-        $result = $insert->execute(array($image_id, $this->gallery, String::convertCharset($this->filename, NLS::getCharset(), $GLOBALS['conf']['sql']['charset']), $this->type, String::convertCharset($this->caption, NLS::getCharset(), $GLOBALS['conf']['sql']['charset']), $this->uploaded, $this->sort, $this->originalDate));
+        /* Perform the INSERT */
+        $result = $insert->execute(array($image_id,
+                                         $this->gallery,
+                                         String::convertCharset($this->filename, NLS::getCharset(), $GLOBALS['conf']['sql']['charset']),
+                                         $this->type,
+                                         String::convertCharset($this->caption, NLS::getCharset(), $GLOBALS['conf']['sql']['charset']),
+                                         $this->uploaded,
+                                         $this->sort,
+                                         $this->originalDate,
+                                         $this->lat,
+                                         $this->lng,
+                                         $this->location,
+                                         (empty($this->lat) ? 0 : $this->uploaded)));
         $insert->free();
         if (is_a($result, 'PEAR_Error')) {
             Horde::logMessage($result, __FILE__, __LINE__, PEAR_LOG_ERR);
             return $result;
         }
 
-        // Save the image_id
+        /* Keep the image_id */
         $this->id = $image_id;
 
-        // Handle any tags
-        if ($this->_tags) {
+        /* The EXIF functions require a stream, so we need to save before we read */
+        $this->_writeData();
+
+        /* Get the EXIF data now that we have an id and a file in the VFS */
+        $needUpdate = $this->_getEXIF();
+
+        /* Create tags from exif data if desired */
+        $fields = @unserialize($GLOBALS['prefs']->getValue('exif_tags'));
+        if ($fields) {
+            $this->_exifToTags($fields);
+        }
+
+        /* Save the tags */
+        if (count($this->_tags)) {
             $result = $this->setTags($this->_tags);
             if (is_a($result, 'PEAR_Error')) {
                 // Since we got this far, the image has been added, so
@@ -2398,13 +2439,18 @@ class Ansel_Image {
             }
         }
 
+        /* Save again if EXIF changed any values */
+        if ($needUpdate) {
+            $this->save();
+        }
+
         return $this->id;
     }
 
    /**
-     * Replace this image's image data.
-     *
-     */
+    * Replace this image's image data.
+    *
+    */
     function replace($imageData)
     {
         /* Reset the data array and remove all cached images */
@@ -2418,38 +2464,24 @@ class Ansel_Image {
             return $result;
         }
         /* Load the new image data */
+        $this->_getEXIF();
         $this->updateData($imageData);
-        $this->_updateEXIF();
 
         return true;
     }
 
     /**
-     * Adds specified EXIF fields to this image's tags.
+     * Adds specified EXIF fields to this image's tags. Called during image
+     * upload/creation.
      *
      * @param array $fields  An array of EXIF fields to import as a tag.
      *
-     * @return @see Ansel_Image::setTags
      */
-    function exifToTags($fields = array())
+    function _exifToTags($fields = array())
     {
         require_once 'Horde/Date.php';
 
-        /* Get the existing tags */
-        $tags = $this->getTags();
-        if (is_a($tags, 'PEAR_Error')) {
-            return $tags;
-        }
-        $tags = array_values($tags);
-        if (is_a($tags, 'PEAR_Error')) {
-            return $tags;
-        }
-
-        if (!count($this->_exif)) {
-            require_once ANSEL_BASE . '/lib/Exif.php';
-            $this->_exif = Ansel_ImageData::getAttributes($this);
-        }
-
+        $tags = array();
         foreach ($fields as $field) {
             if (!empty($this->_exif[$field])) {
                 if (substr($field, 0, 8) == 'DateTime') {
@@ -2461,15 +2493,16 @@ class Ansel_Image {
             }
         }
 
-        return $this->setTags($tags);
+        $this->_tags = array_merge($this->_tags, $tags);
     }
 
     /**
-     * Reads the EXIF data from the image and update the storage backend.
+     * Reads the EXIF data from the image and stores in _exif array() as well
+     * also populates any local properties that come from the EXIF data.
      *
-     * @return mixed  true || PEAR_Error
+     * @return mixed  true if any local properties were modified, false otherwise, PEAR_Error on failure
      */
-    function _updateEXIF()
+    function _getEXIF()
     {
         require_once ANSEL_BASE . '/lib/Exif.php';
 
@@ -2478,47 +2511,27 @@ class Ansel_Image {
 
         /* Get the data */
         $exif_fields = Ansel_ImageData::getExifData($this);
+
+        /* Flag to determine if we need to resave the image data */
+        $needUpdate = false;
+
+        /* Populate any local properties that come from EXIF */
         if (!is_a($exif_fields, 'PEAR_Error')) {
-            /* Auto-rotate the image if there is appropriate Exif information
-             * based on which to do so. */
-            if (isset($exif_fields['Orientation']) &&
-                $exif_fields['Orientation'] != 1) {
-                switch ($exif_fields['Orientation']) {
-                case 2:
-                     $this->mirror();
-                    break;
-
-                case 3:
-                    $this->rotate('full', 180);
-                    break;
-
-                case 4:
-                    $this->mirror();
-                    $this->rotate('full', 180);
-                    break;
-
-                case 5:
-                    $this->flip();
-                    $this->rotate('full', 90);
-                    break;
-
-                case 6:
-                    $this->rotate('full', 90);
-                    break;
-
-                case 7:
-                    $this->mirror();
-                    $this->rotate('full', 90);
-                    break;
-
-                case 8:
-                    $this->rotate('full', 270);
-                    break;
-                }
-
-                $exif_fields['Orientation'] = 1;
-                $this->updateData($this->raw());
+            /* Save any geo data to a seperate table as well */
+            if (!empty($exif_fields['GPSLatitude'])) {
+                $this->lat = $exif_fields['GPSLatitude'];
+                $this->lng = $exif_fields['GPSLongitude'];
+                $this->geotag_timestamp = time();
+                $needUpdate = true;
             }
+
+            if (!empty($exif_fields['DateTimeOriginal'])) {
+                $this->originalDate = strtotime($exif_fields['DateTimeOriginal']);
+                $needUpdate = true;
+            }
+
+            /* Attempt to autorotate based on Orientation field */
+            $this->_autoRotate();
 
             /* Save attributes. */
             $insert = $GLOBALS['ansel_db']->prepare('INSERT INTO ansel_image_attributes (image_id, attr_name, attr_value) VALUES (?, ?, ?)');
@@ -2531,12 +2544,56 @@ class Ansel_Image {
                 $this->_exif[$name] = Ansel_ImageData::getHumanReadable($name, $value);
             }
             $insert->free();
+        }
 
-            /* Save any geo data to a seperate table as well */
-            if (!empty($exif_fields['GPSLatitude'])) {
-                $GLOBALS['ansel_storage']->updateImageGeodata(array('image_id' => $this->id,
-                                                                    'lat' => $exif_fields['GPSLatitude'],
-                                                                    'lng' => $exif_fields['GPSLongitude']));
+        return $needUpdate;
+    }
+
+    /**
+     * Autorotate based on EXIF orientation field. Updates the data in memory
+     * only.
+     *
+     */
+    function _autoRotate()
+    {
+        if (isset($this->_exif['Orientation']) && $this->_exif['Orientation'] != 1) {
+            switch ($this->_exif['Orientation']) {
+            case 2:
+                 $this->mirror();
+                break;
+
+            case 3:
+                $this->rotate('full', 180);
+                break;
+
+            case 4:
+                $this->mirror();
+                $this->rotate('full', 180);
+                break;
+
+            case 5:
+                $this->flip();
+                $this->rotate('full', 90);
+                break;
+
+            case 6:
+                $this->rotate('full', 90);
+                break;
+
+            case 7:
+                $this->mirror();
+                $this->rotate('full', 90);
+                break;
+
+            case 8:
+                $this->rotate('full', 270);
+                break;
+            }
+
+            if ($this->_dirty) {
+                $this->_exif['Orientation'] = 1;
+                $this->data['full'] = $this->raw();
+                $this->_writeData();
             }
         }
     }
@@ -2549,7 +2606,6 @@ class Ansel_Image {
         $this->_image->reset();
         $this->_loaded = array();
     }
-
 
     /**
      * Deletes the specified cache file.
@@ -2603,31 +2659,12 @@ class Ansel_Image {
      */
     function raw($view = 'full')
     {
-        $this->load($view);
         if ($this->_dirty) {
-            return $this->_image->raw();
+          return $this->_image->raw();
         } else {
+            $this->load($view);
             return $this->_data[$view];
         }
-    }
-
-    /**
-     * Change the image data. Deletes old cache and writes the new
-     * data to the VFS.
-     *
-     * @param string $data  The new data for this image.
-     */
-    function updateData($data)
-    {
-        if (is_a($data, 'PEAR_Error')) {
-            return $data;
-        }
-
-        /* Delete old cached data and write the full data. */
-        $this->deleteCache();
-        return $GLOBALS['ansel_vfs']->writeData($this->getVFSPath('full'),
-                                                $this->getVFSName('full'),
-                                                $data, true);
     }
 
     /**
@@ -2789,6 +2826,7 @@ class Ansel_Image {
             $params['font'] = $GLOBALS['conf']['image']['font'];
         }
         $this->_image->addEffect('text_watermark', $params);
+
         return true;
     }
 
@@ -2850,7 +2888,7 @@ class Ansel_Image {
     /**
      * Set/replace this image's tags.
      *
-     * @param array $tags  AN array of tag names to associate with this image.
+     * @param array $tags  An array of tag names to associate with this image.
      */
     function setTags($tags)
     {
@@ -2889,8 +2927,7 @@ class Ansel_Image {
             $style = Ansel::getStyleDefinition($style);
         }
 
-        return Ansel_Tile_Image::getTile($this, $parent, $style, $mini,
-                                         $params);
+        return Ansel_Tile_Image::getTile($this, $style, $mini, $params);
     }
 
     /**
@@ -3374,10 +3411,7 @@ class Ansel_Storage {
             return $this->images[$id];
         }
 
-        $q = $this->_db->prepare('SELECT image_id, gallery_id, image_filename, '
-                                 . 'image_type, image_caption, image_uploaded_date, '
-                                 . 'image_sort, image_faces, image_original_date FROM ansel_images WHERE '
-                                 . 'image_id = ?');
+        $q = $this->_db->prepare('SELECT ' . $this->_getImageFields() . ' FROM ansel_images WHERE image_id = ?');
         $result = $q->execute((int)$id);
         if (is_a($result, 'PEAR_Error')) {
             Horde::logMessage($result, __FILE__, __LINE__, PEAR_LOG_ERR);
@@ -3410,10 +3444,7 @@ class Ansel_Storage {
     function getImages($ids, $preserve_order = false)
     {
         if (is_array($ids) && count($ids) > 0) {
-            $sql = 'SELECT image_id, gallery_id, image_filename, image_type, '
-                   . 'image_caption, image_uploaded_date, image_sort, '
-                   . 'image_faces, image_original_date FROM ansel_images WHERE '
-                   . 'image_id IN (';
+            $sql = 'SELECT ' . $this->_getImageFields() . ' FROM ansel_images WHERE image_id IN (';
             $i = 1;
             $cnt = count($ids);
             foreach ($ids as $id) {
@@ -3481,6 +3512,7 @@ class Ansel_Storage {
      *                          with PERMS_SHOW.
      * @param integer $limit    The maximum number of images to return
      * @param string $slugs     An array of gallery slugs.
+     * @param string $where     Additional where clause
      *
      * @return array An array of Ansel_Image objects
      */
@@ -3488,32 +3520,25 @@ class Ansel_Storage {
     {
         $results = array();
 
-        if (!count($galleries)) {
-            $sql = 'SELECT DISTINCT i.image_id, i.gallery_id, i.image_filename, i.image_type, '
-            . 'i.image_caption, i.image_uploaded_date, i.image_sort, i.image_original_date FROM ansel_images i, '
-            . str_replace('WHERE' , ' WHERE i.gallery_id = s.share_id AND (', substr($this->shares->_getShareCriteria(Auth::getAuth()), 5)) . ')'
-            . ' ORDER BY i.image_uploaded_date DESC LIMIT ' . (int)$limit;
+        if (!count($galleries) && !count($slugs)) {
+            $sql = 'SELECT DISTINCT ' . $this->_getImageFields('i') . ' FROM ansel_images i, '
+            . str_replace('WHERE' , ' WHERE i.gallery_id = s.share_id AND (', substr($this->shares->_getShareCriteria(Auth::getAuth()), 5)) . ')';
         } elseif (!count($slugs) && count($galleries)) {
             // Searching by gallery_id
-            $sql = 'SELECT image_id, gallery_id, image_filename, image_type, '
-                   . 'image_caption, image_uploaded_date, image_sort, image_original_date FROM ansel_images '
+            $sql = 'SELECT ' . $this->_getImageFields() . ' FROM ansel_images '
                    . 'WHERE gallery_id IN ('
-                   . str_repeat('?, ', count($galleries) - 1) . '?) '
-                   . 'ORDER BY image_uploaded_date DESC LIMIT ' . (int)$limit;
+                   . str_repeat('?, ', count($galleries) - 1) . '?) ';
         } elseif (count($slugs)) {
             // Searching by gallery_slug so we need to join the share table
-            $sql = 'SELECT image_id, gallery_id, image_filename, image_type, '
-                . 'image_caption, image_uploaded_date, image_sort, image_original_date '
-                . 'FROM ansel_images LEFT JOIN ' . $this->shares->_table
-                . ' ON ansel_images.gallery_id = '
-                . $this->shares->_table . '.share_id '
-                . 'WHERE attribute_slug IN ('
-                . str_repeat('?, ', count($slugs) - 1) . '?) '
-                . 'ORDER BY image_uploaded_date DESC LIMIT ' . (int)$limit;
+            $sql = 'SELECT ' . $this->_getImageFields() . ' FROM ansel_images LEFT JOIN '
+                . $this->shares->_table . ' ON ansel_images.gallery_id = '
+                . $this->shares->_table . '.share_id ' . 'WHERE attribute_slug IN ('
+                . str_repeat('?, ', count($slugs) - 1) . '?) ';
         } else {
             return array();
         }
 
+        $sql .= ' ORDER BY image_uploaded_date DESC LIMIT ' . (int)$limit;
         $query = $this->_db->prepare($sql);
         if (is_a($query, 'PEAR_Error')) {
             return $query;
@@ -3564,15 +3589,15 @@ class Ansel_Storage {
     }
 
    /**
-     * Return a list of categories containing galleries with the given
-     * permissions for the current user.
-     *
-     * @param integer $perm   The level of permissions required.
-     * @param integer $from   The gallery to start listing at.
-     * @param integer $count  The number of galleries to return.
-     *
-     * @return mixed  List of categories | PEAR_Error
-     */
+    * Return a list of categories containing galleries with the given
+    * permissions for the current user.
+    *
+    * @param integer $perm   The level of permissions required.
+    * @param integer $from   The gallery to start listing at.
+    * @param integer $count  The number of galleries to return.
+    *
+    * @return mixed  List of categories | PEAR_Error
+    */
     function listCategories($perm = PERMS_SHOW, $from = 0, $count = 0)
     {
         require_once 'Horde/Array.php';
@@ -3607,20 +3632,20 @@ class Ansel_Storage {
     }
 
    /**
-     * Return the count of galleries that the user has specified permissions to
-     * and that match any of the requested attributes.
-     *
-     * @param string  $userid       The user to check access for.
-     * @param integer $perm         The level of permissions to require for a
-     *                              gallery to return it.
-     * @param mixed   $attributes   Restrict the galleries counted to those
-     *                              matching $attributes. An array of
-     *                              attribute/values pairs or a gallery owner
-     *                              username.
-     * @param string  $parent       The parent share to start counting at.
-     * @param boolean $allLevels    Return all levels, or just the direct
-     *                              children of $parent? Defaults to all levels.
-     */
+    * Return the count of galleries that the user has specified permissions to
+    * and that match any of the requested attributes.
+    *
+    * @param string  $userid       The user to check access for.
+    * @param integer $perm         The level of permissions to require for a
+    *                              gallery to return it.
+    * @param mixed   $attributes   Restrict the galleries counted to those
+    *                              matching $attributes. An array of
+    *                              attribute/values pairs or a gallery owner
+    *                              username.
+    * @param string  $parent       The parent share to start counting at.
+    * @param boolean $allLevels    Return all levels, or just the direct
+    *                              children of $parent? Defaults to all levels.
+    */
     function countGalleries($userid, $perm = PERMS_SHOW, $attributes = null,
                             $parent = null, $allLevels = true)
     {
@@ -3647,27 +3672,27 @@ class Ansel_Storage {
     }
 
    /**
-     * Retrieves the current user's gallery list from storage.
-     *
-     * @param integer $perm         The level of permissions to require for a
-     *                              gallery to return it.
-     * @param mixed   $attributes   Restrict the galleries counted to those
-     *                              matching $attributes. An array of
-     *                              attribute/values pairs or a gallery owner
-     *                              username.
-     * @param mixed   $parent       The parent gallery to start listing at.
-     *                              (Ansel_Gallery, gallery id or null)
-     * @param boolean $allLevels    Return all levels, or just the direct
-     *                              children of $parent?
-     * @param integer $from         The gallery to start listing at.
-     * @param integer $count        The number of galleries to return.
-     * @param string  $sort_by      The field to order the results by.
-     * @param integer $direction    Sort direction:
-     *                               0 - ascending
-     *                               1 - descending
-     *
-     * @return mixed An array of Ansel_Gallery objects | PEAR_Error
-     */
+    * Retrieves the current user's gallery list from storage.
+    *
+    * @param integer $perm         The level of permissions to require for a
+    *                              gallery to return it.
+    * @param mixed   $attributes   Restrict the galleries counted to those
+    *                              matching $attributes. An array of
+    *                              attribute/values pairs or a gallery owner
+    *                              username.
+    * @param mixed   $parent       The parent gallery to start listing at.
+    *                              (Ansel_Gallery, gallery id or null)
+    * @param boolean $allLevels    Return all levels, or just the direct
+    *                              children of $parent?
+    * @param integer $from         The gallery to start listing at.
+    * @param integer $count        The number of galleries to return.
+    * @param string  $sort_by      The field to order the results by.
+    * @param integer $direction    Sort direction:
+    *                               0 - ascending
+    *                               1 - descending
+    *
+    * @return mixed An array of Ansel_Gallery objects | PEAR_Error
+    */
     function listGalleries($perm = PERMS_SHOW,
                            $attributes = null,
                            $parent = null,
@@ -3696,8 +3721,8 @@ class Ansel_Storage {
      * @return string  The json data || PEAR_Error
      */
     function getImageJson($images, $style = null, $full = false,
-                          $image_view = 'mini', $view_links = false) {
-
+                          $image_view = 'mini', $view_links = false)
+    {
         $galleries = array();
         if (is_null($style)) {
             $style = 'ansel_default';
@@ -3717,10 +3742,10 @@ class Ansel_Storage {
                     }
                 }
 
-                if (!isset($galleries[$gallery_id]['perm'])) {
                 // Any authentication that needs to take place for any of the
                 // images included here MUST have already taken place or the
                 // image will not be incldued in the output.
+                if (!isset($galleries[$gallery_id]['perm'])) {
                     $galleries[$gallery_id]['perm'] =
                         ($galleries[$gallery_id]['gallery']->hasPermission(Auth::getAuth(), PERMS_READ) &&
                          $galleries[$gallery_id]['gallery']->isOldEnough() &&
@@ -3795,7 +3820,7 @@ class Ansel_Storage {
      *                             fileds or a single string).
      * @param string $where        A SQL where clause ($gallery_id will be
      *                             ignored if this is non-empty).
-     * @param mixed $sort         The field(s) to sort by.
+     * @param mixed $sort          The field(s) to sort by.
      *
      * @return mixed  An array of image_ids | PEAR_Error
      */
@@ -3837,62 +3862,104 @@ class Ansel_Storage {
     }
 
     /**
-     * Return images' data from the geolocation table.
+     * Return images' geolocation data.
      *
      * @param array $image_ids  An array of image_ids to look up.
+     * @param integer $gallery  A gallery id. If this is provided, will return
+     *                          all images in the gallery that have geolocation
+     *                          data ($image_ids would be ignored).
      *
      * @return mixed An array of geodata || PEAR_Error
      */
-    function getImagesGeodata($image_ids)
+    function getImagesGeodata($image_ids = array(), $gallery = null)
     {
-        if (!is_array($image_ids) || count($image_ids) == 0) {
+        if ((!is_array($image_ids) || count($image_ids) == 0) && empty($gallery)) {
             return array();
         }
 
-        $sql = 'SELECT image_id, image_latitude, image_longitude FROM ansel_images_geolocation WHERE image_id IN('
-            .   implode(',', $image_ids) . ');';
-
-        $results = $this->_db->query($sql);
-        if (is_a($results, 'PEAR_Error')) {
-            var_dump($results);
+        if (!empty($gallery)) {
+            $where = 'gallery_id = ' . (int)$gallery . ' AND LENGTH(image_latitude) > 0';
+        } elseif (count($image_ids) > 0) {
+            $where = 'image_id IN(' . implode(',', $image_ids) . ') AND LENGTH(image_latitude) > 0';
+        } else {
+            return array();
         }
-        $geodata = $results->fetchAll(MDB2_FETCHMODE_ASSOC, true, true, false);
 
-        return $geodata;
+        return $this->listImages(0, 0, 0, array('image_id as id', 'image_id', 'image_latitude', 'image_longitude', 'image_location'), $where);
     }
 
     /**
-     * Add/Update an image's entry in the ansel_images_geolocation table
-     *
-     * @param array $params  A hash of 'image_id', 'lat', 'lng', and optionally
-     *                                 'location'
-     * @return mixed
+     * Like getRecentImages, but returns geotag data for the most recently added
+     * images from the current user. Useful for providing images to help locate
+     * images at the same place.
      */
-    function updateImageGeodata($params)
+    function getRecentImagesGeodata($user = null, $start = 0, $count = 8)
     {
-        global $ansel_db;
-
-        // See if it's an existing entry:
-        $sql = 'SELECT COUNT(image_id) FROM ansel_images_geolocation WHERE image_id = ' . $params['image_id'];
-        $result = $ansel_db->queryOne($sql);
-        if ($result) {
-            // Updating an existing entry
-            // $params['location'] is optional.
-            $sql = $ansel_db->prepare('UPDATE ansel_images_geolocation SET image_latitude = ?, image_longitude = ?, image_location = ? WHERE image_id = ?');
-            if (is_a($sql, 'PEAR_Error')) {
-                return $sql;
-            }
-            $results = $sql->execute(array($params['lat'], $params['lng'], (!empty($params['location']) ? $params['location'] : ''), $params['image_id']));
-        } else {
-            // New entry. I don't think there is any way reverse geocode data would be present?
-            $sql = $GLOBALS['ansel_db']->prepare('INSERT INTO ansel_images_geolocation (image_id, image_latitude, image_longitude) VALUES(?, ?, ?)');
-            if (is_a($sql, 'PEAR_Error')) {
-                return $sql;
-            }
-            $results = $sql->execute(array($params['image_id'], $params['lat'], $params['lng']));
-        }
-        $sql->free();
-        return $results;
+        $galleries = $this->listGalleries('PERMS_EDIT', $user);
+        $where = 'gallery_id IN(' . implode(',', array_keys($galleries)) . ') AND LENGTH(image_latitude) > 0 GROUP BY image_latitude, image_longitude';
+        return $this->listImages(0, $start, $count, array('image_id as id', 'image_id', 'gallery_id', 'image_latitude', 'image_longitude', 'image_location'), $where, 'image_geotag_date DESC');
     }
+
+    function searchLocations($search = '')
+    {
+        $sql = 'SELECT DISTINCT image_location, image_latitude, image_longitude'
+            . ' FROM ansel_images WHERE image_location LIKE "' . $search . '%"';
+        $results = $this->_db->query($sql);
+        if (is_a($results, 'PEAR_Error')) {
+            return $results;
+        }
+
+        return $results->fetchAll(MDB2_FETCHMODE_ASSOC, true, true, false);
+    }
+
+    /**
+     * Helper function to get a string of field names
+     *
+     * @return string
+     */
+    function _getImageFields($alias = '')
+    {
+        $fields = array('image_id', 'gallery_id', 'image_filename', 'image_type',
+                        'image_caption', 'image_uploaded_date', 'image_sort',
+                        'image_faces', 'image_original_date', 'image_latitude',
+                        'image_longitude', 'image_location', 'image_geotag_date');
+        if (!empty($alias)) {
+            foreach ($fields as $field) {
+                $new[] = $alias . '.' . $field;
+            }
+            return implode(', ', $new);
+        }
+
+        return implode(', ', $fields);
+    }
+
+}
+
+/**
+ * Extend Horde_Script_Files so we can include external script files and have
+ * them appear in the <head> along with other scripts.
+ *
+ */
+class Ansel_Script_Files extends Horde_Script_Files {
+
+        var $_cache;
+
+        function addExternalScript($url)
+        {
+            $this->_cache->_files['ansel'][] = array('f' => basename($url),
+                                                     'u' => $url);
+        }
+
+        function &singleton()
+        {
+            static $instance;
+
+            if (!$instance) {
+                $instance = new Ansel_Script_Files();
+                $instance->_cache = &Horde_Script_Files::singleton();
+            }
+
+            return $instance;
+        }
 
 }

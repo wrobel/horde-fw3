@@ -26,7 +26,7 @@ if ($gallery->hasPermission(Auth::getAuth(), PERMS_EDIT)) {
 </div>
 <br />
 <div align="center">
-<?php echo Horde::img($image_url, '', '', '') ?>
+<?php echo '<img src="' . $image_url . '" />'?>
 <br />
 <?php $caption = $image->caption ? $image->caption : $image->filename; echo Text_Filter::filter($caption, 'text2html', array('parselevel' => TEXT_HTML_MICRO)) ?>
 </div>

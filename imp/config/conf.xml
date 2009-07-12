@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- $Horde: imp/config/conf.xml,v 1.53.2.42 2009/06/18 17:33:38 slusarz Exp $ -->
+<!-- $Horde: imp/config/conf.xml,v 1.53.2.43 2009/07/02 06:18:15 slusarz Exp $ -->
 <configuration>
  <configtab name="utils" desc="External Utilities and Menu">
   <configsection name="spell">
@@ -237,7 +237,8 @@
   <configsection name="msgcache">
    <configswitch name="use_msgcache" desc="Should we cache the details of
    messages across sessions? This requires configuration of a Horde_Cache
-   driver in Horde.">false
+   driver in Horde. DO NOT ENABLE CACHING WITH POP3 SERVERS UNLESS THE
+   SERVER SUPPORTS THE UIDL EXTENSION.">false
     <case name="false" desc="No" />
     <case name="true" desc="Yes">
      <configswitch name="use_compress" desc="Should the contents of the cache
@@ -272,7 +273,8 @@
   <configsection name="mlistcache">
    <configswitch name="use_mlistcache" desc="Should we cache the mailbox
    message lists? This requires configuration of a Horde_Cache driver in
-   Horde.">false
+   Horde. DO NOT ENABLE CACHING WITH POP3 SERVERS UNLESS THE SERVER SUPPORTS
+   THE UIDL EXTENSION.">false
     <case name="false" desc="No" />
     <case name="true" desc="Yes">
      <configinteger name="lifetime" desc="The lifetime, in seconds, of the

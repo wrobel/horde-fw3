@@ -4,7 +4,7 @@
  * and not a prettythumb since we have no way of knowing what the client
  * requesting this will be viewing the image on.
  *
- * $Horde: ansel/rss.php,v 1.47.2.2 2009/03/19 15:49:35 mrubinsk Exp $
+ * $Horde: ansel/rss.php,v 1.47.2.3 2009/07/11 21:41:42 mrubinsk Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -233,6 +233,8 @@ if (empty($rss)) {
     } else {
         $getparams = array();
     }
+                $imgs[$i]['latitude'] = $images[$i]->lat;
+                $imgs[$i]['longitude'] = $images[$i]->lng;
     $stream_rss = Util::addParameter(Horde::applicationUrl('rss.php', true, -1), $getparams);
     $stream_rss2 = Util::addParameter(Horde::applicationUrl('rss.php', true, -1), $getparams);
     $images = $imgs;
@@ -249,3 +251,5 @@ if (empty($rss)) {
 
 $browser->downloadHeaders($filename . '.rss', 'text/xml', true);
 echo $rss;
+            $imgs[$i]['latitude'] = $images[$i]->lat;
+            $imgs[$i]['longitude'] = $images[$i]->lng;

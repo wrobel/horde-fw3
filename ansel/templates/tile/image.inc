@@ -1,4 +1,4 @@
-<?php echo '<div class="image-tile" id="imagetile_' . (int)$image->id . '">' . Horde::link($view_url, $image->filename, '', '', $imgOnClick, $title, '', $imgAttributes) . Horde::img($thumb_url, '', '', '') . '</a>'; ?>
+<?php echo '<div class="image-tile" id="imagetile_' . (int)$image->id . '">' . Horde::link($view_url, $image->filename, '', '', $imgOnClick, $title, '', $imgAttributes) . '<img src="' . $thumb_url  . '" /></a>'; ?>
  <div style="valign: bottom;">
  <div class="image-tile-caption" id="<?php echo (int)$image->id . 'caption'?>"><?php echo $imageCaption ?></div>
 <?php if (Auth::getAuth() || $option_select): ?>

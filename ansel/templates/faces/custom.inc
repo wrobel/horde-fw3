@@ -38,7 +38,7 @@ Event.observe(
   <img src="<?php echo Ansel::getImageUrl($image_id, 'screen') ?>" alt="<?php echo $image->filename ?>" id="faceImage" />
 </div>
 <div style="float:left;width:25%;text-align:center;">
-   <form method="post" action="<?php echo Horde::applicationUrl(Util::addParameter('faces/savecustom.php', 'url', $url)); ?>">
+      <form method="post" action="<?php echo $form_post ?>">
       <input type="hidden" name="image_id" id="image_id" value="<?php echo (int)$image->id ?>" />
       <input type="hidden" name="face_id" id="face_id" value="<?php echo (int)$face_id ?>" />
       <input type="hidden" name="gallery_id" id="gallery_id" value="<?php echo (int)$image->gallery ?>" />

@@ -38,7 +38,7 @@ $mini_count = 0;
     <?php if ($gallery->isOldEnough() && !$gallery->hasPasswd()): ?>
      <?php echo $link ?><img src="<?php echo Ansel::getImageUrl($gallery->getDefaultImage('ansel_default'), 'mini', false, 'ansel_default'); ?>"/></a>
     <?php else: ?>
-     <?php echo $link . Horde::img($GLOBALS['registry']->getImageDir() . '/gallery-locked-mini.png', '', '', '') ?></a>
+     <?php echo $link . Horde::img('gallery-locked-mini.png') ?></a>
     <?php endif; ?>
    </td>
 <?php if (!(++$mini_count % 2)) echo "  </tr>\n  <tr>\n" ?>

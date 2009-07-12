@@ -3,7 +3,7 @@
  * Class for auto-generating the preferences user interface and
  * processing the forms.
  *
- * $Horde: framework/Prefs/Prefs/UI.php,v 1.63.2.24 2009/01/06 15:23:31 jan Exp $
+ * $Horde: framework/Prefs/Prefs/UI.php,v 1.63.2.25 2009/07/11 23:35:26 chuck Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *
@@ -120,9 +120,9 @@ class Prefs_UI {
 
                         case 'number':
                             $num = Util::getPost($pref);
-                            if (intval($num) != $num) {
+                            if ((string)(double)$num !== $num) {
                                 $notification->push(_("This value must be a number."), 'horde.error');
-                            } elseif ($num == 0) {
+                            } elseif (empty($num)) {
                                 $notification->push(_("This number must be at least one."), 'horde.error');
                             } else {
                                 $updated = $updated | $save->setValue($pref, $num);

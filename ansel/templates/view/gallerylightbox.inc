@@ -115,7 +115,11 @@ function downloadSelected()
         startPage: "<?php echo $jsvars['start_page']; ?>"
     };
     //]]>
-    document.observe('dom:loaded', function () { document.lb = new Lightbox(LightboxOptions); if (window.location.hash.length) document.lb.start(window.location.hash.substring(1));});
+    <?php if($GLOBALS['browser']->getBrowser() != 'msie'):?>
+      document.observe('dom:loaded', function () { document.lb = new Lightbox(LightboxOptions); if (window.location.hash.length) document.lb.start(window.location.hash.substring(1));});
+    <?php else:?>
+      Event.observe(window, 'load', function () { document.lb = new Lightbox(LightboxOptions); if (window.location.hash.length) document.lb.start(window.location.hash.substring(1));});
+    <?php endif; ?>
 </script>
 <div class="header" id="galleryHeader">
  <?php echo ($this->numTiles ? '<span class="rightFloat">' . ($this->numTiles > $this->perpage ? sprintf(_("%d to %d of %d Items"), $this->pagestart, $this->pageend, $this->numTiles) : sprintf(ngettext("%d Item", "%d Items", $this->numTiles), $this->numTiles)) . '</span>' : '') . Ansel::getBreadCrumbs(); ?>

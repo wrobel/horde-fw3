@@ -2,7 +2,7 @@
 /**
  * Class to make an "official" Horde or application release.
  *
- * $Horde: framework/Horde/Horde/Release.php,v 1.27.2.10 2009/01/06 15:23:10 jan Exp $
+ * $Horde: framework/Horde/Horde/Release.php,v 1.27.2.12 2009/07/06 18:56:57 chuck Exp $
  *
  * Copyright 1999 Mike Hardy
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
@@ -21,13 +21,14 @@ class Horde_Release {
      *
      * @var array
      */
-    var $options = array('test' => false,
-                         'nocommit' => false,
-                         'noftp' => false,
-                         'noannounce' => false,
-                         'nofreshmeat' => false,
-                         'nowhups' => false,
-                        );
+    var $options = array(
+        'test' => false,
+        'nocommit' => false,
+        'noftp' => false,
+        'noannounce' => false,
+        'nofreshmeat' => false,
+        'nowhups' => false,
+    );
 
     /**
      * Version number of release.
@@ -145,6 +146,13 @@ class Horde_Release {
     var $makeDiff = false;
 
     /**
+     * The list of binary diffs.
+     *
+     * @var array
+     */
+    var $binaryDiffs = array();
+
+    /**
      * Whether or not we have an old version to compare against.
      *
      * @var boolean
@@ -242,6 +250,21 @@ class Horde_Release {
         $this->patchName = 'patch-' . $this->oldDirectoryName . str_replace($this->options['module'], '', $this->directoryName);
         print "Making diff between $this->oldDirectoryName and $this->directoryName\n";
         system("diff -uNr $this->oldDirectoryName $this->directoryName > $this->patchName");
+
+        // Search for binary diffs
+        $this->binaryDiffs = array();
+        $handle = fopen($this->patchName, 'r');
+        if ($handle) {
+            while (!feof($handle)) {
+                // GNU diff reports binary diffs as the following:
+                // Binary files ./locale/de_DE/LC_MESSAGES/imp.mo and ../../horde/imp/locale/de_DE/LC_MESSAGES/imp.mo differ
+                if (preg_match("/^Binary files (.+) and (.+) differ$/i", rtrim(fgets($handle)), $matches)) {
+                    // [1] = oldname, [2] = newname
+                    $this->binaryDiffs[] = ltrim(str_replace($this->oldDirectoryName . '/', '', $matches[1]));
+                }
+            }
+            fclose($handle);
+        }
         system("gzip -9f $this->patchName");
         exec($this->options['md5'] . ' ' . $this->patchName . '.gz', $this->patchMD5);
     }
@@ -461,7 +484,7 @@ class Horde_Release {
                 system("scp -P 35$identity $this->patchName.gz $user@ftp.horde.org:/horde/ftp/pub/$module/patches/");
             }
             print "Executing $chmod\n";
-            system("ssh -l $user$identity ftp.horde.org '$chmod'");
+            system("ssh -p 35 -l $user$identity ftp.horde.org '$chmod'");
         } else {
             print "NOT uploading $this->tarballName to ftp.horde.org:/horde/ftp/pub/$module/\n";
             if ($this->makeDiff) {
@@ -516,26 +539,35 @@ class Horde_Release {
         if (empty($doc_dir)) {
             $doc_dir = $module . '/docs';
         }
-        $announcement = array('SID' => $fm['SID'],
-                              'project_name' => $this->notes['fm']['project'],
-                              'branch_name' => $this->notes['fm']['branch'],
-                              'version' => $this->sourceVersionString,
-                              'changes' => htmlspecialchars($this->notes['fm']['changes']),
-                              'release_focus' => (int)$this->notes['fm']['focus'],
-                              'url_changelog' => ($this->oldVersion ? "http://cvs.horde.org/diff.php/$doc_dir/CHANGES?r1={$this->oldChangelogVersion}&r2={$this->changelogVersion}&ty=h" : ''),
-                              'url_tgz' => "ftp://ftp.horde.org/pub/$module/{$this->tarballName}");
-        if ($this->_fmVerify($fm)) {
-            if (!empty($this->options['noannounce']) ||
-                !empty($this->options['nofreshmeat'])) {
-                print "Announcement data:\n";
-                print_r($announcement);
-            } else {
-                $fm = Horde_RPC::request(
-                    'xmlrpc',
-                    'http://freshmeat.net/xmlrpc/',
-                    'publish_release',
-                    $announcement);
-                $this->_fmVerify($fm);
+
+        $url_changelog = $this->oldVersion
+            ? "http://cvs.horde.org/diff.php/$doc_dir/CHANGES?r1={$this->oldChangelogVersion}&r2={$this->changelogVersion}&ty=h"
+            : '';
+
+        if (is_a($fm, 'PEAR_Error')) {
+            print $fm->getMessage() . "\n";
+        } else {
+            $announcement = array('SID' => $fm['SID'],
+                                  'project_name' => $this->notes['fm']['project'],
+                                  'branch_name' => $this->notes['fm']['branch'],
+                                  'version' => $this->sourceVersionString,
+                                  'changes' => htmlspecialchars($this->notes['fm']['changes']),
+                                  'release_focus' => (int)$this->notes['fm']['focus'],
+                                  'url_changelog' => $url_changelog,
+                                  'url_tgz' => "ftp://ftp.horde.org/pub/$module/{$this->tarballName}");
+            if ($this->_fmVerify($fm)) {
+                if (!empty($this->options['noannounce']) ||
+                    !empty($this->options['nofreshmeat'])) {
+                    print "Announcement data:\n";
+                    print_r($announcement);
+                } else {
+                    $fm = Horde_RPC::request(
+                        'xmlrpc',
+                        'http://freshmeat.net/xmlrpc/',
+                        'publish_release',
+                        $announcement);
+                    $this->_fmVerify($fm);
+                }
             }
         }
 
@@ -544,7 +576,7 @@ class Horde_Release {
             $ml = 'horde';
         }
 
-        $to = "announce@lists.horde.org, $ml@lists.horde.org";
+        $to = "announce@lists.horde.org, vendor@lists.horde.org, $ml@lists.horde.org";
         if (!$this->latest) {
             $to .= ', i18n@lists.horde.org';
         }
@@ -573,7 +605,7 @@ class Horde_Release {
             $body .= "\n\n" .
                 sprintf('The full list of changes (from version %s) can be viewed here:', $this->oldSourceVersionString) .
                 "\n\n" .
-                $announcement['url_changelog'];
+                $url_changelog;
         }
         $body .= "\n\n" .
             sprintf('The %s %s distribution is available from the following locations:', $this->notes['name'], $this->sourceVersionString) .
@@ -585,9 +617,14 @@ class Horde_Release {
                 sprintf('Patches against version %s are available at:', $this->oldSourceVersionString) .
                 "\n\n" .
                 sprintf('    ftp://ftp.horde.org/pub/%s/patches/%s.gz', $module, $this->patchName) . "\n" .
-                sprintf('    http://ftp.horde.org/pub/%s/patches/%s.gz', $module, $this->patchName) ."\n\n" .
-                'NOTE: Patches do not contain differences between files containing binary data.' . "\n" .
-                'These files will need to be updated via the distribution files.';
+                sprintf('    http://ftp.horde.org/pub/%s/patches/%s.gz', $module, $this->patchName);
+
+            if (!empty($this->binaryDiffs)) {
+                $body .= "\n\n" .
+                    'NOTE: Patches do not contain differences between files containing binary data.' . "\n" .
+                    'These files will need to be updated via the distribution files:' . "\n\n    " .
+                    implode("\n    ", $this->binaryDiffs);
+            }
         }
         $body .= "\n\n" .
             'Or, for quicker access, download from your nearest mirror:' .
@@ -669,7 +706,7 @@ class Horde_Release {
     function addWhupsVersion()
     {
         if (!isset($this->notes)) {
-            print "NOT updating bugs.horde.org, RELEASE_NOTES missing.\n";
+            print "\nNOT updating bugs.horde.org, RELEASE_NOTES missing.\n";
             return;
         }
         $this->ticketVersionDesc = $this->notes['name'] . $this->ticketVersionDesc;
@@ -892,6 +929,7 @@ class Horde_Release {
                 $this->options['noftp'] = true;
                 $this->options['noannounce'] = true;
                 $this->options['nowhups'] = true;
+                $this->options['nofreshmeat']= true;
 
             // Check to see if they tell us to test (for development only)
             } elseif (strstr($arg, '--test')) {
@@ -901,6 +939,12 @@ class Horde_Release {
                 $this->options['noftp'] = true;
                 $this->options['noannounce'] = true;
                 $this->options['nowhups'] = true;
+                $this->options['nofreshmeat']= true;
+
+            // Check for help usage.
+            } elseif (strstr($arg, '--help')) {
+                $this->print_usage();
+                exit;
 
             // We have no idea what this is
             } else {
@@ -964,9 +1008,11 @@ class Horde_Release {
     /**
      * Show people how to use the damned thing
      */
-    function print_usage($message)
+    function print_usage($message = null)
     {
-        print "\n***  ERROR: $message  ***\n";
+        if (!is_null($message)) {
+            print "\n***  ERROR: $message  ***\n";
+        }
 
         print <<<USAGE
 
@@ -975,22 +1021,27 @@ make-release.php: Horde release generator.
    This script takes as arguments the module to make a release of, the
    version of the release, and the branch:
 
-      horde-make-release.php --module=<name> --version=[Hn-]xx.yy[.zz[-<string>]]
+      horde-make-release.php --module=<name>
+                         --version=[Hn-]xx.yy[.zz[-<string>]]
                          --oldversion=[Hn-]xx[.yy[.zz[-<string>]]]
                          [--branch=<branchname>] [--nocommit] [--noftp]
                          [--noannounce] [--nofreshmeat] [--noticketversion]
-                         [--test] [--dryrun]
+                         [--test] [--dryrun] [--help]
 
    If you omit the branch, it will implicitly work with the HEAD branch.
    If you release a new major version use the --oldversion=0 option.
    Use the --nocommit option to do a test build (without touching the CVS
-   repository). Use the --noftp option to not upload any files on the FTP
-   server. Use the --noannounce option to not send any release announcements.
+   repository).
+   Use the --noftp option to not upload any files on the FTP server.
+   Use the --noannounce option to not send any release announcements.
    Use the --nofreshmeat option to not send any freshmeat announcements.
-   The --dryrun option is a short cut for --nocommit --noftp --noannounce,
-   the --test options is for debugging purposes only.
+   Use the --noticketversion option to not update the version information on
+   bugs.horde.org.
+   The --dryrun option is an alias for:
+     --nocommit --noftp --noannounce --nofreshmeat --noticketversion.
+   The --test option is for debugging purposes only.
 
-   Some examples would be:
+   EXAMPLES:
 
    To make a new development release of Horde:
       horde-make-release.php --module=horde --version=2.1-dev --oldversion=2.0
@@ -1004,7 +1055,8 @@ make-release.php: Horde release generator.
         --branch=RELENG_3
 
    To make a brand new Alpha/Beta/RC release of Luxor:
-      horde-make-release.php --module=luxor --version=H3-1.0-ALPHA --oldversion=0
+      horde-make-release.php --module=luxor --version=H3-1.0-ALPHA \
+        --oldversion=0
 
 USAGE;
     }

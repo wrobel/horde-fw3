@@ -3,7 +3,7 @@
  * Turba directory driver implementation for PHP's PEAR database abstraction
  * layer.
  *
- * $Horde: turba/lib/Driver/sql.php,v 1.59.10.30 2009/02/17 18:52:56 chuck Exp $
+ * $Horde: turba/lib/Driver/sql.php,v 1.59.10.31 2009/07/10 00:37:32 mrubinsk Exp $
  *
  * @author  Jon Parise <jon@csh.rit.edu>
  * @package Turba
@@ -463,12 +463,16 @@ class Turba_Driver_sql extends Turba_Driver {
                                 $clause .= ' ' . $key . ' ';
                             }
                             $rhs = $this->_convertToDriver($test['test']);
-                            $binds = Horde_SQL::buildClause($this->_db, $test['field'], $test['op'], $rhs, true, array('begin' => !empty($test['begin'])));
-                            if (is_array($binds)) {
-                                $clause .= $binds[0];
-                                $values = array_merge($values, $binds[1]);
+                            if ($rhs == '' && $test['op'] == '=') {
+                                $clause .= '(' . Horde_SQL::buildClause($this->_db, $test['field'], '=', $rhs) . ' OR ' . $test['field'] . ' IS NULL)';
                             } else {
-                                $clause .= $binds;
+                                $binds = Horde_SQL::buildClause($this->_db, $test['field'], $test['op'], $rhs, true, array('begin' => !empty($test['begin'])));
+                                if (is_array($binds)) {
+                                    $clause .= $binds[0];
+                                    $values = array_merge($values, $binds[1]);
+                                } else {
+                                    $clause .= $binds;
+                                }
                             }
                         }
                     }

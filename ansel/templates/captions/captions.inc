@@ -31,7 +31,7 @@ if ($gallery->countImages()) {
         $thumb_url = Ansel::getImageUrl($image->id, $style['thumbstyle'], false, $style['name']);
 
         echo '<td width="10%" align="right" valign="top">';
-        echo Horde::img($thumb_url, '', '', '') .
+        echo '<img src="' . $thumb_url . '" />' .
             '</td><td width="40%" valign="top"><textarea name="img' . $image->id . '" rows="5" cols="25">' .
             htmlspecialchars($image->caption) . '</textarea></td>';
 

@@ -32,10 +32,9 @@ if (!empty($haveImages)) {
   </div>
 </td>
 </tr></table>
-<script type="text/javascript">
-// <![CDATA[
-// Delay response
 <?php if (!empty($haveImages)):?>
+<script type="text/javascript">
+// Delay response
 Ajax.Request.prototype.originalInitialize = Ajax.Request.prototype.initialize;
 Ajax.Request.prototype.initialize = function(url, options) {
     options.onSuccess = options.onSuccess.wrap(function(proceed, request, json) {
@@ -85,7 +84,6 @@ function updateCarouselSize() {
 }
 Event.observe(window, "load", runTest);
 Event.observe(window, "resize", resized);
-// ]]>
 </script>
 
 <style type="text/css">

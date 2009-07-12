@@ -45,7 +45,7 @@ $mini_galleries = array_values($mini_galleries);
     <?php if ($mini_galleries[$i]->isOldEnough() && !$mini_galleries[$i]->hasPasswd()): ?>
      <?php echo $link ?><img src="<?php echo Ansel::getImageUrl($mini_galleries[$i]->getDefaultImage('ansel_default'), 'mini', false, 'ansel_default') ?>"/></a>
     <?php else: ?>
-      <?php echo $link . Horde::img($GLOBALS['registry']->getImageDir() . '/gallery-locked-mini.png', '', '', '') ?></a>
+      <?php echo $link . Horde::img('gallery-locked-mini.png') ?></a>
     <?php endif; ?>
    </td>
 

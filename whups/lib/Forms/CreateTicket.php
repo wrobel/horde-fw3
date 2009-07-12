@@ -2,7 +2,7 @@
 /**
  * This file contains all Horde_Form classes to create a new ticket.
  *
- * $Horde: whups/lib/Forms/CreateTicket.php,v 1.19.2.1 2009/01/06 15:28:20 jan Exp $
+ * $Horde: whups/lib/Forms/CreateTicket.php,v 1.19.2.4 2009/07/06 02:23:22 bklang Exp $
  *
  * Copyright 2001-2002 Robert E. Coyle <robertecoyle@hotmail.com>
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
@@ -39,6 +39,11 @@ class CreateStep1Form extends Horde_Form {
                 if (!empty($info['description'])) {
                     $queues[$queue_id] .= ' [' . $info['description'] . ']';
                 }
+            }
+
+            // Auto-select the only queue if only one option is available
+            if (count($queues) == 1) {
+                $vars->set('queue', array_pop(array_keys($queues)));
             }
 
             require_once 'Horde/Form/Action.php';
@@ -139,10 +144,18 @@ class CreateStep3Form extends Horde_Form {
             }
         }
 
-        $f_state = &$this->addVariable(_("Ticket State"), 'state', 'enum', true,
-                                       false, null, array($states));
-        $f_state->setDefault(
-            $whups_driver->getDefaultState($vars->get('type')));
+        // Silently default the state if there is only one choice
+        if (count($states) == 1) {
+            $vars->set('state', reset(array_keys($states)));
+            $f_state = &$this->addHidden(_("Ticket State"), 'state', 'enum',
+                                           true, false, null, array($states));
+        } else {
+            $f_state = &$this->addVariable(_("Ticket State"), 'state', 'enum',
+                                           true, false, null, array($states));
+            $f_state->setDefault(
+                $whups_driver->getDefaultState($vars->get('type')));
+        }
+
         $f_priority = &$this->addVariable(
             _("Priority"), 'priority', 'enum', true, false, null,
             array($whups_driver->getPriorities($vars->get('type'))));

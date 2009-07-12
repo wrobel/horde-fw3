@@ -2,7 +2,7 @@
 /**
  * Face recognition class
  *
- * $Horde: ansel/lib/Faces.php,v 1.18.2.4 2008/11/12 23:11:04 mrubinsk Exp $
+ * $Horde: ansel/lib/Faces.php,v 1.18.2.5 2009/06/30 15:48:09 mrubinsk Exp $
  *
  * @author  Duck <duck@obala.net>
  * @package Ansel
@@ -1100,10 +1100,9 @@ class Ansel_Faces {
         $search_url = Horde::applicationUrl('faces/search/image_search.php');
 
         // The HTML to display the face image.
-        $imghtml = Horde::img($faces->getFaceUrl($face['image_id'], $face_id),
-                '',
-                array('class' => 'bordered-facethumb',
-                    'id' => 'facethumb' . $face_id), '');
+        $imghtml = sprintf("<img src=\"%s\" class=\"bordered-facethumb\" id=\"%s\" />",
+             $faces->getFaceUrl($face['image_id'], $face_id),
+             'facethumb' . $face_id);
 
         $img_view_url = Ansel::getUrlFor('view',
             array('gallery' => $face['gallery_id'],

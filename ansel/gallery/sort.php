@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ansel/gallery/sort.php,v 1.23.2.2 2009/01/06 15:22:24 jan Exp $
+ * $Horde: ansel/gallery/sort.php,v 1.23.2.4 2009/07/04 15:37:09 mrubinsk Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *
@@ -88,10 +88,11 @@ require ANSEL_TEMPLATES . '/menu.inc';
 <?php
 $images = $gallery->getImages();
 foreach ($images as $image) {
-    echo '<div id="o_' . htmlspecialchars($image->id) . '"><a title="' .
-        htmlspecialchars($image->caption) . '" href="#">' .
-        Horde::img(Ansel::getImageUrl($image->id, 'thumb', false, $style['name']), '', '', '') .
-        '</a></div>';
+    $caption = empty($image->caption) ? $image->filename : $image->caption;
+    echo '<div id="o_' . htmlspecialchars($image->id) . '"><a title="'
+        . htmlspecialchars($caption) . '" href="#">'
+        . '<img src="' . Ansel::getImageUrl($image->id, 'thumb', false, $style['name']) . '" />'
+        . '</a></div>';
 }
 echo '</div>';
 $notification->push('Sortable.create(\'sortContainer\', {tag: \'div\', overlap: \'horizontal\', constraint: false })', 'javascript');
