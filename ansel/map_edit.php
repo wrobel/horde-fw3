@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ansel/map_edit.php,v 1.1.2.17 2009/07/12 00:06:37 mrubinsk Exp $
+ * $Horde: ansel/map_edit.php,v 1.1.2.18 2009/07/16 17:36:36 mrubinsk Exp $
  *
  * Copyright 2009 The Horde Project (http://www.horde.org/)
  *
@@ -16,6 +16,8 @@ require_once 'Horde/Serialize.php';
 
 /* Script includes */
 Horde::addScriptFile('prototype.js', 'horde');
+$sfiles = &Ansel_Script_Files::singleton();
+$sfiles->addExternalScript('http://maps.google.com/maps?file=api&v=2.x&sensor=false&key=' . $GLOBALS['conf']['api']['googlemaps']);
 
 // Need to include autocomplete *here* in FW_3 code, since it's not a horde
 // level js file here. In H4, it's in horde proper, and therefore loaded before
@@ -100,10 +102,6 @@ if (count($imgs) > 0) {
 } else {
     $other_images = '';
 }
-
-/* Include the google scripts */
-$sfiles = &Ansel_Script_Files::singleton();
-$sfiles->addExternalScript('http://maps.google.com/maps?file=api&v=2.x&sensor=false&key=' . $GLOBALS['conf']['api']['googlemaps']);
 
 /* Build the HTML */
 $html = <<<EOT

@@ -1,0 +1,4 @@
+*.src.rpm
+*.tgz
+*.spec
+package.patch

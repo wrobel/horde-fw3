@@ -6,7 +6,7 @@ require_once 'Horde/Cache.php';
  * The Perms_sql:: class provides a SQL driver for the Horde
  * permissions system.
  *
- * $Horde: framework/Perms/Perms/sql.php,v 1.1.2.11 2009/02/25 05:35:43 chuck Exp $
+ * $Horde: framework/Perms/Perms/sql.php,v 1.1.2.12 2009/07/20 11:22:48 jan Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -100,7 +100,7 @@ class Perms_sql extends Perms {
             return $permsCache[$name];
         }
 
-        $perm = $this->_cache->get('perm_' . $name, $GLOBALS['conf']['cache']['default_lifetime']);
+        $perm = $this->_cache->get('perm_sql' . $name, $GLOBALS['conf']['cache']['default_lifetime']);
         if ($perm === false) {
             $this->_connect();
 
@@ -117,7 +117,7 @@ class Perms_sql extends Perms {
             $object->setId($result['perm_id']);
             $object->setData(unserialize($result['perm_data']));
 
-            $this->_cache->set('perm_' . $name, serialize($object));
+            $this->_cache->set('perm_sql' . $name, serialize($object));
 
             $permsCache[$name] = $object;
         } else {
@@ -175,8 +175,8 @@ class Perms_sql extends Perms {
             return PEAR::raiseError('Permission names must be non-empty');
         }
 
-        $this->_cache->expire('perm_' . $name);
-        $this->_cache->expire('perm_exists_' . $name);
+        $this->_cache->expire('perm_sql' . $name);
+        $this->_cache->expire('perm_sql_exists_' . $name);
 
         $this->_connect();
         $id = $this->_write_db->nextId('horde_perms');
@@ -224,8 +224,8 @@ class Perms_sql extends Perms {
         }
 
         $name = $perm->getName();
-        $this->_cache->expire('perm_' . $name);
-        $this->_cache->expire('perm_exists_' . $name);
+        $this->_cache->expire('perm_sql' . $name);
+        $this->_cache->expire('perm_sql_exists_' . $name);
 
         $this->_connect();
         $query = 'DELETE FROM horde_perms WHERE perm_name = ?';
@@ -266,7 +266,7 @@ class Perms_sql extends Perms {
      */
     function exists($permission)
     {
-        $key = 'perm_exists_' . $permission;
+        $key = 'perm_sql_exists_' . $permission;
         $exists = $this->_cache->get($key, $GLOBALS['conf']['cache']['default_lifetime']);
         if ($exists === false) {
             $this->_connect();
@@ -522,8 +522,8 @@ class SQLObject_Permission extends Horde_Permission {
         }
 
         $cache = Horde_Cache::singleton($GLOBALS['conf']['cache']['driver'], Horde::getDriverConfig('cache', $GLOBALS['conf']['cache']['driver']));
-        $cache->expire('perm_' . $name);
-        $cache->expire('perm_exists_' . $name);
+        $cache->expire('perm_sql_' . $name);
+        $cache->expire('perm_sql_exists_' . $name);
 
         return true;
     }

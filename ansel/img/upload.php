@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ansel/img/upload.php,v 1.29.2.7 2009/02/10 14:52:28 mrubinsk Exp $
+ * $Horde: ansel/img/upload.php,v 1.29.2.9 2009/07/20 16:04:07 mrubinsk Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -16,7 +16,7 @@ require_once 'Horde/Form/Renderer.php';
 require_once 'Horde/Variables.php';
 
 $gallery_id = Util::getFormData('gallery');
-$gallery = &$ansel_storage->getGallery($gallery_id, array('view_mode' => 'Normal'));
+$gallery = &$ansel_storage->getGallery($gallery_id);
 if (is_a($gallery, 'PEAR_Error')) {
     $notification->push(sprintf(_("Gallery %s not found."), $gallery_id), 'horde.error');
     header('Location: ' . Ansel::getUrlFor('view', array('view' => 'List'), true));
@@ -180,22 +180,20 @@ if ($form->validate($vars)) {
                     $notification->push(_("The file you uploaded does not appear to be a valid photo."), 'horde.error');
                     continue;
                 }
-                $image_id = $gallery->addImage(array('image_filename' => $info['file' . $i]['name'],
-                                                     'image_caption' => $vars->get('image' . $i . '_desc'),
-                                                     'image_type' => $info['file' . $i]['type'],
-                                                     'data' => $data,
-                                                     'tags' => (isset($info['image' . $i . '_tags']) ? explode(',', $info['image' . $i . '_tags']) : array())));
+
+                /* Add the image to the gallery */
+                $image_data = array('image_filename' => $info['file' . $i]['name'],
+                                    'image_caption' => $vars->get('image' . $i . '_desc'),
+                                    'image_type' => $info['file' . $i]['type'],
+                                    'data' => $data,
+                                    'tags' => (isset($info['image' . $i . '_tags']) ? explode(',', $info['image' . $i . '_tags']) : array()));
+                $image_id = $gallery->addImage($image_data, (bool)$vars->get('image' . $i . '_default'));
                 unset($data);
                 if (is_a($image_id, 'PEAR_Error')) {
                     $notification->push(sprintf(_("There was a problem saving the photo: %s"), $image_id->getMessage()), 'horde.error');
                     $valid = false;
                 } else {
                     ++$uploaded;
-                    if ($vars->get('image_default')) {
-                        $gallery->set('default', $image_id);
-                        $gallery->set('default_type', 'manual');
-                        $gallery->save();
-                    }
                     if ($conf['image']['autogen'] > count($image_ids)) {
                         $image_ids[] = $image_id;
                     }

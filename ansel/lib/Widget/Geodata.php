@@ -7,7 +7,7 @@
  *
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.
- * $Horde: ansel/lib/Widget/Geodata.php,v 1.1.2.30 2009/07/12 00:06:38 mrubinsk Exp $
+ * $Horde: ansel/lib/Widget/Geodata.php,v 1.1.2.38 2009/07/17 17:47:39 mrubinsk Exp $
  *
  * @author Michael J. Rubinsky <mrubinsk@horde.org>
  * @package Ansel
@@ -45,6 +45,7 @@ class Ansel_Widget_Geodata extends Ansel_Widget {
         $geodata = $ansel_storage->getImagesGeodata($this->_params['images']);
         $url = Horde::applicationUrl('map_edit.php', true);
         $rtext = _("Relocate this image");
+        $dtext = _("Delete geotag");
         $xrequestUrl = Horde::applicationUrl('xrequest.php', true);
         $permsEdit = $this->_view->gallery->hasPermission(Auth::getAuth(), PERMS_EDIT);
         $viewType = $this->_view->viewType();
@@ -67,6 +68,9 @@ class Ansel_Widget_Geodata extends Ansel_Widget {
         // Add extra information to the JSON data to be sent:
         foreach ($geodata as $id => $data) {
             $geodata[$id]['icon'] = Ansel::getImageUrl($geodata[$id]['image_id'], 'mini', true);
+            $geodata[$id]['link'] = Ansel::getUrlFor('view', array('view' => 'Image',
+                                                                   'gallery' => $this->_view->gallery->id,
+                                                                   'image' => $geodata[$id]['image_id']), true);
             $geodata[$id]['markerOnly'] = ($viewType == 'Image');
         }
 
@@ -91,13 +95,13 @@ class Ansel_Widget_Geodata extends Ansel_Widget {
                 $content .= '<div class="ansel_geolocation">';
                 $content .= '<div id="ansel_locationtext"></div>';
                 $content .= '<div id="ansel_latlng"></div>';
-                $content .= '<div id="ansel_relocate"></div></div>';
+                $content .= '<div id="ansel_relocate"></div><div id="ansel_deleteGeotag"></div></div>';
                 $content .= '<div id="ansel_map_small"></div>';
 
             } elseif ($permsEdit) {
                 // Image view, but no geotags, provide ability to add it.
                 $addurl = Util::addParameter(Horde::applicationUrl('map_edit.php'), 'image', $this->_params['images'][0]);
-                $addLink = Horde::link($addurl, '', '', '', 'popup(\'' . Util::addParameter(Horde::applicationUrl('map_edit.php'), 'image', $this->_params['images'][0]) . '\'); return false;');
+                $addLink = Horde::link($addurl, '', '', '', 'popup(\'' . Util::addParameter(Horde::applicationUrl('map_edit.php'), 'image', $this->_params['images'][0]) . '\', 750, 600); return false;');
                 $imgs = $ansel_storage->getRecentImagesGeodata(Auth::getAuth());
                     if (count($imgs) > 0) {
                         $imgsrc = '<div class="ansel_location_sameas">';
@@ -140,34 +144,53 @@ class Ansel_Widget_Geodata extends Ansel_Widget {
             viewType: '{$viewType}',
             relocateUrl: '{$url}',
             relocateText: '{$rtext}',
+            deleteGeotagText: '{$dtext}',
             hasEdit: {$permsEdit},
-            calculateMaxZoom: false,
-            updateEndpoint: '{$xrequestUrl}'
+            calculateMaxZoom: true,
+            updateEndpoint: '{$xrequestUrl}',
+            deleteGeotagCallback: function() {deleteLocation();}
         };
 
         function setLocation(lat, lng)
         {
-            params = {requestType: 'ImageSaveGeolocation/img=' + {$image_id} + '/lat=' + lat + '/lng=' + lng};
+            params = {requestType: 'ImageSaveGeolocation/type=geotag/img=' + {$image_id} + '/lat=' + lat + '/lng=' + lng};
             url = "{$xrequestUrl}";
              new Ajax.Request(url, {
                 method: 'post',
                 parameters: params,
                 onComplete: function(transport) {
                      if (transport.responseText == 1) {
+                        if (typeof ToolTips != 'undefined') {
+                            ToolTips.out();
+                        }
                         w = new Element('div');
                         w.appendChild(new Element('div', {id: 'ansel_map'}));
                         ag = new Element('div', {'class': 'ansel_geolocation'});
                         ag.appendChild(new Element('div', {id: 'ansel_locationtext'}));
                         ag.appendChild(new Element('div', {id: 'ansel_latlng'}));
                         ag.appendChild(new Element('div', {id: 'ansel_relocate'}));
+                        ag.appendChild(new Element('div', {id: 'ansel_deleteGeotag'}));
                         w.appendChild(ag);
                         w.appendChild(new Element('div', {id: 'ansel_map_small'}));
                         $('ansel_geo_widget').update(w);
-                        pageImages.push({image_id: {$image_id}, image_latitude: lat, image_longitude: lng, image_location:'', markerOnly:true});
+                        pageImages.unshift({image_id: {$image_id}, image_latitude: lat, image_longitude: lng, image_location:'', markerOnly:true});
                         doMap(pageImages);
                      }
                  }
             });
+        }
+
+        function deleteLocation() {
+            params = {requestType: 'ImageSaveGeolocation/type=untag/img=' + {$image_id}};
+            url = "{$xrequestUrl}";
+            new Ajax.Request(url, {
+                method: 'post',
+                parameters: params,
+                onComplete: function(transport) {
+                    $('ansel_geo_widget').update(transport.responseText)
+                }
+            });
+
         }
 
         function doMap(points) {

@@ -8,7 +8,7 @@
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.
  *
- * $Horde: ansel/lib/XRequest/ImageSaveGeolocation.php,v 1.1.2.5 2009/07/10 17:50:42 mrubinsk Exp $
+ * $Horde: ansel/lib/XRequest/ImageSaveGeolocation.php,v 1.1.2.7 2009/07/16 16:07:53 mrubinsk Exp $
  *
  * @author Michael J. Rubinsky <mrubinsk@horde.org>
  * @package Ansel
@@ -34,14 +34,14 @@ class Ansel_XRequest_ImageSaveGeolocation extends Ansel_XRequest {
         }
 
         // Get the image and gallery to check perms
-        $image = $ansel_storage->getImage($args['img']);
+        $image = $ansel_storage->getImage((int)$args['img']);
         if (is_a($image, 'PEAR_Error')) {
             echo 0;
             exit;
         }
         $gallery = $ansel_storage->getGallery($image->gallery);
         if (is_a($gallery, 'PEAR_Error')) {
-            return 0;
+            echo 0;
             exit;
         }
         // Bail out if no perms on the image.
@@ -50,17 +50,43 @@ class Ansel_XRequest_ImageSaveGeolocation extends Ansel_XRequest {
             exit;
         }
 
-        // Only updating textual location?
-        if (!empty($args['type']) && $args['type'] == 'location') {
+        switch ($args['type']) {
+        case 'geotag':
+            $image->geotag($args['lat'], $args['lng'], !empty($args['location']) ? $args['location'] : '');
+            echo 1;
+            exit;
+
+        case 'location':
             $image->location = !empty($args['location']) ? urldecode($args['location']) : '';
             $image->save();
             echo htmlentities($image->location);
             exit;
-        }
-        $image->geotag($args['lat'], $args['lng'], !empty($args['location']) ? $args['location'] : '');
 
-        echo 1;
-        exit;
+        case 'untag':
+            $image->geotag('', '', '');
+            // Now get the "add geotag" stuff
+            $addurl = Util::addParameter(Horde::applicationUrl('map_edit.php'), 'image', $args['img']);
+            $addLink = Horde::link($addurl, '', '', '', 'popup(\'' . Util::addParameter(Horde::applicationUrl('map_edit.php'), 'image', $args['img']) . '\'); return false;');
+            $imgs = $GLOBALS['ansel_storage']->getRecentImagesGeodata(Auth::getAuth());
+            if (count($imgs) > 0) {
+                $imgsrc = '<div class="ansel_location_sameas">';
+                foreach ($imgs as $id => $data) {
+                    if (!empty($data['image_location'])) {
+                        $title = $data['image_location'];
+                    } else {
+                        $title = $this->_point2Deg($data['image_latitude'], true) . ' ' . $this->_point2Deg($data['image_longitude']);
+                    }
+                    $imgsrc .= Horde::link($addurl, $title, '', '', "setLocation('" . $data['image_latitude'] . "', '" . $data['image_longitude'] . "');return false") . '<img src="' . Ansel::getImageUrl($id, 'mini', true) . '" alt="[image]" /></a>';
+                }
+                $imgsrc .= '</div>';
+                $content = sprintf(_("No location data present. Place using %s map %s or click on image to place at the same location."), $addLink, '</a>') . $imgsrc;
+            } else {
+                $content = _("No location data present. You may add some ") . $addLink . _("here") . '</a>';
+            }
+
+            echo $content;
+            exit;
+        }
     }
 
 }

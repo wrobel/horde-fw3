@@ -76,7 +76,7 @@ Ansel_MapEdit.prototype = {
     handleSave: function(id)
     {
         var o = this._options;
-        params = {requestType: 'ImageSaveGeolocation/img=' + id + '/lat=' + this._map.points[0].getLatLng().lat() + '/lng=' + this._map.points[0].getLatLng().lng()};
+        params = {requestType: 'ImageSaveGeolocation/type=geotag/img=' + id + '/lat=' + this._map.points[0].getLatLng().lat() + '/lng=' + this._map.points[0].getLatLng().lng()};
         url = this._options.url;
         new Ajax.Request(o.xurl, {
             method: 'post',

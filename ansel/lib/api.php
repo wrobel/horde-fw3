@@ -2,7 +2,7 @@
 /**
  * Ansel external API interface.
  *
- * $Horde: ansel/lib/api.php,v 1.122.2.10 2009/06/27 17:56:54 chuck Exp $
+ * $Horde: ansel/lib/api.php,v 1.122.2.11 2009/07/20 16:04:07 mrubinsk Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *
@@ -573,15 +573,9 @@ function _ansel_saveImage($app = null, $gallery_id, $image, $default = false,
             $image_data['tags'] = $image['tags'];
     }
 
-    $image_id = $gallery->addImage($image_data);
+    $image_id = $gallery->addImage($image_data, $default);
     if (is_a($image_id, 'PEAR_Error')) {
         return $image_id;
-    }
-
-    if ($default) {
-        $gallery->set('default', $image_id);
-        $gallery->set('default_type', 'manual');
-        $gallery->save();
     }
 
     return array('image_id'   => (int)$image_id,

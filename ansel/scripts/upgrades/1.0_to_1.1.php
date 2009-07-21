@@ -27,12 +27,23 @@ $cli = &Horde_CLI::singleton();
 
 require_once ANSEL_BASE . '/lib/base.php';
 
+// First update the tables
+$alter = array("ALTER TABLE ansel_images ADD COLUMN image_latitude VARCHAR(32) NOT NULL DEFAULT ''",
+               "ALTER TABLE ansel_images ADD COLUMN image_longitude VARCHAR(32) NOT NULL DEFAULT ''",
+               "ALTER TABLE ansel_images ADD COLUMN image_location VARCHAR(255) NOT NULL DEFAULT ''",
+               "ALTER TABLE ansel_images ADD COLUMN image_geotag_date INT NOT NULL DEFAULT 0");
+
+foreach ($alter as $sql) {
+    $cli->message(sprintf("Executing %s", $sql));
+    $ansel_db->exec($sql);
+}
+
 $sql = 'SELECT image_id, image_latitude, image_longitude FROM ansel_images_geolocation;';
 $results = $ansel_db->queryAll($sql, null, MDB2_FETCHMODE_ASSOC);
-$sql = $ansel_db->prepare('UPDATE ansel_images_geolocation SET image_latitude = ?, image_longitude = ? WHERE image_id = ?');
+$sql = $ansel_db->prepare('UPDATE ansel_images SET image_latitude = ?, image_longitude = ? WHERE image_id = ?');
 foreach ($results as $image) {
     // Clean up from a bug in Exifer
-    if (strlen(trim($image['image_latitude']) <= 1) || strlen(trim($image['image_longitude']) <= 1)) {
+    if (strlen(trim($image['image_latitude'])) <= 1 || strlen(trim($image['image_longitude'])) <= 1) {
         $cli->message(sprintf("Erroneous geoloction data for Image %d deleted", $image['image_id']), 'cli.message');
         $ansel_db->query('DELETE FROM ansel_images_geolocation WHERE image_id = ' . $image['image_id']);
     } else {
@@ -45,7 +56,4 @@ foreach ($results as $image) {
     }
 }
 
-// Add the location column.
-$sql = 'ALTER TABLE ansel_images_geolocation ADD COLUMN image_location VARCHAR(255)';
-$ansel_db->exec($sql);
 $cli->message('Done.', 'cli.success');

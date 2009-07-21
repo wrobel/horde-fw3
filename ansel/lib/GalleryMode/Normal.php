@@ -3,7 +3,7 @@
  * Ansel_Gallery_Mode_Normal:: Class for encapsulating gallery methods that
  * depend on the current display mode of the gallery.
  *
- * $Horde: ansel/lib/GalleryMode/Normal.php,v 1.2.2.12 2009/02/12 15:36:59 mrubinsk Exp $
+ * $Horde: ansel/lib/GalleryMode/Normal.php,v 1.2.2.13 2009/07/17 17:28:46 mrubinsk Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -288,7 +288,7 @@ class Ansel_GalleryMode_Normal {
     {
         $this->_gallery->_shareOb->_db->setLimit($count, $from);
 
-        $images = $this->_gallery->_shareOb->_db->query('SELECT image_id, gallery_id, image_filename, image_type, image_caption, image_uploaded_date, image_sort FROM ansel_images WHERE gallery_id = ' . $this->_gallery->id . ' ORDER BY image_sort');
+        $images = $this->_gallery->_shareOb->_db->query('SELECT image_id, gallery_id, image_filename, image_type, image_caption, image_uploaded_date, image_sort, image_latitude, image_longitude, image_location, image_geotag_date FROM ansel_images WHERE gallery_id = ' . $this->_gallery->id . ' ORDER BY image_sort');
         if (is_a($images, 'PEAR_Error')) {
             return $images;
         }
@@ -348,6 +348,5 @@ class Ansel_GalleryMode_Normal {
 
         return (int)$this->_gallery->data['attribute_images'];
     }
-
 
 }

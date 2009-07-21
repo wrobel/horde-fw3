@@ -2,8 +2,8 @@
  Installing Ansel 1.0
 ======================
 
-:Last update:   $Date: 2009/05/15 20:01:25 $
-:Revision:      $Revision: 1.8.2.4 $
+:Last update:   $Date: 2009/07/16 19:03:00 $
+:Revision:      $Revision: 1.8.2.5 $
 
 .. contents:: Contents
 .. section-numbering::
@@ -180,6 +180,13 @@ Configuring Ansel
       them if desired. If you have changed the location of Ansel relative
       to Horde, either in the URL, in the filesystem or both, you must update
       the ``fileroot`` and ``webroot`` settings to their correct values.
+
+   b. The geotagging features of Ansel require a Google Maps API key. Once you
+      have a key, you should enter it in the ``API Keys`` section of Horde's
+      configuration interface. You can obtain a Google Maps API key at the URL::
+
+        http://code.google.com/apis/maps/signup.html
+
 
 2. Creating the database tables
 

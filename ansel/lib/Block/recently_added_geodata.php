@@ -5,7 +5,7 @@ $block_name = _("Recently Geotagged");
 /**
  * Display most recently geotagged images.
  *
- * $Horde: ansel/lib/Block/recently_added_geodata.php,v 1.1.2.1 2009/07/12 00:06:37 mrubinsk Exp $
+ * $Horde: ansel/lib/Block/recently_added_geodata.php,v 1.1.2.3 2009/07/15 20:12:31 mrubinsk Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *
@@ -33,6 +33,10 @@ class Horde_Block_ansel_recently_added_geodata extends Horde_Block {
                              'name' => _("Maximum number of photos"),
                              'type' => 'int',
                              'default' => 10),
+                        'height' => array(
+                             'name' => _("Height of map (width automatically adjusts to block)"),
+                             'type' => 'int',
+                             'default' => 250),
         );
 
         if ($GLOBALS['ansel_storage']->countGalleries(Auth::getAuth(), PERMS_READ) < $GLOBALS['conf']['gallery']['listlimit']) {
@@ -49,7 +53,8 @@ class Horde_Block_ansel_recently_added_geodata extends Horde_Block {
     function _title()
     {
         require_once dirname(__FILE__) . '/../base.php';
-         Horde::addScriptFile('prototype.js', 'horde');
+
+        Horde::addScriptFile('prototype.js', 'horde');
         $sfiles = &Ansel_Script_Files::singleton();
         $sfiles->addExternalScript('http://maps.google.com/maps?file=api&v=2&sensor=false&key=' . $GLOBALS['conf']['api']['googlemaps']);
         $sfiles->addExternalScript('http://gmaps-utility-library.googlecode.com/svn/trunk/markermanager/1.1/src/markermanager.js');
@@ -78,7 +83,7 @@ class Horde_Block_ansel_recently_added_geodata extends Horde_Block {
             $viewurl = Ansel::getUrlFor('view', array('view' => 'List'), true);
             $name = _("All Galleries");
         }
-        return sprintf(_("Recently Added Photos From %s"),
+        return sprintf(_("Recently Geotagged Photos From %s"),
                        Horde::link($viewurl) . $name . '</a>');
     }
 
@@ -118,13 +123,13 @@ class Horde_Block_ansel_recently_added_geodata extends Horde_Block {
                       'slug' => $gallery->get('slug'),
                       'gallery' => $gallery->id,
                       'image' => $id,
-                      'gallery_view' => 'GalleryLightbox'), true);
+                      'gallery_view' => $style['gallery_view']), true);
             $images[$id]['icon'] = Ansel::getImageUrl($images[$id]['image_id'], 'mini', true);
             $images[$id]['link'] = $url;
         }
 
         $json = Horde_Serialize::serialize(array_values($images), SERIALIZE_JSON);
-        $html = '<div id="ansel_map"></div>';
+        $html = '<div id="ansel_map" style="height:' . $this->_params['height'] . 'px;"></div>';
         $html .= <<<EOT
         <script type="text/javascript">
         var map = {};
@@ -132,11 +137,7 @@ class Horde_Block_ansel_recently_added_geodata extends Horde_Block {
         options = {
             mainMap:  'ansel_map',
             viewType: 'Block',
-            relocateUrl: '',
-            relocateText: '',
-            hasEdit: false,
-            calculateMaxZoom: false,
-            updateEndpoint: ''
+            calculateMaxZoom: false
         };
         function doMap(points) {
             map = new Ansel_GMap(options);

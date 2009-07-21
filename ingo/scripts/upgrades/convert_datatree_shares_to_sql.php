@@ -5,7 +5,7 @@
  * driver to the new SQL Horde_Share driver. You should run the 1.1_to_1.2.sql
  * upgrade script before executing this script.
  *
- * $Horde: ingo/scripts/upgrades/convert_datatree_shares_to_sql.php,v 1.1.2.5 2008/10/23 15:50:34 jan Exp $
+ * $Horde: ingo/scripts/upgrades/convert_datatree_shares_to_sql.php,v 1.1.2.6 2009/07/20 11:16:55 jan Exp $
  */
 
 @define('AUTH_HANDLER', true);
@@ -27,6 +27,7 @@ require_once 'MDB2.php';
 $config = $GLOBALS['conf']['sql'];
 unset($config['charset']);
 $db = MDB2::factory($config);
+$db->setOption('seqcol_name', 'id');
 
 $error_cnt = 0;
 $delete_dt_data = false;
@@ -40,23 +41,26 @@ if ($answer != 'y') {
 }
 
 /* Get the share entries */
-$sql = 'SELECT datatree_id, datatree_name FROM horde_datatree WHERE '
-    . 'group_uid = \'horde.shares.ingo\'';
-$shares_result = $db->query($sql);
+$shares_result = $db->query('SELECT datatree_id, datatree_name FROM horde_datatree WHERE group_uid = \'horde.shares.ingo\'');
 if (is_a($shares_result, 'PEAR_Error')) {
     die($shares_result->toString());
 }
 
+$query = $db->prepare('SELECT attribute_name, attribute_key, attribute_value FROM horde_datatree_attributes WHERE datatree_id = ?');
 while ($row = $shares_result->fetchRow(MDB2_FETCHMODE_ASSOC)) {
     $share_id = $row['datatree_id'];
     $share_name = $row['datatree_name'];
 
     /* Build an array to hold the new row data */
-    $data = array('share_id' => $db->nextId('ingo_shares'),
+    $nextId = $db->nextId('ingo_shares');
+    if (is_a($nextId, 'PEAR_Error')) {
+        $cli->message($nextId->toString(), 'cli.error');
+        $error_cnt++;
+        continue;
+    }
+    $data = array('share_id' => $nextId,
                   'share_name' => $share_name);
 
-    $sql = 'SELECT attribute_name, attribute_key, attribute_value FROM horde_datatree_attributes WHERE datatree_id = ?';
-    $query = $db->prepare($sql);
     $query_result = $query->execute($share_id);
     $rows = $query_result->fetchAll(MDB2_FETCHMODE_ASSOC);
     $users = array();

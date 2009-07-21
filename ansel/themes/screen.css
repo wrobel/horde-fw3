@@ -1,5 +1,5 @@
 /**
- * $Horde: ansel/themes/screen.css,v 1.60.2.15 2009/07/11 00:32:46 mrubinsk Exp $
+ * $Horde: ansel/themes/screen.css,v 1.60.2.16 2009/07/16 19:15:47 mrubinsk Exp $
  */
 
 /* Table CSS. */
@@ -371,6 +371,12 @@ form.inplaceeditor-form a {
     margin: 0;
     font-size: 80%;
 }
+
+#ansel_deleteGeotag {
+    font-size: 70%;
+    font-style: italic;
+}
+
 /* Autocomplete styles. */
 .autocomplete {
     background: #f4f4f4;

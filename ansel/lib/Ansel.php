@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ansel/lib/Ansel.php,v 1.517.2.65 2009/07/12 00:06:37 mrubinsk Exp $
+ * $Horde: ansel/lib/Ansel.php,v 1.517.2.69 2009/07/20 16:51:12 mrubinsk Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *
@@ -1095,7 +1095,6 @@ class Ansel_Gallery extends Horde_Share_Object_sql_hierarchical {
         $this->setShareOb($GLOBALS['ansel_storage']->shares);
         $mode = isset($attributes['attribute_view_mode']) ? $attributes['attribute_view_mode'] : 'Normal';
         $this->_setModeHelper($mode);
-        $this->_modeHelper->init();
     }
 
     /**
@@ -1124,6 +1123,7 @@ class Ansel_Gallery extends Horde_Share_Object_sql_hierarchical {
         $class = 'Ansel_GalleryMode_' . $type;
         require_once dirname(__FILE__) . '/GalleryMode/' . $type . '.php';
         $this->_modeHelper = new $class($this);
+        $this->_modeHelper->init();
     }
 
     /**
@@ -1227,11 +1227,19 @@ class Ansel_Gallery extends Horde_Share_Object_sql_hierarchical {
      *                           'image_caption', and 'data'. Optional keys
      *                           include 'image_filename' and 'image_type'
      *
+     * @param boolean $default   Make this image the new default tile image.
+     *
      * @return integer  The id of the new image.
      */
-    function addImage($image_data)
+    function addImage($image_data, $default = false)
     {
         global $conf;
+
+        /* Normal is the only view mode that can accurately update gallery counts */
+        $vMode = $this->get('view_mode');
+        if ($vMode != 'Normal') {
+            $this->_setModeHelper('Normal');
+        }
 
         $resetStack = false;
         if (!isset($image_data['image_filename'])) {
@@ -1254,10 +1262,13 @@ class Ansel_Gallery extends Horde_Share_Object_sql_hierarchical {
             }
         }
 
-        /* Change the default image if it's set to automatic. */
-        if ($this->data['attribute_default_type'] == 'auto') {
+        /* Should this be the default image? */
+        if (!$default && $this->data['attribute_default_type'] == 'auto') {
             $this->data['attribute_default'] = $image->id;
             $resetStack = true;
+        } elseif ($default) {
+            $this->data['attribute_default'] = $image->id;
+            $this->data['default_type'] = 'manual';
         }
 
         /* Reset the gallery default image stacks if needed. */
@@ -1270,6 +1281,11 @@ class Ansel_Gallery extends Horde_Share_Object_sql_hierarchical {
 
         /* Save all changes to the gallery */
         $this->save();
+
+        /* Return to the proper view mode */
+        if ($vMode != 'Normal') {
+            $this->_setModeHelper($vMode);
+        }
 
         /* Return the ID of the new image. */
         return $image->id;
@@ -2526,7 +2542,7 @@ class Ansel_Image {
             }
 
             if (!empty($exif_fields['DateTimeOriginal'])) {
-                $this->originalDate = strtotime($exif_fields['DateTimeOriginal']);
+                $this->originalDate = $exif_fields['DateTimeOriginal'];
                 $needUpdate = true;
             }
 
@@ -3243,8 +3259,8 @@ class Ansel_Storage {
      * Retrieve an Ansel_Gallery given the share id
      *
      * @param integer $gallery_id  The share_id to fetch
-     * @param array $overrides  An array of attributes that should be overridden
-     *                          when the gallery is returned.
+     * @param array $overrides     An array of attributes that should be
+     *                             overridden when the gallery is returned.
      *
      * @return mixed  Ansel_Gallery | PEAR_Error
      */

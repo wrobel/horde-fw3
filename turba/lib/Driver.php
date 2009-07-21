@@ -4,7 +4,7 @@
  * various directory search drivers.  It includes functions for searching,
  * adding, removing, and modifying directory entries.
  *
- * $Horde: turba/lib/Driver.php,v 1.57.2.87 2009/07/10 00:37:32 mrubinsk Exp $
+ * $Horde: turba/lib/Driver.php,v 1.57.2.88 2009/07/14 16:21:21 mrubinsk Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Jon Parise <jon@csh.rit.edu>
@@ -820,6 +820,14 @@ class Turba_Driver {
         $result = $this->_delete($this->toDriver('__key'), $object_id);
         if (is_a($result, 'PEAR_Error')) {
             return $result;
+        }
+    
+        $own_contact = $GLOBALS['prefs']->getValue('own_contact');
+        if (!empty($own_contact)) {
+            @list($source, $id) = explode(';', $own_contact);
+            if ($id == $object_id) {
+                $GLOBALS['prefs']->setValue('own_contact', '');
+            }
         }
 
         /* Log the deletion of this item in the history log. */

@@ -1,7 +1,7 @@
 #!/usr/bin/php -q
 <?php
 /**
- * $Horde: horde/scripts/upgrades/convert_datatree_groups_to_sql.php,v 1.1.2.1 2008/05/02 16:46:01 jan Exp $
+ * $Horde: horde/scripts/upgrades/convert_datatree_groups_to_sql.php,v 1.1.2.2 2009/07/20 11:36:02 jan Exp $
  *
  * A script to migrate groups from the DataTree backend to the new
  * (Horde 3.2+) native SQL Group backend.
@@ -63,12 +63,19 @@ foreach ($g->listGroups(true) as $id => $name) {
                     String::convertCharset($parents, NLS::getCharset(), $conf['sql']['charset']),
                     String::convertCharset($object->get('email'), NLS::getCharset(), $conf['sql']['charset']),
     );
-    $db->query($group_query, $params);
+    $result = $db->query($group_query, $params);
+    if (is_a($result, 'PEAR_Error')) {
+        echo $result->toString();
+        continue;
+    }
 
     $members = $object->listUsers();
     foreach ($members as $user_uid) {
         $params = array($id, $user_uid);
-        $db->query($member_query, $params);
+        $result = $db->query($member_query, $params);
+        if (is_a($result, 'PEAR_Error')) {
+            echo $result->toString();
+        }
     }
 }
 

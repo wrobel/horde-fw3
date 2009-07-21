@@ -5,7 +5,7 @@
  * Works equally well with either the built in php exif functions (if PHP
  * compiled with exif support) or the (slower) bundled exif library.
  *
- * $Horde: ansel/lib/Exif.php,v 1.41.2.10 2009/06/17 16:53:30 mrubinsk Exp $
+ * $Horde: ansel/lib/Exif.php,v 1.41.2.11 2009/07/20 16:45:36 mrubinsk Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -135,14 +135,14 @@ class Ansel_ImageData {
         if ($data[0] == 0) {
             return 0;
         }
-        $min = split('/', $data[1]);
+        $min = explode('/', $data[1]);
         if (count($min) > 1) {
             $min = $min[0] / $min[1];
         } else {
             $min = $min[0];
         }
 
-        $sec = split('/', $data[2]);
+        $sec = explode('/', $data[2]);
         if (count($sec) > 1) {
             $sec = $sec[0] / $sec[1];
         } else {

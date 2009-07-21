@@ -1,0 +1,36 @@
+=====================
+ Upgrading Ansel
+=====================
+
+:Last update:   $Date: 2009/07/17 15:32:13 $
+:Revision:      $Revision: 1.1.2.3 $
+:Contact:       ansel@lists.horde.org
+
+
+These are instructions to upgrade from earlier Ansel versions. Please
+backup your existing data before running any of the steps described below.
+
+
+Upgrading Ansel from 1.0 to 1.1.x
+=================================
+
+Some fixes to the share tables have been made for users of PostgreSQL. In
+addition to the instructions below, you also need to run the
+``scripts/upgrades/1.0_to_1.1.pgsql.sql`` script.
+
+Geotagging
+----------
+
+Ansel 1.1 introduces geotagging support and integration with Google Maps. There
+are some changes to the database schema to better support this. Previous
+versions of Ansel may have captured location information from images that
+contained such data in the EXIF fields. Any such data that was retrieved will
+be migrated to the new schema as well. You MUST run the following script EVEN IF
+YOU DO NOT PLAN ON USING GEOTAGGING FEATURES::
+
+    php scripts/upgrades/1.0_to_1.1.php
+
+In addition to the above, if you wish to use the geotagging feature, you will
+need an API key from Google for the Maps API.
+
+    http://code.google.com/apis/maps/signup.html
