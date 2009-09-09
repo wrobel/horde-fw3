@@ -10,7 +10,7 @@
  * the preferences backend (e.g. usernames may have to be in the form
  * user@example.com).
  *
- * $Horde: ingo/scripts/upgrades/convert_prefs_to_sql.php,v 1.2.2.4 2009/01/06 15:24:39 jan Exp $
+ * $Horde: ingo/scripts/upgrades/convert_prefs_to_sql.php,v 1.2.2.5 2009/08/02 13:45:50 mrubinsk Exp $
  *
  * Copyright 2006-2009 The Horde Project (http://www.horde.org/)
  *
@@ -80,6 +80,10 @@ while (!feof(STDIN)) {
         $filter = $prefs_storage->retrieve($rule, false);
         if ($rule == INGO_STORAGE_ACTION_FILTERS) {
             $new_filter = &$sql_storage->retrieve(INGO_STORAGE_ACTION_FILTERS, true, true);
+            if (is_a($new_filter, 'PEAR_Error')) {
+                // If we can't create the filter, fatal out and notify the user.
+                $cli->fatal($new_filter->getMessage(), 'cli.error');
+            }
             foreach ($filter->getFilterlist() as $rule) {
                 $new_filter->addRule($rule);
                 echo '.';

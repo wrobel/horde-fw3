@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ansel/lib/Ansel.php,v 1.517.2.69 2009/07/20 16:51:12 mrubinsk Exp $
+ * $Horde: ansel/lib/Ansel.php,v 1.517.2.71 2009/08/13 21:29:08 mrubinsk Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *
@@ -3342,6 +3342,7 @@ class Ansel_Storage {
      */
     function emptyGallery($gallery)
     {
+        $gallery->clearStacks();
         $images = $gallery->listImages();
         foreach ($images as $image) {
             // Pretend we are a stack so we don't update the images count
@@ -3428,6 +3429,10 @@ class Ansel_Storage {
         }
 
         $q = $this->_db->prepare('SELECT ' . $this->_getImageFields() . ' FROM ansel_images WHERE image_id = ?');
+        if (is_a($q, 'PEAR_Error')) {
+            Horde::logMessage($q, __FILE__, __LINE__, PEAR_LOG_ERR);
+            return $q;
+        }
         $result = $q->execute((int)$id);
         if (is_a($result, 'PEAR_Error')) {
             Horde::logMessage($result, __FILE__, __LINE__, PEAR_LOG_ERR);

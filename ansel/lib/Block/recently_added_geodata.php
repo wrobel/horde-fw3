@@ -5,7 +5,7 @@ $block_name = _("Recently Geotagged");
 /**
  * Display most recently geotagged images.
  *
- * $Horde: ansel/lib/Block/recently_added_geodata.php,v 1.1.2.3 2009/07/15 20:12:31 mrubinsk Exp $
+ * $Horde: ansel/lib/Block/recently_added_geodata.php,v 1.1.2.4 2009/07/26 23:52:15 mrubinsk Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *
@@ -90,6 +90,7 @@ class Horde_Block_ansel_recently_added_geodata extends Horde_Block {
     function _content()
     {
         require_once dirname(__FILE__) . '/../base.php';
+        require_once 'Horde/Serialize.php';
 
         if ($this->_params['gallery'] == 'all') {
             $galleries = array();

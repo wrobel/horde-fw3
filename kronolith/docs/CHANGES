@@ -2,6 +2,16 @@
 v2.3.2-cvs
 ----------
 
+[mms] Upgrade prototype.js to v1.6.1.
+[jan] Allow to add address lists as attendees through the address book popup
+      (Bug #7834).
+[jan] Fix exporting certain weekday recurrence rules to iCalendar
+      (lst_hoe02@kwsoft.de, Bug #8501).
+[jan] Export recurrence end dates as date-time values in iCalendar data to
+      improve compatibility with external clients (Bug #7846).
+[jan] Fix synchronization with output compression enabled (Bug #7769).
+[jan] Add configuration whether to show user drop down list or text field in
+      permissions dialog (requires Horde 3.3.5).
 [jan] Propagate the 'modified' API method (Request #8274).
 [cjh] Fix the signature of the kronolith/import API method
       (rpolli@babel.it, Bug #8309).

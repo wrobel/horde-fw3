@@ -2,7 +2,7 @@
 /**
  * Turba external API interface.
  *
- * $Horde: turba/lib/api.php,v 1.120.2.65 2009/06/04 19:00:36 mrubinsk Exp $
+ * $Horde: turba/lib/api.php,v 1.120.2.68 2009/09/04 10:38:38 jan Exp $
  *
  * This file defines Turba's external API interface. Other applications can
  * interact with Turba through this API.
@@ -50,7 +50,7 @@ $_services['list'] = array(
 );
 
 $_services['listBy'] = array(
-    'args' => array('action' => 'string', 'timestamp' => 'int'),
+    'args' => array('action' => 'string', 'timestamp' => 'int', 'sources' => '{urn:horde}stringArray'),
     'type' => '{urn:horde}stringArray',
 );
 
@@ -230,7 +230,7 @@ function _turba_removeUserData($user)
     }
 
     /* Only attempt share removal if we have shares configured */
-    if ($_SESSION['turba']['has_share']) {
+    if (!empty($_SESSION['turba']['has_share'])) {
         $shares = &$GLOBALS['turba_shares']->listShares(
             $user, PERMS_EDIT, $user);
 
@@ -248,7 +248,7 @@ function _turba_removeUserData($user)
                 }
             }
         }
-        
+
         /* Get a list of all shares this user has perms to and remove the perms */
         $shares = $GLOBALS['turba_shares']->listShares($user);
         if (is_a($shares, 'PEAR_Error')) {
@@ -846,6 +846,7 @@ function _turba_getActionTimestamp($uid, $action, $sources = null)
         return PEAR::raiseError(_("No address book specified"), 'horde.error');
     }
 
+    $last = 0;
     foreach ($sources as $source) {
         if (empty($source) || !isset($cfgSources[$source])) {
             return PEAR::raiseError(sprintf(_("Invalid address book: %s"), $source), 'horde.error', null, null, $source);
@@ -860,12 +861,12 @@ function _turba_getActionTimestamp($uid, $action, $sources = null)
         $ts = $history->getActionTimestamp('turba:' . $driver->getName()
                                            . ':' . $uid,
                                            $action);
-        if (!empty($ts)) {
-            return $ts;
+        if (!empty($ts) && $ts > $last) {
+            $last = $ts;
         }
     }
 
-    return 0;
+    return $last;
 }
 
 /**

@@ -1,5 +1,5 @@
 /**
- * $Horde: mnemo/themes/screen.css,v 1.4.2.5 2008/04/08 18:13:39 chuck Exp $
+ * $Horde: mnemo/themes/screen.css,v 1.4.2.6 2009/08/05 23:03:25 jan Exp $
  */
 
 /* Menu bottom margin, added for BC. */
@@ -67,18 +67,12 @@ th {
     padding: 10px;
     background: #e9e9e9;
 }
-.noteArea p {
+.noteArea p, .noteArea td {
     font-weight: bold;
-    margin: 5px 0 5px 0;
+    margin: 5px 0;
 }
 .noteArea textarea {
     width: 100%;
-}
-.noteArea p select {
-    margin-right: 5px;
-}
-.noteArea .button {
-    margin-right: 1em;
 }
 
 body.rightPanel #page {

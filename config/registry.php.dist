@@ -2,7 +2,7 @@
 /**
  * registry.php -- Horde application registry.
  *
- * $Horde: horde/config/registry.php.dist,v 1.255.2.26 2008/07/07 12:17:08 jan Exp $
+ * $Horde: horde/config/registry.php.dist,v 1.255.2.27 2009/07/24 08:58:06 jan Exp $
  *
  * This configuration file is used by Horde to determine which Horde
  * applications are installed and where, as well as how they interact.
@@ -81,7 +81,7 @@ $this->applications['ingo'] = array(
     'webroot' => $this->applications['horde']['webroot'] . '/ingo',
     'name' => _("Filters"),
     'status' => 'active',
-    'provides' => array('mail/blacklistFrom', 'mail/showBlacklist', 'mail/whitelistFrom', 'mail/showWhitelist', 'mail/applyFilters', 'mail/canApplyFilters', 'mail/showFilters'),
+    'provides' => array('filter', 'mail/blacklistFrom', 'mail/showBlacklist', 'mail/whitelistFrom', 'mail/showWhitelist', 'mail/applyFilters', 'mail/canApplyFilters', 'mail/showFilters'),
     'menu_parent' => 'imp'
 );
 

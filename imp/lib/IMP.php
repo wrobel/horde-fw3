@@ -128,7 +128,7 @@ define('IMP_IDX_SEP', "\1");
 /**
  * IMP Base Class.
  *
- * $Horde: imp/lib/IMP.php,v 1.449.4.126 2009/06/15 22:57:26 jan Exp $
+ * $Horde: imp/lib/IMP.php,v 1.449.4.127 2009/08/05 03:56:37 slusarz Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -1347,7 +1347,7 @@ class IMP {
      */
     function appendNamespace($mbox)
     {
-        $ns_info = IMP::getNamespace($mbox, false);
+        $ns_info = IMP::getNamespace($mbox);
         if ($ns_info === null) {
             $ns_info = IMP::defaultNamespace();
         }

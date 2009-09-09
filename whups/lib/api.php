@@ -5,7 +5,7 @@
  * This file defines Whups' external API interface. Other applications
  * can interact with Whups through this API.
  *
- * $Horde: whups/lib/api.php,v 1.148.2.1 2009/06/19 17:09:56 jan Exp $
+ * $Horde: whups/lib/api.php,v 1.148.2.2 2009/09/07 10:09:11 jan Exp $
  *
  * @package Whups
  */
@@ -676,6 +676,7 @@ function _whups_listVersions($queue)
         $versions[] = array('id' => $version['version_id'],
                             'name' => $version['version_name'],
                             'description' => $version['version_description'],
+                            'active' => !empty($version['version_active']),
                             'readonly' => false);
     }
 

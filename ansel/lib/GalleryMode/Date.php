@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ansel/lib/GalleryMode/Date.php,v 1.5.2.20 2009/07/05 17:35:25 mrubinsk Exp $
+ * $Horde: ansel/lib/GalleryMode/Date.php,v 1.5.2.21 2009/08/13 20:42:32 mrubinsk Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -534,9 +534,6 @@ class Ansel_GalleryMode_Date {
 
         /* Remove any attributes */
         $this->_gallery->_shareOb->_write_db->exec('DELETE FROM ansel_image_attributes WHERE image_id = ' . (int)$image->id);
-
-        /* Remove any geolocation data */
-        $this->_gallery->_shareOb->_write_db->exec('DELETE FROM ansel_images_geolocation WHERE image_id = ' . (int)$image->id);
 
         if (!$isStack) {
             $this->_gallery->_updateImageCount(1, false, $image_gallery);

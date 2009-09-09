@@ -5,7 +5,10 @@
  * This file brings in all of the dependencies that every Mnemo
  * script will need and sets up objects that all scripts use.
  *
- * $Horde: mnemo/lib/base.php,v 1.46.10.13 2009/01/06 15:24:58 jan Exp $
+ * The following global variables are used:
+ *   $no_compress  -  Controls whether the page should be compressed
+ *
+ * $Horde: mnemo/lib/base.php,v 1.46.10.14 2009/08/12 22:28:13 jan Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *
@@ -54,7 +57,9 @@ require_once 'Horde/Text/Filter.php';
 require_once 'Horde/History.php';
 
 // Start compression, if requested.
-Horde::compressOutput();
+if (!Util::nonInputVar('no_compress')) {
+    Horde::compressOutput();
+}
 
 // Create a share instance.
 require_once 'Horde/Share.php';

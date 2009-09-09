@@ -6,8 +6,9 @@
  *
  * The following global variables are declared by this script:
  *   $ingo_storage - The Ingo_Storage:: object to use for storing rules.
+ *   $no_compress  - Controls whether the page should be compressed
  *
- * $Horde: ingo/lib/base.php,v 1.56.10.3 2007/12/20 14:05:47 jan Exp $
+ * $Horde: ingo/lib/base.php,v 1.56.10.4 2009/08/12 22:28:12 jan Exp $
  *
  * See the enclosed file LICENSE for license information (ASL).  If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.
@@ -52,7 +53,9 @@ require_once INGO_BASE . '/lib/Ingo.php';
 require_once 'Horde/Help.php';
 
 // Start compression.
-Horde::compressOutput();
+if (!Util::nonInputVar('no_compress')) {
+    Horde::compressOutput();
+}
 
 // Load the Ingo_Storage driver. It appears in the global variable
 // $ingo_storage.

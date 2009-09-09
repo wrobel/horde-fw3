@@ -2,7 +2,7 @@
 /**
  * Nag external API interface.
  *
- * $Horde: nag/lib/api.php,v 1.100.10.45 2009/06/04 15:23:54 chuck Exp $
+ * $Horde: nag/lib/api.php,v 1.100.10.46 2009/09/04 10:38:38 jan Exp $
  *
  * This file defines Nag's external API interface. Other applications can
  * interact with Nag through this API.
@@ -65,7 +65,7 @@ $_services['list'] = array(
 );
 
 $_services['listBy'] = array(
-    'args' => array('action' => 'string', 'timestamp' => 'int'),
+    'args' => array('action' => 'string', 'timestamp' => 'int', 'tasklist' => 'string'),
     'type' => '{urn:horde}stringArray',
 );
 

@@ -44,7 +44,7 @@
  *    we saved the results of the hook for them. However, if the preference is
  *    locked, the result of the hook will never be saved.
  *
- * $Horde: horde/config/hooks.php.dist,v 1.73.6.18 2008/09/13 14:03:56 chuck Exp $
+ * $Horde: horde/config/hooks.php.dist,v 1.73.6.19 2009/08/13 15:43:56 jan Exp $
  */
 
 // Example theme hook function. This shows how you can access things like the
@@ -340,7 +340,7 @@
 // example below. It also assumes that you are using an SQL backend.
 
 // if (!function_exists('_horde_hook_signup_addextra')) {
-//     function _horde_hook_signup_addextra($userID, $extra)
+//     function _horde_hook_signup_addextra($userID, $extra, $password)
 //     {
 //         global $conf;
 //

@@ -5,7 +5,7 @@
  * This file defines Horde's external API interface. Other
  * applications can interact with Horde through this API.
  *
- * $Horde: horde/lib/api.php,v 1.43.2.14 2009/02/18 16:14:53 chuck Exp $
+ * $Horde: horde/lib/api.php,v 1.43.2.15 2009/08/03 15:53:33 jan Exp $
  *
  * @package Horde
  */
@@ -65,6 +65,11 @@ $_services['setPreference'] = array(
 );
 
 $_services['removeUserData'] = array(
+    'args' => array('user' => 'string'),
+    'type' => 'boolean'
+);
+
+$_services['removeUserDataFromAllApplications'] = array(
     'args' => array('user' => 'string'),
     'type' => 'boolean'
 );
@@ -402,7 +407,48 @@ function _horde_removeUserData($user)
     if (!$haveError) {
         return true;
     } else {
-        return PEAR::raiseError(sprintf("There was an error removing global data for %s. Details have been logged."), $user);
+        return PEAR::raiseError(sprintf(_("There was an error removing global data for %s. Details have been logged"), $user));
+    }
+}
+
+/**
+ * Removes user data from all applications.
+ *
+ * @param string $user  Name of user to remove data for.
+ */
+function _horde_removeUserDataFromAllApplications($user)
+{
+    if (!Auth::isAdmin() && $user != Auth::getAuth()) {
+        return PEAR::raiseError(_("You are not allowed to remove user data."));
+    }
+
+    /* Error flag */
+    $haveError = false;
+
+    /* Get all APIs */
+    $apis = _horde_listAPIs();
+    if (is_a($apis, 'PEAR_Error')) {
+        Horde::logMessage($apis, __FILE__, __LINE__, PEAR_LOG_ERR);
+        return PEAR::raiseError(_("No API found."));
+    }
+    foreach ($apis as $api) {
+	if ($GLOBALS['registry']->hasMethod($api . '/removeUserData') === true) {
+	    $result = $GLOBALS['registry']->call($api . '/removeUserData', $user);
+	    if (is_a($result, 'PEAR_Error')) {
+		Horde::logMessage($result, __FILE__, __LINE__, PEAR_LOG_ERR);
+		$haveError = true;
+	    }
+	}
+    }
+    $result = _horde_removeUserData($user);
+    if (is_a($result, 'PEAR_Error')) {
+	$haveError = true;
+    }
+
+    if (!$haveError) {
+        return true;
+    } else {
+        return PEAR::raiseError(sprintf(_("There was an error removing global data for %s. Details have been logged."), $user));
     }
 }
 

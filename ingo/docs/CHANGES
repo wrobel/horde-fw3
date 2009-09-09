@@ -2,6 +2,10 @@
 v1.2.2-cvs
 ----------
 
+[mms] Upgrade prototype.js to v1.6.1.
+[jan] Correctly match negative header values with numeric comparison in Sieve
+      driver (bb@apc.ag, Bug #7308).
+[jan] Implement removeUserData API (adrieder@sbox.tugraz.at, Request #8452).
 [jan] Take default settings for forwards, vacation and spam rules from
       config/prefs.php in the SQL storage driver.
 [jan] No longer try to read spam folder from IMP's preferences.
@@ -19,7 +23,6 @@ v1.2.2-cvs
       to execute (rsalmon@mbpgroup.com, Bug #7140).
 [cjh] Fix compound header tests in the procmail and maildrop drivers
       (rsalmon@mbpgroup.com, Bugs #7117, #7611).
-[mms] Upgrade prototype.js to v1.6.0.3.
 [jan] Change group field in shares table to work with LDAP groups (Bug #6883).
 
 

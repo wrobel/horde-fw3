@@ -6,7 +6,7 @@ require_once 'Horde/Cache.php';
  * The Perms_sql:: class provides a SQL driver for the Horde
  * permissions system.
  *
- * $Horde: framework/Perms/Perms/sql.php,v 1.1.2.12 2009/07/20 11:22:48 jan Exp $
+ * $Horde: framework/Perms/Perms/sql.php,v 1.1.2.15 2009/08/14 21:45:52 jan Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -100,10 +100,10 @@ class Perms_sql extends Perms {
             return $permsCache[$name];
         }
 
+        $this->_connect();
+
         $perm = $this->_cache->get('perm_sql' . $name, $GLOBALS['conf']['cache']['default_lifetime']);
         if ($perm === false) {
-            $this->_connect();
-
             $query = 'SELECT perm_id, perm_data FROM horde_perms WHERE perm_name = ?';
             $result = $this->_db->getRow($query, array($name), DB_FETCHMODE_ASSOC);
 
@@ -123,6 +123,8 @@ class Perms_sql extends Perms {
         } else {
             $permsCache[$name] = unserialize($perm);
         }
+
+        $permsCache[$name]->setSQLOb($this->_write_db);
 
         return $permsCache[$name];
     }
@@ -276,7 +278,7 @@ class Perms_sql extends Perms {
                 return $exists;
             }
 
-            $this->_cache->set($key, $exists);
+            $this->_cache->set($key, (string)$exists);
         }
 
         return (bool)$exists;

@@ -1,5 +1,5 @@
 --
--- $Horde: whups/scripts/sql/whups.sql,v 1.30 2008/09/23 15:11:57 jan Exp $
+-- $Horde: whups/scripts/sql/whups.sql,v 1.30.2.1 2009/09/07 10:09:12 jan Exp $
 --
 -- Copyright 2001-2005 Robert E. Coyle <robertecoyle@hotmail.com>
 --
@@ -165,9 +165,11 @@ CREATE TABLE whups_versions (
     queue_id            INT NOT NULL,
     version_name        VARCHAR(64),
     version_description VARCHAR(255),
+    version_active      INT DEFAULT 1,
 --
     PRIMARY KEY (version_id)
 );
+CREATE INDEX whups_versions_active_idx ON whups_versions (version_active);
 
 CREATE TABLE whups_ticket_listeners (
     ticket_id           INT NOT NULL,

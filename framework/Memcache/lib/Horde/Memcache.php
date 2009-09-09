@@ -12,7 +12,7 @@ define('MEMCACHE_MAX_SIZE', 1000000);
  *
  * memcached website: http://www.danga.com/memcached/
  *
- * $Horde: framework/Memcache/lib/Horde/Memcache.php,v 1.1.2.6 2009/01/06 15:23:24 jan Exp $
+ * $Horde: framework/Memcache/lib/Horde/Memcache.php,v 1.1.2.7 2009/07/23 20:29:44 slusarz Exp $
  *
  * Configuration parameters (set in $conf['memcache']):<pre>
  *   'compression' - Compress data inside memcache?
@@ -376,7 +376,7 @@ class Horde_Memcache {
      */
     function unlock($key)
     {
-        $this->_memcache->delete($this->_key($key . '_l'));
+        $this->_memcache->delete($this->_key($key . '_l'), 0);
     }
 
     /**

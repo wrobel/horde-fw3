@@ -2,7 +2,7 @@
 /**
  * Classes for dealing with tags within Ansel
  *
- * $Horde: ansel/lib/Tags.php,v 1.87.2.5 2009/03/19 15:49:36 mrubinsk Exp $
+ * $Horde: ansel/lib/Tags.php,v 1.87.2.6 2009/07/26 23:47:23 mrubinsk Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *
@@ -415,6 +415,22 @@ class Ansel_Tags {
         }
         $result->free();
         $stmt->free();
+
+        return $tags;
+    }
+
+    /**
+     * List tag names that start with a given string. Used for autocompletion.
+     *
+     */
+    function listTags($search = '', $limit = 100)
+    {
+        $GLOBALS['ansel_db']->setLimit($limit);
+        $stmt = $GLOBALS['ansel_db']->prepare('SELECT tag_name FROM ansel_tags WHERE tag_name LIKE ?');
+        $result  = $stmt->execute(array($search . '%'));
+        $stmt->free();
+        $tags = $result->fetchCol();
+        $result->free();
 
         return $tags;
     }

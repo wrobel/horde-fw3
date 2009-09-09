@@ -13,7 +13,7 @@ define('HORDE_ERROR_DRIVER_CONFIG', 2);
 /**
  * The Util:: class provides generally useful methods of different kinds.
  *
- * $Horde: framework/Util/Util.php,v 1.384.6.36 2009/02/19 18:01:08 chuck Exp $
+ * $Horde: framework/Util/Util.php,v 1.384.6.37 2009/07/21 18:17:23 slusarz Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -857,11 +857,12 @@ class Util {
      */
     function getPathInfo()
     {
-        if (isset($_SERVER['PATH_INFO']) && strpos($_SERVER['SERVER_SOFTWARE'], 'lighttpd') === false) {
+        if (isset($_SERVER['PATH_INFO']) &&
+            strpos($_SERVER['SERVER_SOFTWARE'], 'lighttpd') === false) {
             return $_SERVER['PATH_INFO'];
         } elseif (isset($_SERVER['REQUEST_URI']) &&
                   isset($_SERVER['SCRIPT_NAME'])) {
-            $search = array($_SERVER['SCRIPT_NAME']);
+            $search = array((basename($_SERVER['SCRIPT_NAME']) == 'index.php') ? dirname($_SERVER['SCRIPT_NAME']) . '/' : $_SERVER['SCRIPT_NAME']);
             $replace = array('');
             if (!empty($_SERVER['QUERY_STRING'])) {
                 $search[] = '?' . $_SERVER['QUERY_STRING'];

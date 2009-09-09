@@ -2,10 +2,13 @@
 /**
  * Nag base inclusion file.
  *
- * $Horde: nag/lib/base.php,v 1.75.10.7 2008/01/02 16:50:50 chuck Exp $
+ * $Horde: nag/lib/base.php,v 1.75.10.8 2009/08/12 22:28:13 jan Exp $
  *
  * This file brings in all of the dependencies that every Nag
  * script will need and sets up objects that all scripts use.
+ *
+ * The following global variables are used:
+ *   $no_compress  -  Controls whether the page should be compressed
  */
 
 // Check for a prior definition of HORDE_BASE (perhaps by an
@@ -54,7 +57,9 @@ require_once NAG_BASE . '/lib/Driver.php';
 require_once 'Horde/History.php';
 
 // Start compression.
-Horde::compressOutput();
+if (!Util::nonInputVar('no_compress')) {
+    Horde::compressOutput();
+}
 
 // Set the timezone variable.
 NLS::setTimeZone();

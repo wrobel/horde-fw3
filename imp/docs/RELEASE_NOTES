@@ -12,37 +12,36 @@
  * 8 - Minor security fixes
  * 9 - Major security fixes
  */
-$this->notes['fm']['focus'] = 8;
+$this->notes['fm']['focus'] = 6;
 
 /* Mailing list release notes. */
 $this->notes['ml']['changes'] = <<<ML
 The Horde Team is pleased to announce the final release of the Internet
-Messaging Program (IMP) version H3 (4.3.4).
-
-This is a bugfix and minor security release that fixes an issue with PGP
-messages sent or received from a user on the local server. All users are
-encouraged to upgrade to this release. Thanks to Peter Meier for reporting
-this issue.
+Messaging Program (IMP) version H3 (4.3.5).
 
 IMP, the Internet Messaging Program, is one of the most popular webmail
 applications available.  It allows universal, web-based access to IMAP and
 POP3 mail servers and provides a full range of features normally found only in
 desktop email clients.
 
-The major changes compared to IMP version H3 (4.3.3) are:
-    * Don't cache local PGP public keys retrieved from the address book.
-    * Fixed some URL escaping issue for certain links introduced with the
-      security fixes from 4.3.3.
-    * Fixed updating POP3 indices when deleting in mailbox view.
-    * Fixed some folder creation issues occasionally seen, most often during
-      maintenance tasks.
-    * Other minor bugfixes.
+
+The major changes compared to IMP version H3 (4.3.4) are:
+    * Fix some javascript if using IE 8.
+    * Fix unqualified domain preference.
+    * Highlight signed messages depending on the signature verification.
+    * Use correct charset when rendering inline PGP data.
+    * Fix renaming shared folders contained in empty namespaces.
+    * Correctly set charset of Bcc header in sent mail copy.
+    * Correctly handle NO untagged responses on login.
+    * Fix spellcheck in text-mode for certain words in non-English locales.
+    * Allow to lock default_encrypt preference.
+    * Fix display_folder hook.
+    * Other minor bugfixes and improvements.
 ML;
 
 /* Freshmeat release notes, not more than 600 characters. */
 $this->notes['fm']['changes'] = <<<FM
-This release fixes an issue involving PGP public keys retrieved from the local
-address book. In addition, the release includes other bugfixes and improvements.
+Fix some javascript if using IE 8. Fix unqualified domain preference. Highlight signed messages depending on the signature verification. Use correct charset when rendering inline PGP data. Fix renaming shared folders contained in empty namespaces. Correctly set charset of Bcc header in sent mail copy. Correctly handle NO untagged responses on login. Fix spellcheck in text-mode for certain words in non-English locales. Allow to lock default_encrypt preference. Fix display_folder hook. Other minor bugfixes and improvements.
 FM;
 
 $this->notes['name'] = 'IMP';

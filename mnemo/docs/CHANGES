@@ -2,6 +2,9 @@
 v2.2.2-cvs
 ----------
 
+[mms] Upgrade prototype.js to v1.6.1.
+[jan] Fix synchronization with output compression enabled (Bug #7769).
+[jan] Add passphrase confirmation field (Bug #7379).
 [cjh] Work around BC break with Horde versions before 3.2 (Bug #7820).
 [cjh] Add URL access to notes by "starts-with" search on the note title.
 [cjh] Add hooks for altering the displayed note body and showing help text next
@@ -9,7 +12,6 @@ v2.2.2-cvs
 [cjh] Explicitly load DB library (Bug #7648).
 [jan] Fix "replace" API method (Alfonso Marín Marín <almarin@um.es>, Bug #7436).
 [cjh] Add a PostgreSQL-specific upgrade script.
-[mms] Upgrade prototype.js to v1.6.0.3.
 [jan] Change group field in shares table to work with LDAP groups (Bug #6883).
 [jan] Fix user name conversion with user hooks in the notepad panel (Bug #7366).
 

@@ -10,7 +10,7 @@ define('IMP_IMAPCLIENT_CONTINUATION', 2);
  *
  * TODO: This should eventually be moved to Horde 4.0/framework.
  *
- * $Horde: imp/lib/IMAP/Client.php,v 1.21.2.35 2009/01/06 15:24:05 jan Exp $
+ * $Horde: imp/lib/IMAP/Client.php,v 1.21.2.36 2009/08/05 08:36:37 slusarz Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *
@@ -249,6 +249,8 @@ class IMP_IMAPClient {
                 $ob = $ob2;
             } elseif ($ob2->type == IMP_IMAPCLIENT_UNTAGGED) {
                 $ob->message .= "\n" . $ob2->message;
+            } else {
+                $ob->response = $ob2->response;
             }
             break;
 

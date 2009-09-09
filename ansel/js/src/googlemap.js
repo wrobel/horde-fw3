@@ -3,7 +3,7 @@
  *
  * Copyright 2009 The Horde Project (http://www.horde.org/)
  *
- * $Horde: ansel/js/src/googlemap.js,v 1.1.2.23 2009/07/17 16:09:45 mrubinsk Exp $
+ * $Horde: ansel/js/src/googlemap.js,v 1.1.2.24 2009/07/28 15:43:04 mrubinsk Exp $
  *
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.
@@ -268,7 +268,7 @@ Ansel_GMap.prototype = {
      */
     getLocations: function(p) {
         if (p.image_data.image_location.length > 0) {
-            r = {Status: {code: 200}, Placemark: [{AddressDetails: {Accuracy: 4}, address:p.image_data.image_location}]};
+            r = {Status: {code: 200}, Placemark: [{AddressDetails: {Accuracy: 4}, address:p.image_data.image_location}], NoUpdate: true};
             this.getLocationCallback(r, p, false);
         } else {
             this.geocoder.getLocations(p.getLatLng(), function(address) {this.getLocationCallback(address, p, true)}.bind(this));

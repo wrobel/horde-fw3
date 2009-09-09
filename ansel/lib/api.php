@@ -2,7 +2,7 @@
 /**
  * Ansel external API interface.
  *
- * $Horde: ansel/lib/api.php,v 1.122.2.11 2009/07/20 16:04:07 mrubinsk Exp $
+ * $Horde: ansel/lib/api.php,v 1.122.2.12 2009/07/28 19:50:48 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *
@@ -1047,6 +1047,9 @@ function _ansel_listImages($app = null, $gallery_id = null, $perm = PERMS_SHOW,
     $imagelist = array();
     foreach ($images as $id) {
         $image = $GLOBALS['ansel_storage']->getImage($id);
+        if (is_a($image, 'PEAR_Error')) {
+            return $image;
+        }
         $imagelist[$id]['name'] = $image->filename;
         $imagelist[$id]['caption'] = $image->caption;
         $imagelist[$id]['type'] = $image->type;

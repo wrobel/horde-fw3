@@ -5,7 +5,10 @@
  * This file brings in all of the dependencies that every Whups script will
  * need, and sets up objects that all scripts use.
  *
- * $Horde: whups/lib/base.php,v 1.75.2.1 2009/01/06 15:28:17 jan Exp $
+ * The following global variables are used:
+ *   $no_compress  -  Controls whether the page should be compressed
+ *
+ * $Horde: whups/lib/base.php,v 1.75.2.2 2009/08/12 22:28:14 jan Exp $
  *
  * Copyright 2001-2002 Robert E. Coyle <robertecoyle@hotmail.com>
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
@@ -61,7 +64,9 @@ require_once 'Horde/Form/Renderer.php';
 require_once 'Horde/UI/Tabs.php';
 
 // Start output compression.
-Horde::compressOutput();
+if (!Util::nonInputVar('no_compress')) {
+    Horde::compressOutput();
+}
 
 // Whups backend.
 $GLOBALS['whups_driver'] = Whups_Driver::factory();

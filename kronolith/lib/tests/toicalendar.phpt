@@ -73,7 +73,7 @@ echo $ical->exportvCalendar() . "\n";
 --EXPECTF--
 BEGIN:VCALENDAR
 VERSION:1.0
-PRODID:-//The Horde Project//Horde_iCalendar Library, Horde 3.3.4-cvs//EN
+PRODID:-//The Horde Project//Horde_iCalendar Library, Horde %d.%d.%d-cvs//EN
 METHOD:PUBLISH
 BEGIN:VEVENT
 DTSTART:20070315T121020Z
@@ -97,7 +97,7 @@ END:VCALENDAR
 
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//The Horde Project//Horde_iCalendar Library\, Horde 3.3.4-cvs//EN
+PRODID:-//The Horde Project//Horde_iCalendar Library\, Horde %d.%d.%d-cvs//EN
 METHOD:PUBLISH
 BEGIN:VEVENT
 DTSTART:20070315T121020Z
@@ -123,7 +123,7 @@ END:VCALENDAR
 
 BEGIN:VCALENDAR
 VERSION:1.0
-PRODID:-//The Horde Project//Horde_iCalendar Library, Horde 3.3.4-cvs//EN
+PRODID:-//The Horde Project//Horde_iCalendar Library, Horde %d.%d.%d-cvs//EN
 METHOD:PUBLISH
 BEGIN:VEVENT
 DTSTART:20070315T121020Z
@@ -147,7 +147,7 @@ END:VCALENDAR
 
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//The Horde Project//Horde_iCalendar Library\, Horde 3.3.4-cvs//EN
+PRODID:-//The Horde Project//Horde_iCalendar Library\, Horde %d.%d.%d-cvs//EN
 METHOD:PUBLISH
 BEGIN:VEVENT
 DTSTART:20070315T121020Z

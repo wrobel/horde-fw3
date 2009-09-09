@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/SyncML/SyncML/Sync.php,v 1.8.4.21 2009/04/05 20:24:42 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Sync.php,v 1.8.4.23 2009/08/26 11:02:53 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -237,13 +237,13 @@ class SyncML_Sync {
 
         if (($item->contentType == 'text/calendar' ||
              $item->contentType == 'text/x-vcalendar') &&
-            stristr($backend->_normalize($database), 'calendar') !== false && 
+            $backend->_normalize($database) == 'calendar' && 
             $device->handleTasksInCalendar()) {
             $tasksincalendar = true;
             /* Check if the client sends us a vtodo in a calendar sync. */
             if (preg_match('/(\r\n|\r|\n)BEGIN[^:]*:VTODO/',
                            "\n" . $content)) {
-                $hordedatabase = $this->_taskdDbUriForCalendarDbUri($database);
+                $hordedatabase = $this->_taskToCalendar($backend->_normalize($database));
              }
         } else {
             $tasksincalendar = false;
@@ -288,7 +288,7 @@ class SyncML_Sync {
                 $backend->logMessage(
                     'Task ' . $cuid . ' deletion sent with calendar request',
                     __FILE__, __LINE__, PEAR_LOG_DEBUG);
-                $ok = $backend->deleteEntry($this->_taskdDbUriForCalendarDbUri($database), $cuid);
+                $ok = $backend->deleteEntry($this->_taskToCalendar($backend->_normalize($database)), $cuid);
             }
 
             if ($ok) {
@@ -397,7 +397,7 @@ class SyncML_Sync {
 
             /* If tasks are handled inside calendar, do the same again for
              * tasks. Merge resulting arrays. */
-            if (stristr($backend->_normalize($this->_targetLocURI), 'calendar') !== false && 
+            if ($backend->_normalize($this->_targetLocURI) == 'calendar' && 
                 $device->handleTasksInCalendar()) {
                 $backend->logMessage('Handling tasks in calendar sync',
                                      __FILE__, __LINE__, PEAR_LOG_DEBUG);
@@ -602,7 +602,7 @@ class SyncML_Sync {
                                                         $this->_serverAnchorNext,
                                                         $adds, $replaces, $deletes);
         if (is_a($result, 'PEAR_Error')) {
-            $GLOBALS['backend']->logMessage($r, __FILE__, __LINE__, PEAR_LOG_ERR);
+            $GLOBALS['backend']->logMessage($result, __FILE__, __LINE__, PEAR_LOG_ERR);
             return $result;
         }
     }
@@ -751,10 +751,10 @@ class SyncML_Sync {
     {
         $device = $_SESSION['SyncML.state']->getDevice();
 
-        if (stristr($GLOBALS['backend']->_normalize($databaseURI), 'calendar') !== false &&
+        if ($GLOBALS['backend']->_normalize($databaseURI) == 'calendar' &&
             $device->handleTasksInCalendar() &&
             isset($this->_server_task_adds[$suid])) {
-            $db = $this->_taskdDbUriForCalendarDbUri($databaseURI);
+            $db = $this->_taskToCalendar($GLOBALS['backend']->_normalize($databaseURI));
         } else {
             $db = $databaseURI;
         }
@@ -813,7 +813,7 @@ class SyncML_Sync {
      * Converts a calendar databaseURI to a tasks databaseURI for devices with
      * handleTasksInCalendar.
      */
-    function _taskdDbUriForCalendarDbUri($databaseURI)
+    function _taskToCalendar($databaseURI)
     {
         return str_replace('calendar', 'tasks', $databaseURI);
     }

@@ -2,7 +2,7 @@
 /**
  * Base class for Whups' storage backend.
  *
- * $Horde: whups/lib/Driver.php,v 1.200.2.5 2009/01/24 16:01:48 chuck Exp $
+ * $Horde: whups/lib/Driver.php,v 1.200.2.6 2009/09/07 10:09:11 jan Exp $
  *
  * Copyright 2001-2002 Robert E. Coyle <robertecoyle@hotmail.com>
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
@@ -162,8 +162,9 @@ class Whups_Driver {
     }
 
     /**
+     * Returns a hash of versions suitable for select lists.
      */
-    function getVersions($queue)
+    function getVersions($queue, $all = false)
     {
         if (empty($queue)) {
             return array();
@@ -175,11 +176,23 @@ class Whups_Driver {
         }
 
         $versions = array();
+        $old_versions = false;
         foreach ($versioninfo as $vinfo) {
+            if (!$all && !$vinfo['active']) {
+                $old_versions = $vinfo['id'];
+                continue;
+            }
             $versions[$vinfo['id']] = $vinfo['name'];
             if (!empty($vinfo['description'])) {
                 $versions[$vinfo['id']] .= ': ' . $vinfo['description'];
             }
+            if ($all && !$vinfo['active']) {
+                $versions[$vinfo['id']] .= ' ' . _("(inactive)");
+            }
+        }
+
+        if ($old_versions) {
+            $versions[$old_versions] = _("Older? Please update first!");
         }
 
         return $versions;

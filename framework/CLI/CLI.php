@@ -2,7 +2,7 @@
 /**
  * Horde_CLI:: API for basic command-line functionality/checks.
  *
- * $Horde: framework/CLI/CLI.php,v 1.42.6.25 2009/01/06 15:22:55 jan Exp $
+ * $Horde: framework/CLI/CLI.php,v 1.42.6.27 2009/08/15 08:23:46 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -171,6 +171,8 @@ class Horde_CLI {
             $this->_blue_start   = '<span style="color:blue">';
             $this->_red_end = $this->_green_end = $this->_yellow_end = $this->_blue_end = '</span>';
         }
+
+        register_shutdown_function(array($this, '_shutdown'));
     }
 
     /**
@@ -427,6 +429,14 @@ class Horde_CLI {
             return (PHP_SAPI == 'cgi' || PHP_SAPI == 'cgi-fcgi') &&
                 empty($_SERVER['SERVER_NAME']);
         }
+    }
+
+    /**
+     * Destroys any session on script end.
+     */
+    function _shutdown()
+    {
+        @session_destroy();
     }
 
 }

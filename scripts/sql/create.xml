@@ -1073,4 +1073,238 @@
 
  </table>
 
+ <table>
+
+  <name>metarAirports</name>
+
+  <declaration>
+
+   <field>
+    <name>id</name>
+    <type>integer</type>
+    <default></default>
+    <notnull>false</notnull>
+    <length>4</length>
+   </field>
+
+   <field>
+    <name>block</name>
+    <type>integer</type>
+    <default></default>
+    <notnull>false</notnull>
+    <length>4</length>
+   </field>
+
+   <field>
+    <name>station</name>
+    <type>integer</type>
+    <default></default>
+    <notnull>false</notnull>
+    <length>4</length>
+   </field>
+
+   <field>
+    <name>icao</name>
+    <type>text</type>
+    <default></default>
+    <notnull>false</notnull>
+    <length>4</length>
+   </field>
+
+   <field>
+    <name>name</name>
+    <type>text</type>
+    <default></default>
+    <notnull>false</notnull>
+    <length>80</length>
+   </field>
+
+   <field>
+    <name>state</name>
+    <type>text</type>
+    <fixed>true</fixed>
+    <default></default>
+    <notnull>false</notnull>
+    <length>2</length>
+   </field>
+
+   <field>
+    <name>country</name>
+    <type>text</type>
+    <default></default>
+    <notnull>false</notnull>
+    <length>50</length>
+   </field>
+
+   <field>
+    <name>wmo</name>
+    <type>integer</type>
+    <default></default>
+    <notnull>false</notnull>
+    <length>4</length>
+   </field>
+
+   <field>
+    <name>latitude</name>
+    <type>float</type>
+    <default></default>
+    <notnull>false</notnull>
+   </field>
+
+   <field>
+    <name>longitude</name>
+    <type>float</type>
+    <default></default>
+    <notnull>false</notnull>
+   </field>
+
+   <field>
+    <name>elevation</name>
+    <type>float</type>
+    <default></default>
+    <notnull>false</notnull>
+   </field>
+
+   <field>
+    <name>x</name>
+    <type>float</type>
+    <default></default>
+    <notnull>false</notnull>
+   </field>
+
+   <field>
+    <name>y</name>
+    <type>float</type>
+    <default></default>
+    <notnull>false</notnull>
+   </field>
+
+   <field>
+    <name>z</name>
+    <type>float</type>
+    <default></default>
+    <notnull>false</notnull>
+   </field>
+
+  </declaration>
+
+ </table>
+
+ <table>
+
+  <name>metarLocations</name>
+
+  <declaration>
+
+   <field>
+    <name>id</name>
+    <type>integer</type>
+    <default></default>
+    <notnull>false</notnull>
+    <length>4</length>
+   </field>
+
+   <field>
+    <name>block</name>
+    <type>integer</type>
+    <default></default>
+    <notnull>false</notnull>
+    <length>4</length>
+   </field>
+
+   <field>
+    <name>station</name>
+    <type>integer</type>
+    <default></default>
+    <notnull>false</notnull>
+    <length>4</length>
+   </field>
+
+   <field>
+    <name>icao</name>
+    <type>text</type>
+    <default></default>
+    <notnull>false</notnull>
+    <length>4</length>
+   </field>
+
+   <field>
+    <name>name</name>
+    <type>text</type>
+    <default></default>
+    <notnull>false</notnull>
+    <length>80</length>
+   </field>
+
+   <field>
+    <name>state</name>
+    <type>text</type>
+    <fixed>true</fixed>
+    <default></default>
+    <notnull>false</notnull>
+    <length>2</length>
+   </field>
+
+   <field>
+    <name>country</name>
+    <type>text</type>
+    <default></default>
+    <notnull>false</notnull>
+    <length>50</length>
+   </field>
+
+   <field>
+    <name>wmo</name>
+    <type>integer</type>
+    <default></default>
+    <notnull>false</notnull>
+    <length>4</length>
+   </field>
+
+   <field>
+    <name>latitude</name>
+    <type>float</type>
+    <default></default>
+    <notnull>false</notnull>
+   </field>
+
+   <field>
+    <name>longitude</name>
+    <type>float</type>
+    <default></default>
+    <notnull>false</notnull>
+   </field>
+
+   <field>
+    <name>elevation</name>
+    <type>float</type>
+    <default></default>
+    <notnull>false</notnull>
+   </field>
+
+   <field>
+    <name>x</name>
+    <type>float</type>
+    <default></default>
+    <notnull>false</notnull>
+   </field>
+
+   <field>
+    <name>y</name>
+    <type>float</type>
+    <default></default>
+    <notnull>false</notnull>
+   </field>
+
+   <field>
+    <name>z</name>
+    <type>float</type>
+    <default></default>
+    <notnull>false</notnull>
+   </field>
+
+  </declaration>
+
+ </table>
+
 </database>

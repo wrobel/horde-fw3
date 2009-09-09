@@ -2,7 +2,7 @@
 /**
  * The Ingo_Script_sieve class represents a Sieve Script.
  *
- * $Horde: ingo/lib/Script/sieve.php,v 1.63.10.37 2009/05/01 17:49:40 selsky Exp $
+ * $Horde: ingo/lib/Script/sieve.php,v 1.63.10.38 2009/08/18 22:35:03 jan Exp $
  *
  * See the enclosed file LICENSE for license information (ASL).  If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.
@@ -1672,13 +1672,36 @@ class Sieve_Test_Relational extends Sieve_Test {
                     Ingo_Script_sieve::escapeString($val) . '"';
             }
 
-            $code .= $headerstr . "] ";
+            $code .= $headerstr . '] ';
+            $headerstr = '[' . $headerstr . ']';
         } elseif ($header_count == 1) {
             $code .= '"' . Ingo_Script_sieve::escapeString($headers[0]) . '" ';
+            $headerstr = Ingo_Script_sieve::escapeString($headers[0]);
         }
 
-        return $code . '["' . $this->_vars['value'] . '"]';
-     }
+        $code .= '["' . $this->_vars['value'] . '"]';
+
+        // Add workarounds for negative numbers - works only if the comparison
+        // value is positive. Sieve doesn't support comparisons of negative
+        // numbers at all so this is the best we can do.
+        switch ($this->_vars['comparison']) {
+        case 'gt':
+        case 'ge':
+        case 'eq':
+            // Greater than, greater or equal, equal: number must be
+            // non-negative.
+            return 'allof ( not header :comparator "i;ascii-casemap" :contains "'
+                . $headerstr . '" "-", ' . $code . ' )';
+            break;
+        case 'lt':
+        case 'le':
+        case 'ne':
+            // Less than, less or equal, nonequal: also match negative numbers
+            return 'anyof ( header :comparator "i;ascii-casemap" :contains "'
+                . $headerstr . '" "-", ' . $code . ' )';
+            break;
+        }
+    }
 
     /**
      * Checks if the rule parameters are valid.

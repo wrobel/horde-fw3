@@ -3,7 +3,7 @@
  * Whups_Driver_sql class - implements a Whups backend for the
  * PEAR::DB abstraction layer.
  *
- * $Horde: whups/lib/Driver/sql.php,v 1.306.2.6 2009/03/16 15:11:58 jan Exp $
+ * $Horde: whups/lib/Driver/sql.php,v 1.306.2.7 2009/09/07 10:09:11 jan Exp $
  *
  * Copyright 2001-2002 Robert E. Coyle <robertecoyle@hotmail.com>
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
@@ -198,13 +198,14 @@ class Whups_Driver_sql extends Whups_Driver {
     /**
      * Adds a new version to the specified queue.
      *
-     * @param int $queueId         The queueId to add the version to.
+     * @param integer $queueId     The queueId to add the version to.
      * @param string $name         The name of the new version.
      * @param string $description  The descriptive text for the new version.
+     * @param boolean $active      Whether the version is still active.
      *
      * @return mixed  The new version id || PEAR_Error
      */
-    function addVersion($queueId, $name, $description)
+    function addVersion($queueId, $name, $description, $active)
     {
         // Get a new version id.
         $new_id = $this->_write_db->nextId('whups_versions');
@@ -214,13 +215,14 @@ class Whups_Driver_sql extends Whups_Driver {
         }
 
         $query = 'INSERT INTO whups_versions (version_id, queue_id, '
-            . 'version_name, version_description) VALUES (?, ?, ?, ?)';
-        $values = array($new_id,
-                        $queueId,
+            . 'version_name, version_description, version_active) VALUES (?, ?, ?, ?, ?)';
+        $values = array((int)$new_id,
+                        (int)$queueId,
                         String::convertCharset($name, NLS::getCharset(),
                                                $this->_params['charset']),
                         String::convertCharset($description, NLS::getCharset(),
-                                               $this->_params['charset']));
+                                               $this->_params['charset']),
+                        (int)$active);
         Horde::logMessage(
             sprintf('Whups_Driver_sql::addVersion(): query="%s"; values="%s"',
                     $query, implode(',', $values)),
@@ -982,10 +984,11 @@ class Whups_Driver_sql extends Whups_Driver {
             $groupby .= ', whups_types.type_name, whups_states.state_name, whups_states.state_category';
             if ($myversions) {
                 $versions = array();
-                $fields .= ', whups_versions.version_name AS version_name' .
-                    ', whups_versions.version_description AS version_description';
+                $fields .= ', whups_versions.version_name AS version_name'
+                    . ', whups_versions.version_description AS version_description'
+                    . ', whups_versions.version_active AS version_active';
                 $join .= ' LEFT JOIN whups_versions ON whups_tickets.version_id = whups_versions.version_id';
-                $groupby .= ', whups_versions.version_name, whups_versions.version_description, whups_tickets.version_id';
+                $groupby .= ', whups_versions.version_name, whups_versions.version_description, whups_versions.version_active, whups_tickets.version_id';
             }
             if ($myqueues) {
                 $queues = array();
@@ -2124,11 +2127,12 @@ class Whups_Driver_sql extends Whups_Driver {
 
     function getVersionInfoInternal($queue)
     {
-        $query = 'SELECT version_id, version_name, version_description ' .
-                 'FROM whups_versions WHERE queue_id = ? ORDER BY version_id';
+        $query = 'SELECT version_id, version_name, version_description, version_active '
+            . 'FROM whups_versions WHERE queue_id = ?'
+            . ' ORDER BY version_id';
         $values = array($queue);
         Horde::logMessage(
-            sprintf('Whups_Driver_sql::getVersionInfo(): query="%s"; values="%s"',
+            sprintf('Whups_Driver_sql::getVersionInfoInternal(): query="%s"; values="%s"',
                     $query, implode(',', $values)),
             __FILE__, __LINE__, PEAR_LOG_DEBUG);
 
@@ -2146,7 +2150,7 @@ class Whups_Driver_sql extends Whups_Driver {
         if (empty($versionId)) {
             return false;
         }
-        $query = 'SELECT version_id, version_name, version_description'.
+        $query = 'SELECT version_id, version_name, version_description, version_active'.
                  ' FROM whups_versions WHERE version_id = ?';
         $values = array($versionId);
         Horde::logMessage(
@@ -2164,18 +2168,21 @@ class Whups_Driver_sql extends Whups_Driver {
                      'name' => isset($version[$versionId][0])
                          ? $version[$versionId][0] : '',
                      'description' => isset($version[$versionId][1])
-                         ? $version[$versionId][1] : '');
+                         ? $version[$versionId][1] : '',
+                     'active' => !empty($version[$versionId][2]));
     }
 
-    function updateVersion($versionId, $name, $description)
+    function updateVersion($versionId, $name, $description, $active)
     {
         $query = 'UPDATE whups_versions SET version_name = ?, '
-            . 'version_description = ? WHERE version_id = ?';
+            . 'version_description = ?, version_active = ? '
+            . 'WHERE version_id = ?';
         $values = array(String::convertCharset($name, NLS::getCharset(),
                                                $this->_params['charset']),
                         String::convertCharset($description, NLS::getCharset(),
                                                $this->_params['charset']),
-                        $versionId);
+                        (int)$active,
+                        (int)$versionId);
         Horde::logMessage(
             sprintf('Whups_Driver_sql::updateVersion(): query="%s"; values="%s"',
                     $query, implode(',', $values)),

@@ -7,7 +7,7 @@
  *
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.
- * $Horde: ansel/lib/Widget/Geodata.php,v 1.1.2.38 2009/07/17 17:47:39 mrubinsk Exp $
+ * $Horde: ansel/lib/Widget/Geodata.php,v 1.1.2.39 2009/07/28 15:43:05 mrubinsk Exp $
  *
  * @author Michael J. Rubinsky <mrubinsk@horde.org>
  * @package Ansel
@@ -197,7 +197,7 @@ class Ansel_Widget_Geodata extends Ansel_Widget {
             map = new Ansel_GMap(options);
             map.getLocationCallback_ = map.getLocationCallback;
             map.getLocationCallback = function(points, marker) {
-                map.getLocationCallback_(points, marker, true);
+                map.getLocationCallback_(points, marker, Object.isUndefined(points.NoUpdate));
             }.bind(map);
             map.addPoints(points);
             map.display();

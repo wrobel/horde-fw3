@@ -56,32 +56,45 @@ if ($memo_id):
 
  <p>
   <input type="submit" class="button" value="<?php echo _("Save") ?>" onclick="return checkCategory();" />
-<?php if (!$prefs->isLocked('default_notepad') && count($notepads) > 1): ?>
-<?php echo Horde::label('notepad_target', _("Note_pad")) ?>
-  <select id="notepad_target" name="notepad_target">
-  <?php
-  foreach (array_keys($notepads) as $id) {
-      $sel = ($id == $memolist_id) ? ' selected="selected"' : '';
-      printf('<option value="%s"%s>%s</option>',
-             htmlspecialchars($id), $sel, htmlspecialchars($notepads[$id]->get('name'))) . "\n";
-  } ?>
-  </select>
-<?php
-endif;
-echo Horde::label('memo_category', _("_Category")) . ' ' .
-    $cManager->getSelect('memo_category', $memo_category);
-if ($storage->encryptionSupported()):
-    if ($actionID == 'modify_memo' && $memo_encrypted && !$show_passphrase):
-        echo ' ' . Horde::label('memo_encrypt', _("_Encrypt?"));
-?>
-  <input type="checkbox" id="memo_encrypt" name="memo_encrypt" checked="checked" />
-<?php
-    endif;
-    echo ' ' . Horde::label('memo_passphrase', _("_Password"));
-?>
-  <input type="password" id="memo_passphrase" name="memo_passphrase" />
-<?php endif; ?>
  </p>
+ <table>
+  <?php if (!$prefs->isLocked('default_notepad') && count($notepads) > 1): ?>
+  <tr>
+   <td class="rightAlign"><?php echo Horde::label('notepad_target', _("Note_pad:")) ?></td>
+   <td>
+    <select id="notepad_target" name="notepad_target">
+     <?php
+     foreach (array_keys($notepads) as $id) {
+         $sel = ($id == $memolist_id) ? ' selected="selected"' : '';
+         printf('<option value="%s"%s>%s</option>',
+                htmlspecialchars($id), $sel, htmlspecialchars($notepads[$id]->get('name'))) . "\n";
+     }
+     ?>
+    </select>
+   </td>
+  </tr>
+  <?php endif; ?>
+  <tr>
+   <td class="rightAlign"><?php echo Horde::label('memo_category', _("_Category:")) ?></td>
+   <td><?php echo $cManager->getSelect('memo_category', $memo_category) ?>
+  </tr>
+  <?php if ($storage->encryptionSupported()): ?>
+  <?php if ($actionID == 'modify_memo' && $memo_encrypted && !$show_passphrase): ?>
+  <tr>
+   <td class="rightAlign"><?php echo Horde::label('memo_encrypt', _("_Encrypt?")) ?></td>
+   <td><input type="checkbox" id="memo_encrypt" name="memo_encrypt" checked="checked" /></td>
+  </tr>
+  <?php endif; ?>
+  <tr>
+   <td class="rightAlign"><?php echo Horde::label('memo_passphrase', _("_Password:")) ?></td>
+   <td><input type="password" id="memo_passphrase" name="memo_passphrase" /></td>
+  </tr>
+  <tr>
+   <td class="rightAlign"><?php echo Horde::label('memo_passphrase2', _("_Repeat:")) ?></td>
+   <td><input type="password" id="memo_passphrase2" name="memo_passphrase2" /></td>
+  </tr>
+  <?php endif; ?>
+ </table>
 </form>
 <script type="text/javascript" >
 document.memo.memo_body.focus();

@@ -2,6 +2,7 @@
 v1.0.1-cvs
 ----------
 
+[jan] Add flag to disable old versions.
 [jan] Apply simple markup highlighting on comments.
 [jan] Save queue email addresses when editing queues (horde@hatzidakis.org,
       Bug #7905).

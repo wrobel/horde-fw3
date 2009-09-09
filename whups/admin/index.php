@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: whups/admin/index.php,v 1.18.2.2 2009/03/16 15:11:57 jan Exp $
+ * $Horde: whups/admin/index.php,v 1.18.2.3 2009/09/07 10:09:11 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -769,7 +769,8 @@ case 'addversionform':
     if ($form->validate($vars)) {
         $result = $whups_driver->addVersion($vars->get('queue'),
                                             $vars->get('name'),
-                                            $vars->get('description'));
+                                            $vars->get('description'),
+                                            $vars->get('active') == 'on');
         if (!is_a($result, 'PEAR_Error')) {
             $queuename = $whups_driver->getQueue($vars->get('queue'));
             $queuename = $queuename['name'];
@@ -831,7 +832,8 @@ case 'editversionstep2form':
     if ($form->validate($vars)) {
         $result = $whups_driver->updateVersion($vars->get('version'),
                                                $vars->get('name'),
-                                               $vars->get('description'));
+                                               $vars->get('description'),
+                                               $vars->get('active') == 'on');
         if (!is_a($result, 'PEAR_Error')) {
             $notification->push(_("The version has been modified."),
                                 'horde.success');

@@ -2,6 +2,8 @@
 v2.3.3-cvs
 ----------
 
+[mms] Upgrade prototype.js to v1.6.1.
+[jan] Fix synchronization with output compression enabled (Bug #7769).
 [jan] Show application name as task list name when listing external tasks.
 [jan] Fix importing vTodo data including more iCalendar components.
 

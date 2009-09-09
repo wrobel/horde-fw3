@@ -2,7 +2,7 @@
 v3.1.2-cvs
 ----------
 
-
+[jan] Simplify and fix smbldap driver (Bug #8192).
 
 
 ------

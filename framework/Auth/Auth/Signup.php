@@ -8,7 +8,7 @@ require_once 'Horde/Form/Renderer.php';
  * new users sign themselves up into the horde installation, depending
  * on how the admin has configured Horde.
  *
- * $Horde: framework/Auth/Auth/Signup.php,v 1.38.2.21 2009/06/15 16:01:22 jan Exp $
+ * $Horde: framework/Auth/Auth/Signup.php,v 1.38.2.23 2009/08/13 15:43:57 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -99,7 +99,7 @@ class Auth_Signup {
         if (!empty($info['extra'])) {
             $result = false;
             $result = Horde::callHook('_horde_hook_signup_addextra',
-                                     array($info['user_name'], $info['extra']));
+                                      array($info['user_name'], $info['extra'], $info['password']));
             if (is_a($result, 'PEAR_Error')) {
                 Horde::logMessage($result, __FILE__, __LINE__, PEAR_LOG_EMERG);
                 return $result;
@@ -175,7 +175,8 @@ class Auth_Signup {
                 $conf['signup']['email'],
                 $conf['signup']['email'],
                 NLS::getCharset());
-            $result = $mail->send($conf['mailer']['type'], $conf['mailer']['params']);
+            list($mail_driver, $mail_params) = Horde::getMailerConfig();
+            $result = $mail->send($mail_driver, $mail_params);
             if (is_a($result, 'PEAR_Error')) {
                 Horde::logMessage($result, __FILE__, __LINE__, PEAR_LOG_ERR);
             }

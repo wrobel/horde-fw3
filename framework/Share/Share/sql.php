@@ -3,7 +3,7 @@
  * Horde_Share_sql:: provides the sql backend for the horde share
  * driver.
  *
- * $Horde: framework/Share/Share/sql.php,v 1.1.2.56 2009/04/20 21:04:35 jan Exp $
+ * $Horde: framework/Share/Share/sql.php,v 1.1.2.57 2009/08/12 13:52:00 jan Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -751,7 +751,7 @@ class Horde_Share_sql extends Horde_Share {
         require_once 'MDB2.php';
         $params = $this->_params;
         unset($params['charset']);
-        $this->_write_db = MDB2::factory($params);
+        $this->_write_db = &MDB2::factory($params);
         if (is_a($this->_write_db, 'PEAR_Error')) {
             Horde::fatal($this->_write_db, __FILE__, __LINE__);
         }

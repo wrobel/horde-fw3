@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ansel/lib/Forms/Ecard.php,v 1.1 2006/12/02 07:13:55 chuck Exp $
+ * $Horde: ansel/lib/Forms/Ecard.php,v 1.1.2.1 2009/07/28 20:32:43 jan Exp $
  *
  * @package Ansel
  */
@@ -26,6 +26,7 @@ class EcardForm extends Horde_Form {
         $this->addHidden('', 'actionID', 'text', false);
         $this->addHidden('', 'gallery', 'text', false);
         $this->addHidden('', 'image', 'text', false);
+        $this->addHidden('', 'image_desc', 'text', false);
 
         $user = Auth::getAuth();
         if (empty($user)) {

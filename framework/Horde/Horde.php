@@ -7,7 +7,7 @@
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.
  *
- * $Horde: framework/Horde/Horde.php,v 1.489.2.113 2009/02/14 18:02:06 mrubinsk Exp $
+ * $Horde: framework/Horde/Horde.php,v 1.489.2.116 2009/08/20 21:43:00 jan Exp $
  */
 
 /** Log */
@@ -77,14 +77,19 @@ class Horde {
         $app = isset($GLOBALS['registry']) ? $GLOBALS['registry']->getApp() : 'horde';
         $message = '[' . $app . '] ' . $message . ' [pid ' . getmypid() . ' on line ' . $line . ' of "' . $file . '"]';
 
-        /* Make sure to log in the system's locale. */
+        /* Make sure to log in the system's locale and timezone. */
         $locale = setlocale(LC_TIME, 0);
         setlocale(LC_TIME, 'C');
+        $tz = getenv('TZ');
+        @putenv('TZ');
 
         $logger->log($message, $priority);
 
-        /* Restore original locale. */
+        /* Restore original locale and timezone. */
         setlocale(LC_TIME, $locale);
+        if ($tz) {
+            @putenv('TZ=' . $tz);
+        }
 
         return true;
     }
@@ -647,6 +652,26 @@ HTML;
         }
 
         return $vfs;
+    }
+
+    /**
+     * Return the driver and parameters for the current mailer configuration.
+     *
+     * @since Horde 3.3.5
+     *
+     * @return array  Array with driver name and parameter hash.
+     */
+    function getMailerConfig()
+    {
+        $mail_driver = $GLOBALS['conf']['mailer']['type'];
+        $mail_params = $GLOBALS['conf']['mailer']['params'];
+        if ($mail_driver == 'smtp' && $mail_params['auth'] &&
+            empty($mail_params['username'])) {
+            $mail_params['username'] = Auth::getAuth();
+            $mail_params['password'] = Auth::getCredential('password');
+        }
+
+        return array($mail_driver, $mail_params);
     }
 
     /**

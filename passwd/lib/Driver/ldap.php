@@ -3,7 +3,7 @@
  * The LDAP class attempts to change a user's password stored in an LDAP
  * directory service.
  *
- * $Horde: passwd/lib/Driver/ldap.php,v 1.41.2.8 2009/03/31 10:51:02 jan Exp $
+ * $Horde: passwd/lib/Driver/ldap.php,v 1.41.2.11 2009/08/19 08:41:12 jan Exp $
  *
  * Copyright 2000-2009 The Horde Project (http://www.horde.org/)
  *
@@ -121,19 +121,15 @@ class Passwd_Driver_ldap extends Passwd_Driver {
      * @param string $username      The user for which to change the password.
      * @param string $old_password  The old (current) user password.
      * @param string $new_password  The new user password to set.
+     * @param string $userdn        Will be set to the retrieved user DN.
      *
      * @return boolean  True or PEAR_Error based on success of the change.
      */
-    function changePassword($username, $old_password, $new_password)
+    function changePassword($username, $old_password, $new_password, &$userdn)
     {
         // See if the old password matches before allowing the change
         if ($old_password !== Auth::getCredential('password')) {
             return PEAR::raiseError(_("Incorrect old password."));
-        }
-
-        // Append realm as username@realm if 'realm' parameter is set.
-        if (!empty($this->_params['realm'])) {
-            $username .= '@' . $this->_params['realm'];
         }
 
         // Bind as current user. _connect will try as guest if no user realm
@@ -143,13 +139,18 @@ class Passwd_Driver_ldap extends Passwd_Driver {
             return $result;
         }
 
+        // Append realm as username@realm if 'realm' parameter is set.
+        if (!empty($this->_params['realm'])) {
+            $username .= '@' . $this->_params['realm'];
+        }
+
         // Get the user's dn.
         if ($GLOBALS['conf']['hooks']['userdn']) {
             $userdn = Horde::callHook('_passwd_hook_userdn',
-                                      array(Auth::getAuth()),
+                                      array($username),
                                       'passwd');
         } else {
-            $userdn = $this->_lookupdn($username);
+            $userdn = $this->_lookupdn($username, $old_password);
             if (is_a($userdn, 'PEAR_Error')) {
                 return $userdn;
             }
@@ -205,7 +206,7 @@ class Passwd_Driver_ldap extends Passwd_Driver {
             $new_details[$this->_params['shadowlastchange']] = floor(time() / 86400);
         }
 
-        if (!ldap_mod_replace($this->_ds, $userdn, $new_details)) {
+        if (!@ldap_mod_replace($this->_ds, $userdn, $new_details)) {
             return PEAR::raiseError(ldap_error($this->_ds));
         }
 
@@ -220,13 +221,10 @@ class Passwd_Driver_ldap extends Passwd_Driver {
      *
      * @param string $user    The username of the user.
      * @param string $passw   The password of the user.
-     * @param string $realm   The realm (domain) name of the user.
-     * @param string $basedn  The ldap basedn.
-     * @param string $uid     The ldap uid.
      *
      * @return string  The ldap dn for the user.
      */
-    function _lookupdn($user)
+    function _lookupdn($user, $passw)
     {
         // Search as an admin if so configured
         if (!empty($this->_params['admindn'])) {
@@ -247,6 +245,16 @@ class Passwd_Driver_ldap extends Passwd_Driver {
         $entry = ldap_first_entry($this->_ds, $result);
         if ($entry === false) {
             return PEAR::raiseError(_("User not found."));
+        }
+
+        // If we used admin bindings, we have to check the password here.
+        if (!empty($this->_params['admindn'])) {
+            $ldappasswd = ldap_get_values($this->_ds, $entry,
+                                          $this->_params['attribute']);
+            $result = $this->comparePasswords($ldappasswd[0], $passw);
+            if (is_a($result, 'PEAR_Error')) {
+                return $result;
+            }
         }
 
         return ldap_get_dn($this->_ds, $entry);

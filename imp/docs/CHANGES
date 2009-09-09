@@ -2,12 +2,18 @@
 v4.3.5-cvs
 ----------
 
+[mms] Upgrade prototype.js to v1.6.1.
+[jan] Add example hook for the search_sources preference (dom.lalot@gmail.com,
+      Request #7796).
+[mms] Fix renaming shared folders contained in empty namespaces (Bug #8468).
+[mms] Correctly handle NO untagged responses on login (Bug #8478).
+[mms] Correctly set charset of Bcc header in sent mail copy (Bug #8362).
 [mms] Fix spellcheck in text-mode for certain words in non-English locales
       (Bug #8330).
 [mms] Fix some javascript if using IE 8 (uses IE 7 compatibility mode) (Bug
       #8345).
 [jan] Allow to lock default_encrypt preference.
-[mjr] Add example hook showing how to set the add_source preference (Bug #8285)
+[mjr] Add example hook for the add_source preference (Bug #8285).
 [mms] Fix unqualified domain preference (Bug #8272).
 [jan] Highlight signed messages depending on the signature verification.
 [mms] Fix display_folder hook (m.gabriel@das-netzwerkteam.de, Bug #8254).

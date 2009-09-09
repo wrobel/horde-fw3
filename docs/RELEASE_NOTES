@@ -12,28 +12,39 @@
  * 8 - Minor security fixes
  * 9 - Major security fixes
  */
-$this->notes['fm']['focus'] = 6;
+$this->notes['fm']['focus'] = 8;
 
 /* Mailing list release notes. */
 $this->notes['ml']['changes'] = <<<ML
 The Horde Team is pleased to announce the final release of the Horde
-Application Framework version 3.3.4.
+Application Framework version 3.3.5.
 
 The Horde Application Framework is a modular, general-purpose web application
 framework written in PHP.  It provides an extensive array of classes that are
 targeted at the common problems and tasks involved in developing modern web
 applications.
 
-The major changes compared to Horde version 3.3.3 are:
-    * Improved synchronization.
-    * Improved LDAP configuration.
-    * Large variety of small bug fixes and improvements all over the place.
+This is a minor security release that fixes validation of "number" type
+preferences, and prevents display of unknown text parts inline without
+escaping the data.  All users are encouraged to upgrade to this release.
+
+The major changes compared to Horde version 3.3.4 are:
+    * SECURITY: Fix validation of "number" type preferences.
+    * SECURITY: Don't display unknown text parts inline.
+    * Releasing memcache lock no longer takes 1 second.
+    * Fixes when resetting passwords.
+    * Export current locale to the environment.
+    * Multiple other small bug fixes and improvements.
 ML;
 
 /* Freshmeat release notes, not more than 600 characters. */
 $this->notes['fm']['changes'] = <<<FM
-Synchronization and LDAP configuration have been improved.
-Bug fixes and improvements have been made all over the place.
+This is a minor security release that fixes validation of "number" type
+preferences, and prevents display of unknown text parts inline without
+escaping the data.
+Additionally, fix an issue with memcache locking taking a full second to
+release, various fixes when resetting a password, and ensure the current
+locale is exported to the environment.
 FM;
 
 $this->notes['name'] = 'Horde';

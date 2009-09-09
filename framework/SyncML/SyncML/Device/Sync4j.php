@@ -2,7 +2,7 @@
 /**
  * @package SyncML
  *
- * $Horde: framework/SyncML/SyncML/Device/Sync4j.php,v 1.8.2.25 2009/04/05 21:38:49 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Device/Sync4j.php,v 1.8.2.31 2009/08/20 15:49:22 jan Exp $
  */
 
 /** Horde_Date */
@@ -425,10 +425,12 @@ class SyncML_Device_sync4j extends SyncML_Device {
             case 5:
                 /* olYearly */
                 $freq = 'YEARLY';
+                $interval = ';INTERVAL=' . $a['Interval'];
                 break;
             case 6:
                 /* olYearNth */
                 $freq = 'YEARLY';
+                $interval = ';INTERVAL=' . $a['Interval'];
                 break;
             }
             $rrule = 'FREQ=' . $freq;
@@ -829,7 +831,26 @@ class SyncML_Device_sync4j extends SyncML_Device {
         $hash = array('ReminderSet' => 0,
                       'IsRecurring' => 0,
                       'BusyStatus' => 2);
-        $alarm = null;
+        $alarm = $end = null;
+        $start = $content->getAttribute('DTSTART');
+        if ($start) {
+            if (!empty($start['params']['VALUE']) &&
+                $start['params']['VALUE'] == 'DATE') {
+                $hash['AllDayEvent'] = 1;
+                $hash['Start'] = sprintf('%04d-%02d-%02d',
+                                         $start['value']['year'],
+                                         $start['value']['month'],
+                                         $start['value']['mday']);
+                $start = mktime(0, 0, 0,
+                                $start['value']['month'],
+                                $start['value']['mday'],
+                                $start['value']['year']);
+            } else {
+                $hash['AllDayEvent'] = 0;
+                $hash['Start'] = Horde_iCalendar::_exportDateTime($start);
+            }
+        }
+
         foreach ($content->getAllAttributes() as $item) {
             $GLOBALS['backend']->logMessage(
                 sprintf('Sync4j for name %s, value %s',
@@ -840,37 +861,19 @@ class SyncML_Device_sync4j extends SyncML_Device {
 
             switch (String::upper($item['name'])) {
             case 'DTSTART':
-                if (!empty($item['params']['VALUE']) &&
-                    $item['params']['VALUE'] == 'DATE') {
-                    $hash['AllDayEvent'] = 1;
-                    $hash['Start'] = sprintf('%04d-%02d-%02dT00:00:00Z',
-                                             $item['value']['year'],
-                                             $item['value']['month'],
-                                             $item['value']['mday']);
-                    $start = mktime(0, 0, 0,
-                                    $item['value']['month'],
-                                    $item['value']['mday'],
-                                    $item['value']['year']);
-                } else {
-                    $hash['AllDayEvent'] = 0;
-                    $hash['Start'] = Horde_iCalendar::_exportDateTime
-                        ($item['value']);
-                    $start = $item['value'];
-                }
                 break;
 
             case 'DTEND':
                 if (!empty($item['params']['VALUE']) &&
                     $item['params']['VALUE'] == 'DATE') {
                     $hash['AllDayEvent'] = 1;
-                    $hash['End'] = sprintf('%04d-%02d-%02dT00:00:00Z',
-                                           $item['value']['year'],
-                                           $item['value']['month'],
-                                           $item['value']['mday']);
-                    $end = mktime(0, 0, 0,
-                                  $item['value']['month'],
-                                  $item['value']['mday'],
-                                  $item['value']['year']);
+                    $date = new Horde_Date(array('year' => $item['value']['year'],
+                                                 'month' => $item['value']['month'],
+                                                 'mday' => $item['value']['mday']));
+                    $date->mday--;
+                    $date->correct();
+                    $hash['End'] = $date->format('Y-m-d');
+                    $end = $date->datestamp();
                 } else {
                     $hash['AllDayEvent'] = 0;
                     $hash['End'] = Horde_iCalendar::_exportDateTime(
@@ -983,18 +986,20 @@ class SyncML_Device_sync4j extends SyncML_Device {
                         $hash['DayOfWeekMask'] = $mask;
                     } else {
                         $hash['RecurrenceType'] = 2;
-                        $start = $content->getAttribute('DTSTART');
-                        if (!empty($start['params']['VALUE']) &&
-                            $start['params']['VALUE'] == 'DATE') {
-                            $hash['DayOfMonth'] = $start['value']['mday'];
-                        } else {
-                            $hash['DayOfMonth'] = date('j', $start);
-                        }
+                        $hash['DayOfMonth'] = date('j', $start);
                     }
                     break;
 
                 case 'YEARLY':
-                    $hash['RecurrenceType'] = 6;
+                    if (isset($rdata['BYDAY'])) {
+                        $hash['RecurrenceType'] = 6;
+                        $hash['Instance'] = $instance;
+                        $hash['DayOfWeekMask'] = $mask;
+                    } else {
+                        $hash['RecurrenceType'] = 5;
+                        $hash['DayOfMonth'] = date('j', $start);
+                    }
+                    $hash['MonthOfYear'] = date('n', $start);
                     break;
                 }
 

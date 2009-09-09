@@ -12,12 +12,12 @@
  * 8 - Minor security fixes
  * 9 - Major security fixes
  */
-$this->notes['fm']['focus'] = 4;
+$this->notes['fm']['focus'] = 6;
 
 /* Mailing list release notes. */
 $this->notes['ml']['changes'] = <<<ML
 The Horde Team is pleased to announce the final release of the Mobile Internet
-Messaging Program (MIMP) version H3 (1.1.1).
+Messaging Program (MIMP) version H3 (1.1.2).
 
 MIMP (or Mobile IMP) is a version of the webmail client IMP suitable for
 mobile devices such as WAP phones or PDAs. Basic IMP functionality is
@@ -29,17 +29,17 @@ Although not required to upgrade either Horde or IMP, it is STRONGLY
 RECOMMENDED you do as any bugfixes to core functionality will occur in
 these applications.
 
-Major changes compared to the MIMP H3 (1.1) version are:
-  * Added MIME_Viewer to display mail system admin messages.
-  * Added Basque and Brazilian Portuguese translations.
-  * Fixes for displaying messages with escaped characters in the headers.
+Major changes compared to the MIMP H3 (1.1.1) version are:
+    * Ignore 'compose_html' preference in IMP (requires IMP 4.3.5).
+    * Fix showing Cc and Bcc fields.
+    * Implement custom menu items.
 ML;
 
 /* Freshmeat release notes. */
 $this->notes['fm']['changes'] = <<<FM
-A MIME viewer to display mail system admin messages has been added.
-Basque and Brazilian Portuguese translations have been added.
-Messages with escaped characters in the headers are displayed correctly now.
+Ignore 'compose_html' preference in IMP (requires IMP 4.3.5).
+Fix showing Cc and Bcc fields.
+Implement custom menu items.
 FM;
 
 $this->notes['name'] = 'MIMP';

@@ -2,7 +2,7 @@
 /**
  * This file contains all Horde_Form classes for version administration.
  *
- * $Horde: whups/lib/Forms/Admin/Version.php,v 1.1.2.1 2009/01/06 15:28:21 jan Exp $
+ * $Horde: whups/lib/Forms/Admin/Version.php,v 1.1.2.2 2009/09/07 10:09:12 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -22,6 +22,8 @@ class AddVersionForm extends Horde_Form {
         $this->addHidden('', 'queue', 'int', true, true);
         $this->addVariable(_("Version Name"), 'name', 'text', true);
         $this->addVariable(_("Version Description"), 'description', 'text', true);
+        $vactive = &$this->addVariable(_("Version Active?"), 'active', 'boolean', false);
+        $vactive->setDefault(true);
     }
 
 }
@@ -35,7 +37,7 @@ class EditVersionStep1Form extends Horde_Form {
         parent::Horde_Form($vars, _("Edit or Delete Versions"));
         $this->setButtons(array(_("Edit Version"), _("Delete Version")));
 
-        $versions = $whups_driver->getVersions($vars->get('queue'));
+        $versions = $whups_driver->getVersions($vars->get('queue'), true);
         if ($versions) {
             $vtype = 'enum';
             $type_params = array($versions);
@@ -69,6 +71,8 @@ class EditVersionStep2Form extends Horde_Form {
 
         $vdesc = &$this->addVariable(_("Version Description"), 'description', 'text', true);
         $vdesc->setDefault($info['description']);
+        $vactive = &$this->addVariable(_("Version Active?"), 'active', 'boolean', false);
+        $vactive->setDefault($info['active']);
     }
 
 }

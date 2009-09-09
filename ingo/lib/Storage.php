@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ingo/lib/Storage.php,v 1.43.8.21 2009/05/14 13:46:20 jan Exp $
+ * $Horde: ingo/lib/Storage.php,v 1.43.8.22 2009/07/24 08:57:03 jan Exp $
  *
  * See the enclosed file LICENSE for license information (ASL).  If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.
@@ -387,6 +387,19 @@ class Ingo_Storage {
         }
 
         return $ob;
+    }
+
+    /**
+     * Removes the user data from the storage backend.
+     * Stub for child class to override if it can implement.
+     *
+     * @param string $user The user name to delete filters for.
+     *
+     * @return mixed  True | PEAR_Error
+     */
+    function removeUserData($user)
+    {
+	return PEAR::raiseError(_("Removing user data is not supported with the current filter storage backend."));
     }
 
 }

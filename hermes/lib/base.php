@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: hermes/lib/base.php,v 1.36 2008/01/02 16:15:09 chuck Exp $
+ * $Horde: hermes/lib/base.php,v 1.36.2.1 2009/08/12 22:28:11 jan Exp $
  *
  * Copyright 2001-2007 Robert E. Coyle <robertecoyle@hotmail.com>
  *
@@ -11,6 +11,9 @@
  *
  * This file brings in all of the dependencies that every Hermes script
  * will need, and sets up objects that all scripts use.
+ *
+ * The following global variables are used:
+ *   $no_compress  -  Controls whether the page should be compressed
  */
 
 // Check for a prior definition of HORDE_BASE (perhaps by an
@@ -54,4 +57,6 @@ require_once 'Horde/Form/Renderer.php';
 require_once 'Horde/Template.php';
 
 // Start compression.
-Horde::compressOutput();
+if (!Util::nonInputVar('no_compress')) {
+    Horde::compressOutput();
+}

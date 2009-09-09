@@ -2,7 +2,7 @@
 /**
  * This file contains the Horde_Date_Recurrence class and according constants.
  *
- * $Horde: framework/Date/Date/Recurrence.php,v 1.7.2.11 2009/03/31 11:06:24 jan Exp $
+ * $Horde: framework/Date/Date/Recurrence.php,v 1.7.2.12 2009/08/21 15:37:55 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *
@@ -921,21 +921,12 @@ class Horde_Date_Recurrence {
             break;
 
         case HORDE_DATE_RECUR_MONTHLY_WEEKDAY:
-            $next_week = new Horde_Date($this->start);
-            $next_week->mday += 7;
-            $next_week->correct();
-
-            if ($this->start->month != $next_week->month) {
-                $p = 5;
-            } else {
-                $p = (int)($this->start->mday / 7);
-                if (($this->start->mday % 7) > 0) {
-                    $p++;
-                }
+            $nth_weekday = (int)($this->start->mday / 7);
+            if (($this->start->mday % 7) > 0) {
+                    $nth_weekday++;
             }
-
             $vcaldays = array('SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA');
-            $rrule = 'MP' . $this->recurInterval . ' ' . $p . '+ ' . $vcaldays[$this->start->dayOfWeek()];
+            $rrule = 'MP' . $this->recurInterval . ' ' . $nth_weekday . '+ ' . $vcaldays[$this->start->dayOfWeek()];
             break;
 
         case HORDE_DATE_RECUR_YEARLY_DATE:
@@ -1094,20 +1085,13 @@ class Horde_Date_Recurrence {
             break;
 
         case HORDE_DATE_RECUR_MONTHLY_WEEKDAY:
-            $next_week = new Horde_Date($this->start);
-            $next_week->mday += 7;
-            $next_week->correct();
-            if ($this->start->month != $next_week->month) {
-                $p = 5;
-            } else {
-                $p = (int)($this->start->mday / 7);
-                if (($this->start->mday % 7) > 0) {
-                    $p++;
-                }
+            $nth_weekday = (int)($this->start->mday / 7);
+            if (($this->start->mday % 7) > 0) {
+                $nth_weekday++;
             }
             $vcaldays = array('SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA');
             $rrule = 'FREQ=MONTHLY;INTERVAL=' . $this->recurInterval
-                . ';BYDAY=' . $p . $vcaldays[$this->start->dayOfWeek()];
+                . ';BYDAY=' . $nth_weekday . $vcaldays[$this->start->dayOfWeek()];
             break;
 
         case HORDE_DATE_RECUR_YEARLY_DATE:
@@ -1120,13 +1104,14 @@ class Horde_Date_Recurrence {
             break;
 
         case HORDE_DATE_RECUR_YEARLY_WEEKDAY:
+            $nth_weekday = (int)($this->start->mday / 7);
+            if (($this->start->mday % 7) > 0) {
+                $nth_weekday++;
+            }
             $vcaldays = array('SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA');
-            $weekday = new Horde_Date(array('month' => $this->start->month,
-                                            'mday' => 1,
-                                            'year' => $this->start->year));
             $rrule = 'FREQ=YEARLY;INTERVAL=' . $this->recurInterval
                 . ';BYDAY='
-                . ($this->start->weekOfYear() - $weekday->weekOfYear() + 1)
+                . $nth_weekday
                 . $vcaldays[$this->start->dayOfWeek()]
                 . ';BYMONTH=' . $this->start->month;
             break;

@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/thread.php,v 2.10.2.28 2009/01/06 15:24:02 jan Exp $
+ * $Horde: imp/thread.php,v 2.10.2.29 2009/07/23 11:33:34 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *
@@ -96,6 +96,10 @@ foreach ($loop_array as $mbox => $idxlist) {
         /* Get the body of the message. */
         $curr_msg = $curr_tree = array();
         $contents = &IMP_Contents::singleton($idx . IMP_IDX_SEP . $mbox);
+        if (is_a($contents, 'PEAR_Error')) {
+            $notification->push($contents, 'horde.error');
+            continue;
+        }
         $mime_id = $contents->findBody();
         $mime_part = $contents->getDecodedMIMEPart($mime_id);
         if ($contents->canDisplayInline($mime_part)) {

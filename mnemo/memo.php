@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: mnemo/memo.php,v 1.42.2.13 2009/01/13 15:47:32 chuck Exp $
+ * $Horde: mnemo/memo.php,v 1.42.2.14 2009/08/05 23:03:25 jan Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *
@@ -11,6 +11,44 @@
  * @since   Mnemo 1.0
  * @package Mnemo
  */
+
+ /**
+  * Encryption tests.
+  */
+function showPassphrase($memo, $storage)
+{
+    global $notification;
+
+    if (!is_a($memo['body'], 'PEAR_Error')) {
+        return false;
+    }
+
+    /* Check for secure connection. */
+    $secure_check = $storage->requireSecureConnection();
+    if ($memo['body']->getCode() == MNEMO_ERR_NO_PASSPHRASE) {
+        if (is_a($secure_check, 'PEAR_Error')) {
+            $notification->push(_("This note has been encrypted.") . ' ' . $secure_check->getMessage(), 'horde.error');
+            $memo['body'] = '';
+            return false;
+        }
+        $notification->push(_("This note has been encrypted, please provide the password below."), 'horde.message');
+        return true;
+    }
+    if ($memo['body']->getCode() == MNEMO_ERR_DECRYPT) {
+        if (is_a($secure_check, 'PEAR_Error')) {
+            $notification->push(_("This note has been encrypted.") . ' ' . $secure_check->getMessage(), 'horde.error');
+            $memo['body'] = '';
+            return false;
+        }
+        $notification->push(_("This note cannot be decrypted:") . ' ' . $memo['body']->getMessage(), 'horde.message');
+        return true;
+    }
+
+    $notification->push($memo['body'], 'horde.error');
+    $memo['body'] = '';
+
+    return false;
+}
 
 @define('MNEMO_BASE', dirname(__FILE__));
 require_once MNEMO_BASE . '/lib/base.php';
@@ -71,31 +109,7 @@ case 'modify_memo':
     $storage = &Mnemo_Driver::singleton($memolist_id);
 
     /* Encryption tests. */
-    $show_passphrase = false;
-    if (is_a($memo['body'], 'PEAR_Error')) {
-        /* Check for secure connection. */
-        $secure_check = $storage->requireSecureConnection();
-        if ($memo['body']->getCode() == MNEMO_ERR_NO_PASSPHRASE) {
-            if (is_a($secure_check, 'PEAR_Error')) {
-                $notification->push(_("This note has been encrypted.") . ' ' . $secure_check->getMessage(), 'horde.error');
-                $memo['body'] = '';
-            } else {
-                $notification->push(_("This note has been encrypted, please provide the password below."), 'horde.message');
-                $show_passphrase = true;
-            }
-        } elseif ($memo['body']->getCode() == MNEMO_ERR_DECRYPT) {
-            if (is_a($secure_check, 'PEAR_Error')) {
-                $notification->push(_("This note has been encrypted.") . ' ' . $secure_check->getMessage(), 'horde.error');
-                $memo['body'] = '';
-            } else {
-                $notification->push(_("This note cannot be decrypted:") . ' ' . $memo['body']->getMessage(), 'horde.message');
-                $show_passphrase = true;
-            }
-        } else {
-            $notification->push($memo['body'], 'horde.error');
-            $memo['body'] = '';
-        }
-    }
+    $show_passphrase = showPassphrase($memo, $storage);
 
     /* Set up the note attributes. */
     $memo_body = $memo['body'];
@@ -109,19 +123,42 @@ case 'save_memo':
     $memo_id = Util::getFormData('memo');
     $memo_body = Util::getFormData('memo_body');
     $memo_category = Util::getFormData('memo_category');
-    $memo_passphrase = Util::getFormData('memo_passphrase', Mnemo::getPassphrase($memo_id));
     $memolist_original = Util::getFormData('memolist_original');
     $notepad_target = Util::getFormData('notepad_target');
+    $memo_passphrase = Util::getFormData('memo_passphrase');
+    $memo_passphrase2 = Util::getFormData('memo_passphrase2');
 
     $share = &$GLOBALS['mnemo_shares']->getShare($notepad_target);
     if (is_a($share, 'PEAR_Error')) {
         $notification->push(sprintf(_("Access denied saving note: %s"), $share->getMessage()), 'horde.error');
     } elseif (!$share->hasPermission(Auth::getAuth(), PERMS_EDIT)) {
         $notification->push(sprintf(_("Access denied saving note to %s."), $share->get('name')), 'horde.error');
-    } else {
+    } elseif ($memo_passphrase != $memo_passphrase2) {
+        $notification->push(_("The passwords don't match."), 'horde.error');
+        $storage = &Mnemo_Driver::singleton($memolist_original);
+        if (empty($memo_id)) {
+            $title = _("New Note");
+        } else {
+            $actionID = 'modify_memo';
+            $memo = Mnemo::getMemo($memolist_original, $memo_id);
+            if (!$memo || !isset($memo['memo_id'])) {
+                $notification->push(_("Note not found."), 'horde.error');
+                header('Location: ' . Horde::applicationUrl('list.php', true));
+                exit;
+            }
+            $title = sprintf(_("Edit: %s"), $memo['desc']);
+            $show_passphrase = showPassphrase($memo, $storage);
+            $memo_encrypted = $memo['encrypted'];
+            $memolist_id = $memolist_original;
+        }
+        break;
+  } else {
         if ($new_category = Util::getFormData('new_category')) {
             $new_category = $cManager->add($new_category);
             $memo_category = $new_category ? $new_category : '';
+        }
+        if (!strlen($memo_passphrase)) {
+            $memo_passphrase = Mnemo::getPassphrase($memo_id);
         }
 
         /* If $memo_id is set, we're modifying an existing note.  Otherwise,

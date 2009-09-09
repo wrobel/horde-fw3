@@ -6,7 +6,7 @@
  * This script imports the contents of an existing Bugzilla bug database into
  * a Whups database.
  *
- * $Horde: whups/scripts/bugzilla-import.php,v 1.13.2.1 2009/01/06 15:28:34 jan Exp $
+ * $Horde: whups/scripts/bugzilla-import.php,v 1.13.2.2 2009/09/07 10:09:12 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *
@@ -170,11 +170,9 @@ $versions = array();
 sectionHeader('Importing Versions');
 $res = $bugzilla->query('select value, program from versions');
 while ($row = $res->fetchRow()) {
-    /*
-     * Bugzilla manages versions on a per-product basis.  Whups manages
+    /* Bugzilla manages versions on a per-product basis.  Whups manages
      * versions on a per-queue (i.e., per-component) basis.  Add this
-     * product's versions to each each of its components.
-     */
+     * product's versions to each each of its components. */
     foreach ($components[($row['program'])] as $component) {
         $queueID = array_search($component, $queues);
 
@@ -183,7 +181,7 @@ while ($row = $res->fetchRow()) {
             continue;
         }
 
-        $result = $whups_driver->addVersion($queueID, $row['value'], '');
+        $result = $whups_driver->addVersion($queueID, $row['value'], '', true, 0);
         if (is_a($result, 'PEAR_Error')) {
             error('Failed to add version: ' . $row['value'], $result);
             continue;

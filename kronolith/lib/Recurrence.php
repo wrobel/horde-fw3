@@ -2,7 +2,7 @@
 /**
  * This file contains the Horde_Date_Recurrence class and according constants.
  *
- * $Horde: kronolith/lib/Recurrence.php,v 1.16.2.8 2009/01/06 15:24:45 jan Exp $
+ * $Horde: kronolith/lib/Recurrence.php,v 1.16.2.10 2009/08/21 15:37:58 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *
@@ -921,21 +921,12 @@ class Horde_Date_Recurrence {
             break;
 
         case HORDE_DATE_RECUR_MONTHLY_WEEKDAY:
-            $next_week = new Horde_Date($this->start);
-            $next_week->mday += 7;
-            $next_week->correct();
-
-            if ($this->start->month != $next_week->month) {
-                $p = 5;
-            } else {
-                $p = (int)($this->start->mday / 7);
-                if (($this->start->mday % 7) > 0) {
-                    $p++;
-                }
+            $nth_weekday = (int)($this->start->mday / 7);
+            if (($this->start->mday % 7) > 0) {
+                    $nth_weekday++;
             }
-
             $vcaldays = array('SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA');
-            $rrule = 'MP' . $this->recurInterval . ' ' . $p . '+ ' . $vcaldays[$this->start->dayOfWeek()];
+            $rrule = 'MP' . $this->recurInterval . ' ' . $nth_weekday . '+ ' . $vcaldays[$this->start->dayOfWeek()];
             break;
 
         case HORDE_DATE_RECUR_YEARLY_DATE:
@@ -950,14 +941,19 @@ class Horde_Date_Recurrence {
             return '';
         }
 
-        return $this->hasRecurEnd() ?
-            $rrule . ' ' . $calendar->_exportDate($this->recurEnd) :
-            $rrule . ' #' . (int)$this->getRecurCount();
+        if ($this->hasRecurEnd()) {
+            $recurEnd = new Horde_Date($this->recurEnd);
+            $recurEnd->mday++;
+            return $rrule . ' ' . $calendar->_exportDateTime($recurEnd);
+        }
+
+        return $rrule . ' #' . (int)$this->getRecurCount();
     }
 
     /**
      * Parses an iCalendar 2.0 recurrence rule.
      *
+     * @link http://rfc.net/rfc2445.html#s4.3.10
      * @link http://rfc.net/rfc2445.html#s4.8.5
      * @link http://www.shuchow.com/vCalAddendum.html
      *
@@ -1051,6 +1047,7 @@ class Horde_Date_Recurrence {
     /**
      * Creates an iCalendar 2.0 recurrence rule.
      *
+     * @link http://rfc.net/rfc2445.html#s4.3.10
      * @link http://rfc.net/rfc2445.html#s4.8.5
      * @link http://www.shuchow.com/vCalAddendum.html
      *
@@ -1088,20 +1085,13 @@ class Horde_Date_Recurrence {
             break;
 
         case HORDE_DATE_RECUR_MONTHLY_WEEKDAY:
-            $next_week = new Horde_Date($this->start);
-            $next_week->mday += 7;
-            $next_week->correct();
-            if ($this->start->month != $next_week->month) {
-                $p = 5;
-            } else {
-                $p = (int)($this->start->mday / 7);
-                if (($this->start->mday % 7) > 0) {
-                    $p++;
-                }
+            $nth_weekday = (int)($this->start->mday / 7);
+            if (($this->start->mday % 7) > 0) {
+                $nth_weekday++;
             }
             $vcaldays = array('SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA');
             $rrule = 'FREQ=MONTHLY;INTERVAL=' . $this->recurInterval
-                . ';BYDAY=' . $p . $vcaldays[$this->start->dayOfWeek()];
+                . ';BYDAY=' . $nth_weekday . $vcaldays[$this->start->dayOfWeek()];
             break;
 
         case HORDE_DATE_RECUR_YEARLY_DATE:
@@ -1114,20 +1104,23 @@ class Horde_Date_Recurrence {
             break;
 
         case HORDE_DATE_RECUR_YEARLY_WEEKDAY:
+            $nth_weekday = (int)($this->start->mday / 7);
+            if (($this->start->mday % 7) > 0) {
+                $nth_weekday++;
+            }
             $vcaldays = array('SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA');
-            $weekday = new Horde_Date(array('month' => $this->start->month,
-                                            'mday' => 1,
-                                            'year' => $this->start->year));
             $rrule = 'FREQ=YEARLY;INTERVAL=' . $this->recurInterval
                 . ';BYDAY='
-                . ($this->start->weekOfYear() - $weekday->weekOfYear() + 1)
+                . $nth_weekday
                 . $vcaldays[$this->start->dayOfWeek()]
                 . ';BYMONTH=' . $this->start->month;
             break;
         }
 
         if ($this->hasRecurEnd()) {
-            $rrule .= ';UNTIL=' . $calendar->_exportDate($this->recurEnd);
+            $recurEnd = new Horde_Date($this->recurEnd);
+            $recurEnd->mday++;
+            $rrule .= ';UNTIL=' . $calendar->_exportDateTime($recurEnd);
         }
         if ($count = $this->getRecurCount()) {
             $rrule .= ';COUNT=' . $count;

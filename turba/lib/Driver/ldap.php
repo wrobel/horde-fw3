@@ -2,7 +2,7 @@
 /**
  * Turba directory driver implementation for PHP's LDAP extension.
  *
- * $Horde: turba/lib/Driver/ldap.php,v 1.54.4.20 2008/06/09 03:28:07 chuck Exp $
+ * $Horde: turba/lib/Driver/ldap.php,v 1.54.4.22 2009/08/18 17:00:06 jan Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Jon Parise <jon@csh.rit.edu>
@@ -76,6 +76,11 @@ class Turba_Driver_ldap extends Turba_Driver {
         /* Set the LDAP deref option for dereferencing aliases. */
         if (!empty($this->_params['deref'])) {
             @ldap_set_option($this->_ds, LDAP_OPT_DEREF, $this->_params['deref']);
+        }
+
+        /* Set the LDAP referrals. */
+        if (!empty($this->_params['referrals'])) {
+            @ldap_set_option($this->_ds, LDAP_OPT_REFERRALS, $this->_params['referrals']);
         }
 
         /* Start TLS if we're using it. */
@@ -540,8 +545,11 @@ class Turba_Driver_ldap extends Turba_Driver {
     function _emptyAttributeFilter($var)
     {
         if (!is_array($var)) {
-            return ($var != '');
+            return $var != '';
         } else {
+            if (!count($var)) {
+                return false;
+            }
             foreach ($var as $v) {
                 if ($v == '') {
                     return false;

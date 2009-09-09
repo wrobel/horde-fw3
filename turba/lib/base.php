@@ -2,10 +2,13 @@
 /**
  * Turba base inclusion file.
  *
- * $Horde: turba/lib/base.php,v 1.62.10.21 2009/06/04 19:00:36 mrubinsk Exp $
+ * $Horde: turba/lib/base.php,v 1.62.10.22 2009/08/12 22:28:13 jan Exp $
  *
  * This file brings in all of the dependencies that every Turba script will
  * need, and sets up objects that all scripts use.
+ *
+ * The following global variables are used:
+ *   $no_compress  -  Controls whether the page should be compressed
  */
 
 // Check for a prior definition of HORDE_BASE (perhaps by an auto_prepend_file
@@ -117,4 +120,6 @@ foreach ($copymoveSources as $key => $curSource) {
 $GLOBALS['addSources'] = $addSources;
 
 // Start compression, if requested.
-Horde::compressOutput();
+if (!Util::nonInputVar('no_compress')) {
+    Horde::compressOutput();
+}

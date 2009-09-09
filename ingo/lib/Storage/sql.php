@@ -20,7 +20,7 @@
  * The table structure can be created by the scripts/drivers/sql/ingo.sql
  * script.
  *
- * $Horde: ingo/lib/Storage/sql.php,v 1.21.2.5 2009/05/14 13:48:15 jan Exp $
+ * $Horde: ingo/lib/Storage/sql.php,v 1.21.2.7 2009/07/24 14:08:17 jan Exp $
  *
  * See the enclosed file LICENSE for license information (ASL).  If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.
@@ -395,6 +395,42 @@ class Ingo_Storage_sql extends Ingo_Storage {
         }
 
         return $ret;
+    }
+
+    /**
+     * Removes the data of the specified user from the storage backend.
+     *
+     * @param string $user  The user name to delete filters for.
+     *
+     * @return mixed  True | PEAR_Error
+     */
+    function removeUserData($user)
+    {
+        if (!Auth::isAdmin() && $user != Auth::getAuth()) {
+            return PEAR::raiseError(_("Permission Denied"));
+        }
+
+        $queries = array(sprintf('DELETE FROM %s WHERE rule_owner = ?',
+                                 $this->_params['table_rules']),
+                         sprintf('DELETE FROM %s WHERE list_owner = ?',
+                                 $this->_params['table_lists']),
+                         sprintf('DELETE FROM %s WHERE vacation_owner = ?',
+                                 $this->_params['table_vacations']),
+                         sprintf('DELETE FROM %s WHERE forward_owner = ?',
+                                 $this->_params['table_forwards']),
+                         sprintf('DELETE FROM %s WHERE spam_owner = ?',
+                                 $this->_params['table_spam']));
+
+        $values = array($user);
+        foreach ($queries as $query) {
+            Horde::logMessage('Ingo_Storage_sql::removeUserData(): ' . $query, __FILE__, __LINE__, PEAR_LOG_DEBUG);
+            $result = $this->_write_db->query($query, $values);
+            if (is_a($result, 'PEAR_Error')) {
+                return $result;
+            }
+        }
+
+        return true;
     }
 
 }

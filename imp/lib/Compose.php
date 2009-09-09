@@ -17,7 +17,7 @@ define('IMP_VFS_LINK_ATTACH_PATH', '.horde/imp/attachments');
  * The IMP_Compose:: class contains functions related to generating
  * outgoing mail messages.
  *
- * $Horde: imp/lib/Compose.php,v 1.107.2.84 2009/01/06 15:24:03 jan Exp $
+ * $Horde: imp/lib/Compose.php,v 1.107.2.86 2009/07/29 06:04:42 slusarz Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -792,7 +792,7 @@ class IMP_Compose {
 
             /* Keep Bcc: headers on saved messages. */
             if (!empty($header['bcc'])) {
-                $msg_headers->addHeader('Bcc', $header['bcc']);
+                $msg_headers->addHeader('Bcc', String::convertCharset($header['bcc'], $browser_charset, $charset));
             }
 
             /* Loop through the envelope and add headers. */
@@ -1733,7 +1733,9 @@ class IMP_Compose {
             } else {
                 $msg = $msg_pre . $msg . $msg_post;
             }
-            if ($rte && $GLOBALS['prefs']->getValue('compose_html')) {
+            if ($rte &&
+                (empty($_SESSION['imp']['viewmode']) || ($_SESSION['imp']['viewmode']) != 'mimp') &&
+                $GLOBALS['prefs']->getValue('compose_html')) {
                 $msg = $this->text2html($msg);
                 $format = 'html';
             } else {
@@ -1826,7 +1828,9 @@ class IMP_Compose {
 
             if (empty($msg)) {
                 $msg = $msg_pre . $this->_rebuildMsgText($imp_contents) . $msg_post;
-                if ($rte && $GLOBALS['prefs']->getValue('compose_html')) {
+                if ($rte &&
+                    (empty($_SESSION['imp']['viewmode']) || ($_SESSION['imp']['viewmode']) != 'mimp') &&
+                    $GLOBALS['prefs']->getValue('compose_html')) {
                     $msg = $this->text2html($msg);
                     $format = 'html';
                 } else {

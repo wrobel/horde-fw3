@@ -5,11 +5,11 @@
  * This file brings in all of the dependencies that every Kronolith
  * script will need, and sets up objects that all scripts use.
  *
- * The following variables, defined in the script that calls this one, are
- * used:
- * - $session_control - Sets special session control limitations
+ * The following global variables are used:
+ *   $session_control - Sets special session control limitations
+ *   $no_compress     - Controls whether the page should be compressed
  *
- * $Horde: kronolith/lib/base.php,v 1.117.8.16 2008/08/01 18:49:01 mrubinsk Exp $
+ * $Horde: kronolith/lib/base.php,v 1.117.8.17 2009/08/12 22:28:12 jan Exp $
  *
  * @package Kronolith
  */
@@ -70,7 +70,9 @@ $GLOBALS['cManager_fgColors'] = $GLOBALS['cManager']->fgColors();
 require_once 'Date/Calc.php';
 
 /* Start compression, if requested. */
-Horde::compressOutput();
+if (!Util::nonInputVar('no_compress')) {
+    Horde::compressOutput();
+}
 
 /* Set the timezone variable, if available. */
 NLS::setTimeZone();

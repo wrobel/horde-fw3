@@ -3,7 +3,7 @@
  * Ansel_Gallery_Mode_Normal:: Class for encapsulating gallery methods that
  * depend on the current display mode of the gallery.
  *
- * $Horde: ansel/lib/GalleryMode/Normal.php,v 1.2.2.13 2009/07/17 17:28:46 mrubinsk Exp $
+ * $Horde: ansel/lib/GalleryMode/Normal.php,v 1.2.2.14 2009/08/13 20:42:32 mrubinsk Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -240,9 +240,6 @@ class Ansel_GalleryMode_Normal {
         if (!$isStack) {
             $this->_gallery->_updateImageCount(1, false);
         }
-
-        /* Remove any geolocation data */
-        $this->_gallery->_shareOb->_write_db->exec('DELETE FROM ansel_images_geolocation WHERE image_id = ' . (int)$image->id);
 
         /* Update the modified flag if we are not a stack image */
         if (!$isStack) {

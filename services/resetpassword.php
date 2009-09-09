@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/services/resetpassword.php,v 1.5.10.11 2009/01/06 15:26:20 jan Exp $
+ * $Horde: horde/services/resetpassword.php,v 1.5.10.12 2009/07/27 12:19:26 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *
@@ -68,18 +68,25 @@ if ($can_validate && $form->validate($vars)) {
         strtolower($answer) == strtolower($info['answer'])) {
         /* Info matches, so reset the password. */
         $password = $auth->resetPassword($info['username']);
-
-        require_once 'Horde/MIME/Mail.php';
-        $mail = new MIME_Mail(_("Your password has been reset"),
-                              sprintf(_("Your new password for %s is: %s"),
-                                      $registry->get('name', 'horde'),
-                                      $password),
-                              $email, $email, NLS::getCharset());
-        $mail->send($conf['mailer']['type'], $conf['mailer']['params']);
-
-        $notification->push(_("Your password has been reset, check your email and log in with your new password."), 'horde.success');
-        header('Location: ' . Auth::getLoginScreen('', $info['url']));
-        exit;
+        if (is_a($password, 'PEAR_Error')) {
+            $notification->push($password);
+        } else {
+            require_once 'Horde/MIME/Mail.php';
+            $mail = new MIME_Mail(_("Your password has been reset"),
+                                  sprintf(_("Your new password for %s is: %s"),
+                                          $registry->get('name', 'horde'),
+                                          $password),
+                                  $email, $email, NLS::getCharset());
+            $result = $mail->send($conf['mailer']['type'], $conf['mailer']['params']);
+            if (is_a($result, 'PEAR_Error')) {
+                Horde::logMessage($result, __FILE__, __LINE__, PEAR_LOG_ERR);
+                $notification->push(_("Your password has been reset, but couldn't be sent to you. Please contact the administrator."), 'horde.error');
+            } else {
+                $notification->push(_("Your password has been reset, check youremail and log in with your new password."), 'horde.success');
+                header('Location: ' . Auth::getLoginScreen('', $info['url']));
+                exit;
+            }
+        }
     } else {
         /* Info submitted does not match what is in prefs, redirect user back
          * to login. */

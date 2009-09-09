@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/folders.php,v 2.309.2.43 2009/01/06 15:24:01 jan Exp $
+ * $Horde: imp/folders.php,v 2.309.2.46 2009/08/06 17:12:43 slusarz Exp $
  *
  * Copyright 2000-2009 The Horde Project (http://www.horde.org/)
  *
@@ -172,17 +172,28 @@ case 'create_folder':
     break;
 
 case 'rename_folder':
-    $new_names = explode("\n", Util::getFormData('new_names'));
-    $old_names = explode("\n", Util::getFormData('old_names'));
+    // $old_names already in UTF7-IMAP
+    $old_names = array_map('trim', explode("\n", Util::getFormData('old_names')));
+    $new_names = array_map('trim', explode("\n", Util::getFormData('new_names')));
+
     $iMax = count($new_names);
     if (!empty($new_names) &&
         !empty($old_names) &&
         ($iMax == count($old_names))) {
-        for ($i = 0; $i < $iMax; $i++) {
-            $oldname = trim($old_names[$i], "\r\n");
-            $newname = trim($new_names[$i], "\r\n");
-            $newname = String::convertCharset($newname, NLS::getCharset(), 'UTF7-IMAP');
-            $imp_folder->rename($oldname, IMP::appendNamespace($newname));
+        for ($i = 0; $i < $iMax; ++$i) {
+            $old_ns = IMP::getNamespace($old_names[$i]);
+            $new = trim($new_names[$i], $old_ns['delimiter']);
+
+            /* If this is a personal namespace, then anything goes as far as
+             * the input. Just append the personal namespace to it. For
+             * others, add the  */
+            if (($old_ns['type'] == 'personal') ||
+                ($old_ns['name'] &&
+                 (stripos($new_names[$i], $old_ns['name']) !== 0))) {
+                $new = $old_ns['name'] . $new;
+            }
+
+            $imp_folder->rename($old_names[$i], String::convertCharset($new, NLS::getCharset(), 'UTF7-IMAP'));
         }
     }
     break;

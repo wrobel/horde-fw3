@@ -10,7 +10,7 @@ require_once 'SyncML/Command.php';
  * This is not strictly a command but specifies the request status code for a
  * corresponding SyncML command.
  *
- * $Horde: framework/SyncML/SyncML/Command/Status.php,v 1.15.10.12 2009/01/06 15:23:38 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Command/Status.php,v 1.15.10.13 2009/08/26 15:28:10 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -140,7 +140,7 @@ class SyncML_Command_Status extends SyncML_Command {
                              * wasn't found on the client. Try an Add
                              * instead. */
                             if ($this->_Cmd == 'Replace' &&
-                                $this->_Data == RESPONSE_NOT_FOUND) {
+                                $this->_Status == RESPONSE_NOT_FOUND) {
                                 $sync->setServerChange('add', $id[0], $id[1]);
                             }
                             if (isset($this->_SourceRef) || isset($this->_TargetRef)) {

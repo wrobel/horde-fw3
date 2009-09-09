@@ -7,7 +7,7 @@
 # Sergio G. Caredda <scaredda@tiscali.it>, 2003.
 # Copyright 2007 nethesis srl.
 # Cristian Manoni, Alessio Fattorini, Davide marini 2007
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Horde 3.2-cvs\n"
@@ -234,8 +234,9 @@ msgid ""
 "%s: This message may not be from whom it claims to be. Beware of following "
 "any links in it or of providing the sender with any personal information."
 msgstr ""
-"%s: Questo messaggio non quello che dice di essere. Fare attenzione nel "
-"seguirei link contenuti o nel fornire informazioni personali al mittente."
+"%s: Questo messaggio potrebbe non provenire dal mittente indicato. Fare "
+"attenzione nel seguire i link contenuti o nel fornire informazioni personali "
+"al mittente."
 
 #: lib/Block/weatherdotcom.php:375 lib/Block/weatherdotcom.php:420
 msgid ", gusting "
@@ -724,7 +725,7 @@ msgstr "L'applicazione è pronta."
 
 #: admin/setup/index.php:136 admin/setup/index.php:171
 msgid "Application is up-to-date."
-msgstr "L'applicazione e aggiornata."
+msgstr "L'applicazione è aggiornata."
 
 #: templates/shares/edit.inc:351
 msgid "Apply to Child Shares"
@@ -1226,8 +1227,7 @@ msgstr "Impossibile connettersi al server IMAP: %s"
 #: lib/VFS.php:335 lib/VFS/ftp.php:734 lib/VFS/sql_file.php:181
 #: lib/VFS/smb.php:449 lib/VFS/ssh2.php:685 lib/VFS/file.php:259
 msgid "Cannot copy file(s) - source and destination are the same."
-msgstr ""
-"Impossibile copiare i file(s) - sorgente e destinazione sono li stessi."
+msgstr "Impossibile copiare i file(s) - sorgente e destinazione coincidono."
 
 #: lib/VFS/ftp.php:352 lib/VFS/ssh2.php:308
 #, php-format
@@ -1383,8 +1383,8 @@ msgid ""
 "Changing your password is not supported with the current configuration.  "
 "Contact your administrator."
 msgstr ""
-"Cambiare la tua password non supportato nella configurazione corrente. "
-"Contatta il tuo amministratore."
+"Cambiamento password non supportato nella configurazione corrente. Contatta "
+"il tuo amministratore."
 
 #: lib/Horde/Form.php:2224
 msgid "Character to split multiple addresses with"
@@ -1595,7 +1595,7 @@ msgstr "Configurazione Differenze"
 
 #: config/prefs.php.dist:163
 msgid "Configuration for syncing with PDAs, Smartphones and Outlook."
-msgstr "Configurazione per la sincoronizzazione con PDA, Smartphone e Outlook"
+msgstr "Configurazione per la sincronizzazione con PDA, Smartphone e Outlook"
 
 #: admin/setup/index.php:199
 msgid "Configuration is out of date."
@@ -1639,7 +1639,7 @@ msgstr "Connessione fallita: "
 
 #: lib/Horde/Crypt/pgp.php:983
 msgid "Connection refused to the public keyserver."
-msgstr "Connessione al keyserver pubblico rifiutata"
+msgstr "Connessione al keyserver pubblico rifiutata."
 
 #: lib/Horde/Crypt/pgp.php:985
 #, php-format
@@ -1790,15 +1790,15 @@ msgstr "Impossibile determinare il destinatario dell'e-mail."
 
 #: lib/Net/SMS/sms2email_http.php:292
 msgid "Could not fetch complete address book."
-msgstr "Impossibile importare completamente la rubrica"
+msgstr "Impossibile importare completamente la rubrica."
 
 #: lib/Net/SMS/sms2email_http.php:502
 msgid "Could not fetch complete distribution list."
-msgstr "Impossibile importare completamente la lista di distribuzione"
+msgstr "Impossibile importare completamente la lista di distribuzione."
 
 #: lib/Net/SMS/sms2email_http.php:455
 msgid "Could not fetch the complete list of distribution lists."
-msgstr "Impossible importare la lista completa delle liste di distribuzione"
+msgstr "Impossible importare la lista completa delle liste di distribuzione."
 
 #: lib/VFS/ISOWriter/RealInputStrategy.php:84
 #: lib/VFS/ISOWriter/RealOutputStrategy.php:68
@@ -1814,7 +1814,7 @@ msgstr "Impossibile creare la directory \"%s\"."
 
 #: lib/Horde/Crypt/pgp.php:791 lib/Horde/Crypt/pgp.php:887
 msgid "Could not obtain public key from the keyserver."
-msgstr "Impossibile ottenere la chiave pubblica per il keyserver"
+msgstr "Impossibile ottenere la chiave pubblica per il keyserver."
 
 #: lib/VFS/ISOWriter/RealInputStrategy/copy.php:139
 #, php-format
@@ -2042,7 +2042,7 @@ msgstr "4 fasi correnti"
 
 #: admin/alarms.php:127
 msgid "Current Alarms"
-msgstr "Allarme attuale"
+msgstr "Allarmi attuali"
 
 #: admin/sessions.php:40
 msgid "Current Sessions"
@@ -2099,7 +2099,7 @@ msgstr "DD"
 msgid ""
 "DSN (see http://pear.php.net/manual/en/package.database.db.intro-dsn.php)"
 msgstr ""
-"DSN (see http://pear.php.net/manual/en/package.database.db.intro-dsn.php)"
+"DSN (vedi http://pear.php.net/manual/en/package.database.db.intro-dsn.php)"
 
 #: lib/Horde/Maintenance.php:64 lib/Horde/Date/Recurrence.php:192
 msgid "Daily"
@@ -2263,8 +2263,8 @@ msgstr "Eliminato lo script di aggiornamento del setup \"%s\"."
 #, php-format
 msgid "Deleted synchronization session for device \"%s\" and database \"%s\"."
 msgstr ""
-"Cancellate le sessioni di sicronizzazione per il device \"%s\" e il database "
-"\"%s\"."
+"Cancellate le sessioni di sicronizzazione per il dispositivo \"%s\" e il "
+"database \"%s\"."
 
 #: lib/Net/SMS/clickatell_http.php:229 lib/Net/SMS/clickatell_http.php:261
 #: lib/Net/SMS/sms2email_http.php:572 lib/Net/SMS/sms2email_http.php:604
@@ -2302,7 +2302,7 @@ msgstr "Sviluppo"
 
 #: templates/syncml/syncml.inc:9
 msgid "Device"
-msgstr "Device"
+msgstr "Dispositivo"
 
 #: lib/Block/metar.php:226
 msgid "Dew Point"
@@ -2369,7 +2369,7 @@ msgstr "Non accedere direttamente a maintenance.php"
 
 #: templates/data/csvinfo.inc:12 templates/data/tsvinfo.inc:12
 msgid "Does the first row contain the field names? If yes, check this box:"
-msgstr "La prima riga contiene i nomi dei campi? Se si, spunta questi campo"
+msgstr "La prima riga contiene i nomi dei campi? Se si, spunta questo campo"
 
 #: lib/Horde/NLS/tld.php:73 lib/Horde/NLS/GeoIP.php:69
 #: lib/Horde/NLS/countries.php:70
@@ -2540,14 +2540,14 @@ msgstr "Risultato vuoto"
 
 #: lib/Horde/Form.php:3121 lib/Horde/Form.php:3329 lib/Horde/Form.php:3495
 msgid "End year"
-msgstr "Fine anndo"
+msgstr "Fine anno"
 
 #: config/prefs.php.dist:265
 msgid ""
 "Enter a security question which you will be asked if you need to reset your "
 "password, e.g. 'what is the name of your pet?':"
 msgstr ""
-"Inserisci una domanda di sicurezza che ti verra chiesta se sarà necessario "
+"Inserisci una domanda di sicurezza che ti verrà chiesta se sarà necessario "
 
 #: lib/Horde/UI/VarRenderer/html.php:945 lib/Horde/UI/VarRenderer/html.php:957
 msgid "Enter the letters below:"
@@ -3578,7 +3578,7 @@ msgstr "inserisci"
 
 #: config/prefs.php.dist:283
 msgid "Insert an email address to which you can receive the new password:"
-msgstr "inserisci l'indirizzo email su cui ricevere la nova password:"
+msgstr "inserisci l'indirizzo email su cui ricevere la nuova password:"
 
 #: lib/Horde/IMAP/ACL/rfc2086.php:90 lib/Horde/IMAP/ACL/rfc4314.php:50
 msgid "Insert messages"
@@ -3611,7 +3611,7 @@ msgstr "Elenco Intero"
 #: lib/Horde/Group/ldap.php:479
 #, php-format
 msgid "Internal Error: An attribute must ALWAYS match itself: %s"
-msgstr "Errore interno: un attributo deve SEMPRE corrispondere a se stesso: %s"
+msgstr "Errore interno: un attributo deve SEMPRE corrispondere a sé stesso: %s"
 
 #: lib/Horde/Prefs/ldap.php:153 lib/Horde/Prefs/ldap.php:167
 #: lib/Horde/Prefs/ldap.php:185 lib/Horde/Prefs/ldap.php:198
@@ -4181,7 +4181,7 @@ msgstr "Utente"
 
 #: services/portal/sidebar.php:184
 msgid "Log out"
-msgstr "Esci"
+msgstr "Fine sessione"
 
 #: lib/Block/account.php:66
 msgid "Login"
@@ -4398,7 +4398,7 @@ msgstr "Medicina"
 
 #: lib/Block/iframe.php:25
 msgid "Medium"
-msgstr "Mezzo"
+msgstr "Medio"
 
 #: templates/admin/groups/edit.inc:17
 msgid "Members"
@@ -4422,7 +4422,7 @@ msgid ""
 "verified."
 msgstr ""
 "Messaggio verificato con successo ma il certificato della firma non può "
-"essere verificato"
+"essere verificato."
 
 #: lib/Net/SMS/clickatell_http.php:318
 msgid "Message expired."
@@ -4992,7 +4992,7 @@ msgstr "oggetto %s non presente!"
 
 #: lib/Block/weatherdotcom.php:149
 msgid "No temporary directory available for cache."
-msgstr "Nessun direttorio temporaneo disponibile per la cache."
+msgstr "Nessuna cartella temporanea disponibile per la cache."
 
 #: lib/Net/SMS/sms2email_http.php:640 lib/Net/SMS/win_http.php:230
 msgid "No username and/or password sent."
@@ -5242,7 +5242,7 @@ msgstr "Unità organizzativa"
 
 #: config/registry.php.dist:124
 msgid "Organizing"
-msgstr "GroupWare"
+msgstr "Strumenti"
 
 #: lib/Horde/NLS/GeoIP.php:119 services/keyboard.php:126
 msgid "Other"
@@ -6411,7 +6411,8 @@ msgstr "Mostra"
 msgid ""
 "Show differences between currently saved and the newly generated "
 "configuration."
-msgstr "Mostra differenze tra la configurazione salvata quella appena generata"
+msgstr ""
+"Mostra differenze tra la configurazione salvata e quella appena generata."
 
 #: lib/Block/feed.php:29
 msgid "Show extra detail?"
@@ -7094,8 +7095,8 @@ msgid ""
 "The links that caused this warning have the same background color as this "
 "message."
 msgstr ""
-"I link che ha causato questo avvertimento ha lo stesso colore di fondo di "
-"questo messaggio."
+"I link che hanno causato questo avvertimento hanno lo stesso colore di fondo "
+"di questo messaggio."
 
 #: lib/Horde/Crypt/pgp.php:158
 msgid ""
@@ -8342,7 +8343,7 @@ msgstr "Che applicazione %s deve mostrare dopo il login?"
 
 #: templates/data/csvinfo.inc:14
 msgid "What is the delimiter character?"
-msgstr "Cosa è carattere delimitatore"
+msgstr "Cosa è il carattere delimitatore"
 
 #: templates/data/csvinfo.inc:17
 msgid "What is the quote character?"
@@ -8715,8 +8716,8 @@ msgid ""
 "Your Internet Address has changed since the beginning of your %s session. To "
 "protect your security, you must login again."
 msgstr ""
-"Il tuo indirizzo IP è cambiato dall'inizio della tua %s sessione.Per ragioni "
-"di sicurezza è necessario effettuare nuovamente l'accesso"
+"Il tuo indirizzo IP è cambiato dall'inizio della tua sessione di %s.Per "
+"ragioni di sicurezza è necessario effettuare nuovamente l'accesso."
 
 #: templates/problem/problem.inc:30
 msgid "Your Name"
@@ -8730,7 +8731,7 @@ msgid ""
 msgstr ""
 "Il tuo backend di autenticazione non supporta la aggiunta di utenti.Se si "
 "desidera utilizzare Horde per l'amministrazione degli account utente è "
-"necesario utilizzare un differente backend di autenticazione"
+"necesario utilizzare un differente backend di autenticazione."
 
 #: templates/admin/user/nolist.inc:5
 msgid ""
@@ -8746,8 +8747,8 @@ msgid ""
 "Your browser appears to have changed since the beginning of your %s session. "
 "To protect your security, you must login again."
 msgstr ""
-"Il tuo browser è cambiato dall'inizio della tua sessione %s. Per ragioni di "
-"sicurezza è necessario effettuare nuovamente l'accesso."
+"Il tuo browser è cambiato dall'inizio della tua sessione di %s. Per ragioni "
+"di sicurezza è necessario effettuare nuovamente l'accesso."
 
 #: lib/Block/iframe.php:55
 msgid "Your browser does not support this feature."
@@ -9106,3 +9107,21 @@ msgstr "weather.com"
 #, php-format
 msgid "you must enter less than %d."
 msgstr "Inserire meno di %d."
+
+#: lib/Horde.php:335
+#, php-format
+msgid ""
+"This request cannot be completed because the link you followed or the form "
+"you submitted was only valid for %s minutes. Please try again now."
+msgstr ""
+"La richiesta non può essere completata in quanto il link usato o il form "
+"inviato erano validi solo per %s minuti. Si prega di riprovare ora."
+
+#: lib/Horde.php:331
+msgid ""
+"We cannot verify that this request was really sent by you. It could be a "
+"malicious request. If you intended to perform this action, you can retry it "
+"now."
+msgstr ""
+"Impossibile verificare che questa richiesta sia veramente la tua. Potrebbe "
+"essere una richiesta malevola. Se intendi procedere, puoi riprovare adesso."

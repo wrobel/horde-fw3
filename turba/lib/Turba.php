@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: turba/lib/Turba.php,v 1.59.4.43 2008/10/07 12:56:17 jan Exp $
+ * $Horde: turba/lib/Turba.php,v 1.59.4.44 2009/08/04 14:37:30 mrubinsk Exp $
  *
  * @package Turba
  */
@@ -339,6 +339,7 @@ class Turba {
         foreach ($in as $sourceId => $source) {
             $driver = &Turba_Driver::singleton($sourceId);
             if (is_a($driver, 'PEAR_Error')) {
+                Horde::logMessage(sprintf("Could not instantiate the %s source: %s", $sourceId, $driver->getMessage()), __FILE__, __LINE__, PEAR_LOG_ERR);
                 continue;
             }
 

@@ -1337,11 +1337,26 @@
     <length>255</length>
    </field>
 
+   <field>
+    <name>version_active</name>
+    <type>integer</type>
+    <default>1</default>
+    <length>1</length>
+   </field>
+
    <index>
     <name>whups_versions_pKey</name>
     <primary>true</primary>
     <field>
      <name>version_id</name>
+     <sorting>ascending</sorting>
+    </field>
+   </index>
+
+   <index>
+    <name>whups_versions_active</name>
+    <field>
+     <name>version_active</name>
      <sorting>ascending</sorting>
     </field>
    </index>

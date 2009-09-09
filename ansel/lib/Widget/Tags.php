@@ -5,7 +5,7 @@ require_once ANSEL_BASE . '/lib/Tags.php';
  * Ansel_Widget_Tags:: class to display a tags widget in the image and gallery
  * views.
  *
- * $Horde: ansel/lib/Widget/Tags.php,v 1.12 2008/05/31 01:49:11 mrubinsk Exp $
+ * $Horde: ansel/lib/Widget/Tags.php,v 1.12.2.1 2009/07/26 23:47:24 mrubinsk Exp $
  *
  * @author Michael J. Rubinsky <mrubinsk@horde.org>
  * @package Ansel
@@ -56,7 +56,12 @@ class Ansel_Widget_Tags extends Ansel_Widget {
                                                  'gallery' => $this->_view->gallery->id));
             $html .= '<form name="tagform" action="' . $actionUrl . '" onsubmit="return !addTag();" method="post">';
             $html .= '<input id="addtag" name="addtag" type="text" size="15" /> <input onclick="return !addTag();" name="tagbutton" id="tagbutton" class="button" value="' . _("Add") . '" type="submit" />';
+            $html .= '<div id="addtag_results" class="autocomplete"></div><span style="display:none;" id="addtag_loading_img">' . Horde::img('loading.gif', _("Loading...")) . '</span>';
             $html .= '</form>';
+
+            /* Attach the autocompleter */
+            $ac = Ansel_XRequest::factory('TagAutoCompleter', array('triggerId' => 'addtag'));
+            $ac->attach();
         }
         $html .= $this->_htmlEnd();
 

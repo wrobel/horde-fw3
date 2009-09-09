@@ -8,7 +8,7 @@
  *   None.</pre>
  *
  *
- * $Horde: framework/Auth/Auth/composite.php,v 1.26.10.14 2009/01/06 15:22:49 jan Exp $
+ * $Horde: framework/Auth/Auth/composite.php,v 1.26.10.15 2009/07/27 12:19:56 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -96,6 +96,7 @@ class Auth_composite extends Auth {
         case 'update':
         case 'remove':
         case 'list':
+        case 'resetpassword':
             if (!empty($this->_params['admin_driver']) &&
                 $this->_loadDriver($this->_params['admin_driver'])) {
                 return $this->_drivers[$this->_params['admin_driver']]->hasCapability($capability);
@@ -185,6 +186,25 @@ class Auth_composite extends Auth {
         if (!empty($this->_params['admin_driver']) &&
             $this->_loadDriver($this->_params['admin_driver'])) {
             return $this->_drivers[$this->_params['admin_driver']]->updateUser($oldID, $newID, $credentials);
+        } else {
+            return PEAR::raiseError('Unsupported');
+        }
+    }
+
+    /**
+     * Reset a user's password. Used for example when the user does not
+     * remember the existing password.
+     *
+     * @param string $userId  The user id for which to reset the password.
+     *
+     * @return mixed  The new password on success or a PEAR_Error object on
+     *                failure.
+     */
+    function resetPassword($userId)
+    {
+        if (!empty($this->_params['admin_driver']) &&
+            $this->_loadDriver($this->_params['admin_driver'])) {
+            return $this->_drivers[$this->_params['admin_driver']]->resetPassword($userId);
         } else {
             return PEAR::raiseError('Unsupported');
         }

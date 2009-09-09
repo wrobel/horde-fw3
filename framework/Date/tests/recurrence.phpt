@@ -43,6 +43,7 @@ function dump($rrule, $version)
 require_once 'Horde/iCalendar.php';
 require dirname(__FILE__) . '/../Date/Recurrence.php';
 
+// This is a Thursday
 $r = new Horde_Date_Recurrence('2007-03-01 10:00:00');
 
 $r->setRecurType(HORDE_DATE_RECUR_DAILY);
@@ -117,6 +118,12 @@ $r->setRecurInterval(1);
 $next = new Horde_Date('2008-03-01 00:00:00');
 $next = $r->nextRecurrence($next);
 echo $next->rfc3339DateTime() . "\n\n";
+
+$r = new Horde_Date_Recurrence('2009-03-27 10:00:00');
+$r->setRecurType(HORDE_DATE_RECUR_YEARLY_WEEKDAY);
+$r->setRecurCount(1);
+$ical = new Horde_iCalendar();
+echo $r->toRRule20($ical) . "\n\n";
 
 $rrule1 = array('D2 20070307',
                 'D2 20070308T090000Z',
@@ -299,6 +306,8 @@ MP1 2+ FR #2
 FREQ=MONTHLY;INTERVAL=1;BYDAY=2FR;COUNT=2
 
 2012-02-29T00:00:00
+
+FREQ=YEARLY;INTERVAL=1;BYDAY=4FR;BYMONTH=3;COUNT=1
 
 int(1)
 int(2)
