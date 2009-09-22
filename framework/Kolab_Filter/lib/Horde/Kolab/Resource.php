@@ -2,7 +2,7 @@
 /**
  * Resource management for the Kolab server.
  *
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php,v 1.15.2.6 2009/05/09 22:05:59 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php,v 1.15.2.7 2009/09/22 16:29:55 wrobel Exp $
  *
  * PHP version 4
  *
@@ -42,7 +42,7 @@ define('RM_ITIP_TENTATIVE',                 3);
 /**
  * Provides Kolab resource handling
  *
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php,v 1.15.2.6 2009/05/09 22:05:59 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php,v 1.15.2.7 2009/09/22 16:29:55 wrobel Exp $
  *
  * Copyright 2004-2009 Klarälvdalens Datakonsult AB
  *
@@ -510,18 +510,21 @@ class Kolab_Resource
                         $duration = $dtend - $dtstart;
                         $events = array();
                         $next_start = $vfbstart;
-                        while ($next = $recurrence->nextActiveRecurrence($next_start)) {
-                            $next_start = $next->timestamp();
-                            if ($next_start < $vfbend) {
-                                $events[$next_start] = $next_start + $duration;
-                            } else {
-                                break;
-                            }
+                        $next = $recurrence->nextActiveRecurrence($vfbstart);
+                        while ($next !== false && $next->compareDate($vfbend) <= 0) {
+                            $next_ts = $next->timestamp();
+                            $events[$next_ts] = $next_ts + $duration;
+                            $next = $recurrence->nextActiveRecurrence(array('year' => $next->year,
+                                                                            'month' => $next->month,
+                                                                            'mday' => $next->mday + 1,
+                                                                            'hour' => $next->hour,
+                                                                            'min' => $next->min,
+                                                                            'sec' => $next->sec));
                         }
                     } else {
                         $events = array($dtstart => $dtend);
                     }
-                    
+
                     foreach ($events as $dtstart => $dtend) {
                         foreach ($busyperiods as $busyfrom => $busyto) {
                             if (empty($busyfrom) && empty($busyto)) {
@@ -874,7 +877,7 @@ class Kolab_Resource
         @$http->sendRequest();
         if ($http->getResponseCode() != 200) {
             return PEAR::raiseError(sprintf('Unable to retrieve free/busy information for %s',
-                                            $email), 
+                                            $email),
                                     OUT_LOG | EX_UNAVAILABLE);
         }
         $vfb_text = $http->getResponseBody();
@@ -955,7 +958,7 @@ class Kolab_Resource
         //     for( $i = 0; $i < count($attendees); $i++ ) {
         //       $attendee = preg_replace('/^mailto:\s*/i', '', $attendees[$i]);
         //       if ($attendee != $resource) {
-        // 	continue;
+        //	continue;
         //       }
         //       $params = $params[$i];
         //       break;

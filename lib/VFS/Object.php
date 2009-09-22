@@ -1,0 +1,1 @@
+../../framework/VFS/lib/VFS/Object.php

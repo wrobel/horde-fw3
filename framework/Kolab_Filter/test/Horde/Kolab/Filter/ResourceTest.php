@@ -2,7 +2,7 @@
 /**
  * Test resource handling within the Kolab filter implementation.
  *
- * $Horde: framework/Kolab_Filter/test/Horde/Kolab/Filter/ResourceTest.php,v 1.4.2.3 2009/03/05 10:08:54 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/test/Horde/Kolab/Filter/ResourceTest.php,v 1.4.2.4 2009/09/22 16:29:56 wrobel Exp $
  *
  * @package Horde_Kolab_Filter
  */
@@ -21,7 +21,7 @@ require_once 'Horde/iCalendar/vfreebusy.php';
 /**
  * Test resource handling
  *
- * $Horde: framework/Kolab_Filter/test/Horde/Kolab/Filter/ResourceTest.php,v 1.4.2.3 2009/03/05 10:08:54 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/test/Horde/Kolab/Filter/ResourceTest.php,v 1.4.2.4 2009/09/22 16:29:56 wrobel Exp $
  *
  * Copyright 2008 Klarälvdalens Datakonsult AB
  *
@@ -141,4 +141,34 @@ class Horde_Kolab_Filter_ResourceTest extends Horde_Kolab_Test_Filter
                            'home.example.org', $params);
     }
 
+    /**
+     * Test an issue with recurring invitations.
+     *
+     * https://issues.kolab.org/issue3868
+     */
+    public function testIssue3868()
+    {
+        $GLOBALS['KOLAB_FILTER_TESTING'] = &new Horde_iCalendar_vfreebusy();
+        $GLOBALS['KOLAB_FILTER_TESTING']->setAttribute('DTSTART', Horde_iCalendar::_parseDateTime('20090901T000000Z'));
+        $GLOBALS['KOLAB_FILTER_TESTING']->setAttribute('DTEND', Horde_iCalendar::_parseDateTime('20091101T000000Z'));
+
+        $params = array('unmodified_content' => true,
+                        'incoming' => true);
+
+        $this->sendFixture(dirname(__FILE__) . '/fixtures/recur_invitation2.eml',
+                           dirname(__FILE__) . '/fixtures/null.ret',
+                           '', '', 'test@example.org', 'wrobel@example.org',
+                           'home.example.org', $params);
+
+        $result = $this->auth->authenticate('wrobel', array('password' => 'none'));
+        $this->assertNoError($result);
+
+        $folder = $this->storage->getFolder('INBOX/Kalender');
+        $data = $folder->getData();
+        $events = $data->getObjects();
+        $this->assertEquals(1251950400, $events[0]['start-date']);
+
+        $result = $data->deleteAll();
+        $this->assertNoError($result);
+    }
 }
