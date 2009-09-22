@@ -18,7 +18,7 @@ update:
 	  do                         \
 	  rm -rf lib/$$BIT*;         \
 	done
-	@php -c php.ini -q $(SYMLINK) --src framework --dest lib > /dev/null
+	@php -c php.ini -d include_path="../lib:../horde-release/horde-webmail/pear/" -q $(SYMLINK) --src framework --dest lib > /dev/null
 	cd config; for fl in *.dist;do cp $$fl $${fl/.dist};done;cd ..;\
 	for PKG in $(CONFIGS); \
 	  do                         \
