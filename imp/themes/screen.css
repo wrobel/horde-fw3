@@ -1,5 +1,5 @@
 /**
- * $Horde: imp/themes/screen.css,v 1.2.2.36 2009/05/27 15:47:08 jan Exp $
+ * $Horde: imp/themes/screen.css,v 1.2.2.37 2009/09/21 13:30:36 jan Exp $
  */
 
 /* Align styles, added for BC. */
@@ -177,6 +177,9 @@ ul.msgactions, ul.msgactions ul {
 }
 .signedinvalid td {
     background: #ffd0af;
+}
+.signedinvalid td .signature {
+    color: #999;
 }
 
 /* Search page styling. */

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ingo 1.2-cvs\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2009-03-19 10:37+0100\n"
-"PO-Revision-Date: 2009-03-19 11:25+0100\n"
+"POT-Creation-Date: 2009-09-12 10:09+0200\n"
+"PO-Revision-Date: 2009-09-12 10:21+0200\n"
 "Last-Translator: Jan Schneider\n"
 "Language-Team: i18n@lists.horde.org\n"
 "MIME-Version: 1.0\n"
@@ -57,7 +57,7 @@ msgstr "Erweiterte Einstellungen"
 msgid "All of the following"
 msgstr "Alle der folgenden"
 
-#: lib/api.php:73
+#: lib/api.php:78
 msgid "Allow Rules"
 msgstr "Regeln erlauben"
 
@@ -146,7 +146,7 @@ msgstr "Enthält"
 msgid "Copy %s"
 msgstr "%s kopieren"
 
-#: lib/Storage.php:993 lib/Storage/sql.php:623
+#: lib/Storage.php:991 lib/Storage/sql.php:678
 #, php-format
 msgid "Copy of %s"
 msgstr "Kopie von %s"
@@ -441,7 +441,7 @@ msgstr "Weiterleitung Bearbeiten"
 msgid "From"
 msgstr "Von"
 
-#: lib/Script/sieve.php:2948
+#: lib/Script/sieve.php:2971
 msgid "From:"
 msgstr "Von:"
 
@@ -462,7 +462,7 @@ msgid "Individual rules are not supported in the current filtering driver."
 msgstr ""
 "Individuelle Regeln werden vom aktuellen Filtertreiber nicht unterstützt."
 
-#: lib/Script/sieve.php:2542
+#: lib/Script/sieve.php:2565
 msgid "Inexistant mailbox specified for message delivery."
 msgstr "Nicht vorhandener Ordner für die Nachrichtenauslieferung angegeben."
 
@@ -513,11 +513,11 @@ msgstr "Vergleichstyp"
 msgid "Matches (with placeholders)"
 msgstr "Entspricht (mit Platzhaltern)"
 
-#: lib/api.php:76
+#: lib/api.php:81
 msgid "Maximum Number of Rules"
 msgstr "Maximale Anzahl an Regeln"
 
-#: lib/Storage.php:507
+#: lib/Storage.php:520
 #, php-format
 msgid ""
 "Maximum number of blacklisted addresses exceeded (Total addresses: %s, "
@@ -527,7 +527,7 @@ msgstr ""
 "insgesamt: %s, Maximale Anzahl: %s). Neue Adressen konnten nicht zur "
 "Ausschlussliste hinzugefügt werden."
 
-#: lib/Storage.php:560
+#: lib/Storage.php:573
 #, php-format
 msgid ""
 "Maximum number of whitelisted addresses exceeded (Total addresses: %s, "
@@ -545,19 +545,19 @@ msgstr ""
 "Nachrichten mit einem Spam-Level größer oder gleich diesem Wert werden als "
 "Spam behandelt."
 
-#: lib/Script/sieve.php:2962
+#: lib/Script/sieve.php:2985
 msgid "Missing address to notify"
 msgstr "Benachrichtigungsadresse fehlt"
 
-#: lib/Script/sieve.php:2343
+#: lib/Script/sieve.php:2366
 msgid "Missing address to redirect message to"
 msgstr "Die Adresse, zu der weitergeleitet werden soll, wurde nicht angegeben"
 
-#: lib/Script/sieve.php:2389
+#: lib/Script/sieve.php:2412
 msgid "Missing reason for reject"
 msgstr "Der Grund für Ablehnung wurde nicht angegeben"
 
-#: lib/Script/sieve.php:2692
+#: lib/Script/sieve.php:2715
 msgid "Missing reason in vacation."
 msgstr "Der Grund für die Abwesenheitsnachricht wurde nicht angegeben"
 
@@ -578,7 +578,7 @@ msgid "My email addresses:"
 msgstr "Meine E-Mail-Adressen:"
 
 #: templates/filters/filter-none.inc:3 templates/filters/footer.inc:6
-#: lib/Storage.php:889
+#: lib/Storage.php:887
 msgid "New Rule"
 msgstr "Neue Regel"
 
@@ -600,8 +600,8 @@ msgstr "Keine Backends in backends.php konfiguriert"
 msgid "No filters. Click \"%s\" to create a new filter."
 msgstr "Keine Filter. Klicken Sie auf \"%s\", um neue Filter anzulegen."
 
-#: lib/Script/sieve.php:1692 lib/Script/sieve.php:1841
-#: lib/Script/sieve.php:2065
+#: lib/Script/sieve.php:1715 lib/Script/sieve.php:1864
+#: lib/Script/sieve.php:2088
 msgid "No headers specified"
 msgstr "Keine E-Mail-Köpfe angegeben"
 
@@ -609,7 +609,7 @@ msgstr "Keine E-Mail-Köpfe angegeben"
 msgid "No script generated."
 msgstr "Kein Skript erzeugt."
 
-#: lib/Script/sieve.php:2081 lib/Script/sieve.php:2165
+#: lib/Script/sieve.php:2104 lib/Script/sieve.php:2188
 msgid "No strings specified"
 msgstr "Keine Texte angegeben"
 
@@ -645,6 +645,10 @@ msgstr "Übersicht"
 msgid "Participant (From,To,etc)"
 msgstr "Beteiligter (Von, An etc.)"
 
+#: lib/Storage/sql.php:410
+msgid "Permission Denied"
+msgstr "Zugriff verweigert"
+
 #: templates/javascript/new_folder.js:7
 msgid "Please enter the name of the new folder:"
 msgstr "Bitte geben Sie den Namen für den neuen Ordner an:"
@@ -668,6 +672,13 @@ msgstr "Regulärer Ausdruck"
 #: lib/Storage.php:310
 msgid "Reject with reason..."
 msgstr "Ablehnen mit dem Grund..."
+
+#: lib/Storage.php:402
+msgid ""
+"Removing user data is not supported with the current filter storage backend."
+msgstr ""
+"Das Löschen von Benutzerdaten wird vom aktuellen Filter-Speicherbackend "
+"nicht unterstützt."
 
 #: config/fields.php.dist:51
 msgid "Resent-From"
@@ -711,7 +722,7 @@ msgstr "Regel aktiviert"
 msgid "Rule Name:"
 msgstr "Regelname:"
 
-#: lib/Script/sieve.php:2950
+#: lib/Script/sieve.php:2973
 msgid "Rule:"
 msgstr "Regel:"
 
@@ -846,16 +857,16 @@ msgstr "Betreff"
 msgid "Subject of vacation message:"
 msgstr "Betreff der Abwesenheitsnachricht:"
 
-#: lib/Script/sieve.php:2949
+#: lib/Script/sieve.php:2972
 msgid "Subject:"
 msgstr "Betreff:"
 
-#: lib/api.php:113
+#: lib/api.php:180
 #, php-format
 msgid "The address \"%s\" has been added to your blacklist."
 msgstr "Die Adresse \"%s\" wurde zu Ihrer Ausschlussliste hinzugefügt."
 
-#: lib/api.php:141
+#: lib/api.php:208
 #, php-format
 msgid "The address \"%s\" has been added to your whitelist."
 msgstr "Die Adresse \"%s\" wurde zu Ihrer Positivliste hinzugefügt."
@@ -955,6 +966,10 @@ msgstr "Sie dürfen nicht mehr als %d Regeln erstellen."
 msgid "You are not allowed to create or edit custom rules."
 msgstr "Sie dürfen keine eigenen Regeln erstellen oder bearbeiten."
 
+#: lib/api.php:97
+msgid "You are not allowed to remove user data."
+msgstr "Sie dürfen keine Benutzerdaten löschen."
+
 #: rule.php:96
 #, php-format
 msgid "You cannot create empty conditions. Please fill in a value for \"%s\"."
@@ -970,7 +985,7 @@ msgstr "Sie haben nicht genügend Rechte, um Filterregeln zu löschen."
 msgid "You do not have permission to edit filter rules."
 msgstr "Sie haben nicht genügend Rechte, um Filterregeln zu bearbeiten."
 
-#: lib/Script/sieve.php:2947
+#: lib/Script/sieve.php:2970
 msgid "You have received a new message"
 msgstr "Sie haben eine neue Nachricht erhalten"
 

@@ -1,18 +1,16 @@
 <?php
 /**
- * Release focus. Possible values:
- * 0 - N/A
- * 1 - Initial freshmeat announcement
- * 2 - Documentation
- * 3 - Code cleanup
- * 4 - Minor feature enhancements
- * 5 - Major feature enhancements
- * 6 - Minor bugfixes
- * 7 - Major bugfixes
- * 8 - Minor security fixes
- * 9 - Major security fixes
+ * Release focus. Possible values (multiple possible with arrays):
+ * Horde_Release::FOCUS_INITIAL - Initial announcement
+ * Horde_Release::FOCUS_MINORFEATURE - Minor feature enhancement
+ * Horde_Release::FOCUS_MAJORFEATURE - Major feature enhancement
+ * Horde_Release::FOCUS_MINORBUG - Minor bugfixes
+ * Horde_Release::FOCUS_MAJORBUG - Major bugfixes
+ * Horde_Release::FOCUS_MINORSECURITY - Minor security fixes
+ * Horde_Release::FOCUS_MAJORSECURITY - Major security fixes
+ * Horde_Release::FOCUS_DOCS - Documentation improvements
  */
-$this->notes['fm']['focus'] = 6;
+$this->notes['fm']['focus'] = Horde_Release::FOCUS_MINORBUG;
 
 /* Mailing list release notes. */
 $this->notes['ml']['changes'] = <<<ML
@@ -27,16 +25,13 @@ Major changes compared to the Ingo H3 (1.2.1) version are:
     * Various fixes to the maildrop and procmail drivers.
     * Better default settings for forwards, vacation and spam rules.
     * Several VFS fixes.
-    * Fix determination of the spam folder.
+    * Fixed determination of the spam folder.
     * Other bug fixes and improvements.
 ML;
 
 /* Freshmeat release notes. */
 $this->notes['fm']['changes'] = <<<FM
-Various fixes to the maildrop and procmail drivers.
-Better default settings for forwards, vacation and spam rules.
-Fix determination of the spam folder and several VFS issues.
-Numerous other bug fixes and improvements.
+Various fixes have been applied to the maildrop and procmail drivers. Better default settings for forwards, vacation and spam rules are being used now. Determination of the spam folder and several VFS issues have been fixed. Numerous other bug fixes and improvements have been made.
 FM;
 
 $this->notes['name'] = 'Ingo';

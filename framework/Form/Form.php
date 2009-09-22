@@ -12,7 +12,7 @@ include_once 'Horde/String.php';
  * The Horde_Form:: package provides form rendering, validation, and
  * other functionality for the Horde Application Framework.
  *
- * $Horde: framework/Form/Form.php,v 1.306.2.76 2009/05/14 22:13:07 jan Exp $
+ * $Horde: framework/Form/Form.php,v 1.306.2.77 2009/09/14 07:22:07 jan Exp $
  *
  * Copyright 2001-2007 Robert E. Coyle <robertecoyle@hotmail.com>
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
@@ -1781,7 +1781,14 @@ class Horde_Form_Type_image extends Horde_Form_Type {
      *
      * @var array
      */
-    var $_img = array();
+    var $_img;
+
+    /**
+     * A random id that identifies the image information in the session data.
+     *
+     * @var string
+     */
+    var $_random;
 
     function init($show_upload = true, $show_keeporig = false, $max_filesize = null)
     {
@@ -1793,42 +1800,41 @@ class Horde_Form_Type_image extends Horde_Form_Type {
     function onSubmit(&$var, &$vars)
     {
         /* Get the upload. */
-        $this->_getUpload($vars, $var);
+        $this->getImage($vars, $var);
 
         /* If this was done through the upload button override the submitted
          * value of the form. */
         if ($vars->get('_do_' . $var->getVarName())) {
             $var->form->setSubmitted(false);
             if (is_a($this->_uploaded, 'PEAR_Error')) {
-                $vars->set($var->getVarName(), array('img' => serialize(array('error' => $this->_uploaded->getMessage()))));
+                $this->_img = array('hash' => $this->getRandomId(),
+                                    'error' => $this->_uploaded->getMessage());
             }
         }
     }
 
     function isValid(&$var, &$vars, $value, &$message)
     {
-        $field = $vars->get($var->getVarName());
-
         /* Get the upload. */
-        $this->_getUpload($vars, $var);
+        $this->getImage($vars, $var);
+        $field = $vars->get($var->getVarName());
 
         /* The upload generated a PEAR Error. */
         if (is_a($this->_uploaded, 'PEAR_Error')) {
             /* Not required and no image upload attempted. */
-            if (!$var->isRequired() && empty($field['img']) &&
+            if (!$var->isRequired() && empty($field['hash']) &&
                 $this->_uploaded->getCode() == UPLOAD_ERR_NO_FILE) {
                 return true;
             }
 
             if (($this->_uploaded->getCode() == UPLOAD_ERR_NO_FILE) &&
-                empty($field['img'])) {
+                empty($field['hash'])) {
                 /* Nothing uploaded and no older upload. */
                 $message = _("This field is required.");
                 return false;
-            } elseif (!empty($field['img'])) {
-                $img = @unserialize($field['img']);
-                if ($img && isset($img['error'])) {
-                    $message = $img['error'];
+            } elseif (!empty($field['hash'])) {
+                if ($this->_img && isset($this->_img['error'])) {
+                    $message = $this->_img['error'];
                     return false;
                 }
                 /* Nothing uploaded but older upload present. */
@@ -1838,11 +1844,11 @@ class Horde_Form_Type_image extends Horde_Form_Type {
                 $message = $this->_uploaded->getMessage();
                 return false;
             }
-        } elseif (empty($this->_img['size'])) {
+        } elseif (empty($this->_img['img']['size'])) {
             $message = _("The image file size could not be determined or it was 0 bytes. The upload may have been interrupted.");
             return false;
         } elseif ($this->_max_filesize &&
-                  $this->_img['size'] > $this->_max_filesize) {
+                  $this->_img['img']['size'] > $this->_max_filesize) {
             $message = sprintf(_("The image file was larger than the maximum allowed size (%d bytes)."), $this->_max_filesize);
             return false;
         }
@@ -1853,11 +1859,11 @@ class Horde_Form_Type_image extends Horde_Form_Type {
     function getInfo(&$vars, &$var, &$info)
     {
         /* Get the upload. */
-        $this->_getUpload($vars, $var);
+        $this->getImage($vars, $var);
 
         /* Get image params stored in the hidden field. */
         $value = $var->getValue($vars);
-        $info = $this->_img;
+        $info = $this->_img['img'];
         if (empty($info['file'])) {
             unset($info['file']);
             return;
@@ -1912,7 +1918,7 @@ class Horde_Form_Type_image extends Horde_Form_Type {
         if ($this->_uploaded === true) {
             /* A file has been uploaded on this submit. Save to temp dir for
              * preview work. */
-            $this->_img['type'] = $this->getUploadedFileType($varname . '[new]');
+            $this->_img['img']['type'] = $this->getUploadedFileType($varname . '[new]');
 
             /* Get the other parts of the upload. */
             require_once 'Horde/Array.php';
@@ -1920,19 +1926,22 @@ class Horde_Form_Type_image extends Horde_Form_Type {
 
             /* Get the temporary file name. */
             $keys_path = array_merge(array($base, 'tmp_name'), $keys);
-            $this->_img['file'] = Horde_Array::getElement($_FILES, $keys_path);
+            $this->_img['img']['file'] = Horde_Array::getElement($_FILES, $keys_path);
 
             /* Get the actual file name. */
-            $keys_path= array_merge(array($base, 'name'), $keys);
-            $this->_img['name'] = Horde_Array::getElement($_FILES, $keys_path);
+            $keys_path = array_merge(array($base, 'name'), $keys);
+            $this->_img['img']['name'] = Horde_Array::getElement($_FILES, $keys_path);
 
             /* Get the file size. */
-            $keys_path= array_merge(array($base, 'size'), $keys);
-            $this->_img['size'] = Horde_Array::getElement($_FILES, $keys_path);
+            $keys_path = array_merge(array($base, 'size'), $keys);
+            $this->_img['img']['size'] = Horde_Array::getElement($_FILES, $keys_path);
 
             /* Get any existing values for the image upload field. */
             $upload = $vars->get($var->getVarName());
-            $upload['img'] = @unserialize($upload['img']);
+            if (!empty($upload['hash'])) {
+                $upload['img'] = $_SESSION['horde_form'][$upload['hash']];
+                unset($_SESSION['horde_form'][$upload['hash']]);
+            }
 
             /* Get the temp file if already one uploaded, otherwise create a
              * new temporary file. */
@@ -1943,21 +1952,23 @@ class Horde_Form_Type_image extends Horde_Form_Type {
             }
 
             /* Move the browser created temp file to the new temp file. */
-            move_uploaded_file($this->_img['file'], $tmp_file);
-            $this->_img['file'] = basename($tmp_file);
-
-            /* Store the uploaded image file data to the hidden field. */
-            $upload['img'] = serialize($this->_img);
-            $vars->set($var->getVarName(), $upload);
+            move_uploaded_file($this->_img['img']['file'], $tmp_file);
+            $this->_img['img']['file'] = basename($tmp_file);
         } elseif ($this->_uploaded) {
             /* File has not been uploaded. */
             $upload = $vars->get($var->getVarName());
-            if ($this->_uploaded->getCode() == 4 && !empty($upload['img'])) {
-                $this->_img = @unserialize($upload['img']);
+            if ($this->_uploaded->getCode() == 4 &&
+                !empty($upload['hash']) &&
+                isset($_SESSION['horde_form'][$upload['hash']])) {
+                $this->_img['img'] = $_SESSION['horde_form'][$upload['hash']];
+                unset($_SESSION['horde_form'][$upload['hash']]);
                 if (isset($this->_img['error'])) {
                     $this->_uploaded = PEAR::raiseError($this->_img['error']);
                 }
             }
+        }
+        if (isset($this->_img['img'])) {
+            $_SESSION['horde_form'][$this->getRandomId()] = $this->_img['img'];
         }
     }
 
@@ -2009,6 +2020,27 @@ class Horde_Form_Type_image extends Horde_Form_Type {
     }
 
     /**
+     * Returns the current image information.
+     *
+     * @return array  The current image hash.
+     */
+    function getImage($vars, $var)
+    {
+        $this->_getUpload($vars, $var);
+        if (!isset($this->_img)) {
+            $image = $vars->get($var->getVarName());
+            if ($image) {
+                $this->loadImageData($image);
+                if (isset($image['img'])) {
+                    $this->_img = $image;
+                    $_SESSION['horde_form'][$this->getRandomId()] = $this->_img['img'];
+                }
+            }
+        }
+        return $this->_img;
+    }
+
+    /**
      * Loads any existing image data into the image field. Requires that the
      * array $image passed to it contains the structure:
      *   $image['load']['file'] - the filename of the image;
@@ -2030,8 +2062,16 @@ class Horde_Form_Type_image extends Horde_Form_Type {
             fclose($fd);
         }
 
-        $image['img'] = serialize(array('file' => $image['load']['file']));
+        $image['img'] = array('file' => $image['load']['file']);
         unset($image['load']);
+    }
+
+    function getRandomId()
+    {
+        if (!isset($this->_random)) {
+            $this->_random = uniqid(mt_rand());
+        }
+        return $this->_random;
     }
 
     /**

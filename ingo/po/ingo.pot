@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2009-03-19 10:37+0100\n"
+"POT-Creation-Date: 2009-09-12 10:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,7 +57,7 @@ msgstr ""
 msgid "All of the following"
 msgstr ""
 
-#: lib/api.php:73
+#: lib/api.php:78
 msgid "Allow Rules"
 msgstr ""
 
@@ -146,7 +146,7 @@ msgstr ""
 msgid "Copy %s"
 msgstr ""
 
-#: lib/Storage.php:993 lib/Storage/sql.php:623
+#: lib/Storage.php:991 lib/Storage/sql.php:678
 #, php-format
 msgid "Copy of %s"
 msgstr ""
@@ -432,7 +432,7 @@ msgstr ""
 msgid "From"
 msgstr ""
 
-#: lib/Script/sieve.php:2948
+#: lib/Script/sieve.php:2971
 msgid "From:"
 msgstr ""
 
@@ -452,7 +452,7 @@ msgstr ""
 msgid "Individual rules are not supported in the current filtering driver."
 msgstr ""
 
-#: lib/Script/sieve.php:2542
+#: lib/Script/sieve.php:2565
 msgid "Inexistant mailbox specified for message delivery."
 msgstr ""
 
@@ -501,18 +501,18 @@ msgstr ""
 msgid "Matches (with placeholders)"
 msgstr ""
 
-#: lib/api.php:76
+#: lib/api.php:81
 msgid "Maximum Number of Rules"
 msgstr ""
 
-#: lib/Storage.php:507
+#: lib/Storage.php:520
 #, php-format
 msgid ""
 "Maximum number of blacklisted addresses exceeded (Total addresses: %s, "
 "Maximum addresses: %s).  Could not add new addresses to blacklist."
 msgstr ""
 
-#: lib/Storage.php:560
+#: lib/Storage.php:573
 #, php-format
 msgid ""
 "Maximum number of whitelisted addresses exceeded (Total addresses: %s, "
@@ -525,19 +525,19 @@ msgid ""
 "be treated as spam."
 msgstr ""
 
-#: lib/Script/sieve.php:2962
+#: lib/Script/sieve.php:2985
 msgid "Missing address to notify"
 msgstr ""
 
-#: lib/Script/sieve.php:2343
+#: lib/Script/sieve.php:2366
 msgid "Missing address to redirect message to"
 msgstr ""
 
-#: lib/Script/sieve.php:2389
+#: lib/Script/sieve.php:2412
 msgid "Missing reason for reject"
 msgstr ""
 
-#: lib/Script/sieve.php:2692
+#: lib/Script/sieve.php:2715
 msgid "Missing reason in vacation."
 msgstr ""
 
@@ -558,7 +558,7 @@ msgid "My email addresses:"
 msgstr ""
 
 #: templates/filters/filter-none.inc:3 templates/filters/footer.inc:6
-#: lib/Storage.php:889
+#: lib/Storage.php:887
 msgid "New Rule"
 msgstr ""
 
@@ -580,8 +580,8 @@ msgstr ""
 msgid "No filters. Click \"%s\" to create a new filter."
 msgstr ""
 
-#: lib/Script/sieve.php:1692 lib/Script/sieve.php:1841
-#: lib/Script/sieve.php:2065
+#: lib/Script/sieve.php:1715 lib/Script/sieve.php:1864
+#: lib/Script/sieve.php:2088
 msgid "No headers specified"
 msgstr ""
 
@@ -589,7 +589,7 @@ msgstr ""
 msgid "No script generated."
 msgstr ""
 
-#: lib/Script/sieve.php:2081 lib/Script/sieve.php:2165
+#: lib/Script/sieve.php:2104 lib/Script/sieve.php:2188
 msgid "No strings specified"
 msgstr ""
 
@@ -625,6 +625,10 @@ msgstr ""
 msgid "Participant (From,To,etc)"
 msgstr ""
 
+#: lib/Storage/sql.php:410
+msgid "Permission Denied"
+msgstr ""
+
 #: templates/javascript/new_folder.js:7
 msgid "Please enter the name of the new folder:"
 msgstr ""
@@ -647,6 +651,11 @@ msgstr ""
 
 #: lib/Storage.php:310
 msgid "Reject with reason..."
+msgstr ""
+
+#: lib/Storage.php:402
+msgid ""
+"Removing user data is not supported with the current filter storage backend."
 msgstr ""
 
 #: config/fields.php.dist:51
@@ -691,7 +700,7 @@ msgstr ""
 msgid "Rule Name:"
 msgstr ""
 
-#: lib/Script/sieve.php:2950
+#: lib/Script/sieve.php:2973
 msgid "Rule:"
 msgstr ""
 
@@ -825,16 +834,16 @@ msgstr ""
 msgid "Subject of vacation message:"
 msgstr ""
 
-#: lib/Script/sieve.php:2949
+#: lib/Script/sieve.php:2972
 msgid "Subject:"
 msgstr ""
 
-#: lib/api.php:113
+#: lib/api.php:180
 #, php-format
 msgid "The address \"%s\" has been added to your blacklist."
 msgstr ""
 
-#: lib/api.php:141
+#: lib/api.php:208
 #, php-format
 msgid "The address \"%s\" has been added to your whitelist."
 msgstr ""
@@ -933,6 +942,10 @@ msgstr ""
 msgid "You are not allowed to create or edit custom rules."
 msgstr ""
 
+#: lib/api.php:97
+msgid "You are not allowed to remove user data."
+msgstr ""
+
 #: rule.php:96
 #, php-format
 msgid "You cannot create empty conditions. Please fill in a value for \"%s\"."
@@ -946,7 +959,7 @@ msgstr ""
 msgid "You do not have permission to edit filter rules."
 msgstr ""
 
-#: lib/Script/sieve.php:2947
+#: lib/Script/sieve.php:2970
 msgid "You have received a new message"
 msgstr ""
 

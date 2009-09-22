@@ -12,36 +12,36 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IMP 4.2-cvs\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2009-03-19 11:55+0100\n"
-"PO-Revision-Date: 2009-03-19 11:58+0100\n"
+"POT-Creation-Date: 2009-09-12 10:09+0200\n"
+"PO-Revision-Date: 2009-09-16 15:11+0200\n"
 "Last-Translator: Jan Schneider <jan@horde.org>\n"
 "Language-Team: German <dev@lists.horde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: lib/Compose.php:1980
+#: lib/Compose.php:1984
 msgid "      Cc: "
 msgstr "        Cc: "
 
-#: lib/Compose.php:1977
+#: lib/Compose.php:1981
 msgid "      To: "
 msgstr "        An: "
 
-#: lib/Compose.php:1965
+#: lib/Compose.php:1969
 msgid "    Date: "
 msgstr "     Datum: "
 
-#: lib/Compose.php:1968
+#: lib/Compose.php:1972
 msgid "    From: "
 msgstr "       Von: "
 
-#: folders.php:359 mailbox.php:357
+#: folders.php:370 mailbox.php:357
 #, php-format
 msgid " (Accesskey %s)"
 msgstr " (Zugriffstaste %s)"
 
-#: lib/Compose.php:1974
+#: lib/Compose.php:1978
 msgid " Subject: "
 msgstr "   Betreff: "
 
@@ -59,12 +59,12 @@ msgstr "%.0f MB"
 msgid "%.0f%% of %.0f MB"
 msgstr "%.0f%% von %.0f MB"
 
-#: folders.php:300 folders.php:311 lib/Message.php:863
+#: folders.php:311 folders.php:322 lib/Message.php:863
 #, php-format
 msgid "%.2fMB"
 msgstr "%.2fMB"
 
-#: thread.php:158
+#: thread.php:162
 #, php-format
 msgid "%d Messages"
 msgstr "%d Nachrichten"
@@ -207,7 +207,7 @@ msgstr "%s möchte Sie auf \"%s\" aufmerksam machen."
 msgid "%s wishes to receive the latest information about \"%s\"."
 msgstr "%s möchte die neuesten Informationen über \"%s\" erhalten."
 
-#: compose.php:1229
+#: compose.php:1233
 #, php-format
 msgid "%s%% of allowed size"
 msgstr "%s%% der erlaubten Größe"
@@ -217,7 +217,7 @@ msgstr "%s%% der erlaubten Größe"
 msgid "%s: %s"
 msgstr "%s: %s"
 
-#: lib/Compose.php:1909
+#: lib/Compose.php:1913
 #, php-format
 msgid "%u Forwarded Messages"
 msgstr "%u weitergeleitete Nachrichten"
@@ -350,7 +350,7 @@ msgstr "Zu meiner Aufgabenliste hinzufügen"
 msgid "Add to my calendar"
 msgstr "Zu meinem Kalender hinzufügen"
 
-#: lib/Compose.php:2954
+#: lib/Compose.php:2958
 #, php-format
 msgid "Added \"%s\" as an attachment."
 msgstr "\"%s\" als Anhang hinzugefügt."
@@ -390,7 +390,7 @@ msgstr "Zusätzliche Fehlerdetails"
 msgid "Additional message error details can be viewed %s."
 msgstr "Zusätzliche Fehlerdetails können %s angeschaut werden."
 
-#: compose.php:825 compose.php:1071 contacts.php:120
+#: compose.php:826 compose.php:1072 contacts.php:120
 #: templates/contacts/contacts.html:8
 msgid "Address Book"
 msgstr "Adressbuch"
@@ -551,7 +551,7 @@ msgid "Apply filter rules whenever sidebar is refreshed?"
 msgstr ""
 "Filterregeln immer anwenden, wenn das seitliche Menü aktualisiert wird?"
 
-#: thread.php:170
+#: thread.php:174
 msgid "Are you sure you want to delete all messages in this thread?"
 msgstr ""
 "Sind Sie sicher, dass Sie alle Nachrichten zu diesem Thema löschen möchten?"
@@ -628,15 +628,15 @@ msgstr "Aufsteigend"
 msgid "Ask"
 msgstr "Nachfragen"
 
-#: compose.php:1167
+#: compose.php:1171
 msgid "Attach Files"
 msgstr "Dateien anhängen"
 
-#: compose.php:1156
+#: compose.php:1160
 msgid "Attach a copy of your PGP public key to the message?"
 msgstr "Ihren öffentlichen PGP-Schlüssels an die Nachricht anhängen?"
 
-#: compose.php:1161
+#: compose.php:1165
 msgid "Attach your contact information to the message?"
 msgstr "Ihre Visitenkarte an die Nachricht anhängen?"
 
@@ -644,7 +644,7 @@ msgstr "Ihre Visitenkarte an die Nachricht anhängen?"
 msgid "Attached File:"
 msgstr "Angehängte Datei:"
 
-#: lib/Compose.php:2013 lib/Compose.php:2119
+#: lib/Compose.php:2017 lib/Compose.php:2123
 #, php-format
 msgid ""
 "Attached file \"%s\" exceeds the attachment size limits. File NOT attached."
@@ -668,7 +668,7 @@ msgstr "Anhang"
 msgid "Attachment %s deleted."
 msgstr "Anlage %s wurde gelöscht."
 
-#: lib/Compose.php:2642
+#: lib/Compose.php:2646
 msgid "Attachment Information"
 msgstr "Anhangsinformationen"
 
@@ -676,7 +676,7 @@ msgstr "Anhangsinformationen"
 msgid "Attachment stripped: Original attachment type"
 msgstr "Anhang entfernt: Ehemaliger Anhangstyp"
 
-#: compose.php:1105 lib/Compose.php:2609 templates/compose/compose.html:252
+#: compose.php:1105 lib/Compose.php:2613 templates/compose/compose.html:252
 msgid "Attachments"
 msgstr "Anhänge"
 
@@ -692,7 +692,7 @@ msgstr "Achtung"
 msgid "Auth_imp: Required IMAP extension not found."
 msgstr "Auth_imp: Die benötigte IMAP-Erweiterung wurde nicht gefunden."
 
-#: config/hooks.php.dist:538
+#: config/hooks.php.dist:579
 msgid "Authentication failed."
 msgstr "Anmeldung fehlgeschlagen."
 
@@ -712,21 +712,21 @@ msgstr "Verfügbare Adressbücher:"
 msgid "Awaiting Response"
 msgstr "Auf Antwort wartend"
 
-#: message.php:524 thread.php:137
+#: message.php:524 thread.php:141
 #, php-format
 msgid "Bac_k to %s"
 msgstr "_Zurück zu %s"
 
-#: message.php:524 thread.php:137
+#: message.php:524 thread.php:141
 #, php-format
 msgid "Back to %s"
 msgstr "Zurück zu %s"
 
-#: thread.php:134
+#: thread.php:138
 msgid "Back to Multiple Message View Index"
 msgstr "Zurück zum Nachrichtenindex"
 
-#: thread.php:132
+#: thread.php:136
 msgid "Back to Thread Display"
 msgstr "Zurück zur Themenliste"
 
@@ -734,7 +734,7 @@ msgstr "Zurück zur Themenliste"
 msgid "Background Color"
 msgstr "Hintergrundfarbe"
 
-#: lib/IMAP/Client.php:478
+#: lib/IMAP/Client.php:480
 #, php-format
 msgid "Bad login name or password."
 msgstr "Falscher Benutzername oder Passwort."
@@ -744,7 +744,7 @@ msgstr "Falscher Benutzername oder Passwort."
 msgid "Bad or malformed request. Server Responded: %s"
 msgstr "Ungültige oder fehlerhafte Anfrage. Serverantwort: %s"
 
-#: lib/IMAP/Client.php:482
+#: lib/IMAP/Client.php:484
 #, php-format
 msgid "Bad request: %s"
 msgstr "Ungültige Anfrage: %s"
@@ -805,18 +805,18 @@ msgstr "Unten"
 msgid "Bulleted List"
 msgstr "Unnummerierte Liste"
 
-#: lib/IMAP/Client.php:407
+#: lib/IMAP/Client.php:409
 msgid ""
 "CRAM-MD5 or DIGEST-MD5 requires PEAR's Auth_SASL package to be installed."
 msgstr ""
 "Für CRAM-MD5 oder DIGEST-MD5 muss das Auth_SASL-Paket von PEAR installiert "
 "sein."
 
-#: compose.php:1025
+#: compose.php:1026
 msgid "C_harset"
 msgstr "_Zeichensatz"
 
-#: search.php:279 config/hooks.php.dist:465
+#: search.php:279 config/hooks.php.dist:506
 msgid "Calendar"
 msgstr "Kalender"
 
@@ -845,7 +845,7 @@ msgstr "Verbindung zum E-Mail-Server kann nicht hergestellt werden."
 msgid "Cannot connect to the remote mail server: "
 msgstr "Verbindung zum E-Mail-Server kann nicht hergestellt werden: "
 
-#: lib/IMAP/Tree.php:2092
+#: lib/IMAP/Tree.php:2093
 msgid "Cannot directly create mailbox in this folder."
 msgstr "In diesem Order kann kein direkter Unterordner angelegt werden."
 
@@ -921,7 +921,7 @@ msgstr "Alle/Keine auswählen"
 msgid "Check Spelling"
 msgstr "Rechtschreibprüfung"
 
-#: folders.php:372 mailbox.php:656
+#: folders.php:383 mailbox.php:656
 msgid "Check _All/None"
 msgstr "_Alle/Keine auswählen"
 
@@ -991,7 +991,7 @@ msgstr "Klicken Sie %s, um das Bild herunterzuladen."
 msgid "Click %s to go to %s management page."
 msgstr "Klicken Sie %s, um zu %s-Verwaltung zu gelangen."
 
-#: lib/MIME/Viewer/pkcs7.php:484
+#: lib/MIME/Viewer/pkcs7.php:487
 #, php-format
 msgid "Click %s to view the attachment in a separate window."
 msgstr "Klicken Sie %s, um den Anhang in einem neuen Fenster anzuzeigen."
@@ -1039,23 +1039,23 @@ msgstr "Schließen"
 msgid "Close this window"
 msgstr "Dieses Fenster schließen"
 
-#: lib/IMAP/Tree.php:2037
+#: lib/IMAP/Tree.php:2038
 msgid "Closed Folder"
 msgstr "Geschlossener Ordner"
 
-#: folders.php:453
+#: folders.php:464
 msgid "Collapse"
 msgstr "Schließen"
 
-#: folders.php:388
+#: folders.php:399
 msgid "Collapse All"
 msgstr "Alle s_chließen"
 
-#: folders.php:388
+#: folders.php:399
 msgid "Collapse All Folders"
 msgstr "Alle Ordner schließen"
 
-#: folders.php:453
+#: folders.php:464
 msgid "Collapse Folder"
 msgstr "Ordner schließen"
 
@@ -1095,11 +1095,11 @@ msgstr "Legen Sie fest, wie Nachrichten angezeigt werden."
 msgid "Configure mail preview options."
 msgstr "Ändern Sie die Einstellungen für die Nachrichtenvorschau."
 
-#: config/hooks.php.dist:534
+#: config/hooks.php.dist:575
 msgid "Connection to server failed."
 msgstr "Verbindung zum Server fehlgeschlagen."
 
-#: config/hooks.php.dist:489
+#: config/hooks.php.dist:530
 msgid "Contacts"
 msgstr "Kontakte"
 
@@ -1137,7 +1137,7 @@ msgstr "Auswahl kopieren"
 msgid "Copy to folder"
 msgstr "Kopieren nach"
 
-#: lib/Compose.php:2094
+#: lib/Compose.php:2098
 #, php-format
 msgid "Could not attach %s to the message."
 msgstr "%s konnte nicht an die Nachricht angehängt werden."
@@ -1157,7 +1157,7 @@ msgstr "Das VFS-Backend konnte nicht aufgerufen werden: %s"
 msgid "Could not delete messages from %s. The server said: %s"
 msgstr "Nachrichten konnten nicht aus %s gelöscht werden: %s"
 
-#: lib/Session.php:330
+#: lib/Session.php:333
 msgid "Could not execute maintenance operations."
 msgstr "Die Wartungsaufgaben konnten nicht durchgeführt werden."
 
@@ -1178,11 +1178,11 @@ msgstr ""
 "Die Nachrichten können nicht in den Spamordner verschoben werden - es wurde "
 "in den Einstellungen kein Spamordner angebeben."
 
-#: lib/IMAP/Client.php:318
+#: lib/IMAP/Client.php:320
 msgid "Could not open secure connection to the IMAP server."
 msgstr "Sichere Verbindung zum IMAP-Server kann nicht hergestellt werden."
 
-#: lib/Session.php:286
+#: lib/Session.php:284
 msgid "Could not retrieve namespace information from IMAP server."
 msgstr ""
 "Die Namespace-Informationen konnten nicht vom IMAP-Server ausgelesen werden."
@@ -1365,7 +1365,7 @@ msgstr "Standardsortierrichtung:"
 msgid "Delegated"
 msgstr "Delegiert"
 
-#: folders.php:418 message.php:554 mailbox.php:508 mailbox.php:510
+#: folders.php:429 message.php:554 mailbox.php:508 mailbox.php:510
 #: lib/IMAP/ACL/rfc4314.php:57 templates/fetchmail/fetchmailprefs.html:122
 #: templates/contacts/contacts.html:59 templates/folders/actions.html:19
 #: templates/smime/smime.html:35 templates/pgp/pgp.html:43
@@ -1393,11 +1393,11 @@ msgstr "Ausgewählte Ordner löschen"
 msgid "Delete Stationery"
 msgstr "Vorlage löschen"
 
-#: thread.php:170
+#: thread.php:174
 msgid "Delete Thread"
 msgstr "Thema löschen"
 
-#: folders.php:418
+#: folders.php:429
 msgid "Delete Virtual Folder"
 msgstr "Virtuellen Ordner löschen"
 
@@ -1478,19 +1478,19 @@ msgstr "Beschreibung:"
 msgid "Details"
 msgstr "Details"
 
-#: lib/Compose.php:2936
+#: lib/Compose.php:2940
 #, php-format
 msgid "Did not attach \"%s\" as it was only partially uploaded."
 msgstr ""
 "\"%s\" wurde nicht angehängt, weil die Datei nicht vollständig hochgeladen "
 "wurde."
 
-#: lib/Compose.php:2945
+#: lib/Compose.php:2949
 #, php-format
 msgid "Did not attach \"%s\" as the file was empty."
 msgstr "\"%s\" wurde nicht angehängt, weil die Datei leer war."
 
-#: lib/Compose.php:2932
+#: lib/Compose.php:2936
 #, php-format
 msgid ""
 "Did not attach \"%s\" as the maximum allowed upload size has been exceeded."
@@ -1498,7 +1498,7 @@ msgstr ""
 "\"%s\" wurde nicht angehängt, weil die maximal erlaubte Größe überschritten "
 "wurde."
 
-#: lib/Compose.php:2940
+#: lib/Compose.php:2944
 #, php-format
 msgid ""
 "Did not attach \"%s\" as the server configuration did not allow the file to "
@@ -1593,7 +1593,7 @@ msgstr "Als ZIP-Datei herunterladen"
 msgid "Draft"
 msgstr "Entwurf"
 
-#: lib/IMAP/Tree.php:1992
+#: lib/IMAP/Tree.php:1993
 msgid "Draft folder"
 msgstr "Entwürfe-Ordner"
 
@@ -1621,7 +1621,7 @@ msgstr "ENDE"
 msgid "ERROR: Your message could not be delivered."
 msgstr "FEHLER: Ihre Nachricht konnte nicht verschickt werden."
 
-#: folders.php:419 templates/stationery/stationery.html:19
+#: folders.php:430 templates/stationery/stationery.html:19
 msgid "Edit"
 msgstr "Bearbeiten"
 
@@ -1629,7 +1629,7 @@ msgstr "Bearbeiten"
 msgid "Edit Search Query"
 msgstr "Suchanfrage bearbeiten"
 
-#: folders.php:419 templates/search/search.html:17
+#: folders.php:430 templates/search/search.html:17
 msgid "Edit Virtual Folder"
 msgstr "Virtuellen Ordner bearbeiten"
 
@@ -1695,16 +1695,11 @@ msgstr "S/MIME-Funktionen aktivieren?"
 msgid "Enable message previews?"
 msgstr "Nachrichtenvorschau aktivieren?"
 
-#: compose.php:1150
+#: compose.php:1153
 msgid "Encr_yption Options"
 msgstr "_Verschlüsselungs-Einstellungen"
 
-#: lib/MIME/Viewer/itip.php:608 lib/MIME/Viewer/itip.php:610
-#: lib/MIME/Viewer/itip.php:784 lib/MIME/Viewer/itip.php:786
-msgid "End"
-msgstr "Ende"
-
-#: lib/Compose.php:1813
+#: lib/Compose.php:1815
 msgid "End forwarded message"
 msgstr "Ende der weitergeleiteten Nachricht"
 
@@ -1716,6 +1711,11 @@ msgstr "Ende der Nachricht"
 #, php-format
 msgid "End message from %s"
 msgstr "Ende der Nachricht von %s"
+
+#: lib/MIME/Viewer/itip.php:608 lib/MIME/Viewer/itip.php:610
+#: lib/MIME/Viewer/itip.php:784 lib/MIME/Viewer/itip.php:786
+msgid "End:"
+msgstr "Ende:"
 
 #: smime.php:346 pgp.php:447
 msgid "Enter Passphrase"
@@ -1748,12 +1748,12 @@ msgstr "Gesamte Nachricht"
 msgid "Entry \"%s\" was successfully added to the address book"
 msgstr "Der Eintrag \"%s\" wurde erfolgreich dem Adressbuch hinzugefügt"
 
-#: lib/MIME/Viewer/pkcs7.php:441 lib/MIME/Viewer/pgp.php:448
+#: lib/MIME/Viewer/pkcs7.php:444 lib/MIME/Viewer/pgp.php:453
 #: lib/MIME/Viewer/status.php:71 lib/MIME/Viewer/status.php:162
 msgid "Error"
 msgstr "Fehler"
 
-#: lib/IMAP/Client.php:303 lib/IMAP/Client.php:323
+#: lib/IMAP/Client.php:305 lib/IMAP/Client.php:325
 #, php-format
 msgid "Error connecting to IMAP server: [%s] %s."
 msgstr "Verbindung zum IMAP-Server kann nicht hergestellt werden. [%s] %s."
@@ -1795,23 +1795,23 @@ msgstr "Alle halbe Stunde"
 msgid "Every minute"
 msgstr "Alle 60 Sekunden"
 
-#: folders.php:464
+#: folders.php:475
 msgid "Expand"
 msgstr "Vergrößern"
 
-#: folders.php:387
+#: folders.php:398
 msgid "Expand All"
 msgstr "Alle ö_ffnen"
 
-#: folders.php:387
+#: folders.php:398
 msgid "Expand All Folders"
 msgstr "Alle Ordner öffnen"
 
-#: folders.php:464
+#: folders.php:475
 msgid "Expand Folder"
 msgstr "Ordner öffnen"
 
-#: compose.php:827 compose.php:1079
+#: compose.php:828 compose.php:1080
 msgid "Expand Names"
 msgstr "Namen suchen"
 
@@ -1920,20 +1920,20 @@ msgstr "Markierte Nachrichten"
 msgid "Fo_rward"
 msgstr "_Weiterleiten"
 
-#: lib/IMAP/Tree.php:2037 templates/folders/folders_size.html:6
+#: lib/IMAP/Tree.php:2038 templates/folders/folders_size.html:6
 msgid "Folder"
 msgstr "Ordner"
 
-#: folders.php:262 templates/folders/folders_confirm.html:6
+#: folders.php:273 templates/folders/folders_confirm.html:6
 msgid "Folder Actions - Confirmation"
 msgstr "Ordneraktionen - Bestätigung"
 
-#: folders.php:325 templates/prefs/initialpageselect.inc:11
+#: folders.php:336 templates/prefs/initialpageselect.inc:11
 #: templates/folders/head.html:2
 msgid "Folder Navigator"
 msgstr "Ordner Navigation"
 
-#: folders.php:282 templates/folders/folders_size.html:1
+#: folders.php:293 templates/folders/folders_size.html:1
 msgid "Folder Sizes"
 msgstr "Ordnergrößen"
 
@@ -1957,23 +1957,23 @@ msgstr "Schriftfarbe"
 msgid "Format of message dates in the mailbox view for messages dated today"
 msgstr "Datumsformat für Nachrichten von heute in der Ordneransicht"
 
-#: message.php:568 mailbox.php:533 lib/Compose.php:1796
+#: message.php:568 mailbox.php:533 lib/Compose.php:1798
 msgid "Forward"
 msgstr "Weiterleiten"
 
-#: lib/Compose.php:1782
+#: lib/Compose.php:1784
 msgid "Forward:"
 msgstr "Weiterleiten:"
 
-#: lib/Compose.php:1895
+#: lib/Compose.php:1899
 msgid "Forwarded Message:"
 msgstr "Weitergeleitete Nachricht:"
 
-#: lib/Compose.php:1809
+#: lib/Compose.php:1811
 msgid "Forwarded message"
 msgstr "Weitergeleitete Nachricht"
 
-#: lib/Compose.php:1807
+#: lib/Compose.php:1809
 #, php-format
 msgid "Forwarded message from %s"
 msgstr "Weitergeleitete Nachricht von %s"
@@ -2012,12 +2012,12 @@ msgstr "Allgemeine Einstellungen"
 msgid "Get only new messages? (IMAP only)"
 msgstr "Nur neue Nachrichten abrufen? (nur IMAP)"
 
-#: folders.php:374 lib/MIME/Viewer/itip.php:650 lib/MIME/Viewer/itip.php:860
+#: folders.php:385 lib/MIME/Viewer/itip.php:650 lib/MIME/Viewer/itip.php:860
 #: lib/MIME/Viewer/itip.php:991
 msgid "Go"
 msgstr "Los"
 
-#: thread.php:136
+#: thread.php:140
 msgid "Go to Message"
 msgstr "Zu dieser Nachricht"
 
@@ -2034,7 +2034,7 @@ msgstr "Zum Adressbucheintrag von \"%s\""
 #: lib/MIME/Viewer/images.php:90 lib/MIME/Viewer/images.php:97
 #: lib/MIME/Viewer/images.php:99 lib/MIME/Viewer/notification.php:60
 #: lib/MIME/Viewer/notification.php:67 lib/MIME/Viewer/related.php:85
-#: lib/MIME/Viewer/pkcs7.php:484 lib/MIME/Viewer/appledouble.php:48
+#: lib/MIME/Viewer/pkcs7.php:487 lib/MIME/Viewer/appledouble.php:48
 #: lib/MIME/Viewer/status.php:119 lib/MIME/Viewer/status.php:128
 msgid "HERE"
 msgstr "HIER"
@@ -2079,11 +2079,11 @@ msgstr "Versteckt in der Themenansicht und in Mailinglisten-Nachrichten"
 msgid "Hide Deleted"
 msgstr "Verstecke gelöschte"
 
-#: folders.php:380
+#: folders.php:391
 msgid "Hide Unsubscribed"
 msgstr "_Ausgeblendete Ordner verstecken"
 
-#: compose.php:1041
+#: compose.php:1042
 msgid "High"
 msgstr "Hoch"
 
@@ -2091,7 +2091,7 @@ msgstr "Hoch"
 msgid "High Priority"
 msgstr "Hohe Priorität"
 
-#: compose.php:1040
+#: compose.php:1041
 msgid "Highest"
 msgstr "Höchste"
 
@@ -2144,7 +2144,7 @@ msgstr "IMAP ohne TLS"
 msgid "IMAP/POP3 Mail Servers"
 msgstr "IMAP/POP3 E-Mail-Server"
 
-#: lib/IMAP/Client.php:283
+#: lib/IMAP/Client.php:285
 msgid "If using SSL or TLS, you must have the PHP openssl extension loaded."
 msgstr ""
 "Um SSL oder TLS benutzen zu können, muss die OpenSSL-Erweiterung für PHP "
@@ -2251,7 +2251,7 @@ msgstr "In Bearbeitung"
 
 #: templates/prefs/initialpageselect.inc:4 lib/Folder.php:68 lib/api.php:293
 #: lib/IMP.php:732 lib/IMP.php:742 lib/IMAP/Tree.php:410
-#: lib/IMAP/Tree.php:1975
+#: lib/IMAP/Tree.php:1976
 msgid "Inbox"
 msgstr "Posteingang"
 
@@ -2435,15 +2435,15 @@ msgstr "Letzte Ordnerseite"
 msgid "Last Page"
 msgstr "Letzte Seite"
 
-#: compose.php:1193
+#: compose.php:1197
 msgid "Link Attachments?"
 msgstr "Anhänge verlinken?"
 
-#: attachment.php:35 lib/Compose.php:2600
+#: attachment.php:35 lib/Compose.php:2604
 msgid "Linked attachments are forbidden."
 msgstr "Verlinkte Anhänge sind deaktiviert."
 
-#: lib/Compose.php:2616
+#: lib/Compose.php:2620
 #, php-format
 msgid "Links will expire on %s"
 msgstr "Die Links sind bis zum %s gültig"
@@ -2464,7 +2464,7 @@ msgstr ""
 msgid "Listing in the Header"
 msgstr "Als Liste im Nachrichtenkopf"
 
-#: compose.php:812
+#: compose.php:813
 msgid "Loading..."
 msgstr "Lade..."
 
@@ -2493,7 +2493,7 @@ msgstr "Anmelden"
 msgid "Login Tasks"
 msgstr "Anmeldeaufgaben"
 
-#: compose.php:1043
+#: compose.php:1044
 msgid "Low"
 msgstr "Niedrig"
 
@@ -2501,7 +2501,7 @@ msgstr "Niedrig"
 msgid "Low Priority"
 msgstr "Niedrige Priorität"
 
-#: compose.php:1044
+#: compose.php:1045
 msgid "Lowest"
 msgstr "Niedrigste"
 
@@ -2517,7 +2517,7 @@ msgstr "Nachrichtenvorschau"
 msgid "Mail server type to connect to:"
 msgstr "Typ des E-Mail-Servers, mit dem Sie sich verbinden wollen:"
 
-#: lib/IMAP/Tree.php:1982 lib/IMAP/Tree.php:2009
+#: lib/IMAP/Tree.php:1983 lib/IMAP/Tree.php:2010
 msgid "Mailbox"
 msgstr "Ordner"
 
@@ -2658,7 +2658,7 @@ msgstr "Verschlüsselte Nachricht"
 
 #: lib/UI/Mailbox.php:149
 msgid "Message is signed"
-msgstr "Unterschriebene Nachricht"
+msgstr "Signierte Nachricht"
 
 #: compose.php:390 compose.php:397
 msgid "Message redirected successfully."
@@ -2723,7 +2723,7 @@ msgstr "Nach oben"
 msgid "Multipart/alternative"
 msgstr "Multipart/alternative"
 
-#: thread.php:177
+#: thread.php:181
 msgid "Multiple Message View"
 msgstr "Ansicht für mehrere Nachrichten"
 
@@ -2791,7 +2791,7 @@ msgstr "Nein"
 msgid "No Certificate found"
 msgstr "Kein Zertifikat gefunden"
 
-#: lib/IMP.php:1447
+#: lib/IMP.php:1449
 msgid "No Encryption"
 msgstr "Keine Verschlüsselung"
 
@@ -2836,7 +2836,7 @@ msgstr "Kein Ordner ausgewählt."
 msgid "No folders are being checked for new mail."
 msgstr "Es werden keine Ordner auf neue Nachrichten überprüft."
 
-#: folders.php:199 lib/Folder.php:423 lib/Folder.php:471
+#: folders.php:210 lib/Folder.php:423 lib/Folder.php:471
 msgid "No folders were specified"
 msgstr "Kein Ordner angegeben"
 
@@ -2856,7 +2856,7 @@ msgstr "Keine Begrenzung"
 msgid "No message body text"
 msgstr "Kein Nachrichtentext"
 
-#: lib/IMAP/Client.php:474
+#: lib/IMAP/Client.php:476
 msgid "No message returned."
 msgstr "Keine Nachricht gefunden."
 
@@ -2876,14 +2876,14 @@ msgstr "Es wurde kein persönlicher öffentlicher PGP-Schlüssel importiert."
 msgid "No personal S/MIME certificates imported."
 msgstr "Es wurden keine privaten S/MIME-Zertifikate importiert."
 
-#: lib/MIME/Viewer/pkcs7.php:302
+#: lib/MIME/Viewer/pkcs7.php:305
 msgid ""
 "No personal private key exists so the message is unable to be decrypted."
 msgstr ""
 "Sie haben zur Zeit keinen privaten Schlüssel, so dass die Nachricht nicht "
 "entschlüsselt werden kann."
 
-#: lib/IMAP/Client.php:374
+#: lib/IMAP/Client.php:376
 msgid "No supported IMAP authentication method could be found."
 msgstr ""
 "Es wurde keine unterstützte Authentifizierungsmethode für IMAP gefunden."
@@ -2903,7 +2903,7 @@ msgstr "Kein Teilnehmer"
 msgid "None"
 msgstr "Keine"
 
-#: compose.php:1042
+#: compose.php:1043
 msgid "Normal"
 msgstr "Normal"
 
@@ -2941,7 +2941,7 @@ msgstr "Beachten Sie, dass dieser Vorgang einige Zeit dauern kann"
 msgid "Notepads"
 msgstr "Notizblöcke"
 
-#: config/hooks.php.dist:481
+#: config/hooks.php.dist:522
 msgid "Notes"
 msgstr "Bemerkungen"
 
@@ -2994,7 +2994,7 @@ msgstr "Or_dner anzeigen"
 msgid "Open Folder"
 msgstr "Ordner anzeigen"
 
-#: lib/IMAP/Tree.php:2033
+#: lib/IMAP/Tree.php:2034
 msgid "Opened Folder"
 msgstr "Geöffneter Ordner"
 
@@ -3025,15 +3025,15 @@ msgid "Outbound Server"
 msgstr "Postausgangs-Server"
 
 #: pgp.php:44 lib/MIME/Viewer/pgp.php:165 lib/MIME/Viewer/pgp.php:213
-#: lib/MIME/Viewer/pgp.php:309
+#: lib/MIME/Viewer/pgp.php:314
 msgid "PGP"
 msgstr "PGP"
 
-#: lib/IMP.php:1450
+#: lib/IMP.php:1452
 msgid "PGP Encrypt Message"
 msgstr "Verschlüsseln (PGP)"
 
-#: lib/IMP.php:1455
+#: lib/IMP.php:1457
 msgid "PGP Encrypt Message with passphrase"
 msgstr "Mit Passwort verschlüsseln (PGP)"
 
@@ -3070,19 +3070,19 @@ msgstr "Der öffentliche PGP-Schlüssel für \"%s\" wurde erfolgreich gelöscht."
 msgid "PGP Public Keyring"
 msgstr "Öffentlicher PGP-Schlüsselbund"
 
-#: lib/IMP.php:1451
+#: lib/IMP.php:1453
 msgid "PGP Sign Message"
 msgstr "Unterzeichnen (PGP)"
 
-#: lib/IMP.php:1452
+#: lib/IMP.php:1454
 msgid "PGP Sign/Encrypt Message"
 msgstr "Unterzeichnen und verschlüsseln (PGP)"
 
-#: lib/IMP.php:1456
+#: lib/IMP.php:1458
 msgid "PGP Sign/Encrypt Message with passphrase"
 msgstr "Unterzeichnen und mit Passwort verschlüsseln (PGP)"
 
-#: compose.php:732
+#: compose.php:733
 msgid ""
 "PGP encryption cannot be used by default as public keys cannot be found for "
 "all recipients."
@@ -3302,7 +3302,7 @@ msgstr "Bitte geben Sie Ihr Passwort an."
 msgid "Please provide your username."
 msgstr "Bitte geben Sie Ihren Benutzernamen an."
 
-#: lib/Compose.php:2790 lib/UI/Compose.php:26
+#: lib/Compose.php:2794 lib/UI/Compose.php:26
 msgid "Please resolve ambiguous or invalid addresses."
 msgstr "Bitte mehrdeutige oder ungültige Adressen korrigieren."
 
@@ -3338,7 +3338,7 @@ msgstr "Powered by Horde"
 msgid "Precede your signature with dashes ('-- ')?"
 msgstr "Striche ('-- ') vor der Signatur einfügen?"
 
-#: config/hooks.php.dist:497
+#: config/hooks.php.dist:538
 msgid "Preferences"
 msgstr "Benutzereinstellungen"
 
@@ -3346,7 +3346,7 @@ msgstr "Benutzereinstellungen"
 msgid "Preferences successfully updated."
 msgstr "Die Einstellungen wurden erfolgreich gespeichert."
 
-#: compose.php:1213
+#: compose.php:1217
 msgid "Preview"
 msgstr "Vorschau"
 
@@ -3400,7 +3400,7 @@ msgstr "Protokoll"
 msgid "Protocol:"
 msgstr "Protokoll:"
 
-#: lib/Crypt/PGP.php:489
+#: lib/Crypt/PGP.php:491
 msgid "Public PGP keyserver support has been disabled."
 msgstr ""
 "Die Unterstützung für öffentliche PGP-Schlüsselserver ist deaktiviert worden."
@@ -3540,7 +3540,7 @@ msgstr "Diese Nachricht umleiten"
 msgid "Redoes your last action"
 msgstr "Führt letzte Aktion erneut aus"
 
-#: folders.php:361
+#: folders.php:372
 msgid "Refresh"
 msgstr "Aktualisiere"
 
@@ -3552,7 +3552,7 @@ msgstr "Ordnerübersicht aktualisieren:"
 msgid "Reload"
 msgstr "Aktualisieren"
 
-#: folders.php:351
+#: folders.php:362
 msgid "Reload View"
 msgstr "Ansicht a_ktualisieren"
 
@@ -3628,7 +3628,7 @@ msgstr "Mit erfragten Frei/Gebucht-Informationen antworten."
 msgid "Reply-To"
 msgstr "Antwort an"
 
-#: lib/Compose.php:1971
+#: lib/Compose.php:1975
 msgid "Reply-To: "
 msgstr "Antwort an: "
 
@@ -3716,12 +3716,12 @@ msgstr "Die Rechte für den Benutzer \"%s\" können nicht geändert werden."
 msgid "Role"
 msgstr "Rolle"
 
-#: smime.php:67 lib/MIME/Viewer/pkcs7.php:173 lib/MIME/Viewer/pkcs7.php:293
-#: lib/MIME/Viewer/pkcs7.php:485
+#: smime.php:67 lib/MIME/Viewer/pkcs7.php:173 lib/MIME/Viewer/pkcs7.php:296
+#: lib/MIME/Viewer/pkcs7.php:488
 msgid "S/MIME"
 msgstr "S/MIME"
 
-#: lib/IMP.php:1460
+#: lib/IMP.php:1462
 msgid "S/MIME Encrypt Message"
 msgstr "Verschlüsseln (S/MIME)"
 
@@ -3767,11 +3767,11 @@ msgstr "Öffentlicher S/MIME-Schlüsselbund"
 msgid "S/MIME Public/Private Keypair successfully added."
 msgstr "Das öffentliche/private Schlüsselpaar wurde erfolgreich gespeichert."
 
-#: lib/IMP.php:1461
+#: lib/IMP.php:1463
 msgid "S/MIME Sign Message"
 msgstr "Unterzeichnen (S/MIME)"
 
-#: lib/IMP.php:1462
+#: lib/IMP.php:1464
 msgid "S/MIME Sign/Encrypt Message"
 msgstr "Unterzeichnen und verschlüsseln (S/MIME)"
 
@@ -3779,7 +3779,7 @@ msgstr "Unterzeichnen und verschlüsseln (S/MIME)"
 msgid "S/MIME support is disabled on this system."
 msgstr "Die S/MIME-Unterstützung wurde auf diesem System deaktiviert."
 
-#: lib/MIME/Viewer/pkcs7.php:297
+#: lib/MIME/Viewer/pkcs7.php:300
 msgid ""
 "S/MIME support is not currently enabled so the message is unable to be "
 "decrypted."
@@ -3793,7 +3793,7 @@ msgid ""
 "be displayed."
 msgstr ""
 "Die S/MIME-Unterstützung ist zur Zeit deaktiviert, so dass der Inhalt dieser "
-"unterschriebenen Nachricht nicht angezeigt werden kann."
+"signierten Nachricht nicht angezeigt werden kann."
 
 #: lib/MIME/Viewer/pkcs7.php:177
 msgid ""
@@ -3801,7 +3801,7 @@ msgid ""
 "verified."
 msgstr ""
 "Die S/MIME-Unterstützung ist zur Zeit deaktiviert, so dass die digitale "
-"Unterschrift nicht überprüft werden kann."
+"Signatur nicht überprüft werden kann."
 
 #: lib/MIME/Viewer/pkcs7.php:134
 msgid "S/MIME support is not enabled."
@@ -3826,7 +3826,7 @@ msgstr "SMTP"
 msgid "SMTP Port"
 msgstr "SMTP-Port"
 
-#: compose.php:1017
+#: compose.php:1018
 msgid "S_ubject"
 msgstr "Betre_ff"
 
@@ -3843,7 +3843,7 @@ msgstr "Speichern unter"
 msgid "Save"
 msgstr "Speichern"
 
-#: compose.php:1189
+#: compose.php:1193
 msgid "Save Attachments with message in sent-mail folder?"
 msgstr ""
 "Anhänge zusammen mit Nachrichten im Ordner für gesendete Nachrichten "
@@ -3871,7 +3871,7 @@ msgstr "Einstellungen speichern"
 msgid "Save Stationery"
 msgstr "Vorlage speichern"
 
-#: compose.php:930
+#: compose.php:931
 msgid "Save _Draft"
 msgstr "_Entwurf speichern"
 
@@ -4051,7 +4051,7 @@ msgstr "Die Nachricht ohne ein Betreff verschicken?"
 msgid "Sent"
 msgstr "Gesendet"
 
-#: lib/IMAP/Tree.php:2005
+#: lib/IMAP/Tree.php:2006
 msgid "Sent mail folder"
 msgstr "Ordner für gesendete Nachrichten"
 
@@ -4101,14 +4101,14 @@ msgstr "Gemeinsame Ordner"
 #: templates/pgp/pgp.html:15
 msgid "Should PGP signed messages automatically be verified when viewed?"
 msgstr ""
-"Sollen mit PGP unterschriebene Nachrichten beim Anzeigen automatisch "
-"überprüft werden?"
+"Sollen mit PGP signierte Nachrichten beim Anzeigen automatisch überprüft "
+"werden?"
 
 #: templates/smime/smime.html:7
 msgid "Should S/MIME signed messages automatically be verified when viewed?"
 msgstr ""
-"Sollen mit S/MIME unterschriebene Nachrichten beim Anzeigen automatisch "
-"überprüft werden?"
+"Sollen mit S/MIME signierte Nachrichten beim Anzeigen automatisch überprüft "
+"werden?"
 
 #: config/prefs.php.dist:913
 msgid ""
@@ -4167,7 +4167,7 @@ msgstr "Nur eingeblendete Ordner anzeigen"
 msgid "Show Size"
 msgstr "Größe anzeigen"
 
-#: folders.php:380
+#: folders.php:391
 msgid "Show Unsubscribed"
 msgstr "Ausge_blendete Ordner anzeigen"
 
@@ -4267,7 +4267,7 @@ msgstr "Sortieren nach Empfänger"
 msgid "Spam"
 msgstr "Spam"
 
-#: lib/IMAP/Tree.php:1998
+#: lib/IMAP/Tree.php:1999
 msgid "Spam folder"
 msgstr "Spam-Ordner"
 
@@ -4275,7 +4275,7 @@ msgstr "Spam-Ordner"
 msgid "Spam folder:"
 msgstr "Spam-Ordner:"
 
-#: compose.php:1098
+#: compose.php:1099
 msgid "Special Characters"
 msgstr "Sonderzeichen"
 
@@ -4293,10 +4293,10 @@ msgstr "Block teilen"
 
 #: lib/MIME/Viewer/itip.php:599 lib/MIME/Viewer/itip.php:601
 #: lib/MIME/Viewer/itip.php:775 lib/MIME/Viewer/itip.php:777
-msgid "Start"
-msgstr "Beginn"
+msgid "Start:"
+msgstr "Beginn:"
 
-#: compose.php:1056 templates/stationery/stationery.html:8
+#: compose.php:1057 templates/stationery/stationery.html:8
 #: templates/stationery/stationery.html:12
 msgid "Stationery"
 msgstr "Vorlagen"
@@ -4367,7 +4367,7 @@ msgstr "Einblenden"
 msgid "Subscript"
 msgstr "Tiefgestellt"
 
-#: lib/MIME/Viewer/pkcs7.php:445 lib/MIME/Viewer/pgp.php:451
+#: lib/MIME/Viewer/pkcs7.php:448 lib/MIME/Viewer/pgp.php:456
 #: lib/MIME/Viewer/status.php:86
 msgid "Success"
 msgstr "Erfolg"
@@ -4409,7 +4409,7 @@ msgstr "Zielordner:"
 msgid "Task Lists"
 msgstr "Aufgabenlisten"
 
-#: config/hooks.php.dist:473
+#: config/hooks.php.dist:514
 msgid "Tasks"
 msgstr "Aufgaben"
 
@@ -4454,7 +4454,7 @@ msgstr "Schriftgröße"
 msgid "The From: column of the message should be linked:"
 msgstr "Die Von: Spalte der Nachricht soll so verlinkt werden:"
 
-#: lib/IMAP/Client.php:432
+#: lib/IMAP/Client.php:434
 msgid ""
 "The IMAP server does not appear to support the authentication method "
 "selected. Please contact your system administrator."
@@ -4539,7 +4539,7 @@ msgstr "Der Termin wurde Ihrem Kalender hinzugefügt."
 msgid "The event was updated in your calendar."
 msgstr "Der Termin wurde in Ihrem Kalender aktualisiert."
 
-#: lib/Compose.php:2047
+#: lib/Compose.php:2051
 #, php-format
 msgid "The file %s could not be attached."
 msgstr "Die Datei %s konnte nicht angehängt werden."
@@ -4549,7 +4549,7 @@ msgstr "Die Datei %s konnte nicht angehängt werden."
 msgid "The folder \"%s\" already exists"
 msgstr "Der Ordner \"%s\" existiert bereits"
 
-#: folders.php:248 lib/Folder.php:190
+#: folders.php:259 lib/Folder.php:190
 #, php-format
 msgid "The folder \"%s\" may not be deleted."
 msgstr "Der Ordner \"%s\" darf nicht gelöscht werden."
@@ -4636,14 +4636,14 @@ msgstr ""
 msgid "The message being composed has been closed. Exiting."
 msgstr "Die Nachricht, die erstellt wurde, ist geschlossen worden. Abbruch."
 
-#: lib/MIME/Viewer/pgp.php:376
+#: lib/MIME/Viewer/pgp.php:381
 msgid ""
 "The message below does not appear to be a valid PGP encrypted message. "
 "Error: "
 msgstr ""
 "Dies scheint keine gültige PGP-verschlüsselte Nachricht zu sein. Fehler:"
 
-#: lib/MIME/Viewer/pgp.php:252 lib/MIME/Viewer/pgp.php:411
+#: lib/MIME/Viewer/pgp.php:252 lib/MIME/Viewer/pgp.php:416
 msgid ""
 "The message below does not appear to be in the correct PGP format (according "
 "to RFC 2015)."
@@ -4651,7 +4651,7 @@ msgstr ""
 "Die Nachricht unten ist anscheinend nicht im korrekten PGP-Format (nach RFC "
 "2015)."
 
-#: lib/MIME/Viewer/pgp.php:371
+#: lib/MIME/Viewer/pgp.php:376
 msgid "The message below has been compressed with PGP."
 msgstr "Die Nachricht unten wurde mit PGP komprimiert."
 
@@ -4660,27 +4660,26 @@ msgid ""
 "The message below has been digitally signed and encrypted with PGP, but the "
 "signature cannot be verified."
 msgstr ""
-"Die Nachricht unten wurde mit PGP digital unterschrieben und verschlüsselt, "
-"aber die Unterschrift kann nicht überprüft werden."
+"Die Nachricht unten wurde mit PGP digital signiert und verschlüsselt, aber "
+"die Signatur kann nicht überprüft werden."
 
 #: lib/MIME/Viewer/pgp.php:207
 msgid "The message below has been digitally signed and encrypted with PGP."
-msgstr ""
-"Die Nachricht unten wurde mit PGP digital unterschrieben und verschlüsselt."
+msgstr "Die Nachricht unten wurde mit PGP digital signiert und verschlüsselt."
 
 #: lib/MIME/Viewer/pgp.php:203
 msgid ""
 "The message below has been digitally signed with PGP, but the signature "
 "cannot be verified."
 msgstr ""
-"Die Nachricht unten wurde mit PGP digital unterschrieben, aber die "
-"Unterschrift kann nicht überprüft werden."
+"Die Nachricht unten wurde mit PGP digital signiert, aber die Signatur kann "
+"nicht überprüft werden."
 
 #: lib/MIME/Viewer/pgp.php:209
 msgid "The message below has been digitally signed with PGP."
-msgstr "Die Nachricht unten wurde mit PGP digital unterschrieben."
+msgstr "Die Nachricht unten wurde mit PGP digital signiert."
 
-#: lib/MIME/Viewer/pgp.php:313
+#: lib/MIME/Viewer/pgp.php:318
 msgid ""
 "The message below has been encrypted with PGP, however, PGP support is "
 "disabled so the message cannot be decrypted."
@@ -4688,7 +4687,7 @@ msgstr ""
 "Die Nachricht unten wurde mit PGP verschlüsselt, aber die PGP-Unterstützung "
 "wurde deaktiviert, so dass die Nachricht nicht entschlüsselt werden kann."
 
-#: lib/MIME/Viewer/pgp.php:355
+#: lib/MIME/Viewer/pgp.php:360
 msgid ""
 "The message below has been encrypted with PGP, however, no personal private "
 "key exists so the message cannot be decrypted."
@@ -4697,11 +4696,11 @@ msgstr ""
 "persönlicher privater Schlüssel, mit dem die Nachricht entschlüsselt werden "
 "könnte."
 
-#: lib/MIME/Viewer/pgp.php:371
+#: lib/MIME/Viewer/pgp.php:376
 msgid "The message below has been encrypted with PGP."
 msgstr "Die Nachricht unten wurde mit PGP verschlüsselt."
 
-#: lib/MIME/Viewer/pgp.php:365
+#: lib/MIME/Viewer/pgp.php:370
 msgid ""
 "The message below has been encrypted with PGP. You must enter the passphrase "
 "for your PGP private key before it can be decrypted."
@@ -4710,7 +4709,7 @@ msgstr ""
 "Ihren persönlichen privaten Schlüssel angeben, mit dem die Nachricht "
 "entschlüsselt werden kann."
 
-#: lib/MIME/Viewer/pgp.php:348
+#: lib/MIME/Viewer/pgp.php:353
 msgid ""
 "The message below has been encrypted with PGP. You must enter the passphrase "
 "that was used to encrypt this message."
@@ -4718,15 +4717,14 @@ msgstr ""
 "Die Nachricht unten wurde mit PGP verschlüsselt, Sie müssen das Passwort "
 "angeben, mit dem diese Nachricht verschlüsselt wurde."
 
-#: lib/MIME/Viewer/pgp.php:455
+#: lib/MIME/Viewer/pgp.php:460
 msgid "The message below has been verified."
 msgstr "Die Nachricht unten wurde überprüft und bestätigt."
 
-#: lib/Crypt/PGP.php:380
+#: lib/Crypt/PGP.php:382
 msgid "The message below has not been digitally signed or encrypted with PGP."
 msgstr ""
-"Die Nachricht unten wurde nicht mit PGP digital unterschrieben und "
-"verschlüsselt."
+"Die Nachricht unten wurde nicht mit PGP digital signiert und verschlüsselt."
 
 #: templates/javascript_defs.php:34
 msgid "The message does not have a Subject entered."
@@ -4753,7 +4751,7 @@ msgstr "Diese Nachricht wurde bei Ihrem Systemadministrator als Spam gemeldet."
 msgid "The message has been reported as spam."
 msgstr "Diese Nachricht wurde als Spam gemeldet."
 
-#: lib/MIME/Viewer/pkcs7.php:450
+#: lib/MIME/Viewer/pkcs7.php:453
 #, php-format
 msgid "The message has been verified. Sender: %s."
 msgstr "Die Nachricht wurde überprüft und bestätigt. Absender: %s."
@@ -4869,7 +4867,7 @@ msgstr ""
 msgid "There are no messages in this mailbox."
 msgstr "In diesem Ordner sind keine Nachrichten vorhanden"
 
-#: thread.php:104
+#: thread.php:108
 msgid "There is no text that can be displayed inline."
 msgstr "Es gibt keine anzeigbaren Nachrichtenteile."
 
@@ -4972,15 +4970,14 @@ msgstr ""
 msgid "This message contains a Macintosh file."
 msgstr "Diese Nachricht enthält eine Macintosh-Datei."
 
-#: lib/MIME/Viewer/pkcs7.php:476
+#: lib/MIME/Viewer/pkcs7.php:479
 msgid ""
 "This message contains an attachment that has been digitally signed via S/"
 "MIME."
 msgstr ""
-"Diese Nachricht enthält einen Anhang, der mit S/MIME digital unterschrieben "
-"wurde."
+"Diese Nachricht enthält einen Anhang, der mit S/MIME digital signiert wurde."
 
-#: lib/MIME/Viewer/pkcs7.php:480
+#: lib/MIME/Viewer/pkcs7.php:483
 msgid "This message contains an attachment that has been encrypted via S/MIME."
 msgstr ""
 "Diese Nachricht enthält einen Anhang, der mit S/MIME verschlüsselt wurde."
@@ -4999,9 +4996,9 @@ msgstr "Diese Nachricht scheint nicht im korrekten S/MIME-Format zu sein."
 
 #: lib/MIME/Viewer/pkcs7.php:174
 msgid "This message has been digitally signed via S/MIME."
-msgstr "Diese Nachricht wurde mit S/MIME digital unterschrieben."
+msgstr "Diese Nachricht wurde mit S/MIME digital signiert."
 
-#: lib/MIME/Viewer/pkcs7.php:170 lib/MIME/Viewer/pkcs7.php:294
+#: lib/MIME/Viewer/pkcs7.php:170 lib/MIME/Viewer/pkcs7.php:297
 msgid "This message has been encrypted via S/MIME."
 msgstr "Diese Nachricht wurde mit S/MIME verschlüsselt."
 
@@ -5036,7 +5033,7 @@ msgstr "Dieses Fenster muss vom Fenster für neue Nachrichten geöffnet werden."
 msgid "Thread Display:"
 msgstr "Themenansicht:"
 
-#: thread.php:177 config/prefs.php.dist:1206
+#: thread.php:181 config/prefs.php.dist:1206
 msgid "Thread View"
 msgstr "Themenansicht"
 
@@ -5048,7 +5045,7 @@ msgstr "Vorschau der angehängten PDF-Datei"
 msgid "Thumbnail of attached image"
 msgstr "Vorschau des angehängten Bildes"
 
-#: compose.php:831 mailbox.php:587 lib/Search.php:716 lib/UI/Mailbox.php:90
+#: compose.php:832 mailbox.php:587 lib/Search.php:716 lib/UI/Mailbox.php:90
 #: lib/UI/Message.php:26 templates/contacts/contacts.html:40
 #: templates/login/recompose.html:14
 msgid "To"
@@ -5102,7 +5099,7 @@ msgstr ""
 "Um eine TLS-Verbindung benutzen zu können, müssen Sie PHP Version 5.1.0 oder "
 "höher einsetzen."
 
-#: thread.php:117 templates/thread/thread.html:31
+#: thread.php:121 templates/thread/thread.html:31
 msgid "To:"
 msgstr "An:"
 
@@ -5130,7 +5127,7 @@ msgstr "Traditionell"
 msgid "Trash"
 msgstr "Papierkorb"
 
-#: lib/IMAP/Tree.php:1985
+#: lib/IMAP/Tree.php:1986
 msgid "Trash folder"
 msgstr "\"Papierkorb\"-Ordner"
 
@@ -5181,11 +5178,11 @@ msgstr "Unbekannte Empfänger"
 msgid "Undoes your last action"
 msgstr "Macht die letzte Aktion rückgängig"
 
-#: lib/IMAP/Client.php:462
+#: lib/IMAP/Client.php:464
 msgid "Unexpected response from server to AUTHENTICATE command."
 msgstr "Unerwartete Antwort des Servers auf AUTHENTICATE Kommando."
 
-#: lib/IMAP/Client.php:428
+#: lib/IMAP/Client.php:430
 msgid "Unexpected response from server to Digest-MD5 response."
 msgstr "Unerwartete Antwort des Servers auf Digest-MD5 Anfrage."
 
@@ -5338,7 +5335,7 @@ msgstr "Persönlichen öffentlichen Schlüssel anzeigen"
 msgid "View Thread"
 msgstr "Thema Anzeigen"
 
-#: lib/MIME/Viewer/pkcs7.php:484
+#: lib/MIME/Viewer/pkcs7.php:487
 msgid "View attachment in a separate window"
 msgstr "Anhang in einem neuen Fenster anzeigen"
 
@@ -5350,7 +5347,7 @@ msgstr "Inhalt in einem neuen Fenster anzeigen"
 msgid "View event"
 msgstr "Termin anzeigen"
 
-#: folders.php:436 mailbox.php:695
+#: folders.php:447 mailbox.php:695
 #, php-format
 msgid "View messages in %s"
 msgstr "Nachrichten in %s anzeigen"
@@ -5384,7 +5381,7 @@ msgstr "Virtuelle Ordner müssen einen Namen haben."
 msgid "Virtual INBOX"
 msgstr "Virtueller Posteingang"
 
-#: lib/IMAP/Tree.php:2025
+#: lib/IMAP/Tree.php:2026
 msgid "Virtual INBOX Folder"
 msgstr "Virtueller Posteingangsordner"
 
@@ -5392,7 +5389,7 @@ msgstr "Virtueller Posteingangsordner"
 msgid "Virtual Trash"
 msgstr "Virtueller Papierkorb"
 
-#: lib/IMAP/Tree.php:2021
+#: lib/IMAP/Tree.php:2022
 msgid "Virtual Trash Folder"
 msgstr "Virtueller Papierkorb"
 
@@ -5400,7 +5397,7 @@ msgstr "Virtueller Papierkorb"
 msgid "Virtual folder label:"
 msgstr "Name des Virtuellen Ordners:"
 
-#: lib/Crypt/PGP.php:380 lib/MIME/Viewer/pkcs7.php:439
+#: lib/Crypt/PGP.php:382 lib/MIME/Viewer/pkcs7.php:442
 msgid "Warning"
 msgstr "Warnung"
 
@@ -5613,14 +5610,14 @@ msgstr "Sie haben keine externen E-Mail-Konten angelegt."
 msgid "You must enter at least one recipient."
 msgstr "Sie müssen mindestens einen Empfänger angeben."
 
-#: lib/MIME/Viewer/pgp.php:365
+#: lib/MIME/Viewer/pgp.php:370
 msgid ""
 "You must enter the passphrase for your PGP private key to view this message."
 msgstr ""
 "Sie müssen das Passwort für Ihren privaten PGP-Schlüssel angeben, um diese "
 "Nachricht lesen zu können."
 
-#: lib/MIME/Viewer/pkcs7.php:313
+#: lib/MIME/Viewer/pkcs7.php:316
 msgid ""
 "You must enter the passphrase for your S/MIME private key to view this "
 "message"
@@ -5628,7 +5625,7 @@ msgstr ""
 "Sie müssen das Passwort für Ihren privaten S/MIME-Schlüssel angeben, um "
 "diese Nachricht lesen zu können"
 
-#: lib/MIME/Viewer/pgp.php:348
+#: lib/MIME/Viewer/pgp.php:353
 msgid "You must enter the passphrase that was used to encrypt this message."
 msgstr ""
 "Sie müssen das Passwort angeben, das benutzt wurde, um diese Nachricht zu "
@@ -5796,8 +5793,8 @@ msgstr "[Anhang entfernt: Ehemaliger Anhangstyp: %s, Name: %s]"
 msgid "[Hide Addresses]"
 msgstr "[Adressen verstecken]"
 
-#: message.php:285 rss.php:75 mailbox.php:719 lib/Compose.php:1891
-#: lib/Compose.php:2369
+#: message.php:285 rss.php:75 mailbox.php:719 lib/Compose.php:1895
+#: lib/Compose.php:2373
 msgid "[No Subject]"
 msgstr "[Kein Betreff]"
 
@@ -5814,7 +5811,7 @@ msgstr "[Adressen anzeigen -"
 msgid "[Show Addresses - %d recipients]"
 msgstr "[Adressen anzeigen - %d Empfänger]"
 
-#: lib/Compose.php:3015
+#: lib/Compose.php:3019
 msgid "[Truncated Text]"
 msgstr "[Text gekürzt]"
 
@@ -5822,7 +5819,7 @@ msgstr "[Text gekürzt]"
 msgid "[View the raw key]"
 msgstr "[Unformatiert anzeigen]"
 
-#: compose.php:966
+#: compose.php:967
 msgid "_Bcc"
 msgstr "_Bcc"
 
@@ -5830,7 +5827,7 @@ msgstr "_Bcc"
 msgid "_Blacklist"
 msgstr "Auss_chlussliste"
 
-#: compose.php:963
+#: compose.php:964
 msgid "_Cc"
 msgstr "_Cc"
 
@@ -5842,7 +5839,7 @@ msgstr "_Löschen"
 msgid "_Folders"
 msgstr "_Ordner"
 
-#: compose.php:943
+#: compose.php:944
 msgid "_Identity"
 msgstr "_Identität"
 
@@ -5866,7 +5863,7 @@ msgstr "_Neue Nachricht"
 msgid "_Print"
 msgstr "D_rucken"
 
-#: compose.php:1035
+#: compose.php:1036
 msgid "_Priority"
 msgstr "_Priorität"
 
@@ -5883,7 +5880,7 @@ msgstr "An_tworten"
 msgid "_Search"
 msgstr "_Suche"
 
-#: compose.php:928
+#: compose.php:929
 msgid "_Send Message"
 msgstr "_Senden"
 
@@ -5891,7 +5888,7 @@ msgstr "_Senden"
 msgid "_Thread"
 msgstr "_Thema"
 
-#: compose.php:959 compose.php:961
+#: compose.php:960 compose.php:962
 msgid "_To"
 msgstr "_An"
 
@@ -5915,7 +5912,7 @@ msgstr "Adressat unbekannt"
 msgid "and"
 msgstr "und"
 
-#: lib/Compose.php:2002
+#: lib/Compose.php:2006
 msgid "attachment"
 msgstr "Anhang"
 

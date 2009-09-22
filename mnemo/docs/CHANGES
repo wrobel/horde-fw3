@@ -1,6 +1,13 @@
 ----------
-v2.2.2-cvs
+v2.2.3-cvs
 ----------
+
+
+
+
+------
+v2.2.2
+------
 
 [mms] Upgrade prototype.js to v1.6.1.
 [jan] Fix synchronization with output compression enabled (Bug #7769).

@@ -1,1 +1,1 @@
-<?php define('MNEMO_VERSION', 'H3 (2.2.2-cvs)') ?>
+<?php define('MNEMO_VERSION', 'H3 (2.2.3-cvs)') ?>

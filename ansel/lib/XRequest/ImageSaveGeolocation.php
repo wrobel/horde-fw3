@@ -8,7 +8,7 @@
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.
  *
- * $Horde: ansel/lib/XRequest/ImageSaveGeolocation.php,v 1.1.2.7 2009/07/16 16:07:53 mrubinsk Exp $
+ * $Horde: ansel/lib/XRequest/ImageSaveGeolocation.php,v 1.1.2.8 2009/09/12 08:29:55 jan Exp $
  *
  * @author Michael J. Rubinsky <mrubinsk@horde.org>
  * @package Ansel
@@ -81,7 +81,7 @@ class Ansel_XRequest_ImageSaveGeolocation extends Ansel_XRequest {
                 $imgsrc .= '</div>';
                 $content = sprintf(_("No location data present. Place using %s map %s or click on image to place at the same location."), $addLink, '</a>') . $imgsrc;
             } else {
-                $content = _("No location data present. You may add some ") . $addLink . _("here") . '</a>';
+                $content = sprintf(_("No location data present. You may add some %s"), $addLink . _("here") . '</a>');
             }
 
             echo $content;

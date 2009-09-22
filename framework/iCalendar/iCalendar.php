@@ -12,7 +12,7 @@ include_once 'Horde/NLS.php';
 /**
  * Class representing iCalendar files.
  *
- * $Horde: framework/iCalendar/iCalendar.php,v 1.57.4.76 2009/05/14 10:47:29 jan Exp $
+ * $Horde: framework/iCalendar/iCalendar.php,v 1.57.4.77 2009/09/15 16:36:51 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -1237,16 +1237,11 @@ class Horde_iCalendar {
         $temp = array();
         if (!is_object($value) && !is_array($value)) {
             $tz = date('O', $value);
-            $TZOffset = (3600 * substr($tz, 0, 3)) + (60 * substr(date('O', $value), 3, 2));
+            $TZOffset = (3600 * substr($tz, 0, 3)) + (60 * substr($tz, 3, 2));
             $value -= $TZOffset;
 
             $temp['zone']   = 'UTC';
-            $temp['year']   = date('Y', $value);
-            $temp['month']  = date('n', $value);
-            $temp['mday']   = date('j', $value);
-            $temp['hour']   = date('G', $value);
-            $temp['minute'] = date('i', $value);
-            $temp['second'] = date('s', $value);
+            list($temp['year'], $temp['month'], $temp['mday'], $temp['hour'], $temp['minute'], $temp['second']) = explode('-', date('Y-n-j-G-i-s', $value));
         } else {
             $dateOb = new Horde_Date($value);
             return Horde_iCalendar::_exportDateTime($dateOb->timestamp());

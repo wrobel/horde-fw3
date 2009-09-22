@@ -1,1 +1,1 @@
-<?php define('HORDE_VERSION', '3.3.5-cvs') ?>
+<?php define('HORDE_VERSION', '3.3.6-cvs') ?>

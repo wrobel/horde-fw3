@@ -2,7 +2,7 @@
 /**
  * The Ingo_Script_procmail:: class represents a Procmail script generator.
  *
- * $Horde: ingo/lib/Script/procmail.php,v 1.46.10.32 2009/01/06 15:24:37 jan Exp $
+ * $Horde: ingo/lib/Script/procmail.php,v 1.46.10.33 2009/09/16 12:37:22 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -470,63 +470,64 @@ class Procmail_Recipe {
             $this->_action[] = '{';
             foreach ($params['action-value']['addresses'] as $address) {
                 if (!empty($address)) {
-                    $this->_action[] = '  FILEDATE=`test -f ${VACATION_DIR:-.}/\'.vacation.' . $address . '\' && '
+                    $this->_action[] = '  :0';
+                    $this->_action[] = '  * ^TO_' . $address;
+                    $this->_action[] = '  {';
+                    $this->_action[] = '    FILEDATE=`test -f ${VACATION_DIR:-.}/\'.vacation.' . $address . '\' && '
                         . $this->_params['ls'] . ' -lcn --time-style=+%s ${VACATION_DIR:-.}/\'.vacation.' . $address . '\' | '
                         . 'awk \'{ print $6 + (' . $days * 86400 . ') }\'`';
-                    $this->_action[] = '  DATE=`' . $this->_params['date'] . ' +%s`';
-                    $this->_action[] = '  DUMMY=`test -f ${VACATION_DIR:-.}/\'.vacation.' . $address . '\' && '
+                    $this->_action[] = '    DATE=`' . $this->_params['date'] . ' +%s`';
+                    $this->_action[] = '    DUMMY=`test -f ${VACATION_DIR:-.}/\'.vacation.' . $address . '\' && '
                         . 'test $FILEDATE -le $DATE && '
                         . 'rm ${VACATION_DIR:-.}/\'.vacation.' . $address . '\'`';
                     if ($timed) {
-                        $this->_action[] = '  START=' . $params['action-value']['start'];
-                        $this->_action[] = '  END=' . $params['action-value']['end'];
+                        $this->_action[] = '    START=' . $params['action-value']['start'];
+                        $this->_action[] = '    END=' . $params['action-value']['end'];
                     }
                     $this->_action[] = '';
-                    $this->_action[] = '  :0 h';
-                    $this->_action[] = '  SUBJECT=| formail -xSubject:';
+                    $this->_action[] = '    :0 h';
+                    $this->_action[] = '    SUBJECT=| formail -xSubject:';
                     $this->_action[] = '';
-                    $this->_action[] = '  :0 Whc: ${VACATION_DIR:-.}/vacation.lock';
+                    $this->_action[] = '    :0 Whc: ${VACATION_DIR:-.}/vacation.lock';
                     if ($timed) {
-                        $this->_action[] = '  * ? test $DATE -gt $START && test $END -gt $DATE';
-                        $this->_action[] = '  {';
-                        $this->_action[] = '  :0 Whc';
+                        $this->_action[] = '    * ? test $DATE -gt $START && test $END -gt $DATE';
+			$this->_action[] = '    {';
+                        $this->_action[] = '      :0 Wh';
                     }
-                    $this->_action[] = '  * ^TO_' . $address;
-                    $this->_action[] = '  * !^X-Loop: ' . $address;
-                    $this->_action[] = '  * !^X-Spam-Flag: YES';
+                    $this->_action[] = '      * ^TO_' . $address;
+                    $this->_action[] = '      * !^X-Loop: ' . $address;
+                    $this->_action[] = '      * !^X-Spam-Flag: YES';
                     if (count($params['action-value']['excludes']) > 0) {
                         foreach ($params['action-value']['excludes'] as $exclude) {
                             if (!empty($exclude)) {
-                                $this->_action[] = '  * !^From.*' . $exclude;
+                                $this->_action[] = '      * !^From.*' . $exclude;
                             }
                         }
                     }
                     if ($params['action-value']['ignorelist']) {
-                        $this->_action[] = '  * !^FROM_DAEMON';
+                        $this->_action[] = '      * !^FROM_DAEMON';
                     }
-                    $this->_action[] = '  | formail -rD 8192 ${VACATION_DIR:-.}/.vacation.' . $address;
-                    $this->_action[] = '  :0 ehc';
-                    $this->_action[] = '  | (formail -rI"Precedence: junk" \\';
-                    $this->_action[] = '     -a"From: <' . $address . '>" \\';
-                    $this->_action[] = '     -A"X-Loop: ' . $address . '" \\';
+                    $this->_action[] = '      | formail -rD 8192 ${VACATION_DIR:-.}/.vacation.' . $address;
+                    $this->_action[] = '      :0 eh';
+                    $this->_action[] = '      | (formail -rI"Precedence: junk" \\';
+                    $this->_action[] = '       -a"From: <' . $address . '>" \\';
+                    $this->_action[] = '       -A"X-Loop: ' . $address . '" \\';
                     if (MIME::is8bit($params['action-value']['reason'])) {
-                        $this->_action[] = '     -i"Subject: ' . MIME::encode($params['action-value']['subject'] . ' (Re: $SUBJECT)', NLS::getCharset()) . '" \\';
-                        $this->_action[] = '     -i"Content-Transfer-Encoding: quoted-printable" \\';
-                        $this->_action[] = '     -i"Content-Type: text/plain; charset=' . NLS::getCharset() . '" ; \\';
+                        $this->_action[] = '       -i"Subject: ' . MIME::encode($params['action-value']['subject'] . ' (Re: $SUBJECT)', NLS::getCharset()) . '" \\';
+                        $this->_action[] = '       -i"Content-Transfer-Encoding: quoted-printable" \\';
+                        $this->_action[] = '       -i"Content-Type: text/plain; charset=' . NLS::getCharset() . '" ; \\';
                         $reason = MIME::quotedPrintableEncode($params['action-value']['reason'], "\n");
                     } else {
-                        $this->_action[] = '     -i"Subject: ' . MIME::encode($params['action-value']['subject'] . ' (Re: $SUBJECT)', NLS::getCharset()) . '" ; \\';
+                        $this->_action[] = '       -i"Subject: ' . MIME::encode($params['action-value']['subject'] . ' (Re: $SUBJECT)', NLS::getCharset()) . '" ; \\';
                         $reason = $params['action-value']['reason'];
                     }
                     $reason = addcslashes($reason, "\\\n\r\t\"`");
-                    $this->_action[] = '     ' . $this->_params['echo'] . ' -e "' . $reason . '" \\';
-                    $this->_action[] = '    ) | $SENDMAIL -f' . $address . ' -oi -t';
-                    $this->_action[] = '';
-                    $this->_action[] = '    :0';
-                    $this->_action[] = '    /dev/null';
+                    $this->_action[] = '       ' . $this->_params['echo'] . ' -e "' . $reason . '" \\';
+                    $this->_action[] = '      ) | $SENDMAIL -f' . $address . ' -oi -t';
                     if ($timed) {
-                        $this->_action[] = '  }';
+                        $this->_action[] = '    }';
                     }
+                    $this->_action[] = '  }';
                 }
             }
             $this->_action[] = '}';

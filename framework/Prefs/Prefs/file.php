@@ -2,7 +2,7 @@
 /**
  * Preferences storage implementation using files in a directory
  *
- * $Horde: framework/Prefs/Prefs/file.php,v 1.1.2.3 2009/01/06 15:23:31 jan Exp $
+ * $Horde: framework/Prefs/Prefs/file.php,v 1.1.2.4 2009/09/09 20:06:22 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -20,7 +20,7 @@ class Prefs_file extends Prefs {
      *
      * @var int
      */
-    var $_version = 1;
+    var $_version = 2;
 
     /**
      * Directory to store the preferences
@@ -114,8 +114,12 @@ class Prefs_file extends Prefs {
             if (!is_array($this->_file_cache) ||
                 !array_key_exists('__file_version', $this->_file_cache) ||
                 !($this->_file_cache['__file_version'] == $this->_version)) {
-                return PEAR::raiseError(sprintf(_("Wrong version number found: %s (should be %d)"),
-                                                $this->_file_cache['__file_version'], $this->_version));
+                if ($this->_file_cache['__file_version'] == 1) {
+                    $this->transformV1V2();
+                } else {
+                    return PEAR::raiseError(sprintf(_("Wrong version number found: %s (should be %d)"),
+                                                    $this->_file_cache['__file_version'], $this->_version));
+                }
             }
         }
 
@@ -125,8 +129,16 @@ class Prefs_file extends Prefs {
         }
 
         // Merge config values
-        foreach ($this->_file_cache[$scope] as $name => $pref) {
-            $this->_scopes[$scope][$name] = $pref;
+        foreach ($this->_file_cache[$scope] as $name => $val) {
+            if (isset($this->_scopes[$scope][$name])) {
+                $this->_scopes[$scope][$name]['v'] = $val;
+                $this->_scopes[$scope][$name]['m'] &= ~_PREF_DEFAULT;
+            } else {
+                // This is a shared preference.
+                $this->_scopes[$scope][$name] = array('v' => $val,
+                                                      'm' => 0,
+                                                      'd' => null);
+            }
         }
 
         return true;
@@ -144,6 +156,32 @@ class Prefs_file extends Prefs {
         }
 
         return unserialize(file_get_contents($this->_fullpath));
+    }
+
+    /**
+     * Transforms the broken version 1 format into version 2.
+     *
+     * @return NULL
+     */
+    function transformV1V2()
+    {
+        $version2 = array('__file_version' => 2);
+        foreach ($this->_file_cache as $scope => $prefs) {
+            if ($scope == '__file_version') {
+                continue;
+            }
+            foreach ($prefs as $name => $pref) {
+                /**
+                 * Default values should not have been stored by the
+                 * driver. They are being set via the prefs.php files.
+                 */
+                if ($pref['m'] & _PREF_DEFAULT) {
+                    continue;
+                }
+                $version2[$scope][$name] = $pref['v'];
+            }
+        }
+        $this->_file_cache = $version2;
     }
 
     /**
@@ -192,28 +230,27 @@ class Prefs_file extends Prefs {
         if (!$dirty_prefs) {
             return true;
         }
-        $dirty_scopes = array_keys($dirty_prefs);
 
         // Read in all existing preferences, if any.
         $this->_retrieve('');
         if (!is_array($this->_file_cache)) {
-            $this->_file_cache = array();
+            $this->_file_cache = array('__file_version' => $this->_version);
         }
 
         // Update all values from dirty scope
-        foreach ($dirty_scopes as $scope) {
-            foreach ($this->_scopes[$scope] as $name => $pref) {
+        foreach ($dirty_prefs as $scope => $prefs) {
+            foreach ($prefs as $name => $pref) {
                 // Don't store locked preferences.
                 if ($this->_scopes[$scope][$name]['m'] & _PREF_LOCKED) {
                     continue;
                 }
 
-                $this->_file_cache[$scope][$name] = $pref;
+                $this->_file_cache[$scope][$name] = $pref['v'];
+
+                // Clean the pref since it was just saved.
+                $this->_scopes[$scope][$name]['m'] &= ~_PREF_DIRTY;
             }
         }
-
-        // Add/update version number
-        $this->_file_cache['__file_version'] = $this->_version;
 
         if ($this->_write_cache() == false) {
             return PEAR::raiseError(sprintf(_("Write of preferences to %s failed"),

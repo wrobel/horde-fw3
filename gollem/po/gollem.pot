@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2009-03-19 10:37+0100\n"
+"POT-Creation-Date: 2009-09-12 10:10+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,12 +26,12 @@ msgstr ""
 msgid "%.2fMB / %.2fMB  (%.2f%%)"
 msgstr ""
 
-#: manager.php:560
+#: manager.php:567
 #, php-format
 msgid "%d item"
 msgstr ""
 
-#: manager.php:560
+#: manager.php:567
 #, php-format
 msgid "%d items"
 msgstr ""
@@ -57,7 +57,7 @@ msgid ""
 "block popup windows?"
 msgstr ""
 
-#: edit.php:33 edit.php:43 view.php:35 view.php:42
+#: edit.php:33 edit.php:43 view.php:36 view.php:43
 #, php-format
 msgid "Access denied to %s"
 msgstr ""
@@ -116,7 +116,7 @@ msgstr ""
 msgid "Below is the current contents of your clipboard."
 msgstr ""
 
-#: manager.php:285 selectlist.php:101 clipboard.php:38
+#: manager.php:290 selectlist.php:101 clipboard.php:38
 #: templates/edit/edit.inc:13
 msgid "Cancel"
 msgstr ""
@@ -144,7 +144,7 @@ msgstr ""
 msgid "Cannot paste \"%s\" (file cleared from clipboard): %s"
 msgstr ""
 
-#: manager.php:313 templates/manager/manager.html:70
+#: manager.php:318 templates/manager/manager.html:70
 msgid "Change Folder"
 msgstr ""
 
@@ -168,7 +168,7 @@ msgstr ""
 msgid "Check Quota"
 msgstr ""
 
-#: manager.php:556
+#: manager.php:563
 msgid "Check _All/None"
 msgstr ""
 
@@ -192,7 +192,7 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: login.php:258
+#: login.php:261
 #, php-format
 msgid "Connect to: %s"
 msgstr ""
@@ -206,7 +206,7 @@ msgstr ""
 msgid "Could not save the compiled template file '%s'."
 msgstr ""
 
-#: manager.php:306 templates/manager/manager.html:58
+#: manager.php:311 templates/manager/manager.html:58
 msgid "Create Folder"
 msgstr ""
 
@@ -253,7 +253,7 @@ msgstr ""
 msgid "Download"
 msgstr ""
 
-#: manager.php:440
+#: manager.php:446
 #, php-format
 msgid "Download %s"
 msgstr ""
@@ -340,7 +340,7 @@ msgstr ""
 msgid "Gollem Backend Permissions Administration"
 msgstr ""
 
-#: manager.php:535 templates/manager/manager.html:10
+#: manager.php:542 templates/manager/manager.html:10
 msgid "Group"
 msgstr ""
 
@@ -376,7 +376,7 @@ msgstr ""
 msgid "List folders first?"
 msgstr ""
 
-#: login.php:307
+#: login.php:310
 msgid "Login"
 msgstr ""
 
@@ -384,7 +384,7 @@ msgstr ""
 msgid "Menu List"
 msgstr ""
 
-#: manager.php:505
+#: manager.php:512
 msgid "Modified"
 msgstr ""
 
@@ -396,7 +396,7 @@ msgstr ""
 msgid "Move right"
 msgstr ""
 
-#: manager.php:483
+#: manager.php:490
 msgid "Name"
 msgstr ""
 
@@ -416,11 +416,11 @@ msgstr ""
 msgid "No quota found."
 msgstr ""
 
-#: manager.php:286
+#: manager.php:291
 msgid "OK"
 msgstr ""
 
-#: manager.php:528 templates/manager/manager.html:9
+#: manager.php:535 templates/manager/manager.html:9
 msgid "Owner"
 msgstr ""
 
@@ -432,7 +432,7 @@ msgstr ""
 msgid "Paste"
 msgstr ""
 
-#: manager.php:521
+#: manager.php:528
 msgid "Permission"
 msgstr ""
 
@@ -479,7 +479,7 @@ msgstr ""
 msgid "Read"
 msgstr ""
 
-#: manager.php:291
+#: manager.php:296
 msgid "Refresh"
 msgstr ""
 
@@ -503,7 +503,7 @@ msgstr ""
 msgid "Reset"
 msgstr ""
 
-#: manager.php:284 templates/edit/edit.inc:11
+#: manager.php:289 templates/edit/edit.inc:11
 msgid "Save"
 msgstr ""
 
@@ -523,7 +523,7 @@ msgstr ""
 msgid "Show dotfiles?"
 msgstr ""
 
-#: manager.php:513
+#: manager.php:520
 msgid "Size"
 msgstr ""
 
@@ -563,7 +563,7 @@ msgid ""
 "next to the filename and click on &quot;Paste&quot;."
 msgstr ""
 
-#: manager.php:475
+#: manager.php:482
 msgid "Type"
 msgstr ""
 
@@ -592,7 +592,7 @@ msgstr ""
 msgid "Up to %s"
 msgstr ""
 
-#: manager.php:303
+#: manager.php:308
 msgid "Upload File(s)"
 msgstr ""
 
@@ -604,11 +604,11 @@ msgstr ""
 msgid "Username"
 msgstr ""
 
-#: manager.php:298
+#: manager.php:303
 msgid "View Clipboard"
 msgstr ""
 
-#: login.php:201
+#: login.php:204
 #, php-format
 msgid "Welcome to %s"
 msgstr ""

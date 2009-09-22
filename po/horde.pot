@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2009-04-30 18:33+0200\n"
+"POT-Creation-Date: 2009-09-12 10:19+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,30 +17,30 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: framework/Form/Form.php:3071
+#: framework/Form/Form.php:3122
 #, php-format
 msgid " (%s days ago)"
 msgstr ""
 
-#: framework/Horde/Horde.php:1597
+#: framework/Horde/Horde.php:1622
 #, php-format
 msgid " (Accesskey %s)"
 msgstr ""
 
-#: framework/Form/Form.php:3079
+#: framework/Form/Form.php:3130
 #, php-format
 msgid " (in %s days)"
 msgstr ""
 
-#: framework/Form/Form.php:3075
+#: framework/Form/Form.php:3126
 msgid " (today)"
 msgstr ""
 
-#: framework/Form/Form.php:3077
+#: framework/Form/Form.php:3128
 msgid " (tomorrow)"
 msgstr ""
 
-#: framework/Form/Form.php:3073
+#: framework/Form/Form.php:3124
 msgid " (yesterday)"
 msgstr ""
 
@@ -59,12 +59,12 @@ msgstr ""
 msgid "\"%s\" is not a directory."
 msgstr ""
 
-#: framework/CLI/CLI.php:348
+#: framework/CLI/CLI.php:350
 #, php-format
 msgid "\"%s\" is not a valid choice."
 msgstr ""
 
-#: framework/Form/Form.php:2200
+#: framework/Form/Form.php:2251
 #, php-format
 msgid "\"%s\" is not a valid email address."
 msgstr ""
@@ -174,7 +174,7 @@ msgstr ""
 msgid "%s Setup"
 msgstr ""
 
-#: framework/Auth/Auth/Signup.php:191
+#: framework/Auth/Auth/Signup.php:265
 #, php-format
 msgid "%s Sign Up"
 msgstr ""
@@ -202,37 +202,37 @@ msgstr ""
 msgid "%s authentication credentials"
 msgstr ""
 
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:979
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:983
 #, php-format
 msgid "%s has accepted the invitation to the following event:"
 msgstr ""
 
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:978
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:982
 #, php-format
 msgid "%s has accepted the update to the following event:"
 msgstr ""
 
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:702
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:706
 #, php-format
 msgid "%s has been cancelled"
 msgstr ""
 
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:969
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:973
 #, php-format
 msgid "%s has declined the invitation to the following event:"
 msgstr ""
 
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:968
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:972
 #, php-format
 msgid "%s has declined the update to the following event:"
 msgstr ""
 
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:989
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:993
 #, php-format
 msgid "%s has tentatively accepted the invitation to the following event:"
 msgstr ""
 
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:988
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:992
 #, php-format
 msgid "%s has tentatively accepted the update to the following event:"
 msgstr ""
@@ -254,7 +254,7 @@ msgid ""
 "box for any operation(s) you want to perform at this time."
 msgstr ""
 
-#: framework/Form/Form.php:3026
+#: framework/Form/Form.php:3077
 #, php-format
 msgid "%s is required"
 msgstr ""
@@ -313,8 +313,8 @@ msgid ", variable from %s to %s"
 msgstr ""
 
 #: framework/Perms/Perms/UI.php:341 framework/Perms/Perms/UI.php:400
-#: framework/Form/Form.php:2738 framework/Form/Form.php:2804
-#: framework/UI/UI/VarRenderer/html.php:833
+#: framework/Form/Form.php:2789 framework/Form/Form.php:2855
+#: framework/UI/UI/VarRenderer/html.php:828
 msgid "-- select --"
 msgstr ""
 
@@ -374,7 +374,7 @@ msgstr ""
 msgid "A database backend is required for this block."
 msgstr ""
 
-#: framework/Horde/Horde.php:193
+#: framework/Horde/Horde.php:198
 msgid "A fatal error has occurred"
 msgstr ""
 
@@ -384,6 +384,12 @@ msgid ""
 "A message has been sent to \"%s\" to verify that this is really your "
 "address. The new email address is activated as soon as you confirm this "
 "message."
+msgstr ""
+
+#: framework/Auth/Auth/Signup.php:166
+#, php-format
+msgid ""
+"A new account for the user \"%s\" has been requested through the signup form."
 msgstr ""
 
 #: admin/setup/index.php:134 admin/setup/index.php:169
@@ -485,7 +491,7 @@ msgstr ""
 msgid "API ID"
 msgstr ""
 
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:980
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:984
 msgid "Accepted: "
 msgstr ""
 
@@ -513,11 +519,16 @@ msgstr ""
 msgid "Account frozen."
 msgstr ""
 
+#: framework/Auth/Auth/Signup.php:173
+#, php-format
+msgid "Account signup request for \"%s\""
+msgstr ""
+
 #: config/registry.php.dist:330
 msgid "Accounting"
 msgstr ""
 
-#: framework/Perms/Perms/UI.php:195 framework/UI/UI/VarRenderer/html.php:636
+#: framework/Perms/Perms/UI.php:195 framework/UI/UI/VarRenderer/html.php:631
 #: templates/portal/add.inc:14 templates/admin/groups/addchild.inc:12
 msgid "Add"
 msgstr ""
@@ -577,11 +588,11 @@ msgstr ""
 msgid "Add the %s Menu as a Mozilla Sidebar"
 msgstr ""
 
-#: framework/MIME/MIME/Viewer/vcard.php:323
+#: framework/MIME/MIME/Viewer/vcard.php:330
 msgid "Add to address book:"
 msgstr ""
 
-#: framework/MIME/MIME/Viewer/vcard.php:338
+#: framework/MIME/MIME/Viewer/vcard.php:345
 msgid "Add to my address book"
 msgstr ""
 
@@ -589,7 +600,7 @@ msgstr ""
 msgid "Add user"
 msgstr ""
 
-#: admin/user.php:95
+#: admin/signup_confirm.php:83 admin/user.php:95
 #, php-format
 msgid ""
 "Added \"%s\" to the system, but could not add additional signup information: "
@@ -605,13 +616,13 @@ msgstr ""
 msgid "Adding users is disabled."
 msgstr ""
 
-#: framework/MIME/MIME/Viewer/vcard.php:151
-#: framework/MIME/MIME/Viewer/vcard.php:209 framework/Form/Form.php:1556
+#: framework/MIME/MIME/Viewer/vcard.php:158
+#: framework/MIME/MIME/Viewer/vcard.php:216 framework/Form/Form.php:1556
 #: lib/Block/vatid.php:102
 msgid "Address"
 msgstr ""
 
-#: framework/MIME/MIME/Viewer/vcard.php:325 config/registry.php.dist:132
+#: framework/MIME/MIME/Viewer/vcard.php:332 config/registry.php.dist:132
 msgid "Address Book"
 msgstr ""
 
@@ -696,7 +707,7 @@ msgstr ""
 msgid "All"
 msgstr ""
 
-#: framework/Perms/Perms/UI.php:254 templates/shares/edit.inc:61
+#: framework/Perms/Perms/UI.php:254 templates/shares/edit.inc:64
 msgid "All Authenticated Users"
 msgstr ""
 
@@ -712,7 +723,7 @@ msgstr ""
 msgid "All synchronization sessions deleted."
 msgstr ""
 
-#: framework/Form/Form.php:2388
+#: framework/Form/Form.php:2439
 msgid "Allow multiple addresses?"
 msgstr ""
 
@@ -811,8 +822,12 @@ msgstr ""
 msgid "Approve"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:448
-#: framework/UI/UI/VarRenderer/html.php:486
+#: framework/Auth/Auth/Signup.php:168
+msgid "Approve the account:"
+msgstr ""
+
+#: framework/UI/UI/VarRenderer/html.php:443
+#: framework/UI/UI/VarRenderer/html.php:481
 #: templates/javascript/open_calendar.js:63
 msgid "April"
 msgstr ""
@@ -885,7 +900,7 @@ msgstr ""
 msgid "Ask for confirmation before doing maintenance operations?"
 msgstr ""
 
-#: framework/Form/Form.php:4029
+#: framework/Form/Form.php:4080
 msgid "Assignment columns"
 msgstr ""
 
@@ -919,8 +934,8 @@ msgstr ""
 msgid "Attributes"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:452
-#: framework/UI/UI/VarRenderer/html.php:490
+#: framework/UI/UI/VarRenderer/html.php:447
+#: framework/UI/UI/VarRenderer/html.php:485
 #: templates/javascript/open_calendar.js:67
 msgid "August"
 msgstr ""
@@ -1245,7 +1260,7 @@ msgid "Cache init was not completed."
 msgstr ""
 
 #: framework/Share/Share/kolab.php:447 framework/Kolab/Kolab.php:743
-#: framework/UI/UI/VarRenderer/html.php:528 config/registry.php.dist:148
+#: framework/UI/UI/VarRenderer/html.php:523 config/registry.php.dist:148
 msgid "Calendar"
 msgstr ""
 
@@ -1265,6 +1280,10 @@ msgstr ""
 
 #: themes/camouflage/info.php:6
 msgid "Camouflage"
+msgstr ""
+
+#: framework/MIME/MIME/Viewer/simple.php:31
+msgid "Can not display contents of text part inline."
 msgstr ""
 
 #: framework/Auth/Auth/cyrsql.php:507
@@ -1383,7 +1402,7 @@ msgstr ""
 msgid "Categories and Labels"
 msgstr ""
 
-#: framework/Form/Form.php:4305
+#: framework/Form/Form.php:4356
 msgid "Category"
 msgstr ""
 
@@ -1396,7 +1415,7 @@ msgstr ""
 msgid "Cc"
 msgstr ""
 
-#: framework/MIME/MIME/Viewer/vcard.php:235
+#: framework/MIME/MIME/Viewer/vcard.php:242
 msgid "Cell Phone"
 msgstr ""
 
@@ -1450,7 +1469,7 @@ msgid ""
 "Contact your administrator."
 msgstr ""
 
-#: framework/Form/Form.php:2400
+#: framework/Form/Form.php:2451
 msgid "Character to split multiple addresses with"
 msgstr ""
 
@@ -1497,11 +1516,11 @@ msgstr ""
 msgid "Choose Application:"
 msgstr ""
 
-#: framework/Auth/Auth/Signup.php:204 framework/Auth/Auth/Signup.php:218
+#: framework/Auth/Auth/Signup.php:278 framework/Auth/Auth/Signup.php:292
 msgid "Choose a password"
 msgstr ""
 
-#: framework/Auth/Auth/Signup.php:201 framework/Auth/Auth/Signup.php:217
+#: framework/Auth/Auth/Signup.php:275 framework/Auth/Auth/Signup.php:291
 msgid "Choose a username"
 msgstr ""
 
@@ -1598,19 +1617,19 @@ msgstr ""
 msgid "Colombia"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:584
-#: framework/UI/UI/VarRenderer/html.php:586
+#: framework/UI/UI/VarRenderer/html.php:579
+#: framework/UI/UI/VarRenderer/html.php:581
 #: templates/prefs/categorymanagement.inc:58
 #: templates/prefs/categorymanagement.inc:74
 #: templates/prefs/categorymanagement.inc:90
 msgid "Color Picker"
 msgstr ""
 
-#: framework/Form/Form.php:3715
+#: framework/Form/Form.php:3766
 msgid "Colour selection"
 msgstr ""
 
-#: framework/Form/Form.php:2619
+#: framework/Form/Form.php:2670
 msgid "Column titles"
 msgstr ""
 
@@ -1639,7 +1658,7 @@ msgstr ""
 msgid "Comoros"
 msgstr ""
 
-#: framework/MIME/MIME/Viewer/vcard.php:287
+#: framework/MIME/MIME/Viewer/vcard.php:294
 msgid "Company"
 msgstr ""
 
@@ -1935,7 +1954,7 @@ msgstr ""
 msgid "Could not read response PDU"
 msgstr ""
 
-#: services/resetpassword.php:86
+#: services/resetpassword.php:93
 msgid ""
 "Could not reset the password for the requested user. Some or all of the "
 "details are not correct. Try again or contact your administrator if you need "
@@ -2094,7 +2113,7 @@ msgstr ""
 msgid "Creator Permissions"
 msgstr ""
 
-#: framework/Form/Form.php:4144
+#: framework/Form/Form.php:4195
 msgid "Credit card number"
 msgstr ""
 
@@ -2162,7 +2181,7 @@ msgstr ""
 msgid "Czech Republic"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:495 templates/data/date.inc:47
+#: framework/UI/UI/VarRenderer/html.php:490 templates/data/date.inc:47
 #: templates/data/date.inc:48 templates/data/date.inc:49
 #: templates/data/date.inc:50 templates/data/datetime.inc:89
 #: templates/data/datetime.inc:90 templates/data/datetime.inc:91
@@ -2170,7 +2189,7 @@ msgstr ""
 msgid "DD"
 msgstr ""
 
-#: framework/Form/Form.php:4200
+#: framework/Form/Form.php:4251
 msgid ""
 "DSN (see http://pear.php.net/manual/en/package.database.db.intro-dsn.php)"
 msgstr ""
@@ -2202,11 +2221,11 @@ msgstr ""
 msgid "Database"
 msgstr ""
 
-#: framework/Form/Form.php:4198
+#: framework/Form/Form.php:4249
 msgid "Database lookup"
 msgstr ""
 
-#: framework/MIME/MIME/Viewer/rfc822.php:75 framework/Form/Form.php:3100
+#: framework/MIME/MIME/Viewer/rfc822.php:75 framework/Form/Form.php:3151
 #: lib/Block/vatid.php:95
 msgid "Date"
 msgstr ""
@@ -2215,11 +2234,11 @@ msgstr ""
 msgid "Date Received"
 msgstr ""
 
-#: framework/Form/Form.php:3675
+#: framework/Form/Form.php:3726
 msgid "Date and time selection"
 msgstr ""
 
-#: framework/Form/Form.php:3509
+#: framework/Form/Form.php:3560
 msgid "Date selection"
 msgstr ""
 
@@ -2232,17 +2251,17 @@ msgstr ""
 msgid "Day"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:456
-#: framework/UI/UI/VarRenderer/html.php:494
+#: framework/UI/UI/VarRenderer/html.php:451
+#: framework/UI/UI/VarRenderer/html.php:489
 #: templates/javascript/open_calendar.js:71
 msgid "December"
 msgstr ""
 
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:970
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:974
 msgid "Declined: "
 msgstr ""
 
-#: framework/Prefs/Prefs/UI.php:216 lib/prefs.php:135
+#: framework/Prefs/Prefs/UI.php:216 lib/prefs.php:136
 msgid "Default"
 msgstr ""
 
@@ -2266,15 +2285,15 @@ msgstr ""
 #: admin/groups.php:77 framework/Perms/Perms.php:403
 #: framework/Perms/Perms/UI.php:480 framework/Perms/Perms/UI.php:497
 #: framework/IMAP/IMAP/ACL/rfc4314.php:68 templates/syncml/syncml.inc:13
-#: templates/syncml/syncml.inc:29 templates/shares/edit.inc:66
-#: templates/shares/edit.inc:86 templates/shares/edit.inc:101
-#: templates/shares/edit.inc:121 templates/shares/edit.inc:136
-#: templates/shares/edit.inc:156 templates/shares/edit.inc:171
-#: templates/shares/edit.inc:195 templates/shares/edit.inc:235
-#: templates/shares/edit.inc:250 templates/shares/edit.inc:270
-#: templates/shares/edit.inc:299 templates/rpcsum/rpcsum.inc:69
-#: templates/rpcsum/rpcsum.inc:89 templates/admin/groups/delete.inc:10
-#: templates/admin/user/list.inc:31
+#: templates/syncml/syncml.inc:29 templates/shares/edit.inc:69
+#: templates/shares/edit.inc:89 templates/shares/edit.inc:104
+#: templates/shares/edit.inc:124 templates/shares/edit.inc:139
+#: templates/shares/edit.inc:159 templates/shares/edit.inc:174
+#: templates/shares/edit.inc:198 templates/shares/edit.inc:233
+#: templates/shares/edit.inc:260 templates/shares/edit.inc:276
+#: templates/shares/edit.inc:296 templates/shares/edit.inc:325
+#: templates/rpcsum/rpcsum.inc:69 templates/rpcsum/rpcsum.inc:89
+#: templates/admin/groups/delete.inc:10 templates/admin/user/list.inc:31
 msgid "Delete"
 msgstr ""
 
@@ -2351,7 +2370,11 @@ msgstr ""
 msgid "Denmark"
 msgstr ""
 
-#: framework/MIME/MIME/Viewer/vcard.php:289
+#: framework/Auth/Auth/Signup.php:170
+msgid "Deny the account:"
+msgstr ""
+
+#: framework/MIME/MIME/Viewer/vcard.php:296
 msgid "Department"
 msgstr ""
 
@@ -2363,11 +2386,11 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: framework/Horde/Horde.php:237
+#: framework/Horde/Horde.php:242
 msgid "Details have been logged for the administrator."
 msgstr ""
 
-#: framework/Horde/Horde.php:228
+#: framework/Horde/Horde.php:233
 msgid "Details:"
 msgstr ""
 
@@ -2391,7 +2414,7 @@ msgstr ""
 msgid "Dew point: "
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:1180
+#: framework/UI/UI/VarRenderer/html.php:1170
 #, php-format
 msgid "Dial %s"
 msgstr ""
@@ -2421,7 +2444,7 @@ msgstr ""
 msgid "Display forecast (TAF)"
 msgstr ""
 
-#: framework/Form/Form.php:3519 framework/Form/Form.php:3685
+#: framework/Form/Form.php:3570 framework/Form/Form.php:3736
 msgid "Display format"
 msgstr ""
 
@@ -2446,8 +2469,8 @@ msgstr ""
 msgid "Does the first row contain the field names? If yes, check this box:"
 msgstr ""
 
-#: framework/MIME/MIME/Viewer/vcard.php:134
-#: framework/MIME/MIME/Viewer/vcard.php:192
+#: framework/MIME/MIME/Viewer/vcard.php:141
+#: framework/MIME/MIME/Viewer/vcard.php:199
 msgid "Domestic Address"
 msgstr ""
 
@@ -2479,7 +2502,7 @@ msgstr ""
 msgid "Drizzle"
 msgstr ""
 
-#: framework/Form/Form.php:2784
+#: framework/Form/Form.php:2835
 msgid "Drop down list"
 msgstr ""
 
@@ -2517,13 +2540,14 @@ msgid "Ecuador"
 msgstr ""
 
 #: framework/Perms/Perms.php:402 framework/Block/Block/Layout.php:106
-#: framework/Block/Block/Layout.php:107 templates/shares/edit.inc:65
-#: templates/shares/edit.inc:82 templates/shares/edit.inc:100
-#: templates/shares/edit.inc:117 templates/shares/edit.inc:135
-#: templates/shares/edit.inc:152 templates/shares/edit.inc:170
-#: templates/shares/edit.inc:191 templates/shares/edit.inc:231
-#: templates/shares/edit.inc:249 templates/shares/edit.inc:266
-#: templates/shares/edit.inc:295 templates/rpcsum/rpcsum.inc:68
+#: framework/Block/Block/Layout.php:107 templates/shares/edit.inc:68
+#: templates/shares/edit.inc:85 templates/shares/edit.inc:103
+#: templates/shares/edit.inc:120 templates/shares/edit.inc:138
+#: templates/shares/edit.inc:155 templates/shares/edit.inc:173
+#: templates/shares/edit.inc:194 templates/shares/edit.inc:229
+#: templates/shares/edit.inc:256 templates/shares/edit.inc:275
+#: templates/shares/edit.inc:292 templates/shares/edit.inc:321
+#: templates/rpcsum/rpcsum.inc:68
 msgid "Edit"
 msgstr ""
 
@@ -2548,11 +2572,11 @@ msgstr ""
 msgid "Edit options for:"
 msgstr ""
 
-#: services/shares/edit.php:244
+#: services/shares/edit.php:250
 msgid "Edit permissions"
 msgstr ""
 
-#: framework/Perms/Perms/UI.php:419 services/shares/edit.php:246
+#: framework/Perms/Perms/UI.php:419 services/shares/edit.php:252
 #: templates/shares/edit.inc:14
 #, php-format
 msgid "Edit permissions for \"%s\""
@@ -2572,7 +2596,7 @@ msgstr ""
 msgid "El Salvador"
 msgstr ""
 
-#: framework/MIME/MIME/Viewer/vcard.php:272 framework/Form/Form.php:2385
+#: framework/MIME/MIME/Viewer/vcard.php:279 framework/Form/Form.php:2436
 msgid "Email"
 msgstr ""
 
@@ -2589,7 +2613,7 @@ msgstr ""
 msgid "Email address (optional)"
 msgstr ""
 
-#: framework/Form/Form.php:2635
+#: framework/Form/Form.php:2686
 msgid "Email addresses must match."
 msgstr ""
 
@@ -2597,7 +2621,7 @@ msgstr ""
 msgid "Email addresses to confirm not found."
 msgstr ""
 
-#: framework/Form/Form.php:2663
+#: framework/Form/Form.php:2714
 msgid "Email with confirmation"
 msgstr ""
 
@@ -2605,7 +2629,7 @@ msgstr ""
 msgid "Email-to-SMS Gateway"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:321
+#: framework/UI/UI/VarRenderer/html.php:316
 msgid "Emoticons"
 msgstr ""
 
@@ -2622,8 +2646,8 @@ msgstr ""
 msgid "Empty result."
 msgstr ""
 
-#: framework/Form/Form.php:3297 framework/Form/Form.php:3513
-#: framework/Form/Form.php:3679
+#: framework/Form/Form.php:3348 framework/Form/Form.php:3564
+#: framework/Form/Form.php:3730
 msgid "End year"
 msgstr ""
 
@@ -2633,8 +2657,8 @@ msgid ""
 "password, e.g. 'what is the name of your pet?':"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:975
-#: framework/UI/UI/VarRenderer/html.php:987
+#: framework/UI/UI/VarRenderer/html.php:970
+#: framework/UI/UI/VarRenderer/html.php:982
 msgid "Enter the letters below:"
 msgstr ""
 
@@ -2668,7 +2692,7 @@ msgstr ""
 msgid "Error connecting to LDAP server %s!"
 msgstr ""
 
-#: framework/SyncML/SyncML/Device/Sync4j.php:577
+#: framework/SyncML/SyncML/Device/Sync4j.php:579
 msgid "Error converting notes."
 msgstr ""
 
@@ -2685,8 +2709,8 @@ msgstr ""
 msgid "Error deleting synchronization sessions:"
 msgstr ""
 
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:678
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:684
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:682
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:688
 #, php-format
 msgid "Error processing \"%s\""
 msgstr ""
@@ -2919,16 +2943,16 @@ msgstr ""
 msgid "Faroe Islands"
 msgstr ""
 
-#: framework/CLI/CLI.php:304
+#: framework/CLI/CLI.php:306
 msgid "Fatal Error:"
 msgstr ""
 
-#: framework/MIME/MIME/Viewer/vcard.php:226
+#: framework/MIME/MIME/Viewer/vcard.php:233
 msgid "Fax"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:446
-#: framework/UI/UI/VarRenderer/html.php:484
+#: framework/UI/UI/VarRenderer/html.php:441
+#: framework/UI/UI/VarRenderer/html.php:479
 #: templates/javascript/open_calendar.js:61
 msgid "February"
 msgstr ""
@@ -2957,15 +2981,15 @@ msgstr ""
 msgid "Few Snow Showers"
 msgstr ""
 
-#: framework/Form/Form.php:2617
+#: framework/Form/Form.php:2668
 msgid "Field matrix"
 msgstr ""
 
-#: framework/Form/Form.php:4253
+#: framework/Form/Form.php:4304
 msgid "Figlet CAPTCHA"
 msgstr ""
 
-#: framework/Form/Form.php:4257
+#: framework/Form/Form.php:4308
 msgid "Figlet font"
 msgstr ""
 
@@ -2991,7 +3015,7 @@ msgstr ""
 msgid "File Name"
 msgstr ""
 
-#: framework/Form/Form.php:3903
+#: framework/Form/Form.php:3954
 msgid "File selection"
 msgstr ""
 
@@ -2999,7 +3023,7 @@ msgstr ""
 msgid "File upload"
 msgstr ""
 
-#: framework/Browser/Browser.php:1043
+#: framework/Browser/Browser.php:1051
 msgid "File uploads not supported."
 msgstr ""
 
@@ -3020,7 +3044,7 @@ msgstr ""
 msgid "First Quarter"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:275
+#: framework/UI/UI/VarRenderer/html.php:270
 msgid "Fix ratio"
 msgstr ""
 
@@ -3029,7 +3053,7 @@ msgstr ""
 msgid "Flash"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:250
+#: framework/UI/UI/VarRenderer/html.php:245
 msgid "Flip"
 msgstr ""
 
@@ -3064,7 +3088,7 @@ msgstr ""
 msgid "Folder %s has type \"%s\" not \"event\"!"
 msgstr ""
 
-#: framework/Form/Form.php:4276
+#: framework/Form/Form.php:4327
 msgid "Font"
 msgstr ""
 
@@ -3229,7 +3253,7 @@ msgstr ""
 msgid "Goedel"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:1325
+#: framework/UI/UI/VarRenderer/html.php:1315
 msgid "Google Maps"
 msgstr ""
 
@@ -3241,7 +3265,7 @@ msgstr ""
 msgid "Google search is not enabled."
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:256
+#: framework/UI/UI/VarRenderer/html.php:251
 msgid "Grayscale"
 msgstr ""
 
@@ -3305,7 +3329,7 @@ msgid ""
 msgstr ""
 
 #: admin/groups.php:249 framework/Perms/Perms/UI.php:361
-#: templates/shares/edit.inc:245
+#: templates/shares/edit.inc:271
 msgid "Groups"
 msgstr ""
 
@@ -3328,7 +3352,7 @@ msgstr ""
 msgid "Guernsey"
 msgstr ""
 
-#: framework/Perms/Perms/UI.php:273 templates/shares/edit.inc:96
+#: framework/Perms/Perms/UI.php:273 templates/shares/edit.inc:99
 msgid "Guest Permissions"
 msgstr ""
 
@@ -3376,7 +3400,7 @@ msgstr ""
 msgid "Haze"
 msgstr ""
 
-#: framework/Form/Form.php:922 framework/Form/Form.php:3841
+#: framework/Form/Form.php:922 framework/Form/Form.php:3892
 msgid "Header"
 msgstr ""
 
@@ -3447,8 +3471,8 @@ msgstr ""
 msgid "Holy See (Vatican City State)"
 msgstr ""
 
-#: framework/MIME/MIME/Viewer/vcard.php:128
-#: framework/MIME/MIME/Viewer/vcard.php:186
+#: framework/MIME/MIME/Viewer/vcard.php:135
+#: framework/MIME/MIME/Viewer/vcard.php:193
 msgid "Home Address"
 msgstr ""
 
@@ -3456,7 +3480,7 @@ msgstr ""
 msgid "Home Directory"
 msgstr ""
 
-#: framework/MIME/MIME/Viewer/vcard.php:229
+#: framework/MIME/MIME/Viewer/vcard.php:236
 msgid "Home Phone"
 msgstr ""
 
@@ -3614,7 +3638,7 @@ msgstr ""
 msgid "Icons with text"
 msgstr ""
 
-#: framework/Form/Form.php:3905
+#: framework/Form/Form.php:3956
 msgid "Id"
 msgstr ""
 
@@ -3631,7 +3655,7 @@ msgstr ""
 msgid "If it is not displayed correctly, %s to open it in a new window."
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:190
+#: framework/UI/UI/VarRenderer/html.php:185
 msgid ""
 "If you see this message but no image, the image you want to upload can't be "
 "displayed by your browser."
@@ -3641,11 +3665,11 @@ msgstr ""
 msgid "Image"
 msgstr ""
 
-#: framework/Form/Form.php:4272
+#: framework/Form/Form.php:4323
 msgid "Image CAPTCHA"
 msgstr ""
 
-#: framework/Form/Form.php:2032
+#: framework/Form/Form.php:2083
 msgid "Image upload"
 msgstr ""
 
@@ -3691,7 +3715,7 @@ msgstr ""
 msgid "India"
 msgstr ""
 
-#: framework/Perms/Perms/UI.php:301 templates/shares/edit.inc:166
+#: framework/Perms/Perms/UI.php:301 templates/shares/edit.inc:169
 msgid "Individual Users"
 msgstr ""
 
@@ -3773,8 +3797,8 @@ msgid ""
 "Internal database error.  Details have been logged for the administrator."
 msgstr ""
 
-#: framework/MIME/MIME/Viewer/vcard.php:137
-#: framework/MIME/MIME/Viewer/vcard.php:195
+#: framework/MIME/MIME/Viewer/vcard.php:144
+#: framework/MIME/MIME/Viewer/vcard.php:202
 msgid "International Address"
 msgstr ""
 
@@ -3800,6 +3824,11 @@ msgstr ""
 msgid "Invalid ZIP data"
 msgstr ""
 
+#: admin/signup_confirm.php:48
+#, php-format
+msgid "Invalid action %s"
+msgstr ""
+
 #: admin/setup/config.php:34
 msgid "Invalid application."
 msgstr ""
@@ -3822,8 +3851,8 @@ msgstr ""
 msgid "Invalid character in e-mail address: %s."
 msgstr ""
 
-#: framework/Form/Form.php:2756 framework/Form/Form.php:2834
-#: framework/Form/Form.php:2907 framework/Form/Form.php:2986
+#: framework/Form/Form.php:2807 framework/Form/Form.php:2885
+#: framework/Form/Form.php:2958 framework/Form/Form.php:3037
 #: framework/Form/Form/Type/tableset.php:37
 msgid "Invalid data submitted."
 msgstr ""
@@ -3841,6 +3870,10 @@ msgstr ""
 #: framework/Group/Group/ldap.php:409 framework/Group/Group/ldap.php:528
 #: framework/Group/Group/ldap.php:555 framework/Group/Group/ldap.php:729
 msgid "Invalid group ID passed (bad DN syntax)"
+msgstr ""
+
+#: admin/signup_confirm.php:35
+msgid "Invalid hash."
 msgstr ""
 
 #: lib/Block/weatherdotcom.php:183
@@ -3901,7 +3934,7 @@ msgstr ""
 msgid "Inventory"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:763
+#: framework/UI/UI/VarRenderer/html.php:758
 #: framework/UI/UI/VarRenderer/tableset_html.php:25
 msgid "Invert selection"
 msgstr ""
@@ -3948,8 +3981,8 @@ msgstr ""
 msgid "Jamaica"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:445
-#: framework/UI/UI/VarRenderer/html.php:483
+#: framework/UI/UI/VarRenderer/html.php:440
+#: framework/UI/UI/VarRenderer/html.php:478
 #: templates/javascript/open_calendar.js:60
 msgid "January"
 msgstr ""
@@ -3972,14 +4005,14 @@ msgstr ""
 msgid "Jordan"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:451
-#: framework/UI/UI/VarRenderer/html.php:489
+#: framework/UI/UI/VarRenderer/html.php:446
+#: framework/UI/UI/VarRenderer/html.php:484
 #: templates/javascript/open_calendar.js:66
 msgid "July"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:450
-#: framework/UI/UI/VarRenderer/html.php:488
+#: framework/UI/UI/VarRenderer/html.php:445
+#: framework/UI/UI/VarRenderer/html.php:483
 #: templates/javascript/open_calendar.js:65
 msgid "June"
 msgstr ""
@@ -3989,7 +4022,7 @@ msgstr ""
 msgid "Kazakhstan"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:283
+#: framework/UI/UI/VarRenderer/html.php:278
 msgid "Keep original?"
 msgstr ""
 
@@ -4129,17 +4162,17 @@ msgstr ""
 msgid "Last Updated:"
 msgstr ""
 
-#: framework/Auth/Auth.php:728
+#: framework/Auth/Auth.php:729
 #, php-format
 msgid "Last login: %s"
 msgstr ""
 
-#: framework/Auth/Auth.php:730
+#: framework/Auth/Auth.php:731
 #, php-format
 msgid "Last login: %s from %s"
 msgstr ""
 
-#: framework/Auth/Auth.php:725
+#: framework/Auth/Auth.php:726
 msgid "Last login: Never"
 msgstr ""
 
@@ -4161,11 +4194,11 @@ msgstr ""
 msgid "Lebanon"
 msgstr ""
 
-#: framework/Form/Form.php:4035
+#: framework/Form/Form.php:4086
 msgid "Left header"
 msgstr ""
 
-#: framework/Form/Form.php:4031
+#: framework/Form/Form.php:4082
 msgid "Left values"
 msgstr ""
 
@@ -4237,35 +4270,35 @@ msgstr ""
 msgid "Limerick"
 msgstr ""
 
-#: framework/Form/Form.php:2092
+#: framework/Form/Form.php:2143
 msgid "Link"
 msgstr ""
 
-#: framework/Form/Form.php:2095
+#: framework/Form/Form.php:2146
 msgid "Link URL"
 msgstr ""
 
-#: framework/Form/Form.php:2110
+#: framework/Form/Form.php:2161
 msgid "Link access key"
 msgstr ""
 
-#: framework/Form/Form.php:3909
+#: framework/Form/Form.php:3960
 msgid "Link style"
 msgstr ""
 
-#: framework/Form/Form.php:2101
+#: framework/Form/Form.php:2152
 msgid "Link target"
 msgstr ""
 
-#: framework/Form/Form.php:2098 framework/Form/Form.php:3907
+#: framework/Form/Form.php:2149 framework/Form/Form.php:3958
 msgid "Link text"
 msgstr ""
 
-#: framework/Form/Form.php:2394
+#: framework/Form/Form.php:2445
 msgid "Link the email address to the compose page when displaying?"
 msgstr ""
 
-#: framework/Form/Form.php:2107
+#: framework/Form/Form.php:2158
 msgid "Link title attribute"
 msgstr ""
 
@@ -4381,11 +4414,11 @@ msgstr ""
 msgid "Login Tasks"
 msgstr ""
 
-#: framework/Auth/Auth.php:1022
+#: framework/Auth/Auth.php:1023
 msgid "Login failed because your username or password was entered incorrectly."
 msgstr ""
 
-#: framework/Auth/Auth.php:1018
+#: framework/Auth/Auth.php:1019
 msgid "Login failed."
 msgstr ""
 
@@ -4414,8 +4447,8 @@ msgstr ""
 msgid "Luxembourg"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:444
-#: framework/UI/UI/VarRenderer/html.php:482 templates/data/date.inc:47
+#: framework/UI/UI/VarRenderer/html.php:439
+#: framework/UI/UI/VarRenderer/html.php:477 templates/data/date.inc:47
 #: templates/data/date.inc:48 templates/data/date.inc:49
 #: templates/data/date.inc:50 templates/data/datetime.inc:89
 #: templates/data/datetime.inc:90 templates/data/datetime.inc:91
@@ -4493,13 +4526,13 @@ msgid ""
 "associated with those categories."
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:1251
-#: framework/UI/UI/VarRenderer/html.php:1300
+#: framework/UI/UI/VarRenderer/html.php:1241
+#: framework/UI/UI/VarRenderer/html.php:1290
 msgid "MapQuest map"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:447
-#: framework/UI/UI/VarRenderer/html.php:485
+#: framework/UI/UI/VarRenderer/html.php:442
+#: framework/UI/UI/VarRenderer/html.php:480
 #: templates/javascript/open_calendar.js:62
 msgid "March"
 msgstr ""
@@ -4564,11 +4597,11 @@ msgstr ""
 msgid "Max temp last 6 hours: "
 msgstr ""
 
-#: lib/api.php:175
+#: lib/api.php:180
 msgid "Maximum Number of Portal Blocks"
 msgstr ""
 
-#: framework/Form/Form.php:2038
+#: framework/Form/Form.php:2089
 msgid "Maximum file size in bytes"
 msgstr ""
 
@@ -4577,8 +4610,8 @@ msgstr ""
 msgid "Maximum length"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:449
-#: framework/UI/UI/VarRenderer/html.php:487
+#: framework/UI/UI/VarRenderer/html.php:444
+#: framework/UI/UI/VarRenderer/html.php:482
 #: templates/javascript/open_calendar.js:64
 msgid "May"
 msgstr ""
@@ -4687,7 +4720,7 @@ msgstr ""
 msgid "Minimum password age has not yet expired"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:253
+#: framework/UI/UI/VarRenderer/html.php:248
 msgid "Mirror"
 msgstr ""
 
@@ -4760,7 +4793,7 @@ msgstr ""
 msgid "Montenegro"
 msgstr ""
 
-#: framework/Form/Form.php:3293
+#: framework/Form/Form.php:3344
 msgid "Month and year"
 msgstr ""
 
@@ -4820,12 +4853,12 @@ msgstr ""
 msgid "Move Up"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:608
+#: framework/UI/UI/VarRenderer/html.php:603
 msgid "Move down"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:607
-#: framework/UI/UI/VarRenderer/html.php:608
+#: framework/UI/UI/VarRenderer/html.php:602
+#: framework/UI/UI/VarRenderer/html.php:603
 msgid "Move up"
 msgstr ""
 
@@ -4838,15 +4871,15 @@ msgstr ""
 msgid "Mozilla"
 msgstr ""
 
-#: framework/Form/Form.php:2860
+#: framework/Form/Form.php:2911
 msgid "Multi-level drop down lists"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:1220
+#: framework/UI/UI/VarRenderer/html.php:1210
 msgid "Multimap UK map"
 msgstr ""
 
-#: framework/Form/Form.php:2917
+#: framework/Form/Form.php:2968
 msgid "Multiple selection"
 msgstr ""
 
@@ -5041,11 +5074,15 @@ msgstr ""
 msgid "Niue"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:1083
+#: framework/UI/UI/VarRenderer/html.php:1078
 msgid "No"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:552 templates/prefs/alarm.inc:26
+#: lib/api.php:432
+msgid "No API found."
+msgstr ""
+
+#: framework/UI/UI/VarRenderer/html.php:547 templates/prefs/alarm.inc:26
 msgid "No Sound"
 msgstr ""
 
@@ -5075,7 +5112,7 @@ msgstr ""
 msgid "No children can be added to this permission."
 msgstr ""
 
-#: framework/Horde/Horde.php:200 framework/Horde/Horde.php:682
+#: framework/Horde/Horde.php:205 framework/Horde/Horde.php:707
 #: framework/Util/Util.php:793
 #, php-format
 msgid "No configuration information specified for %s."
@@ -5105,7 +5142,7 @@ msgstr ""
 msgid "No destination supplied."
 msgstr ""
 
-#: framework/Browser/Browser.php:1061
+#: framework/Browser/Browser.php:1069
 msgid "No file uploaded"
 msgstr ""
 
@@ -5199,7 +5236,7 @@ msgstr ""
 msgid "No such folder %s"
 msgstr ""
 
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:917
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:921
 msgid "No summary available"
 msgstr ""
 
@@ -5212,14 +5249,18 @@ msgstr ""
 msgid "No username and/or password sent."
 msgstr ""
 
+#: admin/signup_confirm.php:62
+msgid "No username specified."
+msgstr ""
+
 #: framework/RPC/RPC/phpgw.php:170
 msgid "No valid XML data returned"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:1091
-#: framework/UI/UI/VarRenderer/html.php:1101
-#: framework/UI/UI/VarRenderer/html.php:1112
-#: framework/UI/UI/VarRenderer/html.php:1129
+#: framework/UI/UI/VarRenderer/html.php:1086
+#: framework/UI/UI/VarRenderer/html.php:1096
+#: framework/UI/UI/VarRenderer/html.php:1107
+#: framework/UI/UI/VarRenderer/html.php:1124
 msgid "No values"
 msgstr ""
 
@@ -5307,7 +5348,7 @@ msgid "Not supported."
 msgstr ""
 
 #: framework/Share/Share/kolab.php:445 framework/Kolab/Kolab.php:732
-#: framework/MIME/MIME/Viewer/vcard.php:295 config/registry.php.dist:194
+#: framework/MIME/MIME/Viewer/vcard.php:302 config/registry.php.dist:194
 msgid "Notes"
 msgstr ""
 
@@ -5315,8 +5356,8 @@ msgstr ""
 msgid "Nothing to browse, go back."
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:455
-#: framework/UI/UI/VarRenderer/html.php:493
+#: framework/UI/UI/VarRenderer/html.php:450
+#: framework/UI/UI/VarRenderer/html.php:488
 #: templates/javascript/open_calendar.js:70
 msgid "November"
 msgstr ""
@@ -5353,11 +5394,11 @@ msgstr ""
 msgid "O characters"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:956
+#: framework/UI/UI/VarRenderer/html.php:951
 msgid "Object"
 msgstr ""
 
-#: templates/shares/edit.inc:131
+#: templates/shares/edit.inc:134
 msgid "Object Creator"
 msgstr ""
 
@@ -5374,8 +5415,8 @@ msgstr ""
 msgid "Octal"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:454
-#: framework/UI/UI/VarRenderer/html.php:492
+#: framework/UI/UI/VarRenderer/html.php:449
+#: framework/UI/UI/VarRenderer/html.php:487
 #: templates/javascript/open_calendar.js:69
 msgid "October"
 msgstr ""
@@ -5415,7 +5456,7 @@ msgstr ""
 msgid "Oman"
 msgstr ""
 
-#: framework/Form/Form.php:2104
+#: framework/Form/Form.php:2155
 msgid "Onclick event"
 msgstr ""
 
@@ -5427,11 +5468,11 @@ msgstr ""
 msgid "Only offensive fortunes"
 msgstr ""
 
-#: framework/Form/Form.php:2646
+#: framework/Form/Form.php:2697
 msgid "Only one email address allowed."
 msgstr ""
 
-#: framework/Form/Form.php:2189
+#: framework/Form/Form.php:2240
 msgid "Only one email address is allowed."
 msgstr ""
 
@@ -5461,6 +5502,10 @@ msgstr ""
 #: services/prefs.php:36 templates/prefs/app.inc:19
 #, php-format
 msgid "Options for %s"
+msgstr ""
+
+#: templates/shares/edit.inc:49 templates/shares/edit.inc:241
+msgid "Or enter a user name:"
 msgstr ""
 
 #: framework/Crypt/Crypt/smime.php:571
@@ -5498,7 +5543,7 @@ msgstr ""
 msgid "Owner of folder %s cannot be determined."
 msgstr ""
 
-#: templates/shares/edit.inc:38 templates/shares/edit.inc:49
+#: templates/shares/edit.inc:38 templates/shares/edit.inc:51
 msgid "Owner:"
 msgstr ""
 
@@ -5599,7 +5644,7 @@ msgstr ""
 msgid "POSIX extension is missing"
 msgstr ""
 
-#: lib/api.php:216
+#: lib/api.php:221
 msgid "P_HP Shell"
 msgstr ""
 
@@ -5633,8 +5678,8 @@ msgstr ""
 msgid "Paraguay"
 msgstr ""
 
-#: framework/MIME/MIME/Viewer/vcard.php:143
-#: framework/MIME/MIME/Viewer/vcard.php:201
+#: framework/MIME/MIME/Viewer/vcard.php:150
+#: framework/MIME/MIME/Viewer/vcard.php:208
 msgid "Parcel Address"
 msgstr ""
 
@@ -5645,7 +5690,7 @@ msgstr ""
 #: admin/user.php:44 admin/user.php:55 admin/setup/index.php:244
 #: framework/Net_SMS/SMS/sms2email_http.php:546
 #: framework/Net_SMS/SMS/clickatell_http.php:208
-#: framework/Net_SMS/SMS/win_http.php:160 framework/Form/Form.php:2690
+#: framework/Net_SMS/SMS/win_http.php:160 framework/Form/Form.php:2741
 #: templates/login/login.inc:64 templates/admin/user/update.inc:44
 #: config/registry.php.dist:402
 msgid "Password"
@@ -5663,7 +5708,7 @@ msgstr ""
 msgid "Password required for RADIUS authentication."
 msgstr ""
 
-#: framework/Form/Form.php:2723
+#: framework/Form/Form.php:2774
 msgid "Password with confirmation"
 msgstr ""
 
@@ -5675,7 +5720,7 @@ msgstr ""
 msgid "Password: "
 msgstr ""
 
-#: admin/user.php:167 framework/Form/Form.php:2705
+#: admin/user.php:167 framework/Form/Form.php:2756
 #: templates/admin/user/update.inc:15
 msgid "Passwords must match."
 msgstr ""
@@ -5744,7 +5789,7 @@ msgstr ""
 msgid "Philippines"
 msgstr ""
 
-#: framework/MIME/MIME/Viewer/vcard.php:238
+#: framework/MIME/MIME/Viewer/vcard.php:245
 msgid "Phone"
 msgstr ""
 
@@ -5752,7 +5797,8 @@ msgstr ""
 msgid "Phone number"
 msgstr ""
 
-#: framework/MIME/MIME/Viewer/vcard.php:110
+#: framework/MIME/MIME/Viewer/vcard.php:108
+#: framework/MIME/MIME/Viewer/vcard.php:116
 msgid "Photo"
 msgstr ""
 
@@ -5784,11 +5830,11 @@ msgstr ""
 msgid "Please authenticate!"
 msgstr ""
 
-#: framework/Form/Form.php:3747
+#: framework/Form/Form.php:3798
 msgid "Please choose a sound."
 msgstr ""
 
-#: framework/Form/Form.php:3271
+#: framework/Form/Form.php:3322
 msgid "Please enter a month and a year."
 msgstr ""
 
@@ -5800,11 +5846,11 @@ msgstr ""
 msgid "Please enter a valid IP address."
 msgstr ""
 
-#: framework/Form/Form.php:3351
+#: framework/Form/Form.php:3402
 msgid "Please enter a valid date, check the number of days in the month."
 msgstr ""
 
-#: framework/Form/Form.php:3149
+#: framework/Form/Form.php:3200
 msgid "Please enter a valid time."
 msgstr ""
 
@@ -5862,8 +5908,8 @@ msgstr ""
 msgid "Post to this folder (not enforced by IMAP)"
 msgstr ""
 
-#: framework/MIME/MIME/Viewer/vcard.php:140
-#: framework/MIME/MIME/Viewer/vcard.php:198
+#: framework/MIME/MIME/Viewer/vcard.php:147
+#: framework/MIME/MIME/Viewer/vcard.php:205
 msgid "Postal Address"
 msgstr ""
 
@@ -5895,8 +5941,8 @@ msgstr ""
 msgid "Preferences \"%s\" deleted in scope \"%s\"."
 msgstr ""
 
-#: framework/MIME/MIME/Viewer/vcard.php:146
-#: framework/MIME/MIME/Viewer/vcard.php:204
+#: framework/MIME/MIME/Viewer/vcard.php:153
+#: framework/MIME/MIME/Viewer/vcard.php:211
 msgid "Preferred Address"
 msgstr ""
 
@@ -5916,8 +5962,8 @@ msgstr ""
 msgid "Pressure: "
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:221
-#: framework/UI/UI/VarRenderer/html.php:1528
+#: framework/UI/UI/VarRenderer/html.php:216
+#: framework/UI/UI/VarRenderer/html.php:1518
 msgid "Preview"
 msgstr ""
 
@@ -5937,12 +5983,12 @@ msgstr ""
 msgid "Problem Description"
 msgstr ""
 
-#: framework/Form/Form.php:1704 framework/Form/Form.php:2788
-#: framework/Form/Form.php:2864 framework/Form/Form.php:4204
+#: framework/Form/Form.php:1704 framework/Form/Form.php:2839
+#: framework/Form/Form.php:2915 framework/Form/Form.php:4255
 msgid "Prompt text"
 msgstr ""
 
-#: framework/Form/Form.php:2391
+#: framework/Form/Form.php:2442
 msgid "Protect address from spammers?"
 msgstr ""
 
@@ -5997,7 +6043,7 @@ msgstr ""
 msgid "RSA Public Key (%d bit)"
 msgstr ""
 
-#: framework/Form/Form.php:2952
+#: framework/Form/Form.php:3003
 msgid "Radio selection"
 msgstr ""
 
@@ -6034,13 +6080,13 @@ msgid "Ratio"
 msgstr ""
 
 #: framework/Perms/Perms.php:401 framework/IMAP/IMAP/ACL/rfc4314.php:61
-#: framework/IMAP/IMAP/ACL/rfc2086.php:99 templates/shares/edit.inc:64
-#: templates/shares/edit.inc:78 templates/shares/edit.inc:99
-#: templates/shares/edit.inc:113 templates/shares/edit.inc:134
-#: templates/shares/edit.inc:148 templates/shares/edit.inc:169
-#: templates/shares/edit.inc:187 templates/shares/edit.inc:227
-#: templates/shares/edit.inc:248 templates/shares/edit.inc:262
-#: templates/shares/edit.inc:291
+#: framework/IMAP/IMAP/ACL/rfc2086.php:99 templates/shares/edit.inc:67
+#: templates/shares/edit.inc:81 templates/shares/edit.inc:102
+#: templates/shares/edit.inc:116 templates/shares/edit.inc:137
+#: templates/shares/edit.inc:151 templates/shares/edit.inc:172
+#: templates/shares/edit.inc:190 templates/shares/edit.inc:225
+#: templates/shares/edit.inc:252 templates/shares/edit.inc:274
+#: templates/shares/edit.inc:288 templates/shares/edit.inc:317
 msgid "Read"
 msgstr ""
 
@@ -6085,7 +6131,7 @@ msgstr ""
 msgid "Regex"
 msgstr ""
 
-#: framework/Form/Form.php:4161
+#: framework/Form/Form.php:4212
 msgid "Relationship browser"
 msgstr ""
 
@@ -6106,7 +6152,7 @@ msgid "Remote URL (http://www.example.com/horde):"
 msgstr ""
 
 #: framework/Block/Block/Layout.php:113 framework/Block/Block/Layout.php:117
-#: framework/UI/UI/VarRenderer/html.php:639 templates/admin/groups/edit.inc:23
+#: framework/UI/UI/VarRenderer/html.php:634 templates/admin/groups/edit.inc:23
 #: templates/admin/user/approve.inc:34
 #: templates/admin/user/removequeued.inc:13
 msgid "Remove"
@@ -6141,7 +6187,7 @@ msgstr ""
 msgid "Requested service could not be found."
 msgstr ""
 
-#: framework/Horde/Horde.php:207 framework/Horde/Horde.php:692
+#: framework/Horde/Horde.php:212 framework/Horde/Horde.php:717
 #, php-format
 msgid "Required \"%s\" not specified in %s configuration."
 msgstr ""
@@ -6168,7 +6214,7 @@ msgstr ""
 
 #: admin/user.php:32 framework/Form/Form.php:353
 #: framework/Form/Form/Renderer.php:318
-#: framework/UI/UI/VarRenderer/html.php:238 templates/rpcsum/rpcsum.inc:91
+#: framework/UI/UI/VarRenderer/html.php:233 templates/rpcsum/rpcsum.inc:91
 #: templates/admin/user/update.inc:78
 msgid "Reset"
 msgstr ""
@@ -6245,15 +6291,15 @@ msgstr ""
 msgid "Right click context menu"
 msgstr ""
 
-#: framework/Form/Form.php:4037
+#: framework/Form/Form.php:4088
 msgid "Right header"
 msgstr ""
 
-#: framework/Form/Form.php:4033
+#: framework/Form/Form.php:4084
 msgid "Right values"
 msgstr ""
 
-#: framework/MIME/MIME/Viewer/vcard.php:282
+#: framework/MIME/MIME/Viewer/vcard.php:289
 msgid "Role"
 msgstr ""
 
@@ -6262,15 +6308,15 @@ msgstr ""
 msgid "Romania"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:244
+#: framework/UI/UI/VarRenderer/html.php:239
 msgid "Rotate 180"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:241
+#: framework/UI/UI/VarRenderer/html.php:236
 msgid "Rotate Left"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:247
+#: framework/UI/UI/VarRenderer/html.php:242
 msgid "Rotate Right"
 msgstr ""
 
@@ -6312,7 +6358,7 @@ msgstr ""
 msgid "SQL Shell"
 msgstr ""
 
-#: framework/Form/Form.php:4202
+#: framework/Form/Form.php:4253
 msgid "SQL statement for value lookups"
 msgstr ""
 
@@ -6324,7 +6370,7 @@ msgstr ""
 msgid "SUCCESS"
 msgstr ""
 
-#: lib/api.php:220
+#: lib/api.php:225
 msgid "S_QL Shell"
 msgstr ""
 
@@ -6385,7 +6431,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: templates/shares/edit.inc:309 templates/admin/groups/edit.inc:63
+#: templates/shares/edit.inc:335 templates/admin/groups/edit.inc:63
 #, php-format
 msgid "Save \"%s\""
 msgstr ""
@@ -6394,7 +6440,7 @@ msgstr ""
 msgid "Save Options"
 msgstr ""
 
-#: templates/shares/edit.inc:310
+#: templates/shares/edit.inc:336
 msgid "Save and Finish"
 msgstr ""
 
@@ -6451,15 +6497,15 @@ msgstr ""
 msgid "Search:"
 msgstr ""
 
-#: framework/Form/Form.php:3882
+#: framework/Form/Form.php:3933
 msgid "Select Files"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:528
+#: framework/UI/UI/VarRenderer/html.php:523
 msgid "Select a date"
 msgstr ""
 
-#: templates/shares/edit.inc:277 templates/shares/edit.inc:279
+#: templates/shares/edit.inc:303 templates/shares/edit.inc:305
 msgid "Select a group to add:"
 msgstr ""
 
@@ -6471,16 +6517,16 @@ msgstr ""
 msgid "Select a server"
 msgstr ""
 
-#: templates/shares/edit.inc:203 templates/shares/edit.inc:205
+#: templates/shares/edit.inc:207 templates/shares/edit.inc:209
 msgid "Select a user to add:"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:761
+#: framework/UI/UI/VarRenderer/html.php:756
 #: framework/UI/UI/VarRenderer/tableset_html.php:23
 msgid "Select all"
 msgstr ""
 
-#: framework/Form/Form.php:3354
+#: framework/Form/Form.php:3405
 msgid "Select all date components."
 msgstr ""
 
@@ -6488,7 +6534,7 @@ msgstr ""
 msgid "Select an image"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:956
+#: framework/UI/UI/VarRenderer/html.php:951
 msgid "Select an object"
 msgstr ""
 
@@ -6496,7 +6542,7 @@ msgstr ""
 msgid "Select editor plugins"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:762
+#: framework/UI/UI/VarRenderer/html.php:757
 #: framework/UI/UI/VarRenderer/tableset_html.php:24
 msgid "Select none"
 msgstr ""
@@ -6551,7 +6597,7 @@ msgstr ""
 msgid "Send Problem Report"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:1196
+#: framework/UI/UI/VarRenderer/html.php:1186
 msgid "Send SMS"
 msgstr ""
 
@@ -6569,8 +6615,8 @@ msgstr ""
 msgid "Sensor: "
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:453
-#: framework/UI/UI/VarRenderer/html.php:491
+#: framework/UI/UI/VarRenderer/html.php:448
+#: framework/UI/UI/VarRenderer/html.php:486
 #: templates/javascript/open_calendar.js:68
 msgid "September"
 msgstr ""
@@ -6607,11 +6653,11 @@ msgstr ""
 msgid "Session Timestamp:"
 msgstr ""
 
-#: lib/api.php:212
+#: lib/api.php:217
 msgid "Sessions"
 msgstr ""
 
-#: framework/Form/Form.php:3001
+#: framework/Form/Form.php:3052
 msgid "Set"
 msgstr ""
 
@@ -6686,13 +6732,13 @@ msgstr ""
 msgid "Should access keys be defined for most links?"
 msgstr ""
 
-#: framework/Perms/Perms.php:400 templates/shares/edit.inc:63
-#: templates/shares/edit.inc:74 templates/shares/edit.inc:98
-#: templates/shares/edit.inc:109 templates/shares/edit.inc:133
-#: templates/shares/edit.inc:144 templates/shares/edit.inc:168
-#: templates/shares/edit.inc:183 templates/shares/edit.inc:223
-#: templates/shares/edit.inc:247 templates/shares/edit.inc:258
-#: templates/shares/edit.inc:287
+#: framework/Perms/Perms.php:400 templates/shares/edit.inc:66
+#: templates/shares/edit.inc:77 templates/shares/edit.inc:101
+#: templates/shares/edit.inc:112 templates/shares/edit.inc:136
+#: templates/shares/edit.inc:147 templates/shares/edit.inc:171
+#: templates/shares/edit.inc:186 templates/shares/edit.inc:221
+#: templates/shares/edit.inc:248 templates/shares/edit.inc:273
+#: templates/shares/edit.inc:284 templates/shares/edit.inc:313
 msgid "Show"
 msgstr ""
 
@@ -6706,7 +6752,7 @@ msgstr ""
 msgid "Show extra detail?"
 msgstr ""
 
-#: framework/Form/Form.php:3911
+#: framework/Form/Form.php:3962
 msgid "Show icon?"
 msgstr ""
 
@@ -6714,15 +6760,15 @@ msgstr ""
 msgid "Show last login time when logging in?"
 msgstr ""
 
-#: framework/Form/Form.php:2036
+#: framework/Form/Form.php:2087
 msgid "Show option to keep original?"
 msgstr ""
 
-#: framework/Form/Form.php:3515 framework/Form/Form.php:3681
+#: framework/Form/Form.php:3566 framework/Form/Form.php:3732
 msgid "Show picker?"
 msgstr ""
 
-#: framework/Form/Form.php:3239 framework/Form/Form.php:3687
+#: framework/Form/Form.php:3290 framework/Form/Form.php:3738
 msgid "Show seconds?"
 msgstr ""
 
@@ -6731,7 +6777,7 @@ msgstr ""
 msgid "Show the %s Menu on the left?"
 msgstr ""
 
-#: framework/Form/Form.php:2034
+#: framework/Form/Form.php:2085
 msgid "Show upload?"
 msgstr ""
 
@@ -6771,7 +6817,7 @@ msgstr ""
 msgid "Sierra Leone"
 msgstr ""
 
-#: framework/Auth/Auth/Signup.php:193
+#: framework/Auth/Auth/Signup.php:267
 msgid "Sign up"
 msgstr ""
 
@@ -6795,8 +6841,8 @@ msgstr ""
 #: framework/MIME/MIME/Viewer/rar.php:63 framework/MIME/MIME/Viewer/zip.php:86
 #: framework/MIME/MIME/Viewer/tgz.php:90 framework/Form/Form.php:1205
 #: framework/Form/Form.php:1225 framework/Form/Form.php:1254
-#: framework/Form/Form.php:2921 framework/Form/Form.php:3839
-#: framework/Form/Form.php:4039
+#: framework/Form/Form.php:2972 framework/Form/Form.php:3890
+#: framework/Form/Form.php:4090
 msgid "Size"
 msgstr ""
 
@@ -6872,11 +6918,11 @@ msgstr ""
 msgid "Songs & Poems"
 msgstr ""
 
-#: framework/Form/Form.php:3835
+#: framework/Form/Form.php:3886
 msgid "Sort order selection"
 msgstr ""
 
-#: framework/Form/Form.php:3756
+#: framework/Form/Form.php:3807
 msgid "Sound selection"
 msgstr ""
 
@@ -6955,8 +7001,8 @@ msgstr ""
 msgid "Star Trek"
 msgstr ""
 
-#: framework/Form/Form.php:3295 framework/Form/Form.php:3511
-#: framework/Form/Form.php:3677
+#: framework/Form/Form.php:3346 framework/Form/Form.php:3562
+#: framework/Form/Form.php:3728
 msgid "Start year"
 msgstr ""
 
@@ -6972,7 +7018,7 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: framework/Form/Form.php:3517 framework/Form/Form.php:3683
+#: framework/Form/Form.php:3568 framework/Form/Form.php:3734
 msgid "Storage format"
 msgstr ""
 
@@ -7022,7 +7068,7 @@ msgstr ""
 msgid "Success"
 msgstr ""
 
-#: admin/user.php:101
+#: admin/signup_confirm.php:88 admin/user.php:101
 #, php-format
 msgid "Successfully added \"%s\" to the system."
 msgstr ""
@@ -7265,12 +7311,12 @@ msgstr ""
 msgid "Template \"%s\" not found."
 msgstr ""
 
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:990
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:994
 msgid "Tentative: "
 msgstr ""
 
-#: framework/Form/Form.php:1201 framework/Form/Form.php:4255
-#: framework/Form/Form.php:4274
+#: framework/Form/Form.php:1201 framework/Form/Form.php:4306
+#: framework/Form/Form.php:4325
 msgid "Text"
 msgstr ""
 
@@ -7396,12 +7442,12 @@ msgstr ""
 msgid "The encryption features require a secure web connection."
 msgstr ""
 
-#: framework/Horde/Horde.php:208 framework/Horde/Horde.php:693
+#: framework/Horde/Horde.php:213 framework/Horde/Horde.php:718
 #, php-format
 msgid "The file %s should contain a %s setting."
 msgstr ""
 
-#: framework/Horde/Horde.php:201 framework/Horde/Horde.php:683
+#: framework/Horde/Horde.php:206 framework/Horde/Horde.php:708
 #, php-format
 msgid "The file %s should contain some %s settings."
 msgstr ""
@@ -7410,21 +7456,21 @@ msgstr ""
 msgid "The file contained no data."
 msgstr ""
 
-#: framework/Auth/Auth.php:452
+#: framework/Auth/Auth.php:453
 #, php-format
 msgid "The following applications encountered errors removing user data: %s"
 msgstr ""
 
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:701
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:705
 msgid "The following event has been successfully removed:"
 msgstr ""
 
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:683
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:687
 #, php-format
 msgid "The following event that was canceled is not present in %s's calendar:"
 msgstr ""
 
-#: framework/Horde/Horde.php:229
+#: framework/Horde/Horde.php:234
 msgid ""
 "The full error message is logged in Horde's log file, and is shown below "
 "only to administrators. Non-administrative users will not see error details."
@@ -7435,13 +7481,13 @@ msgstr ""
 msgid "The identity \"%s\" has been deleted."
 msgstr ""
 
-#: framework/Form/Form.php:1834
+#: framework/Form/Form.php:1848
 msgid ""
 "The image file size could not be determined or it was 0 bytes. The upload "
 "may have been interrupted."
 msgstr ""
 
-#: framework/Form/Form.php:1838
+#: framework/Form/Form.php:1852
 #, php-format
 msgid "The image file was larger than the maximum allowed size (%d bytes)."
 msgstr ""
@@ -7486,7 +7532,7 @@ msgid ""
 "edits have been lost."
 msgstr ""
 
-#: framework/Form/Form.php:2397
+#: framework/Form/Form.php:2448
 msgid "The name to use when linking to the compose page"
 msgstr ""
 
@@ -7575,12 +7621,17 @@ msgstr ""
 msgid "The signup request for \"%s\" has been removed."
 msgstr ""
 
+#: admin/signup_confirm.php:44
+#, php-format
+msgid "The signup request for user \"%s\" has been removed."
+msgstr ""
+
 #: framework/Block/Block/Layout/Manager.php:479
 #, php-format
 msgid "The specified row (%d) does not exist."
 msgstr ""
 
-#: framework/Form/Form.php:4230
+#: framework/Form/Form.php:4281
 msgid "The text you entered did not match the text on the screen."
 msgstr ""
 
@@ -7592,9 +7643,14 @@ msgstr ""
 msgid "The uploaded file could not be saved."
 msgstr ""
 
-#: admin/user.php:79
+#: admin/signup_confirm.php:65 admin/user.php:79
 #, php-format
 msgid "The user \"%s\" already exists."
+msgstr ""
+
+#: services/shares/edit.php:79 services/shares/edit.php:168
+#, php-format
+msgid "The user \"%s\" does not exist."
 msgstr ""
 
 #: lib/Block/weatherdotcom.php:54 lib/Block/weatherdotcom.php:110
@@ -7627,7 +7683,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: signup.php:58 signup.php:60 admin/user.php:89
+#: signup.php:58 signup.php:60 admin/signup_confirm.php:77 admin/user.php:89
 #, php-format
 msgid "There was a problem adding \"%s\" to the system: %s"
 msgstr ""
@@ -7647,19 +7703,19 @@ msgstr ""
 msgid "There was a problem updating \"%s\": %s"
 msgstr ""
 
-#: framework/Browser/Browser.php:1068
+#: framework/Browser/Browser.php:1076
 #, php-format
 msgid "There was a problem with the file upload: No %s was uploaded."
 msgstr ""
 
-#: framework/Browser/Browser.php:1073
+#: framework/Browser/Browser.php:1081
 #, php-format
 msgid ""
 "There was a problem with the file upload: The %s was larger than the maximum "
 "allowed size (%d bytes)."
 msgstr ""
 
-#: framework/Browser/Browser.php:1075
+#: framework/Browser/Browser.php:1083
 #, php-format
 msgid ""
 "There was a problem with the file upload: The %s was only partially uploaded."
@@ -7692,6 +7748,12 @@ msgstr ""
 
 #: framework/MIME/MIME/Viewer/vcard.php:40
 msgid "There was an error reading the contact data."
+msgstr ""
+
+#: lib/api.php:410 lib/api.php:451
+#, php-format
+msgid ""
+"There was an error removing global data for %s. Details have been logged."
 msgstr ""
 
 #: framework/Net_SMS/SMS/sms2email_http.php:649
@@ -7730,7 +7792,7 @@ msgstr ""
 msgid "This does not appear to be a valid zip file."
 msgstr ""
 
-#: framework/Form/Form.php:4060
+#: framework/Form/Form.php:4111
 msgid "This does not seem to be a valid card number."
 msgstr ""
 
@@ -7773,15 +7835,15 @@ msgstr ""
 #: framework/Form/Form.php:1080 framework/Form/Form.php:1107
 #: framework/Form/Form.php:1172 framework/Form/Form.php:1272
 #: framework/Form/Form.php:1330 framework/Form/Form.php:1424
-#: framework/Form/Form.php:1823 framework/Form/Form.php:2630
-#: framework/Form/Form.php:2678 framework/Form/Form.php:2700
-#: framework/Form/Form.php:2747 framework/Form/Form.php:2825
-#: framework/Form/Form.php:2896 framework/Form/Form.php:3110
-#: framework/Form/Form.php:3152 framework/Form/Form.php:3346
-#: framework/Form/Form.php:3698 framework/Form/Form.php:3739
-#: framework/Form/Form.php:4052 framework/Form/Form.php:4225
-#: framework/Form/Form.php:4311 framework/Form/Form.php:4788
-#: framework/Form/Form.php:4796
+#: framework/Form/Form.php:1833 framework/Form/Form.php:2681
+#: framework/Form/Form.php:2729 framework/Form/Form.php:2751
+#: framework/Form/Form.php:2798 framework/Form/Form.php:2876
+#: framework/Form/Form.php:2947 framework/Form/Form.php:3161
+#: framework/Form/Form.php:3203 framework/Form/Form.php:3397
+#: framework/Form/Form.php:3749 framework/Form/Form.php:3790
+#: framework/Form/Form.php:4103 framework/Form/Form.php:4276
+#: framework/Form/Form.php:4362 framework/Form/Form.php:4839
+#: framework/Form/Form.php:4847
 msgid "This field is required."
 msgstr ""
 
@@ -7789,7 +7851,7 @@ msgstr ""
 msgid "This field may only contain integers."
 msgstr ""
 
-#: framework/Form/Form.php:3118
+#: framework/Form/Form.php:3169
 msgid "This field may only contain numbers and the colon."
 msgstr ""
 
@@ -7805,7 +7867,7 @@ msgstr ""
 msgid "This field must be a valid number."
 msgstr ""
 
-#: framework/Form/Form.php:3706
+#: framework/Form/Form.php:3757
 msgid ""
 "This field must contain a color code in the RGB Hex format, for example "
 "'#1234af'."
@@ -7833,7 +7895,7 @@ msgstr ""
 msgid "This number must be at least one."
 msgstr ""
 
-#: framework/Horde/Horde.php:335
+#: framework/Horde/Horde.php:340
 #, php-format
 msgid ""
 "This request cannot be completed because the link you followed or the form "
@@ -7860,7 +7922,7 @@ msgstr ""
 msgid "Tickets"
 msgstr ""
 
-#: framework/Form/Form.php:3127
+#: framework/Form/Form.php:3178
 msgid "Time"
 msgstr ""
 
@@ -7872,7 +7934,7 @@ msgstr ""
 msgid "Time format"
 msgstr ""
 
-#: framework/Form/Form.php:3237
+#: framework/Form/Form.php:3288
 msgid "Time selection"
 msgstr ""
 
@@ -7889,7 +7951,7 @@ msgstr ""
 msgid "Timor-Leste"
 msgstr ""
 
-#: framework/MIME/MIME/Viewer/vcard.php:277 lib/Block/iframe.php:20
+#: framework/MIME/MIME/Viewer/vcard.php:284 lib/Block/iframe.php:20
 msgid "Title"
 msgstr ""
 
@@ -7903,7 +7965,7 @@ msgid ""
 "select a field in the lists below and hit \"Remove pair\"."
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:734
+#: framework/UI/UI/VarRenderer/html.php:729
 msgid ""
 "To select multiple items, hold down the Control (PC) or Command (Mac) key "
 "while clicking."
@@ -7945,7 +8007,7 @@ msgstr ""
 msgid "Trinidad and Tobago"
 msgstr ""
 
-#: framework/Form/Form.php:2061
+#: framework/Form/Form.php:2112
 msgid "True or false"
 msgstr ""
 
@@ -7982,7 +8044,7 @@ msgstr ""
 msgid "Tuvalu"
 msgstr ""
 
-#: framework/CLI/CLI.php:337
+#: framework/CLI/CLI.php:339
 msgid "Type your choice: "
 msgstr ""
 
@@ -7998,7 +8060,7 @@ msgstr ""
 msgid "UID not found in Kolab XML object"
 msgstr ""
 
-#: framework/MIME/MIME/Viewer/vcard.php:301 lib/Block/iframe.php:17
+#: framework/MIME/MIME/Viewer/vcard.php:308 lib/Block/iframe.php:17
 msgid "URL"
 msgstr ""
 
@@ -8016,7 +8078,7 @@ msgstr ""
 msgid "Ukraine"
 msgstr ""
 
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:677
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:681
 #, php-format
 msgid "Unable to access %s's calendar:"
 msgstr ""
@@ -8441,7 +8503,7 @@ msgstr ""
 msgid "Update user"
 msgstr ""
 
-#: admin/groups.php:150 admin/perms/edit.php:103 services/shares/edit.php:234
+#: admin/groups.php:150 admin/perms/edit.php:103 services/shares/edit.php:240
 #, php-format
 msgid "Updated \"%s\"."
 msgstr ""
@@ -8450,7 +8512,7 @@ msgstr ""
 msgid "Upgrade script deleted."
 msgstr ""
 
-#: admin/setup/index.php:242 framework/UI/UI/VarRenderer/html.php:216
+#: admin/setup/index.php:242 framework/UI/UI/VarRenderer/html.php:211
 msgid "Upload"
 msgstr ""
 
@@ -8489,7 +8551,7 @@ msgstr ""
 msgid "User"
 msgstr ""
 
-#: framework/Auth/Auth/Signup/sql.php:182
+#: framework/Auth/Auth/Signup/sql.php:134
 #, php-format
 msgid "User \"%s\" does not exist."
 msgstr ""
@@ -8506,11 +8568,11 @@ msgstr ""
 msgid "User Registration"
 msgstr ""
 
-#: signup.php:24
+#: signup.php:24 admin/signup_confirm.php:22
 msgid "User Registration has been disabled for this site."
 msgstr ""
 
-#: signup.php:32
+#: signup.php:32 admin/signup_confirm.php:27
 msgid "User Registration is not properly configured for this site."
 msgstr ""
 
@@ -8518,7 +8580,7 @@ msgstr ""
 msgid "User account not found"
 msgstr ""
 
-#: templates/shares/edit.inc:217
+#: templates/shares/edit.inc:243
 msgid "User to add:"
 msgstr ""
 
@@ -8531,8 +8593,7 @@ msgstr ""
 msgid "Username"
 msgstr ""
 
-#: framework/Auth/Auth/Signup.php:88 framework/Auth/Auth/Signup/sql.php:76
-#: framework/Auth/Auth/Signup/datatree.php:67
+#: framework/Auth/Auth/Signup.php:88 framework/Auth/Auth/Signup.php:136
 #, php-format
 msgid "Username \"%s\" already exists."
 msgstr ""
@@ -8592,13 +8653,13 @@ msgstr ""
 msgid "Value is over the maximum length of %d."
 msgstr ""
 
-#: framework/Form/Form.php:2919 framework/Form/Form.php:2954
-#: framework/Form/Form.php:3003 framework/Form/Form.php:3837
+#: framework/Form/Form.php:2970 framework/Form/Form.php:3005
+#: framework/Form/Form.php:3054 framework/Form/Form.php:3888
 #: framework/Form/Form/Type/tableset.php:59
 msgid "Values"
 msgstr ""
 
-#: framework/Form/Form.php:2786 framework/Form/Form.php:2862
+#: framework/Form/Form.php:2837 framework/Form/Form.php:2913
 msgid "Values to select from"
 msgstr ""
 
@@ -8711,7 +8772,7 @@ msgstr ""
 msgid "We"
 msgstr ""
 
-#: framework/Horde/Horde.php:331
+#: framework/Horde/Horde.php:336
 msgid ""
 "We cannot verify that this request was really sent by you. It could be a "
 "malicious request. If you intended to perform this action, you can retry it "
@@ -8780,7 +8841,7 @@ msgstr ""
 msgid "What sequence do you want to create (_seq will be added automatically)?"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:1227
+#: framework/UI/UI/VarRenderer/html.php:1217
 msgid "Whereis Australia map"
 msgstr ""
 
@@ -8796,7 +8857,7 @@ msgstr ""
 msgid "Which plugins to enable for the Rich Text editor."
 msgstr ""
 
-#: framework/Form/Form.php:4041
+#: framework/Form/Form.php:4092
 msgid "Width in CSS units"
 msgstr ""
 
@@ -8849,16 +8910,16 @@ msgstr ""
 msgid "Work"
 msgstr ""
 
-#: framework/MIME/MIME/Viewer/vcard.php:131
-#: framework/MIME/MIME/Viewer/vcard.php:189
+#: framework/MIME/MIME/Viewer/vcard.php:138
+#: framework/MIME/MIME/Viewer/vcard.php:196
 msgid "Work Address"
 msgstr ""
 
-#: framework/MIME/MIME/Viewer/vcard.php:232
+#: framework/MIME/MIME/Viewer/vcard.php:239
 msgid "Work Phone"
 msgstr ""
 
-#: framework/Prefs/Prefs/file.php:219
+#: framework/Prefs/Prefs/file.php:256
 #, php-format
 msgid "Write of preferences to %s failed"
 msgstr ""
@@ -8878,7 +8939,7 @@ msgstr ""
 msgid "Wrong offset %d while reading a VFS file."
 msgstr ""
 
-#: framework/Prefs/Prefs/file.php:117
+#: framework/Prefs/Prefs/file.php:120
 #, php-format
 msgid "Wrong version number found: %s (should be %d)"
 msgstr ""
@@ -8914,12 +8975,12 @@ msgstr ""
 msgid "YY"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:457
-#: framework/UI/UI/VarRenderer/html.php:499
+#: framework/UI/UI/VarRenderer/html.php:452
+#: framework/UI/UI/VarRenderer/html.php:494
 msgid "YYYY"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:1271
+#: framework/UI/UI/VarRenderer/html.php:1261
 msgid "Yahoo! map"
 msgstr ""
 
@@ -8933,7 +8994,7 @@ msgstr ""
 msgid "Yemen"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:1083
+#: framework/UI/UI/VarRenderer/html.php:1078
 msgid "Yes"
 msgstr ""
 
@@ -8949,19 +9010,19 @@ msgstr ""
 msgid "You are no member of a group that may login on this server."
 msgstr ""
 
-#: lib/api.php:420
+#: lib/api.php:466
 msgid "You are not allowed to add groups."
 msgstr ""
 
-#: lib/api.php:617
+#: lib/api.php:663
 msgid "You are not allowed to add shares."
 msgstr ""
 
-#: lib/api.php:475 lib/api.php:501 lib/api.php:531 lib/api.php:557
+#: lib/api.php:521 lib/api.php:547 lib/api.php:577 lib/api.php:603
 msgid "You are not allowed to change groups."
 msgstr ""
 
-#: lib/api.php:703 lib/api.php:741 lib/api.php:782 lib/api.php:810
+#: lib/api.php:749 lib/api.php:787 lib/api.php:828 lib/api.php:856
 msgid "You are not allowed to change shares."
 msgstr ""
 
@@ -8972,39 +9033,39 @@ msgid_plural "You are not allowed to create more than %d blocks."
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/api.php:449
+#: lib/api.php:495
 msgid "You are not allowed to delete groups."
 msgstr ""
 
-#: lib/api.php:646
+#: lib/api.php:692
 msgid "You are not allowed to delete shares."
 msgstr ""
 
-#: lib/api.php:963
+#: lib/api.php:1009
 msgid "You are not allowed to list groups of shares."
 msgstr ""
 
-#: lib/api.php:845 lib/api.php:887
+#: lib/api.php:891 lib/api.php:933
 msgid "You are not allowed to list share permissions."
 msgstr ""
 
-#: lib/api.php:675
+#: lib/api.php:721
 msgid "You are not allowed to list shares."
 msgstr ""
 
-#: lib/api.php:590
+#: lib/api.php:636
 msgid "You are not allowed to list users of groups."
 msgstr ""
 
-#: lib/api.php:929
+#: lib/api.php:975
 msgid "You are not allowed to list users of shares."
 msgstr ""
 
-#: lib/api.php:372
+#: lib/api.php:377 lib/api.php:422
 msgid "You are not allowed to remove user data."
 msgstr ""
 
-#: framework/Horde/Horde.php:1635
+#: framework/Horde/Horde.php:1660
 msgid "You are not authenticated."
 msgstr ""
 
@@ -9020,7 +9081,7 @@ msgstr ""
 msgid "You did not authenticate."
 msgstr ""
 
-#: framework/Form/Form.php:2650
+#: framework/Form/Form.php:2701
 msgid "You did not enter a valid email address."
 msgstr ""
 
@@ -9031,7 +9092,7 @@ msgid ""
 "in %s."
 msgstr ""
 
-#: framework/Auth/Auth.php:1014
+#: framework/Auth/Auth.php:1015
 msgid "You have been logged out."
 msgstr ""
 
@@ -9047,11 +9108,11 @@ msgid ""
 "If you don't know what this message means, you can delete it."
 msgstr ""
 
-#: framework/Form/Form.php:3582
+#: framework/Form/Form.php:3633
 msgid "You must choose a date."
 msgstr ""
 
-#: framework/Form/Form.php:3580
+#: framework/Form/Form.php:3631
 msgid "You must choose a time."
 msgstr ""
 
@@ -9059,7 +9120,7 @@ msgstr ""
 msgid "You must configure a DataTree backend to use Signups."
 msgstr ""
 
-#: framework/Horde/Horde.php:636
+#: framework/Horde/Horde.php:641
 msgid "You must configure a VFS backend."
 msgstr ""
 
@@ -9081,11 +9142,11 @@ msgstr ""
 msgid "You must enter a valid value."
 msgstr ""
 
-#: framework/Form/Form.php:2210
+#: framework/Form/Form.php:2261
 msgid "You must enter an email address."
 msgstr ""
 
-#: framework/Form/Form.php:2208
+#: framework/Form/Form.php:2259
 msgid "You must enter at least one email address."
 msgstr ""
 
@@ -9126,7 +9187,7 @@ msgstr ""
 msgid "You need to provide an Italian phone number"
 msgstr ""
 
-#: framework/Auth/Auth.php:1002
+#: framework/Auth/Auth.php:1003
 #, php-format
 msgid "Your %s session has expired. Please login again."
 msgstr ""
@@ -9144,7 +9205,7 @@ msgstr ""
 msgid "Your Information"
 msgstr ""
 
-#: framework/Auth/Auth.php:1006
+#: framework/Auth/Auth.php:1007
 #, php-format
 msgid ""
 "Your Internet Address has changed since the beginning of your %s session. To "
@@ -9168,7 +9229,7 @@ msgid ""
 "has been disabled for some other reason."
 msgstr ""
 
-#: framework/Auth/Auth.php:1010
+#: framework/Auth/Auth.php:1011
 #, php-format
 msgid ""
 "Your browser appears to have changed since the beginning of your %s session. "
@@ -9201,11 +9262,11 @@ msgstr ""
 msgid "Your full name:"
 msgstr ""
 
-#: framework/Auth/Auth.php:1026
+#: framework/Auth/Auth.php:1027
 msgid "Your login has expired."
 msgstr ""
 
-#: services/resetpassword.php:74
+#: services/resetpassword.php:76
 #, php-format
 msgid "Your new password for %s is: %s"
 msgstr ""
@@ -9218,11 +9279,17 @@ msgstr ""
 msgid "Your options have been updated."
 msgstr ""
 
-#: services/resetpassword.php:73
+#: services/resetpassword.php:75
 msgid "Your password has been reset"
 msgstr ""
 
-#: services/resetpassword.php:80
+#: services/resetpassword.php:83
+msgid ""
+"Your password has been reset, but couldn't be sent to you. Please contact "
+"the administrator."
+msgstr ""
+
+#: services/resetpassword.php:85
 msgid ""
 "Your password has been reset, check your email and log in with your new "
 "password."
@@ -9232,7 +9299,7 @@ msgstr ""
 msgid "Your password has expired"
 msgstr ""
 
-#: framework/Auth/Auth.php:755
+#: framework/Auth/Auth.php:756
 msgid "Your password has expired."
 msgstr ""
 
@@ -9283,7 +9350,7 @@ msgstr ""
 msgid "[Unknown]"
 msgstr ""
 
-#: framework/Horde/Horde.php:226
+#: framework/Horde/Horde.php:231
 #, php-format
 msgid "[line %d of %s]"
 msgstr ""
@@ -9292,19 +9359,19 @@ msgstr ""
 msgid "[options]"
 msgstr ""
 
-#: lib/api.php:204
+#: lib/api.php:209
 msgid "_Alarms"
 msgstr ""
 
-#: lib/api.php:224
+#: lib/api.php:229
 msgid "_CLI"
 msgstr ""
 
-#: lib/api.php:208
+#: lib/api.php:213
 msgid "_DataTree"
 msgstr ""
 
-#: lib/api.php:196
+#: lib/api.php:201
 msgid "_Groups"
 msgstr ""
 
@@ -9324,15 +9391,15 @@ msgstr ""
 msgid "_Options"
 msgstr ""
 
-#: lib/api.php:200
+#: lib/api.php:205
 msgid "_Permissions"
 msgstr ""
 
-#: lib/api.php:188
+#: lib/api.php:193
 msgid "_Setup"
 msgstr ""
 
-#: lib/api.php:192
+#: lib/api.php:197
 msgid "_Users"
 msgstr ""
 
@@ -9390,7 +9457,7 @@ msgstr ""
 msgid "falling"
 msgstr ""
 
-#: framework/Browser/Browser.php:1039
+#: framework/Browser/Browser.php:1047
 msgid "file"
 msgstr ""
 
@@ -9403,11 +9470,11 @@ msgstr ""
 msgid "gusting"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:268
+#: framework/UI/UI/VarRenderer/html.php:263
 msgid "h:"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:401
+#: framework/UI/UI/VarRenderer/html.php:396
 msgid "hh"
 msgstr ""
 
@@ -9437,7 +9504,7 @@ msgstr ""
 msgid "mkisofs error code %d while making ISO."
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:412
+#: framework/UI/UI/VarRenderer/html.php:407
 msgid "mm"
 msgstr ""
 
@@ -9507,7 +9574,7 @@ msgstr ""
 msgid "sms2email via HTTP"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:429
+#: framework/UI/UI/VarRenderer/html.php:424
 msgid "ss"
 msgstr ""
 
@@ -9523,8 +9590,8 @@ msgstr ""
 msgid "temporary failure"
 msgstr ""
 
-#: admin/user.php:44 admin/user.php:55 framework/Auth/Auth/Signup.php:204
-#: framework/Auth/Auth/Signup.php:218
+#: admin/user.php:44 admin/user.php:55 framework/Auth/Auth/Signup.php:278
+#: framework/Auth/Auth/Signup.php:292
 msgid "type the password twice to confirm"
 msgstr ""
 
@@ -9549,7 +9616,7 @@ msgstr ""
 msgid "vCard"
 msgstr ""
 
-#: framework/UI/UI/VarRenderer/html.php:260
+#: framework/UI/UI/VarRenderer/html.php:255
 msgid "w:"
 msgstr ""
 

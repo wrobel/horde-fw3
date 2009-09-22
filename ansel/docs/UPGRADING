@@ -2,8 +2,8 @@
  Upgrading Ansel
 =====================
 
-:Last update:   $Date: 2009/07/17 15:32:13 $
-:Revision:      $Revision: 1.1.2.3 $
+:Last update:   $Date: 2009/09/17 14:47:15 $
+:Revision:      $Revision: 1.1.2.4 $
 :Contact:       ansel@lists.horde.org
 
 
@@ -31,6 +31,7 @@ YOU DO NOT PLAN ON USING GEOTAGGING FEATURES::
     php scripts/upgrades/1.0_to_1.1.php
 
 In addition to the above, if you wish to use the geotagging feature, you will
-need an API key from Google for the Maps API.
+need an API key from Google for the Maps API. You should add this key using
+Horde's configuration interface, under the ``API Keys`` tab.
 
     http://code.google.com/apis/maps/signup.html

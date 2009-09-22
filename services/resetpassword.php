@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/services/resetpassword.php,v 1.5.10.12 2009/07/27 12:19:26 jan Exp $
+ * $Horde: horde/services/resetpassword.php,v 1.5.10.13 2009/09/12 08:16:19 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *
@@ -82,7 +82,7 @@ if ($can_validate && $form->validate($vars)) {
                 Horde::logMessage($result, __FILE__, __LINE__, PEAR_LOG_ERR);
                 $notification->push(_("Your password has been reset, but couldn't be sent to you. Please contact the administrator."), 'horde.error');
             } else {
-                $notification->push(_("Your password has been reset, check youremail and log in with your new password."), 'horde.success');
+                $notification->push(_("Your password has been reset, check your email and log in with your new password."), 'horde.success');
                 header('Location: ' . Auth::getLoginScreen('', $info['url']));
                 exit;
             }

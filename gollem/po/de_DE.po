@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gollem 1.1-cvs\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2009-03-19 10:37+0100\n"
+"POT-Creation-Date: 2009-09-12 10:10+0200\n"
 "PO-Revision-Date: 2009-03-19 11:08+0100\n"
 "Last-Translator: Jan Schneider <jan@horde.org>\n"
 "Language-Team: German <dev@lists.horde.org>\n"
@@ -28,12 +28,12 @@ msgstr "\"%s\" nach \"%s\" umbenannt"
 msgid "%.2fMB / %.2fMB  (%.2f%%)"
 msgstr "%.2fMB / %.2fMB  (%.2f%%)"
 
-#: manager.php:560
+#: manager.php:567
 #, php-format
 msgid "%d item"
 msgstr "%d Element"
 
-#: manager.php:560
+#: manager.php:567
 #, php-format
 msgid "%d items"
 msgstr "%d Elemente"
@@ -61,7 +61,7 @@ msgstr ""
 "Ein Popup-Fenster konnte nicht geöffnet werden. Vielleicht haben Sie Ihren "
 "Browser so eingestellt, dass er Popup-Fenster blockiert?"
 
-#: edit.php:33 edit.php:43 view.php:35 view.php:42
+#: edit.php:33 edit.php:43 view.php:36 view.php:43
 #, php-format
 msgid "Access denied to %s"
 msgstr "Zugriff auf %s verweigert"
@@ -120,7 +120,7 @@ msgstr "Backends"
 msgid "Below is the current contents of your clipboard."
 msgstr "Unten sehen Sie den aktuellen Inhalt der Zwischenablage."
 
-#: manager.php:285 selectlist.php:101 clipboard.php:38
+#: manager.php:290 selectlist.php:101 clipboard.php:38
 #: templates/edit/edit.inc:13
 msgid "Cancel"
 msgstr "Abbrechen"
@@ -149,7 +149,7 @@ msgid "Cannot paste \"%s\" (file cleared from clipboard): %s"
 msgstr ""
 "\"%s\" kann nicht eingefügt werden (Datei aus Zwischenablage entfernt): %s"
 
-#: manager.php:313 templates/manager/manager.html:70
+#: manager.php:318 templates/manager/manager.html:70
 msgid "Change Folder"
 msgstr "Verzeichnis wechseln"
 
@@ -173,7 +173,7 @@ msgstr "Ändern Sie die Sortierkriterien für die Dateien."
 msgid "Check Quota"
 msgstr "Speicherplatzkontingent überprüfen"
 
-#: manager.php:556
+#: manager.php:563
 msgid "Check _All/None"
 msgstr "_Alle/Keine auswählen"
 
@@ -197,7 +197,7 @@ msgstr "Zwischenablage"
 msgid "Close"
 msgstr "Schließen"
 
-#: login.php:258
+#: login.php:261
 #, php-format
 msgid "Connect to: %s"
 msgstr "Verbinden zu Server: %s"
@@ -211,7 +211,7 @@ msgstr "Kopieren"
 msgid "Could not save the compiled template file '%s'."
 msgstr "Die kompilierte Templatedatei '%s' konnte nicht gespeichert werden."
 
-#: manager.php:306 templates/manager/manager.html:58
+#: manager.php:311 templates/manager/manager.html:58
 msgid "Create Folder"
 msgstr "Verzeichnis erstellen"
 
@@ -260,7 +260,7 @@ msgstr "Fertig"
 msgid "Download"
 msgstr "Herunterladen"
 
-#: manager.php:440
+#: manager.php:446
 #, php-format
 msgid "Download %s"
 msgstr "%s Herunterladen"
@@ -347,7 +347,7 @@ msgstr "Gehe zu:"
 msgid "Gollem Backend Permissions Administration"
 msgstr "Gollem Backend Rechteverwaltung"
 
-#: manager.php:535 templates/manager/manager.html:10
+#: manager.php:542 templates/manager/manager.html:10
 msgid "Group"
 msgstr "Gruppe"
 
@@ -383,7 +383,7 @@ msgstr "Sprache"
 msgid "List folders first?"
 msgstr "Verzeichnisse zuerst anzeigen?"
 
-#: login.php:307
+#: login.php:310
 msgid "Login"
 msgstr "Anmelden"
 
@@ -391,7 +391,7 @@ msgstr "Anmelden"
 msgid "Menu List"
 msgstr "Menüliste"
 
-#: manager.php:505
+#: manager.php:512
 msgid "Modified"
 msgstr "Geändert"
 
@@ -403,7 +403,7 @@ msgstr "Nach links"
 msgid "Move right"
 msgstr "Nach rechts"
 
-#: manager.php:483
+#: manager.php:490
 msgid "Name"
 msgstr "Name"
 
@@ -423,11 +423,11 @@ msgstr "Nein"
 msgid "No quota found."
 msgstr "Kein Speicherplatzkontingent gefunden."
 
-#: manager.php:286
+#: manager.php:291
 msgid "OK"
 msgstr "OK"
 
-#: manager.php:528 templates/manager/manager.html:9
+#: manager.php:535 templates/manager/manager.html:9
 msgid "Owner"
 msgstr "Besitzer"
 
@@ -439,7 +439,7 @@ msgstr "Passwort"
 msgid "Paste"
 msgstr "Einfügen"
 
-#: manager.php:521
+#: manager.php:528
 msgid "Permission"
 msgstr "Rechte"
 
@@ -486,7 +486,7 @@ msgstr "Speicherplatzkontingent"
 msgid "Read"
 msgstr "Lesen"
 
-#: manager.php:291
+#: manager.php:296
 msgid "Refresh"
 msgstr "Aktualisiere"
 
@@ -510,7 +510,7 @@ msgstr "Das Umbenennen von Backends ist nicht erlaubt."
 msgid "Reset"
 msgstr "Zurücksetzen"
 
-#: manager.php:284 templates/edit/edit.inc:11
+#: manager.php:289 templates/edit/edit.inc:11
 msgid "Save"
 msgstr "Speichern"
 
@@ -530,7 +530,7 @@ msgstr "Einstellungen"
 msgid "Show dotfiles?"
 msgstr "Versteckte Dateien anzeigen?"
 
-#: manager.php:513
+#: manager.php:520
 msgid "Size"
 msgstr "Größe"
 
@@ -575,7 +575,7 @@ msgstr ""
 "markieren Sie das Kästchen neben dem Dateinamen und klicken Sie auf &quot;"
 "Einfügen&quot;."
 
-#: manager.php:475
+#: manager.php:482
 msgid "Type"
 msgstr "Typ"
 
@@ -604,7 +604,7 @@ msgstr "Das Verzeichnis \"%s\" konnte nicht gelöscht werden: %s"
 msgid "Up to %s"
 msgstr "Hoch nach %s"
 
-#: manager.php:303
+#: manager.php:308
 msgid "Upload File(s)"
 msgstr "Datei(en) Hochladen"
 
@@ -616,11 +616,11 @@ msgstr "Benutzeroberfläche"
 msgid "Username"
 msgstr "Benutzername"
 
-#: manager.php:298
+#: manager.php:303
 msgid "View Clipboard"
 msgstr "Zwischenablage anzeigen"
 
-#: login.php:201
+#: login.php:204
 #, php-format
 msgid "Welcome to %s"
 msgstr "Willkommen bei %s"

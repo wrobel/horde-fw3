@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ingo/lib/Script/maildrop.php,v 1.7.2.14 2009/03/23 21:38:21 jan Exp $
+ * $Horde: ingo/lib/Script/maildrop.php,v 1.7.2.15 2009/09/15 21:09:26 jan Exp $
  *
  * Copyright 2005-2007 Matt Weyland <mathias@weyland.ch>
  *
@@ -513,7 +513,7 @@ class Maildrop_Recipe {
 
             // Rule : Start/End of vacation
             if (($start != 0) && ($end !== 0)) {
-                $this->_action[] = '  flock "vacation.lock" {';
+                $this->_action[] = '  flock "vacationprocess.lock" {';
                 $this->_action[] = '    current_time=time';
                 $this->_action[] = '      if ( \ ';
                 $this->_action[] = '        ($current_time >= ' . $start . ') && \ ';

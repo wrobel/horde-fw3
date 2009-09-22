@@ -1,1 +1,1 @@
-<?php define('TREAN_VERSION', '1.0-cvs') ?>
+<?php define('TREAN_VERSION', 'H3 (1.0-cvs)') ?>

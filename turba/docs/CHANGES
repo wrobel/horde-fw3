@@ -1,6 +1,13 @@
 ----------
-v2.3.2-cvs
+v2.3.3-cvs
 ----------
+
+[jan] Replace PHP5-only code from the LDIF exporter (Bug #8586).
+
+
+------
+v2.3.2
+------
 
 [mms] Upgrade prototype.js to v1.6.1.
 [jan] Fix synchronization with output compression enabled (Bug #7769).

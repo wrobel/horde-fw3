@@ -2,8 +2,8 @@
  Upgrading Horde
 =================
 
-:Last update:   $Date: 2008/09/05 14:09:06 $
-:Revision:      $Revision: 1.4.4.21 $
+:Last update:   $Date: 2009/09/10 13:48:53 $
+:Revision:      $Revision: 1.4.4.22 $
 :Contact:       horde@lists.horde.org
 
 
@@ -13,6 +13,15 @@ use the updated data with your old Horde version anymore.
 
 After updating to a newer Horde version, or a newer version of **any** Horde
 application, you **always** need to update **all** configuration files.
+
+
+Upgrading Horde from 3.3.x to 3.3.5
+===================================
+
+The signup_email column of the horde_signups table is no longer needed. You
+can execute the provide SQL script to remove that column, e.g.::
+
+   mysql --user=root --password=<MySQL-root-password> <db name> < scripts/upgrades/3.3_to_3.3.5.sql
 
 
 Upgrading Horde from 3.2.x to 3.3.x

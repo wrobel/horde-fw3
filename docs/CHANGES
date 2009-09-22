@@ -1,7 +1,16 @@
-----------
-v3.3.5-cvs
-----------
+------
+v3.3.6
+------
 
+[mms] Fix prototypejs regression on IE 6/7 (Bug #6590).
+
+
+------
+v3.3.5
+------
+
+[jan] SECURITY: Fix vulnerability in image form fields that allows overwriting
+      of arbitrary local files.
 [cjh] SECURITY: Fix validation of "number" type preferences (Bug #8399).
 [mms] SECURITY: Don't display unknown text parts inline (Bug #8311).
 [mms] Upgrade prototype.js to v1.6.1.
@@ -233,6 +242,16 @@ v3.3-RC1
 [mms] Fix error checking when parsing an undisclosed recipients mail header
       and using an older version of PEAR::Mail (Bug #6930).
 [jan] Return to portal after editing or deleting blocks directly from there.
+
+
+------
+v3.2.5
+------
+
+[jan] SECURITY: Fix vulnerability in image form fields that allows overwriting
+      of arbitrary local files.
+[cjh] SECURITY: Fix validation of "number" type preferences (Bug #8399).
+[mms] SECURITY: Don't display unknown text parts inline (Bug #8311).
 
 
 ------

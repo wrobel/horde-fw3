@@ -1,23 +1,21 @@
 <?php
 /**
- * Release focus. Possible values:
- * 0 - N/A
- * 1 - Initial freshmeat announcement
- * 2 - Documentation
- * 3 - Code cleanup
- * 4 - Minor feature enhancements
- * 5 - Major feature enhancements
- * 6 - Minor bugfixes
- * 7 - Major bugfixes
- * 8 - Minor security fixes
- * 9 - Major security fixes
+ * Release focus. Possible values (multiple possible with arrays):
+ * Horde_Release::FOCUS_INITIAL - Initial announcement
+ * Horde_Release::FOCUS_MINORFEATURE - Minor feature enhancement
+ * Horde_Release::FOCUS_MAJORFEATURE - Major feature enhancement
+ * Horde_Release::FOCUS_MINORBUG - Minor bugfixes
+ * Horde_Release::FOCUS_MAJORBUG - Major bugfixes
+ * Horde_Release::FOCUS_MINORSECURITY - Minor security fixes
+ * Horde_Release::FOCUS_MAJORSECURITY - Major security fixes
+ * Horde_Release::FOCUS_DOCS - Documentation improvements
  */
-$this->notes['fm']['focus'] = 6;
+$this->notes['fm']['focus'] = array(Horde_Release::FOCUS_MINORBUG, Horde_Release::FOCUS_MINORFEATURE);
 
 /* Mailing list release notes. */
 $this->notes['ml']['changes'] = <<<ML
 The Horde Team is pleased to announce the final release of the Kronolith
-Calendar Application version H3 (2.3.1).
+Calendar Application version H3 (2.3.2).
 
 Kronolith is the Horde calendar application.  It provides web-based calendars
 backed by a SQL database or a Kolab server.  Supported features include shared
@@ -25,18 +23,16 @@ calendars, remote calendars, meeting management, alarms, recurring events, and
 a sophisticated day/week view which handles arbitrary numbers of overlapping
 events.
 
-The major changes compared to the Kronolith version H3 (2.3) are:
-    * Added script to import events from SquirrelMail calendars.
-    * Added option to manually change attendee responses.
-    * Improved holidays support.
+The major changes compared to the Kronolith version H3 (2.3.1) are:
+    * Improved synchronization support.
+    * Allow to add address lists as attendees through the address book popup.
+    * Fixed several issues with all-day events.
     * Many minor bug fixes.
 ML;
 
 /* Freshmeat release notes, not more than 600 characters. */
 $this->notes['fm']['changes'] = <<<FM
-A script to import events from SquirrelMail calendars has been added.
-An option to manually change attendee responses has been added.
-Holidays support has been improved and many minor bug fixes have been made.
+Synchronization support has been improved. Address lists can be added as attendees through the address book popup now. Several issues with all-day events have been fixed. Many minor bug fixes have been made.
 FM;
 
 $this->notes['name'] = 'Kronolith';

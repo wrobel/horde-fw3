@@ -1,1 +1,1 @@
-<?php define('AGORA_VERSION', '1.0-cvs') ?>
+<?php define('AGORA_VERSION', 'H3 (1.0-cvs)') ?>

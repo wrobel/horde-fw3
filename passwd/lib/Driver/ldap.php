@@ -3,7 +3,7 @@
  * The LDAP class attempts to change a user's password stored in an LDAP
  * directory service.
  *
- * $Horde: passwd/lib/Driver/ldap.php,v 1.41.2.11 2009/08/19 08:41:12 jan Exp $
+ * $Horde: passwd/lib/Driver/ldap.php,v 1.41.2.12 2009/09/18 14:31:58 jan Exp $
  *
  * Copyright 2000-2009 The Horde Project (http://www.horde.org/)
  *
@@ -84,6 +84,12 @@ class Passwd_Driver_ldap extends Passwd_Driver {
             $this->_params['tls']) {
             if (!ldap_start_tls($this->_ds)) {
                 return PEAR::raiseError(_("Could not start TLS connection to LDAP server"));
+            }
+        }
+
+        if (!empty($this->_params['referrals'])) {
+            if (!ldap_set_option($this->_ds, LDAP_OPT_REFERRALS, $this->_params['referrals'])) {
+                return PEAR::raiseError(_("Unable to disable directory referrals"));
             }
         }
 

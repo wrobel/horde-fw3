@@ -6,7 +6,7 @@ $GLOBALS['_HORDE_STRING_CHARSET'] = 'iso-8859-1';
  * The String:: class provides static methods for charset and locale safe
  * string manipulation.
  *
- * $Horde: framework/Util/String.php,v 1.43.6.37 2009/03/30 15:31:38 jan Exp $
+ * $Horde: framework/Util/String.php,v 1.43.6.38 2009/09/15 16:36:14 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -86,6 +86,9 @@ class String {
         }
 
         /* If the from and to character sets are identical, return now. */
+        if ($from == $to) {
+            return $input;
+        }
         $from = String::lower($from);
         $to = String::lower($to);
         if ($from == $to) {
@@ -503,9 +506,9 @@ class String {
             $line = String::substr($string, 0, $width, 'utf-8');
             $string = String::substr($string, String::length($line, 'utf-8'), null, 'utf-8');
             // Make sure didn't cut a word, unless we want hard breaks anyway.
-            if (!$cut && preg_match('/^(.+?)(\s|\r?\n)/u', $string, $match)) {
+            if (!$cut && preg_match('/^(.+?)((\s|\r?\n).*)/us', $string, $match)) {
                 $line .= $match[1];
-                $string = String::substr($string, String::length($match[1], 'utf-8'), null, 'utf-8');
+                $string = $match[2];
             }
             // Wrap at existing line breaks.
             if (preg_match('/^(.*?)(\r?\n)(.*)$/u', $line, $match)) {
@@ -534,8 +537,7 @@ class String {
             }
             // Hard wrap if necessary.
             if ($cut) {
-                $wrapped .= String::substr($line, 0, $width, 'utf-8') . $break;
-                $string = String::substr($line, $width, null, 'utf-8') . $string;
+                $wrapped .= $line . $break;
                 continue;
             }
             $wrapped .= $line;

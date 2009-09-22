@@ -165,7 +165,7 @@
  *    testTearDown() to create a clean (empty) enviroment for the test user
  *    "syncmltest".  See the SyncML_Backend_Sql implementation for details.
  *
- * $Horde: framework/SyncML/SyncML/Backend.php,v 1.8.2.18 2009/08/18 16:47:08 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Backend.php,v 1.8.2.19 2009/09/15 13:42:53 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *
@@ -778,7 +778,6 @@ class SyncML_Backend {
     function logMessage($message, $file, $line, $priority = PEAR_LOG_INFO)
     {
         if ($priority > $this->_logLevel)  {
-            var_dump($priority);
             return;
         }
 

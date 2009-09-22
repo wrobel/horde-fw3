@@ -1,6 +1,14 @@
 ----------
-v2.3.2-cvs
+v2.3.3-cvs
 ----------
+
+[mjr] Fix issue that caused the default alarm time to be applied to 
+      listTimeObjects events (Bug #8588).
+
+
+------
+v2.3.2
+------
 
 [mms] Upgrade prototype.js to v1.6.1.
 [jan] Allow to add address lists as attendees through the address book popup

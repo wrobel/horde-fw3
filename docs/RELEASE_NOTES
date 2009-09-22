@@ -1,36 +1,45 @@
 <?php
 /**
- * Release focus. Possible values:
- * 0 - N/A
- * 1 - Initial freshmeat announcement
- * 2 - Documentation
- * 3 - Code cleanup
- * 4 - Minor feature enhancements
- * 5 - Major feature enhancements
- * 6 - Minor bugfixes
- * 7 - Major bugfixes
- * 8 - Minor security fixes
- * 9 - Major security fixes
+ * Release focus. Possible values (multiple possible with arrays):
+ * Horde_Release::FOCUS_INITIAL - Initial announcement
+ * Horde_Release::FOCUS_MINORFEATURE - Minor feature enhancement
+ * Horde_Release::FOCUS_MAJORFEATURE - Major feature enhancement
+ * Horde_Release::FOCUS_MINORBUG - Minor bugfixes
+ * Horde_Release::FOCUS_MAJORBUG - Major bugfixes
+ * Horde_Release::FOCUS_MINORSECURITY - Minor security fixes
+ * Horde_Release::FOCUS_MAJORSECURITY - Major security fixes
+ * Horde_Release::FOCUS_DOCS - Documentation improvements
  */
-$this->notes['fm']['focus'] = 8;
+$this->notes['fm']['focus'] = array(Horde_Release::FOCUS_MAJORSECURITY, Horde_Release::FOCUS_MINORBUG);
 
 /* Mailing list release notes. */
 $this->notes['ml']['changes'] = <<<ML
 The Horde Team is pleased to announce the final release of the Horde
 Application Framework version 3.3.5.
 
+This is a major security release that fixes a vulnerability in the form
+library that allows overwriting of arbitrary local files with the permissions
+of the web server user. It also fixes two XSS vulnerabilities in the
+preference system and the MIME viewer library. The local file vulnerability
+can only be exploited when running an application that uses image form fields,
+like Turba H3 (2.3) or Ansel, and only by users who have write permissions to
+those applications. All users are encouraged to upgrade to this release.
+
+Thanks to Stefan Esser from SektionEins for finding the local file issue in a
+code audit, and Martin Geisler and David Wharton for finding the XSS issues.
+
 The Horde Application Framework is a modular, general-purpose web application
 framework written in PHP.  It provides an extensive array of classes that are
 targeted at the common problems and tasks involved in developing modern web
 applications.
 
-This is a minor security release that fixes validation of "number" type
-preferences, and prevents display of unknown text parts inline without
-escaping the data.  All users are encouraged to upgrade to this release.
-
 The major changes compared to Horde version 3.3.4 are:
-    * SECURITY: Fix validation of "number" type preferences.
-    * SECURITY: Don't display unknown text parts inline.
+    * Fixed vulnerability in image form fields that allows overwriting of
+      arbitrary local files.
+    * Fixed validation of "number" type preferences.
+    * Fixed displaying unknown text MIME parts inline.
+    * Many synchronization improvements.
+    * Improved signup support.
     * Releasing memcache lock no longer takes 1 second.
     * Fixes when resetting passwords.
     * Export current locale to the environment.
@@ -39,12 +48,8 @@ ML;
 
 /* Freshmeat release notes, not more than 600 characters. */
 $this->notes['fm']['changes'] = <<<FM
-This is a minor security release that fixes validation of "number" type
-preferences, and prevents display of unknown text parts inline without
-escaping the data.
-Additionally, fix an issue with memcache locking taking a full second to
-release, various fixes when resetting a password, and ensure the current
-locale is exported to the environment.
+This is a security release that fixes a vulnerability that allows overwriting of local files, and two XSS vulnerabilities.
+Synchronization and signup support have been improved. An issue with memcache locking taking a full second to release has been fixed. Various fixes when resetting a password have been applied, and the current locale is exported to the environment now.
 FM;
 
 $this->notes['name'] = 'Horde';

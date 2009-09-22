@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: passwd/config/backends.php.dist,v 1.41.2.5 2009/06/10 08:20:39 jan Exp $
+ * $Horde: passwd/config/backends.php.dist,v 1.41.2.6 2009/09/18 14:31:58 jan Exp $
  *
  * This file is where you specify what backends people use to change
  * their passwords. There are a number of properties that you can set
@@ -232,6 +232,12 @@ $backends['ldapadmin'] = array(
 
         // Hash method to use when storing the password
         'encryption' => 'crypt',
+    
+        // Only applies to LDAP servers. If set, should be 0 or 1. See the LDAP 
+        // documentation about the corresponding parameter REFERRALS.
+        // Windows 2003 Server require to set this parameter to 0
+        //'referrals' => 0,
+        
 
         // Whether to enable TLS for this LDAP connection
         // Note: make sure the host matches cn in the server certificate

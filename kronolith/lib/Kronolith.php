@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: kronolith/lib/Kronolith.php,v 1.263.2.81 2009/03/25 23:49:29 jan Exp $
+ * $Horde: kronolith/lib/Kronolith.php,v 1.263.2.82 2009/09/21 16:34:40 mrubinsk Exp $
  *
  * @package Kronolith
  */
@@ -747,7 +747,7 @@ class Kronolith {
                         }
 
                         $event = &$kronolith_driver->getEvent();
-
+                        $event->setAlarm(0);
                         if ($GLOBALS['prefs']->getValue('show_external_colors') &&
                             isset($eventsListItem['category'])) {
                             $event->category = $eventsListItem['category'];

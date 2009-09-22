@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/config/prefs.php.dist,v 1.216.4.34 2008/08/28 21:03:15 slusarz Exp $
+ * $Horde: imp/config/prefs.php.dist,v 1.216.4.35 2009/09/18 14:04:50 jan Exp $
  *
  * See horde/config/prefs.php for documentation on the structure of this file.
  */
@@ -605,7 +605,9 @@ $_prefs['jseditor'] = array(
 
 // The list of buttons to show in FCKeditor
 $_prefs['fckeditor_buttons'] = array(
-    'value' => "[['FontFormat','FontName','FontSize'],['Bold','Italic','Underline'],['TextColor','BGColor'],'/',['JustifyLeft','JustifyCenter','JustifyRight','JustifyFull'],['OrderedList','UnorderedList','Outdent','Indent'],['Link'],['Undo','Redo']]",
+    'value' => "[['Source','FitWindow','-','Templates'],['Cut','Copy','Paste','PasteText','PasteWord'],['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],'/',['OrderedList','UnorderedList','-','Outdent','Indent','Blockquote'],['JustifyLeft','JustifyCenter','JustifyRight','JustifyFull'],['Link','Unlink'],['Image','Flash','Table','Rule','Smiley','SpecialChar'],'/',['Bold','Italic','Underline','StrikeThrough','-','Subscript','Superscript'],['TextColor','BGColor'],'/',['Style','FontFormat','FontName','FontSize']]",
+    // Use the following line for a very basic set of buttons:
+    // 'value' => "['Bold','Italic','-','OrderedList','UnorderedList','-','Link','Unlink']",
     'locked' => true,
     'shared' => false,
     'type' => 'textarea',

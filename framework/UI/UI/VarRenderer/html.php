@@ -2,7 +2,7 @@
 /**
  * The Horde_UI_VarRenderer_html:: class renders variables to HTML.
  *
- * $Horde: framework/UI/UI/VarRenderer/html.php,v 1.98.2.41 2009/02/03 19:20:11 jan Exp $
+ * $Horde: framework/UI/UI/VarRenderer/html.php,v 1.98.2.42 2009/09/14 07:22:07 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -157,10 +157,7 @@ class Horde_UI_VarRenderer_html extends Horde_UI_VarRenderer {
     function _renderVarInput_image($form, &$var, &$vars)
     {
         $varname = htmlspecialchars($var->getVarName());
-        $image = $var->getValue($vars);
-
-        /* Check if existing image data is being loaded. */
-        $var->type->loadImageData($image);
+        $image = $var->type->getImage($vars, $var);
 
         Horde::addScriptFile('image.js', 'horde', true);
         $graphics_dir = $GLOBALS['registry']->getImageDir('horde');
@@ -170,13 +167,11 @@ class Horde_UI_VarRenderer_html extends Horde_UI_VarRenderer {
 
         /* Check if there is existing img information stored. */
         if (isset($image['img'])) {
-            /* Hidden tag to store the preview image filename. */
+            /* Hidden tag to store the preview image id. */
             $html = sprintf('<input type="hidden" name="%s" id="%s" value="%s" />',
-                            $varname . '[img]',
-                            $varname . '[img]',
-                            @htmlspecialchars($image['img'], ENT_QUOTES, $this->_charset));
-            /* Unserialize the img information to get the full array. */
-            $image['img'] = @unserialize($image['img']);
+                            $varname . '[hash]',
+                            $varname . '[hash]',
+                            $var->type->getRandomId());
         }
 
         /* Output MAX_FILE_SIZE parameter to limit large files. */
@@ -1144,11 +1139,6 @@ EOT;
 
         /* Check if existing image data is being loaded. */
         $var->type->loadImageData($image);
-
-        if (isset($image['img'])) {
-            /* Unserialize the img information to get the full array. */
-            $image['img'] = @unserialize($image['img']);
-        }
 
         if (empty($image['img'])) {
             return '';

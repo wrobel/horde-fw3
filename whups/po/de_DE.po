@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Whups 1.0-cvs\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2009-03-19 10:37+0100\n"
-"PO-Revision-Date: 2009-03-19 11:09+0100\n"
+"POT-Creation-Date: 2009-09-12 10:10+0200\n"
+"PO-Revision-Date: 2009-09-12 10:34+0200\n"
 "Last-Translator: Jan Schneider <jan@horde.org>\n"
 "Language-Team: German <dev@horde.org>\n"
 "MIME-Version: 1.0\n"
@@ -48,7 +48,7 @@ msgstr "%s %s Tickets in allen Warteschlangen."
 msgid "%s &rArr; %s"
 msgstr "%s &rArr; %s"
 
-#: lib/Driver.php:517
+#: lib/Driver.php:530
 #, php-format
 msgid "%s (%s) wrote:"
 msgstr "%s (%s) hat geschrieben:"
@@ -82,6 +82,10 @@ msgstr "%s wird bei einer Aktualisierung dieses Tickets benachrichtigt."
 #, php-format
 msgid "%s will no longer receive updates for this ticket."
 msgstr "%s wird keine Benachrichtigungen mehr über dieses Ticket erhalten."
+
+#: lib/Driver.php:190
+msgid "(inactive)"
+msgstr "(inaktiv)"
 
 #: admin/index.php:109
 msgid "- Stage 1"
@@ -196,7 +200,7 @@ msgstr "Das Erstellen ihres Tickets ist fehlgeschlagen: %s."
 msgid "Address Books"
 msgstr "Adressbücher"
 
-#: admin/index.php:54 lib/api.php:775
+#: admin/index.php:54 lib/api.php:776
 msgid "Administration"
 msgstr "Administration"
 
@@ -217,11 +221,11 @@ msgstr "Beliebige Gruppe"
 msgid "Ascending"
 msgstr "Aufsteigend"
 
-#: lib/api.php:795
+#: lib/api.php:796
 msgid "Assign"
 msgstr "Zuweisen"
 
-#: lib/Whups.php:688 lib/Ticket.php:986 lib/Driver.php:202 lib/api.php:913
+#: lib/Whups.php:688 lib/Ticket.php:986 lib/Driver.php:215 lib/api.php:914
 #: lib/Renderer/Query.php:156 config/prefs.php.dist:53
 msgid "Assigned"
 msgstr "Zugewiesen"
@@ -239,11 +243,11 @@ msgstr "Zugewiesen bis"
 msgid "Assigned to %s"
 msgstr "%s zugewiesen"
 
-#: admin/index.php:1203
+#: admin/index.php:1205
 msgid "Associations updated successfully."
 msgstr "Zuordnungen erfolgreich aktualisiert."
 
-#: lib/Forms/CreateTicket.php:153 lib/Forms/EditTicket.php:145
+#: lib/Forms/CreateTicket.php:166 lib/Forms/EditTicket.php:145
 #: lib/Forms/AddComment.php:24
 msgid "Attachment"
 msgstr "Anlage"
@@ -363,7 +367,7 @@ msgstr ""
 "Legen Sie die Reihenfolge der Adressbücher fest, in denen nach passenden "
 "Adressen gesucht werden soll."
 
-#: lib/Forms/CreateTicket.php:47 lib/Forms/CreateTicket.php:77
+#: lib/Forms/CreateTicket.php:52 lib/Forms/CreateTicket.php:82
 msgid "Choose:"
 msgstr "Auswählen:"
 
@@ -457,19 +461,19 @@ msgstr "Ticket erstellen"
 msgid "Create Ticket - Step 1"
 msgstr "Ticket erstellen - Schritt 1"
 
-#: lib/Forms/CreateTicket.php:65
+#: lib/Forms/CreateTicket.php:70
 msgid "Create Ticket - Step 2"
 msgstr "Ticket erstellen - Schritt 2"
 
-#: lib/Forms/CreateTicket.php:112
+#: lib/Forms/CreateTicket.php:117
 msgid "Create Ticket - Step 3"
 msgstr "Ticket erstellen - Schritt 3"
 
-#: lib/Forms/CreateTicket.php:197
+#: lib/Forms/CreateTicket.php:210
 msgid "Create Ticket - Step 4"
 msgstr "Ticket erstellen - Schritt 4"
 
-#: lib/Whups.php:686 lib/Ticket.php:971 lib/api.php:918
+#: lib/Whups.php:686 lib/Ticket.php:971 lib/api.php:919
 #: lib/Renderer/Query.php:141 config/prefs.php.dist:52
 msgid "Created"
 msgstr "Erstellt"
@@ -542,7 +546,7 @@ msgstr "%s löschen"
 msgid "Delete %s?"
 msgstr "%s löschen?"
 
-#: admin/index.php:948 lib/Forms/Admin/Attribute.php:57
+#: admin/index.php:950 lib/Forms/Admin/Attribute.php:57
 msgid "Delete Attribute"
 msgstr "Attribut löschen"
 
@@ -550,7 +554,7 @@ msgstr "Attribut löschen"
 msgid "Delete Attribute Confirmation"
 msgstr "Arbeitsart löschen: Bestätigung"
 
-#: admin/index.php:1083 lib/Forms/Admin/Reply.php:36
+#: admin/index.php:1085 lib/Forms/Admin/Reply.php:36
 msgid "Delete Form Reply"
 msgstr "Standardantwort löschen"
 
@@ -594,11 +598,11 @@ msgstr "Typ löschen"
 msgid "Delete Type Confirmation"
 msgstr "Typ löschen: Bestätigung"
 
-#: admin/index.php:817 lib/Forms/Admin/Version.php:36
+#: admin/index.php:818 lib/Forms/Admin/Version.php:38
 msgid "Delete Version"
 msgstr "Version löschen"
 
-#: lib/Forms/Admin/Version.php:82
+#: lib/Forms/Admin/Version.php:86
 msgid "Delete Version Confirmation"
 msgstr "Version löschen: Bestätigung"
 
@@ -615,7 +619,7 @@ msgstr "Anlage gelöscht: %s"
 msgid "Descending"
 msgstr "Absteigend"
 
-#: lib/Forms/CreateTicket.php:154
+#: lib/Forms/CreateTicket.php:167
 msgid "Description"
 msgstr "Beschreibung"
 
@@ -631,7 +635,7 @@ msgstr "Herunterladen"
 msgid "Download these results as: "
 msgstr "Diese Ergebnisse herunterladen als: "
 
-#: lib/Ticket.php:611 lib/Ticket.php:808 lib/Ticket.php:976 lib/api.php:922
+#: lib/Ticket.php:611 lib/Ticket.php:808 lib/Ticket.php:976 lib/api.php:923
 #: lib/Renderer/Query.php:161
 msgid "Due"
 msgstr "Fällig am"
@@ -641,7 +645,7 @@ msgstr "Fällig am"
 msgid "Due &rArr; %s"
 msgstr "Fällig &rArr; %s"
 
-#: lib/Forms/CreateTicket.php:151 lib/Forms/EditTicket.php:93
+#: lib/Forms/CreateTicket.php:164 lib/Forms/EditTicket.php:93
 msgid "Due Date"
 msgstr "Fälligkeitsdatum"
 
@@ -666,7 +670,7 @@ msgstr "Bearbeiten"
 msgid "Edit %s"
 msgstr "%s Bearbeiten"
 
-#: admin/index.php:943 lib/Forms/Admin/Attribute.php:57
+#: admin/index.php:945 lib/Forms/Admin/Attribute.php:57
 #: lib/Forms/Admin/Attribute.php:86
 msgid "Edit Attribute"
 msgstr "Attribut bearbeiten"
@@ -687,7 +691,7 @@ msgstr "Datumskriterium bearbeiten"
 msgid "Edit Form Replies"
 msgstr "Standardantworten bearbeiten"
 
-#: admin/index.php:1078 lib/Forms/Admin/Reply.php:36
+#: admin/index.php:1080 lib/Forms/Admin/Reply.php:36
 #: lib/Forms/Admin/Reply.php:64
 msgid "Edit Form Reply"
 msgstr "Standardantwort bearbeiten"
@@ -739,8 +743,8 @@ msgstr "Typ bearbeiten"
 msgid "Edit User Criterion"
 msgstr "Benutzerkriterium bearbeiten"
 
-#: admin/index.php:812 lib/Forms/Admin/Version.php:36
-#: lib/Forms/Admin/Version.php:59
+#: admin/index.php:813 lib/Forms/Admin/Version.php:38
+#: lib/Forms/Admin/Version.php:61
 msgid "Edit Version"
 msgstr "Version bearbeiten"
 
@@ -776,7 +780,7 @@ msgstr "Status bearbeiten oder löschen"
 msgid "Edit or Delete Types"
 msgstr "Typen bearbeiten oder löschen"
 
-#: lib/Forms/Admin/Version.php:35
+#: lib/Forms/Admin/Version.php:37
 msgid "Edit or Delete Versions"
 msgstr "Versionen bearbeiten oder löschen"
 
@@ -838,7 +842,7 @@ msgstr "Für Tickets von diesen Warteschlangen"
 msgid "For tickets which are"
 msgstr "Für Tickets, die"
 
-#: lib/api.php:806
+#: lib/api.php:807
 msgid "Form Replies"
 msgstr "Standardantworten"
 
@@ -868,7 +872,7 @@ msgstr "Allgemeine Einstellungen"
 msgid "Go"
 msgstr "Los"
 
-#: lib/Forms/CreateTicket.php:232 lib/Forms/EditTicket.php:133
+#: lib/Forms/CreateTicket.php:245 lib/Forms/EditTicket.php:133
 msgid "Group Owners"
 msgstr "Zuständige Gruppe"
 
@@ -876,7 +880,7 @@ msgstr "Zuständige Gruppe"
 msgid "Groups"
 msgstr "Gruppen"
 
-#: lib/api.php:778
+#: lib/api.php:779
 msgid "Hidden Comments"
 msgstr "Versteckte Kommentare"
 
@@ -1050,19 +1054,19 @@ msgstr "Meine Anfragen"
 msgid "My Tickets"
 msgstr "Meine Tickets"
 
-#: lib/api.php:884
+#: lib/api.php:885
 msgid "My tickets by assignment date"
 msgstr "Meine Tickets nach Zuweisungsdatum"
 
-#: lib/api.php:883
+#: lib/api.php:884
 msgid "My tickets by creation date"
 msgstr "Meine Tickets nach Erstelldatum"
 
-#: lib/api.php:885
+#: lib/api.php:886
 msgid "My tickets by due date"
 msgstr "Meine Tickets nach Fälligkeitsdatum"
 
-#: lib/api.php:886
+#: lib/api.php:887
 msgid "My tickets by resolution date"
 msgstr "Meine Tickets nach Erledigungsdatum"
 
@@ -1078,7 +1082,7 @@ msgstr "Name der Kopie"
 msgid "Ne_w Query"
 msgstr "Ne_ue Abfrage"
 
-#: lib/Driver.php:201
+#: lib/Driver.php:214
 msgid "New"
 msgstr "Neu"
 
@@ -1107,10 +1111,11 @@ msgstr "Neuer Typ"
 msgid "Next>"
 msgstr "Weiter>"
 
-#: ticket/delete.php:33 lib/Forms/Query.php:449 lib/Forms/Admin/Version.php:96
-#: lib/Forms/Admin/State.php:121 lib/Forms/Admin/Priority.php:121
-#: lib/Forms/Admin/Queue.php:174 lib/Forms/Admin/Attribute.php:149
-#: lib/Forms/Admin/Reply.php:110 lib/Forms/Admin/Type.php:176
+#: ticket/delete.php:33 lib/Forms/Query.php:449
+#: lib/Forms/Admin/Version.php:100 lib/Forms/Admin/State.php:121
+#: lib/Forms/Admin/Priority.php:121 lib/Forms/Admin/Queue.php:174
+#: lib/Forms/Admin/Attribute.php:149 lib/Forms/Admin/Reply.php:110
+#: lib/Forms/Admin/Type.php:176
 msgid "No"
 msgstr "Nein"
 
@@ -1127,7 +1132,7 @@ msgstr ""
 msgid "No queries have been saved."
 msgstr "Es wurden keine Abfragen gespeichert."
 
-#: lib/Block/query.php:62 lib/Driver/sql.php:553
+#: lib/Block/query.php:62 lib/Driver/sql.php:555
 msgid "No query to run"
 msgstr "Kein Abfrage durchzuführen"
 
@@ -1148,7 +1153,7 @@ msgstr ""
 msgid "No stats available."
 msgstr "Keine Statistiken verfügbar."
 
-#: lib/Driver.php:553
+#: lib/Driver.php:566
 #, php-format
 msgid "No such backend \"%s\" found"
 msgstr "Ein Backend \"%s\" konnte nicht gefunden werden"
@@ -1192,6 +1197,10 @@ msgstr "Nicht"
 #: config/prefs.php.dist:17
 msgid "Notification Options"
 msgstr "Benachrichtigungs-Einstellungen"
+
+#: lib/Driver.php:195
+msgid "Older? Please update first!"
+msgstr "Älter? Bitte erst aktualisieren!"
 
 #: config/prefs.php.dist:124
 msgid "Only notify me of ticket changes from other users?"
@@ -1253,8 +1262,8 @@ msgstr "Oder"
 
 #: lib/Whups.php:685 lib/Ticket.php:617 lib/Ticket.php:701 lib/Ticket.php:702
 #: lib/Ticket.php:705 lib/Ticket.php:812 lib/Ticket.php:833 lib/Ticket.php:958
-#: lib/Renderer/Query.php:84 lib/Forms/CreateTicket.php:225
-#: lib/Forms/CreateTicket.php:243 lib/Forms/EditTicket.php:123
+#: lib/Renderer/Query.php:84 lib/Forms/CreateTicket.php:238
+#: lib/Forms/CreateTicket.php:256 lib/Forms/EditTicket.php:123
 msgid "Owners"
 msgstr "Zuständige"
 
@@ -1287,7 +1296,7 @@ msgstr "Prioritäten für diesen Typ"
 
 #: ticket/type.php:66 ticket/queue.php:117 lib/Whups.php:673 lib/Whups.php:682
 #: lib/Ticket.php:610 lib/Ticket.php:807 lib/Ticket.php:953
-#: lib/Renderer/Query.php:125 lib/Forms/CreateTicket.php:147
+#: lib/Renderer/Query.php:125 lib/Forms/CreateTicket.php:160
 #: lib/Forms/EditTicket.php:87 lib/Forms/Query.php:198
 #: config/prefs.php.dist:49
 msgid "Priority"
@@ -1363,7 +1372,7 @@ msgstr "Warteschlangenbeschreibung"
 msgid "Queue Email"
 msgstr "Warteschlangen-E-Mail-Adresse"
 
-#: lib/Forms/CreateTicket.php:34 lib/Forms/CreateTicket.php:45
+#: lib/Forms/CreateTicket.php:34 lib/Forms/CreateTicket.php:50
 #: lib/Forms/Admin/Queue.php:23 lib/Forms/Admin/Queue.php:60
 #: lib/Forms/Admin/Queue.php:85 lib/Forms/Admin/Queue.php:166
 msgid "Queue Name"
@@ -1378,7 +1387,7 @@ msgid "Queue Summary"
 msgstr "Warteschlangenbeschreibung"
 
 #: ticket/queue.php:86 lib/Ticket.php:932 lib/Ticket.php:938
-#: lib/Forms/CreateTicket.php:93 lib/Forms/EditTicket.php:77
+#: lib/Forms/CreateTicket.php:98 lib/Forms/EditTicket.php:77
 msgid "Queue Version"
 msgstr "Version"
 
@@ -1390,7 +1399,7 @@ msgstr "Warteschlange/Typ Matri_x"
 msgid "Queue/Type Matrix"
 msgstr "Warteschlange/Typ Matrix"
 
-#: lib/api.php:163 lib/api.php:781
+#: lib/api.php:163 lib/api.php:782
 msgid "Queues"
 msgstr "Warteschlangen"
 
@@ -1444,7 +1453,7 @@ msgid "Really delete this type? This may cause data problems!"
 msgstr ""
 "Soll dieser Typ wirlich gelöscht werden? Das kann Datenprobleme verursachen!"
 
-#: lib/Forms/Admin/Version.php:97
+#: lib/Forms/Admin/Version.php:101
 msgid "Really delete this version? This may cause data problems!"
 msgstr ""
 "Soll diese Version wirlich gelöscht werden? Das kann Datenprobleme "
@@ -1458,7 +1467,7 @@ msgstr "Empfangene Nachricht:"
 msgid "Refine Search"
 msgstr "Suche verfeinern"
 
-#: admin/index.php:1171
+#: admin/index.php:1173
 msgid "Reminders were sent."
 msgstr "Erinnerungen wurden verschickt."
 
@@ -1490,7 +1499,7 @@ msgstr "Anfrager"
 msgid "Required Attribute?"
 msgstr "Notwendiges Attribute?"
 
-#: lib/Whups.php:689 lib/Ticket.php:991 lib/Driver.php:203 lib/api.php:927
+#: lib/Whups.php:689 lib/Ticket.php:991 lib/Driver.php:216 lib/api.php:928
 #: lib/Renderer/Query.php:151 config/prefs.php.dist:54
 msgid "Resolved"
 msgstr "Erledigt"
@@ -1630,7 +1639,7 @@ msgstr "Warteschlange festlegen - Schritt 3"
 msgid "Set Queue for %s"
 msgstr "Warteschlange für %s festlegen"
 
-#: lib/api.php:800
+#: lib/api.php:801
 msgid "Set Requester"
 msgstr "Anfrager festlegen"
 
@@ -1684,7 +1693,7 @@ msgstr ""
 msgid "Sort by %s"
 msgstr "Sortieren nach %s"
 
-#: lib/Forms/CreateTicket.php:136 lib/Forms/CreateTicket.php:175
+#: lib/Forms/CreateTicket.php:141 lib/Forms/CreateTicket.php:188
 #: lib/Forms/AddComment.php:20 lib/Forms/AddComment.php:51
 msgid "Spam protection"
 msgstr "Spamschutz"
@@ -1744,7 +1753,7 @@ msgstr "Tickettyp erfolgreich geändert."
 #: ticket/delete.php:30 lib/Whups.php:672 lib/Whups.php:679 lib/Ticket.php:616
 #: lib/Ticket.php:643 lib/Ticket.php:646 lib/Ticket.php:650 lib/Ticket.php:812
 #: lib/Ticket.php:821 lib/Ticket.php:912 lib/Renderer/Query.php:89
-#: lib/Forms/CreateTicket.php:152 lib/Forms/EditTicket.php:65
+#: lib/Forms/CreateTicket.php:165 lib/Forms/EditTicket.php:65
 #: config/prefs.php.dist:46
 msgid "Summary"
 msgstr "Zusammenfassung"
@@ -1767,11 +1776,11 @@ msgstr "Genommen von %s"
 msgid "Text"
 msgstr "Text"
 
-#: lib/Driver/sql.php:80 lib/Driver/sql.php:1324
+#: lib/Driver/sql.php:80 lib/Driver/sql.php:1327
 msgid "That queue slug is already taken. Please select another."
 msgstr "Dieser Kurzname ist bereits vergeben. Bitte wählen Sie einen anderen."
 
-#: lib/Forms/CreateTicket.php:129
+#: lib/Forms/CreateTicket.php:134
 msgid "The Requester's Email Address"
 msgstr "Die E-Mail-Adresse des Anfragers"
 
@@ -1781,20 +1790,20 @@ msgstr ""
 "Das VFS-Backend muss konfiguriert sein, um das Hochladen von Dateien zu "
 "erlauben."
 
-#: admin/index.php:907
+#: admin/index.php:909
 #, php-format
 msgid "The attribute \"%s\" has been added to %s."
 msgstr "Das Attribut \"%s\" wurde zu %s hinzugefügt."
 
-#: admin/index.php:1007
+#: admin/index.php:1009
 msgid "The attribute has been deleted."
 msgstr "Das Attribut wurde gelöscht."
 
-#: admin/index.php:975
+#: admin/index.php:977
 msgid "The attribute has been modified."
 msgstr "Das Attribut wurde geändert."
 
-#: admin/index.php:1016
+#: admin/index.php:1018
 msgid "The attribute was not deleted."
 msgstr "Das Attribut wurde nicht gelöscht."
 
@@ -1806,20 +1815,20 @@ msgstr "Die Standard-Priorität wurde gespeichert."
 msgid "The default state has been set."
 msgstr "Der Standard-Status wurde gespeichert."
 
-#: admin/index.php:1044
+#: admin/index.php:1046
 #, php-format
 msgid "The form reply \"%s\" has been added to %s."
 msgstr "Die Standardantwort \"%s\" wurde zu %s hinzugefügt."
 
-#: admin/index.php:1136
+#: admin/index.php:1138
 msgid "The form reply has been deleted."
 msgstr "Der Standardantwort wurde gelöscht."
 
-#: admin/index.php:1109
+#: admin/index.php:1111
 msgid "The form reply has been modified."
 msgstr "Die Standardantwort wurde geändert."
 
-#: admin/index.php:1145
+#: admin/index.php:1147
 msgid "The form reply was not deleted."
 msgstr "Die Standardantwort wurde nicht gelöscht."
 
@@ -1914,20 +1923,20 @@ msgstr "Der Typ wurde gelöscht."
 msgid "The type was not deleted."
 msgstr "Der Typ wurde nicht gelöscht."
 
-#: admin/index.php:777
+#: admin/index.php:778
 #, php-format
 msgid "The version \"%s\" has been added to %s."
 msgstr "Die Version \"%s\" wurde zu %s hinzugefügt."
 
-#: admin/index.php:866
+#: admin/index.php:868
 msgid "The version has been deleted."
 msgstr "Die Version wurde gelöscht."
 
-#: admin/index.php:836
+#: admin/index.php:838
 msgid "The version has been modified."
 msgstr "Die Version wurde geändert."
 
-#: admin/index.php:874
+#: admin/index.php:876
 msgid "The version was not deleted."
 msgstr "Die Version wurde nicht gelöscht."
 
@@ -1971,7 +1980,7 @@ msgstr "Es gibt keine Warteschlangen, die Sie durchsuchen dürfen."
 msgid "There are no states to edit"
 msgstr "Kein Status zum Bearbeiten"
 
-#: lib/Forms/CreateTicket.php:72
+#: lib/Forms/CreateTicket.php:77
 msgid ""
 "There are no ticket types associated with this queue; until there are, you "
 "cannot create any tickets in this queue."
@@ -1987,11 +1996,11 @@ msgstr "Keine Typen zum Bearbeiten"
 msgid "There are no users responsible for this queue."
 msgstr "Für diese Warteschlange ist kein Benutzer verantwortlich."
 
-#: lib/Forms/CreateTicket.php:242
+#: lib/Forms/CreateTicket.php:255
 msgid "There are no users to which this ticket can be assigned."
 msgstr "Es gibt keine Benutzer, denen dieses Ticket zugewiesen werden kann."
 
-#: lib/Forms/Admin/Version.php:44
+#: lib/Forms/Admin/Version.php:46
 msgid "There are no versions to edit"
 msgstr "Keine Versionen zum Bearbeiten"
 
@@ -2006,11 +2015,11 @@ msgstr ""
 "Beim Hinzufügen von \"%s\" zu der Liste der Verantwortlichen für \"%s\" ist "
 "ein Problem aufgetreten:"
 
-#: admin/index.php:912
+#: admin/index.php:914
 msgid "There was an error creating the attribute:"
 msgstr "Beim Erstellen des Attributs ist ein Fehler aufgetreten:"
 
-#: admin/index.php:1052
+#: admin/index.php:1054
 msgid "There was an error creating the form reply:"
 msgstr "Beim Erstellen der Standardantwort ist ein Fehler aufgetreten:"
 
@@ -2026,15 +2035,15 @@ msgstr "Beim Erstellen der Warteschlange ist ein Fehler aufgetreten:"
 msgid "There was an error creating the state:"
 msgstr "Beim Erstellen des Status ist ein Fehler aufgetreten:"
 
-#: admin/index.php:781
+#: admin/index.php:782
 msgid "There was an error creating the version:"
 msgstr "Beim Erstellen der Version ist ein Fehler aufgetreten:"
 
-#: admin/index.php:1011
+#: admin/index.php:1013
 msgid "There was an error deleting the attribute:"
 msgstr "Beim Löschen des Attributs ist ein Fehler aufgetreten:"
 
-#: admin/index.php:1140
+#: admin/index.php:1142
 msgid "There was an error deleting the form reply:"
 msgstr "Beim Löschen der Standardantwort ist ein Fehler aufgetreten:"
 
@@ -2058,15 +2067,15 @@ msgstr "Beim Löschen des Tickets ist ein Fehler aufgetreten:"
 msgid "There was an error deleting the type:"
 msgstr "Beim Löschen des Typs ist ein Fehler aufgetreten:"
 
-#: admin/index.php:869
+#: admin/index.php:871
 msgid "There was an error deleting the version:"
 msgstr "Beim Löschen der Version ist ein Fehler aufgetreten:"
 
-#: admin/index.php:983
+#: admin/index.php:985
 msgid "There was an error editing the attribute:"
 msgstr "Beim Bearbeiten des Attributs ist ein Fehler aufgetreten:"
 
-#: admin/index.php:1105
+#: admin/index.php:1107
 msgid "There was an error editing the form reply:"
 msgstr "Beim Bearbeiten der Standardantwort ist ein Fehler aufgetreten:"
 
@@ -2082,7 +2091,7 @@ msgstr "Beim Bearbeiten der Warteschlange ist ein Fehler aufgetreten:"
 msgid "There was an error editing the state:"
 msgstr "Beim Bearbeiten des Status ist ein Fehler aufgetreten:"
 
-#: admin/index.php:842
+#: admin/index.php:844
 msgid "There was an error editing the version:"
 msgstr "Beim Bearbeiten der Version ist ein Fehler aufgetreten:"
 
@@ -2142,7 +2151,7 @@ msgstr "Dies ist keine Vorlage für Suchergebnisse."
 msgid "This query element cannot be edited."
 msgstr "Diese Abfragekriterium kann nicht bearbeitet werden."
 
-#: ticket/queue.php:81 lib/Forms/CreateTicket.php:88
+#: ticket/queue.php:81 lib/Forms/CreateTicket.php:93
 #: lib/Forms/EditTicket.php:72
 msgid ""
 "This queue requires that you specify a version, but there are no versions "
@@ -2162,12 +2171,12 @@ msgstr "Ticket"
 msgid "Ticket %d has been deleted."
 msgstr "Das Ticket %d wurde gelöscht."
 
-#: lib/api.php:850
+#: lib/api.php:851
 #, php-format
 msgid "Ticket %s - %s"
 msgstr "Ticket %s - %s"
 
-#: lib/Driver/sql.php:1081
+#: lib/Driver/sql.php:1084
 #, php-format
 msgid "Ticket %s was not found."
 msgstr "Ticket %s nicht gefunden."
@@ -2176,7 +2185,7 @@ msgstr "Ticket %s nicht gefunden."
 msgid "Ticket Search"
 msgstr "Ticketsuche"
 
-#: lib/Forms/CreateTicket.php:142
+#: lib/Forms/CreateTicket.php:150 lib/Forms/CreateTicket.php:153
 msgid "Ticket State"
 msgstr "Ticket-Status"
 
@@ -2184,7 +2193,7 @@ msgstr "Ticket-Status"
 msgid "Ticket Stats"
 msgstr "Ticket-Statistiken"
 
-#: lib/Forms/CreateTicket.php:80
+#: lib/Forms/CreateTicket.php:85
 msgid "Ticket Type"
 msgstr "Ticket-Typ"
 
@@ -2201,7 +2210,7 @@ msgstr "Ticket-URL: %s"
 msgid "Ticket Updated"
 msgstr "Ticket aktualisiert"
 
-#: lib/api.php:871
+#: lib/api.php:872
 msgid "Tickets"
 msgstr "Tickets"
 
@@ -2256,7 +2265,7 @@ msgstr "Nicht zugewiesene Tickets"
 msgid "Unassigned tickets"
 msgstr "Nicht zugewiesene Tickets"
 
-#: lib/Driver.php:200
+#: lib/Driver.php:213
 msgid "Unconfirmed"
 msgstr "Unbestätigt"
 
@@ -2265,7 +2274,7 @@ msgstr "Unbestätigt"
 msgid "Unknown node type %s"
 msgstr "Unbekannter Knotentyp %s"
 
-#: lib/api.php:790
+#: lib/api.php:791
 msgid "Update"
 msgstr "Aktualisierung"
 
@@ -2321,13 +2330,17 @@ msgstr "Version"
 msgid "Version &rArr; %s"
 msgstr "Version &rArr; %s"
 
-#: lib/Forms/Admin/Version.php:24 lib/Forms/Admin/Version.php:70
-#: lib/Forms/Admin/Version.php:93
+#: lib/Forms/Admin/Version.php:25 lib/Forms/Admin/Version.php:74
+msgid "Version Active?"
+msgstr "Version aktiv?"
+
+#: lib/Forms/Admin/Version.php:24 lib/Forms/Admin/Version.php:72
+#: lib/Forms/Admin/Version.php:97
 msgid "Version Description"
 msgstr "Versionsbeschreibung"
 
-#: lib/Forms/Admin/Version.php:23 lib/Forms/Admin/Version.php:48
-#: lib/Forms/Admin/Version.php:67 lib/Forms/Admin/Version.php:90
+#: lib/Forms/Admin/Version.php:23 lib/Forms/Admin/Version.php:50
+#: lib/Forms/Admin/Version.php:69 lib/Forms/Admin/Version.php:94
 msgid "Version Name"
 msgstr "Versionsbezeichnung"
 
@@ -2360,10 +2373,11 @@ msgstr "JJ/MM/TT"
 msgid "YY/MM/DD HH:MM:SS"
 msgstr "JJ/MM/TT HH:MM:SS"
 
-#: ticket/delete.php:33 lib/Forms/Query.php:449 lib/Forms/Admin/Version.php:96
-#: lib/Forms/Admin/State.php:121 lib/Forms/Admin/Priority.php:121
-#: lib/Forms/Admin/Queue.php:174 lib/Forms/Admin/Attribute.php:149
-#: lib/Forms/Admin/Reply.php:110 lib/Forms/Admin/Type.php:176
+#: ticket/delete.php:33 lib/Forms/Query.php:449
+#: lib/Forms/Admin/Version.php:100 lib/Forms/Admin/State.php:121
+#: lib/Forms/Admin/Priority.php:121 lib/Forms/Admin/Queue.php:174
+#: lib/Forms/Admin/Attribute.php:149 lib/Forms/Admin/Reply.php:110
+#: lib/Forms/Admin/Type.php:176
 msgid "Yes"
 msgstr "Ja"
 
@@ -2372,7 +2386,7 @@ msgstr "Ja"
 msgid "You are not allowed to view ticket %d."
 msgstr "Sie haben keine Berechtigung das Ticket %d anzuzeigen."
 
-#: lib/Driver/sql.php:1090
+#: lib/Driver/sql.php:1093
 #, php-format
 msgid "You do not have permission to access this ticket (%s)."
 msgstr "Sie haben nicht genügend Rechte, um dieses Ticket (%s) anzuzeigen."
@@ -2395,7 +2409,7 @@ msgstr ""
 "Sie müssen erst mindestens ein Warteschlange auswählen, für die Erinnerungen "
 "verschickt werden sollen."
 
-#: lib/Forms/CreateTicket.php:132 lib/Forms/AddComment.php:18
+#: lib/Forms/CreateTicket.php:137 lib/Forms/AddComment.php:18
 msgid "Your Email Address"
 msgstr "Ihre E-Mail-Adresse"
 
@@ -2512,7 +2526,7 @@ msgstr "enthält das Wort"
 msgid "current user:"
 msgstr "aktueller Benutzer:"
 
-#: lib/api.php:859
+#: lib/api.php:860
 msgid "estimated time"
 msgstr "geschätzte Zeit"
 

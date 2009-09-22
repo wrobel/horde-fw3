@@ -1,1 +1,1 @@
-<?php define('DIMP_VERSION', 'H3 (1.1.3-cvs)') ?>
+<?php define('DIMP_VERSION', 'H3 (1.1.4-cvs)') ?>

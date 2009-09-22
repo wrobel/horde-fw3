@@ -5,7 +5,7 @@
  * This file defines Horde's external API interface. Other
  * applications can interact with Horde through this API.
  *
- * $Horde: horde/lib/api.php,v 1.43.2.15 2009/08/03 15:53:33 jan Exp $
+ * $Horde: horde/lib/api.php,v 1.43.2.16 2009/09/12 08:14:36 jan Exp $
  *
  * @package Horde
  */
@@ -407,7 +407,7 @@ function _horde_removeUserData($user)
     if (!$haveError) {
         return true;
     } else {
-        return PEAR::raiseError(sprintf(_("There was an error removing global data for %s. Details have been logged"), $user));
+        return PEAR::raiseError(sprintf(_("There was an error removing global data for %s. Details have been logged."), $user));
     }
 }
 

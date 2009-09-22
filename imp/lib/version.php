@@ -1,1 +1,1 @@
-<?php define('IMP_VERSION', 'H3 (4.3.5-cvs)') ?>
+<?php define('IMP_VERSION', 'H3 (4.3.6-cvs)') ?>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2009-03-19 11:55+0100\n"
+"POT-Creation-Date: 2009-09-12 10:30+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,12 +22,12 @@ msgstr ""
 msgid "\"%s\" is not a directory."
 msgstr ""
 
-#: lib/Exif.php:169
+#: lib/Exif.php:172
 #, php-format
 msgid "%4f sec"
 msgstr ""
 
-#: templates/group/owner.inc:57 templates/group/category.inc:51
+#: templates/group/owner.inc:59 templates/group/category.inc:51
 #: templates/view/list.inc:3 templates/list/header.inc:3
 #, php-format
 msgid "%d Gallery"
@@ -42,7 +42,7 @@ msgid_plural "%d Groups"
 msgstr[0] ""
 msgstr[1] ""
 
-#: templates/view/gallerylightbox.inc:121 templates/view/results.inc:67
+#: templates/view/gallerylightbox.inc:125 templates/view/results.inc:67
 #, php-format
 msgid "%d Item"
 msgid_plural "%d Items"
@@ -56,7 +56,7 @@ msgid_plural "%d comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/Exif.php:261
+#: lib/Exif.php:264
 #, php-format
 msgid "%d dots per unit"
 msgstr ""
@@ -75,37 +75,37 @@ msgid_plural "%d items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/Exif.php:332 lib/Exif.php:334
+#: lib/Exif.php:335 lib/Exif.php:337
 #, php-format
 msgid "%d mm"
 msgstr ""
 
-#: lib/Exif.php:263
+#: lib/Exif.php:266
 #, php-format
 msgid "%d per unit"
 msgstr ""
 
 #: templates/faces/search.inc:9 lib/XRequest/TagActions.php:115
-#: lib/Widget/Tags.php:93 lib/Views/Results.php:291
+#: lib/Widget/Tags.php:98 lib/Views/Results.php:291
 #, php-format
 msgid "%d photo"
 msgid_plural "%d photos"
 msgstr[0] ""
 msgstr[1] ""
 
-#: img/upload.php:223
+#: img/upload.php:221
 #, php-format
 msgid "%d photo was uploaded."
 msgid_plural "%d photos were uploaded."
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/Exif.php:275
+#: lib/Exif.php:278
 #, php-format
 msgid "%d pixels"
 msgstr ""
 
-#: lib/Exif.php:164
+#: lib/Exif.php:167
 #, php-format
 msgid "%d sec"
 msgstr ""
@@ -120,7 +120,7 @@ msgstr ""
 msgid "%d to %d of %d Groups"
 msgstr ""
 
-#: templates/view/gallerylightbox.inc:121 templates/view/results.inc:67
+#: templates/view/gallerylightbox.inc:125 templates/view/results.inc:67
 #, php-format
 msgid "%d to %d of %d Items"
 msgstr ""
@@ -130,7 +130,7 @@ msgstr ""
 msgid "%d to %d of %d items"
 msgstr ""
 
-#: lib/Exif.php:171
+#: lib/Exif.php:174
 #, php-format
 msgid "%s / %s sec"
 msgstr ""
@@ -145,13 +145,14 @@ msgstr ""
 msgid "%s from %s"
 msgstr ""
 
-#: rss.php:112
+#: rss.php:114
 #, php-format
 msgid "%s on %s"
 msgstr ""
 
-#: templates/group/owner.inc:16 lib/Ansel.php:699
-#: lib/Widget/OtherGalleries.php:28 lib/Views/List.php:167
+#: templates/group/owner.inc:16 templates/group/owner.inc:21 lib/Ansel.php:706
+#: lib/Ansel.php:711 lib/Widget/OtherGalleries.php:28 lib/Views/List.php:167
+#: lib/Views/List.php:172
 #, php-format
 msgid "%s's Galleries"
 msgstr ""
@@ -161,7 +162,7 @@ msgstr ""
 msgid "%s: faces %s"
 msgstr ""
 
-#: lib/Ansel.php:2768
+#: lib/Ansel.php:2832
 #, php-format
 msgid "(c) %s %s"
 msgstr ""
@@ -281,35 +282,35 @@ msgstr ""
 msgid "9-area-focusing"
 msgstr ""
 
-#: lib/Exif.php:290
+#: lib/Exif.php:293
 #, php-format
 msgid "90 deg CCW"
 msgstr ""
 
-#: lib/Exif.php:292
+#: lib/Exif.php:295
 #, php-format
 msgid "90 deg CCW Mirrored"
 msgstr ""
 
-#: lib/Exif.php:294
+#: lib/Exif.php:297
 #, php-format
 msgid "90 deg CW"
 msgstr ""
 
-#: lib/Exif.php:288
+#: lib/Exif.php:291
 #, php-format
 msgid "90 deg CW Mirrored"
 msgstr ""
 
-#: config/styles.php.dist:130
+#: config/styles.php.dist:131
 msgid "A Lightbox Inspired Style (Drop Shadows, No Background)"
 msgstr ""
 
-#: config/styles.php.dist:118
+#: config/styles.php.dist:119
 msgid "A Lightbox Inspired Style (No Background)"
 msgstr ""
 
-#: config/styles.php.dist:106
+#: config/styles.php.dist:107
 msgid "A Lightbox Inspired Style (White Background)"
 msgstr ""
 
@@ -343,38 +344,38 @@ msgstr ""
 msgid "Access denied adding photos to \"%s\"."
 msgstr ""
 
-#: lib/Ansel.php:1746
+#: lib/Ansel.php:1724
 msgid "Access denied adding tags to this gallery."
 msgstr ""
 
-#: lib/Ansel.php:2856
+#: lib/Ansel.php:2921
 msgid "Access denied adding tags to this photo."
 msgstr ""
 
-#: lib/Ansel.php:1384
+#: lib/Ansel.php:1364
 #, php-format
 msgid "Access denied copying photos to \"%s\"."
 msgstr ""
 
-#: lib/api.php:649
+#: lib/api.php:643
 msgid "Access denied creating new galleries."
 msgstr ""
 
-#: lib/api.php:606 lib/api.php:686
+#: lib/api.php:600 lib/api.php:680
 msgid "Access denied deleting galleries."
 msgstr ""
 
-#: gallery/delete.php:28 gallery/delete.php:57 lib/api.php:697 lib/api.php:700
+#: gallery/delete.php:28 gallery/delete.php:57 lib/api.php:691 lib/api.php:694
 #, php-format
 msgid "Access denied deleting gallery \"%s\"."
 msgstr ""
 
-#: image.php:572 lib/api.php:623 lib/Views/Results.php:125
+#: image.php:569 lib/api.php:617 lib/Views/Results.php:125
 #, php-format
 msgid "Access denied deleting photos from \"%s\"."
 msgstr ""
 
-#: gallery.php:91 image.php:704 lib/api.php:856 lib/Ansel.php:2658
+#: gallery.php:91 image.php:701 lib/api.php:850 lib/Ansel.php:2722
 #, php-format
 msgid "Access denied downloading photos from \"%s\"."
 msgstr ""
@@ -388,7 +389,7 @@ msgstr ""
 msgid "Access denied editing gallery \"%s\"."
 msgstr ""
 
-#: image.php:304 image.php:731 faces/custom.php:29 faces/delete.php:29
+#: image.php:304 image.php:728 faces/custom.php:35 faces/delete.php:29
 #: faces/name.php:28 lib/Faces.php:540 lib/Faces.php:638
 #: lib/XRequest/EditFaces.php:134
 msgid "Access denied editing the photo."
@@ -409,7 +410,7 @@ msgstr ""
 msgid "Access denied saving gallery \"%s\"."
 msgstr ""
 
-#: image.php:176 image.php:358 image.php:399
+#: image.php:176 image.php:358 image.php:396
 #, php-format
 msgid "Access denied saving photo to \"%s\"."
 msgstr ""
@@ -424,17 +425,18 @@ msgstr ""
 msgid "Access denied to gallery \"%s\"."
 msgstr ""
 
-#: lib/Ansel.php:1731 lib/Views/Gallery.php:154 lib/Block/gallery.php:156
+#: lib/Ansel.php:1709 lib/Views/Gallery.php:154 lib/Block/gallery.php:152
 #: lib/Block/recent_comments.php:154 lib/Block/recently_added.php:197
+#: lib/Block/recently_added_geodata.php:175
 msgid "Access denied viewing this gallery."
 msgstr ""
 
-#: lib/Ansel.php:2835 img/full.php:26 img/prettythumb.php:26 img/mini.php:25
+#: lib/Ansel.php:2900 img/full.php:26 img/prettythumb.php:26 img/mini.php:25
 #: img/index.php:25 img/thumb.php:25 img/download.php:26 img/screen.php:25
 msgid "Access denied viewing this photo."
 msgstr ""
 
-#: lib/Exif.php:251
+#: lib/Exif.php:254
 msgid "Action"
 msgstr ""
 
@@ -442,7 +444,7 @@ msgstr ""
 msgid "Action was cancelled."
 msgstr ""
 
-#: templates/view/gallerylightbox.inc:147 templates/view/results.inc:81
+#: templates/view/gallerylightbox.inc:151 templates/view/results.inc:81
 msgid "Actions: "
 msgstr ""
 
@@ -454,7 +456,7 @@ msgstr ""
 msgid "Add Content"
 msgstr ""
 
-#: img/upload.php:246
+#: img/upload.php:244
 msgid "Add Photo"
 msgstr ""
 
@@ -462,7 +464,7 @@ msgstr ""
 msgid "Add a custom face range"
 msgstr ""
 
-#: lib/Widget/Actions.php:124
+#: lib/Widget/Actions.php:126
 msgid "Add to bookmarks"
 msgstr ""
 
@@ -487,12 +489,13 @@ msgstr ""
 msgid "Advertisement content"
 msgstr ""
 
-#: templates/view/gallery.inc:133 templates/view/gallerylightbox.inc:144
+#: templates/view/gallery.inc:133 templates/view/gallerylightbox.inc:148
 #: templates/view/results.inc:77
 msgid "All"
 msgstr ""
 
 #: lib/Block/recent_comments.php:68 lib/Block/recently_added.php:75
+#: lib/Block/recently_added_geodata.php:84
 msgid "All Galleries"
 msgstr ""
 
@@ -508,15 +511,19 @@ msgstr ""
 msgid "Allow all ages"
 msgstr ""
 
+#: map_edit.php:33 map_edit.php:37 map_edit.php:41
+msgid "An error has occured retrieving the image. Details have been logged."
+msgstr ""
+
 #: templates/gallery/gallery.inc:109 config/prefs.php.dist:226
 msgid "Anyone"
 msgstr ""
 
-#: lib/Exif.php:499
+#: lib/Exif.php:502
 msgid "Aperture"
 msgstr ""
 
-#: lib/Exif.php:248 lib/Exif/panasonic.php:193
+#: lib/Exif.php:251 lib/Exif/panasonic.php:193
 msgid "Aperture Priority"
 msgstr ""
 
@@ -529,7 +536,7 @@ msgstr ""
 msgid "Are you sure you want to delete the selected photos?"
 msgstr ""
 
-#: lib/Exif.php:513
+#: lib/Exif.php:516
 msgid "Artist"
 msgstr ""
 
@@ -545,7 +552,7 @@ msgstr ""
 msgid "Authenticated users"
 msgstr ""
 
-#: lib/Exif.php:395 lib/Exif/fujifilm.php:89 lib/Exif/fujifilm.php:112
+#: lib/Exif.php:398 lib/Exif/fujifilm.php:89 lib/Exif/fujifilm.php:112
 #: lib/Exif/fujifilm.php:124 lib/Exif/fujifilm.php:134
 #: lib/Exif/panasonic.php:127 lib/Exif/panasonic.php:148
 #: lib/Exif/nikon.php:145 lib/Exif/canon.php:109 lib/Exif/canon.php:213
@@ -565,11 +572,11 @@ msgstr ""
 msgid "Auto Selected"
 msgstr ""
 
-#: lib/Exif.php:240
+#: lib/Exif.php:243
 msgid "Auto bracket"
 msgstr ""
 
-#: lib/Exif.php:238
+#: lib/Exif.php:241
 msgid "Auto exposure"
 msgstr ""
 
@@ -593,7 +600,7 @@ msgstr ""
 msgid "Av"
 msgstr ""
 
-#: lib/Exif.php:357
+#: lib/Exif.php:360
 msgid "Average"
 msgstr ""
 
@@ -602,13 +609,12 @@ msgid "Baby"
 msgstr ""
 
 #: templates/image/crop_image.inc:92 templates/image/edit_image.inc:8
-#: templates/image/resize_image.inc:39 templates/view/image.inc:95
-#: templates/view/image.inc:96 templates/view/image.inc:121
-#: templates/view/image.inc:122
+#: templates/image/resize_image.inc:39 templates/view/image.inc:98
+#: templates/view/image.inc:99 templates/view/image.inc:121
 msgid "Back to gallery"
 msgstr ""
 
-#: image.php:620 image.php:669 lib/Views/Results.php:160
+#: image.php:617 image.php:666 lib/Views/Results.php:160
 #: lib/Views/Results.php:208
 msgid "Bad input."
 msgstr ""
@@ -637,11 +643,11 @@ msgstr ""
 msgid "Browse"
 msgstr ""
 
-#: lib/Ansel.php:754
+#: lib/Ansel.php:763
 msgid "Browse Tags"
 msgstr ""
 
-#: lib/Exif.php:174
+#: lib/Exif.php:177
 msgid "Bulb"
 msgstr ""
 
@@ -649,19 +655,19 @@ msgstr ""
 msgid "By"
 msgstr ""
 
-#: lib/Exif.php:482
+#: lib/Exif.php:485
 msgid "Camera Make"
 msgstr ""
 
-#: lib/Exif.php:483
+#: lib/Exif.php:486
 msgid "Camera Model"
 msgstr ""
 
-#: lib/Exif.php:511
+#: lib/Exif.php:514
 msgid "Camera Orientation"
 msgstr ""
 
-#: scripts/remote_import.php:307 lib/Ansel.php:525
+#: scripts/remote_import.php:307 lib/Ansel.php:532
 #, php-format
 msgid "Can't get unknown file type \"%s\"."
 msgstr ""
@@ -671,7 +677,7 @@ msgstr ""
 #: templates/image/crop_image.inc:93 templates/image/edit_image.inc:9
 #: templates/image/resize_image.inc:40 templates/faces/custom.inc:53
 #: templates/faces/define.inc:38 faces/report.php:41 faces/claim.php:40
-#: faces/savecustom.php:27 lib/Forms/Upload.php:39 img/upload.php:224
+#: faces/savecustom.php:29 lib/Forms/Upload.php:39 img/upload.php:222
 msgid "Cancel"
 msgstr ""
 
@@ -715,7 +721,7 @@ msgstr ""
 msgid "Center"
 msgstr ""
 
-#: lib/Exif.php:358
+#: lib/Exif.php:361
 msgid "Center Weighted Average"
 msgstr ""
 
@@ -723,7 +729,7 @@ msgstr ""
 msgid "Center-weighted"
 msgstr ""
 
-#: lib/Exif.php:269
+#: lib/Exif.php:272
 msgid "Centimeter"
 msgstr ""
 
@@ -737,7 +743,7 @@ msgstr ""
 msgid "Change options dealing with tags and exif data."
 msgstr ""
 
-#: lib/Widget/Actions.php:141
+#: lib/Widget/Actions.php:143
 msgid "Change properties"
 msgstr ""
 
@@ -751,7 +757,7 @@ msgstr ""
 msgid "Change your watermark options."
 msgstr ""
 
-#: faces/savecustom.php:28
+#: faces/savecustom.php:30
 msgid "Changes cancelled."
 msgstr ""
 
@@ -767,8 +773,12 @@ msgstr ""
 msgid "Chroma Saturation Normal(STD)"
 msgstr ""
 
-#: templates/tile/face.inc:27 lib/Faces.php:1125
+#: templates/tile/face.inc:27 lib/Faces.php:1124
 msgid "Claim"
+msgstr ""
+
+#: map_edit.php:90
+msgid "Click on a thumbnail to locate at the same point."
 msgstr ""
 
 #: lib/XRequest/EditCaption.php:43
@@ -784,7 +794,7 @@ msgstr ""
 msgid "Cloudy"
 msgstr ""
 
-#: lib/Exif.php:375
+#: lib/Exif.php:378
 msgid "Cloudy weather"
 msgstr ""
 
@@ -792,31 +802,31 @@ msgstr ""
 msgid "Color"
 msgstr ""
 
-#: lib/Exif.php:451
+#: lib/Exif.php:454
 msgid "Color Sequential Area Sensor"
 msgstr ""
 
-#: lib/Exif.php:453
+#: lib/Exif.php:456
 msgid "Color Sequential Linear Sensor"
 msgstr ""
 
-#: lib/Exif.php:508
+#: lib/Exif.php:511
 msgid "Color Space"
 msgstr ""
 
-#: lib/Forms/Ecard.php:42
+#: lib/Forms/Ecard.php:43
 msgid "Comments:"
 msgstr ""
 
-#: lib/Exif.php:410
+#: lib/Exif.php:413
 msgid "Compulsory Flash"
 msgstr ""
 
-#: lib/Exif.php:412
+#: lib/Exif.php:415
 msgid "Compulsory Flash, Return light detected"
 msgstr ""
 
-#: lib/Exif.php:411
+#: lib/Exif.php:414
 msgid "Compulsory Flash, Return light not detected"
 msgstr ""
 
@@ -866,7 +876,7 @@ msgstr ""
 msgid "Cool"
 msgstr ""
 
-#: lib/Exif.php:379
+#: lib/Exif.php:382
 msgid "Cool white fluorescent"
 msgstr ""
 
@@ -877,19 +887,19 @@ msgid_plural "Copied %d photos from %s to %s"
 msgstr[0] ""
 msgstr[1] ""
 
-#: image.php:676
+#: image.php:673
 #, php-format
 msgid "Copied %d photo to %s"
 msgid_plural "Copied %d photos to %s"
 msgstr[0] ""
 msgstr[1] ""
 
-#: templates/view/gallerylightbox.inc:161 templates/view/results.inc:87
+#: templates/view/gallerylightbox.inc:165 templates/view/results.inc:87
 #: lib/Views/GalleryRenderers/Gallery.php:126
 msgid "Copy"
 msgstr ""
 
-#: lib/Exif.php:512
+#: lib/Exif.php:515
 msgid "Copyright"
 msgstr ""
 
@@ -911,12 +921,12 @@ msgstr ""
 msgid "Could not load the lzf extension"
 msgstr ""
 
-#: lib/Ansel.php:1170
+#: lib/Ansel.php:1177
 #, php-format
 msgid "Could not save gallery, the slug, \"%s\", already exists."
 msgstr ""
 
-#: lib/Ansel.php:1163
+#: lib/Ansel.php:1170
 #, php-format
 msgid "Could not save gallery, the slug, \"%s\", contains invalid characters."
 msgstr ""
@@ -929,15 +939,15 @@ msgstr ""
 msgid "Couldn't read command-line options."
 msgstr ""
 
-#: lib/Exif.php:1290
+#: lib/Exif.php:1293
 msgid "Couldnt Find IFD1"
 msgstr ""
 
-#: lib/Exif.php:1337
+#: lib/Exif.php:1340
 msgid "Couldnt Find InteroperabilityIFD"
 msgstr ""
 
-#: lib/Exif.php:1253
+#: lib/Exif.php:1256
 msgid "Couldnt Find SubIFD"
 msgstr ""
 
@@ -945,7 +955,7 @@ msgstr ""
 msgid "Create"
 msgstr ""
 
-#: faces/custom.php:68 faces/search/image_define.php:25
+#: faces/custom.php:74 faces/search/image_define.php:25
 msgid "Create a new face"
 msgstr ""
 
@@ -957,11 +967,11 @@ msgstr ""
 msgid "Create a new gallery:"
 msgstr ""
 
-#: lib/Widget/Actions.php:56
+#: lib/Widget/Actions.php:58
 msgid "Create a subgallery"
 msgstr ""
 
-#: lib/Tile/Gallery.php:123
+#: lib/Tile/Gallery.php:122
 msgid "Created:"
 msgstr ""
 
@@ -970,11 +980,11 @@ msgstr ""
 msgid "Creating gallery: \"%s\""
 msgstr ""
 
-#: lib/Exif.php:250
+#: lib/Exif.php:253
 msgid "Creative"
 msgstr ""
 
-#: image.php:743 templates/image/crop_image.inc:114
+#: image.php:740 templates/image/crop_image.inc:114
 #: templates/image/edit_image.inc:31 templates/image/resize_image.inc:62
 msgid "Crop"
 msgstr ""
@@ -1002,28 +1012,28 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: lib/Exif.php:489
+#: lib/Exif.php:492
 msgid "Date Photo Digitized"
 msgstr ""
 
-#: lib/Exif.php:487
+#: lib/Exif.php:490
 msgid "Date Photo Modified"
 msgstr ""
 
-#: lib/Exif.php:488 config/prefs.php.dist:271
+#: lib/Exif.php:491 config/prefs.php.dist:271
 msgid "Date Photo Taken"
 msgstr ""
 
-#: lib/Exif.php:378
+#: lib/Exif.php:381
 msgid "Day white fluorescent"
 msgstr ""
 
-#: lib/Exif.php:370 lib/Exif/fujifilm.php:90 lib/Exif/panasonic.php:129
+#: lib/Exif.php:373 lib/Exif/fujifilm.php:90 lib/Exif/panasonic.php:129
 #: lib/Exif/nikon.php:147
 msgid "Daylight"
 msgstr ""
 
-#: lib/Exif.php:377
+#: lib/Exif.php:380
 msgid "Daylight fluorescent"
 msgstr ""
 
@@ -1035,7 +1045,7 @@ msgstr ""
 msgid "DaywhiteColor-fluorescence"
 msgstr ""
 
-#: config/styles.php.dist:58
+#: config/styles.php.dist:59
 msgid "Default"
 msgstr ""
 
@@ -1047,17 +1057,17 @@ msgstr ""
 msgid "Default style for galleries"
 msgstr ""
 
-#: templates/view/image.inc:60 templates/view/gallerylightbox.inc:155
+#: templates/view/image.inc:63 templates/view/gallerylightbox.inc:159
 #: templates/view/results.inc:82 templates/view/slideshow.inc:21
 #: lib/Views/GalleryRenderers/Gallery.php:120
 msgid "Delete"
 msgstr ""
 
-#: lib/Widget/Actions.php:185
+#: lib/Widget/Actions.php:187
 msgid "Delete All Photos"
 msgstr ""
 
-#: lib/Widget/Actions.php:186
+#: lib/Widget/Actions.php:188
 msgid "Delete Entire Gallery"
 msgstr ""
 
@@ -1065,7 +1075,11 @@ msgstr ""
 msgid "Delete face"
 msgstr ""
 
-#: image.php:581 lib/Views/Results.php:134
+#: lib/Widget/Geodata.php:48
+msgid "Delete geotag"
+msgstr ""
+
+#: image.php:578 lib/Views/Results.php:134
 msgid "Deleted the photo."
 msgstr ""
 
@@ -1087,7 +1101,7 @@ msgstr ""
 msgid "Did Not Fire"
 msgstr ""
 
-#: lib/Exif.php:442
+#: lib/Exif.php:445
 msgid "Digital Still Camera"
 msgstr ""
 
@@ -1099,7 +1113,7 @@ msgstr ""
 msgid "Display Options"
 msgstr ""
 
-#: lib/Faces.php:1124
+#: lib/Faces.php:1123
 msgid "Do you know someone in this photo?"
 msgstr ""
 
@@ -1116,7 +1130,7 @@ msgstr ""
 msgid "Do you want to permanently delete \"%s\"?"
 msgstr ""
 
-#: templates/view/image.inc:60
+#: templates/view/image.inc:63
 #, php-format
 msgid "Do you want to permanently delete ''%s''?"
 msgstr ""
@@ -1125,11 +1139,11 @@ msgstr ""
 msgid "Done"
 msgstr ""
 
-#: templates/view/image.inc:66 templates/view/slideshow.inc:29
+#: templates/view/image.inc:69 templates/view/slideshow.inc:29
 msgid "Download Original Photo"
 msgstr ""
 
-#: lib/Widget/Actions.php:135
+#: lib/Widget/Actions.php:137
 msgid "Download as zip file"
 msgstr ""
 
@@ -1137,11 +1151,11 @@ msgstr ""
 msgid "Download selected images"
 msgstr ""
 
-#: templates/view/gallerylightbox.inc:149
+#: templates/view/gallerylightbox.inc:153
 msgid "Download selected photos"
 msgstr ""
 
-#: lib/Ansel.php:957
+#: lib/Ansel.php:966
 msgid ""
 "Downloading zip files is not enabled. Talk to your server administrator."
 msgstr ""
@@ -1163,7 +1177,7 @@ msgstr ""
 msgid "Ecard - "
 msgstr ""
 
-#: templates/view/image.inc:57 templates/view/slideshow.inc:18
+#: templates/view/image.inc:60 templates/view/slideshow.inc:18
 #: templates/tile/image.inc:18
 msgid "Edit"
 msgstr ""
@@ -1173,7 +1187,7 @@ msgstr ""
 msgid "Edit %s :: %s"
 msgstr ""
 
-#: edit_dates.php:48 templates/view/gallerylightbox.inc:152
+#: edit_dates.php:48 templates/view/gallerylightbox.inc:156
 #: lib/Views/GalleryRenderers/Gallery.php:117
 msgid "Edit Dates"
 msgstr ""
@@ -1187,7 +1201,7 @@ msgstr ""
 msgid "Edit Permissions for %s"
 msgstr ""
 
-#: image.php:506
+#: image.php:503
 msgid "Edit Photo"
 msgstr ""
 
@@ -1212,7 +1226,7 @@ msgstr ""
 msgid "Editing dates for the following photos"
 msgstr ""
 
-#: lib/Widget/Links.php:48
+#: lib/Widget/Links.php:50
 msgid "Embed: "
 msgstr ""
 
@@ -1233,19 +1247,19 @@ msgstr ""
 msgid "Existing galleries:"
 msgstr ""
 
-#: lib/Exif.php:496
+#: lib/Exif.php:499
 msgid "Exposure"
 msgstr ""
 
-#: lib/Exif.php:502
+#: lib/Exif.php:505
 msgid "Exposure Bias"
 msgstr ""
 
-#: lib/Exif.php:503
+#: lib/Exif.php:506
 msgid "Exposure Mode"
 msgstr ""
 
-#: lib/Exif.php:504
+#: lib/Exif.php:507
 msgid "Exposure Program"
 msgstr ""
 
@@ -1270,7 +1284,7 @@ msgstr ""
 msgid "Extracted exif fields from %s"
 msgstr ""
 
-#: lib/Exif.php:500
+#: lib/Exif.php:503
 msgid "F-Number"
 msgstr ""
 
@@ -1298,11 +1312,11 @@ msgstr ""
 msgid "Face name was not reported."
 msgstr ""
 
-#: faces/savecustom.php:54
+#: faces/savecustom.php:56
 msgid "Face successfuly created"
 msgstr ""
 
-#: faces/savecustom.php:56
+#: faces/savecustom.php:58
 msgid "Face successfuly updated"
 msgstr ""
 
@@ -1318,12 +1332,16 @@ msgstr ""
 msgid "Fast Shutter"
 msgstr ""
 
+#: map_edit.php:75
+msgid "Fetching location"
+msgstr ""
+
 #: lib/Forms/Upload.php:67
 #, php-format
 msgid "File %s"
 msgstr ""
 
-#: lib/Exif.php:486
+#: lib/Exif.php:489
 msgid "File Size"
 msgstr ""
 
@@ -1331,7 +1349,7 @@ msgstr ""
 msgid "File not found."
 msgstr ""
 
-#: lib/Exif.php:517
+#: lib/Exif.php:520
 msgid "File source"
 msgstr ""
 
@@ -1343,7 +1361,11 @@ msgstr ""
 msgid "Filename"
 msgstr ""
 
-#: lib/Widget/Actions.php:163 lib/Widget/GalleryFaces.php:79
+#: map_edit.php:74
+msgid "Find"
+msgstr ""
+
+#: lib/Widget/Actions.php:165 lib/Widget/GalleryFaces.php:79
 #: lib/Widget/ImageFaces.php:77
 msgid "Find faces"
 msgstr ""
@@ -1352,7 +1374,7 @@ msgstr ""
 msgid "Find other photos this face appears in"
 msgstr ""
 
-#: templates/faces/face.inc:14 templates/tile/face.inc:34 lib/Faces.php:1130
+#: templates/faces/face.inc:14 templates/tile/face.inc:34 lib/Faces.php:1129
 msgid "Find similar"
 msgstr ""
 
@@ -1360,7 +1382,7 @@ msgstr ""
 msgid "Fine"
 msgstr ""
 
-#: lib/Exif.php:374
+#: lib/Exif.php:377
 msgid "Fine weather"
 msgstr ""
 
@@ -1372,7 +1394,7 @@ msgstr ""
 msgid "Fisheye"
 msgstr ""
 
-#: lib/Exif.php:373 lib/Exif.php:407 lib/Exif/panasonic.php:137
+#: lib/Exif.php:376 lib/Exif.php:410 lib/Exif/panasonic.php:137
 #: lib/Exif/canon.php:351
 msgid "Flash"
 msgstr ""
@@ -1385,27 +1407,27 @@ msgstr ""
 msgid "Flash Fired"
 msgstr ""
 
-#: lib/Exif.php:506
+#: lib/Exif.php:509
 msgid "Flash Setting"
 msgstr ""
 
-#: lib/Exif.php:415
+#: lib/Exif.php:418
 msgid "Flash, Auto-Mode"
 msgstr ""
 
-#: lib/Exif.php:417
+#: lib/Exif.php:420
 msgid "Flash, Auto-Mode, Return light detected"
 msgstr ""
 
-#: lib/Exif.php:416
+#: lib/Exif.php:419
 msgid "Flash, Auto-Mode, Return light not detected"
 msgstr ""
 
-#: lib/Exif.php:409
+#: lib/Exif.php:412
 msgid "Flash, strobe return light detected"
 msgstr ""
 
-#: lib/Exif.php:408
+#: lib/Exif.php:411
 msgid "Flash, strobe return light not detected"
 msgstr ""
 
@@ -1418,15 +1440,15 @@ msgstr ""
 msgid "Flourescence"
 msgstr ""
 
-#: lib/Exif.php:371 lib/Exif/canon.php:350
+#: lib/Exif.php:374 lib/Exif/canon.php:350
 msgid "Fluorescent"
 msgstr ""
 
-#: lib/Exif.php:497
+#: lib/Exif.php:500
 msgid "Focal Length"
 msgstr ""
 
-#: lib/Exif.php:498
+#: lib/Exif.php:501
 msgid "Focal Length (35mm equiv)"
 msgstr ""
 
@@ -1451,7 +1473,7 @@ msgstr ""
 msgid "Full Auto"
 msgstr ""
 
-#: lib/Ansel.php:751 config/prefs.php.dist:58
+#: lib/Ansel.php:760 config/prefs.php.dist:58
 msgid "Galleries"
 msgstr ""
 
@@ -1460,7 +1482,7 @@ msgstr ""
 msgid "Galleries grouped by %s"
 msgstr ""
 
-#: lib/Views/List.php:174 lib/Views/List.php:178
+#: lib/Views/List.php:176 lib/Views/List.php:180
 #, php-format
 msgid "Galleries in category \"%s\""
 msgstr ""
@@ -1469,17 +1491,18 @@ msgstr ""
 #: lib/Block/gallery.php:30 lib/Block/gallery.php:57
 #: lib/Block/recent_comments.php:31 lib/Block/recent_comments.php:54
 #: lib/Block/recently_added.php:28 lib/Block/recently_added.php:58
-#: lib/Block/recently_added.php:101
+#: lib/Block/recently_added.php:101 lib/Block/recently_added_geodata.php:28
+#: lib/Block/recently_added_geodata.php:67
 msgid "Gallery"
 msgstr ""
 
 #: image.php:65 scripts/remote_import.php:187 scripts/remote_import.php:196
-#: lib/Ansel.php:3190 img/upload_preview.php:19 img/upload.php:21
+#: lib/Ansel.php:3254 img/upload_preview.php:19 img/upload.php:21
 #, php-format
 msgid "Gallery %s not found."
 msgstr ""
 
-#: lib/Widget/Actions.php:15
+#: lib/Widget/Actions.php:17
 msgid "Gallery Actions"
 msgstr ""
 
@@ -1504,7 +1527,7 @@ msgstr ""
 msgid "Gallery Id"
 msgstr ""
 
-#: lib/Views/List.php:70 lib/Views/List.php:181
+#: lib/Views/List.php:70 lib/Views/List.php:183
 msgid "Gallery List"
 msgstr ""
 
@@ -1521,7 +1544,7 @@ msgstr ""
 msgid "Gallery Password"
 msgstr ""
 
-#: lib/Tile/Gallery.php:100
+#: lib/Tile/Gallery.php:99
 msgid "Gallery Properties"
 msgstr ""
 
@@ -1533,8 +1556,8 @@ msgstr ""
 msgid "Gallery Tags"
 msgstr ""
 
-#: lib/Block/gallery.php:152 lib/Block/recent_comments.php:151
-#: lib/Block/recently_added.php:194
+#: lib/Block/gallery.php:148 lib/Block/recent_comments.php:151
+#: lib/Block/recently_added.php:194 lib/Block/recently_added_geodata.php:172
 msgid "Gallery does not exist."
 msgstr ""
 
@@ -1584,8 +1607,12 @@ msgstr ""
 msgid "Hard"
 msgstr ""
 
-#: lib/Exif.php:491
+#: lib/Exif.php:494
 msgid "Height"
+msgstr ""
+
+#: lib/Block/recently_added_geodata.php:37
+msgid "Height of map (width automatically adjusts to block)"
 msgstr ""
 
 #: lib/Exif/panasonic.php:114 lib/Exif/panasonic.php:273
@@ -1610,23 +1637,23 @@ msgstr ""
 msgid "I know who is on one of your photos"
 msgstr ""
 
-#: lib/Exif.php:501
+#: lib/Exif.php:504
 msgid "ISO Setting"
 msgstr ""
 
-#: lib/Exif.php:388
+#: lib/Exif.php:391
 msgid "ISO studio tungsten"
 msgstr ""
 
-#: lib/Exif.php:1309
+#: lib/Exif.php:1312
 msgid "Illegal size for IFD1"
 msgstr ""
 
-#: lib/Exif.php:1356
+#: lib/Exif.php:1359
 msgid "Illegal size for InteroperabilityIFD"
 msgstr ""
 
-#: lib/Exif.php:1272
+#: lib/Exif.php:1275
 msgid "Illegal size for SubIFD"
 msgstr ""
 
@@ -1638,11 +1665,11 @@ msgstr ""
 msgid "Incandescense"
 msgstr ""
 
-#: lib/Exif.php:268
+#: lib/Exif.php:271
 msgid "Inch"
 msgstr ""
 
-#: lib/Ansel.php:2349
+#: lib/Ansel.php:2397
 msgid "Incomplete photo"
 msgstr ""
 
@@ -1667,7 +1694,7 @@ msgstr ""
 msgid "Invalid gallery specified."
 msgstr ""
 
-#: templates/image/crop_image.inc:149 lib/Exif.php:253
+#: templates/image/crop_image.inc:149 lib/Exif.php:256
 #: lib/Exif/fujifilm.php:136 lib/Exif/canon.php:156
 msgid "Landscape"
 msgstr ""
@@ -1680,7 +1707,7 @@ msgstr ""
 msgid "Last Modified"
 msgstr ""
 
-#: lib/Exif.php:514
+#: lib/Exif.php:517
 msgid "Latitude"
 msgstr ""
 
@@ -1693,15 +1720,15 @@ msgstr ""
 msgid "Left"
 msgstr ""
 
-#: lib/Exif.php:516
+#: lib/Exif.php:519
 msgid "Light source"
 msgstr ""
 
-#: config/styles.php.dist:144 config/styles.php.dist:181
+#: config/styles.php.dist:145 config/styles.php.dist:182
 msgid "Lightbox with Polaroids (No Background)"
 msgstr ""
 
-#: lib/Widget/Links.php:15
+#: lib/Widget/Links.php:17
 msgid "Links"
 msgstr ""
 
@@ -1718,16 +1745,25 @@ msgstr ""
 msgid "Loading ..."
 msgstr ""
 
-#: templates/faces/gallery.inc:28 templates/faces/gallery.inc:39
-#: lib/XRequest/EditFaces.php:35
+#: map_edit.php:85 templates/faces/gallery.inc:28
+#: templates/faces/gallery.inc:39 lib/XRequest/EditFaces.php:35
+#: lib/Widget/Tags.php:59
 msgid "Loading..."
+msgstr ""
+
+#: map_edit.php:76
+msgid "Locate image at:"
+msgstr ""
+
+#: lib/Widget/Geodata.php:24
+msgid "Location"
 msgstr ""
 
 #: lib/Exif/canon.php:244
 msgid "Locked (Pan Mode)"
 msgstr ""
 
-#: lib/api.php:850 lib/Views/Image.php:64 lib/Views/Image.php:89
+#: lib/api.php:844 lib/Views/Image.php:64 lib/Views/Image.php:89
 #: lib/Views/Gallery.php:111 lib/Views/Gallery.php:133
 msgid "Locked galleries are not viewable via the api."
 msgstr ""
@@ -1747,7 +1783,7 @@ msgstr ""
 msgid "Login to %s"
 msgstr ""
 
-#: lib/Exif.php:515
+#: lib/Exif.php:518
 msgid "Longitude"
 msgstr ""
 
@@ -1778,7 +1814,7 @@ msgid ""
 "Mandatory arguments to long options are mandatory for short options too."
 msgstr ""
 
-#: templates/image/crop_image.inc:138 lib/Exif.php:246 lib/Exif.php:396
+#: templates/image/crop_image.inc:138 lib/Exif.php:249 lib/Exif.php:399
 #: lib/Exif/fujifilm.php:125 lib/Exif/panasonic.php:135
 #: lib/Exif/panasonic.php:141 lib/Exif/panasonic.php:150
 #: lib/Exif/panasonic.php:199 lib/Exif/nikon.php:182 lib/Exif/canon.php:155
@@ -1794,7 +1830,7 @@ msgstr ""
 msgid "Manual Focus"
 msgstr ""
 
-#: lib/Exif.php:239
+#: lib/Exif.php:242
 msgid "Manual exposure"
 msgstr ""
 
@@ -1814,7 +1850,7 @@ msgstr ""
 msgid "Maximum number of galleries"
 msgstr ""
 
-#: lib/Block/recently_added.php:33
+#: lib/Block/recently_added.php:33 lib/Block/recently_added_geodata.php:33
 msgid "Maximum number of photos"
 msgstr ""
 
@@ -1835,7 +1871,7 @@ msgstr ""
 msgid "Medium"
 msgstr ""
 
-#: lib/Exif.php:505
+#: lib/Exif.php:508
 msgid "Metering Mode"
 msgstr ""
 
@@ -1844,7 +1880,7 @@ msgstr ""
 msgid "Mirror"
 msgstr ""
 
-#: lib/Exif.php:282
+#: lib/Exif.php:285
 #, php-format
 msgid "Mirrored"
 msgstr ""
@@ -1861,7 +1897,7 @@ msgstr ""
 msgid "Mode 2"
 msgstr ""
 
-#: lib/Tile/Gallery.php:125
+#: lib/Tile/Gallery.php:124
 msgid "Modified"
 msgstr ""
 
@@ -1880,23 +1916,23 @@ msgid ""
 "face at a time."
 msgstr ""
 
-#: templates/view/gallerylightbox.inc:158 templates/view/results.inc:84
+#: templates/view/gallerylightbox.inc:162 templates/view/results.inc:84
 #: lib/Views/GalleryRenderers/Gallery.php:123
 msgid "Move"
 msgstr ""
 
-#: image.php:627 lib/Views/Results.php:176
+#: image.php:624 lib/Views/Results.php:176
 #, php-format
 msgid "Moved %d photo from \"%s\" to \"%s\""
 msgid_plural "Moved %d photos from \"%s\" to \"%s\""
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/Exif.php:361
+#: lib/Exif.php:364
 msgid "Multi-Segment"
 msgstr ""
 
-#: lib/Exif.php:360
+#: lib/Exif.php:363
 msgid "Multi-Spot"
 msgstr ""
 
@@ -1904,7 +1940,7 @@ msgstr ""
 msgid "Multiple Photos"
 msgstr ""
 
-#: templates/group/owner.inc:3 lib/Ansel.php:686 lib/Views/List.php:155
+#: templates/group/owner.inc:3 lib/Ansel.php:693 lib/Views/List.php:155
 #: lib/Block/my_galleries.php:3 lib/Block/my_galleries.php:37
 #: config/prefs.php.dist:59
 msgid "My Galleries"
@@ -1934,9 +1970,9 @@ msgstr ""
 msgid "New Gallery Title"
 msgstr ""
 
-#: templates/view/image.inc:93 templates/view/image.inc:94
-#: templates/view/image.inc:119 templates/view/image.inc:120
-#: templates/view/slideshow.inc:42 templates/view/slideshow.inc:43
+#: templates/view/image.inc:96 templates/view/image.inc:97
+#: templates/view/image.inc:120 templates/view/slideshow.inc:42
+#: templates/view/slideshow.inc:43
 msgid "Next"
 msgstr ""
 
@@ -1956,7 +1992,7 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: lib/Exif.php:406 lib/Exif.php:413 lib/Exif.php:414 lib/Exif.php:418
+#: lib/Exif.php:409 lib/Exif.php:416 lib/Exif.php:417 lib/Exif.php:421
 msgid "No Flash"
 msgstr ""
 
@@ -1983,7 +2019,27 @@ msgstr ""
 msgid "No gallery specified"
 msgstr ""
 
-#: templates/view/gallery.inc:135 templates/view/gallerylightbox.inc:145
+#: lib/Widget/Geodata.php:124
+msgid "No location data present."
+msgstr ""
+
+#: lib/XRequest/ImageSaveGeolocation.php:82 lib/Widget/Geodata.php:117
+#, php-format
+msgid ""
+"No location data present. Place using %s map %s or click on image to place "
+"at the same location."
+msgstr ""
+
+#: lib/Widget/Geodata.php:119
+msgid "No location data present. You may add some "
+msgstr ""
+
+#: lib/XRequest/ImageSaveGeolocation.php:84
+#, php-format
+msgid "No location data present. You may add some %s"
+msgstr ""
+
+#: templates/view/gallery.inc:135 templates/view/gallerylightbox.inc:149
 #: templates/view/results.inc:78 lib/Exif/nikon.php:155 lib/Exif/canon.php:172
 #: config/prefs.php.dist:71 config/prefs.php.dist:238
 #: config/prefs.php.dist:259
@@ -2002,16 +2058,20 @@ msgstr ""
 msgid "Normal"
 msgstr ""
 
-#: lib/Exif.php:280
+#: lib/Exif.php:283
 #, php-format
 msgid "Normal (O deg)"
 msgstr ""
 
-#: lib/Exif.php:247
+#: lib/Exif.php:250
 msgid "Normal Program"
 msgstr ""
 
-#: lib/Exif.php:447
+#: map_edit.php:44
+msgid "Not Authorized. Details have been logged for the server administrator."
+msgstr ""
+
+#: lib/Exif.php:450
 msgid "Not defined"
 msgstr ""
 
@@ -2061,7 +2121,7 @@ msgstr ""
 msgid "On Camera"
 msgstr ""
 
-#: lib/Exif.php:448
+#: lib/Exif.php:451
 msgid "One Chip Color Area Sensor"
 msgstr ""
 
@@ -2083,7 +2143,7 @@ msgstr ""
 msgid "Original Date"
 msgstr ""
 
-#: lib/Exif.php:363
+#: lib/Exif.php:366
 msgid "Other"
 msgstr ""
 
@@ -2099,7 +2159,7 @@ msgstr ""
 msgid "Over Exposure"
 msgstr ""
 
-#: templates/group/owner.inc:56
+#: templates/group/owner.inc:58
 #, php-format
 msgid "Owned by: %s"
 msgstr ""
@@ -2117,7 +2177,7 @@ msgstr ""
 msgid "Panning"
 msgstr ""
 
-#: lib/Exif.php:362 lib/Exif/canon.php:234
+#: lib/Exif.php:365 lib/Exif/canon.php:234
 msgid "Partial"
 msgstr ""
 
@@ -2172,7 +2232,7 @@ msgstr ""
 msgid "Photo Count"
 msgstr ""
 
-#: lib/Exif.php:485
+#: lib/Exif.php:488
 msgid "Photo Description"
 msgstr ""
 
@@ -2180,7 +2240,7 @@ msgstr ""
 msgid "Photo Galleries"
 msgstr ""
 
-#: lib/Exif.php:484
+#: lib/Exif.php:487
 msgid "Photo Type"
 msgstr ""
 
@@ -2197,7 +2257,7 @@ msgstr ""
 msgid "Photo is too small. Search photo must be at least 50x50 pixels."
 msgstr ""
 
-#: lib/Ansel.php:3379
+#: lib/Ansel.php:3445
 msgid "Photo not found"
 msgstr ""
 
@@ -2209,7 +2269,7 @@ msgstr ""
 msgid "Photo search"
 msgstr ""
 
-#: rss.php:148
+#: rss.php:150
 #, php-format
 msgid "Photos by %s"
 msgstr ""
@@ -2218,20 +2278,20 @@ msgstr ""
 msgid "Photos in this gallery"
 msgstr ""
 
-#: lib/Ansel.php:3417
+#: lib/Ansel.php:3480
 msgid "Photos not found"
 msgstr ""
 
-#: rss.php:178 rss.php:184
+#: rss.php:180 rss.php:186
 #, php-format
 msgid "Photos tagged with %s on %s"
 msgstr ""
 
-#: lib/Exif.php:267
+#: lib/Exif.php:270
 msgid "Pixels"
 msgstr ""
 
-#: templates/view/image.inc:89 templates/view/image.inc:115
+#: templates/view/image.inc:92 templates/view/image.inc:117
 #: templates/view/slideshow.inc:38
 msgid "Play"
 msgstr ""
@@ -2252,11 +2312,11 @@ msgid ""
 "face per time."
 msgstr ""
 
-#: config/styles.php.dist:96
+#: config/styles.php.dist:97
 msgid "Polaroid Style Thumbnails (White Background)"
 msgstr ""
 
-#: templates/image/crop_image.inc:150 lib/Exif.php:252
+#: templates/image/crop_image.inc:150 lib/Exif.php:255
 #: lib/Exif/fujifilm.php:135 lib/Exif/panasonic.php:183 lib/Exif/canon.php:162
 msgid "Portrait"
 msgstr ""
@@ -2269,11 +2329,11 @@ msgstr ""
 msgid "Press the \"Back\" button and try again."
 msgstr ""
 
-#: config/styles.php.dist:66
+#: config/styles.php.dist:67
 msgid "Pretty Thumbnails (No Background)"
 msgstr ""
 
-#: config/styles.php.dist:77
+#: config/styles.php.dist:78
 msgid "Pretty Thumbnails (White Background)"
 msgstr ""
 
@@ -2281,14 +2341,14 @@ msgstr ""
 msgid "Preview"
 msgstr ""
 
-#: image.php:511 image.php:748
+#: image.php:508 image.php:745
 #, php-format
 msgid "Preview changes for %s :: %s"
 msgstr ""
 
-#: templates/view/image.inc:91 templates/view/image.inc:92
-#: templates/view/image.inc:117 templates/view/image.inc:118
-#: templates/view/slideshow.inc:40 templates/view/slideshow.inc:41
+#: templates/view/image.inc:94 templates/view/image.inc:95
+#: templates/view/image.inc:119 templates/view/slideshow.inc:40
+#: templates/view/slideshow.inc:41
 msgid "Previous"
 msgstr ""
 
@@ -2300,7 +2360,7 @@ msgstr ""
 msgid "Program AE"
 msgstr ""
 
-#: templates/view/image.inc:56 templates/view/slideshow.inc:17
+#: templates/view/image.inc:59 templates/view/slideshow.inc:17
 #: templates/tile/image.inc:17
 msgid "Properties"
 msgstr ""
@@ -2395,12 +2455,12 @@ msgstr ""
 msgid "Recent faces"
 msgstr ""
 
-#: lib/Widget/Links.php:25
+#: lib/Widget/Links.php:27
 #, php-format
 msgid "Recent photos by %s"
 msgstr ""
 
-#: lib/Widget/Links.php:27
+#: lib/Widget/Links.php:29
 #, php-format
 msgid "Recent photos in %s"
 msgstr ""
@@ -2414,7 +2474,16 @@ msgstr ""
 msgid "Recently Added Photos From %s"
 msgstr ""
 
-#: rss.php:153
+#: lib/Block/recently_added_geodata.php:3
+msgid "Recently Geotagged"
+msgstr ""
+
+#: lib/Block/recently_added_geodata.php:86
+#, php-format
+msgid "Recently Geotagged Photos From %s"
+msgstr ""
+
+#: rss.php:155
 #, php-format
 msgid "Recently added photos by %s on %s"
 msgstr ""
@@ -2424,7 +2493,7 @@ msgstr ""
 msgid "Recently added photos on %s"
 msgstr ""
 
-#: lib/Exif.php:419
+#: lib/Exif.php:422
 msgid "Red Eye"
 msgstr ""
 
@@ -2432,35 +2501,35 @@ msgstr ""
 msgid "Red Eye Reduction"
 msgstr ""
 
-#: lib/Exif.php:425
+#: lib/Exif.php:428
 msgid "Red Eye, Auto-Mode"
 msgstr ""
 
-#: lib/Exif.php:427
+#: lib/Exif.php:430
 msgid "Red Eye, Auto-Mode, Return light detected"
 msgstr ""
 
-#: lib/Exif.php:426
+#: lib/Exif.php:429
 msgid "Red Eye, Auto-Mode, Return light not detected"
 msgstr ""
 
-#: lib/Exif.php:422
+#: lib/Exif.php:425
 msgid "Red Eye, Compulsory Flash"
 msgstr ""
 
-#: lib/Exif.php:424
+#: lib/Exif.php:427
 msgid "Red Eye, Compulsory Flash, Return light detected"
 msgstr ""
 
-#: lib/Exif.php:423
+#: lib/Exif.php:426
 msgid "Red Eye, Compulsory Flash, Return light not detected"
 msgstr ""
 
-#: lib/Exif.php:421
+#: lib/Exif.php:424
 msgid "Red Eye, Return light detected"
 msgstr ""
 
-#: lib/Exif.php:420
+#: lib/Exif.php:423
 msgid "Red Eye, Return light not detected"
 msgstr ""
 
@@ -2473,7 +2542,7 @@ msgstr ""
 msgid "Refresh List"
 msgstr ""
 
-#: lib/Widget/Actions.php:159
+#: lib/Widget/Actions.php:161
 msgid "Regenerate all photo views"
 msgstr ""
 
@@ -2485,12 +2554,16 @@ msgstr ""
 msgid "Related Tags"
 msgstr ""
 
-#: lib/Tags.php:595
+#: lib/Widget/Geodata.php:47
+msgid "Relocate this image"
+msgstr ""
+
+#: lib/Tags.php:614
 #, php-format
 msgid "Remove %s from search"
 msgstr ""
 
-#: lib/XRequest/TagActions.php:115 lib/Widget/Tags.php:93
+#: lib/XRequest/TagActions.php:115 lib/Widget/Tags.php:98
 msgid "Remove Tag"
 msgstr ""
 
@@ -2499,8 +2572,8 @@ msgid "Replace photo with this file"
 msgstr ""
 
 #: report.php:47 report.php:66 templates/faces/face.inc:9
-#: templates/faces/search.inc:10 templates/view/image.inc:78
-#: templates/tile/face.inc:30 lib/Widget/Actions.php:181
+#: templates/faces/search.inc:10 templates/view/image.inc:81
+#: templates/tile/face.inc:30 lib/Widget/Actions.php:183
 msgid "Report"
 msgstr ""
 
@@ -2534,11 +2607,11 @@ msgstr ""
 msgid "Reset"
 msgstr ""
 
-#: lib/Widget/Actions.php:156
+#: lib/Widget/Actions.php:158
 msgid "Reset all thumbnails"
 msgstr ""
 
-#: lib/Widget/Actions.php:169
+#: lib/Widget/Actions.php:171
 msgid "Reset default photo"
 msgstr ""
 
@@ -2547,8 +2620,12 @@ msgstr ""
 msgid "Resize"
 msgstr ""
 
-#: lib/Exif.php:494
+#: lib/Exif.php:497
 msgid "Resolution Unit"
+msgstr ""
+
+#: map_edit.php:73
+msgid "Return to Image View"
 msgstr ""
 
 #: lib/Forms/Watermark.php:47 lib/Exif/canon.php:252 lib/Exif/canon.php:363
@@ -2591,9 +2668,9 @@ msgstr ""
 msgid "SXGA Normal"
 msgstr ""
 
-#: templates/image/resize_image.inc:76 templates/faces/custom.inc:52
-#: lib/Forms/Image.php:26 lib/Forms/ImageDate.php:26
-#: lib/Forms/Watermark.php:26
+#: map_edit.php:72 templates/image/resize_image.inc:76
+#: templates/faces/custom.inc:52 lib/Forms/Image.php:26
+#: lib/Forms/ImageDate.php:26 lib/Forms/Watermark.php:26
 msgid "Save"
 msgstr ""
 
@@ -2649,11 +2726,11 @@ msgstr ""
 msgid "Searching for faces in %s"
 msgstr ""
 
-#: templates/view/gallerylightbox.inc:144 templates/view/results.inc:77
+#: templates/view/gallerylightbox.inc:148 templates/view/results.inc:77
 msgid "Select All"
 msgstr ""
 
-#: templates/view/gallerylightbox.inc:145 templates/view/results.inc:78
+#: templates/view/gallerylightbox.inc:149 templates/view/results.inc:78
 msgid "Select None"
 msgstr ""
 
@@ -2665,12 +2742,12 @@ msgstr ""
 msgid "Select:"
 msgstr ""
 
-#: templates/view/gallerylightbox.inc:143 templates/view/results.inc:76
+#: templates/view/gallerylightbox.inc:147 templates/view/results.inc:76
 #, php-format
 msgid "Select: %s, %s"
 msgstr ""
 
-#: templates/view/gallery.inc:139 templates/view/gallerylightbox.inc:163
+#: templates/view/gallery.inc:139 templates/view/gallerylightbox.inc:167
 #: templates/view/results.inc:89
 msgid "Selected photos to"
 msgstr ""
@@ -2684,15 +2761,15 @@ msgstr ""
 msgid "Send Ecard :: %s"
 msgstr ""
 
-#: templates/view/image.inc:63 templates/view/slideshow.inc:27
+#: templates/view/image.inc:66 templates/view/slideshow.inc:27
 msgid "Send an Ecard"
 msgstr ""
 
-#: lib/Forms/Ecard.php:41
+#: lib/Forms/Ecard.php:42
 msgid "Send ecard to the following address:"
 msgstr ""
 
-#: lib/Exif.php:509
+#: lib/Exif.php:512
 msgid "Sensing Method"
 msgstr ""
 
@@ -2704,19 +2781,19 @@ msgstr ""
 msgid "Sepia"
 msgstr ""
 
-#: lib/Widget/Actions.php:146
+#: lib/Widget/Actions.php:148
 msgid "Set captions"
 msgstr ""
 
-#: lib/Widget/Actions.php:174
+#: lib/Widget/Actions.php:176
 msgid "Set permissions"
 msgstr ""
 
-#: lib/Exif.php:376
+#: lib/Exif.php:379
 msgid "Shade"
 msgstr ""
 
-#: config/styles.php.dist:86
+#: config/styles.php.dist:87
 msgid "Shadowed Thumbnails (White Background)"
 msgstr ""
 
@@ -2724,11 +2801,11 @@ msgstr ""
 msgid "Show EXIF data"
 msgstr ""
 
-#: lib/Exif.php:249 lib/Exif/fujifilm.php:141 lib/Exif/panasonic.php:195
+#: lib/Exif.php:252 lib/Exif/fujifilm.php:141 lib/Exif/panasonic.php:195
 msgid "Shutter Priority"
 msgstr ""
 
-#: lib/Exif.php:495
+#: lib/Exif.php:498
 msgid "Shutter Speed"
 msgstr ""
 
@@ -2740,11 +2817,11 @@ msgstr ""
 msgid "Similar faces"
 msgstr ""
 
-#: lib/Exif/panasonic.php:203 config/styles.php.dist:160
+#: lib/Exif/panasonic.php:203 config/styles.php.dist:161
 msgid "Simple"
 msgstr ""
 
-#: config/styles.php.dist:169
+#: config/styles.php.dist:170
 msgid "Simple Lightbox"
 msgstr ""
 
@@ -2792,7 +2869,7 @@ msgstr ""
 msgid "Sort by:"
 msgstr ""
 
-#: lib/Widget/Actions.php:152
+#: lib/Widget/Actions.php:154
 msgid "Sort photos"
 msgstr ""
 
@@ -2808,7 +2885,7 @@ msgstr ""
 msgid "Sports"
 msgstr ""
 
-#: lib/Exif.php:359
+#: lib/Exif.php:362
 msgid "Spot"
 msgstr ""
 
@@ -2821,20 +2898,20 @@ msgstr ""
 msgid "Standard"
 msgstr ""
 
-#: lib/Exif.php:381
+#: lib/Exif.php:384
 msgid "Standard light A"
 msgstr ""
 
-#: lib/Exif.php:382
+#: lib/Exif.php:385
 msgid "Standard light B"
 msgstr ""
 
-#: lib/Exif.php:383
+#: lib/Exif.php:386
 msgid "Standard light C"
 msgstr ""
 
-#: templates/view/image.inc:88 templates/view/image.inc:115
-#: templates/view/slideshow.inc:38 lib/Widget/Actions.php:49
+#: templates/view/image.inc:91 templates/view/image.inc:117
+#: templates/view/slideshow.inc:38 lib/Widget/Actions.php:51
 msgid "Start Slideshow"
 msgstr ""
 
@@ -2923,12 +3000,12 @@ msgstr ""
 msgid "The directory \"%s\" is empty."
 msgstr ""
 
-#: scripts/remote_import.php:297 lib/Ansel.php:515
+#: scripts/remote_import.php:297 lib/Ansel.php:522
 #, php-format
 msgid "The file \"%s\" doesn't exist."
 msgstr ""
 
-#: lib/Exif.php:1084
+#: lib/Exif.php:1087
 msgid "The file could not be found."
 msgstr ""
 
@@ -2936,7 +3013,7 @@ msgstr ""
 msgid "The file you uploaded does not appear to be a valid photo."
 msgstr ""
 
-#: lib/Ansel.php:3060
+#: lib/Ansel.php:3124
 #, php-format
 msgid "The gallery \"%s\" could not be created: %s"
 msgstr ""
@@ -2977,27 +3054,27 @@ msgstr ""
 msgid "The owner of the photo, who will delegate the face name, was notified."
 msgstr ""
 
-#: lib/Ansel.php:3023
+#: lib/Ansel.php:3087
 #, php-format
 msgid "The slug \"%s\" already exists."
 msgstr ""
 
-#: img/upload.php:208
+#: img/upload.php:206
 msgid ""
 "The uploaded file appears to be empty. It may not exist on your computer."
 msgstr ""
 
-#: lib/Views/List.php:197 lib/Block/random_photo.php:35
+#: lib/Views/List.php:199 lib/Block/random_photo.php:35
 msgid "There are no photo galleries available."
 msgstr ""
 
-#: lib/Ansel.php:979
+#: lib/Ansel.php:988
 #, php-format
 msgid "There are no photos in %s to download."
 msgstr ""
 
 #: templates/captions/captions.inc:52 templates/view/gallery.inc:143
-#: templates/view/gallerylightbox.inc:167 templates/view/results.inc:99
+#: templates/view/gallerylightbox.inc:171 templates/view/results.inc:99
 msgid "There are no photos in this gallery."
 msgstr ""
 
@@ -3011,17 +3088,17 @@ msgstr ""
 msgid "There was a problem adding the photo \"%s\" to gallery \"%s\": %s"
 msgstr ""
 
-#: gallery/delete.php:34 lib/api.php:713
+#: gallery/delete.php:34 lib/api.php:707
 #, php-format
 msgid "There was a problem deleting %s: %s"
 msgstr ""
 
-#: image.php:578 lib/Views/Results.php:131
+#: image.php:575 lib/Views/Results.php:131
 #, php-format
 msgid "There was a problem deleting photos: %s"
 msgstr ""
 
-#: img/upload.php:105 img/upload.php:166 img/upload.php:190
+#: img/upload.php:105 img/upload.php:166 img/upload.php:193
 #, php-format
 msgid "There was a problem saving the photo: %s"
 msgstr ""
@@ -3030,7 +3107,7 @@ msgstr ""
 msgid "There was a problem uploading the photo."
 msgstr ""
 
-#: img/upload.php:206
+#: img/upload.php:204
 #, php-format
 msgid "There was a problem uploading the photo: %s"
 msgstr ""
@@ -3078,7 +3155,7 @@ msgid ""
 "administrator."
 msgstr ""
 
-#: lib/Exif.php:450
+#: lib/Exif.php:453
 msgid "Three Chip Color Area Sensor"
 msgstr ""
 
@@ -3094,11 +3171,11 @@ msgstr ""
 msgid "Top Level Gallery"
 msgstr ""
 
-#: lib/Exif.php:452
+#: lib/Exif.php:455
 msgid "Trilinear Sensor"
 msgstr ""
 
-#: lib/Exif.php:372 lib/Exif/canon.php:349
+#: lib/Exif.php:375 lib/Exif/canon.php:349
 msgid "Tungsten"
 msgstr ""
 
@@ -3106,11 +3183,15 @@ msgstr ""
 msgid "Tv"
 msgstr ""
 
-#: lib/Exif.php:449
+#: lib/Exif.php:452
 msgid "Two Chip Color Area Sensor"
 msgstr ""
 
-#: lib/Widget.php:75 lib/ImageView.php:96 lib/Search.php:57 lib/api.php:1322
+#: map_edit.php:77
+msgid "Unable to find location. Error code:"
+msgstr ""
+
+#: lib/Widget.php:75 lib/ImageView.php:96 lib/Search.php:57 lib/api.php:1319
 #, php-format
 msgid "Unable to load the definition of %s."
 msgstr ""
@@ -3119,7 +3200,7 @@ msgstr ""
 msgid "Unable to retrieve requested feed"
 msgstr ""
 
-#: lib/Exif.php:460
+#: lib/Exif.php:463
 msgid "Uncalibrated"
 msgstr ""
 
@@ -3131,12 +3212,12 @@ msgstr ""
 msgid "Undo Changes"
 msgstr ""
 
-#: templates/group/category.inc:7 lib/Views/List.php:175
+#: templates/group/category.inc:7 lib/Views/List.php:177
 msgid "Unfiled"
 msgstr ""
 
-#: lib/Exif.php:241 lib/Exif.php:254 lib/Exif.php:270 lib/Exif.php:356
-#: lib/Exif.php:390 lib/Exif.php:397 lib/Exif.php:454 lib/Exif/fujifilm.php:86
+#: lib/Exif.php:244 lib/Exif.php:257 lib/Exif.php:273 lib/Exif.php:359
+#: lib/Exif.php:393 lib/Exif.php:400 lib/Exif.php:457 lib/Exif/fujifilm.php:86
 #: lib/Exif/fujifilm.php:97 lib/Exif/sanyo.php:73 lib/Exif/sanyo.php:77
 #: lib/Exif/sanyo.php:81 lib/Exif/olympus.php:83 lib/Exif/olympus.php:88
 #: lib/Exif/nikon.php:122 lib/Exif/nikon.php:127 lib/Exif/nikon.php:135
@@ -3181,7 +3262,7 @@ msgstr ""
 msgid "Unknown: "
 msgstr ""
 
-#: lib/Exif.php:364
+#: lib/Exif.php:367
 #, php-format
 msgid "Unknown: %s"
 msgstr ""
@@ -3191,7 +3272,7 @@ msgstr ""
 msgid "Unknown: (%s)"
 msgstr ""
 
-#: lib/Ansel.php:2991 lib/tests/GalleryTest.php:42
+#: lib/Ansel.php:3055 lib/tests/GalleryTest.php:42
 msgid "Unnamed"
 msgstr ""
 
@@ -3201,6 +3282,11 @@ msgstr ""
 
 #: xppublish.php:135
 msgid "Untitled"
+msgstr ""
+
+#: map_edit.php:162
+#, php-format
+msgid "Update position of %s"
 msgstr ""
 
 #: perms.php:237
@@ -3221,16 +3307,16 @@ msgstr ""
 msgid "Upload face photo"
 msgstr ""
 
-#: lib/Widget/Actions.php:52 img/upload.php:29
+#: lib/Widget/Actions.php:54 img/upload.php:29
 msgid "Upload photos"
 msgstr ""
 
-#: lib/Exif.php:284
+#: lib/Exif.php:287
 #, php-format
 msgid "Upsidedown"
 msgstr ""
 
-#: lib/Exif.php:286
+#: lib/Exif.php:289
 #, php-format
 msgid "Upsidedown Mirrored"
 msgstr ""
@@ -3245,11 +3331,11 @@ msgstr ""
 msgid "Use a lightbox to view photos"
 msgstr ""
 
-#: lib/Forms/Ecard.php:32
+#: lib/Forms/Ecard.php:33
 msgid "Use the following return address:"
 msgstr ""
 
-#: lib/Exif.php:507
+#: lib/Exif.php:510
 msgid "User Comment"
 msgstr ""
 
@@ -3304,7 +3390,7 @@ msgstr ""
 msgid "View All Results"
 msgstr ""
 
-#: lib/Block/random_photo.php:55
+#: lib/Block/random_photo.php:54
 msgid "View Photo"
 msgstr ""
 
@@ -3328,7 +3414,7 @@ msgstr ""
 msgid "Warning"
 msgstr ""
 
-#: image.php:463 image.php:474 templates/image/crop_image.inc:111
+#: image.php:460 image.php:471 templates/image/crop_image.inc:111
 #: templates/image/edit_image.inc:27 templates/image/resize_image.inc:58
 msgid "Watermark"
 msgstr ""
@@ -3364,11 +3450,11 @@ msgid ""
 "Which EXIF fields should we automatically add as photo tags during upload?"
 msgstr ""
 
-#: lib/Exif.php:510
+#: lib/Exif.php:513
 msgid "White Balance"
 msgstr ""
 
-#: lib/Exif.php:380
+#: lib/Exif.php:383
 msgid "White fluorescent"
 msgstr ""
 
@@ -3384,15 +3470,15 @@ msgstr ""
 msgid "Who should be allowed to download original photos?"
 msgstr ""
 
-#: lib/Exif.php:490
+#: lib/Exif.php:493
 msgid "Width"
 msgstr ""
 
-#: lib/Exif.php:492
+#: lib/Exif.php:495
 msgid "X Resolution"
 msgstr ""
 
-#: lib/Exif.php:493
+#: lib/Exif.php:496
 msgid "Y Resolution"
 msgstr ""
 
@@ -3408,7 +3494,7 @@ msgstr ""
 msgid "You are not allowed to edit this photo."
 msgstr ""
 
-#: img/upload.php:225
+#: img/upload.php:223
 msgid "You did not select any photos to upload."
 msgstr ""
 
@@ -3433,7 +3519,7 @@ msgid ""
 "messages."
 msgstr ""
 
-#: lib/Views/List.php:192
+#: lib/Views/List.php:194
 msgid "You have no photo galleries, add one!"
 msgstr ""
 
@@ -3475,7 +3561,7 @@ msgstr ""
 msgid "You must select at least on photo to edit."
 msgstr ""
 
-#: image.php:713
+#: image.php:710
 msgid "You must select images to download."
 msgstr ""
 
@@ -3501,27 +3587,27 @@ msgstr ""
 msgid "Zip File Upload"
 msgstr ""
 
-#: lib/Ansel.php:585
+#: lib/Ansel.php:592
 msgid "_Browse"
 msgstr ""
 
-#: lib/Ansel.php:625
+#: lib/Ansel.php:632
 msgid "_Faces"
 msgstr ""
 
-#: lib/Ansel.php:593
+#: lib/Ansel.php:600
 msgid "_Galleries"
 msgstr ""
 
-#: lib/Ansel.php:605
+#: lib/Ansel.php:612
 msgid "_My Galleries"
 msgstr ""
 
-#: lib/Ansel.php:617
+#: lib/Ansel.php:624
 msgid "_New Gallery"
 msgstr ""
 
-#: lib/Ansel.php:630
+#: lib/Ansel.php:637
 msgid "_Print"
 msgstr ""
 
@@ -3534,6 +3620,10 @@ msgstr ""
 msgid "height"
 msgstr ""
 
+#: lib/XRequest/ImageSaveGeolocation.php:84 lib/Widget/Geodata.php:119
+msgid "here"
+msgstr ""
+
 #: group.php:97
 msgid "none"
 msgstr ""
@@ -3543,7 +3633,7 @@ msgstr ""
 msgid "of"
 msgstr ""
 
-#: lib/Exif.php:389
+#: lib/Exif.php:392
 msgid "other light source"
 msgstr ""
 
@@ -3555,11 +3645,11 @@ msgstr ""
 msgid "photo"
 msgstr ""
 
-#: lib/Exif.php:459
+#: lib/Exif.php:462
 msgid "sRGB"
 msgstr ""
 
-#: lib/Exif.php:950
+#: lib/Exif.php:953
 #, php-format
 msgid "version %d"
 msgstr ""

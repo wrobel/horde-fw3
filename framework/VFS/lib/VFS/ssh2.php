@@ -12,7 +12,7 @@
  *      'port'           The port used to connect to the ssh2 server if other
  *                       than 22.</pre>
  *
- * $Horde: framework/VFS/lib/VFS/ssh2.php,v 1.1.2.13 2009/06/15 14:22:32 chuck Exp $
+ * $Horde: framework/VFS/lib/VFS/ssh2.php,v 1.1.2.14 2009/09/16 21:06:40 jan Exp $
  *
  * Copyright 2006-2009 The Horde Project (http://www.horde.org/)
  *
@@ -963,7 +963,7 @@ class VFS_ssh2 extends VFS {
      */
     function _send($local, $remote)
     {
-        return copy($local, $this->_wrap($remote));
+        return @copy($local, $this->_wrap($remote));
     }
 
     /**
@@ -979,7 +979,7 @@ class VFS_ssh2 extends VFS {
      */
     function _recv($remote, $local)
     {
-        return copy($this->_wrap($remote), $local);
+        return @copy($this->_wrap($remote), $local);
     }
 
     /**

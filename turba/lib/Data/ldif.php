@@ -2,7 +2,7 @@
 /**
  * Horde_Data implementation for LDAP Data Interchange Format (LDIF).
  *
- * $Horde: turba/lib/Data/ldif.php,v 1.2.2.4 2009/01/06 15:27:49 jan Exp $
+ * $Horde: turba/lib/Data/ldif.php,v 1.2.2.5 2009/09/18 14:23:22 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *
@@ -243,7 +243,12 @@ class Horde_Data_ldif extends Horde_Data {
                                       'mozillaHomePostalCode', 'mozillaHomeCountryName');
 
                         // Grab all of them that exist in $record.
-                        $values = array_intersect_key($record, array_flip($keys));
+                        $values = array();
+                        foreach ($keys as $key) {
+                            if (isset($record[$key])) {
+                                $values = $record[$key];
+                            }
+                        }
 
                         // Special handling for State if both State
                         // and Locality Name are set.
@@ -264,7 +269,12 @@ class Horde_Data_ldif extends Horde_Data {
                                       'st', 'postalCode', 'c');
 
                         // Grab all of them that exist in $record.
-                        $values = array_intersect_key($record, array_flip($keys));
+                        $values = array();
+                        foreach ($keys as $key) {
+                            if (isset($record[$key])) {
+                                $values = $record[$key];
+                            }
+                        }
 
                         // Special handling for "st" if both "st" and
                         // "l" are set.
