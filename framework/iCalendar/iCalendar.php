@@ -12,7 +12,7 @@ include_once 'Horde/NLS.php';
 /**
  * Class representing iCalendar files.
  *
- * $Horde: framework/iCalendar/iCalendar.php,v 1.57.4.77 2009/09/15 16:36:51 jan Exp $
+ * $Horde: framework/iCalendar/iCalendar.php,v 1.57.4.78 2009/10/01 10:34:06 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -659,6 +659,7 @@ class Horde_iCalendar {
 
                 case 'BDAY':
                 case 'X-SYNCJE-ANNIVERSARY':
+                case 'X-ANNIVERSARY':
                     $this->setAttribute($tag, $this->_parseDate($value), $params);
                     break;
 

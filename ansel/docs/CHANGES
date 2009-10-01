@@ -2,6 +2,7 @@
 v1.1-cvs
 ----------
 
+[mjr] Fix a bug that caused a SQL error on some RDBMS (Bug: 8610).
 [mjr] Add autocompletion for tags.
 [mjr] Fix issue with uploading images to galleries in `Browse by Date` mode
       causing the mode to be reset to `Normal`.

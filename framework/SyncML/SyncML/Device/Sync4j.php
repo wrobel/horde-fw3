@@ -2,7 +2,7 @@
 /**
  * @package SyncML
  *
- * $Horde: framework/SyncML/SyncML/Device/Sync4j.php,v 1.8.2.31 2009/08/20 15:49:22 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Device/Sync4j.php,v 1.8.2.33 2009/10/01 10:26:33 jan Exp $
  */
 
 /** Horde_Date */
@@ -253,8 +253,8 @@ class SyncML_Device_sync4j extends SyncML_Device {
             'OtherTelephoneNumber' => array('TEL'),
             'OtherFaxNumber' => array('TEL'),
             'Email1Address' => array('EMAIL'),
-            'Email2Address' => array('EMAIL'),
-            'Email3Address' => array('EMAIL'),
+            'Email2Address' => array('EMAIL', array('TYPE' => 'HOME')),
+            'Email3Address' => array('EMAIL', array('TYPE' => 'WORK')),
             'HomeLabel' => array('LABEL', array('TYPE' => 'HOME')),
             'BusinessLabel' => array('LABEL', array('TYPE' => 'WORK')),
             'OtherLabel' => array('LABEL'),
@@ -700,7 +700,13 @@ class SyncML_Device_sync4j extends SyncML_Device {
 
             case 'TEL':
                 if (isset($item['params']['FAX'])) {
-                    $hash['BusinessFaxNumber'] = $item['value'];
+                    if (isset($item['params']['WORK'])) {
+                        $hash['BusinessFaxNumber'] = $item['value'];
+                    } elseif (isset($item['params']['HOME'])) {
+                        $hash['HomeFaxNumber'] = $item['value'];
+                    } else {
+                        $hash['OtherFaxNumber'] = $item['value'];
+                    }
                 } elseif (isset($item['params']['TYPE'])) {
                     if (!is_array($item['params']['TYPE'])) {
                         $item['params']['TYPE'] = array($item['params']['TYPE']);
@@ -731,9 +737,31 @@ class SyncML_Device_sync4j extends SyncML_Device {
                 break;
 
             case 'EMAIL':
-                if (isset($item['params']['PREF']) || !isset($hash['email'])) {
-                    $hash['Email1Address'] = Horde_iCalendar_vcard::getBareEmail($item['value']);
-                    $hash['Email1AddressType'] = 'SMTP';
+                $email_set = false;
+                if (isset($item['params']['HOME']) && (!isset($hash['Email2Address']) ||
+                    isset($item['params']['PREF']))) {
+                   $hash['Email2Address'] = Horde_iCalendar_vcard::getBareEmail($item['value']);
+                   $email_set = true;
+                } elseif (isset($item['params']['WORK']) && (!isset($hash['Email3Address']) || 
+                          isset($item['params']['PREF']))) {
+                   $hash['Email3Address'] = Horde_iCalendar_vcard::getBareEmail($item['value']);
+                   $email_set = true;
+                } elseif (isset($item['params']['TYPE'])) {
+                   if (!is_array($item['params']['TYPE'])) {
+                      $item['params']['TYPE'] = array($item['params']['TYPE']);
+                   }
+                   if (in_array('HOME', $item['params']['TYPE']) && 
+                       (!isset($hash['Email2Address']) || in_array('PREF', $item['params']['TYPE']))) {
+                      $hash['Email2Address'] = Horde_iCalendar_vcard::getBareEmail($item['value']);
+                      $email_set = true;
+                   } elseif (in_array('WORK', $item['params']['TYPE']) &&
+                             (!isset($hash['Email3Address']) || in_array('PREF', $item['params']['TYPE']))) {
+                      $hash['Email3Address'] = Horde_iCalendar_vcard::getBareEmail($item['value']);
+                      $email_set = true;
+                   }
+                }
+                if (!$email_set && (!isset($hash['Email1Address']) || isset($item['params']['PREF']))) {
+                   $hash['Email1Address'] = Horde_iCalendar_vcard::getBareEmail($item['value']);
                 }
                 break;
 

@@ -2,7 +2,7 @@
 /**
  * This is a utility class, every method is static.
  *
- * $Horde: framework/SQL/SQL.php,v 1.30.2.21 2009/01/06 15:23:33 jan Exp $
+ * $Horde: framework/SQL/SQL.php,v 1.30.2.22 2009/09/25 07:55:38 selsky Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -233,6 +233,7 @@ class Horde_SQL {
                                            $field, $table, $where));
 
             switch ($dbh->dbsyntax) {
+            case 'mssql':
             case 'pgsql':
                 $result = pack('H' . strlen($result), $result);
                 break;

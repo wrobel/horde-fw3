@@ -2,6 +2,16 @@
 v3.3.6
 ------
 
+[jan] Export all email addresses to Funambol clients (lst_hoe02@kwsoft.de,
+      Request #8571).
+[jan] Export all fax numbers to Funambol clients (lst_hoe02@kwsoft.de,
+      Request #8618).
+[jan] Fix detecting device information of certain synchronization devices.
+[jan] Fix warnings when listing sessions with Oracle or PEAR DB session
+      handlers (Bug #8601).
+[mas] Fix SessionHandler_sql::getSessionIDs() SQL syntax (moreda@allenta.com,
+      Bug #8600).
+[mas] Fix Horde_SQL::readBlob() on MSSQL (moreda@allenta.com, Bug #8599).
 [mms] Fix prototypejs regression on IE 6/7 (Bug #6590).
 
 

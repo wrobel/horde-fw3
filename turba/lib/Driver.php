@@ -4,7 +4,7 @@
  * various directory search drivers.  It includes functions for searching,
  * adding, removing, and modifying directory entries.
  *
- * $Horde: turba/lib/Driver.php,v 1.57.2.88 2009/07/14 16:21:21 mrubinsk Exp $
+ * $Horde: turba/lib/Driver.php,v 1.57.2.90 2009/10/01 12:02:52 jan Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Jon Parise <jon@csh.rit.edu>
@@ -963,9 +963,6 @@ class Turba_Driver {
         $geo = null;
 
         foreach ($hash as $key => $val) {
-            if (!strlen($val)) {
-                continue;
-            }
             if ($version != '2.1') {
                 $val = String::convertCharset($val, NLS::getCharset(), 'utf-8');
             }
@@ -1177,21 +1174,22 @@ class Turba_Driver {
 
             case 'businessCategory':
             case 'category':
-                if (!empty($val)) {
-                    $vcard->setAttribute('CATEGORIES', $val);
-                }
+                $vcard->setAttribute('CATEGORIES', $val);
                 break;
 
             case 'anniversary':
                 $vcard->setAttribute('X-SYNCJE-ANNIVERSARY', $val);
+                $vcard->setAttribute('X-ANNIVERSARY', $val);
                 break;
 
             case 'spouse':
                 $vcard->setAttribute('X-SYNCJE-SPOUSE', $val);
+                $vcard->setAttribute('X-SPOUSE', $val);
                 break;
 
             case 'children':
                 $vcard->setAttribute('X-SYNCJE-CHILD', $val);
+                $vcard->setAttribute('X-CHILD', $val);
                 break;
 
             case 'website':
@@ -1309,10 +1307,10 @@ class Turba_Driver {
         }
 
         $org = array();
-        if (isset($hash['company'])) {
+        if (array_key_exists('company', $hash)) {
             $org[] = $hash['company'];
         }
-        if (isset($hash['department'])) {
+        if (array_key_exists('department', $hash)) {
             $org[] = $hash['department'];
         }
         if (count($org)) {
@@ -1324,11 +1322,14 @@ class Turba_Driver {
             $vcard->setAttribute('ORG', $val, MIME::is8bit($val) ? $charset : array(), false, $org);
         }
 
-        if (isset($hash['commonAddress']) || isset($hash['commonStreet']) ||
-            isset($hash['commonPOBox']) || isset($hash['commonExtended']) ||
-            isset($hash['commonStreet']) || isset($hash['commonCity']) ||
-            isset($hash['commonProvince']) ||
-            isset($hash['commonPostalCode']) || isset($hash['commonCountry'])) {
+        if (array_key_exists('commonAddress', $hash) ||
+            array_key_exists('commonStreet', $hash) ||
+            array_key_exists('commonPOBox', $hash) ||
+            array_key_exists('commonExtended', $hash) ||
+            array_key_exists('commonCity', $hash) ||
+            array_key_exists('commonProvince', $hash) ||
+            array_key_exists('commonPostalCode', $hash) ||
+            array_key_exists('commonCountry', $hash)) {
             /* We can't know if this particular Turba source uses a single
              * address field or multiple for
              * street/city/province/postcode/country. Try to deal with
@@ -1368,11 +1369,14 @@ class Turba_Driver {
             $vcard->setAttribute('ADR', $val, $params, true, $a);
         }
 
-        if (isset($hash['homeAddress']) || isset($hash['homeStreet']) ||
-            isset($hash['homePOBox']) || isset($hash['homeExtended']) ||
-            isset($hash['homeStreet']) || isset($hash['homeCity']) ||
-            isset($hash['homeProvince']) || isset($hash['homePostalCode']) ||
-            isset($hash['homeCountry'])) {
+        if (array_key_exists('homeAddress', $hash) ||
+            array_key_exists('homeStreet', $hash) ||
+            array_key_exists('homePOBox', $hash) ||
+            array_key_exists('homeExtended', $hash) ||
+            array_key_exists('homeCity', $hash) ||
+            array_key_exists('homeProvince', $hash) ||
+            array_key_exists('homePostalCode', $hash) ||
+            array_key_exists('homeCountry', $hash)) {
             if (isset($hash['homeAddress']) && !isset($hash['homeStreet'])) {
                 $hash['homeStreet'] = $hash['homeAddress'];
             }
@@ -1407,11 +1411,14 @@ class Turba_Driver {
             $vcard->setAttribute('ADR', $val, $params, true, $a);
         }
 
-        if (isset($hash['workAddress']) || isset($hash['workStreet']) ||
-            isset($hash['workPOBox']) || isset($hash['workExtended']) ||
-            isset($hash['workStreet']) || isset($hash['workCity']) ||
-            isset($hash['workProvince']) || isset($hash['workPostalCode']) ||
-            isset($hash['workCountry'])) {
+        if (array_key_exists('workAddress', $hash) ||
+            array_key_exists('workStreet', $hash) ||
+            array_key_exists('workPOBox', $hash) ||
+            array_key_exists('workExtended', $hash) ||
+            array_key_exists('workCity', $hash) ||
+            array_key_exists('workProvince', $hash) ||
+            array_key_exists('workPostalCode', $hash) ||
+            array_key_exists('workCountry', $hash)) {
             if (isset($hash['workAddress']) && !isset($hash['workStreet'])) {
                 $hash['workStreet'] = $hash['workAddress'];
             }
@@ -1487,10 +1494,6 @@ class Turba_Driver {
         $hash = array();
         $attr = $vcard->getAllAttributes();
         foreach ($attr as $item) {
-            if (empty($item['value'])) {
-                continue;
-            }
-
             switch ($item['name']) {
             case 'FN':
                 $hash['name'] = $item['value'];
@@ -1856,14 +1859,17 @@ class Turba_Driver {
                 break;
 
             case 'X-SYNCJE-ANNIVERSARY':
+            case 'X-ANNIVERSARY':
                 $hash['anniversary'] = $item['value']['year'] . '-' . $item['value']['month'] . '-' .  $item['value']['mday'];
                 break;
 
             case 'X-SYNCJE-CHILD':
+            case 'X-CHILD':
                 $hash['children'] = $item['value'];
                 break;
 
             case 'X-SYNCJE-SPOUSE':
+            case 'X-SPOUSE':
                 $hash['spouse'] = $item['value'];
                 break;
             }

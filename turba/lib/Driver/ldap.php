@@ -2,7 +2,7 @@
 /**
  * Turba directory driver implementation for PHP's LDAP extension.
  *
- * $Horde: turba/lib/Driver/ldap.php,v 1.54.4.22 2009/08/18 17:00:06 jan Exp $
+ * $Horde: turba/lib/Driver/ldap.php,v 1.54.4.23 2009/09/25 13:58:49 jan Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Jon Parise <jon@csh.rit.edu>
@@ -487,7 +487,8 @@ class Turba_Driver_ldap extends Turba_Driver {
      */
     function _getResults($fields, $res)
     {
-        if (!($entries = @ldap_get_entries($this->_ds, $res))) {
+        $entries = @ldap_get_entries($this->_ds, $res);
+        if ($entries === false) {
             return PEAR::raiseError(sprintf(_("Read failed: (%s) %s"), ldap_errno($this->_ds), ldap_error($this->_ds)));
         }
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Prefs/Prefs/ldap.php,v 1.85.10.32 2009/04/04 10:10:54 jan Exp $
+ * $Horde: framework/Prefs/Prefs/ldap.php,v 1.85.10.33 2009/09/23 17:02:51 mrubinsk Exp $
  *
  * @package Horde_Prefs
  */
@@ -218,7 +218,7 @@ class Prefs_ldap extends Prefs {
                                $this->_params['uid'] . '=' . $this->_user, array('dn'));
         if ($search === false) {
             Horde::logMessage(
-                sprintf('Error while searching the directory for the user\'s DN: [%d]: %s %s',
+                sprintf('Error while searching the directory for the user\'s DN: [%d]: %s',
                         @ldap_errno($this->_connection),
                         @ldap_error($this->_connection)),
                 __FILE__, __LINE__, PEAR_LOG_ERR);

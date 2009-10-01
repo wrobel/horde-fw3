@@ -2,7 +2,7 @@
 /**
  * Face recognition class
  *
- * $Horde: ansel/lib/Faces.php,v 1.18.2.5 2009/06/30 15:48:09 mrubinsk Exp $
+ * $Horde: ansel/lib/Faces.php,v 1.18.2.7 2009/09/29 14:58:11 mrubinsk Exp $
  *
  * @author  Duck <duck@obala.net>
  * @package Ansel
@@ -1044,10 +1044,10 @@ class Ansel_Faces {
         if ($indexes) {
             $sql .= ' AND (' . implode(' OR ', $indexes) . ')';
         }
-        $sql .= ' GROUP BY i.face_id HAVING face_matches > 0 '
+        $sql .= ' GROUP BY i.face_id HAVING COUNT(*) > 0 '
             . 'ORDER BY face_matches DESC';
         $GLOBALS['ansel_db']->setLimit($count, $from);
-
+        Horde::logMessage(sprintf("SQL Query by Ansel_Faces: %s", $sql), __FILE__, __LINE__, PEAR_LOG_DEBUG);
         $result = $GLOBALS['ansel_db']->query($sql);
         if (is_a($result, 'PEAR_Error')) {
             Horde::logMessage($result, __FILE__, __LINE__, PEAR_LOG_ERR);

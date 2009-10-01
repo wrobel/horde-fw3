@@ -5,7 +5,7 @@ $block_name = _("Recently Geotagged");
 /**
  * Display most recently geotagged images.
  *
- * $Horde: ansel/lib/Block/recently_added_geodata.php,v 1.1.2.4 2009/07/26 23:52:15 mrubinsk Exp $
+ * $Horde: ansel/lib/Block/recently_added_geodata.php,v 1.1.2.6 2009/09/23 18:47:50 mrubinsk Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *
@@ -104,11 +104,12 @@ class Horde_Block_ansel_recently_added_geodata extends Horde_Block {
         if (is_a($images, 'PEAR_Error')) {
             return $images->getMessage();
         }
-
-        foreach ($images as $id => $image) {
+        $images = array_reverse($images);
+        foreach ($images as $key => $image) {
             if (is_a($image, 'PEAR_Error')) {
                 continue;
             }
+            $id = $image['image_id'];
             $gallery = $GLOBALS['ansel_storage']->getGallery($image['gallery_id']);
 
             /* Don't show locked galleries in the block. */
@@ -125,8 +126,8 @@ class Horde_Block_ansel_recently_added_geodata extends Horde_Block {
                       'gallery' => $gallery->id,
                       'image' => $id,
                       'gallery_view' => $style['gallery_view']), true);
-            $images[$id]['icon'] = Ansel::getImageUrl($images[$id]['image_id'], 'mini', true);
-            $images[$id]['link'] = $url;
+            $images[$key]['icon'] = Ansel::getImageUrl($images[$key]['image_id'], 'mini', true);
+            $images[$key]['link'] = $url;
         }
 
         $json = Horde_Serialize::serialize(array_values($images), SERIALIZE_JSON);

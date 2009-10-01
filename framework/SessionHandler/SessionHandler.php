@@ -7,7 +7,7 @@
  *   'memcache' - (boolean) Use memcache to cache session data?
  * </pre>
  *
- * $Horde: framework/SessionHandler/SessionHandler.php,v 1.13.10.18 2009/01/06 15:23:34 jan Exp $
+ * $Horde: framework/SessionHandler/SessionHandler.php,v 1.13.10.19 2009/09/25 14:39:46 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -146,7 +146,7 @@ class SessionHandler {
      *
      * @return boolean  True on success, false otherwise.
      */
-    function open($save_path, $session_name)
+    function open($save_path = null, $session_name = null)
     {
         if ($this->_connected) {
             return true;
