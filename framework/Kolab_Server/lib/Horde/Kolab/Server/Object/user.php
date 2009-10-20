@@ -76,7 +76,6 @@ class Horde_Kolab_Server_Object_user extends Horde_Kolab_Server_Object {
         KOLAB_ATTR_GIVENNAME,
         KOLAB_ATTR_USERPASSWORD,
         KOLAB_ATTR_MAIL,
-        KOLAB_ATTR_HOMESERVER,
     );
 
     /**

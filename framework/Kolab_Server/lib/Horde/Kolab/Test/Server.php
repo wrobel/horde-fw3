@@ -400,6 +400,38 @@ class Horde_Kolab_Test_Server extends PHPUnit_Extensions_Story_TestCase
     }
 
     /**
+     * Return a test user.
+     *
+     * @return array The test user.
+     */
+    public function provideUserWithoutFbHost()
+    {
+        return array('givenName' => 'Testhost',
+                     'sn' => 'Testhost',
+                     'type' => KOLAB_OBJECT_USER,
+                     'mail' => 'testhost@example.org',
+                     'uid' => 'testhost',
+                     'userPassword' => 'test',
+                     'kolabHomeServer' => 'home.example.org',
+                     'kolabImapServer' => 'home.example.org');
+    }
+
+    /**
+     * Return a test user.
+     *
+     * @return array The test user.
+     */
+    public function provideUserWithoutHomeserver()
+    {
+        return array('givenName' => 'Homeless',
+                     'sn' => 'Homeless',
+                     'type' => KOLAB_OBJECT_USER,
+                     'mail' => 'homeless@example.org',
+                     'uid' => 'homeless',
+                     'userPassword' => 'test');
+    }
+
+    /**
      * Return a test address.
      *
      * @return array The test address.

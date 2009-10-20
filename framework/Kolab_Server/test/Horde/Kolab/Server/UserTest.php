@@ -49,6 +49,10 @@ class Horde_Kolab_Server_UserTest extends Horde_Kolab_Test_Server {
             $result = $this->server->add($user[0]);
             $this->assertNoError($result);
         }
+	$result = $this->server->add($this->provideUserWithoutFbHost());
+	$this->assertNoError($result);
+	$result = $this->server->add($this->provideUserWithoutHomeserver());
+	$this->assertNoError($result);
     }
 
     /**
@@ -112,14 +116,24 @@ class Horde_Kolab_Server_UserTest extends Horde_Kolab_Test_Server {
 
         $user = $this->server->fetch('cn=Gunnar Wrobel,dc=example,dc=org');
         $attr = $user->get(KOLAB_ATTR_FREEBUSYHOST);
-        if (is_a($attr, 'PEAR_Error')) {
-            $this->assertEquals('', $attr->getMessage());
-        }
+        $this->assertNoError($attr);
         $this->assertEquals('https://fb.example.org/freebusy', $attr);
 
         $imap = $user->getServer('freebusy');
         $this->assertEquals('https://fb.example.org/freebusy', $imap);
 
+        $user = $this->server->fetch('cn=Testhost Testhost,dc=example,dc=org');
+        $this->assertNoError($user);
+
+        $imap = $user->getServer('freebusy');
+        $this->assertEquals('https://home.example.org/freebusy', $imap);
+
+        $user = $this->server->fetch('cn=Homeless Homeless,dc=example,dc=org');
+        $this->assertNoError($user);
+
+	//@todo: still fails
+        $imap = $user->getServer('freebusy');
+        $this->assertEquals('https://localhost/freebusy', $imap);
     }
 
 }
