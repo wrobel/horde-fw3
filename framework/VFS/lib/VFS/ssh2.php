@@ -12,7 +12,7 @@
  *      'port'           The port used to connect to the ssh2 server if other
  *                       than 22.</pre>
  *
- * $Horde: framework/VFS/lib/VFS/ssh2.php,v 1.1.2.14 2009/09/16 21:06:40 jan Exp $
+ * $Horde: framework/VFS/lib/VFS/ssh2.php,v 1.1.2.15 2009/10/15 17:18:48 jan Exp $
  *
  * Copyright 2006-2009 The Horde Project (http://www.horde.org/)
  *
@@ -762,6 +762,11 @@ class VFS_ssh2 extends VFS {
             if (!$fetch) {
                 unlink($tmpFile);
                 return PEAR::raiseError(sprintf(_("Failed to copy from \"%s\"."), $orig));
+            }
+
+            $res = $this->_checkQuotaWrite('file', $tmpFile);
+            if (is_a($res, 'PEAR_Error')) {
+                return $res;
             }
 
             if (!$this->_send($tmpFile, $this->_getPath($dest, $name))) {

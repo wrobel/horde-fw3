@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/admin/phpshell.php,v 1.24.10.14 2009/01/06 15:22:10 jan Exp $
+ * $Horde: horde/admin/phpshell.php,v 1.24.10.15 2009/10/13 15:52:07 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -39,7 +39,7 @@ $command = trim(Util::getFormData('php'))
 
 ?>
 <div style="padding:10px">
-<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+<form action="phpshell.php" method="post">
 <?php Util::pformInput() ?>
 
 <h1 class="header"><?php echo _("PHP Shell") ?></h1>

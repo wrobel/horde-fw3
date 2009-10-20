@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/VFS/lib/VFS/sql_file.php,v 1.1.2.2 2009/02/13 05:45:19 chuck Exp $
+ * $Horde: framework/VFS/lib/VFS/sql_file.php,v 1.1.2.3 2009/10/15 17:18:48 jan Exp $
  *
  * @package VFS
  */
@@ -46,7 +46,7 @@ include_once 'VFS/file.php';
  * The table structure for the VFS can be found in
  * data/vfs.sql.
  *
- * $Horde: framework/VFS/lib/VFS/sql_file.php,v 1.1.2.2 2009/02/13 05:45:19 chuck Exp $
+ * $Horde: framework/VFS/lib/VFS/sql_file.php,v 1.1.2.3 2009/10/15 17:18:48 jan Exp $
  *
  * @author  Michael Varghese <mike.varghese@ascellatech.com>
  * @package VFS
@@ -209,6 +209,11 @@ class VFS_sql_file extends VFS_file {
 
         if (is_dir($orig)) {
             return $this->_recursiveCopy($path, $name, $dest);
+        }
+
+        $res = $this->_checkQuotaWrite('file', $orig);
+        if (is_a($res, 'PEAR_Error')) {
+            return $res;
         }
 
         if (!@copy($orig, $this->_getNativePath($dest, $name))) {

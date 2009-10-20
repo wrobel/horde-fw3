@@ -4,7 +4,7 @@ set sqlblanklines on;
 /**
  * Oracle Table Creation Scripts.
  * 
- * $Horde: horde/scripts/sql/create.oci8.sql,v 1.4.8.23 2009/06/10 16:45:28 jan Exp $
+ * $Horde: horde/scripts/sql/create.oci8.sql,v 1.4.8.24 2009/10/19 10:54:32 jan Exp $
  * 
  * @author Miguel Ward <mward@aluar.com.ar>
  * 
@@ -45,7 +45,7 @@ rem conn horde/&horde_password@database
 
 /**
  * This is the Horde users table, needed only if you are using SQL
- * authentication.  Note that passowrds in this table need to be md5-encoded.
+ * authentication.
  */
 
 CREATE TABLE horde_users (
@@ -74,7 +74,7 @@ CREATE TABLE horde_groups (
 );
 
 CREATE TABLE horde_groups_members (
-    group_uid INTEGER NOT NULL,
+    group_uid NUMBER(16) NOT NULL,
     user_uid VARCHAR2(255) NOT NULL
 );
 
@@ -131,7 +131,7 @@ CREATE TABLE horde_datatree (
     datatree_parents     VARCHAR2(255),
     datatree_order       NUMBER(16),
     datatree_data        CLOB,
-    datatree_serialized  NUMBER(8) DEFAULT 0 NOT NULL,
+    datatree_serialized  NUMBER(1) DEFAULT 0 NOT NULL,
 
     PRIMARY KEY (datatree_id)
 );
@@ -247,7 +247,7 @@ CREATE TABLE horde_alarms (
     alarm_title     VARCHAR2(255) NOT NULL,
     alarm_text      CLOB,
     alarm_snooze    DATE,
-    alarm_dismissed NUMBER(2) DEFAULT 0 NOT NULL,
+    alarm_dismissed NUMBER(1) DEFAULT 0 NOT NULL,
     alarm_internal  CLOB
 );
 
@@ -268,14 +268,14 @@ CREATE TABLE horde_cache (
 );
 
 CREATE TABLE horde_locks (
-    lock_id                  VARCHAR(36) NOT NULL,
-    lock_owner               VARCHAR(32) NOT NULL,
-    lock_scope               VARCHAR(32) NOT NULL,
-    lock_principal           VARCHAR(255) NOT NULL,
+    lock_id                  VARCHAR2(36) NOT NULL,
+    lock_owner               VARCHAR2(32) NOT NULL,
+    lock_scope               VARCHAR2(32) NOT NULL,
+    lock_principal           VARCHAR2(255) NOT NULL,
     lock_origin_timestamp    NUMBER(16) NOT NULL,
     lock_update_timestamp    NUMBER(16) NOT NULL,
     lock_expiry_timestamp    NUMBER(16) NOT NULL,
-    lock_type                NUMBER(4) NOT NULL,
+    lock_type                NUMBER(8) NOT NULL,
 
     PRIMARY KEY (lock_id)
 );

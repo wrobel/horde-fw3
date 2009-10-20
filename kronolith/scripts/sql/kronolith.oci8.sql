@@ -1,4 +1,4 @@
--- $Horde: kronolith/scripts/sql/kronolith.oci8.sql,v 1.4.2.11 2008/09/23 15:18:27 jan Exp $
+-- $Horde: kronolith/scripts/sql/kronolith.oci8.sql,v 1.4.2.12 2009/10/19 10:54:35 jan Exp $
 
 CREATE TABLE kronolith_events (
     event_id VARCHAR2(32) NOT NULL,
@@ -7,22 +7,22 @@ CREATE TABLE kronolith_events (
     event_creator_id VARCHAR2(255) NOT NULL,
     event_description VARCHAR2(4000),
     event_location VARCHAR2(4000),
-    event_status INT DEFAULT 0,
+    event_status NUMBER(8) DEFAULT 0,
     event_attendees VARCHAR2(4000),
     event_keywords VARCHAR2(4000),
     event_exceptions VARCHAR2(4000),
     event_title VARCHAR2(255),
     event_category VARCHAR2(80),
-    event_recurtype INT DEFAULT 0,
-    event_recurinterval INT,
-    event_recurdays INT,
+    event_recurtype NUMBER(8) DEFAULT 0,
+    event_recurinterval NUMBER(16),
+    event_recurdays NUMBER(16),
     event_recurenddate DATE,
-    event_recurcount INT,
+    event_recurcount NUMBER(8),
     event_start DATE,
     event_end DATE,
-    event_alarm INT DEFAULT 0,
-    event_modified INT NOT NULL,
-    event_private INT DEFAULT 0 NOT NULL,
+    event_alarm NUMBER(16) DEFAULT 0,
+    event_modified NUMBER(16) NOT NULL,
+    event_private NUMBER(1) DEFAULT 0 NOT NULL,
 --
     PRIMARY KEY (event_id)
 );
@@ -42,13 +42,13 @@ CREATE INDEX kronolith_vfb_email_idx ON kronolith_storage (vfb_email);
 
 
 CREATE TABLE kronolith_shares (
-    share_id INT NOT NULL,
+    share_id NUMBER(16) NOT NULL,
     share_name VARCHAR2(255) NOT NULL,
     share_owner VARCHAR2(255) NOT NULL,
-    share_flags SMALLINT NOT NULL DEFAULT 0,
-    perm_creator SMALLINT NOT NULL DEFAULT 0,
-    perm_default SMALLINT NOT NULL DEFAULT 0,
-    perm_guest SMALLINT NOT NULL DEFAULT 0,
+    share_flags NUMBER(8) NOT NULL DEFAULT 0,
+    perm_creator NUMBER(8) NOT NULL DEFAULT 0,
+    perm_default NUMBER(8) NOT NULL DEFAULT 0,
+    perm_guest NUMBER(8) NOT NULL DEFAULT 0,
     attribute_name VARCHAR2(255) NOT NULL,
     attribute_desc VARCHAR2(255),
     PRIMARY KEY (share_id)
@@ -61,9 +61,9 @@ CREATE INDEX kronolith_shares_perm_default_idx ON kronolith_shares (perm_default
 CREATE INDEX kronolith_shares_perm_guest_idx ON kronolith_shares (perm_guest);
 
 CREATE TABLE kronolith_shares_groups (
-    share_id INT NOT NULL,
-    group_uid VARCHAR(255) NOT NULL,
-    perm SMALLINT NOT NULL
+    share_id NUMBER(16) NOT NULL,
+    group_uid VARCHAR2(255) NOT NULL,
+    perm NUMBER(8) NOT NULL
 );
 
 CREATE INDEX kronolith_shares_groups_share_id_idx ON kronolith_shares_groups (share_id);
@@ -71,9 +71,9 @@ CREATE INDEX kronolith_shares_groups_group_uid_idx ON kronolith_shares_groups (g
 CREATE INDEX kronolith_shares_groups_perm_idx ON kronolith_shares_groups (perm);
 
 CREATE TABLE kronolith_shares_users (
-    share_id INT NOT NULL,
+    share_id NUMBER(16) NOT NULL,
     user_uid VARCHAR2(255) NOT NULL,
-    perm SMALLINT NOT NULL
+    perm NUMBER(8) NOT NULL
 );
 
 CREATE INDEX kronolith_shares_users_share_id_idx ON kronolith_shares_users (share_id);

@@ -47,7 +47,7 @@ define('MIME_STRING', 2);
 /**
  * The MIME:: class provides methods for dealing with MIME standards.
  *
- * $Horde: framework/MIME/MIME.php,v 1.139.4.47 2009/01/18 03:35:15 chuck Exp $
+ * $Horde: framework/MIME/MIME.php,v 1.139.4.48 2009/10/11 22:27:34 slusarz Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -241,7 +241,7 @@ class MIME {
 
             /* Lines must be 76 characters or less. */
             $curr_length += $char_len;
-            if ($curr_length > 76) {
+            if ($curr_length > 75) {
                 $output .= '=' . $eol;
                 $curr_length = $char_len;
             }

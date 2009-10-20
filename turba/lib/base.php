@@ -2,7 +2,7 @@
 /**
  * Turba base inclusion file.
  *
- * $Horde: turba/lib/base.php,v 1.62.10.22 2009/08/12 22:28:13 jan Exp $
+ * $Horde: turba/lib/base.php,v 1.62.10.23 2009/10/07 16:16:37 mrubinsk Exp $
  *
  * This file brings in all of the dependencies that every Turba script will
  * need, and sets up objects that all scripts use.
@@ -107,7 +107,7 @@ $_SESSION['turba']['source'] = $default_source;
 
 // Only set $add_source_options if there is at least one editable address book
 // that is not the current address book.
-$addSources = Turba::getAddressBooks(PERMS_EDIT);
+$addSources = Turba::getAddressBooks(PERMS_EDIT, array('require_add' => true));
 $copymove_source_options = '';
 $copymoveSources = $addSources;
 unset($copymoveSources[$default_source]);

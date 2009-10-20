@@ -19,7 +19,7 @@ require_once 'Horde/Memcache.php';
  *                         sessions will be treated as expired.
  * </pre>
  *
- * $Horde: framework/SessionHandler/SessionHandler/memcache.php,v 1.1.2.12 2009/01/06 15:23:35 jan Exp $
+ * $Horde: framework/SessionHandler/SessionHandler/memcache.php,v 1.1.2.13 2009/10/06 22:22:20 slusarz Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *
@@ -245,14 +245,13 @@ class SessionHandler_memcache extends SessionHandler {
         $result = $this->_memcache->delete($id);
         $this->_memcache->unlock($id);
 
-        if ($result !== false &&
-            isset($this->_persistent)) {
-            $result = $this->_persistent->destroy($id);
-        }
-
-        if ($result !== false) {
+        if ($result === false) {
             Horde::logMessage('Failed to delete session (id = ' . $id . ')', __FILE__, __LINE__, PEAR_LOG_DEBUG);
             return false;
+        }
+
+        if (isset($this->_persistent)) {
+            $result = $this->_persistent->destroy($id);
         }
 
         if (!empty($this->_params['track'])) {

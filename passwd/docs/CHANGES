@@ -2,6 +2,8 @@
 v3.1.2-cvs
 ----------
 
+[jan] Enable output compression (horde@albasoft.com, Bug #8649).
+[jan] Add Croatian translation (Valentin Vidic <valentin.vidic@carnet.hr>).
 [jan] Add option to configure referrals for LDAP driver (manilal@ejyothi.com,
       Request #8582).
 [jan] Simplify and fix smbldap driver (Bug #8192).

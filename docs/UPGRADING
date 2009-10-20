@@ -2,8 +2,8 @@
  Upgrading Horde
 =================
 
-:Last update:   $Date: 2009/09/10 13:48:53 $
-:Revision:      $Revision: 1.4.4.22 $
+:Last update:   $Date: 2009/10/13 14:24:25 $
+:Revision:      $Revision: 1.4.4.23 $
 :Contact:       horde@lists.horde.org
 
 
@@ -100,12 +100,12 @@ config/hooks.php that will call the old style hook functions for you.
 Custom Themes
 -------------
 
-Themes no longer have ``info.php`` files. If you have any custom
-themes that provide their own images, you must add a
-``themed_graphics`` file to the theme's directory (for all
-applications the theme provides images for) in order for Horde to know
-to use the custom images. The file can be empty or contain whatever
-you wish; it simply needs to exist.
+Themes only have a single ``info.php`` file with the theme name in Horde's
+``themes`` directory now. If you have any custom themes that provide their own
+images, you must add a ``themed_graphics`` file to the theme's directory (for
+all applications the theme provides images for) in order for Horde to know to
+use the custom images. The file can be empty or contain whatever you wish; it
+simply needs to exist.
 
 
 Static Log out Links

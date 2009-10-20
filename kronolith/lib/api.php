@@ -2,7 +2,7 @@
 /**
  * Kronolith external API interface.
  *
- * $Horde: kronolith/lib/api.php,v 1.126.2.64 2009/09/04 10:38:36 jan Exp $
+ * $Horde: kronolith/lib/api.php,v 1.126.2.65 2009/10/14 13:43:11 jan Exp $
  *
  * This file defines Kronolith's external API interface. Other applications
  * can interact with Kronolith through this API.
@@ -1291,6 +1291,9 @@ function _kronolith_listAlarms($time, $user = null)
         return $alarms;
     }
     foreach ($alarms as $calendar => $cal_alarms) {
+        if (!$cal_alarms) {
+            continue;
+        }
         $share = $GLOBALS['kronolith_shares']->getShare($calendar);
         if (is_a($share, 'PEAR_Error')) {
             continue;

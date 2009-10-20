@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/folders.php,v 2.309.2.46 2009/08/06 17:12:43 slusarz Exp $
+ * $Horde: imp/folders.php,v 2.309.2.47 2009/10/12 22:36:33 slusarz Exp $
  *
  * Copyright 2000-2009 The Horde Project (http://www.horde.org/)
  *
@@ -355,8 +355,19 @@ if ($_SESSION['imp']['file_upload'] && ($actionID == 'import_mbox')) {
 /* Build the folder tree. */
 list($raw_rows, $newmsgs, $displayNames) = $imptree->build();
 
+$fullNames = array();
+foreach ($raw_rows as $key => $val) {
+    $tmp = IMP::displayFolder($val['value'], true);
+    if ($tmp != $displayNames[$key]) {
+        $fullNames[$key] = $tmp;
+    }
+}
+
 require_once IMP_BASE . '/lib/JSON.php';
-IMP::addInlineScript('var displayNames = ' . IMP_Serialize_JSON::encode(String::convertCharset($displayNames, NLS::getCharset()), 'utf-8') . ';');
+IMP::addInlineScript(array(
+    'var displayNames = ' . IMP_Serialize_JSON::encode(String::convertCharset($displayNames, NLS::getCharset()), 'utf-8'),
+    'var fullNames = ' . IMP_Serialize_JSON::encode(String::convertCharset($fullNames, NLS::getCharset()), 'utf-8'),
+));
 
 /* Prepare the header template. */
 $refresh_title = _("Reload View");

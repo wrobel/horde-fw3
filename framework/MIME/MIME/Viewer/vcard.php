@@ -2,7 +2,7 @@
 /**
  * The MIME_Viewer_vcard class renders out vCards in HTML format.
  *
- * $Horde: framework/MIME/MIME/Viewer/vcard.php,v 1.34.10.26 2009/06/07 10:42:51 jan Exp $
+ * $Horde: framework/MIME/MIME/Viewer/vcard.php,v 1.34.10.27 2009/10/09 15:55:19 mrubinsk Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -95,6 +95,7 @@ class MIME_Viewer_vcard extends MIME_Viewer {
             }
             $birthdays = $vc->getAttributeValues('BDAY');
             if (!is_a($birthdays, 'PEAR_Error')) {
+                require_once 'Horde/Date.php';
                 $birthday = new Horde_Date($birthdays[0]);
                 $html .= $this->_row(
                     _("Birthday"),

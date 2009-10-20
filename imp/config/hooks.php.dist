@@ -8,7 +8,7 @@
  *
  * For more information please see the horde/config/hooks.php.dist file.
  *
- * $Horde: imp/config/hooks.php.dist,v 1.3.2.9 2009/08/18 22:48:08 jan Exp $
+ * $Horde: imp/config/hooks.php.dist,v 1.3.2.12 2009/10/09 13:10:23 jan Exp $
  */
 
 // Here is an example signature hook function to set the signature from the
@@ -458,6 +458,115 @@
 //     }
 // }
 
+// Sample function for returning the quota. Uses the PECL ssh2
+// extension.
+//
+// @param array $params Parameters for the function, set in servers.php
+//
+// @return array Tuple with two members:
+//               first: disk space used (in bytes)
+//               second: maximum disk space (in bytes)
+//               In case of an error, return PEAR::raiseError()
+
+// if (!function_exists('_imp_hook_quota')) {
+//     function _imp_hook_quota($params = null)
+//     {
+//         $host = $_SESSION['imp']['server'];
+//         $user = $_SESSION['imp']['user'];
+//         $pass = Auth::getCredential('password');
+//         $command = $params[0];
+// 
+//         $session = ssh2_connect($host);
+//         if (!$session) {
+//             return PEAR::raiseError(_("Connection to server failed."), 'horde.error');
+//         }
+// 
+//         if (!ssh2_auth_password($session, $user, $pass)) {
+//             return PEAR::raiseError(_("Authentication failed."), 'horde.error');
+//         }
+// 
+//         $stream = ssh2_exec($session, $command, false);
+//         stream_set_blocking($stream, true);
+// 
+//         $quota = preg_split('/\s+/', trim(stream_get_contents($stream)), 2);
+//         return array($quota[1] * 1024, $quota[2] * 1024);
+//     }
+// }
+
+// This is an example hook for retrieving public S/MIME keys of message
+// recipients. The hook will be called first when searching for the keys, and
+// further lookup techniques will only be used if the hook returns a
+// PEAR_Error or an empty result.
+
+// if (!function_exists('_imp_hook_smime_key')) {
+//     function _imp_hook_smime_key($address)
+//     {
+//         $ldapServer = 'localhost';
+//         $ldapPort = 389;
+//         $searchBase = 'ou=users,dc=example,dc=com';
+//         $binddn = 'uid=admin,dc=example,dc=com';
+//         $bindpw = 'secret';
+//         $attribute = 'simepublickey';
+// 
+//         if (!@ldap_connect($ldapServer, $ldapPort)) {
+//             return;
+//         }
+//         if (!@ldap_set_option($ds, LDAP_OPT_PROTOCOL_VERSION, 3)) {
+//             return;
+//         }
+//         if (!@ldap_bind($ds, $binddn, $bindpw)) {
+//             return;
+//         }
+// 
+//         $searchResult = @ldap_search($ds, $searchBase, 'mail=' . $address);
+//         $information = @ldap_get_entries($ds, $searchResult);
+//         ldap_close($ds);
+// 
+//         if ($information === false || $information['count'] == 0) {
+//             return;
+//         }
+// 
+//         return $information[0][$attribute][0];
+//     }
+// }
+
+// This is an example hook for retrieving public PGP keys of message
+// recipients. The hook will be called first when searching for the keys, and
+// further lookup techniques will only be used if the hook returns a
+// PEAR_Error or an empty result.
+
+// if (!function_exists('_imp_hook_pgp_key')) {
+//     function _imp_hook_pgp_key($address, $fingerprint)
+//     {
+//         $ldapServer = 'localhost';
+//         $ldapPort = 389;
+//         $searchBase = 'ou=users,dc=example,dc=com';
+//         $binddn = 'uid=admin,dc=example,dc=com';
+//         $bindpw = 'secret';
+//         $attribute = 'pgppublickey';
+// 
+//         if (!@ldap_connect($ldapServer, $ldapPort)) {
+//             return;
+//         }
+//         if (!@ldap_set_option($ds, LDAP_OPT_PROTOCOL_VERSION, 3)) {
+//             return;
+//         }
+//         if (!@ldap_bind($ds, $binddn, $bindpw)) {
+//             return;
+//         }
+// 
+//         $searchResult = @ldap_search($ds, $searchBase, 'mail=' . $address);
+//         $information = @ldap_get_entries($ds, $searchResult);
+//         ldap_close($ds);
+// 
+//         if ($information === false || $information['count'] == 0) {
+//             return;
+//         }
+// 
+//         return $information[0][$attribute][0];
+//     }
+// }
+
 // Default Kolab hooks:
 if (!empty($GLOBALS['conf']['kolab']['enabled'])) {
     require_once 'Horde/Kolab.php';
@@ -550,39 +659,5 @@ if (!empty($GLOBALS['conf']['kolab']['enabled'])) {
             $type = Kolab::getMailboxType($mailbox);
             return empty($type) || ($type == 'mail');
         }
-    }
-}
-
-// Sample function for returning the quota. Uses the PECL ssh2
-// extension.
-//
-// @param array $params Parameters for the function, set in servers.php
-//
-// @return array Tuple with two members:
-//               first: disk space used (in bytes)
-//               second: maximum disk space (in bytes)
-//               In case of an error, return PEAR::raiseError()
-if (!function_exists('_imp_hook_quota')) {
-    function _imp_hook_quota($params = null)
-    {
-        $host = $_SESSION['imp']['server'];
-        $user = $_SESSION['imp']['user'];
-        $pass = Auth::getCredential('password');
-        $command = $params[0];
-
-        $session = ssh2_connect($host);
-        if (!$session) {
-            return PEAR::raiseError(_("Connection to server failed."), 'horde.error');
-        }
-
-        if (!ssh2_auth_password($session, $user, $pass)) {
-            return PEAR::raiseError(_("Authentication failed."), 'horde.error');
-        }
-
-        $stream = ssh2_exec($session, $command, false);
-        stream_set_blocking($stream, true);
-
-        $quota = preg_split('/\s+/', trim(stream_get_contents($stream)), 2);
-        return array($quota[1] * 1024, $quota[2] * 1024);
     }
 }

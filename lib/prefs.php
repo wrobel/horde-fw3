@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/lib/prefs.php,v 1.19.4.22 2009/07/11 23:35:26 chuck Exp $
+ * $Horde: horde/lib/prefs.php,v 1.19.4.23 2009/10/15 22:12:53 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -70,6 +70,7 @@ function handle_categorymanagement($updated)
     default:
         /* Save button. */
         $updated = true;
+        $GLOBALS['notification']->push('if (window.opener && window.name) window.close();', 'javascript');
     }
 
     return $updated;

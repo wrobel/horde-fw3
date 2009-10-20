@@ -2,7 +2,7 @@
 if ($registry->hasMethod('contacts/sources')) {
     $selected = explode("\t", $prefs->getValue('search_sources'));
     $readable = $registry->call('contacts/sources');
-    $writeable = $registry->call('contacts/sources', true);
+    $writeable = $registry->call('contacts/sources', array(true));
 
     $nbReadSources = count(array_keys($readable));
     $nbWriteSources = count(array_keys($writeable));
@@ -60,7 +60,7 @@ if ($registry->hasMethod('contacts/sources')) {
     $search_fields = array();
     if (!is_a($readable, 'PEAR_Error') && is_array($readable)) {
         foreach (array_keys($readable) as $source) {
-            $search_fields[$source] = $registry->call('contacts/fields', $source);
+            $search_fields[$source] = $registry->call('contacts/fields', array($source));
         }
     }
 

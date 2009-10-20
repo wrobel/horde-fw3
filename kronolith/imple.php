@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: kronolith/imple.php,v 1.1.2.4 2009/01/06 15:24:43 jan Exp $
+ * $Horde: kronolith/imple.php,v 1.1.2.5 2009/10/15 10:07:50 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *
@@ -49,18 +49,18 @@ if (!empty($_SERVER['Content-Type'])) {
 
 switch ($ct) {
 case 'json':
-    header('Content-Type: text/x-json');
+    header('Content-Type: text/x-json; charset=' . NLS::getCharset());
     require_once KRONOLITH_BASE . '/lib/JSON.php';
     echo Kronolith_Serialize_JSON::encode(String::convertCharset($result, NLS::getCharset(), 'utf-8'));
     break;
 
 case 'plain':
-    header('Content-Type: text/plain');
+    header('Content-Type: text/plain; charset=' . NLS::getCharset());
     echo $result;
     break;
 
 case 'html':
-    header('Content-Type: text/html');
+    header('Content-Type: text/html; charset=' . NLS::getCharset());
     echo $result;
     break;
 

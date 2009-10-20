@@ -9,7 +9,7 @@ require_once 'SyncML/Command.php';
  *
  * The Map command is used to update identifier maps.
  *
- * $Horde: framework/SyncML/SyncML/Command/Map.php,v 1.1.10.12 2009/04/05 20:24:43 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Command/Map.php,v 1.1.10.13 2009/10/11 17:20:36 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *
@@ -45,45 +45,18 @@ class SyncML_Command_Map extends SyncML_Command {
     var $_targetLocURI;
 
     /**
-     * Recipient map item specifier.
+     * Recipient map item specifiers.
      *
-     * @var string
+     * @var array
      */
-    var $_mapTarget;
+    var $_mapTargets = array();
 
     /**
-     * Originator map item specifier.
+     * Originator map item specifiers.
      *
-     * @var string
+     * @var array
      */
-    var $_mapSource;
-
-    /**
-     * Whether we have seen a MapItem element.
-     *
-     * @var boolean
-     */
-    var $_mapItem = false;
-
-    /**
-     * Start element handler for the XML parser, delegated from
-     * SyncML_ContentHandler::startElement().
-     *
-     * @param string $uri      The namespace URI of the element.
-     * @param string $element  The element tag name.
-     * @param array $attrs     A hash with the element's attributes.
-     */
-    function startElement($uri, $element, $attrs)
-    {
-        parent::startElement($uri, $element, $attrs);
-
-        if (count($this->_stack) == 2 &&
-            $element == 'MapItem') {
-            $this->_mapItem = true;
-            unset($this->_mapTarget);
-            unset($this->_mapSource);
-        }
-    }
+    var $_mapSources = array();
 
     /**
      * End element handler for the XML parser, delegated from
@@ -108,9 +81,9 @@ class SyncML_Command_Map extends SyncML_Command {
         case 4:
             if ($element == 'LocURI') {
                 if ($this->_stack[2] == 'Source') {
-                    $this->_mapSource = trim($this->_chars);
+                    $this->_mapSources[] = trim($this->_chars);
                 } elseif ($this->_stack[2] == 'Target') {
-                    $this->_mapTarget = trim($this->_chars);
+                    $this->_mapTargets[] = trim($this->_chars);
                 }
             }
             break;
@@ -126,22 +99,24 @@ class SyncML_Command_Map extends SyncML_Command {
      */
     function handleCommand($debug = false)
     {
-        if (!$debug && $this->_mapItem) {
+        if (!$debug && $this->_mapSources) {
             $state = &$_SESSION['SyncML.state'];
             $sync = &$state->getSync($this->_targetLocURI);
             if (!$state->authenticated) {
                 $GLOBALS['backend']->logMessage(
-                    'Not authenticated while processing MapItem',
+                    'Not authenticated while processing <Map>',
                     __FILE__, __LINE__, PEAR_LOG_ERR);
             } else {
-                $sync->createUidMap($this->_targetLocURI,
-                                    $this->_mapSource,
-                                    $this->_mapTarget);
+                foreach ($this->_mapSources as $key => $source) {
+                    $sync->createUidMap($this->_targetLocURI,
+                                        $source,
+                                        $this->_mapTargets[$key]);
+                }
             }
         }
 
         // Create status response.
-        $this->_outputHandler->outputStatus($this->_cmdID,$this->_cmdName,
+        $this->_outputHandler->outputStatus($this->_cmdID, $this->_cmdName,
                                             RESPONSE_OK,
                                             $this->_targetLocURI,
                                             $this->_sourceLocURI);

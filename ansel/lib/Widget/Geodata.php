@@ -7,7 +7,7 @@
  *
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.
- * $Horde: ansel/lib/Widget/Geodata.php,v 1.1.2.39 2009/07/28 15:43:05 mrubinsk Exp $
+ * $Horde: ansel/lib/Widget/Geodata.php,v 1.1.2.40 2009/10/05 17:48:37 mrubinsk Exp $
  *
  * @author Michael J. Rubinsky <mrubinsk@horde.org>
  * @package Ansel
@@ -133,6 +133,7 @@ class Ansel_Widget_Geodata extends Ansel_Widget {
         }
 
         $content .= '</div>';
+        require_once 'Horde/Serialize.php';
         $json = Horde_Serialize::serialize(array_values($geodata), SERIALIZE_JSON);
         $html .= <<<EOT
         <script type="text/javascript">

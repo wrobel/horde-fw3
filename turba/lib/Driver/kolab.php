@@ -2,7 +2,7 @@
 /**
  * @package Turba
  *
- * $Horde: turba/lib/Driver/kolab.php,v 1.5.10.25 2009/03/19 10:17:01 jan Exp $
+ * $Horde: turba/lib/Driver/kolab.php,v 1.5.10.26 2009/10/07 16:16:38 mrubinsk Exp $
  */
 
 /** Kolab support class. */
@@ -98,6 +98,14 @@ class Turba_Driver_kolab extends Turba_Driver {
     }
 
     /**
+     * @see turba/lib/Turba_Driver#_canAdd()
+     */
+    function _canAdd()
+    {
+        return true;
+    }
+
+    /**
      * Removes the specified object from the Kolab message store.
      */
     function _delete($object_key, $object_id)
@@ -184,7 +192,7 @@ class Turba_Driver_kolab extends Turba_Driver {
 /**
  * Horde Turba wrapper to distinguish between both Kolab driver implementations.
  *
- * $Horde: turba/lib/Driver/kolab.php,v 1.5.10.25 2009/03/19 10:17:01 jan Exp $
+ * $Horde: turba/lib/Driver/kolab.php,v 1.5.10.26 2009/10/07 16:16:38 mrubinsk Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *
@@ -1018,7 +1026,7 @@ class Turba_Driver_kolab_wrapper_new extends Turba_Driver_kolab_wrapper {
         foreach ($ids as $id) {
             if (in_array($id, array_keys($this->_contacts_cache))) {
                 $object = $this->_contacts_cache[$id];
-                
+
                 $object_type = $this->_contacts_cache[$id]['__type'];
                 if (!isset($object['__type']) || $object['__type'] == 'Object') {
                     if ($count) {
@@ -1187,7 +1195,7 @@ class Turba_Driver_kolab_wrapper_new extends Turba_Driver_kolab_wrapper {
             unset($attributes['__members']);
         }
     }
-    
+
 
     /**
      * Removes the specified object from the Kolab message store.
@@ -1208,7 +1216,7 @@ class Turba_Driver_kolab_wrapper_new extends Turba_Driver_kolab_wrapper {
         }
 
         $group = false;
-        if (isset($this->_contacts_cache[$object_id]['__type']) 
+        if (isset($this->_contacts_cache[$object_id]['__type'])
             && $this->_contacts_cache[$object_id]['__type'] == 'Group') {
             $group = true;
         }
@@ -1249,7 +1257,7 @@ class Turba_Driver_kolab_wrapper_new extends Turba_Driver_kolab_wrapper {
         if (is_a($result, 'PEAR_Error')) {
             return $result;
         }
-        
+
         /* Delete groups */
         $result = $this->_store->setObjectType('distribution-list');
         if (is_a($result, 'PEAR_Error')) {

@@ -1,7 +1,7 @@
 /**
  * compose.js - Javascript code used in the DIMP compose view.
  *
- * $Horde: dimp/js/src/compose.js,v 1.84.2.34 2009/03/30 22:19:52 slusarz Exp $
+ * $Horde: dimp/js/src/compose.js,v 1.84.2.35 2009/10/06 23:16:09 slusarz Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *
@@ -405,6 +405,10 @@ var DimpCompose = {
 
     getMsgAreaHeight: function()
     {
+        if (!this.mp_padding) {
+            this.mp_padding = $('messageParent').getHeight() - $('message').getHeight();
+        }
+
         return document.viewport.getHeight() - $('messageParent').cumulativeOffset()[1] - this.mp_padding;
     },
 
@@ -643,8 +647,6 @@ var DimpCompose = {
             }
             return;
         }
-
-        this.mp_padding = $('messageParent').getHeight() - msg.getHeight();
 
         if (!this.row_height) {
             // Change the ID and name to not conflict with msg node.

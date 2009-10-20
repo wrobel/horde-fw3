@@ -14,6 +14,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
 * Hybrid SQL and filesystem
 * Samba
 * SSH2/SFTP
+* IMAP (Kolab)
 
 Reading, writing and listing of files are all supported, and there are both object-based and array-based interfaces to directory listings.
 
@@ -30,27 +31,17 @@ Reading, writing and listing of files are all supported, and there are both obje
   <email>jan@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2008-02-16</date>
+ <date>2009-12-31</date>
  <version>
-  <release>0.3.0</release>
-  <api>0.2.0</api>
+  <release>0.4.0</release>
+  <api>0.3.0</api>
  </version>
  <stability>
   <release>beta</release>
   <api>beta</api>
  </stability>
  <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
- <notes>
-* Rename fixes for SMB driver (leena.heino@uta.fi, Bug #7933).
-* Set LC_TIME to C for consistency in date parsing in the SSH2 backend (michael-dev@fami-braun.de, Bug #6396)
-* Pass -n for numeric UIDs/GIDs in the SSH2 backend when mapping to local user ids (Request #6579)
-* Fix readByteRange() (wrong method name) in SQL backend
-* Add readFile() support, with optimizations for file, ftp, ssh2, and smb backends
-* Add readStream() support to backends that can get a stream resource efficiently
-* Add delete() as a shorter name for deleteFile()
-* Add a Kolab VFS driver.
-* Use streams for file transfers in VFS_ssh2 (jives@jives.ixum.net, Request #8323)
-</notes>
+ <notes></notes>
  <contents>
   <dir name="/">
    <dir name="data">
@@ -124,6 +115,28 @@ Reading, writing and listing of files are all supported, and there are both obje
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <date>2009-10-15</date>
+   <version>
+    <release>0.3.0</release>
+    <api>0.3.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+   <notes>* Rename fixes for SMB driver (leena.heino@uta.fi, Horde Bug #7933).
+* Set LC_TIME to C for consistency in date parsing in the SSH2 backend (michael-dev@fami-braun.de, Horde Bug #6396)
+* Pass -n for numeric UIDs/GIDs in the SSH2 backend when mapping to local user ids (Horde Request #6579)
+* Fix readByteRange() (wrong method name) in SQL backend
+* Add readFile() support, with optimizations for file, ftp, ssh2, and smb backends
+* Add readStream() support to backends that can get a stream resource efficiently
+* Add delete() as a shorter name for deleteFile()
+* Add a Kolab VFS driver.
+* Use streams for file transfers in VFS_ssh2 (jives@jives.ixum.net, Horde Request #8323)
+* Check quota when copying files (Horde Bug #8643).</notes>
+  </release>
   <release>
    <version>
     <release>0.2.0</release>

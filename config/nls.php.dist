@@ -2,7 +2,7 @@
 /**
  * NLS (National Language Support) configuration file.
  *
- * $Horde: horde/config/nls.php.dist,v 1.59.10.14 2008/07/17 21:04:03 jan Exp $
+ * $Horde: horde/config/nls.php.dist,v 1.59.10.17 2009/10/14 16:54:16 jan Exp $
  */
 
 /**
@@ -25,9 +25,9 @@ $nls['languages']['id_ID'] = 'Bahasa Indonesia';
 $nls['languages']['bs_BA'] = 'Bosanski';
 $nls['languages']['bg_BG'] = '&#x202d;Bulgarian (&#x0411;&#x044a;&#x043b;&#x0433;&#x0430;&#x0440;&#x0441;&#x043a;&#x0438;)';
 $nls['languages']['ca_ES'] = 'Catal&#xe0;';
+$nls['languages']['cs_CZ'] = '&#x010c;esky';
 $nls['languages']['zh_CN'] = '&#x202d;Chinese (Simplified) (&#x7b80;&#x4f53;&#x4e2d;&#x6587;)';
 $nls['languages']['zh_TW'] = '&#x202d;Chinese (Traditional) (&#x6b63;&#x9ad4;&#x4e2d;&#x6587;)';
-$nls['languages']['cs_CZ'] = '&#x202d;Czech (&#x010c;esky)';
 $nls['languages']['da_DK'] = 'Dansk';
 $nls['languages']['de_DE'] = 'Deutsch';
 $nls['languages']['en_US'] = '&#x202d;English (American)';
@@ -39,7 +39,8 @@ $nls['languages']['eu_ES'] = 'Euskara';
 $nls['languages']['fr_FR'] = 'Fran&#xe7;ais';
 $nls['languages']['gl_ES'] = 'Galego';
 $nls['languages']['el_GR'] = '&#x202d;Greek (&#x0395;&#x03bb;&#x03bb;&#x03b7;&#x03bd;&#x03b9;&#x03ba;&#x03ac;)';
-$nls['languages']['he_IL'] = '&#x202d;Hebrew &#x202e;(&#x05E2;&#x05D1;&#x05E8;&#x05D9;&#x05EA;)';
+$nls['languages']['he_IL'] = '&#x202d;Hebrew &#x202e;(&#x05e2;&#x05d1;&#x05e8;&#x05d9;&#x05ea;)';
+$nls['languages']['hr_HR'] = 'Hrvatski';
 $nls['languages']['is_IS'] = '&#xcd;slenska';
 $nls['languages']['it_IT'] = 'Italiano';
 $nls['languages']['ja_JP'] = '&#x202d;Japanese (&#x65e5;&#x672c;&#x8a9e;)';
@@ -58,8 +59,8 @@ $nls['languages']['pt_PT'] = 'Portugu&#xea;s';
 $nls['languages']['pt_BR'] = 'Portugu&#xea;s Brasileiro';
 $nls['languages']['ro_RO'] = 'Rom&#xe2;n&#xe4;';
 $nls['languages']['ru_RU'] = '&#x202d;Russian (&#x0420;&#x0443;&#x0441;&#x0441;&#x043a;&#x0438;&#x0439;)';
-$nls['languages']['sk_SK'] = '&#x202d;Slovak (Sloven&#x010d;ina)';
-$nls['languages']['sl_SI'] = '&#x202d;Slovenian (Sloven&#x0161;&#x010d;ina)';
+$nls['languages']['sk_SK'] = 'Sloven&#x010d;ina';
+$nls['languages']['sl_SI'] = 'Sloven&#x0161;&#x010d;ina';
 $nls['languages']['fi_FI'] = 'Suomi';
 $nls['languages']['sv_SE'] = 'Svenska';
 $nls['languages']['th_TH'] = '&#x202d;Thai (&#x0e44;&#x0e17;&#x0e22;)';

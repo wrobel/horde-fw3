@@ -1,4 +1,4 @@
--- $Horde: horde/scripts/sql/horde_vfs.oci8.sql,v 1.3.10.1 2007/12/20 15:03:03 jan Exp $
+-- $Horde: horde/scripts/sql/horde_vfs.oci8.sql,v 1.3.10.2 2009/10/19 10:54:33 jan Exp $
 
 CREATE TABLE horde_vfs (
     vfs_id        NUMBER(16) NOT NULL,
@@ -9,7 +9,7 @@ CREATE TABLE horde_vfs (
     vfs_owner     VARCHAR2(255),
     vfs_data      BLOB,
 --
-    PRIMARY KEY   (vfs_id)
+    PRIMARY KEY (vfs_id)
 );
 
 CREATE INDEX vfs_path_idx ON horde_vfs (vfs_path);

@@ -2,7 +2,7 @@
 /**
  * @package IMP
  *
- * $Horde: imp/lib/Crypt/PGP.php,v 1.90.2.26 2009/05/09 12:31:20 jan Exp $
+ * $Horde: imp/lib/Crypt/PGP.php,v 1.90.2.27 2009/10/09 13:02:34 jan Exp $
  */
 
 /** Horde_Crypt_pgp */
@@ -163,10 +163,10 @@ class IMP_PGP extends Horde_Crypt_pgp {
     /**
      * Retrieves a public key by e-mail.
      *
-     * First, the key will be attempted to be retrieved from a user's address
+     * First, the key is attempted to be retrieved through a hook.
+     * Second, the key is attempted to be retrieved from the user's address
      * book(s).
-     * Second, if unsuccessful, the key is attempted to be retrieved via a
-     * public PGP keyserver.
+     * Third, the key is attempted to be retrieved via a public PGP keyserver.
      *
      * @param string $address      The e-mail address to search by.
      * @param string $fingerprint  The fingerprint of the user's key.
@@ -191,9 +191,9 @@ class IMP_PGP extends Horde_Crypt_pgp {
             }
         }
 
-        if ($result) {
-            Horde::logMessage('PGPpublicKey: ' . serialize($result), __FILE__, __LINE__, PEAR_LOG_DEBUG);
-            return $result;
+        $key = Horde::callHook('_imp_hook_pgp_key', array($address, $fingerprint), 'imp');
+        if ($key && !is_a($key, 'PEAR_Error')) {
+            return $key;
         }
 
         /* Try retrieving by e-mail only first. */

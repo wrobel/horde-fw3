@@ -128,7 +128,7 @@ define('IMP_IDX_SEP', "\1");
 /**
  * IMP Base Class.
  *
- * $Horde: imp/lib/IMP.php,v 1.449.4.127 2009/08/05 03:56:37 slusarz Exp $
+ * $Horde: imp/lib/IMP.php,v 1.449.4.128 2009/10/12 22:36:33 slusarz Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -716,11 +716,12 @@ class IMP {
      * mailbox names that shouldn't be displayed to the user, then use it to
      * strip that prefix out.
      *
-     * @param string $folder  The folder name to display.
+     * @param string $folder        The folder name to display.
+     * @param boolean $notranslate  Do not translate the folder prefix.
      *
      * @return string  The folder, with any prefix gone.
      */
-    function displayFolder($folder)
+    function displayFolder($folder, $notranslate = false)
     {
         static $cache = array();
 
@@ -729,25 +730,30 @@ class IMP {
         }
 
         if ($folder == 'INBOX') {
-            $cache[$folder] = _("Inbox");
+            $out = _("Inbox");
         } else {
             $namespace_info = IMP::getNamespace($folder);
             if (($namespace_info !== null) &&
                 !empty($namespace_info['name']) &&
                 ($namespace_info['type'] == 'personal') &&
                 substr($folder, 0, strlen($namespace_info['name'])) == $namespace_info['name']) {
-                $cache[$folder] = substr($folder, strlen($namespace_info['name']));
-            } elseif (!is_null($namespace_info) &&
+                $out = substr($folder, strlen($namespace_info['name']));
+            } elseif (!$notranslate &&
+                      !is_null($namespace_info) &&
                       (strpos($folder, 'INBOX' . $namespace_info['delimiter']) === 0)) {
-                $cache[$folder] = _("Inbox") . substr($folder, 5);
+                $out = _("Inbox") . substr($folder, 5);
             } else {
-                $cache[$folder] = $folder;
+                $out = $folder;
             }
 
-            $cache[$folder] = String::convertCharset($cache[$folder], 'UTF7-IMAP');
+            $out = String::convertCharset($out, 'UTF7-IMAP');
         }
 
-        return $cache[$folder];
+        if (!$notranslate) {
+            $cache[$folder] = $out;
+        }
+
+        return $out;
     }
 
     /**

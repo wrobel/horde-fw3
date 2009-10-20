@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/admin/sqlshell.php,v 1.18.10.15 2009/01/06 15:22:10 jan Exp $
+ * $Horde: horde/admin/sqlshell.php,v 1.18.10.16 2009/10/13 15:52:07 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -26,7 +26,7 @@ require HORDE_TEMPLATES . '/admin/menu.inc';
 ?>
 <div style="padding:10px">
 <h1 class="header"><?php echo _("SQL Shell") ?></h1><br />
-<form name="sqlshell" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+<form name="sqlshell" action="sqlshell.php" method="post">
 <?php Util::pformInput() ?>
 
 <?php

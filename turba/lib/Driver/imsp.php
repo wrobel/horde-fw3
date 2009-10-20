@@ -5,7 +5,7 @@ require_once 'Horde/Cache.php';
 /**
  * Turba directory driver implementation for an IMSP server.
  *
- * $Horde: turba/lib/Driver/imsp.php,v 1.21.4.22 2009/06/04 19:00:36 mrubinsk Exp $
+ * $Horde: turba/lib/Driver/imsp.php,v 1.21.4.23 2009/10/07 16:16:38 mrubinsk Exp $
  *
  * @author  Michael Rubinsky <mrubinsk@horde.org>
  * @package Turba
@@ -313,6 +313,14 @@ class Turba_Driver_imsp extends Turba_Driver {
         }
 
         return $this->_imsp->addEntry($this->_bookName, $attributes);
+    }
+
+    /**
+     * @see turba/lib/Turba_Driver#_canAdd()
+     */
+    function _canAdd()
+    {
+        return true;
     }
 
     /**

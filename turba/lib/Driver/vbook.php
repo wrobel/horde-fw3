@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: turba/lib/Driver/vbook.php,v 1.8.2.5 2009/01/06 15:27:50 jan Exp $
+ * $Horde: turba/lib/Driver/vbook.php,v 1.8.2.8 2009/10/07 15:03:13 mrubinsk Exp $
  *
  * @package Horde
  */
@@ -126,7 +126,7 @@ class Turba_Driver_vbook extends Turba_Driver {
      */
     function _delete($object_key, $object_id)
     {
-        return PEAR::raiseError(_("You cannot delete contacts from a virtual address book"));
+        return $this->_driver->_delete($object_key, $object_id);
     }
 
     /**
@@ -134,12 +134,11 @@ class Turba_Driver_vbook extends Turba_Driver {
      */
     function _save($object_key, $object_id, $attributes)
     {
-        return PEAR::raiseError(_("You cannot add an entry to a virtual address book."));
+        return $this->_driver->_save($object_key, $object_id, $attributes);
     }
 
     /**
      * Check to see if the currently logged in user has requested permissions.
-     * Note that virtual address books are always readonly
      *
      * @param integer $perm  The permissions to check against.
      *
@@ -147,10 +146,7 @@ class Turba_Driver_vbook extends Turba_Driver {
      */
     function hasPermission($perm)
     {
-        if ($this->_share->hasPermission(Auth::getAuth(), $perm)) {
-            return $perm & (PERMS_SHOW | PERMS_READ);
-        }
-        return false;
+        return $this->_driver->hasPermission($perm);
     }
 
 }

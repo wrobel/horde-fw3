@@ -3,7 +3,7 @@
  * Turba directory driver implementation for Horde Preferences - very simple,
  * lightweight container.
  *
- * $Horde: turba/lib/Driver/prefs.php,v 1.10.10.6 2007/12/20 14:34:30 jan Exp $
+ * $Horde: turba/lib/Driver/prefs.php,v 1.10.10.7 2009/10/07 16:16:38 mrubinsk Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @since   Turba 1.2
@@ -67,6 +67,14 @@ class Turba_Driver_prefs extends Turba_Driver {
         $book[$attributes['id']] = $attributes;
         $this->_setAddressbook($book);
 
+        return true;
+    }
+
+    /**
+     * @see turba/lib/Turba_Driver#_canAdd()
+     */
+    function _canAdd()
+    {
         return true;
     }
 

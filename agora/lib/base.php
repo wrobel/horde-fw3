@@ -2,7 +2,7 @@
 /**
  * The Agora base inclusion library.
  *
- * $Horde: agora/lib/base.php,v 1.48.2.2 2009/01/06 15:22:13 jan Exp $
+ * $Horde: agora/lib/base.php,v 1.48.2.3 2009/10/19 23:34:20 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -42,3 +42,8 @@ require_once 'Horde/Help.php';
 require_once AGORA_BASE . '/lib/Agora.php';
 require_once AGORA_BASE . '/lib/Messages.php';
 require_once AGORA_BASE . '/lib/Template.php';
+
+// Start compression.
+if (!Util::nonInputVar('no_compress')) {
+     Horde::compressOutput();
+}

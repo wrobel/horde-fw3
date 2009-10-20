@@ -28,7 +28,7 @@
  *                       Possible values: 'unix', 'win', 'netware'
  *                       By default, we attempt to auto-detect type.</pre>
  *
- * $Horde: framework/VFS/lib/VFS/ftp.php,v 1.1.2.6 2009/01/06 15:23:47 jan Exp $
+ * $Horde: framework/VFS/lib/VFS/ftp.php,v 1.1.2.7 2009/10/15 17:18:48 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  * Copyright 2002-2007 Michael Varghese <mike.varghese@ascellatech.com>
@@ -781,6 +781,11 @@ class VFS_ftp extends VFS {
             if (!$fetch) {
                 unlink($tmpFile);
                 return PEAR::raiseError(sprintf(_("Failed to copy from \"%s\"."), $orig));
+            }
+
+            $res = $this->_checkQuotaWrite('file', $tmpFile);
+            if (is_a($res, 'PEAR_Error')) {
+                return $res;
             }
 
             if (!@ftp_put($this->_stream, $this->_getPath($dest, $name), $tmpFile, FTP_BINARY)) {

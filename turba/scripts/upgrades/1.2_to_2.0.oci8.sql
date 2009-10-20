@@ -1,6 +1,6 @@
--- $Horde: turba/scripts/upgrades/1.2_to_2.0.oci8.sql,v 1.1.2.2 2007/12/20 14:35:16 jan Exp $
+-- $Horde: turba/scripts/upgrades/1.2_to_2.0.oci8.sql,v 1.1.2.3 2009/10/19 10:54:38 jan Exp $
 
-ALTER TABLE turba_objects ADD object_uid VARCHAR(255);
-ALTER TABLE turba_objects ADD object_freebusyurl VARCHAR(255);
+ALTER TABLE turba_objects ADD object_uid VARCHAR2(255);
+ALTER TABLE turba_objects ADD object_freebusyurl VARCHAR2(255);
 ALTER TABLE turba_objects ADD object_smimepublickey CLOB;
 ALTER TABLE turba_objects ADD object_pgppublickey CLOB;

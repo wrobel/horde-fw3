@@ -4,7 +4,8 @@ include_once 'Log.php';
 
 // Constant Definitions
 define('IMSP_OCTET_COUNT', "/({)([0-9]{1,})(\}$)/");
-define('IMSP_MUST_USE_LITERAL', "/[\W]/i");
+define('IMSP_MUST_USE_LITERAL', "/[\x80-\xFF\\r\\n\"\\\\]/");
+define('IMSP_MUST_USE_QUOTE', "/[\W]/i");
 
 /**
  * The Net_IMSP class provides a common interface to an IMSP server .
@@ -13,7 +14,7 @@ define('IMSP_MUST_USE_LITERAL', "/[\W]/i");
  *   'server'  Hostname of IMSP server.
  *   'port'    Port of IMSP server.</pre>
  *
- * $Horde: framework/Net_IMSP/IMSP.php,v 1.13.10.24 2009/01/06 15:23:26 jan Exp $
+ * $Horde: framework/Net_IMSP/IMSP.php,v 1.13.10.27 2009/10/02 00:03:01 mrubinsk Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -290,10 +291,15 @@ class Net_IMSP {
      */
     function receiveStringLiteral($length)
     {
-        $temp = trim(fread($this->_stream, $length));
-        $this->writeToLog('From{}: ' . $temp, __FILE__,
-                          __LINE__, PEAR_LOG_DEBUG);
-        return $temp;
+        $literal = '';
+        do {
+            $temp = fread($this->_stream, $length);
+            $length -= strlen($temp);
+            $literal .= $temp;
+        } while ($length > 0 && strlen($temp));
+        $this->writeToLog('From{}: ' . $literal, __FILE__, __LINE__, PEAR_LOG_DEBUG);
+
+        return $literal;
     }
 
     /**
@@ -316,7 +322,8 @@ class Net_IMSP {
      */
     function quoteSpacedString($string)
     {
-        if (strpos($string, ' ') !== false) {
+        if (strpos($string, ' ') !== false ||
+            preg_match(IMSP_MUST_USE_QUOTE, $string)) {
             return '"' . $string . '"';
         } else {
             return $string;

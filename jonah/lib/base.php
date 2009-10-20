@@ -2,7 +2,7 @@
 /**
  * Jonah base inclusion file.
  *
- * $Horde: jonah/lib/base.php,v 1.52 2008/01/02 16:48:35 chuck Exp $
+ * $Horde: jonah/lib/base.php,v 1.52.2.1 2009/10/19 23:34:20 jan Exp $
  *
  * This file brings in all of the dependencies that every Jonah script
  * will need, and sets up objects that all scripts use.
@@ -49,3 +49,8 @@ require_once JONAH_BASE . '/lib/Jonah.php';
 /* Horde libraries. */
 require_once 'Horde/Help.php';
 require_once 'Horde/Template.php';
+
+// Start compression.
+if (!Util::nonInputVar('no_compress')) {
+     Horde::compressOutput();
+}

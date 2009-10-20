@@ -7,7 +7,7 @@
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.
  *
- * $Horde: imp/js/src/folders.js,v 1.9.2.2 2008/05/20 16:33:02 slusarz Exp $
+ * $Horde: imp/js/src/folders.js,v 1.9.2.3 2009/10/12 22:36:34 slusarz Exp $
  */
 
 function getChecked()
@@ -122,7 +122,7 @@ function renameMailbox()
             if (IMP.conf.fixed_folders.indexOf(displayNames[j]) != -1) {
                 window.alert(IMP.text.folders_no_rename + ' ' + displayNames[j]);
             } else {
-                var tmp = window.prompt(IMP.text.folders_rename1 + ' ' + displayNames[j] + "\n" + IMP.text.folders_rename2, displayNames[j]);
+                var tmp = window.prompt(IMP.text.folders_rename1 + ' ' + displayNames[j] + "\n" + IMP.text.folders_rename2, fullNames[j] ? fullNames[j] : displayNames[j]);
                 if (tmp) {
                     newnames += tmp + "\n";
                     oldnames += f.value + "\n";

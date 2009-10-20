@@ -2,6 +2,7 @@
 v1.0-cvs
 --------
 
+[jan] Enable output compression.
 [jan] Add Japanese translation (Takeshi Taguchi <taguchi@tcltk.jp>).
 [cjh] Merge Horde_Template_Compiling to stable Agora branch as Agora_Template.
 [mjr] Added batch api methods for retrieving message counts and threads for

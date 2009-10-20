@@ -1,48 +1,48 @@
--- $Horde: hermes/scripts/sql/hermes.oci8.sql,v 1.7 2008/06/30 09:03:11 jan Exp $
+-- $Horde: hermes/scripts/sql/hermes.oci8.sql,v 1.7.2.1 2009/10/19 10:54:34 jan Exp $
 
 CREATE TABLE hermes_timeslices (
-    timeslice_id           INT NOT NULL,
-    clientjob_id           VARCHAR(255) NOT NULL,
-    employee_id            VARCHAR(255) NOT NULL,
-    jobtype_id             INT NOT NULL,
-    timeslice_hours        NUMERIC(10, 2) NOT NULL,
-    timeslice_rate         NUMERIC(10, 2),
-    timeslice_isbillable   SMALLINT DEFAULT 0 NOT NULL,
-    timeslice_date         INT NOT NULL,
+    timeslice_id           NUMBER(16) NOT NULL,
+    clientjob_id           VARCHAR2(255) NOT NULL,
+    employee_id            VARCHAR2(255) NOT NULL,
+    jobtype_id             NUMBER(16) NOT NULL,
+    timeslice_hours        NUMBER(10, 2) NOT NULL,
+    timeslice_rate         NUMBER(10, 2),
+    timeslice_isbillable   NUMBER(1) DEFAULT 0 NOT NULL,
+    timeslice_date         NUMBER(16) NOT NULL,
     timeslice_description  CLOB NOT NULL,
     timeslice_note         CLOB,
-    timeslice_submitted    SMALLINT DEFAULT 0 NOT NULL,
-    timeslice_exported     SMALLINT DEFAULT 0 NOT NULL,
-    costobject_id	   VARCHAR(255),
+    timeslice_submitted    NUMBER(1) DEFAULT 0 NOT NULL,
+    timeslice_exported     NUMBER(1) DEFAULT 0 NOT NULL,
+    costobject_id          VARCHAR2(255),
 --
     PRIMARY KEY (timeslice_id)
 );
 
 CREATE TABLE hermes_jobtypes (
-    jobtype_id          INT NOT NULL,
-    jobtype_name        VARCHAR(255),
-    jobtype_enabled     SMALLINT DEFAULT 1 NOT NULL,
-    jobtype_rate        NUMERIC(10, 2),
-    jobtype_billable    SMALLINT DEFAULT 0 NOT NULL,
+    jobtype_id          NUMBER(16) NOT NULL,
+    jobtype_name        VARCHAR2(255),
+    jobtype_enabled     NUMBER(1) DEFAULT 1 NOT NULL,
+    jobtype_rate        NUMBER(10, 2),
+    jobtype_billable    NUMBER(1) DEFAULT 0 NOT NULL,
 --
     PRIMARY KEY (jobtype_id)
 );
 
 CREATE TABLE hermes_clientjobs (
-    clientjob_id                VARCHAR(255) NOT NULL,
-    clientjob_enterdescription  SMALLINT DEFAULT 1 NOT NULL,
-    clientjob_exportid          VARCHAR(255),
+    clientjob_id                VARCHAR2(255) NOT NULL,
+    clientjob_enterdescription  NUMBER(1) DEFAULT 1 NOT NULL,
+    clientjob_exportid          VARCHAR2(255),
 --
     PRIMARY KEY (clientjob_id)
 );
 
 CREATE TABLE hermes_deliverables (
-    deliverable_id          INT NOT NULL,
-    client_id               VARCHAR(250) NOT NULL,
-    deliverable_name        VARCHAR(250) NOT NULL,
-    deliverable_parent      INT,
-    deliverable_estimate    NUMERIC(10, 2),
-    deliverable_active      SMALLINT DEFAULT 1 NOT NULL,
+    deliverable_id          NUMBER(16) NOT NULL,
+    client_id               VARCHAR2(250) NOT NULL,
+    deliverable_name        VARCHAR2(250) NOT NULL,
+    deliverable_parent      NUMBER(16),
+    deliverable_estimate    NUMBER(10, 2),
+    deliverable_active      NUMBER(1) DEFAULT 1 NOT NULL,
     deliverable_description CLOB,
 --
     PRIMARY KEY (deliverable_id)

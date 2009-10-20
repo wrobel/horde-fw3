@@ -2,8 +2,8 @@
  Horde Coding Standards
 ========================
 
-:Last update:   $Date: 2009/01/23 14:48:47 $
-:Revision:      $Revision: 1.84.10.20 $
+:Last update:   $Date: 2009/10/19 09:53:19 $
+:Revision:      $Revision: 1.84.10.21 $
 :Authors:       Jon Parise, Chuck Hagenbuch
 :Contact:       dev@lists.horde.org
 
@@ -438,8 +438,9 @@ should be singular (user_name).
 Try to use portable data types and avoid RDBMS specific SQL scripts as much as
 possible. Portable types are INTEGER, SMALLINT, NUMERIC(4,0) (for TINYINT),
 NUMERIC(p,s), VARCHAR(n), CHAR(n), FLOAT, and REAL. See
-http://home.fnal.gov/~dbox/SQL_API_Portability.html and
-http://builder.com.com/5100-6388-1045051.html for more information.
+http://home.fnal.gov/~dbox/SQL_API_Portability.html,
+http://articles.techrepublic.com.com/5100-10878_11-1045051.html and
+http://download.oracle.com/docs/html/B10257_01/ch3.htm for more information.
 
 In SQL queries, keywords should be capitalized.
 

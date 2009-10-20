@@ -1,4 +1,4 @@
--- $Horde: horde/scripts/upgrades/3.1_to_3.2.oci8.sql,v 1.2.2.14 2008/06/11 08:06:12 jan Exp $
+-- $Horde: horde/scripts/upgrades/3.1_to_3.2.oci8.sql,v 1.2.2.15 2009/10/19 10:54:34 jan Exp $
 
 CREATE TABLE horde_syncml_map (
     syncml_syncpartner VARCHAR2(255) NOT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE horde_alarms (
     alarm_title     VARCHAR2(255) NOT NULL,
     alarm_text      CLOB,
     alarm_snooze    DATE,
-    alarm_dismissed NUMBER(2) DEFAULT 0 NOT NULL,
+    alarm_dismissed NUMBER(1) DEFAULT 0 NOT NULL,
     alarm_internal  CLOB
 );
 
@@ -55,7 +55,7 @@ CREATE INDEX alarm_dismissed_idx ON horde_alarms (alarm_dismissed);
 CREATE TABLE horde_cache (
     cache_id          VARCHAR(32) NOT NULL,
     cache_timestamp   NUMBER(16) NOT NULL,
-    cache_expiration  BIGINT NOT NULL,
+    cache_expiration  NUMBER(16) NOT NULL,
     cache_data        BLOB,
 --
     PRIMARY KEY  (cache_id)
@@ -70,7 +70,7 @@ CREATE TABLE horde_groups (
 );
 
 CREATE TABLE horde_groups_members (
-    group_uid INTEGER NOT NULL,
+    group_uid NUMBER(16) NOT NULL,
     user_uid VARCHAR2(255) NOT NULL
 );
 
@@ -88,14 +88,14 @@ CREATE TABLE horde_perms (
 CREATE INDEX datatree_attribute_value_idx ON horde_datatree_attributes (attribute_value);
 
 CREATE TABLE horde_locks (
-    lock_id                  VARCHAR(36) NOT NULL,
-    lock_owner               VARCHAR(32) NOT NULL,
-    lock_scope               VARCHAR(32) NOT NULL,
-    lock_principal           VARCHAR(255) NOT NULL,
+    lock_id                  VARCHAR2(36) NOT NULL,
+    lock_owner               VARCHAR2(32) NOT NULL,
+    lock_scope               VARCHAR2(32) NOT NULL,
+    lock_principal           VARCHAR2(255) NOT NULL,
     lock_origin_timestamp    NUMBER(16) NOT NULL,
     lock_update_timestamp    NUMBER(16) NOT NULL,
     lock_expiry_timestamp    NUMBER(16) NOT NULL,
-    lock_type                NUMBER(4) NOT NULL,
+    lock_type                NUMBER(8) NOT NULL,
 
     PRIMARY KEY (lock_id)
 );

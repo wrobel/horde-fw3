@@ -7,7 +7,7 @@
  *   'memcache' - (boolean) Use memcache to cache session data?
  * </pre>
  *
- * $Horde: framework/SessionHandler/SessionHandler.php,v 1.13.10.19 2009/09/25 14:39:46 jan Exp $
+ * $Horde: framework/SessionHandler/SessionHandler.php,v 1.13.10.20 2009/10/08 22:25:23 slusarz Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -56,6 +56,17 @@ class SessionHandler {
     function SessionHandler($params = array())
     {
         $this->_params = $params;
+    }
+
+    /**
+     * Destructor (PHP 5 only).
+     *
+     * This is necessary as of PHP 5.0.5 because objects are not available
+     * when the write() handler is called at the end of a session access.
+     */
+    function __destruct()
+    {
+        session_write_close();
     }
 
     /**

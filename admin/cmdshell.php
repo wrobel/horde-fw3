@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/admin/cmdshell.php,v 1.9.10.10 2009/01/06 15:22:10 jan Exp $
+ * $Horde: horde/admin/cmdshell.php,v 1.9.10.11 2009/10/13 15:52:07 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -43,7 +43,7 @@ if ($command = trim(Util::getFormData('cmd'))) {
 }
 ?>
 
-<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+<form action="cmdshell.php" method="post">
 <?php Util::pformInput() ?>
 <label for="cmd" class="hidden"><?php echo _("Command") ?></label>
 <textarea class="fixed" id="cmd" name="cmd" rows="10" cols="60">

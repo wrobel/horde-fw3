@@ -5,7 +5,7 @@
  * This file brings in all of the dependencies that every PASSWD script will
  * need, and sets up objects that all scripts use.
  *
- * $Horde: passwd/lib/base.php,v 1.33.2.6 2009/01/06 15:25:21 jan Exp $
+ * $Horde: passwd/lib/base.php,v 1.33.2.7 2009/10/19 23:34:20 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -45,6 +45,11 @@ $notification->attach('status');
 
 // Passwd base library.
 require_once PASSWD_BASE . '/lib/Passwd.php';
+
+// Start compression.
+if (!Util::nonInputVar('no_compress')) {
+     Horde::compressOutput();
+}
 
 // Horde libraries.
 require_once 'Horde/Help.php';

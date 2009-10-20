@@ -1,7 +1,20 @@
-------
-v3.3.6
-------
+----------
+v3.3.6-cvs
+----------
 
+[jan] SECURITY: Fix XSS in administrator section.
+[jan] Close popup window after saving categories.
+[jan] Check quota when copying files with VFS (Valentin Vidic
+      <valentin.vidic@carnet.hr>, Bug #8643).
+[jan] Add Croatian translation (Matej Vela <matej.vela@carnet.hr>).
+[jan] Fix detecting SyncML message sizes.
+[jan] Fix mapping of elements during synchronization (Bug #8386).
+[mms] Fix potential session writing issues using PHP 5.0.5+.
+[jan] Fix error in PHP 5 SOAP server implementation.
+[mms] Fix updating memcache tracking info upon session destruction
+      (whatdoyouwant@gmail.com, Bug #8626).
+[mjr] Various improvements and fixes to the Net_IMSP driver
+      (noah@lsit.ucsb.edu; Bug #8532, #8533, #8534, and #8535).
 [jan] Export all email addresses to Funambol clients (lst_hoe02@kwsoft.de,
       Request #8571).
 [jan] Export all fax numbers to Funambol clients (lst_hoe02@kwsoft.de,

@@ -1,7 +1,7 @@
 --
 -- Table structure for table horde_alarms
 --
--- $Horde: horde/scripts/sql/horde_alarms.oci8.sql,v 1.7.2.1 2007/12/20 15:03:03 jan Exp $
+-- $Horde: horde/scripts/sql/horde_alarms.oci8.sql,v 1.7.2.2 2009/10/19 10:54:32 jan Exp $
 --
 
 CREATE TABLE horde_alarms (
@@ -14,7 +14,7 @@ CREATE TABLE horde_alarms (
     alarm_title     VARCHAR2(255) NOT NULL,
     alarm_text      CLOB,
     alarm_snooze    DATE,
-    alarm_dismissed INT DEFAULT 0 NOT NULL,
+    alarm_dismissed NUMBER(1) DEFAULT 0 NOT NULL,
     alarm_internal  CLOB
 );
 

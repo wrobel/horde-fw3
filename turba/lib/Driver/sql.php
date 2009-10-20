@@ -3,7 +3,7 @@
  * Turba directory driver implementation for PHP's PEAR database abstraction
  * layer.
  *
- * $Horde: turba/lib/Driver/sql.php,v 1.59.10.31 2009/07/10 00:37:32 mrubinsk Exp $
+ * $Horde: turba/lib/Driver/sql.php,v 1.59.10.32 2009/10/07 16:16:38 mrubinsk Exp $
  *
  * @author  Jon Parise <jon@csh.rit.edu>
  * @package Turba
@@ -303,6 +303,14 @@ class Turba_Driver_sql extends Turba_Driver {
             return $result;
         }
 
+        return true;
+    }
+
+    /**
+     * @see turba/lib/Turba_Driver#_canAdd()
+     */
+    function _canAdd()
+    {
         return true;
     }
 

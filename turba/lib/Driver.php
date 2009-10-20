@@ -4,7 +4,7 @@
  * various directory search drivers.  It includes functions for searching,
  * adding, removing, and modifying directory entries.
  *
- * $Horde: turba/lib/Driver.php,v 1.57.2.90 2009/10/01 12:02:52 jan Exp $
+ * $Horde: turba/lib/Driver.php,v 1.57.2.91 2009/10/07 16:16:37 mrubinsk Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Jon Parise <jon@csh.rit.edu>
@@ -802,6 +802,21 @@ class Turba_Driver {
     }
 
     /**
+     * Returns ability of the backend to add new contacts.
+     *
+     * @return boolean
+     */
+    function canAdd()
+    {
+        return $this->_canAdd();
+    }
+
+    function _canAdd()
+    {
+        return false;
+    }
+
+    /**
      * Deletes the specified entry from the contact source.
      *
      * @param string $object_id  The ID of the object to delete.
@@ -821,7 +836,7 @@ class Turba_Driver {
         if (is_a($result, 'PEAR_Error')) {
             return $result;
         }
-    
+
         $own_contact = $GLOBALS['prefs']->getValue('own_contact');
         if (!empty($own_contact)) {
             @list($source, $id) = explode(';', $own_contact);

@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: turba/lib/Turba.php,v 1.59.4.44 2009/08/04 14:37:30 mrubinsk Exp $
+ * $Horde: turba/lib/Turba.php,v 1.59.4.45 2009/10/07 16:16:37 mrubinsk Exp $
  *
  * @package Turba
  */
@@ -94,10 +94,11 @@ class Turba {
      * return them in the user's preferred order.
      *
      * @param integer $permission  The PERMS_* constant to filter on.
+     * @param array $options       Any additional options.
      *
      * @return array  The filtered, ordered $cfgSources entries.
      */
-    function getAddressBooks($permission = PERMS_READ)
+    function getAddressBooks($permission = PERMS_READ, $options = array())
     {
         $addressbooks = array();
         foreach (array_keys(Turba::getAddressBookOrder()) as $addressbook) {
@@ -108,7 +109,7 @@ class Turba {
             $addressbooks = $GLOBALS['cfgSources'];
         }
 
-        return Turba::permissionsFilter($addressbooks, $permission);
+        return Turba::permissionsFilter($addressbooks, $permission, $options);
     }
 
     /**
@@ -329,10 +330,11 @@ class Turba {
      * @param array $in            The data we want filtered.
      * @param string $filter       What type of data we are filtering.
      * @param integer $permission  The PERMS_* constant we will filter on.
+     * @param array $options       Additional options.
      *
      * @return array  The filtered data.
      */
-    function permissionsFilter($in, $permission = PERMS_READ)
+    function permissionsFilter($in, $permission = PERMS_READ, $options = array())
     {
         $out = array();
 
@@ -344,6 +346,9 @@ class Turba {
             }
 
             if ($driver->hasPermission($permission)) {
+                if (!empty($options['require_add']) && !$driver->canAdd()) {
+                    continue;
+                }
                 $out[$sourceId] = $source;
             }
         }

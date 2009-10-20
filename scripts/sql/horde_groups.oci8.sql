@@ -1,4 +1,4 @@
--- $Horde: horde/scripts/sql/horde_groups.oci8.sql,v 1.1.2.2 2008/04/28 03:24:02 chuck Exp $
+-- $Horde: horde/scripts/sql/horde_groups.oci8.sql,v 1.1.2.3 2009/10/19 10:54:33 jan Exp $
 
 CREATE TABLE horde_groups (
     group_uid NUMBER(16) NOT NULL,
@@ -9,7 +9,7 @@ CREATE TABLE horde_groups (
 );
 
 CREATE TABLE horde_groups_members (
-    group_uid INTEGER NOT NULL,
+    group_uid NUMBER(16) NOT NULL,
     user_uid VARCHAR2(255) NOT NULL
 );
 

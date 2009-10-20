@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: trean/lib/base.php,v 1.41 2008/06/14 22:47:39 mrubinsk Exp $
+ * $Horde: trean/lib/base.php,v 1.41.2.1 2009/10/19 23:34:20 jan Exp $
  *
  * Trean base inclusion file.
  *
@@ -80,4 +80,9 @@ if (Auth::getAuth() && !$GLOBALS['trean_shares']->exists(Auth::getAuth())) {
     if (is_a($result, 'PEAR_Error')) {
         Horde::fatal($result, __FILE__, __LINE__);
     }
+}
+
+// Start compression.
+if (!Util::nonInputVar('no_compress')) {
+     Horde::compressOutput();
 }

@@ -11,7 +11,7 @@ define('IMP_SMIME_PUBKEY_FIELD', 'smimePublicKey');
  * The IMP_SMIME:: class contains all functions related to handling
  * S/MIME messages within IMP.
  *
- * $Horde: imp/lib/Crypt/SMIME.php,v 1.45.2.24 2009/02/10 18:47:41 slusarz Exp $
+ * $Horde: imp/lib/Crypt/SMIME.php,v 1.45.2.25 2009/10/09 13:02:34 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -173,15 +173,21 @@ class IMP_SMIME extends Horde_Crypt_smime {
 
     /**
      * Retrieves a public key by e-mail.
-     * The key will be retrieved from a user's address book(s).
+     *
+     * The key will be retrieved through a hook or from the user's address
+     * book(s).
      *
      * @param string $address  The e-mail address to search for.
      *
-     * @return string  The S/MIME public key requested.
-     *                 Returns PEAR_Error object on error.
+     * @return string  The requested public S/MIME key or PEAR_Error on failure.
      */
     function getPublicKey($address)
     {
+        $key = Horde::callHook('_imp_hook_smime_key', array($address), 'imp');
+        if ($key && !is_a($key, 'PEAR_Error')) {
+            return $key;
+        }
+
         $this->_getPublicKeySources();
         $key = $GLOBALS['registry']->call('contacts/getField', array($address, IMP_SMIME_PUBKEY_FIELD, $this->_sources, false, true));
 

@@ -1,4 +1,4 @@
--- $Horde: nag/scripts/upgrades/1.1_to_2.0.oci8.sql,v 1.1.2.2 2007/12/20 14:23:38 jan Exp $
+-- $Horde: nag/scripts/upgrades/1.1_to_2.0.oci8.sql,v 1.1.2.3 2009/10/19 10:54:37 jan Exp $
 
 ALTER TABLE nag_tasks DROP COLUMN task_modified;
 
@@ -8,10 +8,10 @@ ALTER TABLE nag_tasks DROP COLUMN task_category;
 ALTER TABLE nag_tasks RENAME COLUMN task_category_new TO task_category;
 
 ALTER TABLE nag_tasks MODIFY task_name VARCHAR2(255);
-ALTER TABLE nag_tasks MODIFY task_private INT DEFAULT 0;
+ALTER TABLE nag_tasks MODIFY task_private NUMBER(16) DEFAULT 0;
 
 ALTER TABLE nag_tasks ADD task_uid VARCHAR2(255);
-ALTER TABLE nag_tasks ADD task_alarm INT DEFAULT 0 NOT NULL;
+ALTER TABLE nag_tasks ADD task_alarm NUMBER(16) DEFAULT 0 NOT NULL;
 
 CREATE INDEX nag_tasklist_idx ON nag_tasks (task_owner);
 CREATE INDEX nag_uid_idx ON nag_tasks (task_uid);

@@ -3,7 +3,7 @@
  * The Horde_RPC_PhpSoap class provides a PHP 5 Soap implementation
  * of the Horde RPC system.
  *
- * $Horde: framework/RPC/RPC/PhpSoap.php,v 1.1.2.4 2009/06/16 15:28:05 jan Exp $
+ * $Horde: framework/RPC/RPC/PhpSoap.php,v 1.1.2.5 2009/10/08 16:10:57 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -65,7 +65,7 @@ class Horde_RPC_PhpSoap extends Horde_RPC {
             $this->_serviceName = $params['serviceName'];
         }
 
-        $this->_server = new SoapServer(Horde::url($registry->get('webroot', 'horde') . '/rpc.php?wsdl', true, false));
+        $this->_server = new SoapServer(Horde::url($GLOBALS['registry']->get('webroot', 'horde') . '/rpc.php?wsdl', true, false));
         $this->_server->addFunction(SOAP_FUNCTIONS_ALL);
         $this->_server->setClass('Horde_RPC_PhpSoap_Caller', $params);
     }

@@ -18,7 +18,7 @@ define('IMSP_ACL_RIGHTS', 'lrwcda');
  *   'server'       The hostname of the IMSP server.
  *   'port'         The port of the IMSP server.</pre>
  *
- * $Horde: framework/Net_IMSP/IMSP/Book.php,v 1.16.2.26 2009/01/06 15:23:27 jan Exp $
+ * $Horde: framework/Net_IMSP/IMSP/Book.php,v 1.16.2.28 2009/10/01 23:44:21 mrubinsk Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -249,11 +249,11 @@ class Net_IMSP_Book {
             $chopped_response =
                 preg_replace("/^\* SEARCHADDRESS/", '', $server_response);
 
-            // Get rid of any lingering quotes.
-            $chopped_response = preg_replace("/\"/", '', $chopped_response);
-
             // Remove any lingering white space in front only.
-            $temp = ltrim($chopped_response);
+            $chopped_response = ltrim($chopped_response);
+
+            // Get rid of any lingering quotes.
+            $temp = preg_replace("/\"/", '', $chopped_response);
 
             if (preg_match("/({)([0-9]{1,})(\}$)/", $temp, $tempArray)) {
                 $dataSize = $tempArray[2];
@@ -1473,6 +1473,18 @@ class Net_IMSP_Book {
                     if (substr($entry[$key],
                                strlen($entry[$key]) - 1, 1) == '"') {
 
+                        $entry[$key] = substr($entry[$key], 0,
+                                              strlen($entry[$key]) - 2);
+                    }
+                } elseif ((@substr($parts[$i + 1], 0, 1) == '"') && 
+                          (substr($parts[$i + 1], -1, 1) == '"')) {
+                    // Remove the quotes sent back to us from the server.
+                    if (substr($entry[$key], 0, 1) == '"') {
+                        $entry[$key] = substr($entry[$key], 1,
+                                              strlen($entry[$key]) - 2);
+                    }
+
+                    if (substr($entry[$key], -1, 1) == '"') {
                         $entry[$key] = substr($entry[$key], 0,
                                               strlen($entry[$key]) - 2);
                     }

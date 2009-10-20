@@ -2,7 +2,7 @@
 /**
  * Nag_Driver:: defines an API for implementing storage backends for Nag.
  *
- * $Horde: nag/lib/Driver.php,v 1.57.2.28 2008/11/26 21:25:25 chuck Exp $
+ * $Horde: nag/lib/Driver.php,v 1.57.2.30 2009/10/15 16:23:26 jan Exp $
  *
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.
@@ -1188,11 +1188,11 @@ class Nag_Task {
         }
 
         if (!empty($this->name)) {
-            $vTodo->setAttribute('SUMMARY', $this->name);
+            $vTodo->setAttribute('SUMMARY', $v1 ? $this->name : String::convertCharset($this->name, NLS::getCharset(), 'utf-8'));
         }
 
         if (!empty($this->desc)) {
-            $vTodo->setAttribute('DESCRIPTION', $this->desc);
+            $vTodo->setAttribute('DESCRIPTION', $v1 ? $this->desc : String::convertCharset($this->desc, NLS::getCharset(), 'utf-8'));
         }
 
         if (isset($this->priority)) {
@@ -1238,7 +1238,7 @@ class Nag_Task {
         }
 
         if (!empty($this->category)) {
-            $vTodo->setAttribute('CATEGORIES', $this->category);
+            $vTodo->setAttribute('CATEGORIES', $v1 ? $this->category : String::convertCharset($this->category, NLS::getCharset(), 'utf-8'));
         }
 
         /* Get the task's history. */
@@ -1324,8 +1324,12 @@ class Nag_Task {
         }
 
         $due = $vTodo->getAttribute('DUE');
-        if (!is_array($due) && !is_a($due, 'PEAR_Error') && !empty($due)) {
-            $this->due = $due;
+        if (!is_a($due, 'PEAR_Error')) {
+            if (is_array($due)) {
+                $this->due = mktime(0, 0, 0, (int)$due['month'], (int)$due['mday'], (int)$due['year']);
+            } elseif (!empty($due)) {
+                $this->due = $due;
+            }
         }
 
         // vCalendar 1.0 alarms
