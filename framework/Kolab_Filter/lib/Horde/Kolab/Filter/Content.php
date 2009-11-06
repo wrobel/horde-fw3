@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Content.php,v 1.4.2.3 2009/03/05 10:08:53 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Content.php,v 1.4.2.4 2009/11/06 11:07:57 wrobel Exp $
  *
  * @package Kolab_Filter
  */
@@ -20,7 +20,7 @@ define('RM_STATE_READING_BODY',   5 );
 /**
  * A Kolab Server filter for outgoing mails.
  *
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Content.php,v 1.4.2.3 2009/03/05 10:08:53 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Content.php,v 1.4.2.4 2009/11/06 11:07:57 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *
@@ -439,8 +439,8 @@ class Horde_Kolab_Filter_Content extends Horde_Kolab_Filter_Base
                                 } else {
                                     $name = '';
                                 }
-                                $new_from = '"' . $name . ' ' . $untrusted . '" <' . $from . '>';
-                                return '=?utf-8?B?' . base64_encode($new_from) . '?=';
+                                $new_from = '"' . $name . ' ' . $untrusted . '"';
+                                return '=?utf-8?B?' . base64_encode($new_from) . '?= <' . $from . '>';
                             } else {
                                 return true;
                             }

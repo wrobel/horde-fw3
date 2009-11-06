@@ -39,6 +39,10 @@ http://pear.php.net/dtd/package-2.0.xsd">
  </stability>
  <license uri="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">LGPL</license>
  <notes>
+  * kolab-filter inserts wrong/undecodeable utf-8 code into From: header
+    (kolab/issue3464, https://issues.kolab.org/issue3464)
+  * Notification messages by the resource manager should be localized
+    (kolab/issue2499, https://issues.kolab.org/issue2499)
   * Whole-day events broken for resources (kolab/issue3558,
     https://www.intevation.de/roundup/kolab/issue3558)
   * Umlauts broken in automatically accepted events (kolab/issue3568,
