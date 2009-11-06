@@ -19,7 +19,7 @@
  *                  DEFAULT: NONE (system default will be used)</pre>
  *
  *
- * $Horde: framework/Auth/Auth/ldap.php,v 1.47.10.32 2009/04/10 21:03:55 mrubinsk Exp $
+ * $Horde: framework/Auth/Auth/ldap.php,v 1.47.10.33 2009/10/26 11:58:59 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -58,18 +58,6 @@ class Auth_ldap extends Auth {
      * @param array $params  A hash containing connection parameters.
      */
     function Auth_ldap($params = array())
-    {
-        $this->_setParams($params);
-    }
-
-    /**
-     * Set configuration parameters
-     *
-     * @access private
-     *
-     * @param array $params  A hash containing connection parameters.
-     */
-    function _setParams($params)
     {
         /* Ensure we've been provided with all of the necessary parameters. */
         Horde::assertDriverConfig($params, 'auth',

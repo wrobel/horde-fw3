@@ -66,7 +66,7 @@ define('AUTH_REASON_SESSIONIP', 'sessionip');
  * The Auth:: class provides a common abstracted interface into the various
  * backends for the Horde authentication system.
  *
- * $Horde: framework/Auth/Auth.php,v 1.142.10.36 2009/06/10 16:43:29 jan Exp $
+ * $Horde: framework/Auth/Auth.php,v 1.142.10.37 2009/10/26 11:58:58 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -487,12 +487,11 @@ class Auth {
     }
 
     /**
-     * Automatic authentication: Finds out if the client matches an allowed IP
-     * block.
+     * Automatic authentication.
      *
      * @abstract
      *
-     * @return boolean  Whether or not the client is allowed.
+     * @return boolean  Whether or not the user is authenticated automatically.
      */
     function transparent()
     {

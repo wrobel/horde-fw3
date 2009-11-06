@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Auth/Auth/msad.php,v 1.7.2.3 2009/01/06 15:22:50 jan Exp $
+ * $Horde: framework/Auth/Auth/msad.php,v 1.7.2.4 2009/10/26 11:58:59 jan Exp $
  *
  * @package Horde_Auth
  */
@@ -47,6 +47,9 @@ class Auth_msad extends Auth_ldap {
      */
     function Auth_msad($params = array())
     {
+        Horde::assertDriverConfig($params, 'auth',
+            array('hostspec', 'basedn', ), 'authentication MSAD');
+
         /* Assumes Horde framework 3 compatibilities */
         if (!isset($params['encryption'])) {
             $params['encryption'] = 'msad';
@@ -92,7 +95,7 @@ class Auth_msad extends Auth_ldap {
             'transparent'   => false
         );
 
-        $this->_setParams($params);
+        $this->_params = $params;
     }
 
     /**
@@ -268,22 +271,6 @@ class Auth_msad extends Auth_ldap {
         $password = Auth::genRandomPassword() . '/';
         $success = $this->updateUser($user_id, $user_id, array('userPassword' => $password));
         return is_a($success, 'PEAR_Error') ? $success : $password;
-    }
-
-    /**
-     * Set configuration parameters
-     *
-     * @access private
-     *
-     * @param array $params  A hash containing connection parameters.
-     */
-    function _setParams($params)
-    {
-        /* Ensure we've been provided with all of the necessary parameters. */
-        Horde::assertDriverConfig($params, 'auth',
-            array('hostspec', 'basedn', ), 'authentication MSAD');
-
-        $this->_params = $params;
     }
 
     /**

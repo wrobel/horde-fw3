@@ -11,7 +11,7 @@
  *   'password_header'     Name of the header holding the password of the logged in user
  *   'password_preference' Name of the Horde preference holding the password of the logged in user
  *
- * $Horde: framework/Auth/Auth/shibboleth.php,v 1.4.2.2 2008/07/03 22:08:25 chuck Exp $
+ * $Horde: framework/Auth/Auth/shibboleth.php,v 1.4.2.3 2009/10/26 11:58:59 jan Exp $
  *
  * Copyright 9Star Research, Inc. 2006 http://www.protectnetwork.org
  *
@@ -44,7 +44,7 @@ class Auth_shibboleth extends Auth {
      */
     function Auth_shibboleth($params = array())
     {
-        Horde::assertDriverConfig($params, 'auth', array('username_header'), 'Authentication Shib');
+        Horde::assertDriverConfig($params, 'auth', array('username_header'), 'authentication Shibboleth');
 
         if (!isset($params['password_holder'])) {
             $params['password_holder'] = false;

@@ -2,7 +2,7 @@
 /**
  * @package SyncML
  *
- * $Horde: framework/SyncML/SyncML/Device/Sync4j.php,v 1.8.2.33 2009/10/01 10:26:33 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Device/Sync4j.php,v 1.8.2.34 2009/10/26 18:06:48 jan Exp $
  */
 
 /** Horde_Date */
@@ -1103,6 +1103,7 @@ class SyncML_Device_sync4j extends SyncML_Device {
         }
 
         $hash['Complete'] = 0;
+        $due = false;
 
         $attr = $content->getAllAttributes();
         foreach ($attr as $item) {
@@ -1131,6 +1132,7 @@ class SyncML_Device_sync4j extends SyncML_Device {
 
             case 'DUE':
                 $hash['DueDate'] = Horde_iCalendar::_exportDateTime($item['value']);
+                $due = $item['value'];
                 break;
 
             case 'AALARM':
@@ -1161,6 +1163,20 @@ class SyncML_Device_sync4j extends SyncML_Device {
                     break;
                 }
                 break;
+            }
+        }
+
+        if ($due && !isset($hash['ReminderSet'])) {
+            // Parse VALARM components.
+            foreach ($content->getComponents() as $component) {
+                if (!is_a($component, 'Horde_iCalendar_valarm') ||
+                    is_a($trigger = $component->getAttribute('TRIGGER'), 'PEAR_Error') ||
+                    is_array($trigger) ||
+                    empty($trigger)) {
+                    continue;
+                }
+                $hash['ReminderSet'] = 1;
+                $hash['ReminderTime'] = Horde_iCalendar::_exportDateTime($due - $trigger);
             }
         }
 
