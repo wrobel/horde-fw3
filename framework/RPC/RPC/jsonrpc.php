@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/RPC/RPC/jsonrpc.php,v 1.4.2.4 2009/01/06 15:23:32 jan Exp $
+ * $Horde: framework/RPC/RPC/jsonrpc.php,v 1.4.2.5 2009-11-07 12:54:36 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *
@@ -29,6 +29,18 @@ require_once 'Horde/Serialize.php';
  * @package Horde_RPC
  */
 class Horde_RPC_jsonrpc extends Horde_RPC {
+
+    /**
+     * Constructor.
+     *
+     * @param array $config  A hash containing any additional configuration or
+     *                       connection parameters this class might need.
+     */
+    function Horde_RPC_jsonrpc($params = array())
+    {
+        parent::Horde_RPC($params);
+        Horde_NLS::setCharsetEnvironment('UTF-8');
+    }
 
     /**
      * Returns the Content-Type of the response.

@@ -28,7 +28,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
   <email>jan@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2009-05-08</date>
+ <date>2009-11-07</date>
  <version>
   <release>0.1.6</release>
   <api>0.1.0</api>
@@ -39,6 +39,8 @@ http://pear.php.net/dtd/package-2.0.xsd">
  </stability>
  <license uri="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">LGPL</license>
  <notes>
+  * Added french translation. Submitted by Mathieu Parent
+    (mathieuparent@users.sourceforge.net).
   * kolab-filter inserts wrong/undecodeable utf-8 code into From: header
     (kolab/issue3464, https://issues.kolab.org/issue3464)
   * Notification messages by the resource manager should be localized
@@ -101,7 +103,17 @@ http://pear.php.net/dtd/package-2.0.xsd">
       <file name="Kolab_Filter.mo" role="data" />
      </dir> <!-- /locale/de_DE/LC_MESSAGES -->
     </dir> <!-- /locale/de_DE -->
+    <dir name="fr_FR">
+     <dir name="LC_MESSAGES">
+      <file name="Kolab_Filter.mo" role="data" />
+     </dir> <!-- /locale/fr_FR/LC_MESSAGES -->
+    </dir> <!-- /locale/fr_FR -->
    </dir> <!-- /locale -->
+   <dir name="po" baseinstalldir="/">
+    <file name="Kolab_Filter.pot" role="data" />
+    <file name="de_DE.po" role="data" />
+    <file name="fr_FR.po" role="data" />
+   </dir> <!-- /po -->
    <dir name="script" baseinstalldir="/">
     <dir name="Horde">
      <dir name="Kolab">
