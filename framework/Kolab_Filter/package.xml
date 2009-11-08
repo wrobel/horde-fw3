@@ -30,7 +30,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
  </lead>
  <date>2009-11-07</date>
  <version>
-  <release>0.1.6</release>
+  <release>0.1.7</release>
   <api>0.1.0</api>
  </version>
  <stability>
@@ -39,23 +39,8 @@ http://pear.php.net/dtd/package-2.0.xsd">
  </stability>
  <license uri="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">LGPL</license>
  <notes>
-  * Added french translation. Submitted by Mathieu Parent
-    (mathieuparent@users.sourceforge.net).
-  * kolab-filter inserts wrong/undecodeable utf-8 code into From: header
-    (kolab/issue3464, https://issues.kolab.org/issue3464)
-  * Notification messages by the resource manager should be localized
-    (kolab/issue2499, https://issues.kolab.org/issue2499)
-  * Whole-day events broken for resources (kolab/issue3558,
-    https://www.intevation.de/roundup/kolab/issue3558)
-  * Umlauts broken in automatically accepted events (kolab/issue3568,
-    https://www.intevation.de/roundup/kolab/issue3568)
-  * kolabmailboxfilter does not accept mail for
-    user+extension@example.com (kolab/issue3521,
-    https://www.intevation.de/roundup/kolab/issue3521)
-  * php error when inviting outside of free/busy interval
-    (kolab/issue3560, https://www.intevation.de/roundup/kolab/issue3560)
-  * Resmgr eats up all memory and dies on some recuring events
-    (https://issues.kolab.org/issue3868)
+  * Added dutch translation. Submitted by Richard Bos
+    (ml@radoeka.nl).
  </notes>
  <contents>
   <dir name="/">
@@ -273,7 +258,38 @@ http://pear.php.net/dtd/package-2.0.xsd">
    <install name="test/Horde/Kolab/Filter/fixtures/validation.ret" as="Horde/Kolab/Filter/fixtures/validation.ret" />
   </filelist>
  </phprelease>
- <changelog>
+  <release>
+   <changelog>
+   <date>2009-11-07</date>
+   <version>
+    <release>0.1.6</release>
+    <api>0.1.0</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <license uri="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">LGPL</license>
+   <notes>
+    * Added french translation. Submitted by Mathieu Parent
+      (mathieuparent@users.sourceforge.net).
+    * kolab-filter inserts wrong/undecodeable utf-8 code into From: header
+      (kolab/issue3464, https://issues.kolab.org/issue3464)
+    * Notification messages by the resource manager should be localized
+      (kolab/issue2499, https://issues.kolab.org/issue2499)
+    * Whole-day events broken for resources (kolab/issue3558,
+      https://www.intevation.de/roundup/kolab/issue3558)
+    * Umlauts broken in automatically accepted events (kolab/issue3568,
+      https://www.intevation.de/roundup/kolab/issue3568)
+    * kolabmailboxfilter does not accept mail for
+      user+extension@example.com (kolab/issue3521,
+      https://www.intevation.de/roundup/kolab/issue3521)
+    * php error when inviting outside of free/busy interval
+      (kolab/issue3560, https://www.intevation.de/roundup/kolab/issue3560)
+    * Resmgr eats up all memory and dies on some recuring events
+      (https://issues.kolab.org/issue3868)
+   </notes>
+  </release>
   <release>
    <date>2009-03-06</date>
    <version>
