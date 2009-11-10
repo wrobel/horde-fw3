@@ -2,8 +2,8 @@
  Horde Coding Standards
 ========================
 
-:Last update:   $Date: 2009/10/19 09:53:19 $
-:Revision:      $Revision: 1.84.10.21 $
+:Last update:   $Date: 2009-10-26 18:05:23 $
+:Revision:      $Revision: 1.84.10.24 $
 :Authors:       Jon Parise, Chuck Hagenbuch
 :Contact:       dev@lists.horde.org
 
@@ -419,8 +419,8 @@ with a border on some browsers.  Use the following instead::
    <a href="" onclick="document.formname.submit(); return false;"><?php echo Horde::img("example.gif", _("Example")) ?></a>
 
 
-Database Naming Conventions
-===========================
+Database Conventions
+====================
 
 All database tables used by Horde resources and Horde applications need to
 make sure that their table and field names work in all databases.  Many
@@ -438,15 +438,16 @@ should be singular (user_name).
 Try to use portable data types and avoid RDBMS specific SQL scripts as much as
 possible. Portable types are INTEGER, SMALLINT, NUMERIC(4,0) (for TINYINT),
 NUMERIC(p,s), VARCHAR(n), CHAR(n), FLOAT, and REAL. See
-http://home.fnal.gov/~dbox/SQL_API_Portability.html,
-http://articles.techrepublic.com.com/5100-10878_11-1045051.html and
-http://download.oracle.com/docs/html/B10257_01/ch3.htm for more information.
+http://home.fnal.gov/~dbox/SQL_API_Portability.html and
+http://articles.techrepublic.com.com/5100-10878_11-1045051.html for more
+information.
 
 In SQL queries, keywords should be capitalized.
 
 In table creation statements, SQL keywords and datatypes should be
-capitalized.  Also, 'DEFAULT' constraints should be listed before 'NOT
-NULL' constraints for maximum portability.
+capitalized. Also, 'DEFAULT' constraints should be listed before 'NOT NULL'
+constraints for maximum portability. 'NOT NULL' constraints should not use an
+empty string for the 'DEFAULT' constraint.
 
 Regular Expression Use
 ======================
@@ -474,6 +475,34 @@ manipulation.
 .. _str_replace(): http://www.php.net/manual/en/function.str-replace.php
 .. _strpos(): http://www.php.net/manual/en/function.strpos.php
 .. _strtr(): http://www.php.net/manual/en/function.strtr.php
+
+Identifiers should not be longer than 30 characters.
+
+
+Oracle Database Scripts
+-----------------------
+
+For maximum portability with several Oracle versions, Oracle-specific database
+scripts are necessary. Coming from MySQL, use the following data types:
+
+* VARCHAR2 for VARCHAR
+* NUMBER(16) for INT(EGER)
+* NUMBER(8) for SMALLINT
+* NUMBER(1) for boolean flags (TINYINT)
+* CLOB or VARCHAR2(4000) for TEXT
+* DATE for DATETIME
+
+See http://download.oracle.com/docs/html/B10257_01/ch3.htm for more
+information.
+
+Identifiers must not be longer than 30 characters. This is easily exceeded
+with some of the index names.
+
+'DEFAULT' constraints must always preceed 'NOT NULL' constraints. 'NOT NULL'
+constraints must not use an empty string for the 'DEFAULT' constraint.
+
+Instead of using `ALTER TABLE table CHANGE column column spec...` use `ALTER
+TABLE table MODIFY column spec...`.
 
 
 Parameter Passing

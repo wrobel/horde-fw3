@@ -1,4 +1,4 @@
--- $Horde: ingo/scripts/sql/ingo.sql,v 1.6.2.7 2008/09/23 15:18:23 jan Exp $
+-- $Horde: ingo/scripts/sql/ingo.sql,v 1.6.2.8 2009-10-20 21:44:32 jan Exp $
 
 CREATE TABLE ingo_rules (
     rule_id INT NOT NULL,
@@ -65,10 +65,10 @@ CREATE TABLE ingo_shares (
     share_id INT NOT NULL,
     share_name VARCHAR(255) NOT NULL,
     share_owner VARCHAR(255) NOT NULL,
-    share_flags SMALLINT NOT NULL DEFAULT 0,
-    perm_creator SMALLINT NOT NULL DEFAULT 0,
-    perm_default SMALLINT NOT NULL DEFAULT 0,
-    perm_guest SMALLINT NOT NULL DEFAULT 0,
+    share_flags SMALLINT DEFAULT 0 NOT NULL,
+    perm_creator SMALLINT DEFAULT 0 NOT NULL,
+    perm_default SMALLINT DEFAULT 0 NOT NULL,
+    perm_guest SMALLINT DEFAULT 0 NOT NULL,
     attribute_name VARCHAR(255) NOT NULL,
     attribute_desc VARCHAR(255),
     PRIMARY KEY (share_id)

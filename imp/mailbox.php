@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/mailbox.php,v 2.617.4.90 2009/02/16 21:15:09 slusarz Exp $
+ * $Horde: imp/mailbox.php,v 2.617.4.92 2009-11-09 14:36:31 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

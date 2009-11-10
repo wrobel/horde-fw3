@@ -1,5 +1,5 @@
 --
--- $Horde: whups/scripts/sql/whups.oci8.sql,v 1.25.2.2 2009/10/19 10:54:38 jan Exp $
+-- $Horde: whups/scripts/sql/whups.oci8.sql,v 1.25.2.3 2009-10-20 21:44:35 jan Exp $
 --
 -- Copyright 2001-2005 Robert E. Coyle <robertecoyle@hotmail.com>
 --
@@ -189,10 +189,10 @@ CREATE TABLE whups_shares (
     share_id NUMBER(16) NOT NULL,
     share_name VARCHAR2(255) NOT NULL,
     share_owner VARCHAR2(255) NOT NULL,
-    share_flags NUMBER(8) NOT NULL DEFAULT 0,
-    perm_creator NUMBER(8) NOT NULL DEFAULT 0,
-    perm_default NUMBER(8) NOT NULL DEFAULT 0,
-    perm_guest NUMBER(8) NOT NULL DEFAULT 0,
+    share_flags NUMBER(8) DEFAULT 0 NOT NULL,
+    perm_creator NUMBER(8) DEFAULT 0 NOT NULL,
+    perm_default NUMBER(8) DEFAULT 0 NOT NULL,
+    perm_guest NUMBER(8) DEFAULT 0 NOT NULL,
     attribute_name VARCHAR2(255) NOT NULL,
     attribute_slug VARCHAR2(255),
 --

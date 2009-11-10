@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ansel/lib/Ansel.php,v 1.517.2.71 2009/08/13 21:29:08 mrubinsk Exp $
+ * $Horde: ansel/lib/Ansel.php,v 1.517.2.73 2009-10-24 20:20:42 mrubinsk Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *

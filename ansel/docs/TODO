@@ -2,8 +2,8 @@
  Ansel Development TODO List
 =============================
 
-:Last update:   $Date: 2008/01/16 01:30:57 $
-:Revision:      $Revision: 1.43 $
+:Last update:   $Date: 2009-11-06 15:43:31 $
+:Revision:      $Revision: 1.43.2.2 $
 :Contact:       ansel@lists.horde.org
 
 - Further abstract out all database access from Ansel_Gallery/Ansel_Image and

@@ -1,4 +1,4 @@
--- $Horde: kronolith/scripts/upgrades/2.1_to_2.2.sql,v 1.1.2.4 2008/04/29 19:33:21 chuck Exp $
+-- $Horde: kronolith/scripts/upgrades/2.1_to_2.2.sql,v 1.1.2.5 2009-10-20 21:44:33 jan Exp $
 
 ALTER TABLE kronolith_events ADD COLUMN event_private INT DEFAULT 0 NOT NULL;
 ALTER TABLE kronolith_events ADD COLUMN event_recurcount INT;
@@ -7,10 +7,10 @@ CREATE TABLE kronolith_shares (
     share_id INT NOT NULL,
     share_name VARCHAR(255) NOT NULL,
     share_owner VARCHAR(32) NOT NULL,
-    share_flags SMALLINT NOT NULL DEFAULT 0,
-    perm_creator SMALLINT NOT NULL DEFAULT 0,
-    perm_default SMALLINT NOT NULL DEFAULT 0,
-    perm_guest SMALLINT NOT NULL DEFAULT 0,
+    share_flags SMALLINT DEFAULT 0 NOT NULL,
+    perm_creator SMALLINT DEFAULT 0 NOT NULL,
+    perm_default SMALLINT DEFAULT 0 NOT NULL,
+    perm_guest SMALLINT DEFAULT 0 NOT NULL,
     attribute_name VARCHAR(255) NOT NULL,
     attribute_desc VARCHAR(255),
     PRIMARY KEY (share_id)

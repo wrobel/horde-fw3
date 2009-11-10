@@ -10,21 +10,21 @@
  * Horde_Release::FOCUS_MAJORSECURITY - Major security fixes
  * Horde_Release::FOCUS_DOCS - Documentation improvements
  */
-$this->notes['fm']['focus'] = Horde_Release::FOCUS_MINORSECURITY;
+$this->notes['fm']['focus'] = array(Horde_Release::FOCUS_MINORFEATURE, Horde_Release::FOCUS_MINORBUG);
 
 /* Mailing list release notes. */
 $this->notes['ml']['changes'] = <<<ML
 The Horde Team is pleased to announce the final release of the Passwd Horde
-password changing application version H3 (3.1.1).
+password changing application version H3 (3.1.2).
 
 Passwd provides fairly complete support for changing passwords via Poppassd,
 LDAP, Unix expect scripts, the Unix smbpasswd command for SMB/CIFS passwords,
 Kolab, ADSI, Pine, Serv-U FTP, VMailMgr, vpopmail, and SQL passwords.
 
-The major changes compared to Passwd version H3 (3.1) are:
-    * SECURITY: Fix XSS when specifying an invalid backend key
-      (security@davidwharton.us, #8398).
-    * A new SOAP driver.
+The major changes compared to Passwd version H3 (3.1.1) are:
+    * Improved LDAP drivers
+    * Added support for output compression
+    * Added Croatian translation
 ML;
 
 /* Freshmeat release notes, not more than 600 characters. */
@@ -32,6 +32,7 @@ $this->notes['fm']['changes'] = <<<FM
 This release fixes an unescaped output bug in the main password form. It also
 introduces a new SOAP password driver.
 FM;
+
 
 $this->notes['name'] = 'Passwd';
 $this->notes['list'] = 'sork';

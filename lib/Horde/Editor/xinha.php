@@ -1,1 +1,0 @@
-../../../framework/Editor/Editor/xinha.php

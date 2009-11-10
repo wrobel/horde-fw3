@@ -66,7 +66,11 @@ define('AUTH_REASON_SESSIONIP', 'sessionip');
  * The Auth:: class provides a common abstracted interface into the various
  * backends for the Horde authentication system.
  *
+<<<<<<< Auth.php
  * $Horde: framework/Auth/Auth.php,v 1.142.10.37 2009/10/26 11:58:58 jan Exp $
+=======
+ * $Horde: framework/Auth/Auth.php,v 1.142.10.37 2009-10-26 11:58:58 jan Exp $
+>>>>>>> 1.142.10.37
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

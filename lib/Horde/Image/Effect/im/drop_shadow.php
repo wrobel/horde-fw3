@@ -1,1 +1,0 @@
-../../../../../framework/Image/Image/Effect/im/drop_shadow.php

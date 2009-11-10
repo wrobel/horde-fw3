@@ -17,7 +17,7 @@ define('IMP_VFS_LINK_ATTACH_PATH', '.horde/imp/attachments');
  * The IMP_Compose:: class contains functions related to generating
  * outgoing mail messages.
  *
- * $Horde: imp/lib/Compose.php,v 1.107.2.86 2009/07/29 06:04:42 slusarz Exp $
+ * $Horde: imp/lib/Compose.php,v 1.107.2.89 2009-11-05 10:30:54 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -227,6 +227,10 @@ class IMP_Compose {
             $draft_headers->addMIMEHeaders($mime);
         }
 
+        if (isset($headers['references']) || isset($headers['in_reply_to'])) {
+            $this->_addReferences($draft_headers, $headers);
+        }
+
         /* Need to add Message-ID so we can use it in the index search. */
         $draft_headers->addMessageIdHeader();
 
@@ -369,6 +373,14 @@ class IMP_Compose {
             'bcc' => MIME::addrArray2String($imp_headers->getOb('bcc')),
             'subject' => $imp_headers->getValue('subject')
         );
+
+        if ($val = $imp_headers->getValue('references')) {
+            $header['references'] = $val;
+        }
+
+        if ($val = $imp_headers->getValue('in-reply-to')) {
+            $header['in_reply_to'] = $val;
+        }
 
         list($this->_draftIdx,) = explode(IMP_IDX_SEP, $index);
 
@@ -729,12 +741,7 @@ class IMP_Compose {
 
         /* Add necessary headers for replies. */
         if (!empty($opts['reply_type']) && ($opts['reply_type'] == 'reply')) {
-            if (!empty($header['references'])) {
-                $msg_headers->addHeader('References', implode(' ', preg_split('|\s+|', trim($header['references']))));
-            }
-            if (!empty($header['in_reply_to'])) {
-                $msg_headers->addHeader('In-Reply-To', $header['in_reply_to']);
-            }
+            $this->_addReferences($msg_headers, $header);
         }
 
         /* Send the messages out now. */
@@ -850,6 +857,24 @@ class IMP_Compose {
         }
 
         return $sent_saved;
+    }
+
+    /**
+     * Add necessary headers for replies.
+     *
+     * @param MIME_Headers &$headers  The object holding this message's
+     *                                headers.
+     * @param array $header           List of message headers.
+     */
+    function _addReferences(&$headers, $header)
+    {
+        if (!empty($header['references'])) {
+            $headers->addHeader('References', implode(' ', preg_split('|\s+|', trim($header['references']))));
+        }
+
+        if (!empty($header['in_reply_to'])) {
+            $headers->addHeader('In-Reply-To', $header['in_reply_to']);
+        }
     }
 
     /**

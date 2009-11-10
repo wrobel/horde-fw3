@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: turba/config/prefs.php.dist,v 1.28.10.10 2008/07/10 22:52:41 jan Exp $
+ * $Horde: turba/config/prefs.php.dist,v 1.28.10.11 2009-10-26 17:34:16 jan Exp $
  *
  * See horde/config/prefs.php for documentation on the structure of this file.
  */
@@ -30,7 +30,7 @@ $prefGroups['format'] = array(
     'column' => _("Display Options"),
     'label' => _("Name Format"),
     'desc' => _("Select which format to display names."),
-    'members' => array('name_format'),
+    'members' => array('name_format', 'name_sort'),
 );
 
 // Address Book selection widget
@@ -122,7 +122,19 @@ $_prefs['name_format'] = array(
     'locked' => false,
     'shared' => false,
     'type' => 'enum',
-    'desc' => _("Select the format used to display names:"),
+    'desc' => _("Select the format used to <em>display</em> names:"),
+    'enum' => array('last_first' => _("\"Lastname, Firstname\" (ie. Doe, John)"),
+                    'first_last' => _("\"Firstname Lastname\"  (ie. John Doe)"),
+                    'none' => _("no formatting")),
+);
+
+// the format to sort names.  Either 'last_first' or 'first_last'
+$_prefs['name_sort'] = array(
+    'value' => 'none',
+    'locked' => false,
+    'shared' => false,
+    'type' => 'enum',
+    'desc' => _("Select the format used to <em>sort</em> names:"),
     'enum' => array('last_first' => _("\"Lastname, Firstname\" (ie. Doe, John)"),
                     'first_last' => _("\"Firstname Lastname\"  (ie. John Doe)"),
                     'none' => _("no formatting")),

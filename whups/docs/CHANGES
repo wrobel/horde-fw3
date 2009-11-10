@@ -1,7 +1,16 @@
 ----------
-v1.0.1-cvs
+v1.0.2-cvs
 ----------
 
+
+
+
+------
+v1.0.1
+------
+
+[jan] Fix Oracle SQL scripts.
+[jan] Render private comments for everyone, but hide the comment text.
 [jan] Add flag to disable old versions.
 [jan] Apply simple markup highlighting on comments.
 [jan] Save queue email addresses when editing queues (horde@hatzidakis.org,

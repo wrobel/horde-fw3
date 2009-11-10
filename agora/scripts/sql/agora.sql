@@ -1,11 +1,11 @@
--- $Horde: agora/scripts/sql/agora.sql,v 1.11 2007/06/27 15:18:59 chuck Exp $
+-- $Horde: agora/scripts/sql/agora.sql,v 1.11.2.1 2009-10-20 21:44:36 jan Exp $
 
 CREATE TABLE agora_files (
     file_id INT NOT NULL,
     file_name VARCHAR(255) NOT NULL,
-    file_size INT NOT NULL DEFAULT 0,
+    file_size INT DEFAULT 0 NOT NULL,
     file_type VARCHAR(32) NOT NULL,
-    message_id INT NOT NULL DEFAULT 0,
+    message_id INT DEFAULT 0 NOT NULL,
 --
     PRIMARY KEY (file_id)
 );
@@ -54,7 +54,7 @@ CREATE INDEX agora_messages_message_thread ON agora_messages (message_thread);
 CREATE INDEX agora_messages_parents ON agora_messages (parents);
 
 CREATE TABLE agora_moderators (
-    forum_id INT NOT NULL DEFAULT 0,
+    forum_id INT DEFAULT 0 NOT NULL,
     horde_uid VARCHAR(32) NOT NULL,
 --
     PRIMARY KEY (forum_id, horde_uid)

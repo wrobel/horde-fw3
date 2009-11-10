@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: kronolith/lib/Kronolith.php,v 1.263.2.82 2009/09/21 16:34:40 mrubinsk Exp $
+ * $Horde: kronolith/lib/Kronolith.php,v 1.263.2.83 2009-11-04 16:41:05 jan Exp $
  *
  * @package Kronolith
  */
@@ -346,8 +346,13 @@ class Kronolith {
         foreach ($GLOBALS['all_external_calendars'] as $api => $categories) {
             foreach ($categories as $id => $name) {
                 $calendarId = $api . '/' . $id;
-                if (in_array($calendarId, $_temp)) {
-                    $GLOBALS['display_external_calendars'][] = $calendarId;
+                /* Forward compatible checking of subscribed external
+                 * sources. */
+                foreach ($_temp as $_temp_cal) {
+                    if (strpos($_temp_cal, $calendarId) === 0 &&
+                        !in_array($calendarId, $GLOBALS['display_external_calendars'])) {
+                        $GLOBALS['display_external_calendars'][] = $calendarId;
+                    }
                 }
             }
         }

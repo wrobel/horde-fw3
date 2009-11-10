@@ -3,7 +3,7 @@
  * The Turba_Object:: class provides a base implementation for Turba
  * objects - people, groups, restaurants, etc.
  *
- * $Horde: turba/lib/Object.php,v 1.17.10.12 2009/01/23 14:48:39 jan Exp $
+ * $Horde: turba/lib/Object.php,v 1.17.10.13 2009-10-24 18:48:23 mrubinsk Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Jon Parise <jon@csh.rit.edu>
@@ -282,9 +282,11 @@ class Turba_Object {
      */
     function deleteFile($file)
     {
-        $this->_vfsInit();
-
-        return $this->_vfs->deleteFile(TURBA_VFS_PATH . '/' . $this->getValue('__uid'), $file);
+        if (!is_a($result = $this->_vfsInit(), 'PEAR_Error')) {
+            return $this->_vfs->deleteFile(TURBA_VFS_PATH . '/' . $this->getValue('__uid'), $file);
+        } else {
+            return $result;
+        }
     }
 
     /**
@@ -292,13 +294,15 @@ class Turba_Object {
      */
     function deleteFiles()
     {
-        $this->_vfsInit();
+        if (!is_a($result = $this->_vfsInit(), 'PEAR_Error')) {
+            if ($this->_vfs->exists(TURBA_VFS_PATH, $this->getValue('__uid'))) {
+                return $this->_vfs->deleteFolder(TURBA_VFS_PATH, $this->getValue('__uid'), true);
+            }
 
-        if ($this->_vfs->exists(TURBA_VFS_PATH, $this->getValue('__uid'))) {
-            return $this->_vfs->deleteFolder(TURBA_VFS_PATH, $this->getValue('__uid'), true);
+            return true;
         }
 
-        return true;
+        return $result;
     }
 
     /**

@@ -1,1 +1,1 @@
-if(Prototype.Browser.IE){document.observe("dom:loaded",function(){[$$("TEXTAREA"),$$('INPUT[type="text"]')].flatten().each(function(A){A.observe("keydown",function(B){return B.keyCode!=27})})})};
+if(Prototype.Browser.IE){document.observe("dom:loaded",function(){[$$("TEXTAREA"),$$('INPUT[type="text"]')].flatten().each(function(a){a.observe("keydown",function(b){return b.keyCode!=27})})})};

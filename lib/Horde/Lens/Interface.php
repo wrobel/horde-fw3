@@ -1,1 +1,0 @@
-../../../framework/Lens/lib/Horde/Lens/Interface.php

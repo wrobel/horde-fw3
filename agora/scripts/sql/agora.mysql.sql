@@ -1,9 +1,9 @@
--- $Horde: agora/scripts/sql/agora.mysql.sql,v 1.11 2007/02/24 22:21:05 chuck Exp $
+-- $Horde: agora/scripts/sql/agora.mysql.sql,v 1.11.2.1 2009-10-20 21:44:36 jan Exp $
 
 CREATE TABLE agora_files (
     file_id INT(11) UNSIGNED NOT NULL,
     file_name VARCHAR(255) NOT NULL,
-    file_size INT(11) UNSIGNED NOT NULL default 0,
+    file_size INT(11) UNSIGNED DEFAULT 0 NOT NULL,
     file_type VARCHAR(32) NOT NULL,
     message_id MEDIUMINT(9) UNSIGNED DEFAULT 0,
 --

@@ -4,7 +4,7 @@
  * various directory search drivers.  It includes functions for searching,
  * adding, removing, and modifying directory entries.
  *
- * $Horde: turba/lib/Driver.php,v 1.57.2.91 2009/10/07 16:16:37 mrubinsk Exp $
+ * $Horde: turba/lib/Driver.php,v 1.57.2.92 2009-10-20 22:10:00 jan Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Jon Parise <jon@csh.rit.edu>
@@ -221,7 +221,7 @@ class Turba_Driver {
                             $fieldarray[] = '';
                         }
                     }
-                    $fields[$this->map[$key]['attribute']] = trim(vsprintf($this->map[$key]['format'], $fieldarray), " \t\n\r\0\x0B,");
+                    $fields[$this->map[$key]['attribute']] = preg_replace('/\s+/', ' ', trim(vsprintf($this->map[$key]['format'], $fieldarray), " \t\n\r\0\x0B,"));
                 } else {
                     // If 'parse' is not specified, use 'format' and 'fields'.
                     if (!isset($this->map[$key]['parse'])) {

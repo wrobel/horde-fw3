@@ -2,7 +2,7 @@
 /**
  * @package Passwd
  *
- * $Horde: passwd/lib/Driver/smbldap.php,v 1.7.2.6 2009/08/18 12:27:16 jan Exp $
+ * $Horde: passwd/lib/Driver/smbldap.php,v 1.7.2.7 2009-11-09 13:31:12 jan Exp $
  */
 
 /** Passwd_Driver_ldap */
@@ -55,13 +55,13 @@ class Passwd_Driver_smbldap extends Passwd_Driver_ldap {
      */
     function changePassword($username, $old_password, $new_password)
     {
-        $result = parent::changePassword($username, $old_password, $new_password, $userdn);
+        $result = parent::changePassword($username, $old_password, $new_password);
         if (is_a($result, 'PEAR_Error')) {
             return $result;
         }
 
         // Return success if the user is not a Samba user
-        if (!@ldap_compare($this->_ds, $userdn, 'objectClass', $this->_params['smb_objectclass'])) {
+        if (!@ldap_compare($this->_ds, $this->_userdn, 'objectClass', $this->_params['smb_objectclass'])) {
             return true;
         }
 
@@ -98,7 +98,7 @@ class Passwd_Driver_smbldap extends Passwd_Driver_ldap {
         }
 
         if (count($changes) > 0) {
-            if (!ldap_mod_replace($this->_ds, $userdn, $changes)) {
+            if (!ldap_mod_replace($this->_ds, $this->_userdn, $changes)) {
                 return PEAR::raiseError(ldap_error($this->_ds));
             }
         }

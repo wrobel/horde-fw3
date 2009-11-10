@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/compose.php,v 2.800.2.125 2009/06/15 22:57:25 jan Exp $
+ * $Horde: imp/compose.php,v 2.800.2.126 2009-11-07 21:22:58 slusarz Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -249,6 +249,7 @@ if ($_SESSION['imp']['file_upload']) {
 }
 
 /* Run through the action handlers. */
+$reply_type = null;
 $title = _("New Message");
 switch ($actionID) {
 case 'recompose':
@@ -308,6 +309,9 @@ case 'draft':
             !$prefs->isLocked('default_identity')) {
             $identity->setDefault($result['identity']);
             $sent_mail_folder = $identity->getValue('sent_mail_folder');
+        }
+        if (isset($result['header']['references'])) {
+            $reply_type = 'reply';
         }
     }
     $get_sig = false;
@@ -870,7 +874,7 @@ if ($redirect) {
 
     echo $t->fetch(IMP_TEMPLATES . '/compose/redirect.html');
 } else {
-    if (!($reply_type = Util::getFormData('reply_type'))) {
+    if (!($reply_type = Util::getFormData('reply_type', $reply_type))) {
         switch ($actionID) {
         case 'reply':
         case 'reply_all':

@@ -1,1 +1,0 @@
-../../../../../framework/MIME/MIME/Viewer/ooo/global_document.xsl

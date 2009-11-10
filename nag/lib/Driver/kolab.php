@@ -2,7 +2,7 @@
 /**
  * Nag driver classes for the Kolab IMAP server.
  *
- * $Horde: nag/lib/Driver/kolab.php,v 1.6.10.16 2009/01/06 15:25:06 jan Exp $
+ * $Horde: nag/lib/Driver/kolab.php,v 1.6.10.17 2009-10-22 14:24:20 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *
@@ -110,7 +110,7 @@ class Nag_Driver_kolab extends Nag_Driver {
      * @param string $category    The category of the task.
      * @param integer $alarm      The alarm associated with the task.
      * @param string $uid         A Unique Identifier for the task.
-     * @param string $parent      The parent task.
+     * @param string $parent      The parent task id.
      * @param boolean $private    Whether the task is private.
      * @param string $owner       The owner of the event.
      * @param string $assignee    The assignee of the event.
@@ -140,7 +140,7 @@ class Nag_Driver_kolab extends Nag_Driver {
      * @param integer $completed       The completion state of the task.
      * @param string $category         The category of the task.
      * @param integer $alarm           The alarm associated with the task.
-     * @param string $parent           The parent task.
+     * @param string $parent           The parent task id.
      * @param boolean $private         Whether the task is private.
      * @param string $owner            The owner of the event.
      * @param string $assignee         The assignee of the event.
@@ -374,7 +374,7 @@ class Nag_Driver_kolab_wrapper_old extends Nag_Driver_kolab_wrapper {
      * @param integer $completed       The completion state of the task.
      * @param string $category         The category of the task.
      * @param integer $alarm           The alarm associated with the task.
-     * @param string $parent           The parent task.
+     * @param string $parent           The parent task id.
      * @param boolean $private         Whether the task is private.
      * @param string $owner            The owner of the event.
      * @param string $assignee         The assignee of the event.
@@ -428,7 +428,7 @@ class Nag_Driver_kolab_wrapper_old extends Nag_Driver_kolab_wrapper {
      * @param string $category    The category of the task.
      * @param integer $alarm      The alarm associated with the task.
      * @param string $uid         A Unique Identifier for the task.
-     * @param string $parent      The parent task.
+     * @param string $parent      The parent task id.
      * @param boolean $private    Whether the task is private.
      * @param string $owner       The owner of the event.
      * @param string $assignee    The assignee of the event.
@@ -469,7 +469,7 @@ class Nag_Driver_kolab_wrapper_old extends Nag_Driver_kolab_wrapper {
      * @param integer $completed       The completion state of the task.
      * @param string $category         The category of the task.
      * @param integer $alarm           The alarm associated with the task.
-     * @param string $parent           The parent task.
+     * @param string $parent           The parent task id.
      * @param boolean $private         Whether the task is private.
      * @param string $owner            The owner of the event.
      * @param string $assignee         The assignee of the event.
@@ -775,7 +775,7 @@ class Nag_Driver_kolab_wrapper_new extends Nag_Driver_kolab_wrapper {
      * @param string $category         The category of the task.
      * @param integer $alarm           The alarm associated with the task.
      * @param string $uid              A Unique Identifier for the task.
-     * @param string $parent           The parent task.
+     * @param string $parent           The parent task id.
      * @param boolean $private         Whether the task is private.
      * @param string $owner            The owner of the event.
      * @param string $assignee         The assignee of the event.
@@ -799,7 +799,7 @@ class Nag_Driver_kolab_wrapper_new extends Nag_Driver_kolab_wrapper {
         }
 
         if ($parent) {
-            list($parent, $dummy) = $this->_splitId($parent);
+            list($parent,) = $this->_splitId($parent);
         }
 
         if ($private) {
@@ -850,7 +850,7 @@ class Nag_Driver_kolab_wrapper_new extends Nag_Driver_kolab_wrapper {
      * @param string $category         The category of the task.
      * @param integer $alarm           The alarm associated with the task.
      * @param string $uid              A Unique Identifier for the task.
-     * @param string $parent           The parent task.
+     * @param string $parent           The parent task id.
      * @param boolean $private         Whether the task is private.
      * @param string $owner            The owner of the event.
      * @param string $assignee         The assignee of the event.
@@ -881,7 +881,7 @@ class Nag_Driver_kolab_wrapper_new extends Nag_Driver_kolab_wrapper {
      * @param integer $completed       The completion state of the task.
      * @param string $category         The category of the task.
      * @param integer $alarm           The alarm associated with the task.
-     * @param string $parent           The parent task.
+     * @param string $parent           The parent task id.
      * @param boolean $private         Whether the task is private.
      * @param string $owner            The owner of the event.
      * @param string $assignee         The assignee of the event.

@@ -17,7 +17,7 @@ require_once 'Horde/MIME/Structure.php';
  * This class may add the following parameters to the URL:
  *   'smime_verify_msg' -- Do verification of S/MIME signed data.
  *
- * $Horde: imp/lib/MIME/Viewer/pkcs7.php,v 1.68.2.28 2009/05/27 15:47:08 jan Exp $
+ * $Horde: imp/lib/MIME/Viewer/pkcs7.php,v 1.68.2.29 2009-10-21 14:07:21 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -371,7 +371,7 @@ class IMP_MIME_Viewer_pkcs7 extends MIME_Viewer {
      *
      * @access private
      */
-    function _getRawSMIMEText()
+    function _getRawSMIMEText($include_headers = true)
     {
         $mime = &$this->mime_part;
 
@@ -382,25 +382,29 @@ class IMP_MIME_Viewer_pkcs7 extends MIME_Viewer {
             $imp_headers = &$this->_contents->getHeaderOb();
             $this->_headers = MIME_Structure::parseMIMEHeaders($imp_headers->getHeaderText(), true, true);
             return $this->_contents->fullMessageText();
-        } else {
-            require_once IMP_BASE . '/lib/MIME/Headers.php';
-            $header_text = $mime->getCanonicalContents();
-            $header_text = substr($header_text, 0, strpos($header_text, "\r\n\r\n"));
-            $this->_headers = MIME_Structure::parseMIMEHeaders($header_text, true, true);
-
-            $imp_headers = new IMP_Headers();
-            if (isset($this->_headers['content-type'])) {
-                $imp_headers->addHeader('Content-Type', $this->_headers['content-type']);
-            }
-            if (isset($this->_headers['from'])) {
-                $imp_headers->addHeader('From', $this->_headers['from']);
-            }
-            if (isset($this->_headers['to'])) {
-                $imp_headers->addHeader('To', $this->_headers['to']);
-            }
-
-            return $imp_headers->toString() . $mime->toCanonicalString();
         }
+
+        if (!$include_headers) {
+            return $mime->toCanonicalString();
+        }
+
+        require_once IMP_BASE . '/lib/MIME/Headers.php';
+        $header_text = $mime->getCanonicalContents();
+        $header_text = substr($header_text, 0, strpos($header_text, "\r\n\r\n"));
+        $this->_headers = MIME_Structure::parseMIMEHeaders($header_text, true, true);
+
+        $imp_headers = new IMP_Headers();
+        if (isset($this->_headers['content-type'])) {
+            $imp_headers->addHeader('Content-Type', $this->_headers['content-type']);
+        }
+        if (isset($this->_headers['from'])) {
+            $imp_headers->addHeader('From', $this->_headers['from']);
+        }
+        if (isset($this->_headers['to'])) {
+            $imp_headers->addHeader('To', $this->_headers['to']);
+        }
+
+        return $imp_headers->toString() . $mime->toCanonicalString();
     }
 
     /* Various formatting helper functions. */

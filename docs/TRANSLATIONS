@@ -2,8 +2,8 @@
  Horde Translation Guide
 =========================
 
-:Last update:   $Date: 2008/03/27 00:47:26 $
-:Revision:      $Revision: 1.8.10.4 $
+:Last update:   $Date: 2009-10-28 18:01:10 $
+:Revision:      $Revision: 1.8.10.5 $
 :Author:        Joris Braakman <jbraakman@yahoo.com>
 :Author:        Chuck Hagenbuch <chuck@horde.org>
 :Author:        Jan Schneider <jan@horde.org>
@@ -49,9 +49,10 @@ instead.
 
    ``locale -a`` should list all locales installed on your system.
 
-   On Debian not all locales may be enabled by default.  Edit
-   ``/etc/locale.gen`` and run ``locale-gen`` if you changed the list of
-   enabled locales.
+   On Debian and Ubuntu not all locales may be enabled by default. On Debian
+   edit ``/etc/locale.gen`` and run ``locale-gen`` after you changed the list
+   of enabled locales. On Ubuntu run ``locale-gen nl_NL`` for all locales that
+   you want to install.
 
 2. Do you have any .mo files?
 

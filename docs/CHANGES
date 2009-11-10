@@ -3,6 +3,10 @@ v3.3.6-cvs
 ----------
 
 [jan] SECURITY: Fix XSS in administrator section.
+[jan] Fix syntax of MSSQL scripts (Bug #8664).
+[jan] Export task alarms to Funambol clients (Request #8426).
+[jan] Fix not catching Alt key combinations for access keys on Mac OS.
+[jan] Fix Oracle SQL scripts.
 [jan] Close popup window after saving categories.
 [jan] Check quota when copying files with VFS (Valentin Vidic
       <valentin.vidic@carnet.hr>, Bug #8643).

@@ -3,7 +3,7 @@
  * The LDAP class attempts to change a user's password stored in an LDAP
  * directory service.
  *
- * $Horde: passwd/lib/Driver/ldap.php,v 1.41.2.12 2009/09/18 14:31:58 jan Exp $
+ * $Horde: passwd/lib/Driver/ldap.php,v 1.41.2.13 2009-11-09 13:31:12 jan Exp $
  *
  * Copyright 2000-2009 The Horde Project (http://www.horde.org/)
  *
@@ -24,6 +24,13 @@ class Passwd_Driver_ldap extends Passwd_Driver {
      * @var resource
      */
     var $_ds = false;
+
+    /**
+     * The user's DN.
+     *
+     * @var string
+     */
+    var $_userdn;
 
     /**
      * Constructs a new Passwd_Driver_ldap object.
@@ -127,11 +134,10 @@ class Passwd_Driver_ldap extends Passwd_Driver {
      * @param string $username      The user for which to change the password.
      * @param string $old_password  The old (current) user password.
      * @param string $new_password  The new user password to set.
-     * @param string $userdn        Will be set to the retrieved user DN.
      *
      * @return boolean  True or PEAR_Error based on success of the change.
      */
-    function changePassword($username, $old_password, $new_password, &$userdn)
+    function changePassword($username, $old_password, $new_password)
     {
         // See if the old password matches before allowing the change
         if ($old_password !== Auth::getCredential('password')) {
@@ -152,13 +158,13 @@ class Passwd_Driver_ldap extends Passwd_Driver {
 
         // Get the user's dn.
         if ($GLOBALS['conf']['hooks']['userdn']) {
-            $userdn = Horde::callHook('_passwd_hook_userdn',
-                                      array($username),
-                                      'passwd');
+            $this->_userdn = Horde::callHook('_passwd_hook_userdn',
+                                             array($username),
+                                             'passwd');
         } else {
-            $userdn = $this->_lookupdn($username, $old_password);
-            if (is_a($userdn, 'PEAR_Error')) {
-                return $userdn;
+            $this->_userdn = $this->_lookupdn($username, $old_password);
+            if (is_a($this->_userdn, 'PEAR_Error')) {
+                return $this->_userdn;
             }
         }
 
@@ -167,7 +173,7 @@ class Passwd_Driver_ldap extends Passwd_Driver {
             $result = $this->_bind($this->_params['admindn'],
                                    $this->_params['adminpw']);
         } else {
-            $result = $this->_bind($userdn, $old_password);
+            $result = $this->_bind($this->_userdn, $old_password);
         }
 
         if (is_a($result, 'PEAR_Error')) {
@@ -175,7 +181,7 @@ class Passwd_Driver_ldap extends Passwd_Driver {
         }
 
         // Get existing user information
-        $result = ldap_read($this->_ds, $userdn, 'objectClass=*');
+        $result = ldap_read($this->_ds, $this->_userdn, 'objectClass=*');
         $entry = ldap_first_entry($this->_ds, $result);
         if ($entry === false) {
             return PEAR::raiseError(_("User not found."));
@@ -212,7 +218,7 @@ class Passwd_Driver_ldap extends Passwd_Driver {
             $new_details[$this->_params['shadowlastchange']] = floor(time() / 86400);
         }
 
-        if (!@ldap_mod_replace($this->_ds, $userdn, $new_details)) {
+        if (!@ldap_mod_replace($this->_ds, $this->_userdn, $new_details)) {
             return PEAR::raiseError(ldap_error($this->_ds));
         }
 

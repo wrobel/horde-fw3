@@ -1,4 +1,4 @@
--- $Horde: kronolith/scripts/upgrades/1.1_to_2.0.mysql.sql,v 1.4.2.1 2007/12/20 14:12:58 jan Exp $
+-- $Horde: kronolith/scripts/upgrades/1.1_to_2.0.mysql.sql,v 1.4.2.2 2009-10-22 16:48:56 jan Exp $
 --
 -- You can simply execute this file in your database.
 --
@@ -18,8 +18,8 @@ CREATE INDEX kronolith_uid_idx ON kronolith_events (event_uid);
 
 
 CREATE TABLE kronolith_storage (
-    vfb_owner      VARCHAR(255) DEFAULT NULL,
-    vfb_email      VARCHAR(255) DEFAULT '' NOT NULL,
+    vfb_owner      VARCHAR(255),
+    vfb_email      VARCHAR(255) NOT NULL,
     vfb_serialized TEXT NOT NULL
 );
 

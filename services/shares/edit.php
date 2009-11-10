@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/services/shares/edit.php,v 1.26.10.19 2009/09/21 14:12:31 jan Exp $
+ * $Horde: horde/services/shares/edit.php,v 1.26.10.20 2009-11-07 13:20:19 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -71,12 +71,13 @@ case 'editform':
 
         // Process owner and owner permissions.
         $old_owner = $share->get('owner');
-        $new_owner = Auth::addHook(Util::getFormData('owner_select', Util::getFormData('owner_input', $old_owner)));
+        $new_owner_backend = Util::getFormData('owner_select', Util::getFormData('owner_input', $old_owner));
+        $new_owner = Auth::addHook($new_owner_backend);
         if ($old_owner !== $new_owner && !empty($new_owner)) {
             if ($old_owner != Auth::getAuth() && !Auth::isAdmin()) {
                 $notification->push(_("Only the owner or system administrator may change ownership or owner permissions for a share"), 'horde.error');
-            } elseif ($auth->hasCapability('list') && !$auth->exists($new_owner)) {
-                $notification->push(sprintf(_("The user \"%s\" does not exist."), Auth::removeHook($new_owner)), 'horde.error');
+            } elseif ($auth->hasCapability('list') && !$auth->exists($new_owner_backend)) {
+                $notification->push(sprintf(_("The user \"%s\" does not exist."), $new_owner_backend), 'horde.error');
             } else {
                 $share->set('owner', $new_owner);
                 $share->save();
@@ -156,16 +157,16 @@ case 'editform':
         $u_edit = Util::getFormData('u_edit');
         $u_delete = Util::getFormData('u_delete');
 
-        foreach ($u_names as $key => $user) {
+        foreach ($u_names as $key => $user_backend) {
             // Apply backend hooks
-            $user = Auth::addHook($user);
+            $user = Auth::addHook($user_backend);
             // If the user is empty, or we've already set permissions
             // via the owner_ options, don't do anything here.
             if (empty($user) || $user == $new_owner) {
                 continue;
             }
-            if ($auth->hasCapability('list') && !$auth->exists($user)) {
-                $notification->push(sprintf(_("The user \"%s\" does not exist."), Auth::removeHook($user)), 'horde.error');
+            if ($auth->hasCapability('list') && !$auth->exists($user_backend)) {
+                $notification->push(sprintf(_("The user \"%s\" does not exist."), $user_backend), 'horde.error');
                 continue;
             }
 

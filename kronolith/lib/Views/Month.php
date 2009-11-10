@@ -6,7 +6,7 @@ require_once KRONOLITH_BASE . '/lib/Day.php';
  * The Kronolith_View_Month:: class provides an API for viewing
  * months.
  *
- * $Horde: kronolith/lib/Views/Month.php,v 1.17.2.2 2008/02/01 21:47:08 chuck Exp $
+ * $Horde: kronolith/lib/Views/Month.php,v 1.17.2.3 2009-11-07 14:34:57 jan Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Jan Schneider <jan@horde.org>
@@ -126,6 +126,10 @@ class Kronolith_View_Month {
 
         $showLocation = Kronolith::viewShowLocation();
         $showTime = Kronolith::viewShowTime();
+        $day_url = Horde::applicationUrl('day.php');
+        $this_link = $this->link(0, true);
+        $new_url = Util::addParameter(Horde::applicationUrl('new.php'), 'url', $this_link);
+        $new_img = Horde::img('new_small.png', '+');
 
         foreach ($this->_currentCalendars as $id => $cal) {
             if ($sidebyside) {
@@ -159,19 +163,16 @@ class Kronolith_View_Month {
 
                 $html .= '<td class="' . $style . '" height="70" width="14%" valign="top"><div>';
 
-                $url = Util::addParameter(Horde::applicationUrl('day.php'),
-                                          'timestamp', $daystamp);
+                $url = Util::addParameter($day_url, 'timestamp', $daystamp);
                 $html .= '<a class="day" href="' . $url . '">' . date('j', $daystamp) . '</a>';
 
                 if ($addLinks) {
-                    $url = Util::addParameter(Horde::applicationUrl('new.php'),
-                                              array('timestamp' => $timestamp,
-                                                    'url' => $this->link(0, true)));
+                    $url = Util::addParameter($new_url, 'timestamp', $timestamp);
                     if ($sidebyside) {
                         $url = Util::addParameter($url, 'calendar', $id);
                     }
                     $html .= Horde::link($url, _("Create a New Event"), 'newEvent') .
-                        Horde::img('new_small.png', '+') . '</a>';
+                        $new_img . '</a>';
                 }
 
                 if ($date->dayOfWeek() == HORDE_DATE_MONDAY) {
@@ -196,7 +197,7 @@ class Kronolith_View_Month {
                                 $eventCategories[$event->getCategory()] = true;
                             }
                             $html .= '<div class="month-eventbox category' . md5($event->getCategory()) . '">'
-                                . $event->getLink($timestamp, true, $this->link(0, true));
+                                . $event->getLink($timestamp, true, $this_link);
                             if ($showTime) {
                                 $html .= '<div class="event-time">' . htmlspecialchars($event->getTimeRange()) . '</div>';
                             }

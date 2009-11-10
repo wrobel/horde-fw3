@@ -1,5 +1,5 @@
 /**
- * $Horde: horde/themes/silver/screen.css,v 1.19.2.5 2008/06/12 12:37:10 jan Exp $
+ * $Horde: horde/themes/silver/screen.css,v 1.19.2.6 2009-11-09 14:37:36 jan Exp $
  */
 
 body {
@@ -46,6 +46,8 @@ a.widget {
 }
 .smallheader a {
     color: #333;
+    background: none;
+    border: none;
 }
 .control {
     background: #eee;

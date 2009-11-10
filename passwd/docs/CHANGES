@@ -1,6 +1,13 @@
 ----------
-v3.1.2-cvs
+v3.1.3-cvs
 ----------
+
+[jan] Fix PHP error when changing passwords with LDAP driver (Bug #8686).
+
+
+------
+v3.1.2
+------
 
 [jan] Enable output compression (horde@albasoft.com, Bug #8649).
 [jan] Add Croatian translation (Valentin Vidic <valentin.vidic@carnet.hr>).

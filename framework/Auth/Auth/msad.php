@@ -1,6 +1,10 @@
 <?php
 /**
+<<<<<<< msad.php
  * $Horde: framework/Auth/Auth/msad.php,v 1.7.2.4 2009/10/26 11:58:59 jan Exp $
+=======
+ * $Horde: framework/Auth/Auth/msad.php,v 1.7.2.4 2009-10-26 11:58:59 jan Exp $
+>>>>>>> 1.7.2.4
  *
  * @package Horde_Auth
  */

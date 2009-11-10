@@ -2,7 +2,11 @@
 /**
  * @package SyncML
  *
+<<<<<<< Sync4j.php
  * $Horde: framework/SyncML/SyncML/Device/Sync4j.php,v 1.8.2.34 2009/10/26 18:06:48 jan Exp $
+=======
+ * $Horde: framework/SyncML/SyncML/Device/Sync4j.php,v 1.8.2.34 2009-10-26 18:06:48 jan Exp $
+>>>>>>> 1.8.2.34
  */
 
 /** Horde_Date */

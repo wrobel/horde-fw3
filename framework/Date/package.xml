@@ -30,7 +30,10 @@ http://pear.php.net/dtd/package-2.0.xsd">
   <api>beta</api>
  </stability>
  <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
- <notes>* Added Horde_Date_Recurrence class.
+ <notes>* Fixed recurring weekly events with fixed number of occurences
+  but multiple incidences per week (kolab/issue3846)
+* Fixed recurring weekly events with intervals > 1 (Bug #8546)
+* Added Horde_Date_Recurrence class.
 * Add PHP 4 fallback for mktime and dates outside of 1970-2038.
 * Correctly match dates with T/Z splitters (Request #4267).
 * Added weekOfMonth() (Request #5229).

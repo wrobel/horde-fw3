@@ -29,7 +29,7 @@
  *
  * The table structure can be created by the scripts/sql/nag.sql script.
  *
- * $Horde: nag/lib/Driver/sql.php,v 1.60.2.23 2009/02/17 18:43:18 chuck Exp $
+ * $Horde: nag/lib/Driver/sql.php,v 1.60.2.24 2009-10-22 14:24:20 jan Exp $
  *
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.
@@ -154,7 +154,7 @@ class Nag_Driver_sql extends Nag_Driver {
      * @param string $category    The category of the task.
      * @param integer $completed  The alarm associated with the task.
      * @param string $uid         A Unique Identifier for the task.
-     * @param string $parent      The parent task.
+     * @param string $parent      The parent task id.
      * @param boolean $private    Whether the task is private.
      * @param string $owner       The owner of the event.
      * @param string $assignee    The assignee of the event.
@@ -193,7 +193,7 @@ class Nag_Driver_sql extends Nag_Driver {
                         String::convertCharset($category, NLS::getCharset(), $this->_params['charset']),
                         (int)$alarm,
                         (int)$private,
-                        String::convertCharset($parent, NLS::getCharset(), $this->_params['charset']));
+                        $parent);
 
         /* Log the query at a DEBUG log level. */
         Horde::logMessage(sprintf('Nag_Driver_sql::_add(): %s', $query),
@@ -224,7 +224,7 @@ class Nag_Driver_sql extends Nag_Driver {
      * @param integer $completed       The completion state of the task.
      * @param string $category         The category of the task.
      * @param integer $alarm           The alarm associated with the task.
-     * @param string $parent           The parent task.
+     * @param string $parent           The parent task id.
      * @param boolean $private         Whether the task is private.
      * @param string $owner            The owner of the event.
      * @param string $assignee         The assignee of the event.
@@ -265,7 +265,7 @@ class Nag_Driver_sql extends Nag_Driver {
                         (int)$completed_date,
                         String::convertCharset($category, NLS::getCharset(), $this->_params['charset']),
                         (int)$alarm,
-                        String::convertCharset($parent, NLS::getCharset(), $this->_params['charset']),
+                        $parent,
                         (int)$private,
                         $this->_tasklist,
                         $taskId);

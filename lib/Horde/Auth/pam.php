@@ -1,1 +1,0 @@
-../../../framework/Auth/Auth/pam.php

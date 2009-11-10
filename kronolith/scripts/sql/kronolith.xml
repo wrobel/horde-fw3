@@ -292,7 +292,7 @@
    </field>
 
    <index>
-    <name>kronolith_shares_share_name</name>
+    <name>kronolith_share_name</name>
     <field>
      <name>share_name</name>
      <sorting>ascending</sorting>
@@ -300,7 +300,7 @@
    </index>
 
    <index>
-    <name>kronolith_shares_share_owner</name>
+    <name>kronolith_share_owner</name>
     <field>
      <name>share_owner</name>
      <sorting>ascending</sorting>
@@ -308,7 +308,7 @@
    </index>
 
    <index>
-    <name>kronolith_shares_perm_creator</name>
+    <name>kronolith_perm_creator</name>
     <field>
      <name>perm_creator</name>
      <sorting>ascending</sorting>
@@ -316,7 +316,7 @@
    </index>
 
    <index>
-    <name>kronolith_shares_perm_default</name>
+    <name>kronolith_perm_default</name>
     <field>
      <name>perm_default</name>
      <sorting>ascending</sorting>
@@ -324,7 +324,7 @@
    </index>
 
    <index>
-    <name>kronolith_shares_perm_guest</name>
+    <name>kronolith_perm_guest</name>
     <field>
      <name>perm_guest</name>
      <sorting>ascending</sorting>
@@ -375,7 +375,7 @@
    </field>
 
    <index>
-    <name>kronolith_shares_groups_share_id</name>
+    <name>kronolith_groups_share_id</name>
     <field>
      <name>share_id</name>
      <sorting>ascending</sorting>
@@ -383,7 +383,7 @@
    </index>
 
    <index>
-    <name>kronolith_shares_groups_group_uid</name>
+    <name>kronolith_groups_group_uid</name>
     <field>
      <name>group_uid</name>
      <sorting>ascending</sorting>
@@ -391,7 +391,7 @@
    </index>
 
    <index>
-    <name>kronolith_shares_groups_perm</name>
+    <name>kronolith_groups_perm</name>
     <field>
      <name>perm</name>
      <sorting>ascending</sorting>
@@ -433,7 +433,7 @@
    </field>
 
    <index>
-    <name>kronolith_shares_users_share_id</name>
+    <name>kronolith_users_share_id</name>
     <field>
      <name>share_id</name>
      <sorting>ascending</sorting>
@@ -441,7 +441,7 @@
    </index>
 
    <index>
-    <name>kronolith_shares_users_user_uid</name>
+    <name>kronolith_users_user_uid</name>
     <field>
      <name>user_uid</name>
      <sorting>ascending</sorting>
@@ -449,7 +449,7 @@
    </index>
 
    <index>
-    <name>kronolith_shares_users_perm</name>
+    <name>kronolith_users_perm</name>
     <field>
      <name>perm</name>
      <sorting>ascending</sorting>

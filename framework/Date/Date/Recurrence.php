@@ -2,7 +2,7 @@
 /**
  * This file contains the Horde_Date_Recurrence class and according constants.
  *
- * $Horde: framework/Date/Date/Recurrence.php,v 1.7.2.12 2009/08/21 15:37:55 jan Exp $
+ * $Horde: framework/Date/Date/Recurrence.php,v 1.7.2.13 2009-11-10 10:24:58 wrobel Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *
@@ -374,18 +374,65 @@ class Horde_Date_Recurrence {
 
             $diff = Date_Calc::dateDiff($start_week->mday, $start_week->month, $start_week->year,
                                         $after_week->mday, $after_week->month, $after_week->year);
-            $recur = $diff + ($diff % ($this->recurInterval * 7));
-            if ($this->recurCount &&
-                ceil($recur / 7) / $this->recurInterval >= $this->recurCount) {
-                return false;
+            $interval = $this->recurInterval * 7;
+            $repeats = floor($diff / $interval);
+            if ($diff % $interval < 7) {
+                $recur = $diff;
+            } else {
+                /**
+                 * If the after_week is not in the first week interval the
+                 * search needs to skip ahead a complete interval. The way it is
+                 * calculated here means that an event that occurs every second
+                 * week on Monday and Wednesday with the event actually starting
+                 * on Tuesday or Wednesday will only have one incidence in the
+                 * first week.
+                 */
+                $recur = $interval * ($repeats + 1);
             }
+
+            if ($this->hasRecurCount()) {
+                $recurrences = 0;
+                /**
+                 * Correct the number of recurrences by the number of events
+                 * that lay between the start of the start week and the
+                 * recurrence start.
+                 */
+                $next = new Horde_Date($start_week);
+                while ($next->compareDateTime($this->start) < 0) {
+                    if ($this->recurOnDay((int)pow(2, $next->dayOfWeek()))) {
+                        $recurrences--;
+                    }
+                    ++$next->mday;
+                }
+                if ($repeats > 0) {
+                    $weekdays = $this->recurData;
+                    $total_recurrences_per_week = 0;
+                    while ($weekdays > 0) {
+                        if ($weekdays % 2) {
+                            $total_recurrences_per_week++;
+                        }
+                        $weekdays = ($weekdays - ($weekdays % 2)) / 2;
+                    }
+                    $recurrences += $total_recurrences_per_week * $repeats;
+                }
+            }
+
             $next = $start_week;
-            list($next->mday, $next->month, $next->year) = explode('/', Date_Calc::daysToDate(Date_Calc::dateToDays($next->mday, $next->month, $next->year) + $recur, '%e/%m/%Y'));
+            list($next->mday, $next->month, $next->year) = explode('/', Date_Calc::daysToDate(Date_Calc::dateToDays($next->mday, $next->month, $next->year) + $recur - 1, '%e/%m/%Y'));
             $next = new Horde_Date($next);
             while ($next->compareDateTime($after) < 0 &&
                    $next->compareDateTime($after_week_end) < 0) {
                 ++$next->mday;
                 $next->correct();
+                if ($this->hasRecurCount()
+                    && $next->compareDateTime($after) < 0
+                    && $this->recurOnDay((int)pow(2, $next->dayOfWeek()))) {
+                    $recurrences++;
+                }
+            }
+            if ($this->hasRecurCount() &&
+                $recurrences >= $this->recurCount) {
+                return false;
             }
             if (!$this->hasRecurEnd() ||
                 $next->compareDateTime($this->recurEnd) <= 0) {

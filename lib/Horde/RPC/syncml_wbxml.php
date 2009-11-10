@@ -1,1 +1,0 @@
-../../../framework/RPC/RPC/syncml_wbxml.php

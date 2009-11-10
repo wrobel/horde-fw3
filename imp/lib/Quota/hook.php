@@ -10,7 +10,7 @@
  * driver supports the following parameters:
  *   'params'       => Array of parameters to pass to the quota function.
  *
- * $Horde: imp/lib/Quota/hook.php,v 1.1.2.4 2009/01/06 15:24:11 jan Exp $
+ * $Horde: imp/lib/Quota/hook.php,v 1.1.2.5 2009-11-06 22:22:17 slusarz Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -32,7 +32,7 @@ class IMP_Quota_hook extends IMP_Quota {
      */
     function getQuota()
     {
-        $quota = Horde::callHook('_imp_hook_quota', $this->_params, 'imp');
+        $quota = Horde::callHook('_imp_hook_quota', array($this->_params), 'imp');
         if (is_a($quota, 'PEAR_Error')) {
             return $quota;
         }

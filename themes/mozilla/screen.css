@@ -1,5 +1,5 @@
 /**
- * $Horde: horde/themes/mozilla/screen.css,v 1.7.6.6 2007/12/20 15:04:32 jan Exp $
+ * $Horde: horde/themes/mozilla/screen.css,v 1.7.6.7 2009-11-09 20:59:57 jan Exp $
  */
 
 body {
@@ -13,6 +13,9 @@ a.widget {
 }
 .header {
     background: #c7d0d9 url("graphics/header.png") repeat-x;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 a.header {
     background-image: none;

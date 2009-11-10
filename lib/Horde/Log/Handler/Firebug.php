@@ -1,1 +1,0 @@
-../../../../framework/Log/lib/Horde/Log/Handler/Firebug.php

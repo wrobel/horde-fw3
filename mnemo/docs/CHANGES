@@ -2,7 +2,7 @@
 v2.2.3-cvs
 ----------
 
-[jan] Add Oracle-specific upgrade scripts.
+[jan] Add and fix Oracle SQL scripts.
 [jan] Add Croatian translation (Matej Vela <matej.vela@carnet.hr>).
 
 

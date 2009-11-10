@@ -2,7 +2,7 @@
 /**
  * Ingo_Driver_vfs:: Implements an Ingo storage driver using Horde VFS.
  *
- * $Horde: ingo/lib/Driver/vfs.php,v 1.12.10.16 2009/01/06 15:24:35 jan Exp $
+ * $Horde: ingo/lib/Driver/vfs.php,v 1.12.10.17 2009-11-01 02:09:44 chuck Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -105,7 +105,7 @@ class Ingo_Driver_vfs extends Ingo_Driver {
         if (is_a($result, 'PEAR_Error')) {
             return $result;
         }
-        return $this->_vfs->read('', $this->_params['vfs_path'] . '/' . $this->_params['filename']);
+        return $this->_vfs->read($this->_params['vfs_path'], $this->_params['filename']);
     }
 
     /**

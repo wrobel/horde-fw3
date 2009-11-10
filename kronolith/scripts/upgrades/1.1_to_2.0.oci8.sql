@@ -1,4 +1,4 @@
--- $Horde: kronolith/scripts/upgrades/1.1_to_2.0.oci8.sql,v 1.1.2.3 2009/10/19 10:54:36 jan Exp $
+-- $Horde: kronolith/scripts/upgrades/1.1_to_2.0.oci8.sql,v 1.1.2.4 2009-10-22 16:48:56 jan Exp $
 
 ALTER TABLE kronolith_events ADD COLUMN event_id_new VARCHAR2(32);
 UPDATE kronolith_events SET event_id_new = event_id;
@@ -16,8 +16,8 @@ CREATE INDEX kronolith_uid_idx ON kronolith_events (event_uid);
 
 
 CREATE TABLE kronolith_storage (
-    vfb_owner      VARCHAR2(255) DEFAULT NULL,
-    vfb_email      VARCHAR2(255) DEFAULT '' NOT NULL,
+    vfb_owner      VARCHAR2(255),
+    vfb_email      VARCHAR2(255) NOT NULL,
     vfb_serialized VARCHAR2(4000) NOT NULL
 );
 

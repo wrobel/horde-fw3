@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2009-09-12 10:30+0200\n"
+"POT-Creation-Date: 2009-11-06 19:12+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -391,7 +391,7 @@ msgstr ""
 
 #: image.php:304 image.php:728 faces/custom.php:35 faces/delete.php:29
 #: faces/name.php:28 lib/Faces.php:540 lib/Faces.php:638
-#: lib/XRequest/EditFaces.php:134
+#: lib/XRequest/EditFaces.php:141
 msgid "Access denied editing the photo."
 msgstr ""
 
@@ -427,7 +427,7 @@ msgstr ""
 
 #: lib/Ansel.php:1709 lib/Views/Gallery.php:154 lib/Block/gallery.php:152
 #: lib/Block/recent_comments.php:154 lib/Block/recently_added.php:197
-#: lib/Block/recently_added_geodata.php:175
+#: lib/Block/recently_added_geodata.php:176
 msgid "Access denied viewing this gallery."
 msgstr ""
 
@@ -1557,7 +1557,7 @@ msgid "Gallery Tags"
 msgstr ""
 
 #: lib/Block/gallery.php:148 lib/Block/recent_comments.php:151
-#: lib/Block/recently_added.php:194 lib/Block/recently_added_geodata.php:172
+#: lib/Block/recently_added.php:194 lib/Block/recently_added_geodata.php:173
 msgid "Gallery does not exist."
 msgstr ""
 
@@ -2002,7 +2002,7 @@ msgstr ""
 
 #: templates/faces/index.inc:14 templates/faces/search.inc:18
 #: templates/faces/faces.inc:10 faces/image.php:52 faces/search/image.php:76
-#: lib/XRequest/EditFaces.php:120 lib/Widget/GalleryFaces.php:59
+#: lib/XRequest/EditFaces.php:124 lib/Widget/GalleryFaces.php:59
 #: lib/Widget/ImageFaces.php:97
 msgid "No faces found"
 msgstr ""
@@ -3490,7 +3490,7 @@ msgstr ""
 msgid "You are not allowed to edit these photos."
 msgstr ""
 
-#: lib/XRequest/EditFaces.php:159
+#: lib/XRequest/EditFaces.php:171
 msgid "You are not allowed to edit this photo."
 msgstr ""
 

@@ -3,7 +3,7 @@
  * Kronolith_Driver defines an API for implementing storage backends for
  * Kronolith.
  *
- * $Horde: kronolith/lib/Driver.php,v 1.116.2.83 2009/04/29 14:57:10 jan Exp $
+ * $Horde: kronolith/lib/Driver.php,v 1.116.2.84 2009-11-07 14:34:57 jan Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Jan Schneider <jan@horde.org>
@@ -2226,13 +2226,16 @@ class Kronolith_Event {
             $from_url = Horde::selfUrl(true, false, true);
         }
 
-        $link = '';
         $event_title = $this->getTitle();
+        $view_url = $this->getViewUrl(array('timestamp' => $timestamp, 'url' => $from_url), $full);
+        $read_permission = $this->hasPermission(PERMS_READ);
+
+        $link = '';
         if (isset($this->external)) {
             $link = $registry->link($this->external . '/show', $this->external_params);
             $link = Horde::linkTooltip(Horde::url($link), '', 'event-tentative', '', '', String::wrap($this->description));
-        } elseif (isset($this->eventID) && $this->hasPermission(PERMS_READ)) {
-            $link = Horde::linkTooltip($this->getViewUrl(array('timestamp' => $timestamp, 'url' => $from_url), $full),
+        } elseif (isset($this->eventID) && $read_permission) {
+            $link = Horde::linkTooltip($view_url,
                                        $event_title,
                                        $this->getStatusClass(), '', '',
                                        $this->getTooltip());
@@ -2240,9 +2243,7 @@ class Kronolith_Event {
 
         $link .= @htmlspecialchars($event_title, ENT_QUOTES, NLS::getCharset());
 
-        if ($this->hasPermission(PERMS_READ) &&
-            (isset($this->eventID) ||
-             isset($this->external))) {
+        if ($read_permission && (isset($this->eventID) || isset($this->external))) {
             $link .= '</a>';
         }
 
@@ -2250,6 +2251,7 @@ class Kronolith_Event {
             $icon_color = isset($GLOBALS['cManager_fgColors'][$this->category]) ?
                 ($GLOBALS['cManager_fgColors'][$this->category] == '#000' ? '000' : 'fff') :
                 ($GLOBALS['cManager_fgColors']['_default_'] == '#000' ? '000' : 'fff');
+            $image_dir = Horde::url($registry->getImageDir(), true, -1);
 
             $status = '';
             if ($this->alarm) {
@@ -2277,7 +2279,7 @@ class Kronolith_Event {
                 $status .= Horde::img('alarm-' . $icon_color . '.png', $title,
                                       array('title' => $title,
                                             'class' => 'iconAlarm'),
-                                      Horde::url($registry->getImageDir(), true, -1));
+                                      $image_dir);
             }
 
             if ($this->recurs()) {
@@ -2285,7 +2287,7 @@ class Kronolith_Event {
                 $status .= Horde::img('recur-' . $icon_color . '.png', $title,
                                       array('title' => $title,
                                             'class' => 'iconRecur'),
-                                      Horde::url($registry->getImageDir(), true, -1));
+                                      $image_dir);
             }
 
             if ($this->isPrivate()) {
@@ -2293,7 +2295,7 @@ class Kronolith_Event {
                 $status .= Horde::img('private-' . $icon_color . '.png', $title,
                                       array('title' => $title,
                                             'class' => 'iconPrivate'),
-                                      Horde::url($registry->getImageDir(), true, -1));
+                                      $image_dir);
             }
 
             if (!empty($this->attendees)) {
@@ -2303,7 +2305,7 @@ class Kronolith_Event {
                 $status .= Horde::img('attendees.png', $title,
                                       array('title' => $title,
                                             'class' => 'iconPeople'),
-                                      Horde::url($registry->getImageDir(), true, -1));
+                                      $image_dir);
             }
 
             if (!empty($status)) {
@@ -2318,17 +2320,15 @@ class Kronolith_Event {
             $delete = '';
             if ((!$this->isPrivate() || $this->getCreatorId() == Auth::getAuth())
                 && $this->hasPermission(PERMS_EDIT)) {
-                $editurl = $this->getEditUrl(array('timestamp' => $timestamp,
-                                                   'url' => $from_url));
+                $editurl = Util::addParameter($view_url, 'view', 'EditEvent', !$full);
                 $edit = Horde::link($editurl, sprintf(_("Edit %s"), $event_title), 'iconEdit')
-                    . Horde::img('edit-' . $icon_color . '.png', _("Edit"), '', Horde::url($registry->getImageDir(), true, -1))
+                    . Horde::img('edit-' . $icon_color . '.png', _("Edit"), '', $image_dir)
                     . '</a>';
             }
             if ($this->hasPermission(PERMS_DELETE)) {
-                $delurl = $this->getDeleteUrl(array('timestamp' => $timestamp,
-                                                    'url' => $from_url));
+                $delurl = Util::addParameter($view_url, 'view', 'DeleteEvent', !$full);
                 $delete = Horde::link($delurl, sprintf(_("Delete %s"), $event_title), 'iconDelete')
-                    . Horde::img('delete-' . $icon_color . '.png', _("Delete"), '', Horde::url($registry->getImageDir(), true, -1))
+                    . Horde::img('delete-' . $icon_color . '.png', _("Delete"), '', $image_dir)
                     . '</a>';
             }
 

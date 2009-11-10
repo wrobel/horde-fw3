@@ -1,1 +1,0 @@
-../../../../../framework/MIME/MIME/Viewer/ooo/style_inlined.xsl

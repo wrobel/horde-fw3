@@ -1,4 +1,4 @@
--- $Horde: horde/scripts/upgrades/3.1_to_3.2.oci8.sql,v 1.2.2.15 2009/10/19 10:54:34 jan Exp $
+-- $Horde: horde/scripts/upgrades/3.1_to_3.2.oci8.sql,v 1.2.2.16 2009-10-20 21:04:22 jan Exp $
 
 CREATE TABLE horde_syncml_map (
     syncml_syncpartner VARCHAR2(255) NOT NULL,
@@ -96,6 +96,6 @@ CREATE TABLE horde_locks (
     lock_update_timestamp    NUMBER(16) NOT NULL,
     lock_expiry_timestamp    NUMBER(16) NOT NULL,
     lock_type                NUMBER(8) NOT NULL,
-
+--
     PRIMARY KEY (lock_id)
 );

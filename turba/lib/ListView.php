@@ -3,7 +3,7 @@
  * The Turba_ListView:: class provides an interface for objects that
  * visualize Turba_lists.
  *
- * $Horde: turba/lib/ListView.php,v 1.17.10.23 2009/01/19 15:07:25 mrubinsk Exp $
+ * $Horde: turba/lib/ListView.php,v 1.17.10.24 2009-10-26 17:34:16 jan Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Jon Parise <jon@csh.rit.edu>
@@ -460,16 +460,19 @@ class Turba_ListView {
 class Turba_ListView_AlphaFilter {
 
     var $_alpha;
+    var $_format;
 
     function Turba_ListView_AlphaFilter($alpha)
     {
         $this->_alpha = String::lower($alpha);
+        $this->_format = $GLOBALS['prefs']->getValue('name_sort');
     }
 
     function skip(&$ob)
     {
-        $name = Turba::formatName($ob);
-        if ($this->_alpha != '*' && String::lower(substr($name, 0, 1)) != $this->_alpha) {
+        $name = Turba::formatName($ob, $this->_format);
+        if ($this->_alpha != '*' &&
+            String::lower(substr($name, 0, 1)) != $this->_alpha) {
             return true;
         }
         return false;

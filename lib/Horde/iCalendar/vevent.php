@@ -1,1 +1,0 @@
-../../../framework/iCalendar/iCalendar/vevent.php

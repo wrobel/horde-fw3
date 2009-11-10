@@ -3,7 +3,7 @@
  * Ansel_XRequest_EditFaces:: class for performing Ajax discovery and editing
  * of image faces
  *
- * $Horde: ansel/lib/XRequest/EditFaces.php,v 1.14.2.2 2009/01/17 16:50:29 mrubinsk Exp $
+ * $Horde: ansel/lib/XRequest/EditFaces.php,v 1.14.2.5 2009-10-28 18:58:55 mrubinsk Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -42,19 +42,23 @@ class Ansel_XRequest_EditFaces extends Ansel_XRequest {
         $js[] = <<<EOT
             function deleteFace(image_id, face_id)
             {
-                url = '$url/action=delete/image=' + image_id + '/face=' + face_id;
-                new Ajax.Request(url);
+                var url = '$url/action=delete';
+                var params = {'image': image_id, face: face_id};
+                new Ajax.Request(url, {
+                    'method': 'post',
+                    'parameters': params});
                 \$('face' + face_id).remove();
             }
             function setFaceName(image_id, face_id)
             {
-                url = '$url/action=setname/face=' + face_id + '/image=' + image_id + '/facename=' + encodeURIComponent(\$F('facename' + face_id));
-                new Ajax.Updater({success: 'face' + face_id}, url);
+                var url = '$url/action=setname';
+                var params = {face: face_id, 'image': image_id, facename: encodeURIComponentencodeURIComponent(\$F('facename' + face_id))};
+                new Ajax.Updater({success: 'face' + face_id}, url, {'method': 'post'});
             }
             function doFaceEdit(image_id)
             {
                 $('faces_widget_content').update('$loading_text');
-                url = '$url/image=' + image_id + '/action=process';
+                var url = '$url/image=' + image_id + '/action=process';
                 new Ajax.Updater({success:'faces_widget_content'}, url);
             }
 EOT;
@@ -123,32 +127,40 @@ EOT;
 
                 case 'delete':
                     // delete - deletes a single face from an image.
-                    $face_id = (int)$args['face'];
+                    $face_id = (int)Util::getPost('face');
+                    $image_id = (int)Util::getPost('image');
                     $image = &$ansel_storage->getImage($image_id);
                     if (is_a($image, 'PEAR_Error')) {
+                        Horde::logMessage($image->getMessage(), __FILE__, __LINE__, PEAR_LOG_ERR);
                         die($image->getMessage());
                     }
 
                     $gallery = &$ansel_storage->getGallery($image->gallery);
                     if (!$gallery->hasPermission(Auth::getAuth(), PERMS_EDIT)) {
+                        Horde::logMessage('Access denied editing the photo', __FILE__, __LINE__, PEAR_LOG_ERR);
                         die(_("Access denied editing the photo."));
                     }
 
                     $faces = Ansel_Faces::factory();
                     if (is_a($faces, 'PEAR_Error')) {
+                         Horde::logMessage($faces->getMessage(), __FILE__, __LINE__, PEAR_LOG_ERR);
                         die($faces->getMessage());
                     }
 
                     $result = $faces->delete($image, $face_id);
                     if (is_a($result, 'PEAR_Error')) {
+                        Horde::logMessage($result->getMessage(), __FILE__, __LINE__, PEAR_LOG_ERR);
                         die($result->getMessage());
                     }
+
+                    echo 1;
                     break;
 
                 case 'setname':
                     // setname - sets the name of a single image.
-                    $face_id = (int)$args['face'];
-                    $name = $args['facename'];
+                    $face_id = (int)Util::getPost('face');
+                    $name = Util::getPost('facename');
+                    $image_id = Util::getPost('image');
                     $image = &$ansel_storage->getImage($image_id);
                     if (is_a($image, 'PEAR_Error')) {
                         die($image->getMessage());
