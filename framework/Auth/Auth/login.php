@@ -10,7 +10,7 @@
  *               DEFAULT: /bin/su</pre>
  *
  *
- * $Horde: framework/Auth/Auth/login.php,v 1.3.10.13 2009/01/06 15:22:49 jan Exp $
+ * $Horde: framework/Auth/Auth/login.php,v 1.3.10.13 2009-01-06 15:22:49 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

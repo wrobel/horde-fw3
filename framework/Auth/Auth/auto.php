@@ -14,7 +14,7 @@
  *                  cookie.</pre>
  *
  *
- * $Horde: framework/Auth/Auth/auto.php,v 1.12.4.13 2009/01/06 15:22:49 jan Exp $
+ * $Horde: framework/Auth/Auth/auto.php,v 1.12.4.13 2009-01-06 15:22:49 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

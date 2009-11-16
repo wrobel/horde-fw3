@@ -19,7 +19,7 @@
  *   location exist. If so, the replace should replace this value rather than
  *   create a new one as a duplicate.
  *
- * $Horde: framework/SyncML/SyncML.php,v 1.21.10.19 2009/04/05 20:24:42 jan Exp $
+ * $Horde: framework/SyncML/SyncML.php,v 1.21.10.19 2009-04-05 20:24:42 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

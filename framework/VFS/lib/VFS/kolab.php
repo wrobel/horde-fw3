@@ -6,7 +6,7 @@ require_once 'Horde/Kolab/Storage/List.php';
 /**
  * VFS implementation for a Kolab IMAP server.
  *
- * $Horde: framework/VFS/lib/VFS/kolab.php,v 1.1.2.3 2009/01/06 15:23:47 jan Exp $
+ * $Horde: framework/VFS/lib/VFS/kolab.php,v 1.1.2.3 2009-01-06 15:23:47 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

@@ -7,7 +7,7 @@ require_once 'SyncML/Backend.php';
  * The Horde_RPC_syncml class provides a SyncML implementation of the Horde
  * RPC system.
  *
- * $Horde: framework/RPC/RPC/syncml.php,v 1.18.10.15 2009/01/06 15:23:32 jan Exp $
+ * $Horde: framework/RPC/RPC/syncml.php,v 1.18.10.15 2009-01-06 15:23:32 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

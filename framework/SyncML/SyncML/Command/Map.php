@@ -9,7 +9,7 @@ require_once 'SyncML/Command.php';
  *
  * The Map command is used to update identifier maps.
  *
- * $Horde: framework/SyncML/SyncML/Command/Map.php,v 1.1.10.13 2009/10/11 17:20:36 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Command/Map.php,v 1.1.10.13 2009-10-11 17:20:36 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

@@ -10,7 +10,7 @@
  *               DEFAULT: 21</pre>
  *
  *
- * $Horde: framework/Auth/Auth/ftp.php,v 1.23.12.12 2009/01/06 15:22:49 jan Exp $
+ * $Horde: framework/Auth/Auth/ftp.php,v 1.23.12.12 2009-01-06 15:22:49 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

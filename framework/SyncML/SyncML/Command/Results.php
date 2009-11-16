@@ -12,7 +12,7 @@ require_once 'SyncML/Command/Put.php';
  * SyncML_Command_Put. The only results we get is the same DevInf as for the
  * Put command.
  *
- * $Horde: framework/SyncML/SyncML/Command/Results.php,v 1.11.10.11 2009/01/06 15:23:38 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Command/Results.php,v 1.11.10.11 2009-01-06 15:23:38 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

@@ -7,7 +7,7 @@ require_once 'MDB2.php';
  * new users sign themselves up into the horde installation, depending
  * on how the admin has configured Horde.
  *
- * $Horde: framework/Auth/Auth/Signup/sql.php,v 1.3.2.5 2009/06/15 15:23:29 jan Exp $
+ * $Horde: framework/Auth/Auth/Signup/sql.php,v 1.3.2.5 2009-06-15 15:23:29 jan Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

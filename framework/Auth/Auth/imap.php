@@ -32,7 +32,7 @@
  *   $conf['auth']['params']['protocol'] = 'imap/notls/novalidate-cert';</pre>
  *
  *
- * $Horde: framework/Auth/Auth/imap.php,v 1.28.10.15 2009/01/06 15:22:49 jan Exp $
+ * $Horde: framework/Auth/Auth/imap.php,v 1.28.10.15 2009-01-06 15:22:49 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/SyncML/SyncML/Constants.php,v 1.1.2.10 2009/01/06 15:23:37 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Constants.php,v 1.1.2.10 2009-01-06 15:23:37 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

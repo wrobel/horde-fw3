@@ -52,7 +52,7 @@
  *       }
  *   }</pre>
  *
- * $Horde: framework/Auth/Auth/cyrus.php,v 1.15.10.19 2009/01/06 15:22:49 jan Exp $
+ * $Horde: framework/Auth/Auth/cyrus.php,v 1.15.10.19 2009-01-06 15:22:49 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

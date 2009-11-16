@@ -10,7 +10,7 @@
  * or sent by the client, the Source/LocURI of the device request might be
  * sufficent to identify it.
  *
- * $Horde: framework/SyncML/SyncML/Device.php,v 1.7.2.16 2009/01/06 15:23:37 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Device.php,v 1.7.2.16 2009-01-06 15:23:37 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

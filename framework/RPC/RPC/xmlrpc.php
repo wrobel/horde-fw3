@@ -3,7 +3,7 @@
  * The Horde_RPC_xmlrpc class provides an XMLRPC implementation of the
  * Horde RPC system.
  *
- * $Horde: framework/RPC/RPC/xmlrpc.php,v 1.9.10.12 2009/01/06 15:23:32 jan Exp $
+ * $Horde: framework/RPC/RPC/xmlrpc.php,v 1.9.10.12 2009-01-06 15:23:32 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

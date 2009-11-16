@@ -2,7 +2,7 @@
 /**
  * All tests for the Horde_Auth:: package.
  *
- * $Horde: framework/Auth/tests/Horde/Auth/AllTests.php,v 1.1.2.2 2009/01/06 15:22:52 jan Exp $
+ * $Horde: framework/Auth/tests/Horde/Auth/AllTests.php,v 1.1.2.2 2009-01-06 15:22:52 jan Exp $
  *
  * PHP version 5
  *
@@ -27,7 +27,7 @@ require_once 'PHPUnit/TextUI/TestRunner.php';
 /**
  * Combine the tests for this package.
  *
- * $Horde: framework/Auth/tests/Horde/Auth/AllTests.php,v 1.1.2.2 2009/01/06 15:22:52 jan Exp $
+ * $Horde: framework/Auth/tests/Horde/Auth/AllTests.php,v 1.1.2.2 2009-01-06 15:22:52 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

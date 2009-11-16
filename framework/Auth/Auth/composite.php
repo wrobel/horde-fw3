@@ -8,7 +8,7 @@
  *   None.</pre>
  *
  *
- * $Horde: framework/Auth/Auth/composite.php,v 1.26.10.15 2009/07/27 12:19:56 jan Exp $
+ * $Horde: framework/Auth/Auth/composite.php,v 1.26.10.15 2009-07-27 12:19:56 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

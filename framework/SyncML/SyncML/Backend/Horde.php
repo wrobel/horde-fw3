@@ -7,7 +7,7 @@
  * See the enclosed file COPYING for license information (LGPL). If you did not
  * receive this file, see http://www.fsf.org/copyleft/lgpl.html.
  *
- * $Horde: framework/SyncML/SyncML/Backend/Horde.php,v 1.8.2.18 2009/07/20 15:42:26 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Backend/Horde.php,v 1.8.2.18 2009-07-20 15:42:26 jan Exp $
  *
  * @author  Karsten Fourmont <karsten@horde.org>
  * @package SyncML

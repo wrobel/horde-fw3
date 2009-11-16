@@ -122,7 +122,7 @@ require_once 'Horde/IMAP/Admin.php';
  * );
  * </pre>
  *
- * $Horde: framework/Auth/Auth/cyrsql.php,v 1.33.10.19 2009/01/06 15:22:49 jan Exp $
+ * $Horde: framework/Auth/Auth/cyrsql.php,v 1.33.10.19 2009-01-06 15:22:49 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

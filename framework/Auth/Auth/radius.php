@@ -40,7 +40,7 @@
  *              DEFAULT: 3 seconds</pre>
  *
  *
- * $Horde: framework/Auth/Auth/radius.php,v 1.24.8.13 2009/01/06 15:22:50 jan Exp $
+ * $Horde: framework/Auth/Auth/radius.php,v 1.24.8.13 2009-01-06 15:22:50 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

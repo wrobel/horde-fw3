@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Transport/stdout.php,v 1.4.2.1 2009/02/20 22:37:15 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Transport/stdout.php,v 1.4.2.1 2009-02-20 22:37:15 wrobel Exp $
  *
  * @package Kolab_Filter
  */
@@ -8,7 +8,7 @@
 /**
  * Delivers a mail to STDOUT for debugging.
  *
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Transport/stdout.php,v 1.4.2.1 2009/02/20 22:37:15 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Transport/stdout.php,v 1.4.2.1 2009-02-20 22:37:15 wrobel Exp $
  *
  * Copyright 2008 Klarälvdalens Datakonsult AB
  *
@@ -36,7 +36,7 @@ class Horde_Kolab_Filter_Transport_stdout extends Horde_Kolab_Filter_Transport
  * Defines a STDOUT wrapper that provides functionality comparable to 
  * the Net/*MTP.php classes.
  *
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Transport/stdout.php,v 1.4.2.1 2009/02/20 22:37:15 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Transport/stdout.php,v 1.4.2.1 2009-02-20 22:37:15 wrobel Exp $
  *
  * Copyright 2008 Klarälvdalens Datakonsult AB
  *

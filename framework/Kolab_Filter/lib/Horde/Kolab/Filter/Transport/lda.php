@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Transport/lda.php,v 1.4.2.1 2009/02/20 22:37:15 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Transport/lda.php,v 1.4.2.1 2009-02-20 22:37:15 wrobel Exp $
  *
  * @package Kolab_Filter
  */
@@ -8,7 +8,7 @@
 /**
  * Provides DovecotLDA delivery.
  *
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Transport/lda.php,v 1.4.2.1 2009/02/20 22:37:15 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Transport/lda.php,v 1.4.2.1 2009-02-20 22:37:15 wrobel Exp $
  *
  * Copyright 2008 Intevation GmbH
  *

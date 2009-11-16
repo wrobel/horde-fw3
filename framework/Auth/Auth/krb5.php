@@ -14,7 +14,7 @@
  *   /etc/krb5.conf) for this class to work correctly.
  *
  *
- * $Horde: framework/Auth/Auth/krb5.php,v 1.21.10.12 2009/01/06 15:22:49 jan Exp $
+ * $Horde: framework/Auth/Auth/krb5.php,v 1.21.10.12 2009-01-06 15:22:49 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

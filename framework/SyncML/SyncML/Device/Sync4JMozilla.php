@@ -9,7 +9,7 @@
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.
  *
- * $Horde: framework/SyncML/SyncML/Device/Sync4JMozilla.php,v 1.3.2.5 2009/01/06 15:23:39 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Device/Sync4JMozilla.php,v 1.3.2.5 2009-01-06 15:23:39 jan Exp $
  *
  * @author  Karsten Fourmont <karsten@horde.org>
  * @package SyncML

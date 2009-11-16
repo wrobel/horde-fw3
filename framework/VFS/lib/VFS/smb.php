@@ -21,7 +21,7 @@
  *   - changePermissions(): The SMB permission style does not fit with the
  *                          module.
  *
- * $Horde: framework/VFS/lib/VFS/smb.php,v 1.1.2.5 2009/02/06 18:24:20 slusarz Exp $
+ * $Horde: framework/VFS/lib/VFS/smb.php,v 1.1.2.5 2009-02-06 18:24:20 slusarz Exp $
  *
  * Codebase copyright 2002 Paul Gareau <paul@xhawk.net>.  Adapted with
  * permission by Patrice Levesque <wayne@ptaff.ca> from phpsmb-0.8 code, and

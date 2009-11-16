@@ -9,7 +9,7 @@
  * 'apache', or 'www-data') MUST have read/write permission to the
  * directory you specify as the 'vfsroot'.
  *
- * $Horde: framework/VFS/lib/VFS/file.php,v 1.1.2.6 2009/10/15 17:18:48 jan Exp $
+ * $Horde: framework/VFS/lib/VFS/file.php,v 1.1.2.6 2009-10-15 17:18:48 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

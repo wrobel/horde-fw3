@@ -6,7 +6,7 @@ require_once dirname(__FILE__) . '/syncml.php';
  * The Horde_RPC_syncml_wbxml class provides a SyncML implementation of the
  * Horde RPC system using WBXML encoding.
  *
- * $Horde: framework/RPC/RPC/syncml_wbxml.php,v 1.11.10.11 2009/01/06 15:23:32 jan Exp $
+ * $Horde: framework/RPC/RPC/syncml_wbxml.php,v 1.11.10.11 2009-01-06 15:23:32 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

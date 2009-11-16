@@ -11,7 +11,7 @@ require_once 'SyncML/Command.php';
  * SyncML_Command_Get class responds to a client Get request and returns the
  * DevInf information for the SyncML server.
  *
- * $Horde: framework/SyncML/SyncML/Command/Get.php,v 1.14.10.16 2009/04/05 20:24:43 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Command/Get.php,v 1.14.10.16 2009-04-05 20:24:43 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

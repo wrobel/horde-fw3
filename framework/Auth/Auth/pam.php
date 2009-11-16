@@ -16,7 +16,7 @@
  *              DEFAULT: php</pre>
  *
  *
- * $Horde: framework/Auth/Auth/pam.php,v 1.3.10.16 2009/01/06 15:22:50 jan Exp $
+ * $Horde: framework/Auth/Auth/pam.php,v 1.3.10.16 2009-01-06 15:22:50 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

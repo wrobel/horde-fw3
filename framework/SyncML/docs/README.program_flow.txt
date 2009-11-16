@@ -1,5 +1,5 @@
 ##
-## $Horde: framework/SyncML/docs/README.program_flow.txt,v 1.1.10.3 2007/12/20 13:49:46 jan Exp $
+## $Horde: framework/SyncML/docs/README.program_flow.txt,v 1.1.10.3 2007-12-20 13:49:46 jan Exp $
 ##
 
 rpc.php in horde's main directory is the starting point for our (and any)

@@ -1,4 +1,4 @@
--- $Horde: framework/VFS/data/VFS/vfs.sql,v 1.1.2.2 2008/07/19 23:16:29 chuck Exp $
+-- $Horde: framework/VFS/data/VFS/vfs.sql,v 1.1.2.2 2008-07-19 23:16:29 chuck Exp $
 
 CREATE TABLE vfs (
     vfs_id        INT UNSIGNED NOT NULL,

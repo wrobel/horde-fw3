@@ -9,7 +9,7 @@
  * message. Its purpose is to make sure that SyncML messages are correctly and
  * completely parsed and distributed into the business logic.
  *
- * $Horde: framework/SyncML/tests/testpacket.php,v 1.2.2.2 2009/04/05 21:38:49 jan Exp $
+ * $Horde: framework/SyncML/tests/testpacket.php,v 1.2.2.2 2009-04-05 21:38:49 jan Exp $
  *
  * Copyright 2009 The Horde Project (http://www.horde.org/)
  *

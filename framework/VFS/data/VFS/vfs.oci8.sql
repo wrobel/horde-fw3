@@ -1,4 +1,4 @@
--- $Horde: framework/VFS/data/VFS/vfs.oci8.sql,v 1.1.2.1 2007/12/20 13:50:21 jan Exp $
+-- $Horde: framework/VFS/data/VFS/vfs.oci8.sql,v 1.1.2.1 2007-12-20 13:50:21 jan Exp $
 
 CREATE TABLE vfs (
     vfs_id        NUMBER(16) NOT NULL,

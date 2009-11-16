@@ -8,7 +8,7 @@
  *   'app'  The application which is providing authentication.</pre>
  *
  *
- * $Horde: framework/Auth/Auth/application.php,v 1.27.10.18 2009/02/13 05:45:36 chuck Exp $
+ * $Horde: framework/Auth/Auth/application.php,v 1.27.10.18 2009-02-13 05:45:36 chuck Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

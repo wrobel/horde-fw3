@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Auth/Auth/http_remote.php,v 1.1.2.3 2009/01/06 15:22:49 jan Exp $
+ * $Horde: framework/Auth/Auth/http_remote.php,v 1.1.2.3 2009-01-06 15:22:49 jan Exp $
  *
  * @package Horde_Auth
  */

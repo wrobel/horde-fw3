@@ -20,7 +20,7 @@
  *                      DEFAULT: false</pre>
  *
  *
- * $Horde: framework/Auth/Auth/passwd.php,v 1.16.10.20 2009/01/06 15:22:50 jan Exp $
+ * $Horde: framework/Auth/Auth/passwd.php,v 1.16.10.20 2009-01-06 15:22:50 jan Exp $
  *
  * Copyright 1997-2007 Rasmus Lerdorf <rasmus@php.net>
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)

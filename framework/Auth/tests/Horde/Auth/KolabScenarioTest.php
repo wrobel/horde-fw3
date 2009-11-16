@@ -2,7 +2,7 @@
 /**
  * Kolab authentication scenarios.
  *
- * $Horde: framework/Auth/tests/Horde/Auth/KolabScenarioTest.php,v 1.1.2.2 2009/01/06 15:22:52 jan Exp $
+ * $Horde: framework/Auth/tests/Horde/Auth/KolabScenarioTest.php,v 1.1.2.2 2009-01-06 15:22:52 jan Exp $
  *
  * PHP version 5
  *
@@ -22,7 +22,7 @@ require_once 'Horde/Kolab/Test.php';
 /**
  * Kolab authentication scenarios.
  *
- * $Horde: framework/Auth/tests/Horde/Auth/KolabScenarioTest.php,v 1.1.2.2 2009/01/06 15:22:52 jan Exp $
+ * $Horde: framework/Auth/tests/Horde/Auth/KolabScenarioTest.php,v 1.1.2.2 2009-01-06 15:22:52 jan Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

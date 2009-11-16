@@ -9,7 +9,7 @@
  * See http://wiki.horde.org/SyncHowTo for a description how to create a test
  * case.
  *
- * $$Horde: framework/SyncML/tests/testsync.php,v 1.14.2.8 2009/01/06 15:23:39 jan Exp $
+ * $$Horde: framework/SyncML/tests/testsync.php,v 1.14.2.8 2009-01-06 15:23:39 jan Exp $
  *
  * Copyright 2006-2009 The Horde Project (http://www.horde.org/)
  *

@@ -49,7 +49,7 @@
  * The table structure for the Auth system is in
  * scripts/sql/horde_users.sql.
  *
- * $Horde: framework/Auth/Auth/sql.php,v 1.69.10.25 2009/02/25 05:35:41 chuck Exp $
+ * $Horde: framework/Auth/Auth/sql.php,v 1.69.10.25 2009-02-25 05:35:41 chuck Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

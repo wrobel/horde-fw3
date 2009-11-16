@@ -3,7 +3,7 @@
  * The Horde_RPC_soap class provides an SOAP implementation of the
  * Horde RPC system.
  *
- * $Horde: framework/RPC/RPC/soap.php,v 1.13.10.17 2009/01/06 15:23:32 jan Exp $
+ * $Horde: framework/RPC/RPC/soap.php,v 1.13.10.17 2009-01-06 15:23:32 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

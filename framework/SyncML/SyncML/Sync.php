@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/SyncML/SyncML/Sync.php,v 1.8.4.23 2009/08/26 11:02:53 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Sync.php,v 1.8.4.23 2009-08-26 11:02:53 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

@@ -8,7 +8,7 @@ require_once 'Horde/Form/Renderer.php';
  * new users sign themselves up into the horde installation, depending
  * on how the admin has configured Horde.
  *
- * $Horde: framework/Auth/Auth/Signup.php,v 1.38.2.23 2009/08/13 15:43:57 jan Exp $
+ * $Horde: framework/Auth/Auth/Signup.php,v 1.38.2.23 2009-08-13 15:43:57 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

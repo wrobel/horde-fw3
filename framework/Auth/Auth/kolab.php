@@ -5,7 +5,7 @@
  * Auth_imap IMAP authentication object, and provides parameters to it based on
  * the global Kolab configuration.
  *
- * $Horde: framework/Auth/Auth/kolab.php,v 1.1.10.21 2009/01/06 15:22:49 jan Exp $
+ * $Horde: framework/Auth/Auth/kolab.php,v 1.1.10.21 2009-01-06 15:22:49 jan Exp $
  *
  * Copyright 2004-2007 Stuart Binge <s.binge@codefusion.co.za>
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)

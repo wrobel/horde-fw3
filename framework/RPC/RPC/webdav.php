@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/RPC/RPC/webdav.php,v 1.1.12.19 2009/01/06 15:23:32 jan Exp $
+ * $Horde: framework/RPC/RPC/webdav.php,v 1.1.12.19 2009-01-06 15:23:32 jan Exp $
  *
  * @package Horde_RPC
  */

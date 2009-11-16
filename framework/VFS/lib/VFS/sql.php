@@ -52,7 +52,7 @@ define('VFS_FOLDER', 2);
  *    mssql.textsize = 0 ; zero to pass through
  * </pre>
  *
- * $Horde: framework/VFS/lib/VFS/sql.php,v 1.1.2.6 2009/02/13 05:45:19 chuck Exp $
+ * $Horde: framework/VFS/lib/VFS/sql.php,v 1.1.2.6 2009-02-13 05:45:19 chuck Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

@@ -11,7 +11,7 @@
  * The SyncML_XMLOutput class takes automatically care of creating a unique
  * CmdID for each command created.
  *
- * $Horde: framework/SyncML/SyncML/XMLOutput.php,v 1.14.2.8 2009/01/06 15:23:37 jan Exp $
+ * $Horde: framework/SyncML/SyncML/XMLOutput.php,v 1.14.2.8 2009-01-06 15:23:37 jan Exp $
  *
  * Copyright 2006-2009 The Horde Project (http://www.horde.org/)
  *

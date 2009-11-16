@@ -19,11 +19,7 @@
  *                  DEFAULT: NONE (system default will be used)</pre>
  *
  *
-<<<<<<< ldap.php
- * $Horde: framework/Auth/Auth/ldap.php,v 1.47.10.33 2009/10/26 11:58:59 jan Exp $
-=======
  * $Horde: framework/Auth/Auth/ldap.php,v 1.47.10.33 2009-10-26 11:58:59 jan Exp $
->>>>>>> 1.47.10.33
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

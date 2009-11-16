@@ -17,7 +17,7 @@
  *                                      'pass' => Auth::getCredential('password')));
  * </code>
  *
- * $Horde: framework/RPC/RPC.php,v 1.7.10.18 2009/06/16 15:28:04 jan Exp $
+ * $Horde: framework/RPC/RPC.php,v 1.7.10.18 2009-06-16 15:28:04 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

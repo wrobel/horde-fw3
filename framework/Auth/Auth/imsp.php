@@ -4,7 +4,7 @@
  * This will be most benificial if already using an IMSP based preference
  * system or IMSP based addressbook system
  *
- * $Horde: framework/Auth/Auth/imsp.php,v 1.2.10.14 2009/01/06 15:22:49 jan Exp $
+ * $Horde: framework/Auth/Auth/imsp.php,v 1.2.10.14 2009-01-06 15:22:49 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

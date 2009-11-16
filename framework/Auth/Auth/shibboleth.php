@@ -11,11 +11,7 @@
  *   'password_header'     Name of the header holding the password of the logged in user
  *   'password_preference' Name of the Horde preference holding the password of the logged in user
  *
-<<<<<<< shibboleth.php
- * $Horde: framework/Auth/Auth/shibboleth.php,v 1.4.2.3 2009/10/26 11:58:59 jan Exp $
-=======
  * $Horde: framework/Auth/Auth/shibboleth.php,v 1.4.2.3 2009-10-26 11:58:59 jan Exp $
->>>>>>> 1.4.2.3
  *
  * Copyright 9Star Research, Inc. 2006 http://www.protectnetwork.org
  *

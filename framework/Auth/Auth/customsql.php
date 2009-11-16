@@ -50,7 +50,7 @@ require_once dirname(__FILE__) . '/sql.php';
  *   'tty'       The TTY on which to connect to the database.</pre>
  *
  *
- * $Horde: framework/Auth/Auth/customsql.php,v 1.16.10.12 2008/06/30 17:04:36 jan Exp $
+ * $Horde: framework/Auth/Auth/customsql.php,v 1.16.10.12 2008-06-30 17:04:36 jan Exp $
  *
  * Copyright 2002 Ronnie Garcia <ronnie@mk2.net>
  *

@@ -2,7 +2,7 @@
 /**
  * Class for providing garbage collection for any VFS instance.
  *
- * $Horde: framework/VFS/lib/VFS/GC.php,v 1.1.2.3 2009/01/06 15:23:47 jan Exp $
+ * $Horde: framework/VFS/lib/VFS/GC.php,v 1.1.2.3 2009-01-06 15:23:47 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

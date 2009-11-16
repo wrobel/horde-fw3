@@ -7,7 +7,7 @@ require_once 'Horde/DataTree.php';
  * new users sign themselves up into the horde installation, depending
  * on how the admin has configured Horde.
  *
- * $Horde: framework/Auth/Auth/Signup/datatree.php,v 1.1.2.3 2009/06/15 15:01:00 jan Exp $
+ * $Horde: framework/Auth/Auth/Signup/datatree.php,v 1.1.2.3 2009-06-15 15:01:00 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

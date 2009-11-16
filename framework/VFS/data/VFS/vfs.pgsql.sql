@@ -1,4 +1,4 @@
--- $Horde: framework/VFS/data/VFS/vfs.pgsql.sql,v 1.1.2.3 2008/10/15 05:06:08 chuck Exp $
+-- $Horde: framework/VFS/data/VFS/vfs.pgsql.sql,v 1.1.2.3 2008-10-15 05:06:08 chuck Exp $
 
 CREATE TABLE vfs (
     vfs_id        INT NOT NULL,
