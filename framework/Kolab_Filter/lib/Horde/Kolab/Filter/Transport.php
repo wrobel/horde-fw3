@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Transport.php,v 1.4.2.1 2009-02-20 22:37:15 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Transport.php,v 1.4.2.2 2009-11-16 12:29:37 wrobel Exp $
  *
  * @package Kolab_Filter
  */
@@ -8,7 +8,7 @@
 /**
  * Provides a delivery mechanism for a mail message.
  *
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Transport.php,v 1.4.2.1 2009-02-20 22:37:15 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Transport.php,v 1.4.2.2 2009-11-16 12:29:37 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *
@@ -140,7 +140,7 @@ class Horde_Kolab_Filter_Transport
             /* OK, all failed, just give up */
             if (count($reciperrors) == 1) {
                 /* Only one failure, just return that */
-                return $reciperrors[0];
+                return $this->rewriteCode($reciperrors[0]);
             }
             /* Multiple errors */
             $error = $this->createErrorObject($reciperrors,

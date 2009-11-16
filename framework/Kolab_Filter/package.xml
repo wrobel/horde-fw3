@@ -39,6 +39,14 @@ http://pear.php.net/dtd/package-2.0.xsd">
  </stability>
  <license uri="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">LGPL</license>
  <notes>
+  * kolab/issue3610 (Mail to unknown@something.example.com gets
+    accepted and yields kolabmailboxfilter exit 38)
+  * kolab/issue2499 (Notification messages by the resource manager
+    should be localized)
+  * kolab/issue2544 (Encoding problem in cancelled appointments)
+  * Reverted the fix for kolab/issue2495 (The reply to an invitation
+    with umlauts of a group account doesn't display the umlauts.) It
+    should be covered by the fix for kolab/issue2499.
   * Added dutch translation. Submitted by Richard Bos
     (ml@radoeka.nl).
  </notes>

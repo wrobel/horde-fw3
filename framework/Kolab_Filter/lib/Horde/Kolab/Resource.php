@@ -2,7 +2,7 @@
 /**
  * Resource management for the Kolab server.
  *
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php,v 1.15.2.7 2009-09-22 16:29:55 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php,v 1.15.2.8 2009-11-16 10:18:05 wrobel Exp $
  *
  * PHP version 4
  *
@@ -42,7 +42,7 @@ define('RM_ITIP_TENTATIVE',                 3);
 /**
  * Provides Kolab resource handling
  *
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php,v 1.15.2.7 2009-09-22 16:29:55 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php,v 1.15.2.8 2009-11-16 10:18:05 wrobel Exp $
  *
  * Copyright 2004-2009 Klarälvdalens Datakonsult AB
  *
@@ -675,11 +675,6 @@ class Kolab_Resource
             Horde::logMessage(sprintf('Removing event %s', $uid),
                               __FILE__, __LINE__, PEAR_LOG_INFO);
 
-            /* Ensure that $summary is single byte here, else we get
-             * problems with sprintf()
-             */
-            $summary = String::convertCharset($summary, 'utf-8', 'iso-8859-1');
-
             if (is_a($imap_error, 'PEAR_Error')) {
                 $body = sprintf(_("Unable to access %s's calendar:"), $resource) . "\n\n" . $summary;
                 $subject = sprintf(_("Error processing \"%s\""), $summary);
@@ -708,10 +703,6 @@ class Kolab_Resource
                 $body = _("The following event has been successfully removed:") . "\n\n" . $summary;
                 $subject = sprintf(_("%s has been cancelled"), $summary);
             }
-
-            /* Switch back to utf-8 */
-            $body = String::convertCharset($body, 'iso-8859-1');
-            $subject = String::convertCharset($subject, 'iso-8859-1');
 
             Horde::logMessage(sprintf('Sending confirmation of cancelation to %s', $organiser),
                               __FILE__, __LINE__, PEAR_LOG_WARNING);
