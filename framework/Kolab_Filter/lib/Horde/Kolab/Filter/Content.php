@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Content.php,v 1.4.2.4 2009-11-06 11:07:57 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Content.php,v 1.4.2.7 2009-11-16 21:05:49 wrobel Exp $
  *
  * @package Kolab_Filter
  */
@@ -20,7 +20,7 @@ define('RM_STATE_READING_BODY',   5 );
 /**
  * A Kolab Server filter for outgoing mails.
  *
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Content.php,v 1.4.2.4 2009-11-06 11:07:57 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Content.php,v 1.4.2.7 2009-11-16 21:05:49 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *
@@ -378,7 +378,7 @@ class Horde_Kolab_Filter_Content extends Horde_Kolab_Filter_Base
 
             $server = &Horde_Kolab_Server::singleton();
             if (is_a($server, 'PEAR_Error')) {
-                $server->code = OUT_LOG | EX_SOFTWARE;
+                $server->code = OUT_LOG | EX_TEMPFAIL;
                 return $server;
             }
 
@@ -428,6 +428,9 @@ class Horde_Kolab_Filter_Content extends Horde_Kolab_Filter_Base
                                                       $from), __FILE__, __LINE__, PEAR_LOG_DEBUG);
                             return false;
                         } else {
+                            require_once 'Horde/String.php';
+                            require_once 'Horde/MIME.php';
+
                             /* Rewrite */
                             Horde::logMessage(sprintf("%s is not an allowed From address for unauthenticated users, rewriting.", 
                                                       $from), __FILE__, __LINE__, PEAR_LOG_DEBUG);
@@ -435,12 +438,12 @@ class Horde_Kolab_Filter_Content extends Horde_Kolab_Filter_Base
                                 if (property_exists($adr, 'personal')) {
                                     $name = str_replace(array("\\", '"'), 
                                                         array("\\\\",'\"'), 
-                                                        $adr->personal);
+                                                        MIME::decode($adr->personal, 'utf-8'));
                                 } else {
                                     $name = '';
                                 }
-                                $new_from = '"' . $name . ' ' . $untrusted . '"';
-                                return '=?utf-8?B?' . base64_encode($new_from) . '?= <' . $from . '>';
+                                $new_from = '"' . MIME::encode($name . ' ' . $untrusted) . '"';
+                                return  $new_from . ' <' . $from . '>';
                             } else {
                                 return true;
                             }

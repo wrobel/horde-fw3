@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Incoming.php,v 1.6.2.3 2009-05-09 21:56:03 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Incoming.php,v 1.6.2.4 2009-11-16 19:59:30 wrobel Exp $
  *
  * @package Kolab_Filter
  */
@@ -15,7 +15,7 @@ require_once dirname(__FILE__) . '/Transport.php';
  * A Kolab Server filter for incoming mails that are parsed for iCal
  * contents.
  *
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Incoming.php,v 1.6.2.3 2009-05-09 21:56:03 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Incoming.php,v 1.6.2.4 2009-11-16 19:59:30 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *
@@ -202,7 +202,7 @@ class Horde_Kolab_Filter_Incoming extends Horde_Kolab_Filter_Base
 
         $server = &Horde_Kolab_Server::singleton();
         if (is_a($server, 'PEAR_Error')) {
-            $server->code = OUT_LOG | EX_SOFTWARE;
+            $server->code = OUT_LOG | EX_TEMPFAIL;
             return $server;
         }
 
@@ -225,12 +225,12 @@ class Horde_Kolab_Filter_Incoming extends Horde_Kolab_Filter_Base
             }
             $user = $server->fetch($dn, KOLAB_OBJECT_USER);
             if (is_a($user, 'PEAR_Error')) {
-                $user->code = OUT_LOG | EX_NOUSER;
+                $user->code = OUT_LOG | EX_TEMPFAIL;
                 return $user;
             }
             $imapserver = $user->get(KOLAB_ATTR_IMAPHOST);
             if (is_a($imapserver, 'PEAR_Error')) {
-                $imapserver->code = OUT_LOG | EX_NOUSER;
+                $imapserver->code = OUT_LOG | EX_TEMPFAIL;
                 return $imapserver;
             }
             if (!empty($imapserver)) {

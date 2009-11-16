@@ -1,0 +1,1 @@
+../../../framework/Editor/Editor/fckeditor.php

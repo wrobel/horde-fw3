@@ -2,7 +2,7 @@
 /**
  * Resource management for the Kolab server.
  *
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php,v 1.15.2.8 2009-11-16 10:18:05 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php,v 1.15.2.10 2009-11-16 19:26:34 wrobel Exp $
  *
  * PHP version 4
  *
@@ -42,7 +42,7 @@ define('RM_ITIP_TENTATIVE',                 3);
 /**
  * Provides Kolab resource handling
  *
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php,v 1.15.2.8 2009-11-16 10:18:05 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php,v 1.15.2.10 2009-11-16 19:26:34 wrobel Exp $
  *
  * Copyright 2004-2009 Klarälvdalens Datakonsult AB
  *
@@ -286,6 +286,20 @@ class Kolab_Resource
                 if (isset($attendees_params[$i]['ROLE'])) {
                     $attendee['role'] = $attendees_params[$i]['ROLE'];
                 }
+
+                if (isset($attendees_params[$i]['PARTSTAT'])) {
+                    $status = strtolower($attendees_params[$i]['PARTSTAT']);
+                    switch ($status) {
+                    case 'needs-action':
+                    case 'delegated':
+                        $attendee['status'] = 'none';
+                        break;
+                    default:
+                        $attendee['status'] = $status;
+                        break;
+                    }
+                }
+
                 $object['attendee'][] = $attendee;
             }
         }
@@ -714,8 +728,6 @@ class Kolab_Resource
 
             // Build the reply headers.
             $msg_headers = &new MIME_Headers();
-            $msg_headers->addReceivedHeader();
-            $msg_headers->addMessageIdHeader();
             $msg_headers->addHeader('Date', date('r'));
             $msg_headers->addHeader('From', $resource);
             $msg_headers->addHeader('To', $organiser);
@@ -1016,8 +1028,6 @@ class Kolab_Resource
 
         // Build the reply headers.
         $msg_headers = &new MIME_Headers();
-        $msg_headers->addReceivedHeader();
-        $msg_headers->addMessageIdHeader();
         $msg_headers->addHeader('Date', date('r'));
         $msg_headers->addHeader('From', "$cn <$resource>");
         $msg_headers->addHeader('To', $organiser);

@@ -28,9 +28,9 @@ http://pear.php.net/dtd/package-2.0.xsd">
   <email>jan@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2009-11-07</date>
+ <date>2009-11-16</date>
  <version>
-  <release>0.1.7</release>
+  <release>0.1.8</release>
   <api>0.1.0</api>
  </version>
  <stability>
@@ -39,16 +39,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
  </stability>
  <license uri="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">LGPL</license>
  <notes>
-  * kolab/issue3610 (Mail to unknown@something.example.com gets
-    accepted and yields kolabmailboxfilter exit 38)
-  * kolab/issue2499 (Notification messages by the resource manager
-    should be localized)
-  * kolab/issue2544 (Encoding problem in cancelled appointments)
-  * Reverted the fix for kolab/issue2495 (The reply to an invitation
-    with umlauts of a group account doesn't display the umlauts.) It
-    should be covered by the fix for kolab/issue2499.
-  * Added dutch translation. Submitted by Richard Bos
-    (ml@radoeka.nl).
+  * 
  </notes>
  <contents>
   <dir name="/">
@@ -132,6 +123,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
        <file name="LoadTest.php" role="test" />
        <file name="ResourceTest.php" role="test" />
        <dir name="fixtures">
+        <file name="attendee_status_invitation.eml" role="test" />
         <file name="empty.eml" role="test" />
         <file name="empty2.ret" role="test" />
         <file name="forged.eml" role="test" />
@@ -240,6 +232,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
    <install name="test/Horde/Kolab/Filter/IncomingTest.php" as="Horde/Kolab/Filter/IncomingTest.php" />
    <install name="test/Horde/Kolab/Filter/LoadTest.php" as="Horde/Kolab/Filter/LoadTest.php" />
    <install name="test/Horde/Kolab/Filter/ResourceTest.php" as="Horde/Kolab/Filter/ResourceTest.php" />
+   <install name="test/Horde/Kolab/Filter/fixtures/attendee_status_invitation.eml" as="Horde/Kolab/Filter/fixtures/attendee_status_invitation.eml" />
    <install name="test/Horde/Kolab/Filter/fixtures/empty.eml" as="Horde/Kolab/Filter/fixtures/empty.eml" />
    <install name="test/Horde/Kolab/Filter/fixtures/empty2.ret" as="Horde/Kolab/Filter/fixtures/empty2.ret" />
    <install name="test/Horde/Kolab/Filter/fixtures/forged.eml" as="Horde/Kolab/Filter/fixtures/forged.eml" />
@@ -266,8 +259,42 @@ http://pear.php.net/dtd/package-2.0.xsd">
    <install name="test/Horde/Kolab/Filter/fixtures/validation.ret" as="Horde/Kolab/Filter/fixtures/validation.ret" />
   </filelist>
  </phprelease>
+ <changelog>
   <release>
-   <changelog>
+   <date>2009-11-16</date>
+   <version>
+    <release>0.1.7</release>
+    <api>0.1.0</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <license uri="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">LGPL</license>
+   <notes>
+    * LDAP errors should be marked as temporary failures.
+    * kolab/issue3464 (kolab-filter inserts double encoded utf-8 code
+      into From: header)
+    * kolab/issue3616 (automatic replies to invitations contain
+      127.0.0.1 in Message-ID)
+    * kolab/issue3364 (manpages for kolabfilter and kolabmailboxfilter)
+    * kolab/issue3768 (Kolab server 2.2.2 resmgr doesn't copy attendee
+      status)
+    * kolab/issue3767 (Kolab server 2.2.0 resmgr creates incorrect event
+      attendee status values)
+    * kolab/issue3610 (Mail to unknown@something.example.com gets
+      accepted and yields kolabmailboxfilter exit 38)
+    * kolab/issue2499 (Notification messages by the resource manager
+      should be localized)
+    * kolab/issue2544 (Encoding problem in cancelled appointments)
+    * Reverted the fix for kolab/issue2495 (The reply to an invitation
+      with umlauts of a group account doesn't display the umlauts.) It
+      should be covered by the fix for kolab/issue2499.
+    * Added dutch translation. Submitted by Richard Bos
+      (ml@radoeka.nl).
+   </notes>
+  </release>
+  <release>
    <date>2009-11-07</date>
    <version>
     <release>0.1.6</release>

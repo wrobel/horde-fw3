@@ -2,7 +2,7 @@
 /**
  * Test resource handling within the Kolab filter implementation.
  *
- * $Horde: framework/Kolab_Filter/test/Horde/Kolab/Filter/ResourceTest.php,v 1.4.2.4 2009-09-22 16:29:56 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/test/Horde/Kolab/Filter/ResourceTest.php,v 1.4.2.5 2009-11-16 17:23:06 wrobel Exp $
  *
  * @package Horde_Kolab_Filter
  */
@@ -21,7 +21,7 @@ require_once 'Horde/iCalendar/vfreebusy.php';
 /**
  * Test resource handling
  *
- * $Horde: framework/Kolab_Filter/test/Horde/Kolab/Filter/ResourceTest.php,v 1.4.2.4 2009-09-22 16:29:56 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/test/Horde/Kolab/Filter/ResourceTest.php,v 1.4.2.5 2009-11-16 17:23:06 wrobel Exp $
  *
  * Copyright 2008 Klarälvdalens Datakonsult AB
  *
@@ -171,4 +171,58 @@ class Horde_Kolab_Filter_ResourceTest extends Horde_Kolab_Test_Filter
         $result = $data->deleteAll();
         $this->assertNoError($result);
     }
+
+    /**
+     * Test that the attendee status gets transferred.
+     */
+    public function testAttendeeStatusInvitation()
+    {
+        require_once 'Horde/iCalendar/vfreebusy.php';
+        $GLOBALS['KOLAB_FILTER_TESTING'] = &new Horde_iCalendar_vfreebusy();
+        $GLOBALS['KOLAB_FILTER_TESTING']->setAttribute('DTSTART', Horde_iCalendar::_parseDateTime('20080926T000000Z'));
+        $GLOBALS['KOLAB_FILTER_TESTING']->setAttribute('DTEND', Horde_iCalendar::_parseDateTime('20081126T000000Z'));
+
+        $params = array('unmodified_content' => true,
+                        'incoming' => true);
+
+        $this->sendFixture(dirname(__FILE__) . '/fixtures/attendee_status_invitation.eml',
+                           dirname(__FILE__) . '/fixtures/null.ret',
+                           '', '', 'test@example.org', 'wrobel@example.org',
+                           'home.example.org', $params);
+
+        $result = $this->auth->authenticate('wrobel', array('password' => 'none'));
+        $this->assertNoError($result);
+
+        $folder = $this->storage->getFolder('INBOX/Kalender');
+        $data = $folder->getData();
+        $events = $data->getObjects();
+        $summaries = array();
+        foreach ($events as $event) {
+            foreach ($event['attendee'] as $attendee) {
+                switch ($attendee['smtp-address']) {
+                case 'needs@example.org':
+                    $this->assertEquals('none', $attendee['status']);
+                    break;
+                case 'accepted@example.org':
+                    $this->assertEquals('accepted', $attendee['status']);
+                    break;
+                case 'declined@example.org':
+                    $this->assertEquals('declined', $attendee['status']);
+                    break;
+                case 'tentative@example.org':
+                    $this->assertEquals('tentative', $attendee['status']);
+                    break;
+                case 'delegated@example.org':
+                    $this->assertEquals('none', $attendee['status']);
+                    break;
+                default:
+                    $this->fail('Unexpected attendee!');
+                    break;
+                }
+            }
+        }
+        $result = $data->deleteAll();
+        $this->assertNoError($result);
+    }
+
 }

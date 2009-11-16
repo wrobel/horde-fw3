@@ -18,6 +18,8 @@
 (setq phpunit_phpoptions "-d log_errors=1 -d error_log=\"php-errors.log\" -d error_reporting=\"E_ALL\"")
 (setq phpunit_includes liblocs)
 
+(setq phplint_command (concat "php -d include_path=\".:" liblocs "\" " current-dir "/../tools/test_lint --verbose"))
+
 (setq phpoptions (concat liblocs
                          logopts
                          " -c \""

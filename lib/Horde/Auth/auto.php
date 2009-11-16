@@ -1,0 +1,1 @@
+../../../framework/Auth/Auth/auto.php
