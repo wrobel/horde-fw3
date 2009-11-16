@@ -2,7 +2,7 @@
 /**
  * Horde_CLI:: API for basic command-line functionality/checks.
  *
- * $Horde: framework/CLI/CLI.php,v 1.42.6.27 2009/08/15 08:23:46 jan Exp $
+ * $Horde: framework/CLI/CLI.php,v 1.42.6.28 2009-11-13 14:28:40 mrubinsk Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -172,7 +172,9 @@ class Horde_CLI {
             $this->_red_end = $this->_green_end = $this->_yellow_end = $this->_blue_end = '</span>';
         }
 
-        register_shutdown_function(array($this, '_shutdown'));
+        if ($this->_console) {
+            register_shutdown_function(array($this, '_shutdown'));
+        }
     }
 
     /**

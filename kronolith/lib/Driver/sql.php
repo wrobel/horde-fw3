@@ -3,7 +3,7 @@
  * The Kronolith_Driver_sql:: class implements the Kronolith_Driver
  * API for a SQL backend.
  *
- * $Horde: kronolith/lib/Driver/sql.php,v 1.136.2.45 2009/09/25 13:46:51 jan Exp $
+ * $Horde: kronolith/lib/Driver/sql.php,v 1.136.2.46 2009-11-11 07:59:18 jan Exp $
  *
  * @author  Luc Saillard <luc.saillard@fr.alcove.com>
  * @author  Chuck Hagenbuch <chuck@horde.org>
@@ -354,7 +354,9 @@ class Kronolith_Driver_sql extends Kronolith_Driver {
                 $events[$row['event_uid']] = $row['event_id'];
             } else {
                 $next = $this->nextRecurrence($row['event_id'], $startInterval);
-                if ($next && $next->compareDate($endInterval) < 0) {
+                if ($next &&
+                    (is_null($endInterval) ||
+                     $next->compareDate($endInterval) < 0)) {
                     $events[$row['event_uid']] = $row['event_id'];
                 }
             }

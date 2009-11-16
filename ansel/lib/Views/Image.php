@@ -2,7 +2,7 @@
 /**
  * The Ansel_View_Image:: class wraps display of individual images.
  *
- * $Horde: ansel/lib/Views/Image.php,v 1.68.2.14 2009/06/30 17:19:54 mrubinsk Exp $
+ * $Horde: ansel/lib/Views/Image.php,v 1.68.2.15 2009-11-15 18:24:41 mrubinsk Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @package Ansel
@@ -180,6 +180,12 @@ class Ansel_View_Image extends Ansel_View_Abstract {
         if (($conf['comments']['allow'] == 'all' || ($conf['comments']['allow'] == 'authenticated' && Auth::getAuth())) &&
             $registry->hasMethod('forums/doComments')) {
             $hasComments = true;
+            if (!empty($this->_params['comment_url'])) {
+                $this->_params['comment_url'] = str_replace(
+                    array('%i', '%g', '%s'),
+                    array($imageId, $galleryId, $gallerySlug),
+                    urldecode($this->_params['comment_url']));
+            }
             $url = empty($this->_params['comment_url']) ? null : $this->_params['comment_url'];
             $comments = $registry->call('forums/doComments',
                                         array('ansel', $imageId,

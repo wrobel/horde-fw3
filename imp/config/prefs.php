@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/config/prefs.php.dist,v 1.216.4.35 2009/09/18 14:04:50 jan Exp $
+ * $Horde: imp/config/prefs.php.dist,v 1.216.4.36 2009-11-10 18:52:42 jan Exp $
  *
  * See horde/config/prefs.php for documentation on the structure of this file.
  */
@@ -163,12 +163,15 @@ $prefGroups['filters'] = array(
     'url' => 'filterprefs.php'
 );
 
-$prefGroups['addressbooks'] = array(
-    'column' => _("Other Options"),
-    'label' => _("Address Books"),
-    'desc' => _("Select address book sources for adding and searching for addresses."),
-    'members' => array('save_recipients', 'display_contact', 'sourceselect')
-);
+$contacts_app = $GLOBALS['registry']->hasInterface('contacts');
+if ($contacts_app && $GLOBALS['registry']->hasPermission($contacts_app)) {
+    $prefGroups['addressbooks'] = array(
+        'column' => _("Other Options"),
+        'label' => _("Address Books"),
+        'desc' => _("Select address book sources for adding and searching for addresses."),
+        'members' => array('save_recipients', 'display_contact', 'sourceselect')
+        );
+}
 
 if (isset($GLOBALS['conf']['utils']['gnupg'])) {
     $prefGroups['pgp'] = array(
