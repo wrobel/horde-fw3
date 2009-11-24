@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Transport.php,v 1.4.2.2 2009-11-16 12:29:37 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Transport.php,v 1.4.2.3 2009-11-24 13:53:40 wrobel Exp $
  *
  * @package Kolab_Filter
  */
@@ -8,7 +8,7 @@
 /**
  * Provides a delivery mechanism for a mail message.
  *
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Transport.php,v 1.4.2.2 2009-11-16 12:29:37 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Transport.php,v 1.4.2.3 2009-11-24 13:53:40 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *
@@ -281,12 +281,13 @@ class Horde_Kolab_Filter_Transport
      */
     function rewriteCode($result) 
     {
-        if ($result->getCode() < 500) {
+        list($resultcode, $resultmessage) = $this->_transport->getResponse();
+        if ($resultcode < 500) {
             $code = EX_TEMPFAIL;
         } else {
             $code = EX_UNAVAILABLE;
         }
-        $append = sprintf(', original code %s', $result->getCode());
+        $append = sprintf(': %s, original code %s', $resultmessage, $resultcode);
         $result->message = $result->getMessage() . $append;
         $result->code = OUT_LOG | OUT_STDOUT | $code;
         return $result;

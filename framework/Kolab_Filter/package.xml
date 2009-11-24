@@ -39,7 +39,8 @@ http://pear.php.net/dtd/package-2.0.xsd">
  </stability>
  <license uri="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">LGPL</license>
  <notes>
-  * 
+  * kolab/issue3594 (Mail containing NUL byte not delivered, Kolab
+    Filter does not report lmtp error)
  </notes>
  <contents>
   <dir name="/">
