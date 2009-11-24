@@ -3,6 +3,7 @@ v3.3.6-cvs
 ----------
 
 [jan] SECURITY: Fix XSS in administrator section.
+[mjr] Fix checking existing signup requests in the Auth_Signup_datatree driver.
 [jan] Fix syntax of MSSQL scripts (Bug #8664).
 [jan] Export task alarms to Funambol clients (Request #8426).
 [jan] Fix not catching Alt key combinations for access keys on Mac OS.

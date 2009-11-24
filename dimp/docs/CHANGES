@@ -2,6 +2,7 @@
 v1.1.4-cvs
 ----------
 
+[jan] Add Basque translation (Euskal Herriko Unibertsitatea <webmaster@ehu.es>).
 [jan] Add Croatian translation (Matej Vela <matej.vela@carnet.hr>).
 [mms] Fix sizing fckeditor compose editor frame in IE (Bug #8616).
 

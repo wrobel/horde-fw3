@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Whups 1.0-cvs\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
 "POT-Creation-Date: 2009-09-12 10:10+0200\n"
-"PO-Revision-Date: 2009-09-12 10:34+0200\n"
+"PO-Revision-Date: 2009-11-19 17:01+0100\n"
 "Last-Translator: Jan Schneider <jan@horde.org>\n"
 "Language-Team: German <dev@horde.org>\n"
 "MIME-Version: 1.0\n"
@@ -107,7 +107,7 @@ msgstr "<<Anfang"
 
 #: templates/prevnext.inc:20
 msgid "<Prev"
-msgstr "<Vorige"
+msgstr "<Zurück"
 
 #: view.php:69
 #, php-format

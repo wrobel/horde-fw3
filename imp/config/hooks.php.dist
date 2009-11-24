@@ -8,7 +8,7 @@
  *
  * For more information please see the horde/config/hooks.php.dist file.
  *
- * $Horde: imp/config/hooks.php.dist,v 1.3.2.12 2009/10/09 13:10:23 jan Exp $
+ * $Horde: imp/config/hooks.php.dist,v 1.3.2.13 2009-11-18 13:14:32 jan Exp $
  */
 
 // Here is an example signature hook function to set the signature from the
@@ -38,6 +38,10 @@
 // if (!function_exists('_prefs_hook_add_source')) {
 //     function _prefs_hook_add_source($username = null)
 //     {
+//         if (!$username) {
+//             return;
+//         }
+//
 //         /** If you have Turba >= 2.3.2 you can simply do this: **/
 //         // return $GLOBALS['registry']->call('contacts/getDefaultShare');
 //

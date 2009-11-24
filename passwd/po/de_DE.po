@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Passwd 3.1-cvs\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2009-09-12 10:10+0200\n"
-"PO-Revision-Date: 2009-03-19 12:01+0100\n"
+"POT-Creation-Date: 2009-11-21 13:07+0100\n"
+"PO-Revision-Date: 2009-11-21 13:18+0100\n"
 "Last-Translator: Jan Schneider <jan@horde.org>\n"
 "Language-Team: German <i18n@lists.horde.org>\n"
 "MIME-Version: 1.0\n"
@@ -70,7 +70,7 @@ msgstr "Passwort für %s ändern"
 msgid "Confirm new password:"
 msgstr "Neues Passwort bestätigen:"
 
-#: lib/Driver/ldap.php:114 lib/Driver/kolab.php:60
+#: lib/Driver/ldap.php:127 lib/Driver/kolab.php:60
 msgid "Could not bind to LDAP server"
 msgstr "Anbindung im LDAP-Server fehlgeschlagen."
 
@@ -82,7 +82,7 @@ msgstr "Passwort konnte nicht geändert werden (Ungültiges altes Passwort?)"
 msgid "Could not change password."
 msgstr "Passwort konnte nicht geändert werden."
 
-#: lib/Driver/ldap.php:80 lib/Driver/kolab.php:46
+#: lib/Driver/ldap.php:87 lib/Driver/kolab.php:46
 msgid "Could not connect to LDAP server"
 msgstr "Verbindung zum LDAP-Server fehlgeschlagen"
 
@@ -94,7 +94,7 @@ msgstr "Anmeldung fehlgeschlagen (kein Passwort-Prompt)"
 msgid "Could not open pipe to smbpasswd."
 msgstr "Verbindung zu smbpasswd konnte nicht hergestellt werden."
 
-#: lib/Driver/ldap.php:86
+#: lib/Driver/ldap.php:93
 msgid "Could not start TLS connection to LDAP server"
 msgstr "TLS-Verbindung zum LDAP-Server fehlgeschlagen"
 
@@ -125,13 +125,13 @@ msgstr "Fehler beim Ändern des Passworts für %s: %s"
 msgid "Full buffer."
 msgstr "Zwischenspeicher voll."
 
-#: lib/Driver.php:72 lib/Driver/ldap.php:132 lib/Driver/http.php:72
+#: lib/Driver.php:72 lib/Driver/ldap.php:144 lib/Driver/http.php:72
 #: lib/Driver/vmailmgr.php:42 lib/Driver/kolab.php:84
 #: lib/Driver/poppassd.php:120
 msgid "Incorrect old password."
 msgstr "Falsches altes Passwort."
 
-#: lib/Driver/ldap.php:198
+#: lib/Driver/ldap.php:210
 msgid "Minimum password age has not yet expired"
 msgstr "Das minimale Passwortalter ist noch nicht abgelaufen"
 
@@ -234,6 +234,10 @@ msgstr "Zeitüberschreitung."
 msgid "Unable to connect to SQL server."
 msgstr "Verbindung zum SQL Server kann nicht hergestellt werden."
 
+#: lib/Driver/ldap.php:99
+msgid "Unable to disable directory referrals"
+msgstr "Directory-Referrals konnten nicht deaktiviert werden"
+
 #: lib/Driver/expectpecl.php:93
 msgid "Unable to open expect stream!"
 msgstr "Der Expect-Stream konnte nicht geöffnet werden!"
@@ -243,7 +247,7 @@ msgstr "Der Expect-Stream konnte nicht geöffnet werden!"
 msgid "User not found"
 msgstr "Benutzer nicht gefunden"
 
-#: lib/Driver/ldap.php:175 lib/Driver/ldap.php:247 lib/Driver/kolab.php:76
+#: lib/Driver/ldap.php:187 lib/Driver/ldap.php:259 lib/Driver/kolab.php:76
 #: lib/Driver/pine.php:231
 msgid "User not found."
 msgstr "Benutzer nicht gefunden."

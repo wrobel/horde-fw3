@@ -4,7 +4,7 @@
  * various directory search drivers.  It includes functions for searching,
  * adding, removing, and modifying directory entries.
  *
- * $Horde: turba/lib/Driver.php,v 1.57.2.92 2009-10-20 22:10:00 jan Exp $
+ * $Horde: turba/lib/Driver.php,v 1.57.2.93 2009-11-18 13:29:28 jan Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Jon Parise <jon@csh.rit.edu>
@@ -2186,8 +2186,6 @@ class Turba_Driver {
         return PEAR::raiseError(_("Removing user data is not supported in the current address book storage driver."));
     }
 
-    function checkDefaultShare(&$share, $srcconfig)
-    {
     /**
      * Check if the passed in share is the default share for this source.
      *
@@ -2197,6 +2195,8 @@ class Turba_Driver {
      *
      * @return boolean
      */
+    function checkDefaultShare(&$share, $srcconfig)
+    {
         $params = @unserialize($share->get('params'));
         if (!isset($params['default'])) {
             $params['default'] = ($params['name'] == Auth::getAuth());

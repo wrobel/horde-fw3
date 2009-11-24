@@ -15,7 +15,7 @@ define('IMP_AGENT_HEADER', 'Internet Messaging Program (IMP) ' . IMP_VERSION);
  * The IMP_Headers:: class contains all functions related to handling the
  * headers of mail messages in IMP.
  *
- * $Horde: imp/lib/MIME/Headers.php,v 1.92.2.40 2009/03/22 14:56:44 jan Exp $
+ * $Horde: imp/lib/MIME/Headers.php,v 1.92.2.41 2009-11-19 19:04:35 slusarz Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -66,8 +66,8 @@ class IMP_Headers extends MIME_Headers {
      * Parses the information in the mailing list headers.
      *
      * @param string $header  The header to process.
-     * @param boolean $raw    Should the raw URL be returned instead of setting
-     *                        the header value?
+     * @param boolean $raw    Should the raw email be returned instead of
+     *                        setting the header value?
      *
      * @return string  The header value (if $raw == true).
      */
@@ -107,12 +107,9 @@ class IMP_Headers extends MIME_Headers {
                     $output .= '&nbsp;' . $comments[1];
                 }
                 break;
-            } else {
+            } elseif (!$raw) {
                 require_once 'Horde/Text/Filter.php';
                 if ($url = Text_Filter::filter($match, 'linkurls', array('callback' => 'Horde::externalUrl'))) {
-                    if ($raw) {
-                        return $match;
-                    }
                     $output = $url;
                     if (!empty($comments[1])) {
                         $output .= '&nbsp;' . $comments[1];

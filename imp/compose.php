@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/compose.php,v 2.800.2.126 2009-11-07 21:22:58 slusarz Exp $
+ * $Horde: imp/compose.php,v 2.800.2.129 2009-11-22 17:10:10 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -929,7 +929,6 @@ if ($redirect) {
     $t->set('hidden', $hidden);
 
     $t->set('title', htmlspecialchars($title));
-    $t->set('status', IMP::status());
     $t->set('send_msg_ak', Horde::getAccessKeyAndTitle(_("_Send Message")));
     if ($conf['user']['allow_folders']) {
         $t->set('save_draft_ak', Horde::getAccessKeyAndTitle(_("Save _Draft")));
@@ -1120,6 +1119,14 @@ if ($redirect) {
         }
         if (!empty($conf['user']['select_sentmail_folder']) &&
             !$prefs->isLocked('sent_mail_folder')) {
+            /* Check to make sure the sent-mail folder is created - it needs
+             * to exist to show up in drop-down list. */
+            require_once IMP_BASE . '/lib/Folder.php';
+            $imp_folder = &IMP_Folder::singleton();
+            if (!$imp_folder->exists($sent_mail_folder)) {
+                $imp_folder->create($sent_mail_folder, true);
+            }
+
             $t->set('ssm_tabindex', ++$tabindex);
             $t->set('ssm_folders', IMP::flistSelect('', false, array('INBOX'), $sent_mail_folder));
         } else {
@@ -1240,6 +1247,7 @@ if ($redirect) {
         }
     }
 
+    $t->set('status', IMP::status());
     echo $t->fetch(IMP_TEMPLATES . '/compose/compose.html');
 }
 

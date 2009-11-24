@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gollem 1.1-cvs\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2009-09-12 10:10+0200\n"
-"PO-Revision-Date: 2009-03-19 11:08+0100\n"
+"POT-Creation-Date: 2009-11-21 13:07+0100\n"
+"PO-Revision-Date: 2009-11-21 13:14+0100\n"
 "Last-Translator: Jan Schneider <jan@horde.org>\n"
 "Language-Team: German <dev@lists.horde.org>\n"
 "MIME-Version: 1.0\n"
@@ -513,6 +513,10 @@ msgstr "Zurücksetzen"
 #: manager.php:289 templates/edit/edit.inc:11
 msgid "Save"
 msgstr "Speichern"
+
+#: templates/clipboard/clipboard.html:24
+msgid "Select All/None"
+msgstr "Alle/Keine auswählen"
 
 #: templates/prefs/columnselect.html:30
 msgid "Selected Columns:"

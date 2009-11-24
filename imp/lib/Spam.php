@@ -3,7 +3,7 @@
  * The IMP_Spam:: class contains functions related to reporting spam
  * messages in IMP.
  *
- * $Horde: imp/lib/Spam.php,v 1.3.4.20 2009/01/06 15:24:04 jan Exp $
+ * $Horde: imp/lib/Spam.php,v 1.3.4.21 2009-11-18 22:39:26 slusarz Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *
@@ -224,6 +224,8 @@ class IMP_Spam {
                             $notification->push(sprintf(_("%d messages have been deleted."), $msg_count), 'horde.message');
                         }
                     }
+                } else {
+                    $delete_spam = 0;
                 }
                 break;
 

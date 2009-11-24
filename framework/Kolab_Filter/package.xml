@@ -92,11 +92,17 @@ http://pear.php.net/dtd/package-2.0.xsd">
       <file name="Kolab_Filter.mo" role="data" />
      </dir> <!-- /locale/fr_FR/LC_MESSAGES -->
     </dir> <!-- /locale/fr_FR -->
+    <dir name="nl_NL">
+     <dir name="LC_MESSAGES">
+      <file name="Kolab_Filter.mo" role="data" />
+     </dir> <!-- /locale/nl_NL/LC_MESSAGES -->
+    </dir> <!-- /locale/nl_NL -->
    </dir> <!-- /locale -->
    <dir name="po" baseinstalldir="/">
     <file name="Kolab_Filter.pot" role="data" />
     <file name="de_DE.po" role="data" />
     <file name="fr_FR.po" role="data" />
+    <file name="nl_NL.po" role="data" />
    </dir> <!-- /po -->
    <dir name="script" baseinstalldir="/">
     <dir name="Horde">

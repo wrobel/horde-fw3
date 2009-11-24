@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Horde 3.3-cvs\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2009-09-12 10:19+0200\n"
-"PO-Revision-Date: 2009-09-16 15:08+0200\n"
+"POT-Creation-Date: 2009-11-21 13:06+0100\n"
+"PO-Revision-Date: 2009-11-21 13:10+0100\n"
 "Last-Translator: Jan Schneider <jan@horde.org>\n"
 "Language-Team: German <dev@lists.horde.org>\n"
 "MIME-Version: 1.0\n"
@@ -62,7 +62,7 @@ msgstr "\"%s\" existiert bereits."
 msgid "\"%s\" is not a directory."
 msgstr "\"%s\" ist kein Verzeichnis."
 
-#: framework/CLI/CLI.php:350
+#: framework/CLI/CLI.php:352
 #, php-format
 msgid "\"%s\" is not a valid choice."
 msgstr "\"%s\" ist keine gültige Auswahl."
@@ -120,7 +120,7 @@ msgid_plural "%d contacts were successfully added to your address book."
 msgstr[0] "%d Kontakt wurde erfolgreich Ihrem Adressbuch hinzugefügt."
 msgstr[1] "%d Kontakte wurden erfolgreich Ihrem Adressbuch hinzugefügt."
 
-#: framework/Auth/Auth/ldap.php:320
+#: framework/Auth/Auth/ldap.php:308
 #, php-format
 msgid "%d day until your password expires."
 msgid_plural "%d days until your password expires."
@@ -188,8 +188,8 @@ msgid "%s Terms of Agreement"
 msgstr "%s Nutzungsbedingungen"
 
 #: framework/VFS/lib/VFS/smb.php:527 framework/VFS/lib/VFS/smb.php:582
-#: framework/VFS/lib/VFS/ftp.php:770 framework/VFS/lib/VFS/ftp.php:832
-#: framework/VFS/lib/VFS/ssh2.php:750 framework/VFS/lib/VFS/ssh2.php:815
+#: framework/VFS/lib/VFS/ftp.php:770 framework/VFS/lib/VFS/ftp.php:837
+#: framework/VFS/lib/VFS/ssh2.php:751 framework/VFS/lib/VFS/ssh2.php:821
 #, php-format
 msgid "%s already exists."
 msgstr "%s existiert bereits."
@@ -205,38 +205,38 @@ msgstr "%s mit %s %s"
 msgid "%s authentication credentials"
 msgstr "%s-Anmeldedaten"
 
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:983
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:989
 #, php-format
 msgid "%s has accepted the invitation to the following event:"
 msgstr "%s hat die Einladung zu dem folgenden Termin angenommen:"
 
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:982
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:988
 #, php-format
 msgid "%s has accepted the update to the following event:"
 msgstr "%s hat die Aktualisierung des folgenden Termins angenommen:"
 
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:706
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:718
 #, php-format
 msgid "%s has been cancelled"
 msgstr "%s wurde abgesagt"
 
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:973
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:979
 #, php-format
 msgid "%s has declined the invitation to the following event:"
 msgstr "%s hat die Einladung zu dem folgenden Termin abgelehnt:"
 
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:972
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:978
 #, php-format
 msgid "%s has declined the update to the following event:"
 msgstr "%s hat die Aktualisierung des folgenden Termins abgelehnt:"
 
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:993
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:999
 #, php-format
 msgid "%s has tentatively accepted the invitation to the following event:"
 msgstr ""
 "%s hat die Einladung zu dem folgenden Termin unter Vorbehalt angenommen:"
 
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:992
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:998
 #, php-format
 msgid "%s has tentatively accepted the update to the following event:"
 msgstr ""
@@ -315,7 +315,7 @@ msgstr ", böig "
 #: lib/Block/metar.php:200 lib/Block/metar.php:205
 #, php-format
 msgid ", gusting %s %s"
-msgstr ", big %s %s"
+msgstr ", böig %s %s"
 
 #: lib/Block/metar.php:213
 #, php-format
@@ -518,7 +518,7 @@ msgstr "AM/PM"
 msgid "API ID"
 msgstr "API ID"
 
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:984
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:990
 msgid "Accepted: "
 msgstr "Angenommen: "
 
@@ -615,11 +615,11 @@ msgstr "Paar hinzufügen"
 msgid "Add the %s Menu as a Mozilla Sidebar"
 msgstr "Das %s-Menü zur Mozilla Sidebar hinzufügen"
 
-#: framework/MIME/MIME/Viewer/vcard.php:330
+#: framework/MIME/MIME/Viewer/vcard.php:331
 msgid "Add to address book:"
 msgstr "Zum Adressbuch hinzufügen:"
 
-#: framework/MIME/MIME/Viewer/vcard.php:345
+#: framework/MIME/MIME/Viewer/vcard.php:346
 msgid "Add to my address book"
 msgstr "Zu meinem Adressbuch hinzufügen"
 
@@ -645,13 +645,13 @@ msgstr "\"%s\" wurde zum System hinzugefügt. Sie können sich jetzt anmelden."
 msgid "Adding users is disabled."
 msgstr "Das Hinzufügen von Benutzern ist nicht möglich."
 
-#: framework/MIME/MIME/Viewer/vcard.php:158
-#: framework/MIME/MIME/Viewer/vcard.php:216 framework/Form/Form.php:1556
+#: framework/MIME/MIME/Viewer/vcard.php:159
+#: framework/MIME/MIME/Viewer/vcard.php:217 framework/Form/Form.php:1556
 #: lib/Block/vatid.php:102
 msgid "Address"
 msgstr "Adresse"
 
-#: framework/MIME/MIME/Viewer/vcard.php:332 config/registry.php.dist:132
+#: framework/MIME/MIME/Viewer/vcard.php:333 config/registry.php.dist:132
 msgid "Address Book"
 msgstr "Adressbuch"
 
@@ -736,7 +736,7 @@ msgstr "Spitzname"
 msgid "All"
 msgstr "Alle"
 
-#: framework/Perms/Perms/UI.php:254 templates/shares/edit.inc:64
+#: framework/Perms/Perms/UI.php:254 templates/shares/edit.inc:59
 msgid "All Authenticated Users"
 msgstr "Angemeldete Benutzer"
 
@@ -861,7 +861,7 @@ msgstr "Das Konto bestätigen:"
 msgid "April"
 msgstr "April"
 
-#: config/nls.php.dist:222
+#: config/nls.php.dist:223
 msgid "Arabic (Windows-1256)"
 msgstr "Arabisch (Windows-1256)"
 
@@ -903,7 +903,7 @@ msgstr "Argentinien"
 msgid "Armenia"
 msgstr "Armenien"
 
-#: config/nls.php.dist:223
+#: config/nls.php.dist:224
 msgid "Armenian (ARMSCII-8)"
 msgstr "Armenisch (ARMSCII-8)"
 
@@ -1010,58 +1010,58 @@ msgstr "Auth_imap: Die benötigte IMAP-Erweiterung wurde nicht gefunden."
 msgid "Auth_krb5: Required krb5 extension not found."
 msgstr "Auth_krb5: Die benötigte Kerberos-Erweiterung wurde nicht gefunden."
 
-#: framework/Auth/Auth/ldap.php:352
+#: framework/Auth/Auth/ldap.php:340
 msgid "Auth_ldap: Adding users is not supported for Active Directory"
 msgstr ""
 "Auth_ldap: Das Hinzufügen von Benutzern wird für Active Directory nicht "
 "unterstützt"
 
-#: framework/Auth/Auth/ldap.php:411
+#: framework/Auth/Auth/ldap.php:399
 msgid "Auth_ldap: Removing users is not supported for Active Directory"
 msgstr ""
 "Auth_ldap: Das Löschen von Benutzern wird für Active Directory nicht "
 "unterstützt"
 
-#: framework/Auth/Auth/ldap.php:92 framework/Auth/Auth/msad.php:300
+#: framework/Auth/Auth/ldap.php:80 framework/Auth/Auth/msad.php:287
 msgid "Auth_ldap: Required LDAP extension not found."
 msgstr "Auth_ldap: Die benötigte LDAP-Erweiterung wurde nicht gefunden."
 
-#: framework/Auth/Auth/ldap.php:393
+#: framework/Auth/Auth/ldap.php:381
 #, php-format
 msgid "Auth_ldap: Unable to add user \"%s\". This is what the server said: "
 msgstr ""
 "Auth_ldap: Der Benutzer \"%s\" konnte nicht hinzugefügt werden. Meldung des "
 "Servers: "
 
-#: framework/Auth/Auth/ldap.php:438
+#: framework/Auth/Auth/ldap.php:426
 #, php-format
 msgid "Auth_ldap: Unable to remove user \"%s\""
 msgstr "Auth_ldap: Benutzer \"%s\" konnte nicht gelöscht werden"
 
-#: framework/Auth/Auth/ldap.php:555
+#: framework/Auth/Auth/ldap.php:543
 #, php-format
 msgid "Auth_ldap: Unable to update user \"%s\""
 msgstr "Auth_ldap: Benutzer \"%s\" konnte nicht aktualisiert werden"
 
-#: framework/Auth/Auth/ldap.php:458
+#: framework/Auth/Auth/ldap.php:446
 msgid "Auth_ldap: Updating users is not supported for Active Directory."
 msgstr ""
 "Auth_ldap: Das Aktualisieren von Benutzern wird für Active Directory nicht "
 "unterstützt."
 
-#: framework/Auth/Auth/msad.php:151
+#: framework/Auth/Auth/msad.php:154
 #, php-format
 msgid "Auth_msad: Unable to add user \"%s\". This is what the server said: "
 msgstr ""
 "Auth_msad: Der Benutzer \"%s\" konnte nicht hinzugefügt werden. Meldung des "
 "Servers: "
 
-#: framework/Auth/Auth/msad.php:190
+#: framework/Auth/Auth/msad.php:193
 #, php-format
 msgid "Auth_msad: Unable to remove user \"%s\""
 msgstr "Auth_msad: Benutzer \"%s\" konnte nicht gelöscht werden"
 
-#: framework/Auth/Auth/msad.php:242
+#: framework/Auth/Auth/msad.php:245
 #, php-format
 msgid "Auth_msad: Unable to update user \"%s\""
 msgstr "Auth_msad: Benutzer \"%s\" konnte nicht aktualisiert werden"
@@ -1092,11 +1092,11 @@ msgstr "Anmeldung fehlgeschlagen. %s"
 msgid "Authentication rejected by RADIUS server."
 msgstr "Die Authentifizierung wurde vom RADIUS-Server zurückgewiesen."
 
-#: framework/VFS/lib/VFS/ftp.php:946
+#: framework/VFS/lib/VFS/ftp.php:951
 msgid "Authentication to FTP server failed."
 msgstr "Anmeldung beim FTP-Server fehlgeschlagen."
 
-#: framework/VFS/lib/VFS/ssh2.php:943
+#: framework/VFS/lib/VFS/ssh2.php:949
 msgid "Authentication to SSH2 server failed."
 msgstr "Anmeldung beim SSH2-Server fehlgeschlagen."
 
@@ -1139,7 +1139,7 @@ msgstr "Bahamas"
 msgid "Bahrain"
 msgstr "Bahrein"
 
-#: config/nls.php.dist:224
+#: config/nls.php.dist:225
 msgid "Baltic (ISO-8859-13)"
 msgstr "Baltisch (ISO-8859-13)"
 
@@ -1196,7 +1196,7 @@ msgstr "Bermudas"
 msgid "Bhutan"
 msgstr "Bhutan"
 
-#: framework/MIME/MIME/Viewer/vcard.php:100
+#: framework/MIME/MIME/Viewer/vcard.php:101
 msgid "Birthday"
 msgstr "Geburtstag"
 
@@ -1367,7 +1367,7 @@ msgstr ""
 
 #: framework/VFS/lib/VFS.php:409 framework/VFS/lib/VFS/smb.php:511
 #: framework/VFS/lib/VFS/file.php:272 framework/VFS/lib/VFS/ftp.php:749
-#: framework/VFS/lib/VFS/ssh2.php:729 framework/VFS/lib/VFS/sql_file.php:181
+#: framework/VFS/lib/VFS/ssh2.php:730 framework/VFS/lib/VFS/sql_file.php:181
 msgid "Cannot copy file(s) - source and destination are the same."
 msgstr ""
 "Datei(en) können nicht kopiert werden - Quell- und Zieldateien sind "
@@ -1379,7 +1379,7 @@ msgstr ""
 "Dieser Order kann nicht angelegt werden! Der Name wurde noch nicht "
 "festgelegt."
 
-#: framework/VFS/lib/VFS/ftp.php:367 framework/VFS/lib/VFS/ssh2.php:352
+#: framework/VFS/lib/VFS/ftp.php:367 framework/VFS/lib/VFS/ssh2.php:353
 #, php-format
 msgid "Cannot delete file \"%s\"."
 msgstr "Die Datei \"%s\" konnte nicht gelöscht werden."
@@ -1390,7 +1390,7 @@ msgid "Cannot find a temporary directory."
 msgstr "Kein temporäres Verzeichnis gefunden."
 
 #: framework/VFS/lib/VFS/smb.php:566 framework/VFS/lib/VFS/file.php:231
-#: framework/VFS/lib/VFS/ftp.php:811 framework/VFS/lib/VFS/ssh2.php:793
+#: framework/VFS/lib/VFS/ftp.php:816 framework/VFS/lib/VFS/ssh2.php:799
 #: framework/VFS/lib/VFS/sql_file.php:140
 msgid "Cannot move file(s) - destination is within source."
 msgstr ""
@@ -1406,7 +1406,7 @@ msgstr "Die Datei \"%s\" kann nicht geöffnet werden."
 msgid "Cannot proceed without 'targetFile' parameter."
 msgstr "Fortsetzung ohne \"targetFile\"-Parameter nicht möglich."
 
-#: framework/VFS/lib/VFS/ftp.php:363 framework/VFS/lib/VFS/ssh2.php:348
+#: framework/VFS/lib/VFS/ftp.php:363 framework/VFS/lib/VFS/ssh2.php:349
 #, php-format
 msgid "Cannot remove directory \"%s\"."
 msgstr "Das Verzeichnis \"%s\" konnte nicht entfernt werden."
@@ -1473,11 +1473,11 @@ msgstr "Cayman-Inseln"
 msgid "Cc"
 msgstr "Cc"
 
-#: framework/MIME/MIME/Viewer/vcard.php:242
+#: framework/MIME/MIME/Viewer/vcard.php:243
 msgid "Cell Phone"
 msgstr "Mobiltelefon"
 
-#: config/nls.php.dist:225
+#: config/nls.php.dist:226
 msgid "Celtic (ISO-8859-14)"
 msgstr "Keltisch (ISO-8859-14)"
 
@@ -1486,7 +1486,7 @@ msgstr "Keltisch (ISO-8859-14)"
 msgid "Central African Republic"
 msgstr "Zentralafrikanische Republik"
 
-#: config/nls.php.dist:226
+#: config/nls.php.dist:227
 msgid "Central European (ISO-8859-2)"
 msgstr "Mitteleuropäisch (ISO-8859-2)"
 
@@ -1521,7 +1521,7 @@ msgid ""
 "emails."
 msgstr ""
 "Ändern Sie den Namen oder die Adresse, die die Empfänger Ihrer E-Mail-"
-"Nachrichten sehen, wenn sie diese lesen oder darauf anworten."
+"Nachrichten sehen, wenn sie diese lesen oder darauf antworten."
 
 #: services/changepassword.php:26
 msgid ""
@@ -1561,11 +1561,11 @@ msgstr "Chile"
 msgid "China"
 msgstr "China"
 
-#: config/nls.php.dist:227
+#: config/nls.php.dist:228
 msgid "Chinese Simplified (GB2312)"
 msgstr "Chinesisch vereinfacht (GB2312)"
 
-#: config/nls.php.dist:228
+#: config/nls.php.dist:229
 msgid "Chinese Traditional (Big5)"
 msgstr "Chinesisch traditionell (Big5)"
 
@@ -1720,7 +1720,7 @@ msgstr "Eindeutiger Name"
 msgid "Comoros"
 msgstr "Komoren"
 
-#: framework/MIME/MIME/Viewer/vcard.php:294
+#: framework/MIME/MIME/Viewer/vcard.php:295
 msgid "Company"
 msgstr "Firma"
 
@@ -1800,11 +1800,11 @@ msgid "Connection refused to the public keyserver. Reason: %s (%s)"
 msgstr ""
 "Verbindung zum öffentlichen Schlüsselserver wurde abgewiesen. Grund: %s (%s)"
 
-#: framework/VFS/lib/VFS/ftp.php:939
+#: framework/VFS/lib/VFS/ftp.php:944
 msgid "Connection to FTP server failed."
 msgstr "Verbindung zum FTP-Server fehlgeschlagen."
 
-#: framework/VFS/lib/VFS/ssh2.php:937
+#: framework/VFS/lib/VFS/ssh2.php:943
 msgid "Connection to SSH2 server failed."
 msgstr "Verbindung zum SSH2-Server fehlgeschlagen."
 
@@ -1885,11 +1885,11 @@ msgstr "Kontakt konnte nicht gespeichert werden. %s"
 msgid "Could not bind to LDAP server"
 msgstr "Anbindung im LDAP-Server fehlgeschlagen."
 
-#: framework/Auth/Auth/ldap.php:143 lib/Block/account.php:487
+#: framework/Auth/Auth/ldap.php:131 lib/Block/account.php:487
 msgid "Could not bind to LDAP server."
 msgstr "Anbindung an LDAP-Server fehlgeschlagen."
 
-#: framework/Auth/Auth/msad.php:338
+#: framework/Auth/Auth/msad.php:325
 msgid "Could not bind to MSAD server."
 msgstr "Anbindung an MSAD-Server fehlgeschlagen."
 
@@ -1903,7 +1903,7 @@ msgstr "Kontostand konnte nicht überprüft werden. %s"
 msgid "Could not connect to LDAP server."
 msgstr "Verbindung zum LDAP-Server fehlgeschlagen."
 
-#: framework/SessionHandler/SessionHandler/memcache.php:305
+#: framework/SessionHandler/SessionHandler/memcache.php:304
 msgid "Could not connect to memcache servers."
 msgstr "Verbindung zu Memcache-Servern fehlgeschlagen."
 
@@ -2106,11 +2106,11 @@ msgstr ""
 "eine der Möglichkeiten unter %s verwenden, um den Code zu speichern, oder "
 "den untenstehenden Code manuell nach %s kopieren."
 
-#: framework/Auth/Auth/ldap.php:175
+#: framework/Auth/Auth/ldap.php:163
 msgid "Could not search the LDAP server."
 msgstr "Der LDAP-Server konnte nicht durchsucht werden."
 
-#: framework/Auth/Auth/msad.php:367
+#: framework/Auth/Auth/msad.php:354
 msgid "Could not search the MSAD server."
 msgstr "Der MSAD-Server konnte nicht durchsucht werden."
 
@@ -2239,15 +2239,15 @@ msgstr ""
 msgid "Cyprus"
 msgstr "Zypern"
 
-#: config/nls.php.dist:229
+#: config/nls.php.dist:230
 msgid "Cyrillic (KOI8-R)"
 msgstr "Kyrillisch (KOI8-R)"
 
-#: config/nls.php.dist:230
+#: config/nls.php.dist:231
 msgid "Cyrillic (Windows-1251)"
 msgstr "Kyrillisch (Windows-1251)"
 
-#: config/nls.php.dist:231
+#: config/nls.php.dist:232
 msgid "Cyrillic/Ukrainian (KOI8-U)"
 msgstr "Kyrillisch/Ukrainisch (KOI8-U)"
 
@@ -2333,11 +2333,11 @@ msgstr "Tag"
 msgid "December"
 msgstr "Dezember"
 
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:974
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:980
 msgid "Declined: "
 msgstr "Abgelehnt: "
 
-#: framework/Prefs/Prefs/UI.php:216 lib/prefs.php:136
+#: framework/Prefs/Prefs/UI.php:216 lib/prefs.php:137
 msgid "Default"
 msgstr "Standard"
 
@@ -2361,13 +2361,13 @@ msgstr "Definitionen"
 #: admin/groups.php:77 framework/Perms/Perms.php:403
 #: framework/Perms/Perms/UI.php:480 framework/Perms/Perms/UI.php:497
 #: framework/IMAP/IMAP/ACL/rfc4314.php:68 templates/syncml/syncml.inc:13
-#: templates/syncml/syncml.inc:29 templates/shares/edit.inc:69
-#: templates/shares/edit.inc:89 templates/shares/edit.inc:104
-#: templates/shares/edit.inc:124 templates/shares/edit.inc:139
-#: templates/shares/edit.inc:159 templates/shares/edit.inc:174
-#: templates/shares/edit.inc:198 templates/shares/edit.inc:233
-#: templates/shares/edit.inc:260 templates/shares/edit.inc:276
-#: templates/shares/edit.inc:296 templates/shares/edit.inc:325
+#: templates/syncml/syncml.inc:29 templates/shares/edit.inc:64
+#: templates/shares/edit.inc:84 templates/shares/edit.inc:99
+#: templates/shares/edit.inc:119 templates/shares/edit.inc:134
+#: templates/shares/edit.inc:154 templates/shares/edit.inc:169
+#: templates/shares/edit.inc:193 templates/shares/edit.inc:228
+#: templates/shares/edit.inc:255 templates/shares/edit.inc:271
+#: templates/shares/edit.inc:291 templates/shares/edit.inc:320
 #: templates/rpcsum/rpcsum.inc:69 templates/rpcsum/rpcsum.inc:89
 #: templates/admin/groups/delete.inc:10 templates/admin/user/list.inc:31
 msgid "Delete"
@@ -2451,7 +2451,7 @@ msgstr "Dänemark"
 msgid "Deny the account:"
 msgstr "Das Konto ablehnen:"
 
-#: framework/MIME/MIME/Viewer/vcard.php:296
+#: framework/MIME/MIME/Viewer/vcard.php:297
 msgid "Department"
 msgstr "Abteilung"
 
@@ -2548,8 +2548,8 @@ msgstr ""
 "Enthält die erste Zeile die Feldnamen? Wenn ja, dieses Auswahlkästchen "
 "markieren:"
 
-#: framework/MIME/MIME/Viewer/vcard.php:141
-#: framework/MIME/MIME/Viewer/vcard.php:199
+#: framework/MIME/MIME/Viewer/vcard.php:142
+#: framework/MIME/MIME/Viewer/vcard.php:200
 msgid "Domestic Address"
 msgstr "Inlandsadresse"
 
@@ -2619,13 +2619,13 @@ msgid "Ecuador"
 msgstr "Ecuador"
 
 #: framework/Perms/Perms.php:402 framework/Block/Block/Layout.php:106
-#: framework/Block/Block/Layout.php:107 templates/shares/edit.inc:68
-#: templates/shares/edit.inc:85 templates/shares/edit.inc:103
-#: templates/shares/edit.inc:120 templates/shares/edit.inc:138
-#: templates/shares/edit.inc:155 templates/shares/edit.inc:173
-#: templates/shares/edit.inc:194 templates/shares/edit.inc:229
-#: templates/shares/edit.inc:256 templates/shares/edit.inc:275
-#: templates/shares/edit.inc:292 templates/shares/edit.inc:321
+#: framework/Block/Block/Layout.php:107 templates/shares/edit.inc:63
+#: templates/shares/edit.inc:80 templates/shares/edit.inc:98
+#: templates/shares/edit.inc:115 templates/shares/edit.inc:133
+#: templates/shares/edit.inc:150 templates/shares/edit.inc:168
+#: templates/shares/edit.inc:189 templates/shares/edit.inc:224
+#: templates/shares/edit.inc:251 templates/shares/edit.inc:270
+#: templates/shares/edit.inc:287 templates/shares/edit.inc:316
 #: templates/rpcsum/rpcsum.inc:68
 msgid "Edit"
 msgstr "Bearbeiten"
@@ -2651,11 +2651,11 @@ msgstr "Rechte bearbeiten"
 msgid "Edit options for:"
 msgstr "Einstellungen bearbeiten für:"
 
-#: services/shares/edit.php:250
+#: services/shares/edit.php:251
 msgid "Edit permissions"
 msgstr "Rechte bearbeiten"
 
-#: framework/Perms/Perms/UI.php:419 services/shares/edit.php:252
+#: framework/Perms/Perms/UI.php:419 services/shares/edit.php:253
 #: templates/shares/edit.inc:14
 #, php-format
 msgid "Edit permissions for \"%s\""
@@ -2675,7 +2675,7 @@ msgstr "Ägypten"
 msgid "El Salvador"
 msgstr "El Salvador"
 
-#: framework/MIME/MIME/Viewer/vcard.php:279 framework/Form/Form.php:2436
+#: framework/MIME/MIME/Viewer/vcard.php:280 framework/Form/Form.php:2436
 msgid "Email"
 msgstr "E-Mail-Adresse"
 
@@ -2721,7 +2721,7 @@ msgstr "Leere Nachricht."
 msgid "Empty result"
 msgstr "Leeres Ergebnis"
 
-#: framework/Auth/Auth/ldap.php:182 framework/Auth/Auth/msad.php:381
+#: framework/Auth/Auth/ldap.php:170 framework/Auth/Auth/msad.php:368
 msgid "Empty result."
 msgstr "Leeres Ergebnis."
 
@@ -2793,8 +2793,8 @@ msgstr "Fehler beim Löschen der Synchronisationssitzung:"
 msgid "Error deleting synchronization sessions:"
 msgstr "Fehler beim Löschen der Synchronisationssitzungen:"
 
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:682
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:688
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:694
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:700
 #, php-format
 msgid "Error processing \"%s\""
 msgstr "Fehler beim Verarbeiten von \"%s\""
@@ -2966,11 +2966,11 @@ msgstr ""
 msgid "Failed saving object. Error was: %s"
 msgstr "Fehler beim Speichern des Objekts. Fehlermeldung des Servers: %s"
 
-#: framework/Auth/Auth/ldap.php:98
+#: framework/Auth/Auth/ldap.php:86
 msgid "Failed to connect to LDAP server."
 msgstr "Verbindung zum LDAP-Server gescheitert."
 
-#: framework/Auth/Auth/msad.php:307
+#: framework/Auth/Auth/msad.php:294
 msgid "Failed to connect to MSAD server."
 msgstr "Verbindung zum MSAD-Server gescheitert."
 
@@ -2978,12 +2978,12 @@ msgstr "Verbindung zum MSAD-Server gescheitert."
 msgid "Failed to connect to SMB server."
 msgstr "Verbindung zum SMB-Server gescheitert."
 
-#: framework/VFS/lib/VFS/ftp.php:783 framework/VFS/lib/VFS/ssh2.php:764
+#: framework/VFS/lib/VFS/ftp.php:783 framework/VFS/lib/VFS/ssh2.php:765
 #, php-format
 msgid "Failed to copy from \"%s\"."
 msgstr "Es konnte keine Kopie von \"%s\" erstellt werden."
 
-#: framework/VFS/lib/VFS/ftp.php:788 framework/VFS/lib/VFS/ssh2.php:769
+#: framework/VFS/lib/VFS/ftp.php:793 framework/VFS/lib/VFS/ssh2.php:775
 #, php-format
 msgid "Failed to copy to \"%s\"."
 msgstr "Es konnte nicht nach \"%s\" kopiert werden."
@@ -3007,8 +3007,8 @@ msgstr "Kolab-IMAP-%s-Treiber konnte nicht geladen werden"
 msgid "Failed to load Kolab XML driver %s"
 msgstr "Kolab-XML-%s-Treiber konnte nicht geladen werden"
 
-#: framework/VFS/lib/VFS/smb.php:589 framework/VFS/lib/VFS/ftp.php:837
-#: framework/VFS/lib/VFS/ssh2.php:820
+#: framework/VFS/lib/VFS/smb.php:589 framework/VFS/lib/VFS/ftp.php:842
+#: framework/VFS/lib/VFS/ssh2.php:826
 #, php-format
 msgid "Failed to move to \"%s\"."
 msgstr "Es konnte nicht nach \"%s\" verschoben werden."
@@ -3037,11 +3037,11 @@ msgstr "Falklandinseln"
 msgid "Faroe Islands"
 msgstr "Faröer"
 
-#: framework/CLI/CLI.php:306
+#: framework/CLI/CLI.php:308
 msgid "Fatal Error:"
 msgstr "Schwerer Fehler:"
 
-#: framework/MIME/MIME/Viewer/vcard.php:233
+#: framework/MIME/MIME/Viewer/vcard.php:234
 msgid "Fax"
 msgstr "Fax"
 
@@ -3370,7 +3370,7 @@ msgstr "Graustufen"
 msgid "Greece"
 msgstr "Griechenland"
 
-#: config/nls.php.dist:232
+#: config/nls.php.dist:233
 msgid "Greek (ISO-8859-7)"
 msgstr "Griechisch (ISO-8859-7)"
 
@@ -3431,7 +3431,7 @@ msgstr ""
 "Servers: %s"
 
 #: admin/groups.php:249 framework/Perms/Perms/UI.php:361
-#: templates/shares/edit.inc:271
+#: templates/shares/edit.inc:266
 msgid "Groups"
 msgstr "Gruppen"
 
@@ -3454,7 +3454,7 @@ msgstr "Guatemala"
 msgid "Guernsey"
 msgstr "Guernsey"
 
-#: framework/Perms/Perms/UI.php:273 templates/shares/edit.inc:99
+#: framework/Perms/Perms/UI.php:273 templates/shares/edit.inc:94
 msgid "Guest Permissions"
 msgstr "Gastrechte"
 
@@ -3526,7 +3526,7 @@ msgstr "Starker Regen"
 msgid "Heavy T-Storm"
 msgstr "Starke Gewitter"
 
-#: config/nls.php.dist:233
+#: config/nls.php.dist:234
 msgid "Hebrew (ISO-8859-8-I)"
 msgstr "Hebräisch (ISO-8859-8-I)"
 
@@ -3573,8 +3573,8 @@ msgstr "Hoch"
 msgid "Holy See (Vatican City State)"
 msgstr "Vatikanstadt"
 
-#: framework/MIME/MIME/Viewer/vcard.php:135
-#: framework/MIME/MIME/Viewer/vcard.php:193
+#: framework/MIME/MIME/Viewer/vcard.php:136
+#: framework/MIME/MIME/Viewer/vcard.php:194
 msgid "Home Address"
 msgstr "Adresse privat"
 
@@ -3582,7 +3582,7 @@ msgstr "Adresse privat"
 msgid "Home Directory"
 msgstr "Heimverzeichnis"
 
-#: framework/MIME/MIME/Viewer/vcard.php:236
+#: framework/MIME/MIME/Viewer/vcard.php:237
 msgid "Home Phone"
 msgstr "Telefon privat"
 
@@ -3830,7 +3830,7 @@ msgstr ""
 msgid "India"
 msgstr "Indien"
 
-#: framework/Perms/Perms/UI.php:301 templates/shares/edit.inc:169
+#: framework/Perms/Perms/UI.php:301 templates/shares/edit.inc:164
 msgid "Individual Users"
 msgstr "Einzelne Benutzer"
 
@@ -3915,8 +3915,8 @@ msgid ""
 msgstr ""
 "Interner Datenbankfehler. Details wurden für den Administrator mitgeloggt."
 
-#: framework/MIME/MIME/Viewer/vcard.php:144
-#: framework/MIME/MIME/Viewer/vcard.php:202
+#: framework/MIME/MIME/Viewer/vcard.php:145
+#: framework/MIME/MIME/Viewer/vcard.php:203
 msgid "International Address"
 msgstr "Internationale Adresse"
 
@@ -4110,7 +4110,7 @@ msgstr "Januar"
 msgid "Japan"
 msgstr "Japan"
 
-#: config/nls.php.dist:234
+#: config/nls.php.dist:235
 msgid "Japanese (ISO-2022-JP)"
 msgstr "Japanisch (ISO-2022-JP)"
 
@@ -4218,7 +4218,7 @@ msgstr "Demokratische Volksrepublic Korea"
 msgid "Korea, Republic of"
 msgstr "Republik Korea"
 
-#: config/nls.php.dist:235
+#: config/nls.php.dist:236
 msgid "Korean (EUC-KR)"
 msgstr "Koreanisch (EUC-KR)"
 
@@ -4281,17 +4281,17 @@ msgstr "Letztes Viertel"
 msgid "Last Updated:"
 msgstr "Letzte Aktualisierung:"
 
-#: framework/Auth/Auth.php:729
+#: framework/Auth/Auth.php:728
 #, php-format
 msgid "Last login: %s"
 msgstr "Letzte Anmeldung: %s"
 
-#: framework/Auth/Auth.php:731
+#: framework/Auth/Auth.php:730
 #, php-format
 msgid "Last login: %s from %s"
 msgstr "Letzte Anmeldung: %s von %s"
 
-#: framework/Auth/Auth.php:726
+#: framework/Auth/Auth.php:725
 msgid "Last login: Never"
 msgstr "Letzte Anmeldung: Noch nie"
 
@@ -4534,13 +4534,13 @@ msgstr "Anmelden"
 msgid "Login Tasks"
 msgstr "Anmeldeaufgaben"
 
-#: framework/Auth/Auth.php:1023
+#: framework/Auth/Auth.php:1022
 msgid "Login failed because your username or password was entered incorrectly."
 msgstr ""
 "Die Anmeldung ist fehlgeschlagen, weil Sie Ihren Benutzernamen oder Ihr "
 "Passwort falsch eingegeben haben."
 
-#: framework/Auth/Auth.php:1019
+#: framework/Auth/Auth.php:1018
 msgid "Login failed."
 msgstr "Anmeldung fehlgeschlagen."
 
@@ -4679,7 +4679,7 @@ msgstr "Mit Gelesen-/Ungelesen-Status versehen"
 #: framework/IMAP/IMAP/ACL/rfc4314.php:49
 #: framework/IMAP/IMAP/ACL/rfc2086.php:89
 msgid "Mark with other flags (e.g. Important/Answered)"
-msgstr "Mit anderem Status versehen (z.B. Wichtig/Beanwortet)"
+msgstr "Mit anderem Status versehen (z.B. Wichtig/Beantwortet)"
 
 #: framework/NLS/NLS/tld.php:156 framework/NLS/NLS/countries.php:143
 #: framework/NLS/NLS/GeoIP.php:91
@@ -4757,7 +4757,7 @@ msgstr "Mittel"
 msgid "Members"
 msgstr "Mitglieder"
 
-#: framework/SessionHandler/SessionHandler/memcache.php:309
+#: framework/SessionHandler/SessionHandler/memcache.php:308
 msgid "Memcache session tracking not enabled."
 msgstr "Sitzungsverfolgung für Memcache ist nicht aktiviert."
 
@@ -4843,7 +4843,7 @@ msgstr "Tiefsttemperatur der letzten 24 Stunden: "
 msgid "Min temp last 6 hours: "
 msgstr "Tiefsttemperatur der letzten 6 Stunden: "
 
-#: framework/Auth/Auth/ldap.php:493
+#: framework/Auth/Auth/ldap.php:481
 msgid "Minimum password age has not yet expired"
 msgstr "Das minimale Passwortalter ist noch nicht abgelaufen"
 
@@ -5248,7 +5248,7 @@ msgstr ""
 msgid "No configuration information specified for %s."
 msgstr "Für %s wurden keine Konfigurationsinformationen angegeben."
 
-#: framework/VFS/lib/VFS/ftp.php:918
+#: framework/VFS/lib/VFS/ftp.php:923
 msgid "No configuration information specified for FTP VFS."
 msgstr ""
 "Für den FTP-VFS-Treiber wurden keine Konfigurationsinformationen angegeben."
@@ -5258,13 +5258,13 @@ msgid "No configuration information specified for SQL VFS."
 msgstr ""
 "Für den SQL-VFS-Treiber wurden keine Konfigurationsinformationen angegeben."
 
-#: framework/VFS/lib/VFS/sql_file.php:742
+#: framework/VFS/lib/VFS/sql_file.php:747
 msgid "No configuration information specified for SQL-File VFS."
 msgstr ""
 "Für den SQL-Datei-VFS-Treiber wurden keine Konfigurationsinformationen "
 "angegeben."
 
-#: framework/VFS/lib/VFS/ssh2.php:920
+#: framework/VFS/lib/VFS/ssh2.php:926
 msgid "No configuration information specified for SSH2 VFS."
 msgstr ""
 "Für den SSH2-VFS-Treiber wurden keine Konfigurationsinformationen angegeben."
@@ -5373,7 +5373,7 @@ msgstr "Datei nicht gefunden"
 msgid "No such folder %s"
 msgstr "Ordner %s nicht gefunden"
 
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:921
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:927
 msgid "No summary available"
 msgstr "Keine Zusammenfassung verfügbar"
 
@@ -5418,7 +5418,7 @@ msgstr ""
 msgid "None"
 msgstr "Keine"
 
-#: config/nls.php.dist:236
+#: config/nls.php.dist:237
 msgid "Nordic (ISO-8859-10)"
 msgstr "Nordisch (ISO-8859-10)"
 
@@ -5449,7 +5449,7 @@ msgstr "Gültig bis"
 msgid "Not Before"
 msgstr "Gültig ab"
 
-#: framework/VFS/lib/VFS/file.php:477
+#: framework/VFS/lib/VFS/file.php:482
 msgid "Not a directory"
 msgstr "Kein Verzeichnis"
 
@@ -5473,7 +5473,7 @@ msgstr "Nicht implementiert!"
 msgid "Not implemented."
 msgstr "Nicht implementiert."
 
-#: framework/SessionHandler/SessionHandler.php:333
+#: framework/SessionHandler/SessionHandler.php:344
 #: framework/VFS/lib/VFS.php:193 framework/VFS/lib/VFS.php:239
 #: framework/VFS/lib/VFS.php:339 framework/VFS/lib/VFS.php:357
 #: framework/VFS/lib/VFS.php:374 framework/VFS/lib/VFS.php:481
@@ -5489,7 +5489,7 @@ msgid "Not supported."
 msgstr "Nicht unterstützt."
 
 #: framework/Share/Share/kolab.php:445 framework/Kolab/Kolab.php:732
-#: framework/MIME/MIME/Viewer/vcard.php:302 config/registry.php.dist:194
+#: framework/MIME/MIME/Viewer/vcard.php:303 config/registry.php.dist:194
 msgid "Notes"
 msgstr "Notizen"
 
@@ -5539,7 +5539,7 @@ msgstr "O Zeichen"
 msgid "Object"
 msgstr "Objekt"
 
-#: templates/shares/edit.inc:134
+#: templates/shares/edit.inc:129
 msgid "Object Creator"
 msgstr "Objektersteller"
 
@@ -5617,7 +5617,7 @@ msgstr "Nur eine E-Mail-Adresse erlaubt."
 msgid "Only one email address is allowed."
 msgstr "Nur eine E-Mail-Adresse ist erlaubt."
 
-#: services/shares/edit.php:77
+#: services/shares/edit.php:78
 msgid ""
 "Only the owner or system administrator may change ownership or owner "
 "permissions for a share"
@@ -5648,7 +5648,7 @@ msgstr "Einstellungen"
 msgid "Options for %s"
 msgstr "Einstellungen für %s"
 
-#: templates/shares/edit.inc:49 templates/shares/edit.inc:241
+#: templates/shares/edit.inc:236
 msgid "Or enter a user name:"
 msgstr "Oder geben Sie einen Benutzernamen ein:"
 
@@ -5687,7 +5687,7 @@ msgstr "Besitzer"
 msgid "Owner of folder %s cannot be determined."
 msgstr "Besitzer des Ordners %s konnte nicht festgestellt werden."
 
-#: templates/shares/edit.inc:38 templates/shares/edit.inc:51
+#: templates/shares/edit.inc:38 templates/shares/edit.inc:47
 msgid "Owner:"
 msgstr "Besitzer:"
 
@@ -5822,8 +5822,8 @@ msgstr "Papua-Neuguinea"
 msgid "Paraguay"
 msgstr "Paraguay"
 
-#: framework/MIME/MIME/Viewer/vcard.php:150
-#: framework/MIME/MIME/Viewer/vcard.php:208
+#: framework/MIME/MIME/Viewer/vcard.php:151
+#: framework/MIME/MIME/Viewer/vcard.php:209
 msgid "Parcel Address"
 msgstr "Paketadresse"
 
@@ -5933,7 +5933,7 @@ msgstr "Haustiere"
 msgid "Philippines"
 msgstr "Philippinen"
 
-#: framework/MIME/MIME/Viewer/vcard.php:245
+#: framework/MIME/MIME/Viewer/vcard.php:246
 msgid "Phone"
 msgstr "Telefon"
 
@@ -5941,8 +5941,8 @@ msgstr "Telefon"
 msgid "Phone number"
 msgstr "Telefonnummer"
 
-#: framework/MIME/MIME/Viewer/vcard.php:108
-#: framework/MIME/MIME/Viewer/vcard.php:116
+#: framework/MIME/MIME/Viewer/vcard.php:109
+#: framework/MIME/MIME/Viewer/vcard.php:117
 msgid "Photo"
 msgstr "Foto"
 
@@ -6056,8 +6056,8 @@ msgstr "Abschicken"
 msgid "Post to this folder (not enforced by IMAP)"
 msgstr "Senden an diesen Ordner (nicht durch IMAP)"
 
-#: framework/MIME/MIME/Viewer/vcard.php:147
-#: framework/MIME/MIME/Viewer/vcard.php:205
+#: framework/MIME/MIME/Viewer/vcard.php:148
+#: framework/MIME/MIME/Viewer/vcard.php:206
 msgid "Postal Address"
 msgstr "Postadresse"
 
@@ -6090,8 +6090,8 @@ msgstr "Benutzereinstellungen"
 msgid "Preferences \"%s\" deleted in scope \"%s\"."
 msgstr "Benutzereinstellungen \"%s\" im Bereich \"%s\" gelöscht."
 
-#: framework/MIME/MIME/Viewer/vcard.php:153
-#: framework/MIME/MIME/Viewer/vcard.php:211
+#: framework/MIME/MIME/Viewer/vcard.php:154
+#: framework/MIME/MIME/Viewer/vcard.php:212
 msgid "Preferred Address"
 msgstr "Bevorzugte Adresse"
 
@@ -6229,13 +6229,13 @@ msgid "Ratio"
 msgstr "Verhältnis"
 
 #: framework/Perms/Perms.php:401 framework/IMAP/IMAP/ACL/rfc4314.php:61
-#: framework/IMAP/IMAP/ACL/rfc2086.php:99 templates/shares/edit.inc:67
-#: templates/shares/edit.inc:81 templates/shares/edit.inc:102
-#: templates/shares/edit.inc:116 templates/shares/edit.inc:137
-#: templates/shares/edit.inc:151 templates/shares/edit.inc:172
-#: templates/shares/edit.inc:190 templates/shares/edit.inc:225
-#: templates/shares/edit.inc:252 templates/shares/edit.inc:274
-#: templates/shares/edit.inc:288 templates/shares/edit.inc:317
+#: framework/IMAP/IMAP/ACL/rfc2086.php:99 templates/shares/edit.inc:62
+#: templates/shares/edit.inc:76 templates/shares/edit.inc:97
+#: templates/shares/edit.inc:111 templates/shares/edit.inc:132
+#: templates/shares/edit.inc:146 templates/shares/edit.inc:167
+#: templates/shares/edit.inc:185 templates/shares/edit.inc:220
+#: templates/shares/edit.inc:247 templates/shares/edit.inc:269
+#: templates/shares/edit.inc:283 templates/shares/edit.inc:312
 msgid "Read"
 msgstr "Lesen"
 
@@ -6344,9 +6344,9 @@ msgstr "Der gewünschte Dienst konnte nicht gefunden werden."
 msgid "Required \"%s\" not specified in %s configuration."
 msgstr "\"%s\" wurde in der Konfiguration für %s nicht angegeben."
 
-#: framework/VFS/lib/VFS/sql.php:768 framework/VFS/lib/VFS/ftp.php:924
-#: framework/VFS/lib/VFS/ssh2.php:926 framework/VFS/lib/VFS/horde.php:41
-#: framework/VFS/lib/VFS/sql_file.php:748
+#: framework/VFS/lib/VFS/sql.php:768 framework/VFS/lib/VFS/ftp.php:929
+#: framework/VFS/lib/VFS/ssh2.php:932 framework/VFS/lib/VFS/horde.php:41
+#: framework/VFS/lib/VFS/sql_file.php:753
 #, php-format
 msgid "Required \"%s\" not specified in VFS configuration."
 msgstr "\"%s\" wurde in der VFS-Konfiguration nicht angegeben."
@@ -6452,7 +6452,7 @@ msgstr "Rechte Überschrift"
 msgid "Right values"
 msgstr "Rechte Werte"
 
-#: framework/MIME/MIME/Viewer/vcard.php:289
+#: framework/MIME/MIME/Viewer/vcard.php:290
 msgid "Role"
 msgstr "Rolle"
 
@@ -6584,7 +6584,7 @@ msgstr "Saudi-Arabien"
 msgid "Save"
 msgstr "Speichern"
 
-#: templates/shares/edit.inc:335 templates/admin/groups/edit.inc:63
+#: templates/shares/edit.inc:330 templates/admin/groups/edit.inc:63
 #, php-format
 msgid "Save \"%s\""
 msgstr "\"%s\" speichern"
@@ -6593,7 +6593,7 @@ msgstr "\"%s\" speichern"
 msgid "Save Options"
 msgstr "Einstellungen speichern"
 
-#: templates/shares/edit.inc:336
+#: templates/shares/edit.inc:331
 msgid "Save and Finish"
 msgstr "Speichern und Beenden"
 
@@ -6660,7 +6660,7 @@ msgstr "Dateien auswählen"
 msgid "Select a date"
 msgstr "Datum auswählen"
 
-#: templates/shares/edit.inc:303 templates/shares/edit.inc:305
+#: templates/shares/edit.inc:298 templates/shares/edit.inc:300
 msgid "Select a group to add:"
 msgstr "Hinzuzufügende Gruppe auswählen:"
 
@@ -6672,7 +6672,7 @@ msgstr "Neuen Besitzer auswählen:"
 msgid "Select a server"
 msgstr "Server auswählen"
 
-#: templates/shares/edit.inc:207 templates/shares/edit.inc:209
+#: templates/shares/edit.inc:202 templates/shares/edit.inc:204
 msgid "Select a user to add:"
 msgstr "Hinzuzufügenden Benutzer auswählen:"
 
@@ -6898,13 +6898,13 @@ msgstr "Kurze Zusammenfassung"
 msgid "Should access keys be defined for most links?"
 msgstr "Sollen Tastenkombinationen für die meisten Links aktiviert werden?"
 
-#: framework/Perms/Perms.php:400 templates/shares/edit.inc:66
-#: templates/shares/edit.inc:77 templates/shares/edit.inc:101
-#: templates/shares/edit.inc:112 templates/shares/edit.inc:136
-#: templates/shares/edit.inc:147 templates/shares/edit.inc:171
-#: templates/shares/edit.inc:186 templates/shares/edit.inc:221
-#: templates/shares/edit.inc:248 templates/shares/edit.inc:273
-#: templates/shares/edit.inc:284 templates/shares/edit.inc:313
+#: framework/Perms/Perms.php:400 templates/shares/edit.inc:61
+#: templates/shares/edit.inc:72 templates/shares/edit.inc:96
+#: templates/shares/edit.inc:107 templates/shares/edit.inc:131
+#: templates/shares/edit.inc:142 templates/shares/edit.inc:166
+#: templates/shares/edit.inc:181 templates/shares/edit.inc:216
+#: templates/shares/edit.inc:243 templates/shares/edit.inc:268
+#: templates/shares/edit.inc:279 templates/shares/edit.inc:308
 msgid "Show"
 msgstr "Zeigen"
 
@@ -7108,7 +7108,7 @@ msgstr "Ursprungsadresse"
 msgid "South Africa"
 msgstr "Südafrika"
 
-#: config/nls.php.dist:237
+#: config/nls.php.dist:238
 msgid "South European (ISO-8859-3)"
 msgstr "Südeuropäisch (ISO-8859-3)"
 
@@ -7483,7 +7483,7 @@ msgstr "Temperatur<br />(%sMax%s/%sMin%s) &deg;%s"
 msgid "Template \"%s\" not found."
 msgstr "Vorlage \"%s\" nicht gefunden."
 
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:994
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:1000
 msgid "Tentative: "
 msgstr "Unter Vorbehalt: "
 
@@ -7504,7 +7504,7 @@ msgstr "Nur Text"
 msgid "Th"
 msgstr "Do"
 
-#: config/nls.php.dist:238
+#: config/nls.php.dist:239
 msgid "Thai (TIS-620)"
 msgstr "Thailändisch (TIS-620)"
 
@@ -7513,7 +7513,7 @@ msgstr "Thailändisch (TIS-620)"
 msgid "Thailand"
 msgstr "Thailand"
 
-#: framework/VFS/lib/VFS/ftp.php:914
+#: framework/VFS/lib/VFS/ftp.php:919
 msgid "The FTP extension is not available."
 msgstr "Die FTP-Extension ist nicht verfügbar."
 
@@ -7542,7 +7542,7 @@ msgstr "Das Kolab-Shareobjekt wurde noch nicht instialisiert!"
 msgid "The Maintenance:: class did not load successfully"
 msgstr "Die Maintenance:: Klasse konnte nicht geladen werden"
 
-#: framework/VFS/lib/VFS/ssh2.php:916
+#: framework/VFS/lib/VFS/ssh2.php:922
 msgid "The SSH2 PECL extension is not available."
 msgstr "Die SSH2-PECL-Extension ist nicht verfügbar."
 
@@ -7646,11 +7646,11 @@ msgstr ""
 "Bei den folgenden Anwendungen sind Fehler aufgetreten, während die "
 "Benutzerdaten entfernt wurden: %s"
 
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:705
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:717
 msgid "The following event has been successfully removed:"
 msgstr "Der folgende Termin wurde erfolgreich gelöscht:"
 
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:687
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:699
 #, php-format
 msgid "The following event that was canceled is not present in %s's calendar:"
 msgstr "Der folgende abgesagte Termin befindet sich nicht in %ss Kalender:"
@@ -7866,7 +7866,7 @@ msgstr "Die hochgeladene Datei konnte nicht gespeichert werden."
 msgid "The user \"%s\" already exists."
 msgstr "Der Benutzer \"%s\" existiert bereits."
 
-#: services/shares/edit.php:79 services/shares/edit.php:168
+#: services/shares/edit.php:80 services/shares/edit.php:169
 #, php-format
 msgid "The user \"%s\" does not exist."
 msgstr "Der Benutzer \"%s\" existiert nicht."
@@ -8213,7 +8213,7 @@ msgstr "Zeitpunkte erfolgreicher Synchronisationssitzungen"
 msgid "Timor-Leste"
 msgstr "Timor-Leste"
 
-#: framework/MIME/MIME/Viewer/vcard.php:284 lib/Block/iframe.php:20
+#: framework/MIME/MIME/Viewer/vcard.php:285 lib/Block/iframe.php:20
 msgid "Title"
 msgstr "Titel"
 
@@ -8292,7 +8292,7 @@ msgstr "Tunesien"
 msgid "Turkey"
 msgstr "Türkei"
 
-#: config/nls.php.dist:239
+#: config/nls.php.dist:240
 msgid "Turkish (ISO-8859-9)"
 msgstr "Türkisch (ISO-8859-9)"
 
@@ -8311,7 +8311,7 @@ msgstr "Turks- und Caicosinseln"
 msgid "Tuvalu"
 msgstr "Tuvalu"
 
-#: framework/CLI/CLI.php:339
+#: framework/CLI/CLI.php:341
 msgid "Type your choice: "
 msgstr "Ihre Auswahl: "
 
@@ -8327,7 +8327,7 @@ msgstr "UV-Index: "
 msgid "UID not found in Kolab XML object"
 msgstr "UID im Kolab-XML-Objekt nicht gefunden"
 
-#: framework/MIME/MIME/Viewer/vcard.php:308 lib/Block/iframe.php:17
+#: framework/MIME/MIME/Viewer/vcard.php:309 lib/Block/iframe.php:17
 msgid "URL"
 msgstr "Homepage"
 
@@ -8345,12 +8345,12 @@ msgstr "Uganda"
 msgid "Ukraine"
 msgstr "Ukraine"
 
-#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:681
+#: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php:693
 #, php-format
 msgid "Unable to access %s's calendar:"
 msgstr "Zugriff auf %ss Kalender nicht möglich:"
 
-#: framework/VFS/lib/VFS/file.php:481
+#: framework/VFS/lib/VFS/file.php:486
 msgid "Unable to access VFS directory."
 msgstr "Auf das VFS-Verzeichnis konnte nicht zugegriffen werden."
 
@@ -8365,19 +8365,19 @@ msgstr ""
 msgid "Unable to bind to the LDAP server as %s!"
 msgstr "Verbindung zum LDAP-Server als %s konnte nicht hergestellt werden!"
 
-#: framework/VFS/lib/VFS/ftp.php:440 framework/VFS/lib/VFS/ssh2.php:426
+#: framework/VFS/lib/VFS/ftp.php:440 framework/VFS/lib/VFS/ssh2.php:427
 #, php-format
 msgid "Unable to change permission for VFS file \"%s\"."
 msgstr ""
 "Die Zugriffsrechte für die VFS-Datei \"%s\" konnten nicht geändert werden."
 
-#: framework/VFS/lib/VFS/file.php:454 framework/VFS/lib/VFS/musql.php:550
+#: framework/VFS/lib/VFS/file.php:459 framework/VFS/lib/VFS/musql.php:550
 #, php-format
 msgid "Unable to change permission for VFS file %s/%s."
 msgstr ""
 "Die Zugriffsrechte für die VFS-Datei %s/%s konnten nicht geändert werden."
 
-#: framework/VFS/lib/VFS/ftp.php:868 framework/VFS/lib/VFS/ssh2.php:861
+#: framework/VFS/lib/VFS/ftp.php:873 framework/VFS/lib/VFS/ssh2.php:867
 #, php-format
 msgid "Unable to change to %s."
 msgstr "Es kann nicht in Verzeichnis %s gewechselt werden."
@@ -8392,24 +8392,24 @@ msgstr "Die Größe von \"%s\" konnte nicht bestimmt werden."
 msgid "Unable to check file size of \"%s/%s\"."
 msgstr "Die Größe von \"%s/%s\" konnte nicht bestimmt werden."
 
-#: framework/VFS/lib/VFS/ftp.php:933
+#: framework/VFS/lib/VFS/ftp.php:938
 msgid "Unable to connect with SSL."
 msgstr "SSL-Verbindung konnte nicht hergestellt werden."
 
-#: framework/VFS/lib/VFS/file.php:288 framework/VFS/lib/VFS/file.php:293
+#: framework/VFS/lib/VFS/file.php:288 framework/VFS/lib/VFS/file.php:298
 #: framework/VFS/lib/VFS/sql_file.php:202
 #: framework/VFS/lib/VFS/sql_file.php:207
-#: framework/VFS/lib/VFS/sql_file.php:215
+#: framework/VFS/lib/VFS/sql_file.php:220
 msgid "Unable to copy VFS file."
 msgstr "Die VFS-Datei konnte nicht kopiert werden."
 
-#: framework/VFS/lib/VFS/ftp.php:417 framework/VFS/lib/VFS/ssh2.php:403
+#: framework/VFS/lib/VFS/ftp.php:417 framework/VFS/lib/VFS/ssh2.php:404
 #, php-format
 msgid "Unable to create VFS directory \"%s\"."
 msgstr "Das VFS-Verzeichnis \"%s\" konnte nicht angelegt werden."
 
-#: framework/VFS/lib/VFS/file.php:423 framework/VFS/lib/VFS/musql.php:306
-#: framework/VFS/lib/VFS/sql_file.php:262
+#: framework/VFS/lib/VFS/file.php:428 framework/VFS/lib/VFS/musql.php:306
+#: framework/VFS/lib/VFS/sql_file.php:267
 msgid "Unable to create VFS directory."
 msgstr "Das VFS-Verzeichnis konnte nicht angelegt werden."
 
@@ -8429,12 +8429,12 @@ msgstr ""
 "Das Verzeichnis %s konnte nicht angelegt werden; richtiges Format: "
 "[anwendung]/[pfad]"
 
-#: framework/VFS/lib/VFS/file.php:328
+#: framework/VFS/lib/VFS/file.php:333
 msgid "Unable to create empty VFS file."
 msgstr "Leere VFS-Datei konnte nicht angelegt werden."
 
 #: framework/VFS/lib/VFS.php:260 framework/VFS/lib/VFS/smb.php:116
-#: framework/VFS/lib/VFS/ftp.php:158 framework/VFS/lib/VFS/ssh2.php:152
+#: framework/VFS/lib/VFS/ftp.php:158 framework/VFS/lib/VFS/ssh2.php:153
 msgid "Unable to create temporary file."
 msgstr "Temporäre Datei konnte nicht angelegt werden."
 
@@ -8445,7 +8445,7 @@ msgid "Unable to decompress data."
 msgstr "Die Daten konnten nicht dekomprimiert werden."
 
 #: framework/VFS/lib/VFS/smb.php:276 framework/VFS/lib/VFS/ftp.php:347
-#: framework/VFS/lib/VFS/ssh2.php:333
+#: framework/VFS/lib/VFS/ssh2.php:334
 #, php-format
 msgid "Unable to delete \"%s\", the directory is not empty."
 msgstr "\"%s\" konnte nicht gelöscht werden, das Verzeichnis ist nicht leer."
@@ -8455,21 +8455,21 @@ msgstr "\"%s\" konnte nicht gelöscht werden, das Verzeichnis ist nicht leer."
 msgid "Unable to delete \"%s\": %s."
 msgstr "\"%s\" kann nicht gelöscht werden: %s."
 
-#: framework/VFS/lib/VFS/file.php:400 framework/VFS/lib/VFS/kolab.php:194
+#: framework/VFS/lib/VFS/file.php:405 framework/VFS/lib/VFS/kolab.php:194
 #: framework/VFS/lib/VFS/sql.php:460 framework/VFS/lib/VFS/musql.php:371
-#: framework/VFS/lib/VFS/sql_file.php:358
+#: framework/VFS/lib/VFS/sql_file.php:363
 #, php-format
 msgid "Unable to delete %s, the directory is not empty"
 msgstr "%s konnte nicht gelöscht werden, das Verzeichnis ist nicht leer"
 
-#: framework/VFS/lib/VFS/sql_file.php:372
-#: framework/VFS/lib/VFS/sql_file.php:376
+#: framework/VFS/lib/VFS/sql_file.php:377
+#: framework/VFS/lib/VFS/sql_file.php:381
 msgid "Unable to delete VFS directory recursively."
 msgstr "Das VFS-Verzeichnis konnte nicht rekursiv gelöscht werden."
 
-#: framework/VFS/lib/VFS/file.php:406 framework/VFS/lib/VFS/musql.php:387
+#: framework/VFS/lib/VFS/file.php:411 framework/VFS/lib/VFS/musql.php:387
 #: framework/VFS/lib/VFS/musql.php:406 framework/VFS/lib/VFS/musql.php:414
-#: framework/VFS/lib/VFS/sql_file.php:368
+#: framework/VFS/lib/VFS/sql_file.php:373
 msgid "Unable to delete VFS directory."
 msgstr "Das VFS-Verzeichnis konnte nicht gelöscht werden."
 
@@ -8478,16 +8478,16 @@ msgstr "Das VFS-Verzeichnis konnte nicht gelöscht werden."
 msgid "Unable to delete VFS directory: %s."
 msgstr "Das VFS-Verzeichnis konnte nicht gelöscht werden: %s."
 
-#: framework/VFS/lib/VFS/ftp.php:281 framework/VFS/lib/VFS/ssh2.php:274
+#: framework/VFS/lib/VFS/ftp.php:281 framework/VFS/lib/VFS/ssh2.php:275
 #, php-format
 msgid "Unable to delete VFS file \"%s\"."
 msgstr "Die VFS-Datei \"%s\" konnte nicht gelöscht werden."
 
-#: framework/VFS/lib/VFS/file.php:372 framework/VFS/lib/VFS/kolab.php:136
+#: framework/VFS/lib/VFS/file.php:377 framework/VFS/lib/VFS/kolab.php:136
 #: framework/VFS/lib/VFS/sql.php:344 framework/VFS/lib/VFS/musql.php:178
 #: framework/VFS/lib/VFS/musql.php:197 framework/VFS/lib/VFS/musql.php:204
-#: framework/VFS/lib/VFS/sql_file.php:407
-#: framework/VFS/lib/VFS/sql_file.php:415
+#: framework/VFS/lib/VFS/sql_file.php:412
+#: framework/VFS/lib/VFS/sql_file.php:420
 msgid "Unable to delete VFS file."
 msgstr "Die VFS-Datei konnte nicht gelöscht werden."
 
@@ -8501,7 +8501,7 @@ msgstr "Das VFS-Verzeichnis \"%s\" konnte nicht gelöscht werden."
 msgid "Unable to delete VFS recursively: %s."
 msgstr "Das VFS konnte nicht rekursiv gelöscht werden: %s."
 
-#: framework/VFS/lib/VFS/ftp.php:897
+#: framework/VFS/lib/VFS/ftp.php:902
 msgid "Unable to determine current directory."
 msgstr "Das aktuelle Verzeichnis konnte nicht bestimmt werden."
 
@@ -8517,7 +8517,7 @@ msgstr "smbclient kann nicht ausgeführt werden."
 msgid "Unable to extract certificate details"
 msgstr "Die Zertifikatdetails konnten nicht ausgelesen werden"
 
-#: framework/Net_IMSP/IMSP.php:440 framework/Net_IMSP/IMSP/Auth.php:121
+#: framework/Net_IMSP/IMSP.php:447 framework/Net_IMSP/IMSP/Auth.php:121
 #: framework/Alarm/Alarm.php:528
 #, php-format
 msgid "Unable to load the definition of %s."
@@ -8530,12 +8530,12 @@ msgid "Unable to move VFS file."
 msgstr "Die VFS-Datei konnte nicht verschoben werden."
 
 #: framework/VFS/lib/VFS/smb.php:127 framework/VFS/lib/VFS/ftp.php:168
-#: framework/VFS/lib/VFS/ssh2.php:157
+#: framework/VFS/lib/VFS/ssh2.php:158
 #, php-format
 msgid "Unable to open VFS file \"%s\"."
 msgstr "Die VFS-Datei \"%s\" konnte nicht geöffnet werden."
 
-#: framework/VFS/lib/VFS/file.php:345 framework/VFS/lib/VFS/sql_file.php:109
+#: framework/VFS/lib/VFS/file.php:350 framework/VFS/lib/VFS/sql_file.php:109
 #: framework/VFS/lib/VFS/sql_file.php:112
 msgid "Unable to open VFS file for writing."
 msgstr "Die VFS-Datei konnte nicht zum Beschreiben geöffnet werden."
@@ -8566,7 +8566,7 @@ msgstr "Die VFS-Datei konnte nicht gelesen werden (size() fehlgeschlagen)."
 msgid "Unable to read free/busy information from %s"
 msgstr "Fehler beim Auslesen der Frei/Gebucht-Informationen von %s"
 
-#: framework/VFS/lib/VFS/file.php:759
+#: framework/VFS/lib/VFS/file.php:764
 msgid "Unable to read the vfsroot directory."
 msgstr "Das vfsroot-Verzeichnis konnte nicht gelesen werden."
 
@@ -8585,7 +8585,7 @@ msgstr ""
 "%s konnte nicht umbenannt werden; Das richtige Format ist [anwendung]/"
 "[pfad], und Quelle und Ziel müssen in der gleichen Anwendung sein."
 
-#: framework/VFS/lib/VFS/sql_file.php:311
+#: framework/VFS/lib/VFS/sql_file.php:316
 msgid "Unable to rename VFS directory."
 msgstr "Das VFS-Verzeichnis konnte nicht umbenannt werden."
 
@@ -8595,12 +8595,12 @@ msgid "Unable to rename VFS directory: %s."
 msgstr "Das VFS-Verzeichnis konnte nicht umbenannt werden: %s."
 
 #: framework/VFS/lib/VFS/smb.php:340 framework/VFS/lib/VFS/ftp.php:395
-#: framework/VFS/lib/VFS/ssh2.php:381
+#: framework/VFS/lib/VFS/ssh2.php:382
 #, php-format
 msgid "Unable to rename VFS file \"%s\"."
 msgstr "Die VFS-Datei \"%s\" konnte nicht umbenannt werden."
 
-#: framework/VFS/lib/VFS/file.php:687 framework/VFS/lib/VFS/musql.php:271
+#: framework/VFS/lib/VFS/file.php:692 framework/VFS/lib/VFS/musql.php:271
 #, php-format
 msgid "Unable to rename VFS file %s/%s."
 msgstr "Die VFS-Datei %s/%s konnte nicht umbenannt werden."
@@ -8610,8 +8610,8 @@ msgid "Unable to rename VFS file to same name."
 msgstr "Die VFS-Datei kann nicht auf den gleichen Namen umbenannt werden."
 
 #: framework/VFS/lib/VFS/sql.php:391 framework/VFS/lib/VFS/musql.php:235
-#: framework/VFS/lib/VFS/musql.php:531 framework/VFS/lib/VFS/sql_file.php:303
-#: framework/VFS/lib/VFS/sql_file.php:325
+#: framework/VFS/lib/VFS/musql.php:531 framework/VFS/lib/VFS/sql_file.php:308
+#: framework/VFS/lib/VFS/sql_file.php:330
 msgid "Unable to rename VFS file."
 msgstr "Die VFS-Datei konnte nicht umbenannt werden."
 
@@ -8637,7 +8637,7 @@ msgid "Unable to trigger URL %s. Response: %s"
 msgstr "Die URL %s konnte nicht angesprochen werden. Antwort: %s"
 
 #: framework/VFS/lib/VFS/ftp.php:223 framework/VFS/lib/VFS/ftp.php:226
-#: framework/VFS/lib/VFS/ssh2.php:212 framework/VFS/lib/VFS/ssh2.php:215
+#: framework/VFS/lib/VFS/ssh2.php:213 framework/VFS/lib/VFS/ssh2.php:216
 #, php-format
 msgid "Unable to write VFS file \"%s\"."
 msgstr "Die VFS-Datei \"%s\" konnte nicht gespeichert werden."
@@ -8646,7 +8646,7 @@ msgstr "Die VFS-Datei \"%s\" konnte nicht gespeichert werden."
 msgid "Unable to write VFS file (copy() failed)."
 msgstr "Die VFS-Datei konnte nicht geschrieben werden (copy() fehlgeschlagen)."
 
-#: framework/VFS/lib/VFS/file.php:340 framework/VFS/lib/VFS/file.php:349
+#: framework/VFS/lib/VFS/file.php:345 framework/VFS/lib/VFS/file.php:354
 #: framework/VFS/lib/VFS/sql_file.php:117
 #: framework/VFS/lib/VFS/sql_file.php:122
 msgid "Unable to write VFS file data."
@@ -8696,7 +8696,7 @@ msgstr ""
 msgid "Unfiled"
 msgstr "Nicht zugeordnet"
 
-#: config/nls.php.dist:240
+#: config/nls.php.dist:241
 msgid "Unicode (UTF-8)"
 msgstr "Unicode (UTF-8)"
 
@@ -8782,7 +8782,7 @@ msgstr "%s aktualisieren"
 msgid "Update user"
 msgstr "Benutzer aktualisieren"
 
-#: admin/groups.php:150 admin/perms/edit.php:103 services/shares/edit.php:240
+#: admin/groups.php:150 admin/perms/edit.php:103 services/shares/edit.php:241
 #, php-format
 msgid "Updated \"%s\"."
 msgstr "\"%s\" wurde aktualisiert."
@@ -8864,7 +8864,7 @@ msgstr ""
 msgid "User account not found"
 msgstr "Benutzerkonto nicht gefunden"
 
-#: templates/shares/edit.inc:243
+#: templates/shares/edit.inc:238
 msgid "User to add:"
 msgstr "Hinzuzufügender Benutzer:"
 
@@ -8915,7 +8915,7 @@ msgstr "UStId-Nummer:"
 msgid "VAT number"
 msgstr "UStId-Nummer"
 
-#: framework/VFS/lib/VFS/file.php:197 framework/VFS/lib/VFS/file.php:318
+#: framework/VFS/lib/VFS/file.php:197 framework/VFS/lib/VFS/file.php:323
 msgid "VFS directory does not exist."
 msgstr "Das VFS-Verzeichnis existiert nicht."
 
@@ -8987,7 +8987,7 @@ msgstr "Sehr Hoch"
 msgid "Viet Nam"
 msgstr "Vietnam"
 
-#: config/nls.php.dist:241
+#: config/nls.php.dist:242
 msgid "Vietnamese (VISCII)"
 msgstr "Vietnamesisch (VISCII)"
 
@@ -9099,11 +9099,11 @@ msgstr "Willkommen bei %s"
 msgid "Welcome, %s"
 msgstr "Willkommen, %s"
 
-#: config/nls.php.dist:242
+#: config/nls.php.dist:243
 msgid "Western (ISO-8859-1)"
 msgstr "Westeuropäisch (ISO-8859-1)"
 
-#: config/nls.php.dist:243
+#: config/nls.php.dist:244
 msgid "Western (ISO-8859-15)"
 msgstr "Westeuropäisch (ISO-8859-15)"
 
@@ -9198,12 +9198,12 @@ msgstr "Wunschzettel"
 msgid "Work"
 msgstr "Arbeit"
 
-#: framework/MIME/MIME/Viewer/vcard.php:138
-#: framework/MIME/MIME/Viewer/vcard.php:196
+#: framework/MIME/MIME/Viewer/vcard.php:139
+#: framework/MIME/MIME/Viewer/vcard.php:197
 msgid "Work Address"
 msgstr "Adresse geschäftlich"
 
-#: framework/MIME/MIME/Viewer/vcard.php:239
+#: framework/MIME/MIME/Viewer/vcard.php:240
 msgid "Work Phone"
 msgstr "Telefon geschäftlich"
 
@@ -9386,7 +9386,7 @@ msgstr ""
 "Sie haben keine Felder aus den importierten Daten den entsprechenden Feldern "
 "in %s zugeordnet."
 
-#: framework/Auth/Auth.php:1015
+#: framework/Auth/Auth.php:1014
 msgid "You have been logged out."
 msgstr "Sie wurden abgemeldet."
 
@@ -9495,7 +9495,7 @@ msgstr "Sie müssen einen neuen Kategorienamen angeben."
 msgid "You need to provide an Italian phone number"
 msgstr "Sie müssen eine Italienische Telefonnummer angeben"
 
-#: framework/Auth/Auth.php:1003
+#: framework/Auth/Auth.php:1002
 #, php-format
 msgid "Your %s session has expired. Please login again."
 msgstr "Ihre %s-Session ist abgelaufen. Bitte melden Sie sich erneut an."
@@ -9513,7 +9513,7 @@ msgstr "Ihre Von: Adresse:"
 msgid "Your Information"
 msgstr "Ihre Angaben"
 
-#: framework/Auth/Auth.php:1007
+#: framework/Auth/Auth.php:1006
 #, php-format
 msgid ""
 "Your Internet Address has changed since the beginning of your %s session. To "
@@ -9544,7 +9544,7 @@ msgstr ""
 "Ihr Authentifizierungssystem erlaubt das Anzeigen der Benutzer nicht, oder "
 "diese Möglichkeit wurde ausgeschaltet."
 
-#: framework/Auth/Auth.php:1011
+#: framework/Auth/Auth.php:1010
 #, php-format
 msgid ""
 "Your browser appears to have changed since the beginning of your %s session. "
@@ -9581,7 +9581,7 @@ msgstr "Ihre Standardidentität:"
 msgid "Your full name:"
 msgstr "Ihr vollständiger Name:"
 
-#: framework/Auth/Auth.php:1027
+#: framework/Auth/Auth.php:1026
 msgid "Your login has expired."
 msgstr "Ihr Zugang ist abgelaufen."
 
@@ -9622,7 +9622,7 @@ msgstr ""
 msgid "Your password has expired"
 msgstr "Ihr Passwort ist abgelaufen"
 
-#: framework/Auth/Auth.php:756
+#: framework/Auth/Auth.php:755
 msgid "Your password has expired."
 msgstr "Ihr Passwort ist abgelaufen."
 
