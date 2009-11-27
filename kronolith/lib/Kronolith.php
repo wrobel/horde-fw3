@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: kronolith/lib/Kronolith.php,v 1.263.2.83 2009-11-04 16:41:05 jan Exp $
+ * $Horde: kronolith/lib/Kronolith.php,v 1.263.2.84 2009-11-25 10:21:36 jan Exp $
  *
  * @package Kronolith
  */
@@ -801,7 +801,9 @@ class Kronolith {
             /* Remote Calendars. */
             foreach ($GLOBALS['display_remote_calendars'] as $url) {
                 $events = Kronolith::listRemoteEvents($url);
-                if (!is_a($events, 'PEAR_Error')) {
+                if (is_a($events, 'PEAR_Error')) {
+                    $GLOBALS['notification']->push($events, 'horde.warning');
+                } else {
                     $kronolith_driver->open(Kronolith::getDefaultCalendar(PERMS_SHOW));
                     foreach ($events as $event) {
 

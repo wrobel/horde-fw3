@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/config/mime_drivers.php.dist,v 1.97.6.13 2009/05/29 05:59:25 slusarz Exp $
+ * $Horde: horde/config/mime_drivers.php.dist,v 1.97.6.14 2009-11-24 19:53:30 slusarz Exp $
  *
  * Decide which output drivers you want to activate for all Horde
  * applications. Individual Horde applications can override these settings
@@ -152,7 +152,7 @@ $mime_drivers['horde']['plain'] = array(
  * Default audio driver settings
  */
 $mime_drivers['horde']['audio'] = array(
-    'inline' => true,
+    'inline' => false,
     'handles' => array(
         'audio/*'
     ),

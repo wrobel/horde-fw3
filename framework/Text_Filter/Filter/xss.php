@@ -6,7 +6,7 @@
  * people *KNOW* HTML is a security hole, clean up what we can, and leave it
  * at that.
  *
- * $Horde: framework/Text_Filter/Filter/xss.php,v 1.1.2.18 2009/01/22 10:14:21 jan Exp $
+ * $Horde: framework/Text_Filter/Filter/xss.php,v 1.1.2.19 2009-11-26 00:38:41 slusarz Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *
@@ -189,6 +189,15 @@ class Text_Filter_xss extends Text_Filter {
         foreach ($malicious as $pattern) {
             $patterns[$pattern] = '<$1' . $this->_params['replace'] . '_tag$2';
         }
+
+        /* Strip out data URLs living in an A HREF element (Bug #8715). */
+        $malicious = '/<((?:a|&#0*65;?|&#0*41;?|&#0*97;?|&#0*61;?)\b[^>]+?)' .
+            '(?:h|&#0*72;?|&#0*48;?|&#0*104;?|&#0*68;?)\s*' .
+            '(?:r|&#0*82;?|&#x0*52;?|&#0*114;?|&#x0*72;?)\s*' .
+            '(?:e|&#0*69;?|&#0*45;?|&#0*101;?|&#0*65;?)\s*' .
+            '(?:f|&#0*70;?|&#0*46;?|&#0*102;?|&#0*66;?)\s*=' .
+            '("|\')?\s*data:(?(2)[^"\')>]*|[^\s)>]*)(?(2)\\2)/is';
+        $patterns[$malicious] = '<$1';
 
         /* Comment out style/link tags. */
         if ($this->_params['strip_styles']) {

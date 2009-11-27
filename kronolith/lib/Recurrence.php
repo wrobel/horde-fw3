@@ -2,7 +2,7 @@
 /**
  * This file contains the Horde_Date_Recurrence class and according constants.
  *
- * $Horde: kronolith/lib/Recurrence.php,v 1.16.2.11 2009-11-10 10:27:00 wrobel Exp $
+ * $Horde: kronolith/lib/Recurrence.php,v 1.16.2.12 2009-11-27 17:23:49 wrobel Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *
@@ -403,6 +403,7 @@ class Horde_Date_Recurrence {
                         $recurrences--;
                     }
                     ++$next->mday;
+                    $next->correct();
                 }
                 if ($repeats > 0) {
                     $weekdays = $this->recurData;

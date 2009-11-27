@@ -2,6 +2,8 @@
 v3.3.6-cvs
 ----------
 
+[mms] SECURITY: Add XSS filtering in HTML data for data URLs in A HREF
+      parameter (Bug #8715).
 [jan] SECURITY: Fix XSS in administrator section.
 [mjr] Fix checking existing signup requests in the Auth_Signup_datatree driver.
 [jan] Fix syntax of MSSQL scripts (Bug #8664).
