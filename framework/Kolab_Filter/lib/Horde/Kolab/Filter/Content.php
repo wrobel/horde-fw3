@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Content.php,v 1.4.2.7 2009-11-16 21:05:49 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Content.php,v 1.4.2.8 2009-11-29 10:43:57 wrobel Exp $
  *
  * @package Kolab_Filter
  */
@@ -20,7 +20,7 @@ define('RM_STATE_READING_BODY',   5 );
 /**
  * A Kolab Server filter for outgoing mails.
  *
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Content.php,v 1.4.2.7 2009-11-16 21:05:49 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Filter/Content.php,v 1.4.2.8 2009-11-29 10:43:57 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *
@@ -404,7 +404,6 @@ class Horde_Kolab_Filter_Content extends Horde_Kolab_Filter_Base
                 $fmt = _("(UNTRUSTED, sender <%s> is not authenticated)");
             }
         }
-        $untrusted = sprintf($fmt, $sender);
 
         $adrs = imap_rfc822_parse_adrlist($fromhdr, $domains[0]);
 
@@ -434,15 +433,22 @@ class Horde_Kolab_Filter_Content extends Horde_Kolab_Filter_Base
                             /* Rewrite */
                             Horde::logMessage(sprintf("%s is not an allowed From address for unauthenticated users, rewriting.", 
                                                       $from), __FILE__, __LINE__, PEAR_LOG_DEBUG);
+
+                            if (property_exists($adr, 'personal')) {
+                                $name = str_replace(array("\\", '"'), 
+                                                    array("\\\\",'\"'), 
+                                                    MIME::decode($adr->personal, 'utf-8'));
+                            } else {
+                                $name = '';
+                            }
+
+                            $untrusted = sprintf($fmt, $sender, $from, $name);
+
+                            // Is this test really correct?  Is $fromhdr a _decoded_ string?
+                            // If not comparing with the unencoded $untrusted is wrong.
+                            // sw - 20091125
                             if (strpos( $fromhdr, $untrusted )===false) {
-                                if (property_exists($adr, 'personal')) {
-                                    $name = str_replace(array("\\", '"'), 
-                                                        array("\\\\",'\"'), 
-                                                        MIME::decode($adr->personal, 'utf-8'));
-                                } else {
-                                    $name = '';
-                                }
-                                $new_from = '"' . MIME::encode($name . ' ' . $untrusted) . '"';
+                                $new_from = '"' . MIME::encode($untrusted) . '"';
                                 return  $new_from . ' <' . $from . '>';
                             } else {
                                 return true;

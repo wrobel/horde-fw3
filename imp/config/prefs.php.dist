@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/config/prefs.php.dist,v 1.216.4.36 2009-11-10 18:52:42 jan Exp $
+ * $Horde: imp/config/prefs.php.dist,v 1.216.4.37 2009-11-29 05:27:14 chuck Exp $
  *
  * See horde/config/prefs.php for documentation on the structure of this file.
  */
@@ -1079,7 +1079,7 @@ $_prefs['nav_popup'] = array(
 
 // play a sound on new mail? if so, which one?
 $_prefs['nav_audio'] = array(
-    'value' => 0,
+    'value' => '',
     'locked' => false,
     'shared' => false,
     'type' => 'implicit',
