@@ -2,7 +2,7 @@
 /**
  * Resource management for the Kolab server.
  *
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php,v 1.15.2.10 2009-11-16 19:26:34 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php,v 1.15.2.11 2009-12-03 14:20:55 wrobel Exp $
  *
  * PHP version 4
  *
@@ -42,7 +42,7 @@ define('RM_ITIP_TENTATIVE',                 3);
 /**
  * Provides Kolab resource handling
  *
- * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php,v 1.15.2.10 2009-11-16 19:26:34 wrobel Exp $
+ * $Horde: framework/Kolab_Filter/lib/Horde/Kolab/Resource.php,v 1.15.2.11 2009-12-03 14:20:55 wrobel Exp $
  *
  * Copyright 2004-2009 Klarälvdalens Datakonsult AB
  *
@@ -211,7 +211,7 @@ class Kolab_Resource
         require_once 'Horde/Kolab/Storage/List.php';
         $list = &Kolab_List::singleton();
         $default = $list->getForeignDefault($id, 'event');
-        if (!$default) {
+        if (!$default || is_a($default, 'PEAR_Error')) {
             $default = &new Kolab_Folder();
             $default->setList($list);
             $default->setName($conf['kolab']['filter']['calendar_store']);

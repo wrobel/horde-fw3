@@ -42,6 +42,8 @@ http://pear.php.net/dtd/package-2.0.xsd">
   * kolab/issue973 (Rewritten from shown inconveniently in kontact)
   * kolab/issue3594 (Mail containing NUL byte not delivered, Kolab
     Filter does not report lmtp error)
+  * kolab/issue3965 (Always accept: invitations get lost when Calendar
+    folder ist not writable for the calendar user)
  </notes>
  <contents>
   <dir name="/">
