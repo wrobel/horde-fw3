@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="iso-8859-2"?>
-<!-- $Horde: passwd/locale/hu_HU/help.xml,v 1.2.2.1 2008/10/09 17:12:13 jan Exp $ -->
+<!-- $Horde: passwd/locale/hu_HU/help.xml,v 1.2.2.1 2008-10-09 17:12:13 jan Exp $ -->
 <help>
   <entry id="passwd-username" md5="2be3ac45ed10bd409bbc31435c15261e" state="changed">
     <title>Felhasználói név</title>

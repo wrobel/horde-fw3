@@ -6,7 +6,7 @@ $block_name = _("Calendar Summary");
  * Horde_Block_Kronolith_summary:: Implementation of the Horde_Block API to
  * display a summary of calendar items.
  *
- * $Horde: kronolith/lib/Block/summary.php,v 1.41.2.18 2009/01/13 22:44:45 mrubinsk Exp $
+ * $Horde: kronolith/lib/Block/summary.php,v 1.41.2.18 2009-01-13 22:44:45 mrubinsk Exp $
  *
  * @package Horde_Block
  */

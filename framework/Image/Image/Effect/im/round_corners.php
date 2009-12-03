@@ -2,7 +2,7 @@
 /**
  * Image effect for rounding image corners.
  *
- * $Horde: framework/Image/Image/Effect/im/round_corners.php,v 1.13.2.2 2009/03/23 18:15:48 mrubinsk Exp $
+ * $Horde: framework/Image/Image/Effect/im/round_corners.php,v 1.13.2.2 2009-03-23 18:15:48 mrubinsk Exp $
  *
  * @author  Michael J. Rubinsky <mrubinsk@horde.org>
  * @since   Horde 3.2

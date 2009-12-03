@@ -3,7 +3,7 @@
  * The Text_Flowed:: class provides common methods for manipulating text
  * using the encoding described in RFC 3676 ('flowed' text).
  *
- * $Horde: framework/Text_Flowed/Flowed.php,v 1.14.10.21 2009/01/06 15:23:43 jan Exp $
+ * $Horde: framework/Text_Flowed/Flowed.php,v 1.14.10.21 2009-01-06 15:23:43 jan Exp $
  *
  * This class is based on the Text::Flowed perl module (Version 0.14) found
  * in the CPAN perl repository.  This module is released under the Perl

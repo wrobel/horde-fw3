@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/util/icon_browser.php,v 1.4.2.8 2009/01/06 15:28:05 jan Exp $
+ * $Horde: horde/util/icon_browser.php,v 1.4.2.8 2009-01-06 15:28:05 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

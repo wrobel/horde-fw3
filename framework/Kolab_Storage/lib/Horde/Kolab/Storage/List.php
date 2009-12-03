@@ -2,7 +2,7 @@
 /**
  * @package Kolab_Storage
  *
- * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Storage/List.php,v 1.3.2.8 2009/04/25 18:43:41 wrobel Exp $
+ * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Storage/List.php,v 1.3.2.8 2009-04-25 18:43:41 wrobel Exp $
  */
 
 /** Kolab IMAP folder representation. **/
@@ -12,7 +12,7 @@ require_once 'Horde/Kolab/Storage/Folder.php';
  * The Kolab_List class represents all IMAP folders on the Kolab
  * server visible to the current user.
  *
- * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Storage/List.php,v 1.3.2.8 2009/04/25 18:43:41 wrobel Exp $
+ * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Storage/List.php,v 1.3.2.8 2009-04-25 18:43:41 wrobel Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

@@ -2,7 +2,7 @@
 /**
  * Preferences storage implementation for PHP's session implementation.
  *
- * $Horde: framework/Prefs/Prefs/session.php,v 1.32.12.12 2009/01/06 15:23:31 jan Exp $
+ * $Horde: framework/Prefs/Prefs/session.php,v 1.32.12.12 2009-01-06 15:23:31 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

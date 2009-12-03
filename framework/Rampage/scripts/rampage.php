@@ -4,7 +4,7 @@
  * Script to automatically create a new Horde application based on a database
  * table definition.
  *
- * $Horde: framework/Rampage/scripts/rampage.php,v 1.3.2.5 2009/01/06 15:23:33 jan Exp $
+ * $Horde: framework/Rampage/scripts/rampage.php,v 1.3.2.5 2009-01-06 15:23:33 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

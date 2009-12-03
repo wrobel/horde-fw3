@@ -3,7 +3,7 @@
  * The Horde_Cache_zps4:: class provides a Zend Performance Suite
  * (version 4.0+) implementation of the Horde caching system.
  *
- * $Horde: framework/Cache/Cache/zps4.php,v 1.1.10.9 2009/01/06 15:22:56 jan Exp $
+ * $Horde: framework/Cache/Cache/zps4.php,v 1.1.10.9 2009-01-06 15:22:56 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

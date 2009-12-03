@@ -5,7 +5,7 @@
  *
  * Web C Plus plus: http://webcpp.sourceforge.net/
  *
- * $Horde: framework/MIME/MIME/Viewer/webcpp.php,v 1.11.10.13 2009/01/06 15:23:22 jan Exp $
+ * $Horde: framework/MIME/MIME/Viewer/webcpp.php,v 1.11.10.13 2009-01-06 15:23:22 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

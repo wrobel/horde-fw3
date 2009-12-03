@@ -10,7 +10,7 @@
  * The original script was freely distributable under the terms of an
  * MIT-style license.
  *
- * $Horde: imp/js/src/autocomplete.js,v 1.3.2.6 2009/01/06 15:24:03 jan Exp $
+ * $Horde: imp/js/src/autocomplete.js,v 1.3.2.6 2009-01-06 15:24:03 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

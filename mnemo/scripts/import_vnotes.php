@@ -5,7 +5,7 @@
  * The data is read from standard input, the notepad and user name passed as
  * parameters.
  *
- * $Horde: mnemo/scripts/import_vnotes.php,v 1.3.2.6 2009/01/06 15:25:03 jan Exp $
+ * $Horde: mnemo/scripts/import_vnotes.php,v 1.3.2.6 2009-01-06 15:25:03 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

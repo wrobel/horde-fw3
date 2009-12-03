@@ -1,7 +1,7 @@
 #!/usr/bin/php
 <?php
 /**
- * $Horde: framework/Cipher/tests/cipher_check.php,v 1.1.2.1 2007/12/20 13:48:52 jan Exp $
+ * $Horde: framework/Cipher/tests/cipher_check.php,v 1.1.2.1 2007-12-20 13:48:52 jan Exp $
  *
  * This script tests the different cipher classes to check
  * conformance.

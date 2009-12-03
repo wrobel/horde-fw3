@@ -1,5 +1,5 @@
 <?xml version='1.0'?>
-<!-- $Horde: passwd/locale/es_ES/help.xml,v 1.1.2.2 2008/10/09 17:12:09 jan Exp $ -->
+<!-- $Horde: passwd/locale/es_ES/help.xml,v 1.1.2.2 2008-10-09 17:12:09 jan Exp $ -->
 <help>
   <entry id="passwd-username">
     <title>Nombre de usuario</title>

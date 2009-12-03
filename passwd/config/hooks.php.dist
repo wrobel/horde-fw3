@@ -8,7 +8,7 @@
  *
  * For more information please see the horde/config/hooks.php.dist file.
  *
- * $Horde: passwd/config/hooks.php.dist,v 1.1.2.2 2009/06/12 08:43:47 jan Exp $
+ * $Horde: passwd/config/hooks.php.dist,v 1.1.2.2 2009-06-12 08:43:47 jan Exp $
  */
 
 // Here is an example _passwd_hook_username function to translate what the

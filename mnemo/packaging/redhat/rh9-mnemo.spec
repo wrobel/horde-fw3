@@ -1,6 +1,6 @@
 #
 #  File: rh9-mnemo.spec
-#  $Horde: mnemo/packaging/redhat/rh9-mnemo.spec,v 1.2.12.1 2007/12/20 14:18:21 jan Exp $
+#  $Horde: mnemo/packaging/redhat/rh9-mnemo.spec,v 1.2.12.1 2007-12-20 14:18:21 jan Exp $
 #
 #  This is the SPEC file for the Mnemo Red Hat 9 RPMs/SRPM.
 #

@@ -1,4 +1,4 @@
--- $Horde: horde/scripts/sql/script.initial_horde_user.sql,v 1.1.10.1 2007/12/20 15:03:03 jan Exp $
+-- $Horde: horde/scripts/sql/script.initial_horde_user.sql,v 1.1.10.1 2007-12-20 15:03:03 jan Exp $
 --
 -- This script will create an initial user in a horde_users table. The
 -- password being used is 'admin', which you should change

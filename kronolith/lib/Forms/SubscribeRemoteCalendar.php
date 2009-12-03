@@ -2,7 +2,7 @@
 /**
  * Horde_Form for subscribing to remote calendars.
  *
- * $Horde: kronolith/lib/Forms/SubscribeRemoteCalendar.php,v 1.1.2.1 2007/12/20 14:12:36 jan Exp $
+ * $Horde: kronolith/lib/Forms/SubscribeRemoteCalendar.php,v 1.1.2.1 2007-12-20 14:12:36 jan Exp $
  *
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.

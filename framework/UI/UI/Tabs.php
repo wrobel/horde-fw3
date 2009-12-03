@@ -5,7 +5,7 @@ require_once dirname(__FILE__) . '/Widget.php';
 /**
  * The Horde_UI_Tabs:: class manages and renders a tab-like interface.
  *
- * $Horde: framework/UI/UI/Tabs.php,v 1.27.6.14 2009/01/06 15:23:45 jan Exp $
+ * $Horde: framework/UI/UI/Tabs.php,v 1.27.6.14 2009-01-06 15:23:45 jan Exp $
  *
  * Copyright 2001-2003 Robert E. Coyle <robertecoyle@hotmail.com>
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)

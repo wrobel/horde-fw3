@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 /**
- * $Horde: turba/scripts/upgrades/2007-06-17_flatten_shares.php,v 1.10.2.2 2008/01/02 05:14:39 chuck Exp $
+ * $Horde: turba/scripts/upgrades/2007-06-17_flatten_shares.php,v 1.10.2.2 2008-01-02 05:14:39 chuck Exp $
  *
  * This script flattens shared address books out to meet the
  * requirements of the future Share API.

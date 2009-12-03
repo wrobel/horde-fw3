@@ -2,7 +2,7 @@
 /**
  * Mnemo_Driver:: defines an API for implementing storage backends for Mnemo.
  *
- * $Horde: mnemo/lib/Driver.php,v 1.25.2.14 2009/01/06 15:24:58 jan Exp $
+ * $Horde: mnemo/lib/Driver.php,v 1.25.2.14 2009-01-06 15:24:58 jan Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *

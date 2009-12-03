@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/admin/cmdshell.php,v 1.9.10.11 2009/10/13 15:52:07 jan Exp $
+ * $Horde: horde/admin/cmdshell.php,v 1.9.10.11 2009-10-13 15:52:07 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

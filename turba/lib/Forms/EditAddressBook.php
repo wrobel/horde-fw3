@@ -2,7 +2,7 @@
 /**
  * Horde_Form for editing address books.
  *
- * $Horde: turba/lib/Forms/EditAddressBook.php,v 1.1.2.1 2007/12/24 05:18:00 chuck Exp $
+ * $Horde: turba/lib/Forms/EditAddressBook.php,v 1.1.2.1 2007-12-24 05:18:00 chuck Exp $
  *
  * See the enclosed file LICENSE for license information (ASL). If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.

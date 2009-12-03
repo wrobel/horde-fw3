@@ -3,7 +3,7 @@
  * imp.php - performs an AJAX-requested action and returns the DIMP-specific
  * JSON object
  *
- * $Horde: dimp/imp.php,v 1.194.2.38 2009/05/18 22:48:32 slusarz Exp $
+ * $Horde: dimp/imp.php,v 1.194.2.38 2009-05-18 22:48:32 slusarz Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

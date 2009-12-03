@@ -4,7 +4,7 @@
  * sets the value of one Horde_Form variable based on the value of the
  * variable the action is attached to.
  *
- * $Horde: framework/Form/Form/Action/conditional_setvalue.php,v 1.19.10.9 2009/01/06 15:23:07 jan Exp $
+ * $Horde: framework/Form/Form/Action/conditional_setvalue.php,v 1.19.10.9 2009-01-06 15:23:07 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

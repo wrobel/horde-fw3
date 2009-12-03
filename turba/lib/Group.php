@@ -6,7 +6,7 @@ require_once TURBA_BASE . '/lib/Object.php';
  * The Turba_Group:: class provides a set of methods for dealing with
  * contact groups.
  *
- * $Horde: turba/lib/Group.php,v 1.23.10.3 2006/04/11 20:04:19 chuck Exp $
+ * $Horde: turba/lib/Group.php,v 1.23.10.3 2006-04-11 20:04:19 chuck Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  jon Parise <jon@csh.rit.edu>

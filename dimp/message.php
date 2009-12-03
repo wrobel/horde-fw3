@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: dimp/message.php,v 1.52.2.17 2009/01/06 15:22:37 jan Exp $
+ * $Horde: dimp/message.php,v 1.52.2.17 2009-01-06 15:22:37 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

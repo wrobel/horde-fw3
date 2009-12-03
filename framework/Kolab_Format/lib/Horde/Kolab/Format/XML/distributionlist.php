@@ -2,7 +2,7 @@
 /**
  * Implementation for distributionlists in the Kolab XML format.
  *
- * $Horde: framework/Kolab_Format/lib/Horde/Kolab/Format/XML/distributionlist.php,v 1.2.2.5 2008/12/12 11:39:04 wrobel Exp $
+ * $Horde: framework/Kolab_Format/lib/Horde/Kolab/Format/XML/distributionlist.php,v 1.2.2.5 2008-12-12 11:39:04 wrobel Exp $
  *
  * @package Kolab_Format
  */
@@ -10,7 +10,7 @@
 /**
  * Kolab XML handler for distributionlist groupware objects
  *
- * $Horde: framework/Kolab_Format/lib/Horde/Kolab/Format/XML/distributionlist.php,v 1.2.2.5 2008/12/12 11:39:04 wrobel Exp $
+ * $Horde: framework/Kolab_Format/lib/Horde/Kolab/Format/XML/distributionlist.php,v 1.2.2.5 2008-12-12 11:39:04 wrobel Exp $
  *
  * Copyright 2007-2008 Klarälvdalens Datakonsult AB
  *

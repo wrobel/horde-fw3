@@ -6,7 +6,7 @@ require_once 'Horde/MIME/Viewer/plain.php';
  * The IMP_MIME_Viewer_plain class renders out text/plain MIME parts
  * with URLs made into hyperlinks.
  *
- * $Horde: imp/lib/MIME/Viewer/plain.php,v 1.58.8.25 2009/01/06 15:24:09 jan Exp $
+ * $Horde: imp/lib/MIME/Viewer/plain.php,v 1.58.8.25 2009-01-06 15:24:09 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

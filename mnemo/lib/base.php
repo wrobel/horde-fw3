@@ -8,7 +8,7 @@
  * The following global variables are used:
  *   $no_compress  -  Controls whether the page should be compressed
  *
- * $Horde: mnemo/lib/base.php,v 1.46.10.14 2009/08/12 22:28:13 jan Exp $
+ * $Horde: mnemo/lib/base.php,v 1.46.10.14 2009-08-12 22:28:13 jan Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *

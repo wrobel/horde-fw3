@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Feed/lib/Horde/Feed/Atom.php,v 1.1.2.5 2009/01/06 15:23:04 jan Exp $
+ * $Horde: framework/Feed/lib/Horde/Feed/Atom.php,v 1.1.2.5 2009-01-06 15:23:04 jan Exp $
  *
  * Portions Copyright 2005-2007 Zend Technologies USA Inc. (http://www.zend.com)
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)

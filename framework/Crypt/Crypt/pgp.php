@@ -65,7 +65,7 @@ define('PGP_KEYSERVER_TIMEOUT', 10);
  * This class has been developed with, and is only guaranteed to work with,
  * Version 1.21 or above of GnuPG.
  *
- * $Horde: framework/Crypt/Crypt/pgp.php,v 1.85.2.30 2009/01/06 15:23:00 jan Exp $
+ * $Horde: framework/Crypt/Crypt/pgp.php,v 1.85.2.30 2009-01-06 15:23:00 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

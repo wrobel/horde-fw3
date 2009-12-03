@@ -1,4 +1,4 @@
--- $Horde: horde/scripts/upgrades/3.0_to_3.1.sql,v 1.1.2.2 2007/12/20 15:03:04 jan Exp $
+-- $Horde: horde/scripts/upgrades/3.0_to_3.1.sql,v 1.1.2.2 2007-12-20 15:03:04 jan Exp $
 
 ALTER TABLE horde_users ADD COLUMN user_soft_expiration_date INT;
 ALTER TABLE horde_users ADD COLUMN user_hard_expiration_date INT;

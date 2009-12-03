@@ -8,7 +8,7 @@ require_once 'Horde/Prefs.php';
  * methods take care of any site-specific restrictions configured in prefs.php
  * and conf.php.
  *
- * $Horde: framework/Prefs/Identity.php,v 1.1.2.13 2009/01/06 15:23:30 jan Exp $
+ * $Horde: framework/Prefs/Identity.php,v 1.1.2.13 2009-01-06 15:23:30 jan Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *

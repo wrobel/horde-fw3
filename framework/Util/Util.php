@@ -13,7 +13,7 @@ define('HORDE_ERROR_DRIVER_CONFIG', 2);
 /**
  * The Util:: class provides generally useful methods of different kinds.
  *
- * $Horde: framework/Util/Util.php,v 1.384.6.37 2009/07/21 18:17:23 slusarz Exp $
+ * $Horde: framework/Util/Util.php,v 1.384.6.37 2009-07-21 18:17:23 slusarz Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

@@ -2,7 +2,7 @@
 /**
  * @package Horde_Maintenance
  *
- * $Horde: framework/Maintenance/Maintenance.php,v 1.52.10.21 2009/01/06 15:23:23 jan Exp $
+ * $Horde: framework/Maintenance/Maintenance.php,v 1.52.10.21 2009-01-06 15:23:23 jan Exp $
  */
 
 /**

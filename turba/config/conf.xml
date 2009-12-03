@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- $Horde: turba/config/conf.xml,v 1.6.2.6 2008/06/25 15:52:54 jan Exp $ -->
+<!-- $Horde: turba/config/conf.xml,v 1.6.2.6 2008-06-25 15:52:54 jan Exp $ -->
 <configuration>
  <configsection name="menu">
   <configheader>Menu Settings</configheader>

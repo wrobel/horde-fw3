@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Cache/Cache/memcache.php,v 1.24.2.3 2009/01/06 15:22:56 jan Exp $
+ * $Horde: framework/Cache/Cache/memcache.php,v 1.24.2.3 2009-01-06 15:22:56 jan Exp $
  *
  * Copyright 2006-2007 Duck <duck@obala.net>
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)

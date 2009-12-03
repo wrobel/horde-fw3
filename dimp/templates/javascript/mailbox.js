@@ -4,7 +4,7 @@
  * See the documentation of prototypejs - Template for the template format:
  *   http://www.prototypejs.org/api/template
  *
- * $Horde: dimp/templates/javascript/mailbox.js,v 1.2.2.6 2009/01/06 15:22:45 jan Exp $
+ * $Horde: dimp/templates/javascript/mailbox.js,v 1.2.2.6 2009-01-06 15:22:45 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

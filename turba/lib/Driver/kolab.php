@@ -2,7 +2,7 @@
 /**
  * @package Turba
  *
- * $Horde: turba/lib/Driver/kolab.php,v 1.5.10.26 2009/10/07 16:16:38 mrubinsk Exp $
+ * $Horde: turba/lib/Driver/kolab.php,v 1.5.10.26 2009-10-07 16:16:38 mrubinsk Exp $
  */
 
 /** Kolab support class. */
@@ -192,7 +192,7 @@ class Turba_Driver_kolab extends Turba_Driver {
 /**
  * Horde Turba wrapper to distinguish between both Kolab driver implementations.
  *
- * $Horde: turba/lib/Driver/kolab.php,v 1.5.10.26 2009/10/07 16:16:38 mrubinsk Exp $
+ * $Horde: turba/lib/Driver/kolab.php,v 1.5.10.26 2009-10-07 16:16:38 mrubinsk Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

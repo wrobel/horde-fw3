@@ -3,7 +3,7 @@
  * The SOAP driver attempts to change a user's password through a SOAP
  * request.
  *
- * $Horde: passwd/lib/Driver/soap.php,v 1.1.2.1 2009/06/10 08:20:39 jan Exp $
+ * $Horde: passwd/lib/Driver/soap.php,v 1.1.2.1 2009-06-10 08:20:39 jan Exp $
  *
  * Copyright 2009 The Horde Project (http://www.horde.org/)
  *

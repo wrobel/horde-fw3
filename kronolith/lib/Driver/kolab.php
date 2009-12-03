@@ -7,7 +7,7 @@ require_once 'Horde/Identity.php';
  * Horde Kronolith driver for the Kolab IMAP Server.
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *
- * $Horde: kronolith/lib/Driver/kolab.php,v 1.16.2.30 2009/01/06 15:24:45 jan Exp $
+ * $Horde: kronolith/lib/Driver/kolab.php,v 1.16.2.30 2009-01-06 15:24:45 jan Exp $
  *
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.
@@ -178,7 +178,7 @@ class Kronolith_Driver_kolab extends Kronolith_Driver {
 /**
  * Horde Kronolith wrapper to distinguish between both Kolab driver implementations.
  *
- * $Horde: kronolith/lib/Driver/kolab.php,v 1.16.2.30 2009/01/06 15:24:45 jan Exp $
+ * $Horde: kronolith/lib/Driver/kolab.php,v 1.16.2.30 2009-01-06 15:24:45 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

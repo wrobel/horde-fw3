@@ -3,7 +3,7 @@
  * The IMP_MIME_Viewer_related class handles multipart/related messages
  * as defined by RFC 2387.
  *
- * $Horde: imp/lib/MIME/Viewer/related.php,v 1.21.10.15 2009/01/06 15:24:09 jan Exp $
+ * $Horde: imp/lib/MIME/Viewer/related.php,v 1.21.10.15 2009-01-06 15:24:09 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

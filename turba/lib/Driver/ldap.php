@@ -2,7 +2,7 @@
 /**
  * Turba directory driver implementation for PHP's LDAP extension.
  *
- * $Horde: turba/lib/Driver/ldap.php,v 1.54.4.24 2009/10/07 16:16:38 mrubinsk Exp $
+ * $Horde: turba/lib/Driver/ldap.php,v 1.54.4.24 2009-10-07 16:16:38 mrubinsk Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Jon Parise <jon@csh.rit.edu>

@@ -3,7 +3,7 @@
  *
  * Provides the javascript to open popup windows.
  *
- * $Horde: horde/js/src/popup.js,v 1.4.2.1 2007/12/20 15:01:31 jan Exp $
+ * $Horde: horde/js/src/popup.js,v 1.4.2.1 2007-12-20 15:01:31 jan Exp $
  *
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.

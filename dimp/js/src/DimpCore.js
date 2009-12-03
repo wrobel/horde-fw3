@@ -2,7 +2,7 @@
  * DimpCore.js - Dimp UI application logic.
  * NOTE: ContextSensitive.js must be loaded before this file.
  *
- * $Horde: dimp/js/src/DimpCore.js,v 1.369.2.62 2009/06/08 20:43:13 slusarz Exp $
+ * $Horde: dimp/js/src/DimpCore.js,v 1.369.2.62 2009-06-08 20:43:13 slusarz Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

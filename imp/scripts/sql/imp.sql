@@ -1,4 +1,4 @@
--- $Horde: imp/scripts/sql/imp.sql,v 1.1.2.1 2007/12/20 14:00:36 jan Exp $
+-- $Horde: imp/scripts/sql/imp.sql,v 1.1.2.1 2007-12-20 14:00:36 jan Exp $
 
 CREATE TABLE imp_sentmail (
     sentmail_id        BIGINT NOT NULL,

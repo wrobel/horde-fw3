@@ -3,7 +3,7 @@
  * The IMAP_Cache:: class facilitates in caching output from the PHP imap
  * extension in the current session.
  *
- * $Horde: framework/IMAP/IMAP/Cache.php,v 1.4.12.15 2009/01/06 15:23:11 jan Exp $
+ * $Horde: framework/IMAP/IMAP/Cache.php,v 1.4.12.15 2009-01-06 15:23:11 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

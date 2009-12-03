@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: turba/lib/Driver/vbook.php,v 1.8.2.8 2009/10/07 15:03:13 mrubinsk Exp $
+ * $Horde: turba/lib/Driver/vbook.php,v 1.8.2.8 2009-10-07 15:03:13 mrubinsk Exp $
  *
  * @package Horde
  */

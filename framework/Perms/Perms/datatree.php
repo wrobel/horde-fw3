@@ -7,7 +7,7 @@ require_once 'Horde/Cache.php';
  * The Perms_datatree:: class provides a DataTree driver for the Horde
  * permissions system.
  *
- * $Horde: framework/Perms/Perms/datatree.php,v 1.6.2.24 2009/08/14 21:45:52 jan Exp $
+ * $Horde: framework/Perms/Perms/datatree.php,v 1.6.2.24 2009-08-14 21:45:52 jan Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *

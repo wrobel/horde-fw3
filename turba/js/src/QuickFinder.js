@@ -15,7 +15,7 @@
  *
  * @author Chuck Hagenbuch <chuck@horde.org>
  *
- * $Horde: turba/js/src/QuickFinder.js,v 1.3.2.2 2007/12/22 05:24:24 chuck Exp $
+ * $Horde: turba/js/src/QuickFinder.js,v 1.3.2.2 2007-12-22 05:24:24 chuck Exp $
  */
 
 var QuickFinder = {

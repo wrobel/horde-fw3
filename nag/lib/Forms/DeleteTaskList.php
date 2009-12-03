@@ -2,7 +2,7 @@
 /**
  * Horde_Form for deleting task lists.
  *
- * $Horde: nag/lib/Forms/DeleteTaskList.php,v 1.1.2.1 2007/12/20 14:23:08 jan Exp $
+ * $Horde: nag/lib/Forms/DeleteTaskList.php,v 1.1.2.1 2007-12-20 14:23:08 jan Exp $
  *
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.

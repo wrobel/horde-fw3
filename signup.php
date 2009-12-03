@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/signup.php,v 1.17.10.16 2009/01/06 15:13:50 jan Exp $
+ * $Horde: horde/signup.php,v 1.17.10.16 2009-01-06 15:13:50 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

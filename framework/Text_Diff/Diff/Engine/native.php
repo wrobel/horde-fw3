@@ -18,7 +18,7 @@
  * Geoffrey T. Dairiki <dairiki@dairiki.org>. The original PHP version of this
  * code was written by him, and is used/adapted with his permission.
  *
- * $Horde: framework/Text_Diff/Diff/Engine/native.php,v 1.7.2.5 2009/01/06 15:23:41 jan Exp $
+ * $Horde: framework/Text_Diff/Diff/Engine/native.php,v 1.7.2.5 2009-01-06 15:23:41 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

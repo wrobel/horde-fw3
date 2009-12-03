@@ -9,7 +9,7 @@
  * process are read and combined with the exit status value and returned to
  * the caller if the status code is not 0.
  *
- * $Horde: passwd/lib/Driver/procopen.php,v 1.4.2.6 2009/02/23 20:01:48 chuck Exp $
+ * $Horde: passwd/lib/Driver/procopen.php,v 1.4.2.6 2009-02-23 20:01:48 chuck Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

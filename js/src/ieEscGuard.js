@@ -3,7 +3,7 @@
  * text input elements to prevent loss of data when the user hits the
  * ESC key.
  *
- * $Horde: horde/js/src/ieEscGuard.js,v 1.4.2.1 2007/12/20 15:01:30 jan Exp $
+ * $Horde: horde/js/src/ieEscGuard.js,v 1.4.2.1 2007-12-20 15:01:30 jan Exp $
  *
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.

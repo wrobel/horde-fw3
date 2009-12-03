@@ -5,7 +5,7 @@
  * set of MIME_Viewer_* drivers which handle the actual rendering,
  * and also a configuration file to map MIME types to drivers.
  *
- * $Horde: framework/MIME/MIME/Viewer.php,v 1.64.10.15 2009/01/06 15:23:20 jan Exp $
+ * $Horde: framework/MIME/MIME/Viewer.php,v 1.64.10.15 2009-01-06 15:23:20 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

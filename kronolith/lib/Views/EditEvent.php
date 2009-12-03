@@ -3,7 +3,7 @@
  * The Kronolith_View_EditEvent:: class provides an API for viewing
  * event edit forms.
  *
- * $Horde: kronolith/lib/Views/EditEvent.php,v 1.9.2.2 2008/03/17 09:25:44 jan Exp $
+ * $Horde: kronolith/lib/Views/EditEvent.php,v 1.9.2.2 2008-03-17 09:25:44 jan Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @since   Kronolith 2.2

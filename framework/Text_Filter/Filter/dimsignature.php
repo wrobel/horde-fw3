@@ -3,7 +3,7 @@
  * Displays message signatures marked by a '-- ' in the style of the CSS class
  * "signature".
  *
- * $Horde: framework/Text_Filter/Filter/dimsignature.php,v 1.2.10.12 2009/01/06 15:23:42 jan Exp $
+ * $Horde: framework/Text_Filter/Filter/dimsignature.php,v 1.2.10.12 2009-01-06 15:23:42 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

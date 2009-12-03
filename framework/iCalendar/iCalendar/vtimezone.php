@@ -2,7 +2,7 @@
 /**
  * Class representing vTimezones.
  *
- * $Horde: framework/iCalendar/iCalendar/vtimezone.php,v 1.8.10.10 2009/01/06 15:23:53 jan Exp $
+ * $Horde: framework/iCalendar/iCalendar/vtimezone.php,v 1.8.10.10 2009-01-06 15:23:53 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

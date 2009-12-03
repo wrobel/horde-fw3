@@ -2,7 +2,7 @@
 /**
  * Maintenance task for upgrading user prefs after upgrading to Turba 2.2
  *
- * $Horde: turba/lib/Maintenance/Task/upgradeprefs.php,v 1.11.2.2 2008/06/09 03:28:08 chuck Exp $
+ * $Horde: turba/lib/Maintenance/Task/upgradeprefs.php,v 1.11.2.2 2008-06-09 03:28:08 chuck Exp $
  *
  * @author Michael J. Rubinsky <mrubinsk@horde.org>
  * @package Turba

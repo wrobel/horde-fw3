@@ -10,7 +10,7 @@
  * This driver interfaces with the email-to-sms gateways provided by many
  * carriers, particularly those based in the U.S.
  *
- * $Horde: framework/Net_SMS/SMS/generic_smtp.php,v 1.8.2.9 2008/05/14 21:39:40 jan Exp $
+ * $Horde: framework/Net_SMS/SMS/generic_smtp.php,v 1.8.2.9 2008-05-14 21:39:40 jan Exp $
  *
  * @category   Networking
  * @package    Net_SMS

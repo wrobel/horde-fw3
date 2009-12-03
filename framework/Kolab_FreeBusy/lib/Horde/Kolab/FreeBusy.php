@@ -2,7 +2,7 @@
 /**
  * The Kolab implementation of free/busy.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy.php,v 1.10.2.2 2009/04/02 18:37:57 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy.php,v 1.10.2.2 2009-04-02 18:37:57 wrobel Exp $
  *
  * @package Kolab_FreeBusy
  */
@@ -29,7 +29,7 @@ require_once 'Horde/Kolab/FreeBusy/Access.php';
  *
  * $fb->fetch();
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy.php,v 1.10.2.2 2009/04/02 18:37:57 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy.php,v 1.10.2.2 2009-04-02 18:37:57 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *

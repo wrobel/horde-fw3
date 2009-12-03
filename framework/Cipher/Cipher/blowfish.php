@@ -3,7 +3,7 @@
  * The Cipher_blowfish:: class implements the Cipher interface encryption data
  * using the Blowfish algorithm.
  *
- * $Horde: framework/Cipher/Cipher/blowfish.php,v 1.14.12.14 2009/01/06 15:22:57 jan Exp $
+ * $Horde: framework/Cipher/Cipher/blowfish.php,v 1.14.12.14 2009-01-06 15:22:57 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

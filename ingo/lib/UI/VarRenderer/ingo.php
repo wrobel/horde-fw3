@@ -6,7 +6,7 @@ require_once 'Horde/UI/VarRenderer/html.php';
  * Extension of Horde's variable renderer that support Ingo's folders variable
  * type.
  *
- * $Horde: ingo/lib/UI/VarRenderer/ingo.php,v 1.3.2.3 2009/01/06 15:24:37 jan Exp $
+ * $Horde: ingo/lib/UI/VarRenderer/ingo.php,v 1.3.2.3 2009-01-06 15:24:37 jan Exp $
  *
  * Copyright 2006-2009 The Horde Project (http://www.horde.org/)
  *

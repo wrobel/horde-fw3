@@ -4,7 +4,7 @@
  * 'application/pdf' enabling web browsers with a PDF viewer plugin to view
  * the PDF file inside the browser.
  *
- * $Horde: framework/MIME/MIME/Viewer/pdf.php,v 1.3.12.10 2009/01/06 15:23:21 jan Exp $
+ * $Horde: framework/MIME/MIME/Viewer/pdf.php,v 1.3.12.10 2009-01-06 15:23:21 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

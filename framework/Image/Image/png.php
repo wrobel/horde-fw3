@@ -7,7 +7,7 @@ require_once dirname(__FILE__) . '/../Image.php';
  * mainly provides some utility functions, such as the ability to make
  * pixels or solid images for now.
  *
- * $Horde: framework/Image/Image/png.php,v 1.19.10.12 2009/01/06 15:23:12 jan Exp $
+ * $Horde: framework/Image/Image/png.php,v 1.19.10.12 2009-01-06 15:23:12 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

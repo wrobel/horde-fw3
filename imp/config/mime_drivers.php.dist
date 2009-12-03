@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/config/mime_drivers.php.dist,v 1.35.10.7 2009/06/20 21:37:43 jan Exp $
+ * $Horde: imp/config/mime_drivers.php.dist,v 1.35.10.7 2009-06-20 21:37:43 jan Exp $
  *
  * Decide which output drivers you want to activate for the IMP application.
  * Settings in this file override settings in horde/config/mime_drivers.php.

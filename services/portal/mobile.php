@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/services/portal/mobile.php,v 2.15.10.8 2009/01/06 15:27:33 jan Exp $
+ * $Horde: horde/services/portal/mobile.php,v 2.15.10.8 2009-01-06 15:27:33 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

@@ -28,7 +28,7 @@
  * ),
  * </code>
  *
- * $Horde: imp/lib/Quota/sql.php,v 1.6.2.5 2009/02/17 17:13:51 chuck Exp $
+ * $Horde: imp/lib/Quota/sql.php,v 1.6.2.5 2009-02-17 17:13:51 chuck Exp $
  *
  * Copyright 2006-2007 Tomas Simonaitis <haden@homelan.lt>
  * Copyright 2006-2009 The Horde Project (http://www.horde.org/)

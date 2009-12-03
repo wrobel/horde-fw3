@@ -5,7 +5,7 @@
  *
  * Based on the FPDF class by Olivier Plathey (http://www.fpdf.org/).
  *
- * $Horde: framework/File_PDF/PDF.php,v 1.18.10.21 2009/01/06 15:23:05 jan Exp $
+ * $Horde: framework/File_PDF/PDF.php,v 1.18.10.21 2009-01-06 15:23:05 jan Exp $
  *
  * Copyright 2001-2003 Olivier Plathey <olivier@fpdf.org>
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)

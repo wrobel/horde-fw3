@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: mnemo/view.php,v 1.27.2.12 2009/01/06 15:24:57 jan Exp $
+ * $Horde: mnemo/view.php,v 1.27.2.12 2009-01-06 15:24:57 jan Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *

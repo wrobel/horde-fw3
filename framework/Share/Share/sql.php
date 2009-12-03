@@ -3,7 +3,7 @@
  * Horde_Share_sql:: provides the sql backend for the horde share
  * driver.
  *
- * $Horde: framework/Share/Share/sql.php,v 1.1.2.57 2009/08/12 13:52:00 jan Exp $
+ * $Horde: framework/Share/Share/sql.php,v 1.1.2.57 2009-08-12 13:52:00 jan Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

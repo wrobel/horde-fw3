@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/lib/Mailbox.php,v 1.76.10.76 2009/03/04 21:16:02 slusarz Exp $
+ * $Horde: imp/lib/Mailbox.php,v 1.76.10.76 2009-03-04 21:16:02 slusarz Exp $
  *
  * @package IMP
  */

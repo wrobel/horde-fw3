@@ -2,7 +2,7 @@
 /**
  * Representation of a Kolab user group.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/group.php,v 1.2.2.5 2009/04/25 08:56:33 wrobel Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/group.php,v 1.2.2.5 2009-04-25 08:56:33 wrobel Exp $
  *
  * PHP version 4
  *
@@ -16,7 +16,7 @@
 /**
  * This class provides methods to deal with groups for Kolab.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/group.php,v 1.2.2.5 2009/04/25 08:56:33 wrobel Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/group.php,v 1.2.2.5 2009-04-25 08:56:33 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

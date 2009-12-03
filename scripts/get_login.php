@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/scripts/get_login.php,v 1.3.10.7 2009/01/06 15:26:19 jan Exp $
+ * $Horde: horde/scripts/get_login.php,v 1.3.10.7 2009-01-06 15:26:19 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

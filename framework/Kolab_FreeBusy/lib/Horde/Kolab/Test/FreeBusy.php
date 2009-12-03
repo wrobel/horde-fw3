@@ -2,7 +2,7 @@
 /**
  * Base for PHPUnit scenarios.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/Test/FreeBusy.php,v 1.1.2.2 2009/04/25 19:16:42 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/Test/FreeBusy.php,v 1.1.2.2 2009-04-25 19:16:42 wrobel Exp $
  *
  * PHP version 5
  *
@@ -21,7 +21,7 @@ require_once 'Horde/Kolab/Test/Storage.php';
 /**
  * Base for PHPUnit scenarios.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/Test/FreeBusy.php,v 1.1.2.2 2009/04/25 19:16:42 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/Test/FreeBusy.php,v 1.1.2.2 2009-04-25 19:16:42 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

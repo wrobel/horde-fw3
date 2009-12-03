@@ -9,7 +9,7 @@
  * Optional parameters:<pre>
  *   None.</pre>
  *
- * $Horde: imp/lib/Auth/imp.php,v 1.16.6.21 2009/01/06 15:24:05 jan Exp $
+ * $Horde: imp/lib/Auth/imp.php,v 1.16.6.21 2009-01-06 15:24:05 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

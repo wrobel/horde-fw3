@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: kronolith/themes/categoryCSS.php,v 1.4.2.7 2009/01/06 15:24:50 jan Exp $
+ * $Horde: kronolith/themes/categoryCSS.php,v 1.4.2.7 2009-01-06 15:24:50 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

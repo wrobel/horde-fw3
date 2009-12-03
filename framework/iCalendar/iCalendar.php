@@ -12,7 +12,7 @@ include_once 'Horde/NLS.php';
 /**
  * Class representing iCalendar files.
  *
- * $Horde: framework/iCalendar/iCalendar.php,v 1.57.4.78 2009/10/01 10:34:06 jan Exp $
+ * $Horde: framework/iCalendar/iCalendar.php,v 1.57.4.78 2009-10-01 10:34:06 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

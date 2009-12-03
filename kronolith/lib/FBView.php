@@ -9,7 +9,7 @@ require_once 'Horde/Template.php';
  *
  * See the enclosed file COPYING for license information.
  *
- * $Horde: kronolith/lib/FBView.php,v 1.10.10.16 2009/01/06 15:24:45 jan Exp $
+ * $Horde: kronolith/lib/FBView.php,v 1.10.10.16 2009-01-06 15:24:45 jan Exp $
  *
  * @author  Mike Cochrane <mike@graftonhall.co.nz>
  * @author  Jan Schneider <jan@horde.org>

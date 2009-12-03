@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: kronolith/pref_api.php,v 1.3.2.3 2009/01/06 15:24:43 jan Exp $
+ * $Horde: kronolith/pref_api.php,v 1.3.2.3 2009-01-06 15:24:43 jan Exp $
  *
  * Copyright 2006-2009 The Horde Project (http://www.horde.org/)
  *

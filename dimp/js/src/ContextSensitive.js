@@ -11,7 +11,7 @@
  * Original code by Havard Eide (http://eide.org/) released under the MIT
  * license.
  *
- * $Horde: dimp/js/src/ContextSensitive.js,v 1.45.2.14 2008/08/20 22:00:53 slusarz Exp $
+ * $Horde: dimp/js/src/ContextSensitive.js,v 1.45.2.14 2008-08-20 22:00:53 slusarz Exp $
  *
  * @author Chuck Hagenbuch <chuck@horde.org>
  * @author Michael Slusarz <slusarz@horde.org>

@@ -8,7 +8,7 @@ require_once 'Horde/Notification/Event.php';
  * Notification_Listener_status_imp:: class to return all messages instead of
  * printing them.
  *
- * $Horde: dimp/lib/Notification/Listener/status.php,v 1.12.2.3 2009/01/06 15:22:39 jan Exp $
+ * $Horde: dimp/lib/Notification/Listener/status.php,v 1.12.2.3 2009-01-06 15:22:39 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

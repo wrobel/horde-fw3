@@ -1,4 +1,4 @@
--- $Horde: horde/scripts/upgrades/3.1_to_3.2.sybase.sql,v 1.2.2.15 2008/06/11 08:06:12 jan Exp $
+-- $Horde: horde/scripts/upgrades/3.1_to_3.2.sybase.sql,v 1.2.2.15 2008-06-11 08:06:12 jan Exp $
 
 CREATE TABLE horde_syncml_map (
     syncml_syncpartner varchar(255) NOT NULL,

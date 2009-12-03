@@ -8,7 +8,7 @@
  * http://tablesorter.com/docs/, and
  * http://www.millstream.com.au/view/code/tablekit/
  *
- * $Horde: turba/js/src/tables.js,v 1.1.2.1 2007/12/24 05:17:59 chuck Exp $
+ * $Horde: turba/js/src/tables.js,v 1.1.2.1 2007-12-24 05:17:59 chuck Exp $
  *
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.

@@ -2,7 +2,7 @@
 /**
  * Test the Kolab cache.
  *
- * $Horde: framework/Kolab_Storage/test/Horde/Kolab/Storage/CacheTest.php,v 1.2.2.2 2009/01/06 15:23:18 jan Exp $
+ * $Horde: framework/Kolab_Storage/test/Horde/Kolab/Storage/CacheTest.php,v 1.2.2.2 2009-01-06 15:23:18 jan Exp $
  *
  * @package Kolab_Storage
  */
@@ -18,7 +18,7 @@ require_once 'Horde/Kolab/Storage/Cache.php';
 /**
  * Test the Kolab cache.
  *
- * $Horde: framework/Kolab_Storage/test/Horde/Kolab/Storage/CacheTest.php,v 1.2.2.2 2009/01/06 15:23:18 jan Exp $
+ * $Horde: framework/Kolab_Storage/test/Horde/Kolab/Storage/CacheTest.php,v 1.2.2.2 2009-01-06 15:23:18 jan Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

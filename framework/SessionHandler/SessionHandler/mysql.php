@@ -25,7 +25,7 @@
  * The table structure for the SessionHandler can be found in
  * horde/scripts/sql/horde_sessionhandler.sql.
  *
- * $Horde: framework/SessionHandler/SessionHandler/mysql.php,v 1.16.12.23 2009/09/25 14:29:09 jan Exp $
+ * $Horde: framework/SessionHandler/SessionHandler/mysql.php,v 1.16.12.23 2009-09-25 14:29:09 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

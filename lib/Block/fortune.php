@@ -7,7 +7,7 @@ if (isset($GLOBALS['conf']['fortune']['exec_path']) &&
 }
 
 /**
- * $Horde: horde/lib/Block/fortune.php,v 1.14.10.4 2007/12/20 15:01:35 jan Exp $
+ * $Horde: horde/lib/Block/fortune.php,v 1.14.10.4 2007-12-20 15:01:35 jan Exp $
  *
  * @package Horde_Block
  */

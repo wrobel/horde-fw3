@@ -3,7 +3,7 @@
  * The Turba_List:: class provides an interface for dealing with a
  * list of Turba_Objects.
  *
- * $Horde: turba/lib/List.php,v 1.41.10.8 2008/08/28 21:24:04 chuck Exp $
+ * $Horde: turba/lib/List.php,v 1.41.10.8 2008-08-28 21:24:04 chuck Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Jon Parise <jon@csh.rit.edu>

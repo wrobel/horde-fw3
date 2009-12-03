@@ -5,7 +5,7 @@
  * This file defines DIMP's external API interface. Other applications can
  * interact with DIMP through this API.
  *
- * $Horde: dimp/lib/api.php,v 1.17.2.2 2009/01/06 15:22:38 jan Exp $
+ * $Horde: dimp/lib/api.php,v 1.17.2.2 2009-01-06 15:22:38 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

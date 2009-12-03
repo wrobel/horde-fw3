@@ -2,7 +2,7 @@
 /**
  * Base for PHPUnit scenarios.
  *
- * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Test/Storage.php,v 1.1.2.5 2009/04/25 18:43:40 wrobel Exp $
+ * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Test/Storage.php,v 1.1.2.5 2009-04-25 18:43:40 wrobel Exp $
  *
  * PHP version 5
  *
@@ -26,7 +26,7 @@ require_once 'Horde/Kolab/Storage/List.php';
 /**
  * Base for PHPUnit scenarios.
  *
- * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Test/Storage.php,v 1.1.2.5 2009/04/25 18:43:40 wrobel Exp $
+ * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Test/Storage.php,v 1.1.2.5 2009-04-25 18:43:40 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

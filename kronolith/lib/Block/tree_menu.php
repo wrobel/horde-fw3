@@ -4,7 +4,7 @@ $block_name = _("Menu List");
 $block_type = 'tree';
 
 /**
- * $Horde: kronolith/lib/Block/tree_menu.php,v 1.10.8.2 2007/12/20 14:12:34 jan Exp $
+ * $Horde: kronolith/lib/Block/tree_menu.php,v 1.10.8.2 2007-12-20 14:12:34 jan Exp $
  *
  * @package Horde_Block
  */

@@ -12,7 +12,7 @@ require_once 'Horde/String.php';
  * wrap    -- Whether to wrap the text or not.
  * </pre>
  *
- * $Horde: framework/Text_Filter/Filter/html2text.php,v 1.4.10.25 2009/04/02 14:37:19 jan Exp $
+ * $Horde: framework/Text_Filter/Filter/html2text.php,v 1.4.10.25 2009-04-02 14:37:19 jan Exp $
  *
  * Copyright 2003-2004 Jon Abernathy <jon@chuggnutt.com>
  * Original source: http://www.chuggnutt.com/html2text.php

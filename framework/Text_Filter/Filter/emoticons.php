@@ -11,7 +11,7 @@ require_once 'Horde.php';
  * entities -- If true the html entity versions of the patterns will be used.
  * </pre>
  *
- * $Horde: framework/Text_Filter/Filter/emoticons.php,v 1.17.10.15 2009/01/06 15:23:42 jan Exp $
+ * $Horde: framework/Text_Filter/Filter/emoticons.php,v 1.17.10.15 2009-01-06 15:23:42 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

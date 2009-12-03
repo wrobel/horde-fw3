@@ -10,7 +10,7 @@
  * the preferences backend (e.g. usernames may have to be in the form
  * user@example.com).
  *
- * $Horde: ingo/scripts/upgrades/convert_prefs_to_sql.php,v 1.2.2.5 2009/08/02 13:45:50 mrubinsk Exp $
+ * $Horde: ingo/scripts/upgrades/convert_prefs_to_sql.php,v 1.2.2.5 2009-08-02 13:45:50 mrubinsk Exp $
  *
  * Copyright 2006-2009 The Horde Project (http://www.horde.org/)
  *

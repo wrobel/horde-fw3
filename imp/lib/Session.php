@@ -2,7 +2,7 @@
 /**
  * Functions required to start an IMP session.
  *
- * $Horde: imp/lib/Session.php,v 1.74.2.44 2009/05/29 22:36:50 slusarz Exp $
+ * $Horde: imp/lib/Session.php,v 1.74.2.44 2009-05-29 22:36:50 slusarz Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

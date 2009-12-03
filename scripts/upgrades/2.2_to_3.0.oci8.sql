@@ -1,4 +1,4 @@
--- $Horde: horde/scripts/upgrades/2.2_to_3.0.oci8.sql,v 1.1.2.2 2007/12/20 15:03:04 jan Exp $
+-- $Horde: horde/scripts/upgrades/2.2_to_3.0.oci8.sql,v 1.1.2.2 2007-12-20 15:03:04 jan Exp $
 
 ALTER TABLE horde_prefs MODIFY pref_uid VARCHAR2(255);
 ALTER TABLE horde_prefs MODIFY pref_scope VARCHAR2(16);

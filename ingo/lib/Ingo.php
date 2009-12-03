@@ -8,7 +8,7 @@ define('INGO_BLACKLIST_MARKER', '++DELETE++');
 /**
  * Ingo base class.
  *
- * $Horde: ingo/lib/Ingo.php,v 1.69.6.23 2008/12/15 02:33:08 chuck Exp $
+ * $Horde: ingo/lib/Ingo.php,v 1.69.6.23 2008-12-15 02:33:08 chuck Exp $
  *
  * See the enclosed file LICENSE for license information (ASL).  If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.

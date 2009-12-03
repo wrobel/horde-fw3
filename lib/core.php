@@ -5,7 +5,7 @@
  * This file sets up any necessary include path variables and includes
  * the minimum required Horde libraries.
  *
- * $Horde: horde/lib/core.php,v 1.26.6.17 2009/02/18 16:23:50 chuck Exp $
+ * $Horde: horde/lib/core.php,v 1.26.6.17 2009-02-18 16:23:50 chuck Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

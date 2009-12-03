@@ -3,7 +3,7 @@
  * The Browser_imode:: class extends the Browser API by providing
  * specific information about Imode handsets.
  *
- * $Horde: framework/Browser/Browser/imode.php,v 1.7.12.9 2009/01/06 15:22:55 jan Exp $
+ * $Horde: framework/Browser/Browser/imode.php,v 1.7.12.9 2009-01-06 15:22:55 jan Exp $
  *
  * Copyright 2000-2007 Mika Tuupola
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)

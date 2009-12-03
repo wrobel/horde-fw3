@@ -5,7 +5,7 @@
  * driver to the new SQL Horde_Share driver. You should run the appropriate
  * 2.1_to_2.2.sql upgrade script for your RDBMS before executing this script.
  *
- * $Horde: kronolith/scripts/upgrades/convert_datatree_shares_to_sql.php,v 1.1.2.7 2009/07/20 11:16:56 jan Exp $
+ * $Horde: kronolith/scripts/upgrades/convert_datatree_shares_to_sql.php,v 1.1.2.7 2009-07-20 11:16:56 jan Exp $
  */
 
 @define('AUTH_HANDLER', true);

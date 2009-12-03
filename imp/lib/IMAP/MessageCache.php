@@ -7,7 +7,7 @@ require_once IMP_BASE . '/lib/MIME/Headers.php';
  * The IMP_MessageCache:: class contains all functions related to caching
  * information about RFC 2822 messages across sessions.
  *
- * $Horde: imp/lib/IMAP/MessageCache.php,v 1.1.2.13 2009/01/06 15:24:05 jan Exp $
+ * $Horde: imp/lib/IMAP/MessageCache.php,v 1.1.2.13 2009-01-06 15:24:05 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

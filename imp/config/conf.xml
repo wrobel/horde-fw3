@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- $Horde: imp/config/conf.xml,v 1.53.2.43 2009/07/02 06:18:15 slusarz Exp $ -->
+<!-- $Horde: imp/config/conf.xml,v 1.53.2.43 2009-07-02 06:18:15 slusarz Exp $ -->
 <configuration>
  <configtab name="utils" desc="External Utilities and Menu">
   <configsection name="spell">

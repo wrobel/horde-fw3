@@ -2,7 +2,7 @@
 /**
  * Checks for the Kolab Free/Busy system.
  *
- * $Horde: framework/Kolab_FreeBusy/test/Horde/Kolab/FreeBusy/FreeBusyScenarioTest.php,v 1.2.2.3 2009/04/25 19:16:42 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/test/Horde/Kolab/FreeBusy/FreeBusyScenarioTest.php,v 1.2.2.3 2009-04-25 19:16:42 wrobel Exp $
  *
  * PHP version 5
  *
@@ -22,7 +22,7 @@ require_once 'Horde/Kolab/Test/FreeBusy.php';
 /**
  * Checks for the Kolab Free/Busy system.
  *
- * $Horde: framework/Kolab_FreeBusy/test/Horde/Kolab/FreeBusy/FreeBusyScenarioTest.php,v 1.2.2.3 2009/04/25 19:16:42 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/test/Horde/Kolab/FreeBusy/FreeBusyScenarioTest.php,v 1.2.2.3 2009-04-25 19:16:42 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

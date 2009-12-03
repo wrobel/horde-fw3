@@ -4,7 +4,7 @@
  * content.  It exists as a fallback if no other intelligent rendering
  * mechanism could be used.
  *
- * $Horde: framework/MIME/MIME/Viewer/default.php,v 1.9.12.9 2009/01/06 15:23:21 jan Exp $
+ * $Horde: framework/MIME/MIME/Viewer/default.php,v 1.9.12.9 2009-01-06 15:23:21 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

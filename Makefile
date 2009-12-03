@@ -1,4 +1,4 @@
-CONFIGS=ansel agora dimp gollem hermes jonah ingo imp kronolith mimp mnemo nag passwd trean turba whups
+CONFIGS=dimp hermes ingo imp kronolith mnemo nag passwd turba
 UPDATE=$(CONFIGS) framework
 FRAMEWORK=File Horde Net SyncML Text VFS XML bin data doc
 
@@ -12,7 +12,7 @@ update:
 	cvs update -A -r FRAMEWORK_3
 	for PKG in $(UPDATE);        \
 	  do                         \
-	  cd $$PKG; cvs update -A -r FRAMEWORK_3; cd ..;\
+	  cd $$PKG;cvs update -A -r FRAMEWORK_3; cd ..;\
 	done
 	for BIT in $(FRAMEWORK);     \
 	  do                         \

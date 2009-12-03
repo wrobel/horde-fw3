@@ -9,7 +9,7 @@
  *   'password' - (string) The bind password.
  * </pre>
  *
- * $Horde: framework/SessionHandler/SessionHandler/ldap.php,v 1.2.2.3 2007/12/20 13:49:39 jan Exp $
+ * $Horde: framework/SessionHandler/SessionHandler/ldap.php,v 1.2.2.3 2007-12-20 13:49:39 jan Exp $
  *
  * This code is adapted from the comments at
  * http://www.php.net/session-set-save-handler.

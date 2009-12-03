@@ -2,7 +2,7 @@
 /**
  * Common library for Ingo test cases
  *
- * $Horde: ingo/lib/tests/TestBase.php,v 1.1.2.1 2007/12/20 14:05:49 jan Exp $
+ * $Horde: ingo/lib/tests/TestBase.php,v 1.1.2.1 2007-12-20 14:05:49 jan Exp $
  *
  * See the enclosed file LICENSE for license information (ASL).  If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.

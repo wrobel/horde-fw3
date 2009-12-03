@@ -8,7 +8,7 @@
  * http://www.millstream.com.au/view/code/tablekit/
  * http://tablesorter.com/docs/
  *
- * $Horde: kronolith/js/src/tables.js,v 1.1.2.3 2007/12/21 00:10:33 chuck Exp $
+ * $Horde: kronolith/js/src/tables.js,v 1.1.2.3 2007-12-21 00:10:33 chuck Exp $
  *
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.

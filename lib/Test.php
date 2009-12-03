@@ -25,7 +25,7 @@ if (!function_exists('_')) {
  * The Horde_Test:: class provides functions used in the test scripts
  * used in the various applications (test.php).
  *
- * $Horde: horde/lib/Test.php,v 1.31.4.26 2009/01/06 15:24:51 jan Exp $
+ * $Horde: horde/lib/Test.php,v 1.31.4.26 2009-01-06 15:24:51 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

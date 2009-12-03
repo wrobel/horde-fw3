@@ -1,6 +1,6 @@
 #
 #  File: rh9-nag.spec
-#  $Horde: nag/packaging/redhat/rh9-nag.spec,v 1.1 2003/04/29 00:32:47 bjn Exp $
+#  $Horde: nag/packaging/redhat/rh9-nag.spec,v 1.1 2003-04-29 00:32:47 bjn Exp $
 #
 #  This is the SPEC file for the Nag Red Hat 9 RPMs/SRPM.
 #

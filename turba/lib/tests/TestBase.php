@@ -2,7 +2,7 @@
 /**
  * Base class for Turba test cases
  *
- * $Horde: turba/lib/tests/TestBase.php,v 1.3.2.1 2007/12/20 14:34:31 jan Exp $
+ * $Horde: turba/lib/tests/TestBase.php,v 1.3.2.1 2007-12-20 14:34:31 jan Exp $
  *
  * @author  Jason M. Felice <jason.m.felice@gmail.com>
  * @package Turba

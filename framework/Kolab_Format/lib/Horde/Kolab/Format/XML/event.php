@@ -2,7 +2,7 @@
 /**
  * Implementation for events in the Kolab XML format.
  *
- * $Horde: framework/Kolab_Format/lib/Horde/Kolab/Format/XML/event.php,v 1.2.2.3 2008/12/12 11:39:04 wrobel Exp $
+ * $Horde: framework/Kolab_Format/lib/Horde/Kolab/Format/XML/event.php,v 1.2.2.3 2008-12-12 11:39:04 wrobel Exp $
  *
  * @package Kolab_Format
  */
@@ -13,7 +13,7 @@ require_once 'Horde/Kolab/Format/Date.php';
 /**
  * Kolab XML handler for event groupware objects.
  *
- * $Horde: framework/Kolab_Format/lib/Horde/Kolab/Format/XML/event.php,v 1.2.2.3 2008/12/12 11:39:04 wrobel Exp $
+ * $Horde: framework/Kolab_Format/lib/Horde/Kolab/Format/XML/event.php,v 1.2.2.3 2008-12-12 11:39:04 wrobel Exp $
  *
  * Copyright 2007-2008 Klarälvdalens Datakonsult AB
  *

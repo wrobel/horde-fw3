@@ -2,7 +2,7 @@
 /**
  * @package IMP
  *
- * $Horde: imp/lib/Crypt/PGP.php,v 1.90.2.27 2009/10/09 13:02:34 jan Exp $
+ * $Horde: imp/lib/Crypt/PGP.php,v 1.90.2.27 2009-10-09 13:02:34 jan Exp $
  */
 
 /** Horde_Crypt_pgp */

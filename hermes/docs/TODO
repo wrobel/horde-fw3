@@ -2,7 +2,7 @@
  Hermes Development TODO List
 ==============================
 
-:Last update:   $Date: 2008/06/25 17:20:56 $
+:Last update:   $Date: 2008-06-25 17:20:56 $
 :Revision:      $Revision: 1.11 $
 
 - Add support for managing "time pools" such as vacation time and sick days.

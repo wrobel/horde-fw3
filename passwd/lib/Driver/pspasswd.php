@@ -48,7 +48,7 @@
  * Special thanks to Mark Russinovich (mark@sysinternals.com) for the
  * tool and helping me solve some questions about it.
  *
- * $Horde: passwd/lib/Driver/pspasswd.php,v 1.2.2.5 2009/01/06 15:25:23 jan Exp $
+ * $Horde: passwd/lib/Driver/pspasswd.php,v 1.2.2.5 2009-01-06 15:25:23 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

@@ -3,7 +3,7 @@
  * The MIME_Viewer_plain class renders out plain text with URLs made
  * into hyperlinks (if viewing inline).
  *
- * $Horde: framework/MIME/MIME/Viewer/plain.php,v 1.18.6.15 2009/01/06 15:23:21 jan Exp $
+ * $Horde: framework/MIME/MIME/Viewer/plain.php,v 1.18.6.15 2009-01-06 15:23:21 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

@@ -6,7 +6,7 @@
  *
  * See the enclosed file COPYING for license information.
  *
- * $Horde: kronolith/lib/FBView/day.php,v 1.13.4.11 2009/01/06 15:24:46 jan Exp $
+ * $Horde: kronolith/lib/FBView/day.php,v 1.13.4.11 2009-01-06 15:24:46 jan Exp $
  *
  * @author  Mike Cochrane <mike@graftonhall.co.nz>
  * @author  Jan Schneider <jan@horde.org>

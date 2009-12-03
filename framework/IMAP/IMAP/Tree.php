@@ -60,7 +60,7 @@ define('IMAPTREE_BASE_ELT', null);
  * functions to iterate through this tree and query information about
  * individual mailboxes/folders.
  *
- * $Horde: framework/IMAP/IMAP/Tree.php,v 1.48.2.47 2009/01/06 15:23:11 jan Exp $
+ * $Horde: framework/IMAP/IMAP/Tree.php,v 1.48.2.47 2009-01-06 15:23:11 jan Exp $
  *
  * Copyright 2000-2009 The Horde Project (http://www.horde.org/)
  *

@@ -4,7 +4,7 @@ set sqlblanklines on;
 /**
  * Oracle Table Creation Scripts.
  * 
- * $Horde: horde/scripts/sql/create.oci8.sql,v 1.4.8.24 2009/10/19 10:54:32 jan Exp $
+ * $Horde: horde/scripts/sql/create.oci8.sql,v 1.4.8.24 2009-10-19 10:54:32 jan Exp $
  * 
  * @author Miguel Ward <mward@aluar.com.ar>
  * 

@@ -4,7 +4,7 @@
  *
  * Copyright 2006-2009 The Horde Project (http://www.horde.org/)
  *
- * $Horde: hermes/scripts/Sandals.wdgt/lib/stripe.js,v 1.2.2.1 2009/01/06 15:24:00 jan Exp $
+ * $Horde: hermes/scripts/Sandals.wdgt/lib/stripe.js,v 1.2.2.1 2009-01-06 15:24:00 jan Exp $
  *
  * @author Chuck Hagenbuch <chuck@horde.org>
  * @author Matt Warden <mwarden@gmail.com>

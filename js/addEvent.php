@@ -1,7 +1,7 @@
 /**
  * Generic function to add an event handler to any DOM element.
  *
- * $Horde: horde/js/addEvent.php,v 1.1.2.3 2007/01/02 13:55:04 jan Exp $
+ * $Horde: horde/js/addEvent.php,v 1.1.2.3 2007-01-02 13:55:04 jan Exp $
  *
  * Copyright 2005-2007 Chuck Hagenbuch <chuck@horde.org>
  *

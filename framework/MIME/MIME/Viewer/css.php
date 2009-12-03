@@ -6,7 +6,7 @@ require_once dirname(__FILE__) . '/source.php';
  * The MIME_Viewer_css class renders CSS source as HTML with an effort
  * to remove potentially malicious code.
  *
- * $Horde: framework/MIME/MIME/Viewer/css.php,v 1.1.10.12 2009/01/06 15:23:21 jan Exp $
+ * $Horde: framework/MIME/MIME/Viewer/css.php,v 1.1.10.12 2009-01-06 15:23:21 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

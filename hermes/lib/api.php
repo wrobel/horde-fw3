@@ -2,7 +2,7 @@
 /**
  * Hermes external API interface.
  *
- * $Horde: hermes/lib/api.php,v 1.42 2008/07/11 17:13:29 jan Exp $
+ * $Horde: hermes/lib/api.php,v 1.42 2008-07-11 17:13:29 jan Exp $
  *
  * This file defines Hermes's external API interface. Other applications
  * can interact with Hermes through this API.

@@ -4,7 +4,7 @@
  * and displaying blocks through Horde_Block_Layout_Manager and
  * Horde_Block_Layout_View.
  *
- * $Horde: framework/Block/Block/Layout.php,v 1.21.10.13 2009/01/06 15:22:53 jan Exp $
+ * $Horde: framework/Block/Block/Layout.php,v 1.21.10.13 2009-01-06 15:22:53 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

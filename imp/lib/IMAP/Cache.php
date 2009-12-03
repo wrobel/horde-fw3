@@ -6,7 +6,7 @@ require_once 'Horde/IMAP/Cache.php';
  * The IMP_IMAP_Cache:: class extends Horde's IMAP_Cache:: class to add extra
  * IMP-specific functionality.
  *
- * $Horde: imp/lib/IMAP/Cache.php,v 1.36.2.6 2009/03/10 05:46:40 slusarz Exp $
+ * $Horde: imp/lib/IMAP/Cache.php,v 1.36.2.6 2009-03-10 05:46:40 slusarz Exp $
  *
  * Copyright 2006-2009 The Horde Project (http://www.horde.org/)
  *

@@ -13,7 +13,7 @@
  * The following global variables are used:
  *   $no_compress  -  Controls whether the page should be compressed
  *
- * $Horde: horde/lib/base.php,v 1.40.10.8 2009/01/06 15:24:51 jan Exp $
+ * $Horde: horde/lib/base.php,v 1.40.10.8 2009-01-06 15:24:51 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

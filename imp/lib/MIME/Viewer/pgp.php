@@ -15,7 +15,7 @@ require_once IMP_BASE . '/lib/Crypt/PGP.php';
  *   'pgp_verify_msg' -- Do verification of PGP signed data.
  *   'rawpgpkey' -- Display the PGP Public Key in raw, text format
  *
- * $Horde: imp/lib/MIME/Viewer/pgp.php,v 1.96.6.26 2009/06/07 10:38:31 jan Exp $
+ * $Horde: imp/lib/MIME/Viewer/pgp.php,v 1.96.6.26 2009-06-07 10:38:31 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

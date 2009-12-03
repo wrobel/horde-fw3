@@ -2,7 +2,7 @@
 /**
  * The Turba_View_DeleteContact:: class provides an API for viewing events.
  *
- * $Horde: turba/lib/Views/DeleteContact.php,v 1.3.2.1 2007/12/20 14:34:31 jan Exp $
+ * $Horde: turba/lib/Views/DeleteContact.php,v 1.3.2.1 2007-12-20 14:34:31 jan Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @since   Turba 2.2

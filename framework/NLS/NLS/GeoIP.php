@@ -3,7 +3,7 @@
  * Horde optimized interface to the MaxMind IP Address->Country
  * listing.
  *
- * $Horde: framework/NLS/NLS/GeoIP.php,v 1.10.10.11 2009/01/06 15:23:26 jan Exp $
+ * $Horde: framework/NLS/NLS/GeoIP.php,v 1.10.10.11 2009-01-06 15:23:26 jan Exp $
  *
  * Based on PHP geoip.inc library by MaxMind LLC:
  *   http://www.maxmind.com/download/geoip/api/php/

@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/config/spelling.php.dist,v 1.1.2.1 2007/12/20 13:59:20 jan Exp $
+ * $Horde: imp/config/spelling.php.dist,v 1.1.2.1 2007-12-20 13:59:20 jan Exp $
  *
  * This file defines a custom list of words that will be added to the spell
  * checker dictionary.

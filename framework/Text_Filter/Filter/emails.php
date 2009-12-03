@@ -15,7 +15,7 @@
  *                  filter.
  * </pre>
  *
- * $Horde: framework/Text_Filter/Filter/emails.php,v 1.15.10.21 2009/01/06 15:23:42 jan Exp $
+ * $Horde: framework/Text_Filter/Filter/emails.php,v 1.15.10.21 2009-01-06 15:23:42 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

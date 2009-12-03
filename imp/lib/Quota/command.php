@@ -15,7 +15,7 @@
  *                   partition label.  By default, quota will determine
  *                   quota information using the user's home directory value.
  *
- * $Horde: imp/lib/Quota/command.php,v 1.11.10.17 2009/01/06 15:24:11 jan Exp $
+ * $Horde: imp/lib/Quota/command.php,v 1.11.10.17 2009-01-06 15:24:11 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

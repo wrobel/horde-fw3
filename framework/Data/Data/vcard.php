@@ -6,7 +6,7 @@ require_once 'Horde/iCalendar.php';
 /**
  * Implement the Horde_Data:: API for vCard data.
  *
- * $Horde: framework/Data/Data/vcard.php,v 1.33.10.11 2009/01/06 15:23:01 jan Exp $
+ * $Horde: framework/Data/Data/vcard.php,v 1.33.10.11 2009-01-06 15:23:01 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

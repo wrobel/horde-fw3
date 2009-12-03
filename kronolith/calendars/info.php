@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: kronolith/calendars/info.php,v 1.2.2.4 2009/01/06 15:24:44 jan Exp $
+ * $Horde: kronolith/calendars/info.php,v 1.2.2.4 2009-01-06 15:24:44 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

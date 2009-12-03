@@ -3,7 +3,7 @@
  * ListMessages view logic.  Abstracted out here to prevent imp.php from
  * becoming too cluttered.
  *
- * $Horde: dimp/lib/Views/ListMessages.php,v 1.53.2.24 2009/01/06 15:22:40 jan Exp $
+ * $Horde: dimp/lib/Views/ListMessages.php,v 1.53.2.24 2009-01-06 15:22:40 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

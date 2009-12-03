@@ -5,7 +5,7 @@ require_once KRONOLITH_BASE . '/lib/Day.php';
 /**
  * The Kronolith_View_Day:: class provides an API for viewing days.
  *
- * $Horde: kronolith/lib/Views/Day.php,v 1.29.2.3 2008/03/06 20:50:53 chuck Exp $
+ * $Horde: kronolith/lib/Views/Day.php,v 1.29.2.3 2008-03-06 20:50:53 chuck Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Jan Schneider <jan@horde.org>

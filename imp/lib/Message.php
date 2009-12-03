@@ -15,7 +15,7 @@ define('IMP_MESSAGE_COPY', 2);
  * For any function below that requires an $indices parameter, see
  * IMP::parseIndicesList() for the list of allowable inputs.
  *
- * $Horde: imp/lib/Message.php,v 1.164.8.63 2009/01/06 15:24:04 jan Exp $
+ * $Horde: imp/lib/Message.php,v 1.164.8.63 2009-01-06 15:24:04 jan Exp $
  *
  * Copyright 2000-2001 Chris Hyde <chris@jeks.net>
  * Copyright 2000-2009 The Horde Project (http://www.horde.org/)

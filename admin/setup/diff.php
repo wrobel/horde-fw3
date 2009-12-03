@@ -3,7 +3,7 @@
  * Script to show the differences between the currently saved and the newly
  * generated configuration.
  *
- * $Horde: horde/admin/setup/diff.php,v 1.4.10.9 2009/01/06 15:22:11 jan Exp $
+ * $Horde: horde/admin/setup/diff.php,v 1.4.10.9 2009-01-06 15:22:11 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

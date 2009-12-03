@@ -2,7 +2,7 @@
 /**
  * @package Turba
  *
- * $Horde: turba/lib/Forms/Contact.php,v 1.3.2.4 2008/12/29 07:58:45 wrobel Exp $
+ * $Horde: turba/lib/Forms/Contact.php,v 1.3.2.4 2008-12-29 07:58:45 wrobel Exp $
  */
 
 /** Horde_Form */

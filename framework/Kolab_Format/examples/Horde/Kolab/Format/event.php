@@ -2,7 +2,7 @@
 /**
  * A sample script for reading/writing an event.
  *
- * $Horde: framework/Kolab_Format/examples/Horde/Kolab/Format/event.php,v 1.1.2.3 2008/08/01 07:13:19 wrobel Exp $
+ * $Horde: framework/Kolab_Format/examples/Horde/Kolab/Format/event.php,v 1.1.2.3 2008-08-01 07:13:19 wrobel Exp $
  *
  * @package Kolab_Format
  */

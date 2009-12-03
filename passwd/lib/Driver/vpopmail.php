@@ -4,7 +4,7 @@
  * servers.  It is very similar to the more generic sql driver, and the two
  * should probably be merged into one driver if possible.
  *
- * $Horde: passwd/lib/Driver/vpopmail.php,v 1.17.2.6 2009/01/06 15:25:23 jan Exp $
+ * $Horde: passwd/lib/Driver/vpopmail.php,v 1.17.2.6 2009-01-06 15:25:23 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/config/menu.php.dist,v 1.5.8.1 2007/12/20 13:59:20 jan Exp $
+ * $Horde: imp/config/menu.php.dist,v 1.5.8.1 2007-12-20 13:59:20 jan Exp $
  *
  * This file lets you extend IMP's menu with your own items.
  *

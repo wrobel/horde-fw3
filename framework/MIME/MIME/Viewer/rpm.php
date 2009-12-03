@@ -3,7 +3,7 @@
  * The MIME_Viewer_rpm class renders out lists of files in RPM
  * packages by using the rpm tool to query the package.
  *
- * $Horde: framework/MIME/MIME/Viewer/rpm.php,v 1.12.10.12 2009/01/06 15:23:21 jan Exp $
+ * $Horde: framework/MIME/MIME/Viewer/rpm.php,v 1.12.10.12 2009-01-06 15:23:21 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

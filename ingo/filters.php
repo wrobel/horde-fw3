@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ingo/filters.php,v 1.59.2.13 2009/01/06 15:24:34 jan Exp $
+ * $Horde: ingo/filters.php,v 1.59.2.13 2009-01-06 15:24:34 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

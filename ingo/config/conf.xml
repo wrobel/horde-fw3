@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- $Horde: ingo/config/conf.xml,v 1.13.12.1 2007/12/20 14:05:46 jan Exp $ -->
+<!-- $Horde: ingo/config/conf.xml,v 1.13.12.1 2007-12-20 14:05:46 jan Exp $ -->
 <configuration>
  <configsection name="menu">
   <configheader>Menu settings</configheader>

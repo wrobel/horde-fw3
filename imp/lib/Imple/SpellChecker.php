@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/lib/Imple/SpellChecker.php,v 1.25.2.7 2009/01/06 15:24:08 jan Exp $
+ * $Horde: imp/lib/Imple/SpellChecker.php,v 1.25.2.7 2009-01-06 15:24:08 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

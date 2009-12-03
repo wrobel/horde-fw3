@@ -8,7 +8,7 @@ require_once dirname(__FILE__) . '/source.php';
  *
  * Source-highlight: http://www.gnu.org/software/src-highlite/
  *
- * $Horde: framework/MIME/MIME/Viewer/srchighlite.php,v 1.14.10.13 2009/01/06 15:23:22 jan Exp $
+ * $Horde: framework/MIME/MIME/Viewer/srchighlite.php,v 1.14.10.13 2009-01-06 15:23:22 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

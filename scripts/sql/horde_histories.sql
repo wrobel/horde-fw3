@@ -1,4 +1,4 @@
--- $Horde: horde/scripts/sql/horde_histories.sql,v 1.1.2.3 2008/07/20 14:25:23 chuck Exp $
+-- $Horde: horde/scripts/sql/horde_histories.sql,v 1.1.2.3 2008-07-20 14:25:23 chuck Exp $
 
 CREATE TABLE horde_histories (
     history_id       INT UNSIGNED NOT NULL,

@@ -7,7 +7,7 @@ require_once dirname(__FILE__) . '/../Image.php';
  * extension. It mainly provides some utility functions, such as the
  * ability to make pixels, for now.
  *
- * $Horde: framework/Image/Image/gd.php,v 1.48.10.23 2009/04/14 04:13:20 mrubinsk Exp $
+ * $Horde: framework/Image/Image/gd.php,v 1.48.10.23 2009-04-14 04:13:20 mrubinsk Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

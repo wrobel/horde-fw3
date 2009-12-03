@@ -17,7 +17,7 @@ require_once 'Horde/Serialize.php';
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.
  *
- * $Horde: framework/Tree/Tree/javascript.php,v 1.34.2.13 2009/01/06 15:23:44 jan Exp $
+ * $Horde: framework/Tree/Tree/javascript.php,v 1.34.2.13 2009-01-06 15:23:44 jan Exp $
  *
  * @author  Marko Djukic <marko@oblo.com>
  * @package Horde_Tree

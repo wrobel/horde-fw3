@@ -20,7 +20,7 @@ require_once 'Horde/String.php';
  * 'outputJS'   -- Add necessary JS files? (DEFAULT: true)
  * </pre>
  *
- * $Horde: framework/Text_Filter/Filter/highlightquotes.php,v 1.6.8.24 2009/01/06 15:23:42 jan Exp $
+ * $Horde: framework/Text_Filter/Filter/highlightquotes.php,v 1.6.8.24 2009-01-06 15:23:42 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

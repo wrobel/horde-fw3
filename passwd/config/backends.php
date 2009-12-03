@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: passwd/config/backends.php.dist,v 1.41.2.6 2009/09/18 14:31:58 jan Exp $
+ * $Horde: passwd/config/backends.php.dist,v 1.41.2.6 2009-09-18 14:31:58 jan Exp $
  *
  * This file is where you specify what backends people use to change
  * their passwords. There are a number of properties that you can set

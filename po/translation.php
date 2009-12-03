@@ -6,7 +6,7 @@
  * For usage information call:
  * ./translation.php help
  *
- * $Horde: horde/po/translation.php,v 1.91.2.25 2008/07/29 06:55:09 jan Exp $
+ * $Horde: horde/po/translation.php,v 1.91.2.25 2008-07-29 06:55:09 jan Exp $
  */
 
 function footer()

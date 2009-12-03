@@ -5,7 +5,7 @@
  * This file defines Horde's external API interface. Other
  * applications can interact with Horde through this API.
  *
- * $Horde: horde/lib/api.php,v 1.43.2.16 2009/09/12 08:14:36 jan Exp $
+ * $Horde: horde/lib/api.php,v 1.43.2.16 2009-09-12 08:14:36 jan Exp $
  *
  * @package Horde
  */

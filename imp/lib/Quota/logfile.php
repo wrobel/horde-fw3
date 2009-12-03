@@ -28,7 +28,7 @@
  * midocc     --  String between usage and total storage space.
  * endocc     --  String after the storage number.
  *
- * $Horde: imp/lib/Quota/logfile.php,v 1.5.10.6 2008/07/02 09:31:14 jan Exp $
+ * $Horde: imp/lib/Quota/logfile.php,v 1.5.10.6 2008-07-02 09:31:14 jan Exp $
  *
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.

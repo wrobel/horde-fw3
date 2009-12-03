@@ -4,7 +4,7 @@
  * form with the current (not the original) value after the form element
  * that the action is attached to is modified.
  *
- * $Horde: framework/Form/Form/Action/reload.php,v 1.7.10.8 2009/01/06 15:23:07 jan Exp $
+ * $Horde: framework/Form/Form/Action/reload.php,v 1.7.10.8 2009-01-06 15:23:07 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

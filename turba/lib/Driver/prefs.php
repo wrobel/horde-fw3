@@ -3,7 +3,7 @@
  * Turba directory driver implementation for Horde Preferences - very simple,
  * lightweight container.
  *
- * $Horde: turba/lib/Driver/prefs.php,v 1.10.10.7 2009/10/07 16:16:38 mrubinsk Exp $
+ * $Horde: turba/lib/Driver/prefs.php,v 1.10.10.7 2009-10-07 16:16:38 mrubinsk Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @since   Turba 1.2

@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: dimp/lib/Block/newmail.php,v 1.11.2.6 2009/01/06 15:22:38 jan Exp $
+ * $Horde: dimp/lib/Block/newmail.php,v 1.11.2.6 2009-01-06 15:22:38 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

@@ -1,4 +1,4 @@
--- $Horde: horde/scripts/sql/create.sybase.sql,v 1.1.10.18 2009/06/10 16:45:28 jan Exp $
+-- $Horde: horde/scripts/sql/create.sybase.sql,v 1.1.10.18 2009-06-10 16:45:28 jan Exp $
 --
 -- horde tables definitions : sql script
 -- 01/22/2003 - F. Helly <francois.helly@wanadoo.fr>

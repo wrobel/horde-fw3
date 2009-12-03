@@ -17,7 +17,7 @@
  *             run htmlspecialchars() or similar *after* using this filter.
  * </pre>
  *
- * $Horde: framework/Text_Filter/Filter/linkurls.php,v 1.11.10.11 2009/01/06 15:23:42 jan Exp $
+ * $Horde: framework/Text_Filter/Filter/linkurls.php,v 1.11.10.11 2009-01-06 15:23:42 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

@@ -9,7 +9,7 @@
  *
  *   'wsdl' -- TODO
  *
- * $Horde: horde/rpc.php,v 1.30.10.12 2009/06/16 15:30:42 jan Exp $
+ * $Horde: horde/rpc.php,v 1.30.10.12 2009-06-16 15:30:42 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

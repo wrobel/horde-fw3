@@ -7,7 +7,7 @@
  *   'memcache' - (boolean) Use memcache to cache session data?
  * </pre>
  *
- * $Horde: framework/SessionHandler/SessionHandler.php,v 1.13.10.20 2009/10/08 22:25:23 slusarz Exp $
+ * $Horde: framework/SessionHandler/SessionHandler.php,v 1.13.10.20 2009-10-08 22:25:23 slusarz Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

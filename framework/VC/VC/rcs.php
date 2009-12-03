@@ -4,7 +4,7 @@
  *
  * Copyright 2004-2007 Jeff Schwentner <jeffrey.schwentner@lmco.com>
  *
- * $Horde: framework/VC/VC/rcs.php,v 1.3.8.7 2007/12/20 13:50:17 jan Exp $
+ * $Horde: framework/VC/VC/rcs.php,v 1.3.8.7 2007-12-20 13:50:17 jan Exp $
  *
  * @author  Jeff Schwentner <jeffrey.schwentner@lmco.com>
  * @author  Chuck Hagenbuch <chuck@horde.org>

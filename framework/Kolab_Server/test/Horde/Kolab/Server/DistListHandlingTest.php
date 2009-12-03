@@ -2,7 +2,7 @@
 /**
  * Handling distribution lists.
  *
- * $Horde: framework/Kolab_Server/test/Horde/Kolab/Server/DistListHandlingTest.php,v 1.1.2.3 2009/01/06 15:23:17 jan Exp $
+ * $Horde: framework/Kolab_Server/test/Horde/Kolab/Server/DistListHandlingTest.php,v 1.1.2.3 2009-01-06 15:23:17 jan Exp $
  *
  * PHP version 5
  *
@@ -23,7 +23,7 @@ require_once 'Horde/Kolab/Server.php';
 /**
  * Handling distribution lists.
  *
- * $Horde: framework/Kolab_Server/test/Horde/Kolab/Server/DistListHandlingTest.php,v 1.1.2.3 2009/01/06 15:23:17 jan Exp $
+ * $Horde: framework/Kolab_Server/test/Horde/Kolab/Server/DistListHandlingTest.php,v 1.1.2.3 2009-01-06 15:23:17 jan Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

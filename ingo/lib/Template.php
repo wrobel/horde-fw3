@@ -13,7 +13,7 @@
  *
  * Compilation code adapted from code written by Bruno Pedro <bpedro@ptm.pt>.
  *
- * $Horde: ingo/lib/Template.php,v 1.6.2.3 2009/01/06 15:24:35 jan Exp $
+ * $Horde: ingo/lib/Template.php,v 1.6.2.3 2009-01-06 15:24:35 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

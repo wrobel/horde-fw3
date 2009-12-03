@@ -2,7 +2,7 @@
 /**
  * Test the Kolab folder handler.
  *
- * $Horde: framework/Kolab_Storage/test/Horde/Kolab/Storage/FolderTest.php,v 1.2.2.9 2009/04/24 07:51:59 wrobel Exp $
+ * $Horde: framework/Kolab_Storage/test/Horde/Kolab/Storage/FolderTest.php,v 1.2.2.9 2009-04-24 07:51:59 wrobel Exp $
  *
  * @package Kolab_Storage
  */
@@ -21,7 +21,7 @@ require_once 'Horde/Kolab/IMAP/test.php';
 /**
  * Test the Kolab folder handler.
  *
- * $Horde: framework/Kolab_Storage/test/Horde/Kolab/Storage/FolderTest.php,v 1.2.2.9 2009/04/24 07:51:59 wrobel Exp $
+ * $Horde: framework/Kolab_Storage/test/Horde/Kolab/Storage/FolderTest.php,v 1.2.2.9 2009-04-24 07:51:59 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

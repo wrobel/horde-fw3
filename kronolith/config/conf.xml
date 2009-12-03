@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- $Horde: kronolith/config/conf.xml,v 1.14.10.5 2007/12/20 14:12:23 jan Exp $ -->
+<!-- $Horde: kronolith/config/conf.xml,v 1.14.10.5 2007-12-20 14:12:23 jan Exp $ -->
 <configuration>
  <configsection name="calendar">
   <configheader>Calendar Driver Settings</configheader>

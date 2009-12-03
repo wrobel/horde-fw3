@@ -2,7 +2,7 @@
 /**
  * Turba base inclusion file.
  *
- * $Horde: turba/lib/base.php,v 1.62.10.23 2009/10/07 16:16:37 mrubinsk Exp $
+ * $Horde: turba/lib/base.php,v 1.62.10.23 2009-10-07 16:16:37 mrubinsk Exp $
  *
  * This file brings in all of the dependencies that every Turba script will
  * need, and sets up objects that all scripts use.

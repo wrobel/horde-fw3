@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: nag/pref_api.php,v 1.1.2.5 2009/01/06 15:25:04 jan Exp $
+ * $Horde: nag/pref_api.php,v 1.1.2.5 2009-01-06 15:25:04 jan Exp $
  *
  * Copyright 2006-2009 The Horde Project (http://www.horde.org/)
  *

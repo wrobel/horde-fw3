@@ -2,7 +2,7 @@
 /**
  * The ISO-3166 country list.
  *
- * $Horde: framework/NLS/NLS/countries.php,v 1.3.12.3 2009/03/16 11:23:43 jan Exp $
+ * $Horde: framework/NLS/NLS/countries.php,v 1.3.12.3 2009-03-16 11:23:43 jan Exp $
  *
  * @package Horde_NLS
  */

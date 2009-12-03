@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/services/cacheview.php,v 1.9.10.7 2009/01/06 15:26:20 jan Exp $
+ * $Horde: horde/services/cacheview.php,v 1.9.10.7 2009-01-06 15:26:20 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

@@ -7,7 +7,7 @@
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.
  *
- * $Horde: imp/js/src/folders.js,v 1.9.2.3 2009/10/12 22:36:34 slusarz Exp $
+ * $Horde: imp/js/src/folders.js,v 1.9.2.3 2009-10-12 22:36:34 slusarz Exp $
  */
 
 function getChecked()

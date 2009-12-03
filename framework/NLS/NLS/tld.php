@@ -7,7 +7,7 @@
  * Format:
  *   $tld['countrycode'] = 'countryname';
  *
- * $Horde: framework/NLS/NLS/tld.php,v 1.5.12.1 2007/12/20 13:49:21 jan Exp $
+ * $Horde: framework/NLS/NLS/tld.php,v 1.5.12.1 2007-12-20 13:49:21 jan Exp $
  *
  * @package Horde_NLS
  */

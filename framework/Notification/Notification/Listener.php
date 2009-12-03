@@ -3,7 +3,7 @@
  * The Notification_Listener:: class provides functionality for displaying
  * messages from the message stack as a status line.
  *
- * $Horde: framework/Notification/Notification/Listener.php,v 1.16.2.14 2009/01/06 15:23:28 jan Exp $
+ * $Horde: framework/Notification/Notification/Listener.php,v 1.16.2.14 2009-01-06 15:23:28 jan Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *

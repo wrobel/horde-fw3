@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/admin/alarms.php,v 1.5.2.4 2009/01/06 15:22:10 jan Exp $
+ * $Horde: horde/admin/alarms.php,v 1.5.2.4 2009-01-06 15:22:10 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

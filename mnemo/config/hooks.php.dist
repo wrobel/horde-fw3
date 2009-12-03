@@ -2,7 +2,7 @@
 /**
  * Example hooks for Mnemo
  *
- * $Horde: mnemo/config/hooks.php.dist,v 1.1.2.1 2008/11/26 21:25:26 chuck Exp $
+ * $Horde: mnemo/config/hooks.php.dist,v 1.1.2.1 2008-11-26 21:25:26 chuck Exp $
  */
 
 // if (!function_exists('_mnemo_hook_format_description')) {

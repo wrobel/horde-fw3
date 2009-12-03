@@ -7,7 +7,7 @@
  * All methods not explicitly set below are passed through as-is to the imagick
  * object.
  *
- * $Horde: framework/Image/Image/imagick.php,v 1.8.2.4 2009/03/23 18:15:47 mrubinsk Exp $
+ * $Horde: framework/Image/Image/imagick.php,v 1.8.2.4 2009-03-23 18:15:47 mrubinsk Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

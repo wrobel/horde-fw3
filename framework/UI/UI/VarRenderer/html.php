@@ -2,7 +2,7 @@
 /**
  * The Horde_UI_VarRenderer_html:: class renders variables to HTML.
  *
- * $Horde: framework/UI/UI/VarRenderer/html.php,v 1.98.2.42 2009/09/14 07:22:07 jan Exp $
+ * $Horde: framework/UI/UI/VarRenderer/html.php,v 1.98.2.42 2009-09-14 07:22:07 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

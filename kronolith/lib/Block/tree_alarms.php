@@ -4,7 +4,7 @@ $block_name = _("Menu Alarms");
 $block_type = 'tree';
 
 /**
- * $Horde: kronolith/lib/Block/tree_alarms.php,v 1.1.2.6 2008/01/02 16:50:49 chuck Exp $
+ * $Horde: kronolith/lib/Block/tree_alarms.php,v 1.1.2.6 2008-01-02 16:50:49 chuck Exp $
  *
  * @package Horde_Block
  */

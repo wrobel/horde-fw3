@@ -6,7 +6,7 @@ require_once 'Horde/Notification/Listener.php';
  * The Notification_Listener_audio:: class provides functionality for
  * inserting embedded audio notifications from the stack into the page.
  *
- * $Horde: framework/Notification/Notification/Listener/audio.php,v 1.3.2.6 2009/01/06 15:23:29 jan Exp $
+ * $Horde: framework/Notification/Notification/Listener/audio.php,v 1.3.2.6 2009-01-06 15:23:29 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

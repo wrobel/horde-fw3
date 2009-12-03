@@ -2,7 +2,7 @@
 /**
  * Horde_Form for creating address books.
  *
- * $Horde: turba/lib/Forms/CreateAddressBook.php,v 1.1.2.2 2008/04/24 02:03:39 chuck Exp $
+ * $Horde: turba/lib/Forms/CreateAddressBook.php,v 1.1.2.2 2008-04-24 02:03:39 chuck Exp $
  *
  * See the enclosed file LICENSE for license information (ASL). If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.

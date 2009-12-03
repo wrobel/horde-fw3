@@ -4,7 +4,7 @@
  * the various caching backends.  It also provides functions for
  * checking in, retrieving, and flushing a cache.
  *
- * $Horde: framework/Cache/Cache.php,v 1.31.10.17 2009/01/06 15:22:55 jan Exp $
+ * $Horde: framework/Cache/Cache.php,v 1.31.10.17 2009-01-06 15:22:55 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

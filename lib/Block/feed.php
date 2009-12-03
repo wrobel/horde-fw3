@@ -6,7 +6,7 @@ if (version_compare(PHP_VERSION, '5.2', '>=')) {
 }
 
 /**
- * $Horde: horde/lib/Block/feed.php,v 1.1.2.1 2008/01/14 20:34:48 chuck Exp $
+ * $Horde: horde/lib/Block/feed.php,v 1.1.2.1 2008-01-14 20:34:48 chuck Exp $
  *
  * @package Horde_Block
  */

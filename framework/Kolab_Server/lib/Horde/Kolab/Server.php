@@ -2,7 +2,7 @@
 /**
  * A library for accessing the Kolab user database.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server.php,v 1.2.2.9 2009/04/25 08:56:34 wrobel Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server.php,v 1.2.2.9 2009-04-25 08:56:34 wrobel Exp $
  *
  * PHP version 4
  *
@@ -28,7 +28,7 @@ define('KOLAB_SERVER_RESULT_MANY',   3);
  * This class provides methods to deal with Kolab objects stored in
  * the Kolab object db.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server.php,v 1.2.2.9 2009/04/25 08:56:34 wrobel Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server.php,v 1.2.2.9 2009-04-25 08:56:34 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

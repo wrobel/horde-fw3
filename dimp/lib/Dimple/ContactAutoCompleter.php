@@ -3,7 +3,7 @@
 require_once IMP_BASE . '/lib/Imple/ContactAutoCompleter.php';
 
 /**
- * $Horde: dimp/lib/Dimple/ContactAutoCompleter.php,v 1.17.2.8 2009/01/06 15:22:39 jan Exp $
+ * $Horde: dimp/lib/Dimple/ContactAutoCompleter.php,v 1.17.2.8 2009-01-06 15:22:39 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

@@ -7,7 +7,7 @@ require_once 'Horde/UI/VarRenderer.php';
  * The Horde_UI_Table:: class displays and allows manipulation of tabular
  * data.
  *
- * $Horde: hermes/lib/Table.php,v 1.7 2008/04/04 11:41:51 jan Exp $
+ * $Horde: hermes/lib/Table.php,v 1.7 2008-04-04 11:41:51 jan Exp $
  *
  * Copyright 2001 Robert E. Coyle <robertecoyle@hotmail.com>
  *

@@ -6,7 +6,7 @@ require_once 'Horde/Block.php';
  * The Horde_Block_Collection:: class provides an API to the blocks
  * (applets) framework.
  *
- * $Horde: framework/Block/Block/Collection.php,v 1.36.4.22 2009/01/06 15:22:53 jan Exp $
+ * $Horde: framework/Block/Block/Collection.php,v 1.36.4.22 2009-01-06 15:22:53 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

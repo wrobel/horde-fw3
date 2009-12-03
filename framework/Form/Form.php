@@ -12,7 +12,7 @@ include_once 'Horde/String.php';
  * The Horde_Form:: package provides form rendering, validation, and
  * other functionality for the Horde Application Framework.
  *
- * $Horde: framework/Form/Form.php,v 1.306.2.77 2009/09/14 07:22:07 jan Exp $
+ * $Horde: framework/Form/Form.php,v 1.306.2.77 2009-09-14 07:22:07 jan Exp $
  *
  * Copyright 2001-2007 Robert E. Coyle <robertecoyle@hotmail.com>
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)

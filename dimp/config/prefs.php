@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: dimp/config/prefs.php.dist,v 1.14.2.5 2008/05/20 05:27:36 slusarz Exp $
+ * $Horde: dimp/config/prefs.php.dist,v 1.14.2.5 2008-05-20 05:27:36 slusarz Exp $
  *
  * See horde/config/prefs.php for documentation on the structure of this file.
  */

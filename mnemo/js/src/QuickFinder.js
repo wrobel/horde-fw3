@@ -15,7 +15,7 @@
  *
  * @author Chuck Hagenbuch <chuck@horde.org>
  *
- * $Horde: mnemo/js/src/QuickFinder.js,v 1.1.2.2 2007/12/22 05:24:23 chuck Exp $
+ * $Horde: mnemo/js/src/QuickFinder.js,v 1.1.2.2 2007-12-22 05:24:23 chuck Exp $
  */
 
 var QuickFinder = {

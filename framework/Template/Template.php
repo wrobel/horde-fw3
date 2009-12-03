@@ -11,7 +11,7 @@
  * template engines (PHP code, XSLT, etc.) without requiring usage
  * changes.
  *
- * $Horde: framework/Template/Template.php,v 1.38.10.15 2009/01/06 15:23:41 jan Exp $
+ * $Horde: framework/Template/Template.php,v 1.38.10.15 2009-01-06 15:23:41 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

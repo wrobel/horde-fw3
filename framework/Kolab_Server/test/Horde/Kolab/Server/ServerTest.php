@@ -2,7 +2,7 @@
 /**
  * Test the server class.
  *
- * $Horde: framework/Kolab_Server/test/Horde/Kolab/Server/ServerTest.php,v 1.3.2.4 2009/01/06 15:23:17 jan Exp $
+ * $Horde: framework/Kolab_Server/test/Horde/Kolab/Server/ServerTest.php,v 1.3.2.4 2009-01-06 15:23:17 jan Exp $
  *
  * PHP version 5
  *
@@ -23,7 +23,7 @@ require_once 'Horde/Kolab/Server.php';
 /**
  * Tests for the main server class.
  *
- * $Horde: framework/Kolab_Server/test/Horde/Kolab/Server/ServerTest.php,v 1.3.2.4 2009/01/06 15:23:17 jan Exp $
+ * $Horde: framework/Kolab_Server/test/Horde/Kolab/Server/ServerTest.php,v 1.3.2.4 2009-01-06 15:23:17 jan Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

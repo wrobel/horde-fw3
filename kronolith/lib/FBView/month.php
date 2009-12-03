@@ -6,7 +6,7 @@
  *
  * See the enclosed file COPYING for license information.
  *
- * $Horde: kronolith/lib/FBView/month.php,v 1.4.2.3 2009/01/06 15:24:46 jan Exp $
+ * $Horde: kronolith/lib/FBView/month.php,v 1.4.2.3 2009-01-06 15:24:46 jan Exp $
  *
  * @author  Gunnar Wrobel <wrobel@pardus.de>
  * @author  Jan Schneider <jan@horde.org>

@@ -5,7 +5,7 @@ require_once 'Horde/MIME/Viewer/tnef.php';
 /**
  * The IMP_MIME_Viewer_tnef class allows MS-TNEF attachments to be displayed.
  *
- * $Horde: imp/lib/MIME/Viewer/tnef.php,v 1.25.10.13 2009/01/06 15:24:09 jan Exp $
+ * $Horde: imp/lib/MIME/Viewer/tnef.php,v 1.25.10.13 2009-01-06 15:24:09 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

@@ -8,7 +8,7 @@
  *
  * For more information please see the horde/config/hooks.php.dist file.
  *
- * $Horde: ingo/config/hooks.php.dist,v 1.1.2.1 2007/12/20 14:05:46 jan Exp $
+ * $Horde: ingo/config/hooks.php.dist,v 1.1.2.1 2007-12-20 14:05:46 jan Exp $
  */
 
 // Here is an example _ingo_hook_vacation_addresses function to set the

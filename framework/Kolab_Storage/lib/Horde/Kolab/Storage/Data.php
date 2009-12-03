@@ -2,7 +2,7 @@
 /**
  * @package Kolab_Storage
  *
- * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Data.php,v 1.5.2.4 2009/01/06 15:23:18 jan Exp $
+ * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Data.php,v 1.5.2.4 2009-01-06 15:23:18 jan Exp $
  */
 
 /** Data caching for Kolab **/
@@ -12,7 +12,7 @@ require_once 'Horde/Kolab/Storage/Cache.php';
  * The Kolab_Data class represents a data type in an IMAP folder on the Kolab
  * server.
  *
- * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Data.php,v 1.5.2.4 2009/01/06 15:23:18 jan Exp $
+ * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Data.php,v 1.5.2.4 2009-01-06 15:23:18 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

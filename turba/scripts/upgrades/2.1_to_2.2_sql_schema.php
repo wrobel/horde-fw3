@@ -9,7 +9,7 @@
  * It is HIGHLY RECOMMENDED to back up your current Turba tables BEFORE
  * attempting this upgrade!
  *
- * $Horde: turba/scripts/upgrades/2.1_to_2.2_sql_schema.php,v 1.18.2.9 2009/10/15 10:13:59 jan Exp $
+ * $Horde: turba/scripts/upgrades/2.1_to_2.2_sql_schema.php,v 1.18.2.9 2009-10-15 10:13:59 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

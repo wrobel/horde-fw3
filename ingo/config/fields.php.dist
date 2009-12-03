@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ingo/config/fields.php.dist,v 1.5.12.1 2007/12/20 14:05:46 jan Exp $
+ * $Horde: ingo/config/fields.php.dist,v 1.5.12.1 2007-12-20 14:05:46 jan Exp $
  *
  * This file defines the set of default match items to display when creating
  * a new filter rule.

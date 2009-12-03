@@ -8,7 +8,7 @@ require_once 'Horde/Kolab.php';
  * Prefs_ldap LDAP authentication object, and simply provides parameters to it
  * based on the global Kolab configuration.
  *
- * $Horde: framework/Prefs/Prefs/kolab.php,v 1.1.10.12 2008/02/29 10:21:25 wrobel Exp $
+ * $Horde: framework/Prefs/Prefs/kolab.php,v 1.1.10.12 2008-02-29 10:21:25 wrobel Exp $
  *
  * Copyright 2004-2007 Stuart Binge <s.binge@codefusion.co.za>
  *

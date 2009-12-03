@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: kronolith/year.php,v 1.16.2.8 2009/01/06 15:24:43 jan Exp $
+ * $Horde: kronolith/year.php,v 1.16.2.8 2009-01-06 15:24:43 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

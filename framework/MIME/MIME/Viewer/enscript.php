@@ -6,7 +6,7 @@ require_once dirname(__FILE__) . '/source.php';
  * The MIME_Viewer_enscript class renders out various content
  * in HTML format by using GNU Enscript.
  *
- * $Horde: framework/MIME/MIME/Viewer/enscript.php,v 1.39.10.13 2009/01/06 15:23:21 jan Exp $
+ * $Horde: framework/MIME/MIME/Viewer/enscript.php,v 1.39.10.13 2009-01-06 15:23:21 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

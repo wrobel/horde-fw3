@@ -71,7 +71,7 @@ define('CHARSET_UTF_16LE', 'UTF-16LE');
 define('CHARSET_UTF_16', 'UTF-16');
 
 /**
- * $Horde: framework/XML_WBXML/WBXML.php,v 1.13.12.12 2009/01/06 15:23:49 jan Exp $
+ * $Horde: framework/XML_WBXML/WBXML.php,v 1.13.12.12 2009-01-06 15:23:49 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

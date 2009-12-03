@@ -31,7 +31,7 @@ define('HORDE_DATE_MASK_ALLPARTS', 63);
  * Horde Date wrapper/logic class, including some calculation
  * functions.
  *
- * $Horde: framework/Date/Date.php,v 1.8.10.18 2008/09/17 08:46:04 jan Exp $
+ * $Horde: framework/Date/Date.php,v 1.8.10.18 2008-09-17 08:46:04 jan Exp $
  *
  * @package Horde_Date
  */

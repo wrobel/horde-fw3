@@ -2,7 +2,7 @@
 /**
  * Provides simple views.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/View.php,v 1.6.2.1 2009/03/06 18:12:01 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/View.php,v 1.6.2.1 2009-03-06 18:12:01 wrobel Exp $
  *
  * @package Kolab_FreeBusy
  */
@@ -10,7 +10,7 @@
 /**
  * The Horde_Kolab_FreeBusy_View:: class renders data.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/View.php,v 1.6.2.1 2009/03/06 18:12:01 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/View.php,v 1.6.2.1 2009-03-06 18:12:01 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *
@@ -52,7 +52,7 @@ class Horde_Kolab_FreeBusy_View {
 /**
  * The Horde_Kolab_FreeBusy_View_vfb:: class renders free/busy data.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/View.php,v 1.6.2.1 2009/03/06 18:12:01 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/View.php,v 1.6.2.1 2009-03-06 18:12:01 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *
@@ -167,7 +167,7 @@ define('FREEBUSY_ERROR_SERVER', 2);
  * The Horde_Kolab_FreeBusy_View_error:: class provides error pages for the 
  * Kolab free/busy system.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/View.php,v 1.6.2.1 2009/03/06 18:12:01 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/View.php,v 1.6.2.1 2009-03-06 18:12:01 wrobel Exp $
  *
  * Copyright 2004-2008 Klarälvdalens Datakonsult AB
  *

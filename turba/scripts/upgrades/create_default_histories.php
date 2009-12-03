@@ -1,7 +1,7 @@
 #!/usr/bin/php
 <?php
 /**
- * $Horde: turba/scripts/upgrades/create_default_histories.php,v 1.1.2.5 2008/03/31 17:06:52 jan Exp $
+ * $Horde: turba/scripts/upgrades/create_default_histories.php,v 1.1.2.5 2008-03-31 17:06:52 jan Exp $
  *
  * Copyright 1999-2007 Charles J. Hagenbuch <chuck@horde.org>
  *

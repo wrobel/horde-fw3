@@ -5,7 +5,7 @@
  * This class uses the xdiff PECL package (http://pecl.php.net/package/xdiff)
  * to compute the differences between the two input arrays.
  *
- * $Horde: framework/Text_Diff/Diff/Engine/xdiff.php,v 1.4.2.5 2009/07/24 13:06:24 jan Exp $
+ * $Horde: framework/Text_Diff/Diff/Engine/xdiff.php,v 1.4.2.5 2009-07-24 13:06:24 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

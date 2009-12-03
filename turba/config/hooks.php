@@ -8,7 +8,7 @@
  *
  * For more information please see the horde/config/hooks.php.dist file.
  *
- * $Horde: turba/config/hooks.php.dist,v 1.1.2.1 2007/12/20 14:34:24 jan Exp $
+ * $Horde: turba/config/hooks.php.dist,v 1.1.2.1 2007-12-20 14:34:24 jan Exp $
  */
 
 // Here is an example _turba_hook_encode_password (and decode). encode is

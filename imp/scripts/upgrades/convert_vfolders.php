@@ -1,7 +1,7 @@
 #!/usr/bin/php -q
 <?php
 /**
- * $Horde: imp/scripts/upgrades/convert_vfolders.php,v 1.1.2.1 2007/12/20 14:00:36 jan Exp $
+ * $Horde: imp/scripts/upgrades/convert_vfolders.php,v 1.1.2.1 2007-12-20 14:00:36 jan Exp $
  *
  * A script to update Virtual Folders from IMP 4.0.x format to IMP 4.1+
  * format. Expects to be given a list of users on STDIN, one username per

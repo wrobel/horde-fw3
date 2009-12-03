@@ -5,7 +5,7 @@
  * The technique for the Polaroid-like stack using the Imagick extension is
 *  credited to Mikko Koppanen and is documented at http://valokuva.org
  *
- * $Horde: framework/Image/Image/Effect/im/photo_stack.php,v 1.33.2.4 2009/03/23 18:15:48 mrubinsk Exp $
+ * $Horde: framework/Image/Image/Effect/im/photo_stack.php,v 1.33.2.4 2009-03-23 18:15:48 mrubinsk Exp $
  *
  * @author  Michael J. Rubinsky <mrubinsk@horde.org>
  * @since   Horde 3.2

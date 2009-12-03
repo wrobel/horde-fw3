@@ -2,7 +2,7 @@
 /**
  * Implementation of the Quota API for IMAP servers.
  *
- * $Horde: imp/lib/Quota/imap.php,v 1.2.2.3 2009/01/06 15:24:11 jan Exp $
+ * $Horde: imp/lib/Quota/imap.php,v 1.2.2.3 2009-01-06 15:24:11 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

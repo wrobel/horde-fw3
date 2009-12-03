@@ -8,7 +8,7 @@
  * http://tablesorter.com/docs/, and
  * http://www.millstream.com.au/view/code/tablekit/
  *
- * $Horde: nag/js/src/tables.js,v 1.4.2.1 2007/12/20 14:23:07 jan Exp $
+ * $Horde: nag/js/src/tables.js,v 1.4.2.1 2007-12-20 14:23:07 jan Exp $
  *
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.

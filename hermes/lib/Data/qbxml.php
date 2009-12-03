@@ -3,7 +3,7 @@
  * The Horde_Data_qbxml class implements the Horde_Data:: framework for
  * QuickBooks qbXML files.
  *
- * $Horde: hermes/lib/Data/qbxml.php,v 1.14.2.1 2009/01/06 15:23:58 jan Exp $
+ * $Horde: hermes/lib/Data/qbxml.php,v 1.14.2.1 2009-01-06 15:23:58 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

@@ -3,7 +3,7 @@
 require_once IMP_BASE . '/lib/Imple.php';
 
 /**
- * $Horde: dimp/lib/Dimple.php,v 1.10.2.2 2009/01/06 15:22:38 jan Exp $
+ * $Horde: dimp/lib/Dimple.php,v 1.10.2.2 2009-01-06 15:22:38 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

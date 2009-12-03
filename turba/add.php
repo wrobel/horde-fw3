@@ -2,7 +2,7 @@
 /**
  * The Turba script to add a new entry into an address book.
  *
- * $Horde: turba/add.php,v 1.54.4.15 2009/01/06 15:27:38 jan Exp $
+ * $Horde: turba/add.php,v 1.54.4.15 2009-01-06 15:27:38 jan Exp $
  *
  * Copyright 2000-2009 The Horde Project (http://www.horde.org/)
  *

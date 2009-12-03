@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: turba/addressbooks/delete.php,v 1.1.2.3 2009/01/06 15:27:41 jan Exp $
+ * $Horde: turba/addressbooks/delete.php,v 1.1.2.3 2009-01-06 15:27:41 jan Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *

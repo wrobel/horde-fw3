@@ -1,7 +1,7 @@
 #!/usr/bin/php -q
 <?php
 /**
- * $Horde: kronolith/scripts/reminders.php,v 1.17.10.10 2009/01/06 15:24:50 jan Exp $
+ * $Horde: kronolith/scripts/reminders.php,v 1.17.10.10 2009-01-06 15:24:50 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

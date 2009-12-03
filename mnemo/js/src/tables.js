@@ -8,7 +8,7 @@
  * http://tablesorter.com/docs/, and
  * http://www.millstream.com.au/view/code/tablekit/
  *
- * $Horde: mnemo/js/src/tables.js,v 1.4.2.1 2007/12/20 14:17:41 jan Exp $
+ * $Horde: mnemo/js/src/tables.js,v 1.4.2.1 2007-12-20 14:17:41 jan Exp $
  *
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.

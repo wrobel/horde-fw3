@@ -8,7 +8,7 @@
  *
  * The name comes from the city of Gennevilliers in France
  *
- * $Horde: horde/themes/gennevilliers/info.php,v 1.1 2004/10/17 19:33:35 mdjukic Exp $
+ * $Horde: horde/themes/gennevilliers/info.php,v 1.1 2004-10-17 19:33:35 mdjukic Exp $
  */
 
 $theme_name = _("Teal");

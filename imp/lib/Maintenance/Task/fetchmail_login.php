@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/lib/Maintenance/Task/fetchmail_login.php,v 1.5.12.11 2009/01/06 15:24:10 jan Exp $
+ * $Horde: imp/lib/Maintenance/Task/fetchmail_login.php,v 1.5.12.11 2009-01-06 15:24:10 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

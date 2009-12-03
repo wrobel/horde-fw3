@@ -3,7 +3,7 @@
  * Hermes_Driver:: defines an API for implementing storage backends
  * for Hermes.
  *
- * $Horde: hermes/lib/Driver.php,v 1.21 2007/04/19 23:14:42 jan Exp $
+ * $Horde: hermes/lib/Driver.php,v 1.21 2007-04-19 23:14:42 jan Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @since   Hermes 0.1

@@ -3,7 +3,7 @@
 $block_name = _("Folder Summary");
 
 /**
- * $Horde: imp/lib/Block/summary.php,v 1.54.2.11 2007/12/20 13:59:25 jan Exp $
+ * $Horde: imp/lib/Block/summary.php,v 1.54.2.11 2007-12-20 13:59:25 jan Exp $
  *
  * @package Horde_Block
  */

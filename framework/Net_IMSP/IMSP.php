@@ -14,7 +14,7 @@ define('IMSP_MUST_USE_QUOTE', "/[\W]/i");
  *   'server'  Hostname of IMSP server.
  *   'port'    Port of IMSP server.</pre>
  *
- * $Horde: framework/Net_IMSP/IMSP.php,v 1.13.10.27 2009/10/02 00:03:01 mrubinsk Exp $
+ * $Horde: framework/Net_IMSP/IMSP.php,v 1.13.10.27 2009-10-02 00:03:01 mrubinsk Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

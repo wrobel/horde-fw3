@@ -2,7 +2,7 @@
 /**
  * This is a utility class, every method is static.
  *
- * $Horde: framework/SQL/SQL.php,v 1.30.2.22 2009/09/25 07:55:38 selsky Exp $
+ * $Horde: framework/SQL/SQL.php,v 1.30.2.22 2009-09-25 07:55:38 selsky Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

@@ -3,7 +3,7 @@
 $block_name = _("Google Search");
 
 /**
- * $Horde: horde/lib/Block/google.php,v 1.10.10.2 2007/12/20 15:01:35 jan Exp $
+ * $Horde: horde/lib/Block/google.php,v 1.10.10.2 2007-12-20 15:01:35 jan Exp $
  *
  * @package Horde_Block
  */

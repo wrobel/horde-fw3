@@ -7,7 +7,7 @@
  * Antony Raijekov <dev@strategma.bg>
  * http://uruds.gateway.bg/zeos/
  *
- * $Horde: framework/Compress/Compress/dbx.php,v 1.3.12.13 2009/01/06 15:22:59 jan Exp $
+ * $Horde: framework/Compress/Compress/dbx.php,v 1.3.12.13 2009-01-06 15:22:59 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

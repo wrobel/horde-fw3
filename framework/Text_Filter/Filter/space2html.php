@@ -9,7 +9,7 @@
  * encode_all -- Replace all spaces with &nbsp;?  Defaults to false.
  * </pre>
  *
- * $Horde: framework/Text_Filter/Filter/space2html.php,v 1.1.10.9 2009/01/06 15:23:42 jan Exp $
+ * $Horde: framework/Text_Filter/Filter/space2html.php,v 1.1.10.9 2009-01-06 15:23:42 jan Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *

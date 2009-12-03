@@ -3,7 +3,7 @@
  * The IMP_Sentmail:: class contains all functions related to handling
  * logging of sent mail and retrieving sent mail statistics.
  *
- * $Horde: imp/lib/Sentmail.php,v 1.16.2.3 2009/01/06 15:24:04 jan Exp $
+ * $Horde: imp/lib/Sentmail.php,v 1.16.2.3 2009-01-06 15:24:04 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

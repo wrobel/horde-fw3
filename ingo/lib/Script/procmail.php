@@ -2,7 +2,7 @@
 /**
  * The Ingo_Script_procmail:: class represents a Procmail script generator.
  *
- * $Horde: ingo/lib/Script/procmail.php,v 1.46.10.33 2009/09/16 12:37:22 jan Exp $
+ * $Horde: ingo/lib/Script/procmail.php,v 1.46.10.33 2009-09-16 12:37:22 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

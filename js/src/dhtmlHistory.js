@@ -2,7 +2,7 @@
  * dhtmlHistory - An object that provides DHTML history, history data, and
  * bookmarking for AJAX applications.
  *
- * $Horde: horde/js/src/dhtmlHistory.js,v 1.4.2.7 2009/01/06 15:24:42 jan Exp $
+ * $Horde: horde/js/src/dhtmlHistory.js,v 1.4.2.7 2009-01-06 15:24:42 jan Exp $
  *
  * Original code (c) 2005, Brad Neuberg, bkn3@columbia.edu
  *   (http://codinginparadise.org)

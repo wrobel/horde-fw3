@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: turba/config/mime_drivers.php.dist,v 1.2.2.2 2007/12/20 14:34:24 jan Exp $
+ * $Horde: turba/config/mime_drivers.php.dist,v 1.2.2.2 2007-12-20 14:34:24 jan Exp $
  *
  * Decide which output drivers you want to activate for Turba.
  * Settings in this file override settings in horde/config/mime_drivers.php.

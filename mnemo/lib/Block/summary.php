@@ -5,7 +5,7 @@ $block_name = _("Notes Summary");
 /**
  * Implementation of Horde_Block api to show notes summary.
  *
- * $Horde: mnemo/lib/Block/summary.php,v 1.22.8.9 2008/05/20 22:02:10 jan Exp $
+ * $Horde: mnemo/lib/Block/summary.php,v 1.22.8.9 2008-05-20 22:02:10 jan Exp $
  *
  * @package Horde_Block
  */

@@ -2,7 +2,7 @@
 /**
  * All tests for the Horde_Kolab_Server:: package.
  *
- * $Horde: framework/Kolab_Server/test/Horde/Kolab/Server/AllTests.php,v 1.2.2.4 2009/01/06 15:23:17 jan Exp $
+ * $Horde: framework/Kolab_Server/test/Horde/Kolab/Server/AllTests.php,v 1.2.2.4 2009-01-06 15:23:17 jan Exp $
  *
  * PHP version 5
  *
@@ -26,7 +26,7 @@ require_once 'PHPUnit/TextUI/TestRunner.php';
 /**
  * Combine the tests for this package.
  *
- * $Horde: framework/Kolab_Server/test/Horde/Kolab/Server/AllTests.php,v 1.2.2.4 2009/01/06 15:23:17 jan Exp $
+ * $Horde: framework/Kolab_Server/test/Horde/Kolab/Server/AllTests.php,v 1.2.2.4 2009-01-06 15:23:17 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

@@ -1,4 +1,4 @@
--- $Horde: nag/scripts/upgrades/1.1_to_2.0.oci8.sql,v 1.1.2.3 2009/10/19 10:54:37 jan Exp $
+-- $Horde: nag/scripts/upgrades/1.1_to_2.0.oci8.sql,v 1.1.2.3 2009-10-19 10:54:37 jan Exp $
 
 ALTER TABLE nag_tasks DROP COLUMN task_modified;
 

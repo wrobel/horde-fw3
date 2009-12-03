@@ -3,7 +3,7 @@
  * The composite class chains other drivers together to change and a user's
  * password stored on various backends.
  *
- * $Horde: passwd/lib/Driver/composite.php,v 1.7.2.7 2009/01/06 15:25:23 jan Exp $
+ * $Horde: passwd/lib/Driver/composite.php,v 1.7.2.7 2009-01-06 15:25:23 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

@@ -5,7 +5,7 @@ require_once dirname(__FILE__) . '/TestBase.php';
 /**
  * Test cases for the Turba_Driver:: class
  *
- * $Horde: turba/lib/tests/DriverTest.php,v 1.2.2.1 2007/12/20 14:34:31 jan Exp $
+ * $Horde: turba/lib/tests/DriverTest.php,v 1.2.2.1 2007-12-20 14:34:31 jan Exp $
  *
  * @author  Jason M. Felice <jason.m.felice@gmail.com>
  * @package Turba

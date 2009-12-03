@@ -26,7 +26,7 @@ define('VCARD_GEO_LON',      1);
 /**
  * Class representing vCard entries.
  *
- * $Horde: framework/iCalendar/iCalendar/vcard.php,v 1.3.10.19 2009/04/30 17:31:43 jan Exp $
+ * $Horde: framework/iCalendar/iCalendar/vcard.php,v 1.3.10.19 2009-04-30 17:31:43 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/admin/sessions.php,v 1.2.2.8 2009/04/04 12:30:51 jan Exp $
+ * $Horde: horde/admin/sessions.php,v 1.2.2.8 2009-04-04 12:30:51 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

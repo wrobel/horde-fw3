@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ingo/config/backends.php.dist,v 1.20.8.12 2008/12/15 02:33:07 chuck Exp $
+ * $Horde: ingo/config/backends.php.dist,v 1.20.8.12 2008-12-15 02:33:07 chuck Exp $
  *
  * Ingo works purely on a preferred mechanism for server selection. There are
  * a number of properties that you can set for each backend:

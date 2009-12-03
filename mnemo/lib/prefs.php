@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: mnemo/lib/prefs.php,v 1.2.10.10 2009/01/13 15:47:33 chuck Exp $
+ * $Horde: mnemo/lib/prefs.php,v 1.2.10.10 2009-01-13 15:47:33 chuck Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

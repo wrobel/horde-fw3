@@ -3,7 +3,7 @@
  * The Passwd_expect class provides an expect implementation of the passwd
  * system.
  *
- * $Horde: passwd/lib/Driver/expect.php,v 1.20.2.5 2009/01/06 15:25:23 jan Exp $
+ * $Horde: passwd/lib/Driver/expect.php,v 1.20.2.5 2009-01-06 15:25:23 jan Exp $
  *
  * Copyright 2000-2009 The Horde Project (http://www.horde.org/)
  *

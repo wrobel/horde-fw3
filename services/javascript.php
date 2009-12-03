@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/services/javascript.php,v 1.37.10.8 2009/01/06 15:26:20 jan Exp $
+ * $Horde: horde/services/javascript.php,v 1.37.10.8 2009-01-06 15:26:20 jan Exp $
  *
  * Copyright 2000-2009 The Horde Project (http://www.horde.org/)
  *

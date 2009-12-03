@@ -3,7 +3,7 @@
  * The vmailmgr class attempts to change a user's password on a local vmailmgr
  * daemon
  *
- * $Horde: passwd/lib/Driver/vmailmgr.php,v 1.11.2.7 2009/01/06 15:25:23 jan Exp $
+ * $Horde: passwd/lib/Driver/vmailmgr.php,v 1.11.2.7 2009-01-06 15:25:23 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

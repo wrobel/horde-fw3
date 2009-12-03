@@ -2,7 +2,7 @@
 /**
  * @package Horde_Framework
  *
- * $Horde: framework/Horde/Horde/Help.php,v 1.68.8.22 2009/01/06 15:23:10 jan Exp $
+ * $Horde: framework/Horde/Horde/Help.php,v 1.68.8.22 2009-01-06 15:23:10 jan Exp $
  */
 
 /**

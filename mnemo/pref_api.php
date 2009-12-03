@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: mnemo/pref_api.php,v 1.1.2.5 2009/01/06 15:24:57 jan Exp $
+ * $Horde: mnemo/pref_api.php,v 1.1.2.5 2009-01-06 15:24:57 jan Exp $
  *
  * Copyright 2006-2009 The Horde Project (http://www.horde.org/)
  *

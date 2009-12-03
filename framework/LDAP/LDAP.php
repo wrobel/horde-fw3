@@ -2,7 +2,7 @@
 /**
  * This is a utility class, every method is static.
  *
- * $Horde: framework/LDAP/LDAP.php,v 1.5.12.15 2009/01/06 15:23:19 jan Exp $
+ * $Horde: framework/LDAP/LDAP.php,v 1.5.12.15 2009-01-06 15:23:19 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

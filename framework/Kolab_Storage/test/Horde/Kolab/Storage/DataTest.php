@@ -2,7 +2,7 @@
 /**
  * Test the Kolab data handler.
  *
- * $Horde: framework/Kolab_Storage/test/Horde/Kolab/Storage/DataTest.php,v 1.2.2.8 2009/01/06 15:23:18 jan Exp $
+ * $Horde: framework/Kolab_Storage/test/Horde/Kolab/Storage/DataTest.php,v 1.2.2.8 2009-01-06 15:23:18 jan Exp $
  *
  * @package Kolab_Storage
  */
@@ -20,7 +20,7 @@ require_once 'Horde/Kolab/IMAP/test.php';
 /**
  * Test the Kolab data handler.
  *
- * $Horde: framework/Kolab_Storage/test/Horde/Kolab/Storage/DataTest.php,v 1.2.2.8 2009/01/06 15:23:18 jan Exp $
+ * $Horde: framework/Kolab_Storage/test/Horde/Kolab/Storage/DataTest.php,v 1.2.2.8 2009-01-06 15:23:18 jan Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

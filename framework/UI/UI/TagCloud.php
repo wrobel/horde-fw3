@@ -4,7 +4,7 @@
  *
  * Based on a striped down version of Pear's HTML_TagCloud
  *
- * $Horde: framework/UI/UI/TagCloud.php,v 1.9.2.2 2008/01/20 21:20:43 mrubinsk Exp $
+ * $Horde: framework/UI/UI/TagCloud.php,v 1.9.2.2 2008-01-20 21:20:43 mrubinsk Exp $
  *
  * @since   Horde 3.2
  * @package Horde

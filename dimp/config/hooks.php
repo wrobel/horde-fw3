@@ -8,7 +8,7 @@
  *
  * For more information please see the horde/config/hooks.php.dist file.
  *
- * $Horde: dimp/config/hooks.php.dist,v 1.8.2.6 2008/05/19 08:24:46 jan Exp $
+ * $Horde: dimp/config/hooks.php.dist,v 1.8.2.6 2008-05-19 08:24:46 jan Exp $
  */
 
 // This is an example hook function for the DIMP mailbox view. This function

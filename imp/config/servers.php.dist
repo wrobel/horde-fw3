@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/config/servers.php.dist,v 1.50.2.23 2008/07/03 13:06:15 jan Exp $
+ * $Horde: imp/config/servers.php.dist,v 1.50.2.23 2008-07-03 13:06:15 jan Exp $
  *
  * This file is where you specify what mail servers people using your
  * installation of IMP can log in to.

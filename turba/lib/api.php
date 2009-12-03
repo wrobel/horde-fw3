@@ -2,7 +2,7 @@
 /**
  * Turba external API interface.
  *
- * $Horde: turba/lib/api.php,v 1.120.2.68 2009/09/04 10:38:38 jan Exp $
+ * $Horde: turba/lib/api.php,v 1.120.2.68 2009-09-04 10:38:38 jan Exp $
  *
  * This file defines Turba's external API interface. Other applications can
  * interact with Turba through this API.

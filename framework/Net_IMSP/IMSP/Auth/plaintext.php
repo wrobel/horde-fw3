@@ -8,7 +8,7 @@
  *   'server'    The hostname of the IMSP server.
  *   'port'      The port of the IMSP server.</pre>
  *
- * $Horde: framework/Net_IMSP/IMSP/Auth/plaintext.php,v 1.7.10.15 2009/01/06 15:23:27 jan Exp $
+ * $Horde: framework/Net_IMSP/IMSP/Auth/plaintext.php,v 1.7.10.15 2009-01-06 15:23:27 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

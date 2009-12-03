@@ -14,7 +14,7 @@
  * This script is written to convert SQL databases ONLY.
  * There is no guarantee it will work on other preference backends (e.g. LDAP).
  *
- * $Horde: ingo/scripts/upgrades/convert_imp_filters.php,v 1.1.2.2 2009/01/06 15:24:39 jan Exp $
+ * $Horde: ingo/scripts/upgrades/convert_imp_filters.php,v 1.1.2.2 2009-01-06 15:24:39 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

@@ -4,7 +4,7 @@
  * methods take care of any site-specific restrictions configured in in the
  * application's prefs.php and conf.php files.
  *
- * $Horde: framework/Share/Share.php,v 1.111.2.33 2009/04/20 21:09:02 jan Exp $
+ * $Horde: framework/Share/Share.php,v 1.111.2.33 2009-04-20 21:09:02 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  * Copyright 2002-2007 Infoteck Internet <webmaster@infoteck.qc.ca>

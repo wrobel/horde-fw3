@@ -12,7 +12,7 @@
  *
  * @package Horde_MIME
  *
- * $Horde: framework/MIME/MIME/mime.mapping.php,v 1.11.2.6 2008/11/07 02:34:34 chuck Exp $
+ * $Horde: framework/MIME/MIME/mime.mapping.php,v 1.11.2.6 2008-11-07 02:34:34 chuck Exp $
  *
  * Generated: 11/05/08 23:30:23 by chuck on technest.org
  */

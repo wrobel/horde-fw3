@@ -14,7 +14,7 @@
  *
  * @author Daniel Dembach http://blog.dembachco.de/
  *
- * $Horde: horde/themes/silver/info.php,v 1.1.2.2 2008/01/10 04:46:37 chuck Exp $
+ * $Horde: horde/themes/silver/info.php,v 1.1.2.2 2008-01-10 04:46:37 chuck Exp $
  */
 
 $theme_name = ("Silver Surfer");

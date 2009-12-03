@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<!-- $Horde: ingo/locale/ca_ES/help.xml,v 1.1.2.3 2009/08/18 22:35:04 jan Exp $ -->
+<!-- $Horde: ingo/locale/ca_ES/help.xml,v 1.1.2.3 2009-08-18 22:35:04 jan Exp $ -->
 <help>
   <entry id="blacklist" md5="5c12e162f66f68c6c2d84cc7c280d710" state="uptodate">
     <title>Llista negra</title>

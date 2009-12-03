@@ -4,7 +4,7 @@ $block_name = _("Menu List");
 $block_type = 'tree';
 
 /**
- * $Horde: turba/lib/Block/tree_menu.php,v 1.5.2.6 2009/06/04 19:00:36 mrubinsk Exp $
+ * $Horde: turba/lib/Block/tree_menu.php,v 1.5.2.6 2009-06-04 19:00:36 mrubinsk Exp $
  *
  * @package Horde_Block
  */

@@ -15,7 +15,7 @@ require_once 'Horde/Kolab/Format/Date.php';
  * several functions to help in the IMAP folder <-> Horde Share synchronisation
  * process.
  *
- * $Horde: framework/Kolab/Kolab.php,v 1.26.10.32 2009/01/06 15:23:13 jan Exp $
+ * $Horde: framework/Kolab/Kolab.php,v 1.26.10.32 2009-01-06 15:23:13 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

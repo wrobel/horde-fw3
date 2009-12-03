@@ -8,7 +8,7 @@
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.
  *
- * $Horde: framework/Cipher/Cipher.php,v 1.16.12.13 2009/03/04 20:34:27 slusarz Exp $
+ * $Horde: framework/Cipher/Cipher.php,v 1.16.12.13 2009-03-04 20:34:27 slusarz Exp $
  *
  * @author  Mike Cochrane <mike@graftonhall.co.nz>
  * @since   Horde 2.2

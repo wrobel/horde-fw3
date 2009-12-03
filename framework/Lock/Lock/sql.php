@@ -47,7 +47,7 @@
  * See the enclosed file COPYING for license information (LGPL). If you did
  * not receive this file, see http://opensource.org/licenses/lgpl-license.php.
  *
- *  $Horde: framework/Lock/Lock/sql.php,v 1.8.2.8 2009/02/25 05:35:42 chuck Exp $
+ *  $Horde: framework/Lock/Lock/sql.php,v 1.8.2.8 2009-02-25 05:35:42 chuck Exp $
  *
  * @author  Ben Klang <ben@alkaloid.net>
  * @since   Horde 3.2

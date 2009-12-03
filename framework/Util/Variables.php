@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Util/Variables.php,v 1.8.10.7 2007/12/20 13:50:16 jan Exp $
+ * $Horde: framework/Util/Variables.php,v 1.8.10.7 2007-12-20 13:50:16 jan Exp $
  *
  * @package Horde_Util
  */

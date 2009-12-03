@@ -6,7 +6,7 @@ require_once 'Horde/Notification/Listener.php';
  * The Notification_Listener_javascript:: class provides functionality for
  * inserting javascript code from the message stack into the page.
  *
- * $Horde: framework/Notification/Notification/Listener/javascript.php,v 1.7.10.10 2009/01/06 15:23:29 jan Exp $
+ * $Horde: framework/Notification/Notification/Listener/javascript.php,v 1.7.10.10 2009-01-06 15:23:29 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

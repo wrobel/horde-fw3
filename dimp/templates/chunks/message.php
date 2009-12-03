@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: dimp/templates/chunks/message.php,v 1.1.2.9 2009/01/06 15:22:45 jan Exp $
+ * $Horde: dimp/templates/chunks/message.php,v 1.1.2.9 2009-01-06 15:22:45 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

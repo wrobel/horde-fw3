@@ -7,7 +7,7 @@ require_once 'Horde/Block/Layout.php';
  * The Horde_Block_Layout_Manager class allows manipulation of Horde_Block
  * layouts.
  *
- * $Horde: framework/Block/Block/Layout/Manager.php,v 1.4.2.12 2009/01/06 15:22:53 jan Exp $
+ * $Horde: framework/Block/Block/Layout/Manager.php,v 1.4.2.12 2009-01-06 15:22:53 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

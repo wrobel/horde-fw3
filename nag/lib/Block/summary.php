@@ -3,7 +3,7 @@
 $block_name = _("Tasks Summary");
 
 /**
- * $Horde: nag/lib/Block/summary.php,v 1.51.8.18 2008/06/15 11:52:20 jan Exp $
+ * $Horde: nag/lib/Block/summary.php,v 1.51.8.18 2008-06-15 11:52:20 jan Exp $
  *
  * @package Horde_Block
  */

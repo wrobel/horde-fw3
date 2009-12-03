@@ -3,7 +3,7 @@
  * The Cipher_des:: class implements the Cipher interface encryption data
  * using the Data Encryption Standard (DES) algorithm as define in FIPS46-3.
  *
- * $Horde: framework/Cipher/Cipher/des.php,v 1.4.12.11 2009/01/06 15:22:57 jan Exp $
+ * $Horde: framework/Cipher/Cipher/des.php,v 1.4.12.11 2009-01-06 15:22:57 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

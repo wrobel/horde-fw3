@@ -10,7 +10,7 @@
  * The original script was freely distributable under the terms of an
  * MIT-style license.
  *
- * $Horde: dimp/js/src/DimpSlider.js,v 1.6.2.11 2009/01/06 15:22:37 jan Exp $
+ * $Horde: dimp/js/src/DimpSlider.js,v 1.6.2.11 2009-01-06 15:22:37 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

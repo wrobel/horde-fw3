@@ -3,7 +3,7 @@
  * The Horde_Compress:: class provides an API for various compression
  * techniques that can be used by Horde applications.
  *
- * $Horde: framework/Compress/Compress.php,v 1.7.12.14 2009/01/06 15:22:58 jan Exp $
+ * $Horde: framework/Compress/Compress.php,v 1.7.12.14 2009-01-06 15:22:58 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

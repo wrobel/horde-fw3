@@ -24,7 +24,7 @@
  * <indentright>, <outdent>, <outdentright>, <samepage>, <iso-8859-X>,
  * <us-ascii>,
  *
- * $Horde: framework/MIME/MIME/Viewer/richtext.php,v 1.4.10.14 2009/01/06 15:23:21 jan Exp $
+ * $Horde: framework/MIME/MIME/Viewer/richtext.php,v 1.4.10.14 2009-01-06 15:23:21 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

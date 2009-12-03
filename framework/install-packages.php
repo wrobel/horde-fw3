@@ -1,7 +1,7 @@
 #!/usr/bin/php
 <?php
 /**
- * $Horde: framework/install-packages.php,v 1.14.10.4 2007/12/20 13:48:46 jan Exp $
+ * $Horde: framework/install-packages.php,v 1.14.10.4 2007-12-20 13:48:46 jan Exp $
  *
  * This script iterates each directory and forces an install from the
  * package.xml file for each package.

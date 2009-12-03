@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/services/resetpassword.php,v 1.5.10.13 2009/09/12 08:16:19 jan Exp $
+ * $Horde: horde/services/resetpassword.php,v 1.5.10.13 2009-09-12 08:16:19 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

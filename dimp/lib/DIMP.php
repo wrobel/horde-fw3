@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: dimp/lib/DIMP.php,v 1.110.2.38 2009/04/07 04:52:58 slusarz Exp $
+ * $Horde: dimp/lib/DIMP.php,v 1.110.2.38 2009-04-07 04:52:58 slusarz Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

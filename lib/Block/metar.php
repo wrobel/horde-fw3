@@ -10,7 +10,7 @@ if ((@include_once 'Services/Weather.php') &&
  * screen to display METAR weather data for a specified location
  * (currently airports).
  *
- * $Horde: horde/lib/Block/metar.php,v 1.22.10.11 2009/01/16 17:05:59 mrubinsk Exp $
+ * $Horde: horde/lib/Block/metar.php,v 1.22.10.11 2009-01-16 17:05:59 mrubinsk Exp $
  *
  * @package Horde_Block
  */

@@ -2,7 +2,7 @@
 /**
  * Class for handling a list of credentials stored in a user's preferences.
  *
- * $Horde: framework/Prefs/Prefs/Credentials.php,v 1.2.2.3 2009/01/06 15:23:31 jan Exp $
+ * $Horde: framework/Prefs/Prefs/Credentials.php,v 1.2.2.3 2009-01-06 15:23:31 jan Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

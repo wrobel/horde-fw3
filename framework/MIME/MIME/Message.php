@@ -6,7 +6,7 @@ require_once dirname(__FILE__) . '/Part.php';
  * The MIME_Message:: class provides methods for creating and manipulating
  * MIME email messages.
  *
- * $Horde: framework/MIME/MIME/Message.php,v 1.76.10.19 2009/01/06 15:23:20 jan Exp $
+ * $Horde: framework/MIME/MIME/Message.php,v 1.76.10.19 2009-01-06 15:23:20 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

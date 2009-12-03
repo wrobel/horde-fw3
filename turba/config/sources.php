@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: turba/config/sources.php.dist,v 1.97.6.41 2009/08/05 21:06:10 jan Exp $
+ * $Horde: turba/config/sources.php.dist,v 1.97.6.41 2009-08-05 21:06:10 jan Exp $
  *
  * This file is where you specify the sources of contacts available to users
  * at your installation. It contains a large number of EXAMPLES. Please

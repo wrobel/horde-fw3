@@ -2,7 +2,7 @@
 /**
  * Horde_Mobile_Renderer:: output module for WML (Wireless Markup Language).
  *
- * $Horde: framework/Mobile/Mobile/Renderer/wml.php,v 1.32.10.13 2009/01/06 15:23:25 jan Exp $
+ * $Horde: framework/Mobile/Mobile/Renderer/wml.php,v 1.32.10.13 2009-01-06 15:23:25 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

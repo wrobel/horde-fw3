@@ -16,7 +16,7 @@ define('VC_WINDOWS', !strncasecmp(PHP_OS, 'WIN', 3));
 /**
  * Version Control generalized library.
  *
- * $Horde: framework/VC/VC.php,v 1.12.8.14 2008/06/07 16:07:26 chuck Exp $
+ * $Horde: framework/VC/VC.php,v 1.12.8.14 2008-06-07 16:07:26 chuck Exp $
  *
  * @package VC
  */

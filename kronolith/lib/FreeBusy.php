@@ -2,7 +2,7 @@
 /**
  * Free/Busy functionality.
  *
- * $Horde: kronolith/lib/FreeBusy.php,v 1.11.2.7 2009/01/07 13:56:01 jan Exp $
+ * $Horde: kronolith/lib/FreeBusy.php,v 1.11.2.7 2009-01-07 13:56:01 jan Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @since   Kronolith 2.2

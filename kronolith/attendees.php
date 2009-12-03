@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: kronolith/attendees.php,v 1.7.8.23 2009/01/07 13:56:57 jan Exp $
+ * $Horde: kronolith/attendees.php,v 1.7.8.23 2009-01-07 13:56:57 jan Exp $
  *
  * Copyright 2004-2007 Code Fusion  <http://www.codefusion.co.za/>
  * Copyright 2004-2007 Stuart Binge <s.binge@codefusion.co.za>

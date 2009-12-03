@@ -2,7 +2,7 @@
 /**
  * Horde_Data implementation for LDAP Data Interchange Format (LDIF).
  *
- * $Horde: turba/lib/Data/ldif.php,v 1.2.2.5 2009/09/18 14:23:22 jan Exp $
+ * $Horde: turba/lib/Data/ldif.php,v 1.2.2.5 2009-09-18 14:23:22 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

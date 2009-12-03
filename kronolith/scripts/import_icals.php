@@ -5,7 +5,7 @@
  * The data is read from standard input, the calendar and user name passed as
  * parameters.
  *
- * $Horde: kronolith/scripts/import_icals.php,v 1.3.2.7 2009/01/06 15:24:50 jan Exp $
+ * $Horde: kronolith/scripts/import_icals.php,v 1.3.2.7 2009-01-06 15:24:50 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

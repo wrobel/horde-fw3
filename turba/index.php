@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: turba/index.php,v 1.29.10.12 2009/01/06 15:27:39 jan Exp $
+ * $Horde: turba/index.php,v 1.29.10.12 2009-01-06 15:27:39 jan Exp $
  *
  * Copyright 2000-2009 The Horde Project (http://www.horde.org/)
  *

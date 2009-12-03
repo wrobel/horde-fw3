@@ -3,7 +3,7 @@
 $block_name = _("View an external web page");
 
 /**
- * $Horde: horde/lib/Block/iframe.php,v 1.18.8.6 2007/12/20 15:01:36 jan Exp $
+ * $Horde: horde/lib/Block/iframe.php,v 1.18.8.6 2007-12-20 15:01:36 jan Exp $
  *
  * @package Horde_Block
  */

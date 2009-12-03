@@ -18,7 +18,7 @@ define('IMSP_ACL_RIGHTS', 'lrwcda');
  *   'server'       The hostname of the IMSP server.
  *   'port'         The port of the IMSP server.</pre>
  *
- * $Horde: framework/Net_IMSP/IMSP/Book.php,v 1.16.2.28 2009/10/01 23:44:21 mrubinsk Exp $
+ * $Horde: framework/Net_IMSP/IMSP/Book.php,v 1.16.2.28 2009-10-01 23:44:21 mrubinsk Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

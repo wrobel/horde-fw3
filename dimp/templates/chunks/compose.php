@@ -6,7 +6,7 @@
  *   $args('folder', 'index'), $compose_html, $draft_index, $from, $id,
  *   $identity, $messageCache, $rte, $selected_identity, $sent_mail_folder
  *
- * $Horde: dimp/templates/chunks/compose.php,v 1.134.2.15 2009/01/06 15:22:45 jan Exp $
+ * $Horde: dimp/templates/chunks/compose.php,v 1.134.2.15 2009-01-06 15:22:45 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

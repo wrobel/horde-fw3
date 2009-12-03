@@ -2,7 +2,7 @@
 /**
  * The Group:: class provides the Horde groups system.
  *
- * $Horde: framework/Group/Group/sql.php,v 1.1.2.12 2009/02/25 05:35:42 chuck Exp $
+ * $Horde: framework/Group/Group/sql.php,v 1.1.2.12 2009-02-25 05:35:42 chuck Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

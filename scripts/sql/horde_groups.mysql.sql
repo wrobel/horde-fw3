@@ -1,4 +1,4 @@
--- $Horde: horde/scripts/sql/horde_groups.mysql.sql,v 1.1.2.2 2008/04/28 03:24:02 chuck Exp $
+-- $Horde: horde/scripts/sql/horde_groups.mysql.sql,v 1.1.2.2 2008-04-28 03:24:02 chuck Exp $
 
 CREATE TABLE horde_groups (
     group_uid INT(10) UNSIGNED NOT NULL,

@@ -1,7 +1,7 @@
 /**
  * Provides the javascript for the acl.php script
  *
- * $Horde: imp/js/src/acl.js,v 1.3.2.1 2007/12/20 13:59:22 jan Exp $
+ * $Horde: imp/js/src/acl.js,v 1.3.2.1 2007-12-20 13:59:22 jan Exp $
  *
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.

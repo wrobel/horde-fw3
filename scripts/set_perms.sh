@@ -2,7 +2,7 @@
 #
 # set_perms.sh - Jon Parise <jon@csh.rit.edu>
 #
-# $Horde: horde/scripts/set_perms.sh,v 1.7 2001/04/15 01:55:32 chuck Exp $
+# $Horde: horde/scripts/set_perms.sh,v 1.7 2001-04-15 01:55:32 chuck Exp $
 
 # "Dangerous" PHP scripts
 #

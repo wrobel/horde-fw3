@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ingo/rule.php,v 1.63.8.13 2009/01/06 15:24:34 jan Exp $
+ * $Horde: ingo/rule.php,v 1.63.8.13 2009-01-06 15:24:34 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

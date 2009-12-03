@@ -2,7 +2,7 @@
 /**
  * Horde_Form for deleting notepads.
  *
- * $Horde: mnemo/lib/Forms/DeleteNotepad.php,v 1.4.2.1 2007/12/20 14:17:46 jan Exp $
+ * $Horde: mnemo/lib/Forms/DeleteNotepad.php,v 1.4.2.1 2007-12-20 14:17:46 jan Exp $
  *
  * See the enclosed file LICENSE for license information (ASL). If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.

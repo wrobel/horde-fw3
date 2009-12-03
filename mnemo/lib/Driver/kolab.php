@@ -5,7 +5,7 @@ require_once 'Horde/Kolab.php';
 /**
  * Horde Mnemo driver for the Kolab IMAP server.
  *
- * $Horde: mnemo/lib/Driver/kolab.php,v 1.7.2.12 2009/01/06 15:24:59 jan Exp $
+ * $Horde: mnemo/lib/Driver/kolab.php,v 1.7.2.12 2009-01-06 15:24:59 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *
@@ -181,7 +181,7 @@ class Mnemo_Driver_kolab extends Mnemo_Driver {
 /**
  * Horde Mnemo wrapper to distinguish between both Kolab driver implementations.
  *
- * $Horde: mnemo/lib/Driver/kolab.php,v 1.7.2.12 2009/01/06 15:24:59 jan Exp $
+ * $Horde: mnemo/lib/Driver/kolab.php,v 1.7.2.12 2009-01-06 15:24:59 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *
@@ -291,7 +291,7 @@ class Mnemo_Driver_kolab_wrapper {
 /**
  * Old Horde Mnemo driver for the Kolab IMAP server.
  *
- * $Horde: mnemo/lib/Driver/kolab.php,v 1.7.2.12 2009/01/06 15:24:59 jan Exp $
+ * $Horde: mnemo/lib/Driver/kolab.php,v 1.7.2.12 2009-01-06 15:24:59 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *
@@ -458,7 +458,7 @@ class Mnemo_Driver_kolab_wrapper_old extends Mnemo_Driver_kolab_wrapper {
 /**
  * New Horde Mnemo driver for the Kolab IMAP server.
  *
- * $Horde: mnemo/lib/Driver/kolab.php,v 1.7.2.12 2009/01/06 15:24:59 jan Exp $
+ * $Horde: mnemo/lib/Driver/kolab.php,v 1.7.2.12 2009-01-06 15:24:59 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

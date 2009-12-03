@@ -10,7 +10,7 @@ require_once 'Mail.php';
  * The MIME_Mail:: class wraps around the various MIME library classes to
  * provide a simple interface for creating and sending MIME messages.
  *
- * $Horde: framework/MIME/MIME/Mail.php,v 1.8.2.7 2009/01/06 15:23:20 jan Exp $
+ * $Horde: framework/MIME/MIME/Mail.php,v 1.8.2.7 2009-01-06 15:23:20 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

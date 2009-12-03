@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: nag/themes/categoryCSS.php,v 1.1.2.7 2009/01/06 15:25:14 jan Exp $
+ * $Horde: nag/themes/categoryCSS.php,v 1.1.2.7 2009-01-06 15:25:14 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

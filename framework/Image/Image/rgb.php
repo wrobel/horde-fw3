@@ -2,7 +2,7 @@
 /**
  * RGB color names/values.
  *
- * $Horde: framework/Image/Image/rgb.php,v 1.2.12.2 2007/12/20 13:49:10 jan Exp $
+ * $Horde: framework/Image/Image/rgb.php,v 1.2.12.2 2007-12-20 13:49:10 jan Exp $
  *
  * @package Horde_Image
  */

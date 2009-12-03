@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/pgp.php,v 2.79.6.21 2009/02/10 18:47:40 slusarz Exp $
+ * $Horde: imp/pgp.php,v 2.79.6.21 2009-02-10 18:47:40 slusarz Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

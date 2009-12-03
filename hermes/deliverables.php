@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: hermes/deliverables.php,v 1.10.2.1 2009/01/06 15:23:58 jan Exp $
+ * $Horde: hermes/deliverables.php,v 1.10.2.1 2009-01-06 15:23:58 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

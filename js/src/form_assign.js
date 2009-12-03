@@ -3,7 +3,7 @@
  *
  * Provides the javascript class to accompany the Horde_Form assign field.
  *
- * $Horde: horde/js/src/form_assign.js,v 1.9.2.3 2009/01/06 15:24:43 jan Exp $
+ * $Horde: horde/js/src/form_assign.js,v 1.9.2.3 2009-01-06 15:24:43 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

@@ -1,7 +1,7 @@
 #!/usr/bin/php -q
 <?php
 /**
- * $Horde: horde/scripts/upgrades/convert_datatree_perms_to_sql.php,v 1.1.2.1 2008/05/02 16:46:01 jan Exp $
+ * $Horde: horde/scripts/upgrades/convert_datatree_perms_to_sql.php,v 1.1.2.1 2008-05-02 16:46:01 jan Exp $
  *
  * A script to migrate permissions from the DataTree backend to the
  * new (Horde 3.2+) native SQL Perms backend.

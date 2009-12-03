@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Share/Share/kolab.php,v 1.42.2.21 2009/01/06 15:23:36 jan Exp $
+ * $Horde: framework/Share/Share/kolab.php,v 1.42.2.21 2009-01-06 15:23:36 jan Exp $
  *
  * @package Horde_Share
  */

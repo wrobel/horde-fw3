@@ -3,7 +3,7 @@
  * The Horde_Data_iif class implements the Horde_Data:: framework for
  * QuickBooks .iif files.
  *
- * $Horde: hermes/lib/Data/iif.php,v 1.20.2.1 2009/01/06 15:23:58 jan Exp $
+ * $Horde: hermes/lib/Data/iif.php,v 1.20.2.1 2009-01-06 15:23:58 jan Exp $
  *
  * Here's a sample header and row from a .iif file (it's
  * tab-delimited):
@@ -11,7 +11,7 @@
  * !TIMEACT        DATE        JOB        EMP        ITEM        DURATION        NOTE        BILLINGSTATUS        PITEM
  * TIMEACT        07/30/02        A Company:Their Projec        Sylvester Employee        Programming        10:00                1        Not Applicable
  *
- * $Horde: hermes/lib/Data/iif.php,v 1.20.2.1 2009/01/06 15:23:58 jan Exp $
+ * $Horde: hermes/lib/Data/iif.php,v 1.20.2.1 2009-01-06 15:23:58 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

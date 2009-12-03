@@ -6,7 +6,7 @@ require_once 'Horde/MIME/Viewer/zip.php';
  * The MIME_Viewer_zip class renders out the contents of ZIP files in HTML
  * format and allows downloading of extractable files.
  *
- * $Horde: imp/lib/MIME/Viewer/zip.php,v 1.25.10.13 2009/01/06 15:24:09 jan Exp $
+ * $Horde: imp/lib/MIME/Viewer/zip.php,v 1.25.10.13 2009-01-06 15:24:09 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

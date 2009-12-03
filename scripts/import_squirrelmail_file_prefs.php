@@ -8,7 +8,7 @@
  * Input can be either a single squirrelmail .pref file, or a directory
  * containing multiple .pref files.
  *
- * $Horde: horde/scripts/import_squirrelmail_file_prefs.php,v 1.3.2.2 2009/01/06 15:26:19 jan Exp $
+ * $Horde: horde/scripts/import_squirrelmail_file_prefs.php,v 1.3.2.2 2009-01-06 15:26:19 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

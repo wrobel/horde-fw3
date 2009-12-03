@@ -2,7 +2,7 @@
 /**
  * @package Kolab_Storage
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/IMAP/pear.php,v 1.1.2.2 2009/01/06 15:23:15 jan Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/IMAP/pear.php,v 1.1.2.2 2009-01-06 15:23:15 jan Exp $
  */
 
 /**
@@ -17,7 +17,7 @@ require_once 'Net/IMAP.php';
  * The Horde_Kolab_IMAP_Connection_pear class connects to an IMAP server using the
  * Net_IMAP PEAR package.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/IMAP/pear.php,v 1.1.2.2 2009/01/06 15:23:15 jan Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/IMAP/pear.php,v 1.1.2.2 2009-01-06 15:23:15 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

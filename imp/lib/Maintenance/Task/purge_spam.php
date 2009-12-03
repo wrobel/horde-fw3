@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/lib/Maintenance/Task/purge_spam.php,v 1.6.2.3 2009/01/06 15:24:10 jan Exp $
+ * $Horde: imp/lib/Maintenance/Task/purge_spam.php,v 1.6.2.3 2009-01-06 15:24:10 jan Exp $
  *
  * Maintenance module that purges old messages in the Spam folder.  Based on
  * the purge_trash task, written by Michael Slusarz <slusarz@horde.org>.

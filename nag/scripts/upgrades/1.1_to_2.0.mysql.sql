@@ -1,4 +1,4 @@
--- $Horde: nag/scripts/upgrades/1.1_to_2.0.mysql.sql,v 1.6.2.3 2007/12/20 14:23:38 jan Exp $
+-- $Horde: nag/scripts/upgrades/1.1_to_2.0.mysql.sql,v 1.6.2.3 2007-12-20 14:23:38 jan Exp $
 --
 -- You can simply execute this file in your database.
 --

@@ -2,7 +2,7 @@
 /**
  * All tests for the Kolab_FreeBusy:: package.
  *
- * $Horde: framework/Kolab_FreeBusy/test/Horde/Kolab/FreeBusy/AllTests.php,v 1.2.2.1 2009/03/06 18:12:01 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/test/Horde/Kolab/FreeBusy/AllTests.php,v 1.2.2.1 2009-03-06 18:12:01 wrobel Exp $
  *
  * @package Kolab_FreeBusy
  */
@@ -20,7 +20,7 @@ require_once 'PHPUnit/TextUI/TestRunner.php';
 /**
  * Combine the tests for this package.
  *
- * $Horde: framework/Kolab_FreeBusy/test/Horde/Kolab/FreeBusy/AllTests.php,v 1.2.2.1 2009/03/06 18:12:01 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/test/Horde/Kolab/FreeBusy/AllTests.php,v 1.2.2.1 2009-03-06 18:12:01 wrobel Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

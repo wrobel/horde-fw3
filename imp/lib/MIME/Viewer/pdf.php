@@ -4,7 +4,7 @@
  * The IMP_MIME_Viewer_pdf class enables generation of thumbnails for PDF
  * attachments.
  *
- * $Horde: imp/lib/MIME/Viewer/pdf.php,v 1.1.2.3 2009/01/06 15:24:09 jan Exp $
+ * $Horde: imp/lib/MIME/Viewer/pdf.php,v 1.1.2.3 2009-01-06 15:24:09 jan Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

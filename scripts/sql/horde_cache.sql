@@ -1,4 +1,4 @@
--- $Horde: horde/scripts/sql/horde_cache.sql,v 1.2.2.2 2008/04/23 19:46:15 bklang Exp $
+-- $Horde: horde/scripts/sql/horde_cache.sql,v 1.2.2.2 2008-04-23 19:46:15 bklang Exp $
 
 CREATE TABLE horde_cache (
     cache_id          VARCHAR(32) NOT NULL,

@@ -3,7 +3,7 @@
  * The Horde_UI_Widget:: class provides base functionality for other Horde
  * UI elements.
  *
- * $Horde: framework/UI/UI/Widget.php,v 1.7.10.13 2009/01/06 15:23:45 jan Exp $
+ * $Horde: framework/UI/UI/Widget.php,v 1.7.10.13 2009-01-06 15:23:45 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

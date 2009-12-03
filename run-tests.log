@@ -1,7 +1,0 @@
-TOTAL TIME: 00:02
-3 PASSED TESTS
-0 SKIPPED TESTS
-3 FAILED TESTS:
-kronolith/lib/tests/bug2813.phpt
-kronolith/lib/tests/bug6031.phpt
-kronolith/lib/tests/toicalendar.phpt

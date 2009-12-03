@@ -5,7 +5,7 @@
  * required for Horde FRAMEWORK_3 compatibility, but can be removed
  * from Horde 4.0.
  *
- * $Horde: horde/js/src/hideable.js,v 1.3.2.1 2007/12/20 15:01:30 jan Exp $
+ * $Horde: horde/js/src/hideable.js,v 1.3.2.1 2007-12-20 15:01:30 jan Exp $
  *
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.

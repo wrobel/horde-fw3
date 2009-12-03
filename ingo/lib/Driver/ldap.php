@@ -3,7 +3,7 @@
  * Ingo_Driver_ldap:: Implements the Sieve_Driver api to allow scripts to be
  * installed and set active via an LDAP server.
  *
- * $Horde: ingo/lib/Driver/ldap.php,v 1.8.2.4 2007/12/20 14:05:47 jan Exp $
+ * $Horde: ingo/lib/Driver/ldap.php,v 1.8.2.4 2007-12-20 14:05:47 jan Exp $
  *
  * See the enclosed file LICENSE for license information (ASL).  If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.

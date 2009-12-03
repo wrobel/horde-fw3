@@ -1,5 +1,5 @@
 <?php
-// $Horde: dimp/templates/index/index.inc,v 1.152.2.65 2008/12/07 22:22:20 slusarz Exp $
+// $Horde: dimp/templates/index/index.inc,v 1.152.2.65 2008-12-07 22:22:20 slusarz Exp $
 
 // Generate various dimp graphics
 $imagedir = $registry->getImageDir('dimp');

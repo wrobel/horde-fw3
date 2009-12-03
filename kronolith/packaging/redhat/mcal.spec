@@ -1,5 +1,5 @@
 #
-# $Horde: kronolith/packaging/redhat/mcal.spec,v 1.7.12.1 2005/01/03 12:25:41 jan Exp $
+# $Horde: kronolith/packaging/redhat/mcal.spec,v 1.7.12.1 2005-01-03 12:25:41 jan Exp $
 #
 # Copyright 2003-2005 Brent J. Nordquist <bjn@horde.org>
 #

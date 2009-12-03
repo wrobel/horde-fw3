@@ -5,7 +5,7 @@
  *
  * No additional configuration parameters needed.
  *
- * $Horde: framework/SessionHandler/SessionHandler/dbm.php,v 1.9.12.11 2009/01/06 15:23:35 jan Exp $
+ * $Horde: framework/SessionHandler/SessionHandler/dbm.php,v 1.9.12.11 2009-01-06 15:23:35 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

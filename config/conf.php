@@ -15,7 +15,7 @@
  * Integers should be given literally (without quotes).
  * Boolean values may be true or false (never quotes).
  *
- * $Horde: horde/config/conf.php.dist,v 1.94.10.4 2008/10/03 00:19:58 chuck Exp $
+ * $Horde: horde/config/conf.php.dist,v 1.94.10.4 2008-10-03 00:19:58 chuck Exp $
  */
 
 // Determines how we generate full URLs (for location headers and

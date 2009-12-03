@@ -2,7 +2,7 @@
 -- the space padding.  This is only necessary if horde_prefs was created using
 -- scripts/sql/create.oci8.sql
 --
--- $Horde: horde/scripts/upgrades/2005-09-22_horde_prefs_varchar2.oci8.sql,v 1.1.2.2 2007/12/20 15:03:04 jan Exp $
+-- $Horde: horde/scripts/upgrades/2005-09-22_horde_prefs_varchar2.oci8.sql,v 1.1.2.2 2007-12-20 15:03:04 jan Exp $
 --
 ALTER TABLE horde_prefs MODIFY pref_uid VARCHAR2(255);
 ALTER TABLE horde_prefs MODIFY pref_scope VARCHAR2(16);

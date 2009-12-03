@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ingo/forward.php,v 1.11.8.9 2009/01/06 15:24:34 jan Exp $
+ * $Horde: ingo/forward.php,v 1.11.8.9 2009-01-06 15:24:34 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

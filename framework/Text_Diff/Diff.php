@@ -6,7 +6,7 @@
  * The original PHP version of this code was written by Geoffrey T. Dairiki
  * <dairiki@dairiki.org>, and is used/adapted with his permission.
  *
- * $Horde: framework/Text_Diff/Diff.php,v 1.11.2.12 2009/01/06 15:23:41 jan Exp $
+ * $Horde: framework/Text_Diff/Diff.php,v 1.11.2.12 2009-01-06 15:23:41 jan Exp $
  *
  * Copyright 2004 Geoffrey T. Dairiki <dairiki@dairiki.org>
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)

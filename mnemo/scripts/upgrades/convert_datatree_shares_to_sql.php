@@ -5,7 +5,7 @@
  * driver to the new SQL Horde_Share driver. You should run the 2.1_to_2.2.sql
  * upgrade script before executing this script.
  *
- * $Horde: mnemo/scripts/upgrades/convert_datatree_shares_to_sql.php,v 1.1.2.6 2009/07/20 11:16:56 jan Exp $
+ * $Horde: mnemo/scripts/upgrades/convert_datatree_shares_to_sql.php,v 1.1.2.6 2009-07-20 11:16:56 jan Exp $
  */
 
 @define('AUTH_HANDLER', true);

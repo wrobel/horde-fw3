@@ -4,7 +4,7 @@
  * environment.  Ignores all text after a '#' character (shell-style
  * comments).
  *
- * $Horde: framework/Text_Filter/Filter/environment.php,v 1.3.10.8 2009/01/06 15:23:42 jan Exp $
+ * $Horde: framework/Text_Filter/Filter/environment.php,v 1.3.10.8 2009-01-06 15:23:42 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

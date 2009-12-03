@@ -6,7 +6,7 @@ require_once 'Horde/MIME/Viewer/rfc822.php';
  * The IMP_MIME_Viewer_rfc822 class renders out messages from
  * message/rfc822 content types.
  *
- * $Horde: imp/lib/MIME/Viewer/rfc822.php,v 1.26.10.14 2009/01/06 15:24:09 jan Exp $
+ * $Horde: imp/lib/MIME/Viewer/rfc822.php,v 1.26.10.14 2009-01-06 15:24:09 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

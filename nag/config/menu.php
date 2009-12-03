@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: nag/config/menu.php.dist,v 1.4.8.1 2007/12/20 14:23:06 jan Exp $
+ * $Horde: nag/config/menu.php.dist,v 1.4.8.1 2007-12-20 14:23:06 jan Exp $
  *
  * This file lets you extend Nag's menu with your own items.
  *

@@ -2,7 +2,7 @@
 /**
  * Test recurrence handling within the Kolab format implementation.
  *
- * $Horde: framework/Kolab_Format/test/Horde/Kolab/Format/RecurrenceTest.php,v 1.4.2.6 2009/01/06 15:23:14 jan Exp $
+ * $Horde: framework/Kolab_Format/test/Horde/Kolab/Format/RecurrenceTest.php,v 1.4.2.6 2009-01-06 15:23:14 jan Exp $
  *
  * @package Kolab_Format
  */
@@ -18,7 +18,7 @@ require_once 'Horde/Kolab/Format.php';
 /**
  * Test recurrence handling
  *
- * $Horde: framework/Kolab_Format/test/Horde/Kolab/Format/RecurrenceTest.php,v 1.4.2.6 2009/01/06 15:23:14 jan Exp $
+ * $Horde: framework/Kolab_Format/test/Horde/Kolab/Format/RecurrenceTest.php,v 1.4.2.6 2009-01-06 15:23:14 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

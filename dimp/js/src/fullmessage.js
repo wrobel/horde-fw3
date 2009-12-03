@@ -1,5 +1,5 @@
 /**
- * $Horde: dimp/js/src/fullmessage.js,v 1.23.2.13 2009/01/06 15:22:37 jan Exp $
+ * $Horde: dimp/js/src/fullmessage.js,v 1.23.2.13 2009-01-06 15:22:37 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

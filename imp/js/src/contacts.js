@@ -1,7 +1,7 @@
 /**
  * Provides the javascript for the contacts.php script
  *
- * $Horde: imp/js/src/contacts.js,v 1.6.2.6 2008/08/22 15:54:25 jan Exp $
+ * $Horde: imp/js/src/contacts.js,v 1.6.2.6 2008-08-22 15:54:25 jan Exp $
  *
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.

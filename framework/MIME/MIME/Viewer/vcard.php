@@ -2,7 +2,7 @@
 /**
  * The MIME_Viewer_vcard class renders out vCards in HTML format.
  *
- * $Horde: framework/MIME/MIME/Viewer/vcard.php,v 1.34.10.27 2009/10/09 15:55:19 mrubinsk Exp $
+ * $Horde: framework/MIME/MIME/Viewer/vcard.php,v 1.34.10.27 2009-10-09 15:55:19 mrubinsk Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

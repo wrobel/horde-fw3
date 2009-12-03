@@ -1,5 +1,5 @@
 #!/bin/sh
-# $Horde: framework/admintools/horde-update.sh,v 1.1.2.1 2007/12/20 13:50:27 jan Exp $
+# $Horde: framework/admintools/horde-update.sh,v 1.1.2.1 2007-12-20 13:50:27 jan Exp $
 #
 # update_horde.sh - Marcus I. Ryan <marcus@riboflavin.net>
 #

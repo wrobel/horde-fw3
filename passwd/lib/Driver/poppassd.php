@@ -3,7 +3,7 @@
  * The poppassd class attempts to change a user's password via a poppassd
  * server.
  *
- * $Horde: passwd/lib/Driver/poppassd.php,v 1.24.2.7 2009/01/06 15:25:23 jan Exp $
+ * $Horde: passwd/lib/Driver/poppassd.php,v 1.24.2.7 2009-01-06 15:25:23 jan Exp $
  *
  * Copyright 2000-2009 The Horde Project (http://www.horde.org/)
  *

@@ -7,7 +7,7 @@
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.
  *
- * $Horde: framework/Block/Block/UI.php,v 1.8.10.9 2009/01/06 15:22:53 jan Exp $
+ * $Horde: framework/Block/Block/UI.php,v 1.8.10.9 2009-01-06 15:22:53 jan Exp $
  *
  * @author  Marko Djukic <marko@oblo.com>
  * @since   Horde 3.0

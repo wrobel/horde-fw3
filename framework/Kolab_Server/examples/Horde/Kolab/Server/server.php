@@ -2,7 +2,7 @@
 /**
  * Demonstrates the use of Horde_Kolab_Server::
  *
- * $Horde: framework/Kolab_Server/examples/Horde/Kolab/Server/server.php,v 1.1.2.2 2008/08/01 07:56:19 wrobel Exp $
+ * $Horde: framework/Kolab_Server/examples/Horde/Kolab/Server/server.php,v 1.1.2.2 2008-08-01 07:56:19 wrobel Exp $
  *
  * @package Kolab_Server
  */

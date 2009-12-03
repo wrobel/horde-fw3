@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Prefs/Prefs/kolab_imap.php,v 1.3.2.4 2009/01/06 15:23:31 jan Exp $
+ * $Horde: framework/Prefs/Prefs/kolab_imap.php,v 1.3.2.4 2009-01-06 15:23:31 jan Exp $
  *
  * @package Horde_Prefs
  */

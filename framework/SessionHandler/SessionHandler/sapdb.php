@@ -27,7 +27,7 @@ require_once dirname(__FILE__) . '/sql.php';
  * The table structure for the SessionHandler can be found in
  * horde/scripts/sql/horde_sessionhandler.sapdb.sql.
  *
- * $Horde: framework/SessionHandler/SessionHandler/sapdb.php,v 1.13.12.12 2009/01/06 15:23:35 jan Exp $
+ * $Horde: framework/SessionHandler/SessionHandler/sapdb.php,v 1.13.12.12 2009-01-06 15:23:35 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

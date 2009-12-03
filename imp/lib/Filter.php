@@ -13,7 +13,7 @@
  *   mail/whitelistFrom
  *   mail/showWhitelist
  *
- * $Horde: imp/lib/Filter.php,v 1.56.10.16 2009/01/06 15:24:03 jan Exp $
+ * $Horde: imp/lib/Filter.php,v 1.56.10.16 2009-01-06 15:24:03 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

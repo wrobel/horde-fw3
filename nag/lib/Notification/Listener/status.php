@@ -7,7 +7,7 @@ require_once 'Horde/Notification/Listener/status.php';
  * Notification_Listener_status:: class to display the messages for
  * Nag's special message type 'nag.alarm'.
  *
- * $Horde: nag/lib/Notification/Listener/status.php,v 1.6.10.6 2007/12/20 14:23:08 jan Exp $
+ * $Horde: nag/lib/Notification/Listener/status.php,v 1.6.10.6 2007-12-20 14:23:08 jan Exp $
  *
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.

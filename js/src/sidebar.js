@@ -1,7 +1,7 @@
 /**
  * Horde sidebar javascript.
  *
- * $Horde: horde/js/src/sidebar.js,v 1.1.2.2 2008/05/19 19:37:24 slusarz Exp $
+ * $Horde: horde/js/src/sidebar.js,v 1.1.2.2 2008-05-19 19:37:24 slusarz Exp $
  *
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.

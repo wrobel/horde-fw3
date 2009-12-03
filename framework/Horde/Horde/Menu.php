@@ -13,7 +13,7 @@ define('HORDE_MENU_MASK_ALL',     15);
  * The Menu:: class provides standardized methods for creating menus in
  * Horde applications.
  *
- * $Horde: framework/Horde/Horde/Menu.php,v 1.35.2.17 2009/01/06 15:23:10 jan Exp $
+ * $Horde: framework/Horde/Horde/Menu.php,v 1.35.2.17 2009-01-06 15:23:10 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

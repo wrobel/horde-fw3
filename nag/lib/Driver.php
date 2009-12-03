@@ -2,7 +2,7 @@
 /**
  * Nag_Driver:: defines an API for implementing storage backends for Nag.
  *
- * $Horde: nag/lib/Driver.php,v 1.57.2.30 2009/10/15 16:23:26 jan Exp $
+ * $Horde: nag/lib/Driver.php,v 1.57.2.30 2009-10-15 16:23:26 jan Exp $
  *
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.

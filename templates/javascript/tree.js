@@ -3,7 +3,7 @@
  *
  * Provides the javascript class to create dynamic trees.
  *
- * $Horde: horde/templates/javascript/tree.js,v 1.62.2.16 2009/01/06 15:27:38 jan Exp $
+ * $Horde: horde/templates/javascript/tree.js,v 1.62.2.16 2009-01-06 15:27:38 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

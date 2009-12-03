@@ -19,7 +19,7 @@ if (is_callable(array('Horde', 'loadConfiguration'))) {
  * all functions related to handling the content and output of mail messages
  * in IMP.
  *
- * $Horde: imp/lib/MIME/Contents.php,v 1.153.4.61 2009/01/06 15:24:09 jan Exp $
+ * $Horde: imp/lib/MIME/Contents.php,v 1.153.4.61 2009-01-06 15:24:09 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

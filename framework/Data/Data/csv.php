@@ -11,7 +11,7 @@ include_once 'File/CSV.php';
 /**
  * Horde_Data implementation for comma-separated data (CSV).
  *
- * $Horde: framework/Data/Data/csv.php,v 1.30.10.12 2009/01/06 15:23:01 jan Exp $
+ * $Horde: framework/Data/Data/csv.php,v 1.30.10.12 2009-01-06 15:23:01 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

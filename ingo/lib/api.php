@@ -5,7 +5,7 @@
  * This file defines Ingo's external API interface. Other applications
  * can interact with Ingo through this API.
  *
- * $Horde: ingo/lib/api.php,v 1.16.12.8 2009/07/24 08:57:03 jan Exp $
+ * $Horde: ingo/lib/api.php,v 1.16.12.8 2009-07-24 08:57:03 jan Exp $
  *
  * See the enclosed file LICENSE for license information (ASL).  If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.

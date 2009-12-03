@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/services/portal/index.php,v 1.39.10.18 2009/01/06 15:27:33 jan Exp $
+ * $Horde: horde/services/portal/index.php,v 1.39.10.18 2009-01-06 15:27:33 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

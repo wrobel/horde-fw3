@@ -2,7 +2,7 @@
 /**
  * Login screen for IMP.
  *
- * $Horde: imp/login.php,v 2.222.2.27 2009/01/06 15:24:01 jan Exp $
+ * $Horde: imp/login.php,v 2.222.2.27 2009-01-06 15:24:01 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

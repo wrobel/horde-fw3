@@ -6,7 +6,7 @@
  * The first argument must be a DSN to the database containing the calendar
  * and event tables, e.g.: "mysql://root:password@localhost/squirrelmail".
  *
- * $Horde: kronolith/scripts/import_squirrelmail_calendar.php,v 1.1.2.3 2009/01/06 15:24:50 jan Exp $
+ * $Horde: kronolith/scripts/import_squirrelmail_calendar.php,v 1.1.2.3 2009-01-06 15:24:50 jan Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ingo/script.php,v 1.33.6.7 2009/01/06 15:24:34 jan Exp $
+ * $Horde: ingo/script.php,v 1.33.6.7 2009-01-06 15:24:34 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

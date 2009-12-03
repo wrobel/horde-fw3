@@ -17,7 +17,7 @@
  * http://daniel.holba.ch/ubuntu/ic/ when not available in
  * tango-icon-theme.
  *
- * $Horde: horde/themes/tango-blue/info.php,v 1.3.2.2 2008/01/10 04:46:37 chuck Exp $
+ * $Horde: horde/themes/tango-blue/info.php,v 1.3.2.2 2008-01-10 04:46:37 chuck Exp $
  *
  * @author xconspirisist <contact@xconspirisist.co.uk>
  * @author roti@al.pmmf.hu

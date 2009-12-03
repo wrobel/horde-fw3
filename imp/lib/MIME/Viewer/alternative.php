@@ -3,7 +3,7 @@
  * The IMP_MIME_Viewer_alternative class renders out messages from
  * multipart/alternative content types (RFC 2046 [5.1.4]).
  *
- * $Horde: imp/lib/MIME/Viewer/alternative.php,v 1.45.10.11 2009/01/06 15:24:09 jan Exp $
+ * $Horde: imp/lib/MIME/Viewer/alternative.php,v 1.45.10.11 2009-01-06 15:24:09 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

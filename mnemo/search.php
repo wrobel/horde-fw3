@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: mnemo/search.php,v 1.9.8.8 2009/01/06 15:24:57 jan Exp $
+ * $Horde: mnemo/search.php,v 1.9.8.8 2009-01-06 15:24:57 jan Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *

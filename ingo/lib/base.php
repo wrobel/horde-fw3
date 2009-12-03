@@ -8,7 +8,7 @@
  *   $ingo_storage - The Ingo_Storage:: object to use for storing rules.
  *   $no_compress  - Controls whether the page should be compressed
  *
- * $Horde: ingo/lib/base.php,v 1.56.10.4 2009/08/12 22:28:12 jan Exp $
+ * $Horde: ingo/lib/base.php,v 1.56.10.4 2009-08-12 22:28:12 jan Exp $
  *
  * See the enclosed file LICENSE for license information (ASL).  If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.

@@ -2,7 +2,7 @@
 /**
  * Effect for creating a polaroid looking image.
  *
- * $Horde: framework/Image/Image/Effect/im/polaroid_image.php,v 1.7.2.2 2009/03/23 18:15:48 mrubinsk Exp $
+ * $Horde: framework/Image/Image/Effect/im/polaroid_image.php,v 1.7.2.2 2009-03-23 18:15:48 mrubinsk Exp $
  *
  * @author  Michael J. Rubinsky <mrubinsk@horde.org>
  * @since   Horde 3.2

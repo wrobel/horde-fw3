@@ -2,7 +2,7 @@
 /**
  * The Kronolith_View_Event:: class provides an API for viewing events.
  *
- * $Horde: kronolith/lib/Views/Event.php,v 1.7.2.3 2008/11/10 05:15:45 chuck Exp $
+ * $Horde: kronolith/lib/Views/Event.php,v 1.7.2.3 2008-11-10 05:15:45 chuck Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @since   Kronolith 2.2

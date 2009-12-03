@@ -4,7 +4,7 @@
  * websites. Meant to be called via a single script tag, therefore this will
  * always return nothing but valid javascript.
  *
- * $Horde: kronolith/lib/Imple/Embed.php,v 1.5.2.6 2009/01/06 15:24:46 jan Exp $
+ * $Horde: kronolith/lib/Imple/Embed.php,v 1.5.2.6 2009-01-06 15:24:46 jan Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

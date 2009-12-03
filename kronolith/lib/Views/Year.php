@@ -5,7 +5,7 @@ require_once KRONOLITH_BASE . '/lib/Day.php';
 /**
  * The Kronolith_View_Year:: class provides an API for viewing years.
  *
- * $Horde: kronolith/lib/Views/Year.php,v 1.12.2.3 2008/09/17 08:52:02 jan Exp $
+ * $Horde: kronolith/lib/Views/Year.php,v 1.12.2.3 2008-09-17 08:52:02 jan Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Jan Schneider <jan@horde.org>

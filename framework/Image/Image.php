@@ -6,7 +6,7 @@ require_once 'Horde/Util.php';
  * This class defines the Horde_Image:: API, and also provides some
  * utility functions, such as generating highlights of a color.
  *
- * $Horde: framework/Image/Image.php,v 1.39.10.20 2009/03/23 18:15:47 mrubinsk Exp $
+ * $Horde: framework/Image/Image.php,v 1.39.10.20 2009-03-23 18:15:47 mrubinsk Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

@@ -2,7 +2,7 @@
 /**
  * Preferences storage implementation using files in a directory
  *
- * $Horde: framework/Prefs/Prefs/file.php,v 1.1.2.4 2009/09/09 20:06:22 wrobel Exp $
+ * $Horde: framework/Prefs/Prefs/file.php,v 1.1.2.4 2009-09-09 20:06:22 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

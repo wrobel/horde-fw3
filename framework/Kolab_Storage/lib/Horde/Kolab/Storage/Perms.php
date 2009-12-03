@@ -2,7 +2,7 @@
 /**
  * @package Kolab_Storage
  *
- * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Perms.php,v 1.2.2.2 2009/01/06 15:23:18 jan Exp $
+ * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Perms.php,v 1.2.2.2 2009-01-06 15:23:18 jan Exp $
  */
 
 /** Basic Horde Permission library. **/
@@ -13,7 +13,7 @@ require_once 'Horde/Perms.php';
  * Permission handling and the IMAP permission system used on the
  * Kolab server.
  *
- * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Perms.php,v 1.2.2.2 2009/01/06 15:23:18 jan Exp $
+ * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Perms.php,v 1.2.2.2 2009-01-06 15:23:18 jan Exp $
  *
  * Copyright 2006-2009 The Horde Project (http://www.horde.org/)
  *

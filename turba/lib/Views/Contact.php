@@ -9,7 +9,7 @@ require_once TURBA_BASE . '/lib/Forms/Contact.php';
 /**
  * The Turba_View_Contact:: class provides an API for viewing events.
  *
- * $Horde: turba/lib/Views/Contact.php,v 1.16.2.2 2008/02/29 04:38:11 chuck Exp $
+ * $Horde: turba/lib/Views/Contact.php,v 1.16.2.2 2008-02-29 04:38:11 chuck Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @since   Turba 2.2

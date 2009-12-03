@@ -2,7 +2,7 @@
 /**
  * A Kolab object of type administrator.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/adminrole.php,v 1.1.2.4 2009/04/25 08:56:33 wrobel Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/adminrole.php,v 1.1.2.4 2009-04-25 08:56:33 wrobel Exp $
  *
  * PHP version 4
  *
@@ -16,7 +16,7 @@
 /**
  * This class provides methods to deal with administrator object types.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/adminrole.php,v 1.1.2.4 2009/04/25 08:56:33 wrobel Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/adminrole.php,v 1.1.2.4 2009-04-25 08:56:33 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

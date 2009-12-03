@@ -7,7 +7,7 @@ require_once 'Horde/Util.php';
  * MIME type for various content, if it provided with different
  * levels of information.
  *
- * $Horde: framework/MIME/MIME/Magic.php,v 1.52.8.18 2009/01/06 15:23:20 jan Exp $
+ * $Horde: framework/MIME/MIME/Magic.php,v 1.52.8.18 2009-01-06 15:23:20 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

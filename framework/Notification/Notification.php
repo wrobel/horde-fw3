@@ -2,7 +2,7 @@
 /**
  * @package Horde_Notification
  *
- * $Horde: framework/Notification/Notification.php,v 1.46.2.17 2009/01/06 15:23:28 jan Exp $
+ * $Horde: framework/Notification/Notification.php,v 1.46.2.17 2009-01-06 15:23:28 jan Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  */

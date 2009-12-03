@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: hermes/admin.php,v 1.29.2.1 2009/01/06 15:23:58 jan Exp $
+ * $Horde: hermes/admin.php,v 1.29.2.1 2009-01-06 15:23:58 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

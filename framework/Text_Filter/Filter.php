@@ -12,7 +12,7 @@ define('TEXT_HTML_NOHTML_NOBREAK', 5);
 /**
  * Text_Filter:: is a parent class for defining stackable text filters.
  *
- * $Horde: framework/Text_Filter/Filter.php,v 1.15.2.13 2009/01/06 15:23:42 jan Exp $
+ * $Horde: framework/Text_Filter/Filter.php,v 1.15.2.13 2009-01-06 15:23:42 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

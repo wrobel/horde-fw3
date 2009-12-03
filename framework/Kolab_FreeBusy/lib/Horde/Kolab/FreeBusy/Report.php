@@ -2,7 +2,7 @@
 /**
  * A view for regenerating the Kolab Free/Busy cache.
  *
- * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Report.php,v 1.1.2.1 2009/04/02 18:37:57 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/lib/Horde/Kolab/FreeBusy/Report.php,v 1.1.2.1 2009-04-02 18:37:57 wrobel Exp $
  *
  * Copyright 2009 Klarälvdalens Datakonsult AB
  *

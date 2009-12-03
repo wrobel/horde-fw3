@@ -3,7 +3,7 @@
  * The Notification_Event:: class provides a container for passing
  * messages to Notification_Listener classes.
  *
- * $Horde: framework/Notification/Notification/Event.php,v 1.5.2.9 2009/01/06 15:23:28 jan Exp $
+ * $Horde: framework/Notification/Notification/Event.php,v 1.5.2.9 2009-01-06 15:23:28 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

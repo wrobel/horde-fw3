@@ -3,7 +3,7 @@
  * Read-only Turba directory driver implementation for favourite
  * recipients. Relies on the contacts/favouriteRecipients API method.
  *
- * $Horde: turba/lib/Driver/favourites.php,v 1.5.2.3 2008/08/03 16:50:06 jan Exp $
+ * $Horde: turba/lib/Driver/favourites.php,v 1.5.2.3 2008-08-03 16:50:06 jan Exp $
  *
  * @author  Jan Schneider <jan@horde.org>
  * @since   Turba 2.1

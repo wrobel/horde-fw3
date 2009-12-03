@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/folders.php,v 2.309.2.47 2009/10/12 22:36:33 slusarz Exp $
+ * $Horde: imp/folders.php,v 2.309.2.47 2009-10-12 22:36:33 slusarz Exp $
  *
  * Copyright 2000-2009 The Horde Project (http://www.horde.org/)
  *

@@ -15,7 +15,7 @@
  * environment, that is we do CRLF conversion even if <nofill> is
  * specified in the text, but we're close at least.
  *
- * $Horde: framework/MIME/MIME/Viewer/enriched.php,v 1.23.10.11 2009/01/06 15:23:21 jan Exp $
+ * $Horde: framework/MIME/MIME/Viewer/enriched.php,v 1.23.10.11 2009-01-06 15:23:21 jan Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *

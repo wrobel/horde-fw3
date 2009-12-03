@@ -26,7 +26,7 @@ define('PERMS_ROOT', -1);
 /**
  * The Perms:: class provides the Horde permissions system.
  *
- * $Horde: framework/Perms/Perms.php,v 1.80.10.22 2009/01/06 15:23:29 jan Exp $
+ * $Horde: framework/Perms/Perms.php,v 1.80.10.22 2009-01-06 15:23:29 jan Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *

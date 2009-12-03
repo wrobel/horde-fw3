@@ -3,7 +3,7 @@
  * This file provides configuration settings for both the freebusy.php
  * and the pfb.php scripts.
  *
- * $Horde: framework/Kolab_FreeBusy/www/Horde/Kolab/FreeBusy/config.php,v 1.4.2.1 2009/03/06 18:12:02 wrobel Exp $
+ * $Horde: framework/Kolab_FreeBusy/www/Horde/Kolab/FreeBusy/config.php,v 1.4.2.1 2009-03-06 18:12:02 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

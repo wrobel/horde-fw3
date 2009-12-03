@@ -2,7 +2,7 @@
 /**
  * The list of international license plate codes.
  *
- * $Horde: framework/NLS/NLS/carsigns.php,v 1.1 2004/09/08 15:18:57 jan Exp $
+ * $Horde: framework/NLS/NLS/carsigns.php,v 1.1 2004-09-08 15:18:57 jan Exp $
  *
  * @package Horde_NLS
  */

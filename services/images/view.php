@@ -2,7 +2,7 @@
 /**
  * Displays an image and allows modifications if required.
  *
- * $Horde: horde/services/images/view.php,v 1.20.10.10 2009/01/06 15:27:29 jan Exp $
+ * $Horde: horde/services/images/view.php,v 1.20.10.10 2009-01-06 15:27:29 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

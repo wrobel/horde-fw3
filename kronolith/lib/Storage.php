@@ -2,7 +2,7 @@
 /**
  * Kronolith_Storage:: defines an API for storing free/busy information.
  *
- * $Horde: kronolith/lib/Storage.php,v 1.2.10.4 2008/06/09 03:28:06 chuck Exp $
+ * $Horde: kronolith/lib/Storage.php,v 1.2.10.4 2008-06-09 03:28:06 chuck Exp $
  *
  * @author  Mike Cochrane <mike@graftonhall.co.nz>
  * @package Kronolith

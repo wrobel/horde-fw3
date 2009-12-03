@@ -1,7 +1,7 @@
 #!/usr/bin/php
 <?php
 /**
- * $Horde: horde/scripts/upgrades/move_history_out_of_datatree.php,v 1.3.2.3 2007/12/20 15:03:04 jan Exp $
+ * $Horde: horde/scripts/upgrades/move_history_out_of_datatree.php,v 1.3.2.3 2007-12-20 15:03:04 jan Exp $
  *
  * This is a script to migrate History information out of the datatree
  * tables and into its own database table.

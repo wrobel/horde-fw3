@@ -3,7 +3,7 @@
  *
  * Provides the javascript to help during the uploading of images in Horde_Form.
  *
- * $Horde: horde/js/src/image.js,v 1.5.2.4 2009/01/06 15:24:43 jan Exp $
+ * $Horde: horde/js/src/image.js,v 1.5.2.4 2009-01-06 15:24:43 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

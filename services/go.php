@@ -9,7 +9,7 @@
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.
  *
- * $Horde: horde/services/go.php,v 1.6.2.21 2009/01/06 15:26:20 jan Exp $
+ * $Horde: horde/services/go.php,v 1.6.2.21 2009-01-06 15:26:20 jan Exp $
  *
  * @author Marko Djukic <marko@oblo.com>
  */

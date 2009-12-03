@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="Big5"?>
-<!-- $Horde: imp/locale/zh_TW/help.xml,v 1.20.6.10 2008/02/12 12:23:22 jan Exp $ -->
+<!-- $Horde: imp/locale/zh_TW/help.xml,v 1.20.6.10 2008-02-12 12:23:22 jan Exp $ -->
 <help>
   <entry id="keyboard-navigation" state="new">
     <title>Keyboard: Navigation</title>

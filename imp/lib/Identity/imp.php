@@ -7,7 +7,7 @@ require_once 'Horde/Identity.php';
  * user might have. Its methods take care of any site-specific
  * restrictions configured in prefs.php and conf.php.
  *
- * $Horde: imp/lib/Identity/imp.php,v 1.44.2.22 2009/01/06 15:24:08 jan Exp $
+ * $Horde: imp/lib/Identity/imp.php,v 1.44.2.22 2009-01-06 15:24:08 jan Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *

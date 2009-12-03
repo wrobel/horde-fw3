@@ -2,7 +2,7 @@
 /**
  * Example hooks for Nag
  *
- * $Horde: nag/config/hooks.php.dist,v 1.1.2.1 2008/11/26 21:25:25 chuck Exp $
+ * $Horde: nag/config/hooks.php.dist,v 1.1.2.1 2008-11-26 21:25:25 chuck Exp $
  */
 
 // if (!function_exists('_nag_hook_format_description')) {

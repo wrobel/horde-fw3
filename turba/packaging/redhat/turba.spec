@@ -1,5 +1,5 @@
 #
-# $Horde: turba/packaging/redhat/turba.spec,v 1.11.10.5 2009/01/06 15:27:52 jan Exp $
+# $Horde: turba/packaging/redhat/turba.spec,v 1.11.10.5 2009-01-06 15:27:52 jan Exp $
 #
 # Copyright 2003-2009 The Horde Project (http://www.horde.org/)
 #

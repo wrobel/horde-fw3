@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Browser/Browser.php,v 1.153.2.70 2009/06/07 10:42:51 jan Exp $
+ * $Horde: framework/Browser/Browser.php,v 1.153.2.70 2009-06-07 10:42:51 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

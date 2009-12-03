@@ -14,7 +14,7 @@ define('INGO_SCRIPT_FILTER_SEEN', 2);
  * The Ingo_Script:: class provides a common abstracted interface to the
  * script-generation subclasses.
  *
- * $Horde: ingo/lib/Script.php,v 1.30.10.10 2008/09/12 17:00:57 jan Exp $
+ * $Horde: ingo/lib/Script.php,v 1.30.10.10 2008-09-12 17:00:57 jan Exp $
  *
  * See the enclosed file LICENSE for license information (ASL).  If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.

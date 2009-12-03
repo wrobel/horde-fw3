@@ -3,7 +3,7 @@
  * The SQL driver attempts to change a user's password stored in an SQL
  * databse and implements the Passwd_Driver API.
  *
- * $Horde: passwd/lib/Driver/sql.php,v 1.24.2.8 2009/01/06 15:25:23 jan Exp $
+ * $Horde: passwd/lib/Driver/sql.php,v 1.24.2.8 2009-01-06 15:25:23 jan Exp $
  *
  * Copyright 2000-2009 The Horde Project (http://www.horde.org/)
  *

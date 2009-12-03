@@ -7,7 +7,7 @@ require_once 'Horde/Kolab.php';
  * Horde Kronolith free/busy driver for the Kolab IMAP Server.
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *
- * $Horde: kronolith/lib/Storage/kolab.php,v 1.4.10.11 2009/01/06 15:24:47 jan Exp $
+ * $Horde: kronolith/lib/Storage/kolab.php,v 1.4.10.11 2009-01-06 15:24:47 jan Exp $
  *
  * See the enclosed file COPYING for license information (GPL). If you
  * not receive such a file, see also http://www.fsf.org/copyleft/gpl.html.

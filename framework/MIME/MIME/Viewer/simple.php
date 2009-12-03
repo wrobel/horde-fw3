@@ -3,7 +3,7 @@
  * The MIME_Viewer_simple class renders out plain text without any
  * modifications.
  *
- * $Horde: framework/MIME/MIME/Viewer/simple.php,v 1.1.6.10 2009/05/29 06:09:03 slusarz Exp $
+ * $Horde: framework/MIME/MIME/Viewer/simple.php,v 1.1.6.10 2009-05-29 06:09:03 slusarz Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

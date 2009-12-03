@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/message.php,v 2.560.4.61 2009/02/17 07:32:12 slusarz Exp $
+ * $Horde: imp/message.php,v 2.560.4.61 2009-02-17 07:32:12 slusarz Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

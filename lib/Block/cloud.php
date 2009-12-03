@@ -3,7 +3,7 @@
 $block_name = _("Tag Cloud");
 
 /**
- * $Horde: horde/lib/Block/cloud.php,v 1.3.2.1 2007/12/20 15:01:35 jan Exp $
+ * $Horde: horde/lib/Block/cloud.php,v 1.3.2.1 2007-12-20 15:01:35 jan Exp $
  *
  * @author Michael J. Rubinsky <mrubinsk@horde.org>
  * @package Horde_Block

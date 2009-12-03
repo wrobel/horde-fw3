@@ -3,7 +3,7 @@
  * The Horde_Editor_tinymce:: class provides an WYSIWYG editor for use
  * in the Horde Framework.
  *
- * $Horde: framework/Editor/Editor/tinymce.php,v 1.15.2.3 2009/01/06 15:23:03 jan Exp $
+ * $Horde: framework/Editor/Editor/tinymce.php,v 1.15.2.3 2009-01-06 15:23:03 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  * Copyright 2005-2007 Ryan Miller <rmiller@horde.org>

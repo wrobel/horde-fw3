@@ -2,7 +2,7 @@
 /**
  * Encapsulate strategies for ability to write output to real file.
  *
- * $Horde: framework/VFS_ISOWriter/ISOWriter/RealOutputStrategy.php,v 1.1.8.11 2009/01/06 15:23:48 jan Exp $
+ * $Horde: framework/VFS_ISOWriter/ISOWriter/RealOutputStrategy.php,v 1.1.8.11 2009-01-06 15:23:48 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

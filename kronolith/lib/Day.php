@@ -2,7 +2,7 @@
 /**
  * The Kronolith_Day:: class provides an API for dealing with days.
  *
- * $Horde: kronolith/lib/Day.php,v 1.26.10.3 2007/12/20 14:12:32 jan Exp $
+ * $Horde: kronolith/lib/Day.php,v 1.26.10.3 2007-12-20 14:12:32 jan Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @since   Kronolith 0.1

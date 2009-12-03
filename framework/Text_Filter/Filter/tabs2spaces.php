@@ -2,7 +2,7 @@
 /**
  * The Text_Filter_tabs2spaces:: converts tabs into spaces.
  *
- * $Horde: framework/Text_Filter/Filter/tabs2spaces.php,v 1.3.10.10 2009/01/06 15:23:42 jan Exp $
+ * $Horde: framework/Text_Filter/Filter/tabs2spaces.php,v 1.3.10.10 2009-01-06 15:23:42 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

@@ -8,7 +8,7 @@
  * US-ASCII (7-bit) text which you suspect (or know) may have invalid or
  * non-printing characters in it.
  *
- * $Horde: framework/Text_Filter/Filter/cleanascii.php,v 1.3.2.8 2009/01/06 15:23:42 jan Exp $
+ * $Horde: framework/Text_Filter/Filter/cleanascii.php,v 1.3.2.8 2009-01-06 15:23:42 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

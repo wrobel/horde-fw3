@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/services/images/pixel.php,v 1.14.10.7 2009/01/06 15:27:29 jan Exp $
+ * $Horde: horde/services/images/pixel.php,v 1.14.10.7 2009-01-06 15:27:29 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

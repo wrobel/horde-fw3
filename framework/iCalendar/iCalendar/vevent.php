@@ -2,7 +2,7 @@
 /**
  * Class representing vEvents.
  *
- * $Horde: framework/iCalendar/iCalendar/vevent.php,v 1.31.10.16 2009/01/06 15:23:53 jan Exp $
+ * $Horde: framework/iCalendar/iCalendar/vevent.php,v 1.31.10.16 2009-01-06 15:23:53 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

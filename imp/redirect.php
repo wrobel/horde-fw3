@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/redirect.php,v 1.116.2.28 2009/01/06 15:24:02 jan Exp $
+ * $Horde: imp/redirect.php,v 1.116.2.28 2009-01-06 15:24:02 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

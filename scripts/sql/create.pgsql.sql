@@ -1,4 +1,4 @@
--- $Horde: horde/scripts/sql/create.pgsql.sql,v 1.1.10.24 2009/06/10 16:45:28 jan Exp $
+-- $Horde: horde/scripts/sql/create.pgsql.sql,v 1.1.10.24 2009-06-10 16:45:28 jan Exp $
 --
 -- Uncomment the ALTER line below and change the password.  Then run as:
 --

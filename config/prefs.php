@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/config/prefs.php.dist,v 1.85.2.11 2008/05/31 07:45:43 jan Exp $
+ * $Horde: horde/config/prefs.php.dist,v 1.85.2.11 2008-05-31 07:45:43 jan Exp $
  *
  * Preferences Information
  * =======================

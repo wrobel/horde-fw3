@@ -3,7 +3,7 @@
 require_once dirname(__FILE__) . '/KolabTestBase.php';
 
 /**
- * $Horde: turba/lib/tests/KolabTest.php,v 1.1.2.2 2008/11/07 15:03:33 selsky Exp $
+ * $Horde: turba/lib/tests/KolabTest.php,v 1.1.2.2 2008-11-07 15:03:33 selsky Exp $
  *
  * @author  Jason M. Felice <jason.m.felice@gmail.com>
  * @package Turba

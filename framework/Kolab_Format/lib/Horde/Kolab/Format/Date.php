@@ -2,7 +2,7 @@
 /**
  * Helper functions to handle format conversions.
  *
- * $Horde: framework/Kolab_Format/lib/Horde/Kolab/Format/Date.php,v 1.2.2.5 2009/01/06 15:23:13 jan Exp $
+ * $Horde: framework/Kolab_Format/lib/Horde/Kolab/Format/Date.php,v 1.2.2.5 2009-01-06 15:23:13 jan Exp $
  *
  * @package Kolab_Format
  */
@@ -10,7 +10,7 @@
 /**
  * Kolab date handling functions. Based upon Kolab.php from Stuart Binge.
  *
- * $Horde: framework/Kolab_Format/lib/Horde/Kolab/Format/Date.php,v 1.2.2.5 2009/01/06 15:23:13 jan Exp $
+ * $Horde: framework/Kolab_Format/lib/Horde/Kolab/Format/Date.php,v 1.2.2.5 2009-01-06 15:23:13 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

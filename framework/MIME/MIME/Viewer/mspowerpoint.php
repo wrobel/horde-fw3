@@ -3,7 +3,7 @@
  * The MIME_Viewer_mspowerpoint class renders out Microsoft Powerpoint
  * documents in HTML format by using the xlHtml package.
  *
- * $Horde: framework/MIME/MIME/Viewer/mspowerpoint.php,v 1.13.10.12 2009/01/06 15:23:21 jan Exp $
+ * $Horde: framework/MIME/MIME/Viewer/mspowerpoint.php,v 1.13.10.12 2009-01-06 15:23:21 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

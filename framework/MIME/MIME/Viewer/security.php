@@ -4,7 +4,7 @@
  * MIME_Viewer for secure multipart messages (defined by RFC 1847). This
  * class handles multipart/signed and multipart/encrypted data.
  *
- * $Horde: framework/MIME/MIME/Viewer/security.php,v 1.6.10.9 2009/01/06 15:23:21 jan Exp $
+ * $Horde: framework/MIME/MIME/Viewer/security.php,v 1.6.10.9 2009-01-06 15:23:21 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

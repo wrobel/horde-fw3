@@ -5,7 +5,7 @@
  * This file should be included via Horde::addScriptFile().
  * Requires prototypejs 1.6.0.2+
  *
- * $Horde: imp/js/src/popup.js,v 1.2.2.7 2008/06/27 21:07:37 slusarz Exp $
+ * $Horde: imp/js/src/popup.js,v 1.2.2.7 2008-06-27 21:07:37 slusarz Exp $
  *
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.

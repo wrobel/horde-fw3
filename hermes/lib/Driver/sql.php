@@ -2,7 +2,7 @@
 /**
  * Hermes storage implementation for PHP's PEAR database abstraction layer.
  *
- * $Horde: hermes/lib/Driver/sql.php,v 1.67 2008/05/26 01:31:16 chuck Exp $
+ * $Horde: hermes/lib/Driver/sql.php,v 1.67 2008-05-26 01:31:16 chuck Exp $
  *
  * Required values for $params:<pre>
  *      'phptype'       The database type (e.g. 'pgsql', 'mysql', etc.).</pre>

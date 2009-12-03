@@ -4,7 +4,7 @@ require_once 'Horde/Maintenance.php';
 require_once $GLOBALS['registry']->get('fileroot', 'kronolith') . '/lib/base.php';
 
 /**
- * $Horde: kronolith/lib/Maintenance/kronolith.php,v 1.1.2.2 2009/01/06 15:24:46 jan Exp $
+ * $Horde: kronolith/lib/Maintenance/kronolith.php,v 1.1.2.2 2009-01-06 15:24:46 jan Exp $
  *
  * The Maintenance_Kronolith class defines the maintenance operations run upon
  * login to Kronolith

@@ -40,7 +40,7 @@ define('IMP_SEARCH_SHOW_SUBSCRIBED_ONLY', 1);
  *     'vinbox_id' => string (The Virtual Inbox query ID)
  * );
  *
- * $Horde: imp/lib/Search.php,v 1.37.10.47 2009/01/06 15:24:04 jan Exp $
+ * $Horde: imp/lib/Search.php,v 1.37.10.47 2009-01-06 15:24:04 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

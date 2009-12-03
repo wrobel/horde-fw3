@@ -3,7 +3,7 @@
  * The abstract Horde_Block:: class represents a single block within
  * the Blocks framework.
  *
- * $Horde: framework/Block/Block.php,v 1.33.10.11 2009/06/20 23:16:42 jan Exp $
+ * $Horde: framework/Block/Block.php,v 1.33.10.11 2009-06-20 23:16:42 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

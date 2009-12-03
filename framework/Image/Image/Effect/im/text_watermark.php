@@ -2,7 +2,7 @@
 /**
  * Image effect for watermarking images with text for the im driver..
  *
- * $Horde: framework/Image/Image/Effect/im/text_watermark.php,v 1.3.2.1 2007/12/20 13:49:11 jan Exp $
+ * $Horde: framework/Image/Image/Effect/im/text_watermark.php,v 1.3.2.1 2007-12-20 13:49:11 jan Exp $
  *
  * @author  Michael J. Rubinsky <mrubinsk@horde.org>
  * @since   Horde 3.2

@@ -7,7 +7,7 @@ require_once 'Horde/IMAP/Search.php';
  * provide necessary bug fixes to ensure backwards compatibility with Horde
  * 3.0.
  *
- * $Horde: ingo/lib/IMAP/Search.php,v 1.1.2.7 2009/01/06 15:24:36 jan Exp $
+ * $Horde: ingo/lib/IMAP/Search.php,v 1.1.2.7 2009-01-06 15:24:36 jan Exp $
  *
  * Copyright 2006-2009 The Horde Project (http://www.horde.org/)
  *

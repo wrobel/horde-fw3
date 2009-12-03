@@ -13,7 +13,7 @@ require_once 'Net/IMSP/Auth.php';
  *   'server'       The hostname of the IMSP server.
  *   'port'         The port of the IMSP server.</pre>
  *
- * $Horde: framework/Net_IMSP/IMSP/Options.php,v 1.3.2.20 2009/01/06 15:23:27 jan Exp $
+ * $Horde: framework/Net_IMSP/IMSP/Options.php,v 1.3.2.20 2009-01-06 15:23:27 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

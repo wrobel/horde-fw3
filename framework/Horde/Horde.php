@@ -7,7 +7,7 @@
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.
  *
- * $Horde: framework/Horde/Horde.php,v 1.489.2.116 2009/08/20 21:43:00 jan Exp $
+ * $Horde: framework/Horde/Horde.php,v 1.489.2.116 2009-08-20 21:43:00 jan Exp $
  */
 
 /** Log */

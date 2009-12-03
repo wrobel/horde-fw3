@@ -9,7 +9,7 @@
  *   $session_control - Sets special session control limitations
  *   $no_compress     - Controls whether the page should be compressed
  *
- * $Horde: kronolith/lib/base.php,v 1.117.8.17 2009/08/12 22:28:12 jan Exp $
+ * $Horde: kronolith/lib/base.php,v 1.117.8.17 2009-08-12 22:28:12 jan Exp $
  *
  * @package Kronolith
  */

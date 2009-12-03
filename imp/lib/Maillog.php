@@ -6,7 +6,7 @@ require_once 'Horde/History.php';
  * The IMP_Maillog:: class contains all functions related to handling
  * logging of responses to individual e-mail messages.
  *
- * $Horde: imp/lib/Maillog.php,v 1.15.10.16 2009/01/06 15:24:04 jan Exp $
+ * $Horde: imp/lib/Maillog.php,v 1.15.10.16 2009-01-06 15:24:04 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

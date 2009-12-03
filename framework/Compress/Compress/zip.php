@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Compress/Compress/zip.php,v 1.11.12.22 2009/01/06 15:22:59 jan Exp $
+ * $Horde: framework/Compress/Compress/zip.php,v 1.11.12.22 2009-01-06 15:22:59 jan Exp $
  *
  * The ZIP compression code is partially based on code from:
  *   Eric Mueller <eric@themepark.com>

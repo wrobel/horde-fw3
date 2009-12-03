@@ -6,7 +6,7 @@ include_once 'Horde/NLS.php';
  * The Horde_UI_VarRenderer:: class provides base functionality for
  * other Horde UI elements.
  *
- * $Horde: framework/UI/UI/VarRenderer.php,v 1.12.10.14 2009/01/06 15:23:45 jan Exp $
+ * $Horde: framework/UI/UI/VarRenderer.php,v 1.12.10.14 2009-01-06 15:23:45 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

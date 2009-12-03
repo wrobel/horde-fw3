@@ -2,7 +2,7 @@
 /**
  * The Ingo_Script_sieve class represents a Sieve Script.
  *
- * $Horde: ingo/lib/Script/sieve.php,v 1.63.10.38 2009/08/18 22:35:03 jan Exp $
+ * $Horde: ingo/lib/Script/sieve.php,v 1.63.10.38 2009-08-18 22:35:03 jan Exp $
  *
  * See the enclosed file LICENSE for license information (ASL).  If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.

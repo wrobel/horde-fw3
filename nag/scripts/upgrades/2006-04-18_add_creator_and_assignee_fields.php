@@ -1,7 +1,7 @@
 #!/usr/bin/php
 <?php
 /**
- * $Horde: nag/scripts/upgrades/2006-04-18_add_creator_and_assignee_fields.php,v 1.8.2.3 2009/01/06 15:25:09 jan Exp $
+ * $Horde: nag/scripts/upgrades/2006-04-18_add_creator_and_assignee_fields.php,v 1.8.2.3 2009-01-06 15:25:09 jan Exp $
  *
  * This script adds and fills the creator and assignee fields in the Nag task
  * table.

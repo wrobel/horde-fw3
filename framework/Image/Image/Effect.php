@@ -3,7 +3,7 @@
  * The Horde_Image_Effect parent class defines a general API for
  * ways to apply effects to Horde_Image objects.
  *
- * $Horde: framework/Image/Image/Effect.php,v 1.5.2.1 2007/12/20 13:49:10 jan Exp $
+ * $Horde: framework/Image/Image/Effect.php,v 1.5.2.1 2007-12-20 13:49:10 jan Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Michael J. Rubinsky <mrubinsk@horde.org>

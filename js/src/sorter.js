@@ -4,7 +4,7 @@
  * Provides the javascript class to accompany the Horde_Form sorter
  * field.
  *
- * $Horde: horde/js/src/sorter.js,v 1.4.2.3 2009/01/06 15:24:43 jan Exp $
+ * $Horde: horde/js/src/sorter.js,v 1.4.2.3 2009-01-06 15:24:43 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

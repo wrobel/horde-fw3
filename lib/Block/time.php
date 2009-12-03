@@ -3,7 +3,7 @@
 $block_name = _("Current Time");
 
 /**
- * $Horde: horde/lib/Block/time.php,v 1.16.6.1 2007/12/20 15:01:36 jan Exp $
+ * $Horde: horde/lib/Block/time.php,v 1.16.6.1 2007-12-20 15:01:36 jan Exp $
  *
  * @package Horde_Block
  */

@@ -39,7 +39,7 @@
  *                           http://wiki.horde.org/Doc/Dev/FormTypes.
  * </pre>
  *
- * $Horde: turba/config/attributes.php.dist,v 1.36.6.18 2008/11/12 06:29:26 wrobel Exp $
+ * $Horde: turba/config/attributes.php.dist,v 1.36.6.18 2008-11-12 06:29:26 wrobel Exp $
  */
 
 /* Personal stuff. */

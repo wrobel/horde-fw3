@@ -4,7 +4,7 @@
  * Horde_Cipher_BlockMode using the Cipher Block Chaining method of
  * encrypting blocks of data.
  *
- * $Horde: framework/Cipher/Cipher/BlockMode/cbc.php,v 1.7.12.9 2009/01/06 15:22:58 jan Exp $
+ * $Horde: framework/Cipher/Cipher/BlockMode/cbc.php,v 1.7.12.9 2009-01-06 15:22:58 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

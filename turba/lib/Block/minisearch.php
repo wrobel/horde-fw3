@@ -6,7 +6,7 @@ $block_name = _("Contact Search");
  * This is an implementation of the Horde_Block API that allows searching of
  * address books from the portal.
  *
- * $Horde: turba/lib/Block/minisearch.php,v 1.17.2.7 2008/05/20 12:21:13 selsky Exp $
+ * $Horde: turba/lib/Block/minisearch.php,v 1.17.2.7 2008-05-20 12:21:13 selsky Exp $
  *
  * @package Horde_Block
  */

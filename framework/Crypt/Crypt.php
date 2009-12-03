@@ -3,7 +3,7 @@
  * The Horde_Crypt:: class provides an API for various cryptographic
  * systems used by Horde applications.
  *
- * $Horde: framework/Crypt/Crypt.php,v 1.27.10.16 2009/01/06 15:23:00 jan Exp $
+ * $Horde: framework/Crypt/Crypt.php,v 1.27.10.16 2009-01-06 15:23:00 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ingo/lib/Script/maildrop.php,v 1.7.2.15 2009/09/15 21:09:26 jan Exp $
+ * $Horde: ingo/lib/Script/maildrop.php,v 1.7.2.15 2009-09-15 21:09:26 jan Exp $
  *
  * Copyright 2005-2007 Matt Weyland <mathias@weyland.ch>
  *

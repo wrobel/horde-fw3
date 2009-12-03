@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/acl.php,v 1.23.10.15 2009/01/06 15:24:01 jan Exp $
+ * $Horde: imp/acl.php,v 1.23.10.15 2009-01-06 15:24:01 jan Exp $
  *
  * Copyright 2000-2009 The Horde Project (http://www.horde.org/)
  *

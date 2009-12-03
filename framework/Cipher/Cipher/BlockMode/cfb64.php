@@ -6,7 +6,7 @@
  * This can be used to encrypt any length string and the encrypted
  * version will be the same length.
  *
- * $Horde: framework/Cipher/Cipher/BlockMode/cfb64.php,v 1.7.12.9 2009/01/06 15:22:58 jan Exp $
+ * $Horde: framework/Cipher/Cipher/BlockMode/cfb64.php,v 1.7.12.9 2009-01-06 15:22:58 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

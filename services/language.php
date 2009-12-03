@@ -2,7 +2,7 @@
 /**
  * Script to set the new language.
  *
- * $Horde: horde/services/language.php,v 1.5.12.8 2009/01/06 15:26:20 jan Exp $
+ * $Horde: horde/services/language.php,v 1.5.12.8 2009-01-06 15:26:20 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

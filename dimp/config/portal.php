@@ -15,7 +15,7 @@
  *                'tag' => A tag name to add to the template array. Allows
  *                         the use of <if:block.tag> in custom template files.
  *
- * $Horde: dimp/config/portal.php.dist,v 1.6 2007/09/04 21:31:14 jan Exp $
+ * $Horde: dimp/config/portal.php.dist,v 1.6 2007-09-04 21:31:14 jan Exp $
  */
 
 require_once 'Horde/Block.php';

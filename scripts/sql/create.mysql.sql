@@ -1,4 +1,4 @@
--- $Horde: horde/scripts/sql/create.mysql.sql,v 1.4.6.25 2009/07/07 03:01:40 mrubinsk Exp $
+-- $Horde: horde/scripts/sql/create.mysql.sql,v 1.4.6.25 2009-07-07 03:01:40 mrubinsk Exp $
 --
 -- If you are installing Horde for the first time, you can simply
 -- direct this file to mysql as STDIN:

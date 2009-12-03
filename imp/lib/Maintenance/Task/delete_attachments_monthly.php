@@ -2,7 +2,7 @@
 /**
  * Maintenance module that deletes old linked attachments.
  *
- * $Horde: imp/lib/Maintenance/Task/delete_attachments_monthly.php,v 1.4.10.6 2007/12/20 13:59:28 jan Exp $
+ * $Horde: imp/lib/Maintenance/Task/delete_attachments_monthly.php,v 1.4.10.6 2007-12-20 13:59:28 jan Exp $
  *
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.

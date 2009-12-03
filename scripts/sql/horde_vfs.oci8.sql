@@ -1,4 +1,4 @@
--- $Horde: horde/scripts/sql/horde_vfs.oci8.sql,v 1.3.10.2 2009/10/19 10:54:33 jan Exp $
+-- $Horde: horde/scripts/sql/horde_vfs.oci8.sql,v 1.3.10.2 2009-10-19 10:54:33 jan Exp $
 
 CREATE TABLE horde_vfs (
     vfs_id        NUMBER(16) NOT NULL,

@@ -3,7 +3,7 @@
 require_once dirname(__FILE__) . '/TestBase.php';
 
 /**
- * $Horde: turba/lib/tests/BrowsePageTest.php,v 1.3.2.1 2007/12/20 14:34:31 jan Exp $
+ * $Horde: turba/lib/tests/BrowsePageTest.php,v 1.3.2.1 2007-12-20 14:34:31 jan Exp $
  *
  * @author  Jason M. Felice <jason.m.felice@gmail.com>
  * @package Turba

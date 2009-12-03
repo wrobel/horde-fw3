@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ingo/config/prefs.php.dist,v 1.30.10.3 2008/06/15 21:14:38 chuck Exp $
+ * $Horde: ingo/config/prefs.php.dist,v 1.30.10.3 2008-06-15 21:14:38 chuck Exp $
  *
  * See horde/config/prefs.php for documentation on the structure of this file.
  */

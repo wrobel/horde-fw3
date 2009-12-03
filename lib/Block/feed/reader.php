@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/lib/Block/feed/reader.php,v 1.1.2.2 2008/09/08 16:22:09 chuck Exp $
+ * $Horde: horde/lib/Block/feed/reader.php,v 1.1.2.2 2008-09-08 16:22:09 chuck Exp $
  *
  * PHP 5 specific code for Horde_Block_Horde_feed segregated in a file
  * that isn't included by default to avoid fatal errors on PHP 4.

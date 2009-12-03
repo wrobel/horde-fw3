@@ -7,7 +7,7 @@
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.
  *
- * $Horde: framework/Alarm/Alarm/sql.php,v 1.11.2.6 2009/02/25 05:35:41 chuck Exp $
+ * $Horde: framework/Alarm/Alarm/sql.php,v 1.11.2.6 2009-02-25 05:35:41 chuck Exp $
  */
 
 /**

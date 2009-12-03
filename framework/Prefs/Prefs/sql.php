@@ -45,7 +45,7 @@ require_once 'Horde/String.php';
  * The table structure for the Prefs system is in
  * scripts/sql/horde_prefs.sql.
  *
- * $Horde: framework/Prefs/Prefs/sql.php,v 1.91.10.26 2009/02/25 05:35:43 chuck Exp $
+ * $Horde: framework/Prefs/Prefs/sql.php,v 1.91.10.26 2009-02-25 05:35:43 chuck Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

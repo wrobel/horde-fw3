@@ -2,7 +2,7 @@
 /**
  * IMAP_Thread provides functions for working with imap_thread() output.
  *
- * $Horde: framework/IMAP/IMAP/Thread.php,v 1.4.10.19 2009/01/06 15:23:11 jan Exp $
+ * $Horde: framework/IMAP/IMAP/Thread.php,v 1.4.10.19 2009-01-06 15:23:11 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

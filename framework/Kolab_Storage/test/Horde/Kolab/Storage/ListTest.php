@@ -2,7 +2,7 @@
 /**
  * Test the Kolab list handler.
  *
- * $Horde: framework/Kolab_Storage/test/Horde/Kolab/Storage/ListTest.php,v 1.2.2.6 2009/01/06 15:23:18 jan Exp $
+ * $Horde: framework/Kolab_Storage/test/Horde/Kolab/Storage/ListTest.php,v 1.2.2.6 2009-01-06 15:23:18 jan Exp $
  *
  * @package Kolab_Storage
  */
@@ -18,7 +18,7 @@ require_once 'Horde/Kolab/Storage/List.php';
 /**
  * Test the Kolab list handler.
  *
- * $Horde: framework/Kolab_Storage/test/Horde/Kolab/Storage/ListTest.php,v 1.2.2.6 2009/01/06 15:23:18 jan Exp $
+ * $Horde: framework/Kolab_Storage/test/Horde/Kolab/Storage/ListTest.php,v 1.2.2.6 2009-01-06 15:23:18 jan Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

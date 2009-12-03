@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- $Horde: hermes/locale/es_ES/help.xml,v 1.2.2.1 2009/02/21 11:16:29 jan Exp $ -->
+<!-- $Horde: hermes/locale/es_ES/help.xml,v 1.2.2.1 2009-02-21 11:16:29 jan Exp $ -->
 <help>
 <entry id="hermes-job-types" state="unknown">
 	<title>Tipos de trabajos de Hermes</title>

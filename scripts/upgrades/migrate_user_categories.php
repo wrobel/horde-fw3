@@ -1,7 +1,7 @@
 #!/usr/bin/php -q
 <?php
 /**
- * $Horde: horde/scripts/upgrades/migrate_user_categories.php,v 1.1.2.3 2008/04/08 14:29:47 chuck Exp $
+ * $Horde: horde/scripts/upgrades/migrate_user_categories.php,v 1.1.2.3 2008-04-08 14:29:47 chuck Exp $
  *
  * A script to update users preferences to combine their categories
  * and category colors from Genie, Kronolith, Mnemo, and Nag into the

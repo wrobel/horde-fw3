@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: kronolith/lib/Imple/ContactAutoCompleter.php,v 1.3.2.4 2009/03/30 17:24:03 jan Exp $
+ * $Horde: kronolith/lib/Imple/ContactAutoCompleter.php,v 1.3.2.4 2009-03-30 17:24:03 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

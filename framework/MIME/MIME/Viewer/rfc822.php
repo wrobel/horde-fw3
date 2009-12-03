@@ -3,7 +3,7 @@
  * The MIME_Viewer_rfc822 class renders out messages from the
  * message/rfc822 content type.
  *
- * $Horde: framework/MIME/MIME/Viewer/rfc822.php,v 1.8.10.15 2009/01/06 15:23:21 jan Exp $
+ * $Horde: framework/MIME/MIME/Viewer/rfc822.php,v 1.8.10.15 2009-01-06 15:23:21 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

@@ -6,7 +6,7 @@ require_once 'Horde/MIME/Viewer/html.php';
  * The MIME_Viewer_html class renders out HTML text with an effort to
  * remove potentially malicious code.
  *
- * $Horde: imp/lib/MIME/Viewer/html.php,v 1.75.2.40 2009/07/07 22:04:51 slusarz Exp $
+ * $Horde: imp/lib/MIME/Viewer/html.php,v 1.75.2.40 2009-07-07 22:04:51 slusarz Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

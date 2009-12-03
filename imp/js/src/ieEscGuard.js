@@ -5,7 +5,7 @@
  *
  * This code is only relevant for IE.
  *
- * $Horde: imp/js/src/ieEscGuard.js,v 1.6.2.1 2007/12/20 13:59:22 jan Exp $
+ * $Horde: imp/js/src/ieEscGuard.js,v 1.6.2.1 2007-12-20 13:59:22 jan Exp $
  *
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.

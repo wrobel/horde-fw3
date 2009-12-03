@@ -13,7 +13,7 @@ require_once 'Horde/String.php';
 /**
  * The Horde_SpellChecker:: class provides a unified spellchecker API.
  *
- * $Horde: framework/SpellChecker/SpellChecker.php,v 1.12.2.5 2009/01/06 15:23:37 jan Exp $
+ * $Horde: framework/SpellChecker/SpellChecker.php,v 1.12.2.5 2009-01-06 15:23:37 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

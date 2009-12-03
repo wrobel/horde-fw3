@@ -4,7 +4,7 @@
  * various directory search drivers.  It includes functions for searching,
  * adding, removing, and modifying directory entries.
  *
- * $Horde: turba/lib/Driver/share.php,v 1.11.2.7 2009/10/07 16:16:38 mrubinsk Exp $
+ * $Horde: turba/lib/Driver/share.php,v 1.11.2.7 2009-10-07 16:16:38 mrubinsk Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Jon Parise <jon@csh.rit.edu>

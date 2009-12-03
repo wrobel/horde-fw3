@@ -7,7 +7,7 @@
  *             opened from a page other than the base DIMP page.
  *   TODO
  *
- * $Horde: dimp/compose.php,v 1.97.2.21 2009/01/06 15:22:36 jan Exp $
+ * $Horde: dimp/compose.php,v 1.97.2.21 2009-01-06 15:22:36 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

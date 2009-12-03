@@ -7,7 +7,7 @@
  *
  * By default, shows statistics for all servers.
  *
- * $Horde: framework/Memcache/scripts/Horde/Memcache/stats.php,v 1.1.2.3 2009/01/06 15:23:24 jan Exp $
+ * $Horde: framework/Memcache/scripts/Horde/Memcache/stats.php,v 1.1.2.3 2009-01-06 15:23:24 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

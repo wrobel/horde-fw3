@@ -1,7 +1,7 @@
 /**
  * Provides the javascript for the fetchmailprefs.php script.
  *
- * $Horde: imp/js/src/fetchmailprefs.js,v 1.3.2.3 2008/01/11 18:07:00 slusarz Exp $
+ * $Horde: imp/js/src/fetchmailprefs.js,v 1.3.2.3 2008-01-11 18:07:00 slusarz Exp $
  *
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.

@@ -1,7 +1,7 @@
 #!/usr/bin/php
 <?php
 /**
- * $Horde: framework/iCalendar/docs/examples/parser.php,v 1.1.2.5 2007/12/20 13:50:27 jan Exp $
+ * $Horde: framework/iCalendar/docs/examples/parser.php,v 1.1.2.5 2007-12-20 13:50:27 jan Exp $
  *
  * Takes a filename on the command line and parses it, displaying what it
  * finds. Intended for use in debugging the iCalendar parser's behavior with

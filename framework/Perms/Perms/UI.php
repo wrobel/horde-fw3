@@ -3,7 +3,7 @@
  * The Perms_UI:: class provides UI methods for the Horde permissions
  * system.
  *
- * $Horde: framework/Perms/Perms/UI.php,v 1.27.2.23 2009/01/06 15:23:30 jan Exp $
+ * $Horde: framework/Perms/Perms/UI.php,v 1.27.2.23 2009-01-06 15:23:30 jan Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *

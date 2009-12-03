@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/test.php,v 1.122.6.31 2009/05/05 15:27:28 selsky Exp $
+ * $Horde: horde/test.php,v 1.122.6.31 2009-05-05 15:27:28 selsky Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

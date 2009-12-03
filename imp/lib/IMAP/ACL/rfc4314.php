@@ -6,7 +6,7 @@ require_once 'Horde/IMAP/ACL/rfc4314.php';
  * IMP_IMAP_ACL_rfc4314:: class extends the IMAP_ACL_rfc4314 class in
  * order to ensure backwards compatibility with Horde 3.0.
  *
- * $Horde: imp/lib/IMAP/ACL/rfc4314.php,v 1.5.2.3 2009/01/06 15:24:07 jan Exp $
+ * $Horde: imp/lib/IMAP/ACL/rfc4314.php,v 1.5.2.3 2009-01-06 15:24:07 jan Exp $
  *
  * Copyright 2006-2009 The Horde Project (http://www.horde.org/)
  *

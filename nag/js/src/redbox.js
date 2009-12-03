@@ -1,7 +1,7 @@
 /**
  * Redbox.js
  *
- * $Horde: nag/js/src/redbox.js,v 1.1.2.4 2008/02/06 10:08:45 slusarz Exp $
+ * $Horde: nag/js/src/redbox.js,v 1.1.2.4 2008-02-06 10:08:45 slusarz Exp $
  *
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.

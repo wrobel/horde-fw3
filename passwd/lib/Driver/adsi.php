@@ -30,7 +30,7 @@
  * Backend parameters:
  * target = Target Windows machine/domain name (Required)
  *
- * $Horde: passwd/lib/Driver/adsi.php,v 1.4.2.5 2009/01/06 15:25:23 jan Exp $
+ * $Horde: passwd/lib/Driver/adsi.php,v 1.4.2.5 2009-01-06 15:25:23 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

@@ -3,7 +3,7 @@
  * The base class representing Kolab objects stored in the server
  * database.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object.php,v 1.2.2.9 2009/04/25 08:56:34 wrobel Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object.php,v 1.2.2.9 2009-04-25 08:56:34 wrobel Exp $
  *
  * PHP version 4
  *
@@ -73,7 +73,7 @@ define('KOLAB_UT_RESOURCE',           3);
  * This class provides methods to deal with Kolab objects stored in
  * the Kolab db.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object.php,v 1.2.2.9 2009/04/25 08:56:34 wrobel Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object.php,v 1.2.2.9 2009-04-25 08:56:34 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

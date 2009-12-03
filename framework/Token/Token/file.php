@@ -7,7 +7,7 @@
  *   'timeout'    The period (in seconds) after which an id is purged.
  *                Defaults to 86400 (i.e. 24 hours).</pre>
  *
- * $Horde: framework/Token/Token/file.php,v 1.19.6.11 2009/01/06 15:23:44 jan Exp $
+ * $Horde: framework/Token/Token/file.php,v 1.19.6.11 2009-01-06 15:23:44 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

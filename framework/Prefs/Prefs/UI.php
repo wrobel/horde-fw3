@@ -3,7 +3,7 @@
  * Class for auto-generating the preferences user interface and
  * processing the forms.
  *
- * $Horde: framework/Prefs/Prefs/UI.php,v 1.63.2.25 2009/07/11 23:35:26 chuck Exp $
+ * $Horde: framework/Prefs/Prefs/UI.php,v 1.63.2.25 2009-07-11 23:35:26 chuck Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *

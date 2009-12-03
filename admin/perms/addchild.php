@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/admin/perms/addchild.php,v 1.27.2.9 2009/01/06 15:22:10 jan Exp $
+ * $Horde: horde/admin/perms/addchild.php,v 1.27.2.9 2009-01-06 15:22:10 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

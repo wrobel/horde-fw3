@@ -2,7 +2,7 @@
 /**
  * The Horde_Compress_gzip class allows gzip files to be read.
  *
- * $Horde: framework/Compress/Compress/gzip.php,v 1.7.12.13 2009/01/06 15:22:59 jan Exp $
+ * $Horde: framework/Compress/Compress/gzip.php,v 1.7.12.13 2009-01-06 15:22:59 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

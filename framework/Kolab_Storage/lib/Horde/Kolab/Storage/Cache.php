@@ -2,7 +2,7 @@
 /**
  * @package Kolab_Storage
  *
- * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Cache.php,v 1.2.2.4 2009/01/06 15:23:18 jan Exp $
+ * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Cache.php,v 1.2.2.4 2009-01-06 15:23:18 jan Exp $
  */
 
 /** We need the Horde Cache system for caching */
@@ -12,7 +12,7 @@ require_once 'Horde/Cache.php';
  * The Kolab_Cache class provides a cache for the Kolab
  * storage for groupware objects
  *
- * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Cache.php,v 1.2.2.4 2009/01/06 15:23:18 jan Exp $
+ * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Cache.php,v 1.2.2.4 2009-01-06 15:23:18 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

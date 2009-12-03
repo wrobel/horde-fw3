@@ -2,7 +2,7 @@
 /**
  * Maintenance task for upgrading contact lists after upgrading to Turba 2.2
  *
- * $Horde: turba/lib/Maintenance/Task/upgradelists.php,v 1.6.2.3 2008/06/09 03:28:08 chuck Exp $
+ * $Horde: turba/lib/Maintenance/Task/upgradelists.php,v 1.6.2.3 2008-06-09 03:28:08 chuck Exp $
  *
  * @author Michael J. Rubinsky <mrubinsk@horde.org>
  * @package Turba

@@ -8,7 +8,7 @@
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.
  *
- * $Horde: horde/js/src/form_sections.js,v 1.6.2.4 2009/05/12 07:12:58 jan Exp $
+ * $Horde: horde/js/src/form_sections.js,v 1.6.2.4 2009-05-12 07:12:58 jan Exp $
  *
  * @author  Marko Djukic <marko@oblo.com>
  * @package Horde_Form

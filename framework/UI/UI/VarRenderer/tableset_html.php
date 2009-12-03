@@ -3,7 +3,7 @@
 require_once 'Horde/UI/VarRenderer/html.php';
 
 /**
- * $Horde: framework/UI/UI/VarRenderer/tableset_html.php,v 1.3.2.3 2008/07/28 17:22:55 chuck Exp $
+ * $Horde: framework/UI/UI/VarRenderer/tableset_html.php,v 1.3.2.3 2008-07-28 17:22:55 chuck Exp $
  *
  * @package Horde_UI
  * @since   Horde 3.1

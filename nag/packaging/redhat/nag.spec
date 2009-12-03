@@ -1,5 +1,5 @@
 #
-# $Horde: nag/packaging/redhat/nag.spec,v 1.4.12.5 2009/01/06 15:25:07 jan Exp $
+# $Horde: nag/packaging/redhat/nag.spec,v 1.4.12.5 2009-01-06 15:25:07 jan Exp $
 #
 # Copyright 2003-2009 The Horde Project (http://www.horde.org/)
 #

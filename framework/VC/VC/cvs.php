@@ -7,7 +7,7 @@ require_once dirname(__FILE__) . '/rcs.php';
  *
  * Copyright 2000-2009 The Horde Project (http://www.horde.org/)
  *
- * $Horde: framework/VC/VC/cvs.php,v 1.32.2.28 2009/01/06 15:23:46 jan Exp $
+ * $Horde: framework/VC/VC/cvs.php,v 1.32.2.28 2009-01-06 15:23:46 jan Exp $
  *
  * @author  Anil Madhavapeddy <anil@recoil.org>
  * @package VC

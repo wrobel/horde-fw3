@@ -11,7 +11,7 @@ require_once 'Net/IMSP.php';
 /**
  * Preference storage implementation for an IMSP server.
  *
- * $Horde: framework/Prefs/Prefs/imsp.php,v 1.1.10.15 2009/01/06 15:23:31 jan Exp $
+ * $Horde: framework/Prefs/Prefs/imsp.php,v 1.1.10.15 2009-01-06 15:23:31 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

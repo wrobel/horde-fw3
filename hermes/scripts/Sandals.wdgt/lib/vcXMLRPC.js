@@ -2,7 +2,7 @@
  * This file is distributed as a component of Sandals.wdgt
  * Sandals is a part of the Hermes application of the Horde Project
  *
- * $Horde: hermes/scripts/Sandals.wdgt/lib/vcXMLRPC.js,v 1.2.2.1 2009/01/06 15:24:00 jan Exp $
+ * $Horde: hermes/scripts/Sandals.wdgt/lib/vcXMLRPC.js,v 1.2.2.1 2009-01-06 15:24:00 jan Exp $
  *
  *    Copyright 2000, 2001, 2002  Virtual Cowboys info@virtualcowboys.nl
  *		

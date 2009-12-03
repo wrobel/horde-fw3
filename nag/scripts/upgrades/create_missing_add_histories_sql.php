@@ -1,7 +1,7 @@
 #!/usr/bin/php
 <?php
 /**
- * $Horde: nag/scripts/upgrades/create_missing_add_histories_sql.php,v 1.8.2.3 2009/01/06 15:25:09 jan Exp $
+ * $Horde: nag/scripts/upgrades/create_missing_add_histories_sql.php,v 1.8.2.3 2009-01-06 15:25:09 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

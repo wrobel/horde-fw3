@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/admin/signup_confirm.php,v 1.1.2.1 2009/06/15 16:01:22 jan Exp $
+ * $Horde: horde/admin/signup_confirm.php,v 1.1.2.1 2009-06-15 16:01:22 jan Exp $
  *
  * Copyright 2009 The Horde Project (http://www.horde.org/)
  *

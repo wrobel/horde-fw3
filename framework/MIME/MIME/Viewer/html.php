@@ -3,7 +3,7 @@
  * The MIME_Viewer_html class renders out HTML text with an effort to
  * remove potentially malicious code.
  *
- * $Horde: framework/MIME/MIME/Viewer/html.php,v 1.14.4.33 2009/03/18 22:40:24 jan Exp $
+ * $Horde: framework/MIME/MIME/Viewer/html.php,v 1.14.4.33 2009-03-18 22:40:24 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

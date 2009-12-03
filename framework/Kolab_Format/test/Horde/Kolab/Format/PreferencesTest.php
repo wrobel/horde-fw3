@@ -2,7 +2,7 @@
 /**
  * Test the preferences XML format.
  *
- * $Horde: framework/Kolab_Format/test/Horde/Kolab/Format/PreferencesTest.php,v 1.1.2.3 2009/01/06 15:23:14 jan Exp $
+ * $Horde: framework/Kolab_Format/test/Horde/Kolab/Format/PreferencesTest.php,v 1.1.2.3 2009-01-06 15:23:14 jan Exp $
  *
  * @package Kolab_Format
  */
@@ -45,7 +45,7 @@ class Horde_Kolab_Format_XML_hprefs_dummy extends Horde_Kolab_Format_XML_hprefs
 /**
  * Test the preferences XML format.
  *
- * $Horde: framework/Kolab_Format/test/Horde/Kolab/Format/PreferencesTest.php,v 1.1.2.3 2009/01/06 15:23:14 jan Exp $
+ * $Horde: framework/Kolab_Format/test/Horde/Kolab/Format/PreferencesTest.php,v 1.1.2.3 2009-01-06 15:23:14 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

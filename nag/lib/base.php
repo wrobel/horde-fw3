@@ -2,7 +2,7 @@
 /**
  * Nag base inclusion file.
  *
- * $Horde: nag/lib/base.php,v 1.75.10.8 2009/08/12 22:28:13 jan Exp $
+ * $Horde: nag/lib/base.php,v 1.75.10.8 2009-08-12 22:28:13 jan Exp $
  *
  * This file brings in all of the dependencies that every Nag
  * script will need and sets up objects that all scripts use.

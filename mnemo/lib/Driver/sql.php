@@ -23,7 +23,7 @@
  *
  * The table structure is defined in scripts/drivers/mnemo_memos.sql.
  *
- * $Horde: mnemo/lib/Driver/sql.php,v 1.28.2.20 2009/02/17 18:42:26 chuck Exp $
+ * $Horde: mnemo/lib/Driver/sql.php,v 1.28.2.20 2009-02-17 18:42:26 chuck Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *

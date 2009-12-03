@@ -15,7 +15,7 @@
  *
  * @author Chuck Hagenbuch <chuck@horde.org>
  *
- * $Horde: kronolith/js/src/QuickFinder.js,v 1.3.2.2 2007/12/22 03:50:02 chuck Exp $
+ * $Horde: kronolith/js/src/QuickFinder.js,v 1.3.2.2 2007-12-22 03:50:02 chuck Exp $
  */
 
 var QuickFinder = {

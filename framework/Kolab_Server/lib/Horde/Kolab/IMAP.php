@@ -2,14 +2,14 @@
 /**
  * @package Kolab_Storage
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/IMAP.php,v 1.1.2.2 2009/01/06 15:23:15 jan Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/IMAP.php,v 1.1.2.2 2009-01-06 15:23:15 jan Exp $
  */
 
 /**
  * The Horde_Kolab_IMAP class provides a wrapper around two different Kolab IMAP
  * connection types.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/IMAP.php,v 1.1.2.2 2009/01/06 15:23:15 jan Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/IMAP.php,v 1.1.2.2 2009-01-06 15:23:15 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

@@ -6,7 +6,7 @@ require_once 'Horde/Notification/Listener/status.php';
  * The Notification_Listener_mobile:: class provides functionality for
  * displaying messages from the message stack on mobile devices.
  *
- * $Horde: framework/Notification/Notification/Listener/mobile.php,v 1.8.10.12 2009/01/06 15:23:29 jan Exp $
+ * $Horde: framework/Notification/Notification/Listener/mobile.php,v 1.8.10.12 2009-01-06 15:23:29 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

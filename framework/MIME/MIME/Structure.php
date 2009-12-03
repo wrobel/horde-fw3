@@ -5,7 +5,7 @@ require_once dirname(__FILE__) . '/Part.php';
 require_once dirname(__FILE__) . '/../MIME.php';
 
 /**
- * $Horde: framework/MIME/MIME/Structure.php,v 1.87.10.31 2009/01/06 15:23:20 jan Exp $
+ * $Horde: framework/MIME/MIME/Structure.php,v 1.87.10.31 2009-01-06 15:23:20 jan Exp $
  *
  * The MIME_Structure:: class provides methods for dealing with MIME mail.
  *

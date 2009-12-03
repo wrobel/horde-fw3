@@ -19,7 +19,7 @@ define('TABSZ', LASTCH - FIRSTCH + 1);
  * The pine class attempts to change a user's password on a in a pine password
  * file.
  *
- * $Horde: passwd/lib/Driver/pine.php,v 1.9.2.5 2009/01/06 15:25:23 jan Exp $
+ * $Horde: passwd/lib/Driver/pine.php,v 1.9.2.5 2009-01-06 15:25:23 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

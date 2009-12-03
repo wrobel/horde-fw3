@@ -2,7 +2,7 @@
 /**
  * Test the Kolab session handler.
  *
- * $Horde: framework/Kolab_Server/test/Horde/Kolab/Server/SessionTest.php,v 1.1.2.10 2009/01/14 21:50:10 wrobel Exp $
+ * $Horde: framework/Kolab_Server/test/Horde/Kolab/Server/SessionTest.php,v 1.1.2.10 2009-01-14 21:50:10 wrobel Exp $
  *
  * PHP version 5
  *
@@ -23,7 +23,7 @@ require_once 'Horde/Kolab/Session.php';
 /**
  * Test the Kolab session handler.
  *
- * $Horde: framework/Kolab_Server/test/Horde/Kolab/Server/SessionTest.php,v 1.1.2.10 2009/01/14 21:50:10 wrobel Exp $
+ * $Horde: framework/Kolab_Server/test/Horde/Kolab/Server/SessionTest.php,v 1.1.2.10 2009-01-14 21:50:10 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

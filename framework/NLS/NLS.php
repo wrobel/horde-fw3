@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/NLS/NLS.php,v 1.82.4.26 2009/08/28 09:01:53 jan Exp $
+ * $Horde: framework/NLS/NLS.php,v 1.82.4.26 2009-08-28 09:01:53 jan Exp $
  *
  * @package Horde_NLS
  */

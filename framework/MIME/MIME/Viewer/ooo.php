@@ -3,7 +3,7 @@
  * The MIME_Viewer_ooo class renders out OpenOffice.org
  * documents in HTML format.
  *
- * $Horde: framework/MIME/MIME/Viewer/ooo.php,v 1.14.10.12 2009/01/06 15:23:21 jan Exp $
+ * $Horde: framework/MIME/MIME/Viewer/ooo.php,v 1.14.10.12 2009-01-06 15:23:21 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

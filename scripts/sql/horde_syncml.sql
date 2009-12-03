@@ -1,5 +1,5 @@
 --
--- $Horde: horde/scripts/sql/horde_syncml.sql,v 1.4.2.3 2008/04/09 14:34:49 jan Exp $
+-- $Horde: horde/scripts/sql/horde_syncml.sql,v 1.4.2.3 2008-04-09 14:34:49 jan Exp $
 --
 
 CREATE TABLE horde_syncml_map (

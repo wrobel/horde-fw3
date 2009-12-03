@@ -2,7 +2,7 @@
 /**
  * @package Kolab_Storage
  *
- * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Folder.php,v 1.7.2.20 2009/04/25 18:42:27 wrobel Exp $
+ * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Folder.php,v 1.7.2.20 2009-04-25 18:42:27 wrobel Exp $
  */
 
 /** We need the current user session. */
@@ -59,7 +59,7 @@ define('HORDE_ANNOT_SHARE_ATTR', '/vendor/horde/share-');
  * The Kolab_Folder class represents an IMAP folder on the Kolab
  * server.
  *
- * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Folder.php,v 1.7.2.20 2009/04/25 18:42:27 wrobel Exp $
+ * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Storage/Folder.php,v 1.7.2.20 2009-04-25 18:42:27 wrobel Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

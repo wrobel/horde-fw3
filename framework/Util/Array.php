@@ -5,7 +5,7 @@ require_once dirname(__FILE__) . '/String.php';
 /**
  * The Horde_Array:: class provides various methods for array manipulation.
  *
- * $Horde: framework/Util/Array.php,v 1.26.2.12 2009/01/06 15:23:45 jan Exp $
+ * $Horde: framework/Util/Array.php,v 1.26.2.12 2009-01-06 15:23:45 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

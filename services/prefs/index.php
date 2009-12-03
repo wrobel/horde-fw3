@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/services/prefs/index.php,v 1.1.2.6 2009/01/06 15:27:35 jan Exp $
+ * $Horde: horde/services/prefs/index.php,v 1.1.2.6 2009-01-06 15:27:35 jan Exp $
  *
  * Copyright 2006-2009 The Horde Project (http://www.horde.org/)
  *

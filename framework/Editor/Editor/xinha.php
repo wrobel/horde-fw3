@@ -5,7 +5,7 @@
  *
  * Xinha website: http://xinha.python-hosting.com/
  *
- * $Horde: framework/Editor/Editor/xinha.php,v 1.27.2.5 2009/01/06 15:23:03 jan Exp $
+ * $Horde: framework/Editor/Editor/xinha.php,v 1.27.2.5 2009-01-06 15:23:03 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

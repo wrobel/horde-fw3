@@ -40,7 +40,7 @@ require_once 'Horde/String.php';
  *
  * $cron->run();
  *
- * $Horde: framework/Scheduler/lib/Horde/Scheduler/cron.php,v 1.1.2.1 2007/12/20 13:49:37 jan Exp $
+ * $Horde: framework/Scheduler/lib/Horde/Scheduler/cron.php,v 1.1.2.1 2007-12-20 13:49:37 jan Exp $
  *
  * @author  Ryan Flynn <ryan@ryanflynn.com>
  * @author  Chuck Hagenbuch <chuck@horde.org>

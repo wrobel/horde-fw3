@@ -2,7 +2,7 @@
 /**
  * Horde_Form for editing calendars.
  *
- * $Horde: kronolith/lib/Forms/EditCalendar.php,v 1.1.2.2 2008/11/12 09:17:11 wrobel Exp $
+ * $Horde: kronolith/lib/Forms/EditCalendar.php,v 1.1.2.2 2008-11-12 09:17:11 wrobel Exp $
  *
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.

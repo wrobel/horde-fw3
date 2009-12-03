@@ -1,4 +1,4 @@
--- $Horde: horde/scripts/sql/horde_prefs.mssql.sql,v 1.1.2.3 2007/12/20 15:03:03 jan Exp $
+-- $Horde: horde/scripts/sql/horde_prefs.mssql.sql,v 1.1.2.3 2007-12-20 15:03:03 jan Exp $
 
 CREATE TABLE horde_prefs (
     pref_uid        VARCHAR(255) NOT NULL,

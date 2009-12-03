@@ -2,7 +2,7 @@
 /**
  * @package Turba
  *
- * $Horde: turba/lib/Forms/AddContact.php,v 1.9.2.3 2008/10/25 01:36:42 chuck Exp $
+ * $Horde: turba/lib/Forms/AddContact.php,v 1.9.2.3 2008-10-25 01:36:42 chuck Exp $
  */
 
 /** Turba_ContactForm */

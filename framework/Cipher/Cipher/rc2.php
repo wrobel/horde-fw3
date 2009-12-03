@@ -7,7 +7,7 @@
  * http://www.mirrors.wiretapped.net/security/cryptography/
  *   algorithms/rc2/comments/gutman-960211
  *
- * $Horde: framework/Cipher/Cipher/rc2.php,v 1.9.12.11 2009/01/06 15:22:57 jan Exp $
+ * $Horde: framework/Cipher/Cipher/rc2.php,v 1.9.12.11 2009-01-06 15:22:57 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

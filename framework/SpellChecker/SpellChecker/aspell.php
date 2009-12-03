@@ -3,7 +3,7 @@
  * The Horde_SpellChecker_aspell:: class provides a driver for the 'aspell'
  * program.
  *
- * $Horde: framework/SpellChecker/SpellChecker/aspell.php,v 1.11.2.8 2009/01/06 15:23:37 jan Exp $
+ * $Horde: framework/SpellChecker/SpellChecker/aspell.php,v 1.11.2.8 2009-01-06 15:23:37 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

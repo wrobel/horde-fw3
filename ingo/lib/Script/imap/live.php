@@ -2,7 +2,7 @@
 /**
  * The Ingo_Script_imap_live:: driver.
  *
- * $Horde: ingo/lib/Script/imap/live.php,v 1.5.2.3 2009/01/06 15:24:37 jan Exp $
+ * $Horde: ingo/lib/Script/imap/live.php,v 1.5.2.3 2009-01-06 15:24:37 jan Exp $
  *
  * Copyright 2006-2009 The Horde Project (http://www.horde.org/)
  *

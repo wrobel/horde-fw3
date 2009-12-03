@@ -1,6 +1,6 @@
 #
 #  File: rh9-turba.spec
-#  $Horde: turba/packaging/redhat/rh9-turba.spec,v 1.2.10.3 2007/12/20 14:35:05 jan Exp $
+#  $Horde: turba/packaging/redhat/rh9-turba.spec,v 1.2.10.3 2007-12-20 14:35:05 jan Exp $
 #
 #  This is the SPEC file for the Turba Red Hat 9 RPMs/SRPM.
 #

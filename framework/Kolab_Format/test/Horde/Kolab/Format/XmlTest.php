@@ -2,7 +2,7 @@
 /**
  * Test the XML format implementation.
  *
- * $Horde: framework/Kolab_Format/test/Horde/Kolab/Format/XmlTest.php,v 1.2.2.4 2009/01/06 15:23:14 jan Exp $
+ * $Horde: framework/Kolab_Format/test/Horde/Kolab/Format/XmlTest.php,v 1.2.2.4 2009-01-06 15:23:14 jan Exp $
  *
  * @package Kolab_Format
  */
@@ -19,7 +19,7 @@ require_once 'Horde/Kolab/Format/XML.php';
 /**
  * A dummy XML type
  *
- * $Horde: framework/Kolab_Format/test/Horde/Kolab/Format/XmlTest.php,v 1.2.2.4 2009/01/06 15:23:14 jan Exp $
+ * $Horde: framework/Kolab_Format/test/Horde/Kolab/Format/XmlTest.php,v 1.2.2.4 2009-01-06 15:23:14 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *
@@ -48,7 +48,7 @@ class Horde_Kolab_Format_XML_dummy extends Horde_Kolab_Format_XML
 /**
  * Test the XML format.
  *
- * $Horde: framework/Kolab_Format/test/Horde/Kolab/Format/XmlTest.php,v 1.2.2.4 2009/01/06 15:23:14 jan Exp $
+ * $Horde: framework/Kolab_Format/test/Horde/Kolab/Format/XmlTest.php,v 1.2.2.4 2009-01-06 15:23:14 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

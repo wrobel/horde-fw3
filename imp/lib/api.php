@@ -5,7 +5,7 @@
  * This file defines IMP's external API interface. Other applications
  * can interact with IMP through this API.
  *
- * $Horde: imp/lib/api.php,v 1.94.10.21 2008/09/30 17:58:49 mrubinsk Exp $
+ * $Horde: imp/lib/api.php,v 1.94.10.21 2008-09-30 17:58:49 mrubinsk Exp $
  *
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.

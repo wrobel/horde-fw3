@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Xml_Element/lib/Horde/Xml/Element.php,v 1.2.2.6 2009/01/06 15:23:50 jan Exp $
+ * $Horde: framework/Xml_Element/lib/Horde/Xml/Element.php,v 1.2.2.6 2009-01-06 15:23:50 jan Exp $
  *
  * Portions Copyright 2005-2007 Zend Technologies USA Inc. (http://www.zend.com)
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)

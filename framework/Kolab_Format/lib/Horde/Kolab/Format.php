@@ -2,7 +2,7 @@
 /**
  * A library for reading/writing the Kolab format.
  *
- * $Horde: framework/Kolab_Format/lib/Horde/Kolab/Format.php,v 1.4.2.4 2008/12/12 11:39:03 wrobel Exp $
+ * $Horde: framework/Kolab_Format/lib/Horde/Kolab/Format.php,v 1.4.2.4 2008-12-12 11:39:03 wrobel Exp $
  *
  * @package Kolab_Format
  */
@@ -14,7 +14,7 @@ require_once 'PEAR.php';
  * The Horde_Kolab_Format:: class provides the means to read/write the
  * Kolab format.
  *
- * $Horde: framework/Kolab_Format/lib/Horde/Kolab/Format.php,v 1.4.2.4 2008/12/12 11:39:03 wrobel Exp $
+ * $Horde: framework/Kolab_Format/lib/Horde/Kolab/Format.php,v 1.4.2.4 2008-12-12 11:39:03 wrobel Exp $
  *
  * Copyright 2007-2008 Klarälvdalens Datakonsult AB
  *

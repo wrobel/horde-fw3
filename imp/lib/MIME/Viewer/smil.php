@@ -5,7 +5,7 @@ require_once 'Horde/MIME/Viewer/smil.php';
 /**
  * The MIME_Viewer_smil renders SMIL documents to very basic HTML.
  *
- * $Horde: imp/lib/MIME/Viewer/smil.php,v 1.4.2.3 2009/01/06 15:24:09 jan Exp $
+ * $Horde: imp/lib/MIME/Viewer/smil.php,v 1.4.2.3 2009-01-06 15:24:09 jan Exp $
  *
  * Copyright 2006-2009 The Horde Project (http://www.horde.org/)
  *

@@ -3,7 +3,7 @@
  *
  * Provides the javascript to open popup windows.
  *
- * $Horde: imp/templates/javascript/popup.js,v 1.1.2.2 2006/02/10 21:10:26 slusarz Exp $
+ * $Horde: imp/templates/javascript/popup.js,v 1.1.2.2 2006-02-10 21:10:26 slusarz Exp $
  *
  * See the enclosed file COPYING for license information (LGPL). If you did not
  * receive this file, see http://www.fsf.org/copyleft/lgpl.html.

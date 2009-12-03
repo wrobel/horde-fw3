@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/services/snooze.php,v 1.2.2.3 2009/01/06 15:26:20 jan Exp $
+ * $Horde: horde/services/snooze.php,v 1.2.2.3 2009-01-06 15:26:20 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

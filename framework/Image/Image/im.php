@@ -10,7 +10,7 @@ require_once 'Horde/Image.php';
  * 'type' - What type of image should be generated.
  * </pre>
  *
- * $Horde: framework/Image/Image/im.php,v 1.34.10.26 2009/03/23 18:15:47 mrubinsk Exp $
+ * $Horde: framework/Image/Image/im.php,v 1.34.10.26 2009-03-23 18:15:47 mrubinsk Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

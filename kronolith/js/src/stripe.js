@@ -2,7 +2,7 @@
  * Javascript code for finding all tables with classname "striped" and
  * dynamically striping their row colors.
  *
- * $Horde: kronolith/js/src/stripe.js,v 1.1.2.2 2008/03/06 20:50:17 chuck Exp $
+ * $Horde: kronolith/js/src/stripe.js,v 1.1.2.2 2008-03-06 20:50:17 chuck Exp $
  *
  * @author Chuck Hagenbuch <chuck@horde.org>
  * @author Matt Warden <mwarden@gmail.com>

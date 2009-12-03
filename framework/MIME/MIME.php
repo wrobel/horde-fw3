@@ -47,7 +47,7 @@ define('MIME_STRING', 2);
 /**
  * The MIME:: class provides methods for dealing with MIME standards.
  *
- * $Horde: framework/MIME/MIME.php,v 1.139.4.48 2009/10/11 22:27:34 slusarz Exp $
+ * $Horde: framework/MIME/MIME.php,v 1.139.4.48 2009-10-11 22:27:34 slusarz Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

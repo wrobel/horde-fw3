@@ -1,7 +1,7 @@
 --
 -- Table structure for table horde_alarms
 --
--- $Horde: horde/scripts/sql/horde_alarms.sql,v 1.6.2.1 2007/12/20 15:03:03 jan Exp $
+-- $Horde: horde/scripts/sql/horde_alarms.sql,v 1.6.2.1 2007-12-20 15:03:03 jan Exp $
 --
 
 CREATE TABLE horde_alarms (

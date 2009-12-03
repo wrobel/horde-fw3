@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: mnemo/config/prefs.php.dist,v 1.24.2.5 2009/06/19 17:06:22 jan Exp $
+ * $Horde: mnemo/config/prefs.php.dist,v 1.24.2.5 2009-06-19 17:06:22 jan Exp $
  *
  * See horde/config/prefs.php for documentation on the structure of this file.
  */

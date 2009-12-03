@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: hermes/lib/base.php,v 1.36.2.1 2009/08/12 22:28:11 jan Exp $
+ * $Horde: hermes/lib/base.php,v 1.36.2.1 2009-08-12 22:28:11 jan Exp $
  *
  * Copyright 2001-2007 Robert E. Coyle <robertecoyle@hotmail.com>
  *

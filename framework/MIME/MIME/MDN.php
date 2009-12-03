@@ -3,7 +3,7 @@
  * The MIME_MDN:: class implements Message Disposition Notifications as
  * described by RFC 3798.
  *
- * $Horde: framework/MIME/MIME/MDN.php,v 1.4.10.14 2009/01/06 15:23:20 jan Exp $
+ * $Horde: framework/MIME/MIME/MDN.php,v 1.4.10.14 2009-01-06 15:23:20 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

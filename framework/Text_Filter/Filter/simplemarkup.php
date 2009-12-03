@@ -2,7 +2,7 @@
 /**
  * Highlights simple markup as used in emails or usenet postings.
  *
- * $Horde: framework/Text_Filter/Filter/simplemarkup.php,v 1.1.10.9 2009/01/06 15:23:42 jan Exp $
+ * $Horde: framework/Text_Filter/Filter/simplemarkup.php,v 1.1.10.9 2009-01-06 15:23:42 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

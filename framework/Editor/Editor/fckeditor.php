@@ -3,7 +3,7 @@
  * The Horde_Editor_fckeditor:: class provides an WYSIWYG editor for use
  * in the Horde Framework.
  *
- * $Horde: framework/Editor/Editor/fckeditor.php,v 1.9.2.4 2009/01/06 15:23:03 jan Exp $
+ * $Horde: framework/Editor/Editor/fckeditor.php,v 1.9.2.4 2009-01-06 15:23:03 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

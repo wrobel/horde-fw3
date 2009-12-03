@@ -2,7 +2,7 @@
 /**
  * All tests for the Kolab_Storage:: package.
  *
- * $Horde: framework/Kolab_Storage/test/Horde/Kolab/Storage/AllTests.php,v 1.2.2.3 2009/01/06 15:23:18 jan Exp $
+ * $Horde: framework/Kolab_Storage/test/Horde/Kolab/Storage/AllTests.php,v 1.2.2.3 2009-01-06 15:23:18 jan Exp $
  *
  * PHP version 5
  *
@@ -27,7 +27,7 @@ require_once 'PHPUnit/TextUI/TestRunner.php';
 /**
  * Combine the tests for this package.
  *
- * $Horde: framework/Kolab_Storage/test/Horde/Kolab/Storage/AllTests.php,v 1.2.2.3 2009/01/06 15:23:18 jan Exp $
+ * $Horde: framework/Kolab_Storage/test/Horde/Kolab/Storage/AllTests.php,v 1.2.2.3 2009-01-06 15:23:18 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

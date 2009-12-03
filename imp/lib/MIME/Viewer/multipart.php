@@ -3,7 +3,7 @@
  * The IMP_MIME_Viewer_multipart class handles multipart messages not
  * rendered by any specific MIME_Viewer.
  *
- * $Horde: imp/lib/MIME/Viewer/multipart.php,v 1.13.10.10 2009/01/06 15:24:09 jan Exp $
+ * $Horde: imp/lib/MIME/Viewer/multipart.php,v 1.13.10.10 2009-01-06 15:24:09 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

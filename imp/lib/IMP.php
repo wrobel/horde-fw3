@@ -128,7 +128,7 @@ define('IMP_IDX_SEP', "\1");
 /**
  * IMP Base Class.
  *
- * $Horde: imp/lib/IMP.php,v 1.449.4.128 2009/10/12 22:36:33 slusarz Exp $
+ * $Horde: imp/lib/IMP.php,v 1.449.4.128 2009-10-12 22:36:33 slusarz Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

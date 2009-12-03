@@ -3,7 +3,7 @@
  * Contains functions related to managing
  * Access Control Lists.
  *
- * $Horde: framework/IMAP/IMAP/ACL.php,v 1.2.12.15 2009/01/06 15:23:11 jan Exp $
+ * $Horde: framework/IMAP/IMAP/ACL.php,v 1.2.12.15 2009-01-06 15:23:11 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

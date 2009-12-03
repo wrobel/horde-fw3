@@ -3,7 +3,7 @@
  * The Cipher_cast128:: class implements the Cipher interface encryption data
  * using the CAST128 (aka Cast5) algorithm as defined in RFC2144.
  *
- * $Horde: framework/Cipher/Cipher/cast128.php,v 1.7.12.12 2009/01/06 15:22:57 jan Exp $
+ * $Horde: framework/Cipher/Cipher/cast128.php,v 1.7.12.12 2009-01-06 15:22:57 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

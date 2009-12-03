@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: kronolith/lib/Imple.php,v 1.1.2.3 2009/01/06 15:24:45 jan Exp $
+ * $Horde: kronolith/lib/Imple.php,v 1.1.2.3 2009-01-06 15:24:45 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

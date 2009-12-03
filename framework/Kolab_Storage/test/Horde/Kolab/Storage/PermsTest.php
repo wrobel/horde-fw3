@@ -2,7 +2,7 @@
 /**
  * Test the Kolab permission handler.
  *
- * $Horde: framework/Kolab_Storage/test/Horde/Kolab/Storage/PermsTest.php,v 1.2.2.3 2009/01/06 15:23:18 jan Exp $
+ * $Horde: framework/Kolab_Storage/test/Horde/Kolab/Storage/PermsTest.php,v 1.2.2.3 2009-01-06 15:23:18 jan Exp $
  *
  * @package Kolab_Storage
  */
@@ -18,7 +18,7 @@ require_once 'Horde/Kolab/Storage/Perms.php';
 /**
  * Test the Kolab permission handler.
  *
- * $Horde: framework/Kolab_Storage/test/Horde/Kolab/Storage/PermsTest.php,v 1.2.2.3 2009/01/06 15:23:18 jan Exp $
+ * $Horde: framework/Kolab_Storage/test/Horde/Kolab/Storage/PermsTest.php,v 1.2.2.3 2009-01-06 15:23:18 jan Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -130,7 +130,7 @@ class Horde_Kolab_Storage_PermsTest extends PHPUnit_Framework_TestCase
 /**
  * A dummy folder representation to test the Kolab permission handler.
  *
- * $Horde: framework/Kolab_Storage/test/Horde/Kolab/Storage/PermsTest.php,v 1.2.2.3 2009/01/06 15:23:18 jan Exp $
+ * $Horde: framework/Kolab_Storage/test/Horde/Kolab/Storage/PermsTest.php,v 1.2.2.3 2009-01-06 15:23:18 jan Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

@@ -2,7 +2,7 @@
 /**
  * @package Kolab_Storage
  *
- * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Deprecated.php,v 1.1.2.4 2009/01/06 15:23:17 jan Exp $
+ * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Deprecated.php,v 1.1.2.4 2009-01-06 15:23:17 jan Exp $
  */
 
 /** Load the main class. */
@@ -17,7 +17,7 @@ require_once 'Horde/Kolab/Storage.php';
  * backward compatibility. The intended way of using the Kolab storage
  * handling is to use the main Kolab_Storage class only.
  *
- * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Deprecated.php,v 1.1.2.4 2009/01/06 15:23:17 jan Exp $
+ * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Deprecated.php,v 1.1.2.4 2009-01-06 15:23:17 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

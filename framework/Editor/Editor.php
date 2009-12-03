@@ -3,7 +3,7 @@
  * The Horde_Editor:: package provides an API to generate the code necessary
  * for embedding javascript RTE editors in a web page.
  *
- * $Horde: framework/Editor/Editor.php,v 1.8.10.14 2009/01/06 15:23:03 jan Exp $
+ * $Horde: framework/Editor/Editor.php,v 1.8.10.14 2009-01-06 15:23:03 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

@@ -19,7 +19,7 @@
  *                 objects; see IMP::parseIndicesList()
  *   'zip'      -- Download in .zip format?
  *
- * $Horde: imp/view.php,v 2.199.4.14 2009/01/06 15:24:02 jan Exp $
+ * $Horde: imp/view.php,v 2.199.4.14 2009-01-06 15:24:02 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

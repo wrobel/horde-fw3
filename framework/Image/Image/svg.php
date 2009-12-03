@@ -6,7 +6,7 @@ require_once 'XML/SVG.php';
 /**
  * This class implements the Horde_Image:: API for SVG.
  *
- * $Horde: framework/Image/Image/svg.php,v 1.31.10.10 2009/01/06 15:23:12 jan Exp $
+ * $Horde: framework/Image/Image/svg.php,v 1.31.10.10 2009-01-06 15:23:12 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

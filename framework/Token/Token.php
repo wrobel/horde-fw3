@@ -8,7 +8,7 @@ require_once 'Horde/Util.php';
  * various token generation mediums. It also includes all of the
  * functions for retrieving, storing, and checking tokens.
  *
- * $Horde: framework/Token/Token.php,v 1.33.6.18 2009/01/06 15:23:44 jan Exp $
+ * $Horde: framework/Token/Token.php,v 1.33.6.18 2009-01-06 15:23:44 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: nag/config/prefs.php.dist,v 1.42.2.12 2009/06/19 17:06:22 jan Exp $
+ * $Horde: nag/config/prefs.php.dist,v 1.42.2.12 2009-06-19 17:06:22 jan Exp $
  *
  * See horde/config/prefs.php for documentation on the structure of this file.
  */

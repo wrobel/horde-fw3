@@ -39,7 +39,7 @@
  * );
  * </pre>
  *
- * $Horde: framework/Token/Token/sql.php,v 1.23.6.17 2009/02/13 05:45:19 chuck Exp $
+ * $Horde: framework/Token/Token/sql.php,v 1.23.6.17 2009-02-13 05:45:19 chuck Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

@@ -26,7 +26,7 @@ require_once 'PEAR.php';
  * Abstract class to handle different kinds of Data formats and to
  * help data exchange between Horde applications and external sources.
  *
- * $Horde: framework/Data/Data.php,v 1.80.10.19 2009/01/06 15:23:00 jan Exp $
+ * $Horde: framework/Data/Data.php,v 1.80.10.19 2009-01-06 15:23:00 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

@@ -6,7 +6,7 @@ $block_name = _("This Month");
  * Horde_Block_Kronolith_month:: Implementation of the Horde_Block API
  * to display a mini month view of calendar items.
  *
- * $Horde: kronolith/lib/Block/month.php,v 1.21.2.13 2009/06/18 17:31:03 jan Exp $
+ * $Horde: kronolith/lib/Block/month.php,v 1.21.2.13 2009-06-18 17:31:03 jan Exp $
  *
  * @package Horde_Block
  */

@@ -28,7 +28,7 @@ define('SERIALIZE_LZF', 17);
 /**
  * The Serialize:: class provides various methods of encapsulating data.
  *
- * $Horde: framework/Serialize/Serialize.php,v 1.25.10.16 2009/01/06 15:23:34 jan Exp $
+ * $Horde: framework/Serialize/Serialize.php,v 1.25.10.16 2009-01-06 15:23:34 jan Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *

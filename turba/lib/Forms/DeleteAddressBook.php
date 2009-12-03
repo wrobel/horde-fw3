@@ -2,7 +2,7 @@
 /**
  * Horde_Form for deleting address books.
  *
- * $Horde: turba/lib/Forms/DeleteAddressBook.php,v 1.1.2.2 2008/08/25 17:10:16 jan Exp $
+ * $Horde: turba/lib/Forms/DeleteAddressBook.php,v 1.1.2.2 2008-08-25 17:10:16 jan Exp $
  *
  * See the enclosed file LICENSE for license information (ASL). If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.

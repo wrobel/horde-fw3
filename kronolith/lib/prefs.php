@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: kronolith/lib/prefs.php,v 1.5.10.11 2009/01/06 15:24:45 jan Exp $
+ * $Horde: kronolith/lib/prefs.php,v 1.5.10.11 2009-01-06 15:24:45 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

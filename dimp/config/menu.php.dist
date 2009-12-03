@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: dimp/config/menu.php.dist,v 1.4.2.1 2008/03/10 20:19:35 slusarz Exp $
+ * $Horde: dimp/config/menu.php.dist,v 1.4.2.1 2008-03-10 20:19:35 slusarz Exp $
  *
  * This file lets you extend DIMP's menu with your own items.
  *

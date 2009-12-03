@@ -1,7 +1,7 @@
 #!@php_bin@
 <?php
 /**
- * $Horde: framework/Scheduler/scripts/Horde/Scheduler/horde-crond.php,v 1.1.2.3 2009/01/06 15:23:34 jan Exp $
+ * $Horde: framework/Scheduler/scripts/Horde/Scheduler/horde-crond.php,v 1.1.2.3 2009-01-06 15:23:34 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

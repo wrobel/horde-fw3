@@ -8,7 +8,7 @@
  * Optional parameters:<pre>
  *   None.</pre>
  *
- * $Horde: framework/SessionHandler/SessionHandler/none.php,v 1.3.2.9 2009/01/06 15:23:35 jan Exp $
+ * $Horde: framework/SessionHandler/SessionHandler/none.php,v 1.3.2.9 2009-01-06 15:23:35 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

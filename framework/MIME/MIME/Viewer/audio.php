@@ -3,7 +3,7 @@
  * The MIME_Viewer_audio class sends audio parts to the browser for
  * handling by the browser, a plugin, or a helper application.
  *
- * $Horde: framework/MIME/MIME/Viewer/audio.php,v 1.3.2.3 2009/01/06 15:23:21 jan Exp $
+ * $Horde: framework/MIME/MIME/Viewer/audio.php,v 1.3.2.3 2009-01-06 15:23:21 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

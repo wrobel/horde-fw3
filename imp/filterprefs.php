@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/filterprefs.php,v 2.16.10.12 2009/01/06 15:24:01 jan Exp $
+ * $Horde: imp/filterprefs.php,v 2.16.10.12 2009-01-06 15:24:01 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: hermes/config/prefs.php.dist,v 1.9 2008/06/25 16:05:34 jan Exp $
+ * $Horde: hermes/config/prefs.php.dist,v 1.9 2008-06-25 16:05:34 jan Exp $
  *
  * See horde/config/prefs.php for documentation on the structure of this file.
  */

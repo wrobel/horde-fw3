@@ -3,7 +3,7 @@
  *
  * Provides the javascript to display tooltips.
  *
- * $Horde: horde/js/tooltip.js,v 1.2.10.2 2005/05/01 16:53:30 chuck Exp $
+ * $Horde: horde/js/tooltip.js,v 1.2.10.2 2005-05-01 16:53:30 chuck Exp $
  *
  * See the enclosed file COPYING for license information (LGPL).  If you
  * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.

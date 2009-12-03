@@ -8,7 +8,7 @@
  * See the enclosed file COPYING for license information (LGPL). If you did
  * not receive this file, see http://opensource.org/licenses/lgpl-license.php.
  *
- * $Horde: framework/Lock/Lock.php,v 1.6.2.5 2009/01/06 15:23:20 jan Exp $
+ * $Horde: framework/Lock/Lock.php,v 1.6.2.5 2009-01-06 15:23:20 jan Exp $
  *
  * @author  Ben Klang <ben@alkaloid.net>
  * @since   Horde 3.2

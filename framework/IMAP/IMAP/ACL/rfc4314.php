@@ -20,7 +20,7 @@ require_once 'Horde/IMAP/ACL/rfc2086.php';
  *               'imap/ssl/novalidate-cert' (for a self-signed certificate).
  *               DEFAULT: 'imap'</pre>
  *
- * $Horde: framework/IMAP/IMAP/ACL/rfc4314.php,v 1.2.2.5 2009/01/06 15:23:12 jan Exp $
+ * $Horde: framework/IMAP/IMAP/ACL/rfc4314.php,v 1.2.2.5 2009-01-06 15:23:12 jan Exp $
  *
  * Copyright 2006-2009 The Horde Project (http://www.horde.org/)
  *

@@ -2,7 +2,7 @@
 /**
  * Implementation for IMAP folder annotations in the Kolab XML format.
  *
- * $Horde: framework/Kolab_Format/lib/Horde/Kolab/Format/XML/annotation.php,v 1.1.2.5 2009/01/06 15:23:14 jan Exp $
+ * $Horde: framework/Kolab_Format/lib/Horde/Kolab/Format/XML/annotation.php,v 1.1.2.5 2009-01-06 15:23:14 jan Exp $
  *
  * @package Kolab_Format
  */
@@ -10,7 +10,7 @@
 /**
  * Kolab XML handler for IMAP folder annotations.
  *
- * $Horde: framework/Kolab_Format/lib/Horde/Kolab/Format/XML/annotation.php,v 1.1.2.5 2009/01/06 15:23:14 jan Exp $
+ * $Horde: framework/Kolab_Format/lib/Horde/Kolab/Format/XML/annotation.php,v 1.1.2.5 2009-01-06 15:23:14 jan Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

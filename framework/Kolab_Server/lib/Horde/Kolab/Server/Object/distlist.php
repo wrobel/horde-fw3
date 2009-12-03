@@ -2,7 +2,7 @@
 /**
  * Representation of a Kolab distribution list.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/distlist.php,v 1.1.2.3 2009/04/25 08:56:33 wrobel Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/distlist.php,v 1.1.2.3 2009-04-25 08:56:33 wrobel Exp $
  *
  * PHP version 4
  *
@@ -18,7 +18,7 @@ require_once 'Horde/Kolab/Server/Object/group.php';
 /**
  * This class provides methods to deal with distribution lists for Kolab.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/distlist.php,v 1.1.2.3 2009/04/25 08:56:33 wrobel Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/distlist.php,v 1.1.2.3 2009-04-25 08:56:33 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

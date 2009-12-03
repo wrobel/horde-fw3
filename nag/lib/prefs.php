@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: nag/lib/prefs.php,v 1.3.10.7 2009/01/06 15:25:05 jan Exp $
+ * $Horde: nag/lib/prefs.php,v 1.3.10.7 2009-01-06 15:25:05 jan Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *

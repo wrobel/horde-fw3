@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- $Horde: mnemo/config/conf.xml,v 1.17.10.1 2007/12/20 14:17:38 jan Exp $ -->
+<!-- $Horde: mnemo/config/conf.xml,v 1.17.10.1 2007-12-20 14:17:38 jan Exp $ -->
 <configuration>
  <configsection name="storage">
   <configheader>Storage System Settings</configheader>

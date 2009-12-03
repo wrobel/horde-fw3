@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: kronolith/config/menu.php.dist,v 1.4.8.1 2007/12/20 14:12:23 jan Exp $
+ * $Horde: kronolith/config/menu.php.dist,v 1.4.8.1 2007-12-20 14:12:23 jan Exp $
  *
  * This file lets you extend Kronolith's menu with your own items.
  *

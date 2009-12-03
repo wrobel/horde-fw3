@@ -4,7 +4,7 @@
  * HTML format by using the UnRTF package
  * (http://www.gnu.org/software/unrtf/unrtf.html).
  *
- * $Horde: framework/MIME/MIME/Viewer/rtf.php,v 1.2.2.1 2007/12/20 13:49:17 jan Exp $
+ * $Horde: framework/MIME/MIME/Viewer/rtf.php,v 1.2.2.1 2007-12-20 13:49:17 jan Exp $
  *
  * Copyright 2007 Duck <duck@obala.net>
  *

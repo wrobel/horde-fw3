@@ -4,7 +4,7 @@
  * using the RC4 encryption algorthim. This class uses the PEAR Crypt_RC4
  * class to do the encryption.
  *
- * $Horde: framework/Cipher/Cipher/rc4.php,v 1.4.12.11 2009/01/06 15:22:57 jan Exp $
+ * $Horde: framework/Cipher/Cipher/rc4.php,v 1.4.12.11 2009-01-06 15:22:57 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

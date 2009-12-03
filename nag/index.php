@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: nag/index.php,v 1.16.10.7 2009/01/06 15:25:04 jan Exp $
+ * $Horde: nag/index.php,v 1.16.10.7 2009-01-06 15:25:04 jan Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *

@@ -3,7 +3,7 @@
  * Class for handling a list of categories stored in a user's
  * preferences.
  *
- * $Horde: framework/Prefs/Prefs/CategoryManager.php,v 1.11.10.11 2009/01/06 15:23:31 jan Exp $
+ * $Horde: framework/Prefs/Prefs/CategoryManager.php,v 1.11.10.11 2009-01-06 15:23:31 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

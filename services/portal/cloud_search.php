@@ -2,7 +2,7 @@
 /**
  * Perform search request for the horde-wide tag cloud block.
  *
- * $Horde: horde/services/portal/cloud_search.php,v 1.1.2.4 2009/01/06 15:27:33 jan Exp $
+ * $Horde: horde/services/portal/cloud_search.php,v 1.1.2.4 2009-01-06 15:27:33 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

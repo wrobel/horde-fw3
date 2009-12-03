@@ -10,7 +10,7 @@ define('IMP_IMAPCLIENT_CONTINUATION', 2);
  *
  * TODO: This should eventually be moved to Horde 4.0/framework.
  *
- * $Horde: imp/lib/IMAP/Client.php,v 1.21.2.36 2009/08/05 08:36:37 slusarz Exp $
+ * $Horde: imp/lib/IMAP/Client.php,v 1.21.2.36 2009-08-05 08:36:37 slusarz Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

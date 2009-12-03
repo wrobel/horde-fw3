@@ -12,7 +12,7 @@ define('HORDE_AGENT_HEADER', 'Horde Application Framework 3.2');
  * variable $GLOBALS['mime_headers']['default_charset'] (defaults to US-ASCII
  * per RFC 2045).
  *
- * $Horde: framework/MIME/MIME/Headers.php,v 1.29.10.30 2009/04/08 16:26:35 jan Exp $
+ * $Horde: framework/MIME/MIME/Headers.php,v 1.29.10.30 2009-04-08 16:26:35 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

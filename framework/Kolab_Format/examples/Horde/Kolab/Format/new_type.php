@@ -2,7 +2,7 @@
 /**
  * An example of defining a new Kolab format type
  *
- * $Horde: framework/Kolab_Format/examples/Horde/Kolab/Format/new_type.php,v 1.1.2.4 2009/01/06 15:23:13 jan Exp $
+ * $Horde: framework/Kolab_Format/examples/Horde/Kolab/Format/new_type.php,v 1.1.2.4 2009-01-06 15:23:13 jan Exp $
  *
  * @package Kolab_Format
  */
@@ -16,7 +16,7 @@ require_once 'Horde/Kolab/Format/XML.php';
 /**
  * Kolab XML handler for a string value
  *
- * $Horde: framework/Kolab_Format/examples/Horde/Kolab/Format/new_type.php,v 1.1.2.4 2009/01/06 15:23:13 jan Exp $
+ * $Horde: framework/Kolab_Format/examples/Horde/Kolab/Format/new_type.php,v 1.1.2.4 2009-01-06 15:23:13 jan Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

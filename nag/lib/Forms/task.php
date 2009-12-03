@@ -2,7 +2,7 @@
 /**
  * This file contains all Horde_Form extensions required for editing tasks.
  *
- * $Horde: nag/lib/Forms/task.php,v 1.11.2.10 2009/03/31 14:51:04 chuck Exp $
+ * $Horde: nag/lib/Forms/task.php,v 1.11.2.10 2009-03-31 14:51:04 chuck Exp $
  *
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.

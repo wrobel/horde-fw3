@@ -4,7 +4,7 @@ $block_name = _("Menu Alarms");
 $block_type = 'tree';
 
 /**
- * $Horde: nag/lib/Block/tree_alarms.php,v 1.5.2.2 2008/01/02 16:50:50 chuck Exp $
+ * $Horde: nag/lib/Block/tree_alarms.php,v 1.5.2.2 2008-01-02 16:50:50 chuck Exp $
  *
  * @package Horde_Block
  */

@@ -19,7 +19,7 @@ require_once 'Horde/Memcache.php';
  *                         sessions will be treated as expired.
  * </pre>
  *
- * $Horde: framework/SessionHandler/SessionHandler/memcache.php,v 1.1.2.13 2009/10/06 22:22:20 slusarz Exp $
+ * $Horde: framework/SessionHandler/SessionHandler/memcache.php,v 1.1.2.13 2009-10-06 22:22:20 slusarz Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

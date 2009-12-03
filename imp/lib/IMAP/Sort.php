@@ -7,7 +7,7 @@ require_once 'Horde/IMAP/Sort.php';
  * provide necessary bug fixes to ensure backwards compatibility with Horde
  * 3.0.
  *
- * $Horde: imp/lib/IMAP/Sort.php,v 1.1.2.5 2009/01/06 15:24:05 jan Exp $
+ * $Horde: imp/lib/IMAP/Sort.php,v 1.1.2.5 2009-01-06 15:24:05 jan Exp $
  *
  * Copyright 2006-2009 The Horde Project (http://www.horde.org/)
  *

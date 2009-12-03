@@ -2,7 +2,7 @@
 /**
  * Horde_Form for editing task lists.
  *
- * $Horde: nag/lib/Forms/EditTaskList.php,v 1.1.2.2 2008/07/31 10:10:03 jan Exp $
+ * $Horde: nag/lib/Forms/EditTaskList.php,v 1.1.2.2 2008-07-31 10:10:03 jan Exp $
  *
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.

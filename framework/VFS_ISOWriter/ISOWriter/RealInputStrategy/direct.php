@@ -3,7 +3,7 @@
 /**
  * Strategy for directly accessing input tree in a 'file' VFS
  *
- * $Horde: framework/VFS_ISOWriter/ISOWriter/RealInputStrategy/direct.php,v 1.1.8.8 2009/01/06 15:23:48 jan Exp $
+ * $Horde: framework/VFS_ISOWriter/ISOWriter/RealInputStrategy/direct.php,v 1.1.8.8 2009-01-06 15:23:48 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

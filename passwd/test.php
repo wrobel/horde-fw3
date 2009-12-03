@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: passwd/test.php,v 1.2.2.7 2009/06/10 08:20:38 jan Exp $
+ * $Horde: passwd/test.php,v 1.2.2.7 2009-06-10 08:20:38 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

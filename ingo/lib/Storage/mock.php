@@ -3,7 +3,7 @@
  * Ingo_Storage_mock:: is used for testing purposes.  It just keeps the
  * data local and doesn't put it anywhere.
  *
- * $Horde: ingo/lib/Storage/mock.php,v 1.2.2.1 2007/12/20 14:05:49 jan Exp $
+ * $Horde: ingo/lib/Storage/mock.php,v 1.2.2.1 2007-12-20 14:05:49 jan Exp $
  *
  * See the enclosed file LICENSE for license information (ASL).  If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.

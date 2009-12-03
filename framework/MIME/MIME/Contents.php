@@ -29,7 +29,7 @@ define('MIME_CONTENTS_DISPLAY_TYPE_BOTH', 2);
  * The MIME_Contents:: class contains functions related to handling the output
  * of MIME content.
  *
- * $Horde: framework/MIME/MIME/Contents.php,v 1.129.4.45 2009/01/06 15:23:20 jan Exp $
+ * $Horde: framework/MIME/MIME/Contents.php,v 1.129.4.45 2009-01-06 15:23:20 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

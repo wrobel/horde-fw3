@@ -8,7 +8,7 @@
  * Input can be either a single squirrelmail .abook file, or a directory
  * containing multiple .abook files.
  *
- * $Horde: turba/scripts/import_squirrelmail_file_abook.php,v 1.2.2.2 2009/01/06 15:28:01 jan Exp $
+ * $Horde: turba/scripts/import_squirrelmail_file_abook.php,v 1.2.2.2 2009-01-06 15:28:01 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

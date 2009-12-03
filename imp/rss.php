@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/rss.php,v 1.11.2.6 2009/01/06 15:24:02 jan Exp $
+ * $Horde: imp/rss.php,v 1.11.2.6 2009-01-06 15:24:02 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

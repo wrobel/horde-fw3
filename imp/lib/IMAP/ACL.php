@@ -6,7 +6,7 @@ require_once 'Horde/IMAP/ACL.php';
  * The IMP_IMAP_ACL:: class extends the IMAP_ACL class in order to
  * ensure backwards compatibility with Horde 3.0.
  *
- * $Horde: imp/lib/IMAP/ACL.php,v 1.4.2.4 2009/01/06 15:24:05 jan Exp $
+ * $Horde: imp/lib/IMAP/ACL.php,v 1.4.2.4 2009-01-06 15:24:05 jan Exp $
  *
  * Copyright 2006-2009 The Horde Project (http://www.horde.org/)
  *

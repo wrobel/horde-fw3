@@ -1,7 +1,7 @@
 /**
  * Provides the javascript for the message.php script
  *
- * $Horde: imp/js/src/message.js,v 1.8.2.4 2008/05/20 16:33:02 slusarz Exp $
+ * $Horde: imp/js/src/message.js,v 1.8.2.4 2008-05-20 16:33:02 slusarz Exp $
  *
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.

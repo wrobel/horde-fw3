@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/attachment.php,v 2.5.10.22 2008/10/23 16:10:11 slusarz Exp $
+ * $Horde: imp/attachment.php,v 2.5.10.22 2008-10-23 16:10:11 slusarz Exp $
  *
  * Copyright 2004-2007 Andrew Coleman <mercury@appisolutions.net>
  *

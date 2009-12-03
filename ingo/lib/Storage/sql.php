@@ -20,7 +20,7 @@
  * The table structure can be created by the scripts/drivers/sql/ingo.sql
  * script.
  *
- * $Horde: ingo/lib/Storage/sql.php,v 1.21.2.7 2009/07/24 14:08:17 jan Exp $
+ * $Horde: ingo/lib/Storage/sql.php,v 1.21.2.7 2009-07-24 14:08:17 jan Exp $
  *
  * See the enclosed file LICENSE for license information (ASL).  If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.

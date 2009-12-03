@@ -3,7 +3,7 @@
  * The Kolab class attempts to change a user's password on the designated
  * Kolab backend. Based off the LDAP passwd class.
  *
- * $Horde: passwd/lib/Driver/kolab.php,v 1.2.2.9 2009/01/06 15:25:23 jan Exp $
+ * $Horde: passwd/lib/Driver/kolab.php,v 1.2.2.9 2009-01-06 15:25:23 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

@@ -1,7 +1,7 @@
 #!/usr/bin/php
 <?php
 /**
- * $Horde: nag/scripts/upgrades/2004-09-13_add_uid_field.php,v 1.2.8.5 2007/01/02 13:55:13 jan Exp $
+ * $Horde: nag/scripts/upgrades/2004-09-13_add_uid_field.php,v 1.2.8.5 2007-01-02 13:55:13 jan Exp $
  *
  * This script maintains existing Nag task IDs as GUIDs.
  *

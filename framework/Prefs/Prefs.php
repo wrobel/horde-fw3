@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Prefs/Prefs.php,v 1.137.10.42 2009/06/04 19:00:36 mrubinsk Exp $
+ * $Horde: framework/Prefs/Prefs.php,v 1.137.10.42 2009-06-04 19:00:36 mrubinsk Exp $
  */
 
 /** Preference is administratively locked. */

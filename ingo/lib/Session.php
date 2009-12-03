@@ -2,7 +2,7 @@
 /**
  * Functions required to start a Ingo session.
  *
- * $Horde: ingo/lib/Session.php,v 1.2.10.11 2009/01/06 15:24:35 jan Exp $
+ * $Horde: ingo/lib/Session.php,v 1.2.10.11 2009-01-06 15:24:35 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

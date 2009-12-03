@@ -3,7 +3,7 @@
  * The http driver attempts to change a user's password via a web based
  * interface and implements the Passwd_Driver API.
  *
- * $Horde: passwd/lib/Driver/http.php,v 1.8.2.3 2009/01/06 15:25:23 jan Exp $
+ * $Horde: passwd/lib/Driver/http.php,v 1.8.2.3 2009-01-06 15:25:23 jan Exp $
  *
  * Copyright 2000-2009 The Horde Project (http://www.horde.org/)
  *

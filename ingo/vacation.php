@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ingo/vacation.php,v 1.28.8.12 2009/01/06 15:24:34 jan Exp $
+ * $Horde: ingo/vacation.php,v 1.28.8.12 2009-01-06 15:24:34 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

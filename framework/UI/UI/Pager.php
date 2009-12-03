@@ -5,7 +5,7 @@ require_once dirname(__FILE__) . '/Widget.php';
 /**
  * The Horde_UI_Pager:: provides links to individual pages.
  *
- * $Horde: framework/UI/UI/Pager.php,v 1.7.10.16 2009/01/06 15:23:45 jan Exp $
+ * $Horde: framework/UI/UI/Pager.php,v 1.7.10.16 2009-01-06 15:23:45 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

@@ -1,7 +1,7 @@
 /**
  * Redbox.js
  *
- * $Horde: kronolith/js/src/redbox.js,v 1.2.2.4 2008/02/06 10:08:44 slusarz Exp $
+ * $Horde: kronolith/js/src/redbox.js,v 1.2.2.4 2008-02-06 10:08:44 slusarz Exp $
  *
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.

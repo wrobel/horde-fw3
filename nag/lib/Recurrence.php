@@ -2,7 +2,7 @@
 /**
  * This file contains the Nag_Recurrence class and according constants.
  *
- * $Horde: nag/lib/Recurrence.php,v 1.1.2.3 2009/01/06 15:25:05 jan Exp $
+ * $Horde: nag/lib/Recurrence.php,v 1.1.2.3 2009-01-06 15:25:05 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

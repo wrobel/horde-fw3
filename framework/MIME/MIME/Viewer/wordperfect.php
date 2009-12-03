@@ -3,7 +3,7 @@
  * The MIME_Viewer_wordperfect class renders out WordPerfect documents in HTML
  * format by using the libwpd package (http://libwpd.sourceforge.net/).
  *
- * $Horde: framework/MIME/MIME/Viewer/wordperfect.php,v 1.1.2.3 2009/01/06 15:23:22 jan Exp $
+ * $Horde: framework/MIME/MIME/Viewer/wordperfect.php,v 1.1.2.3 2009-01-06 15:23:22 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

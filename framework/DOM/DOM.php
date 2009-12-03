@@ -11,7 +11,7 @@
  * The original code can be found at:
  * http://alexandre.alapetite.net/doc-alex/domxml-php4-php5/
  *
- * $Horde: framework/DOM/DOM.php,v 1.9.2.6 2009/10/14 16:42:35 jan Exp $
+ * $Horde: framework/DOM/DOM.php,v 1.9.2.6 2009-10-14 16:42:35 jan Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Michael J. Rubinsky <mrubinsk@horde.org>

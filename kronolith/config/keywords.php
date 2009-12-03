@@ -11,7 +11,7 @@
  * Each category will generate a table cell, with the category name in
  * bold and checkboxes for each entry in the category below it.
  *
- * $Horde: kronolith/config/keywords.php.dist,v 1.3 2004/11/06 18:47:15 jan Exp $
+ * $Horde: kronolith/config/keywords.php.dist,v 1.3 2004-11-06 18:47:15 jan Exp $
  */
 
 $keywords[_("Type")] = array(_("Birthday"), _("Meeting"), _("Game"));

@@ -3,7 +3,7 @@
  * From Binary XML Content Format Specification Version 1.3, 25 July 2001
  * found at http://www.wapforum.org
  *
- * $Horde: framework/XML_WBXML/WBXML/ContentHandler.php,v 1.9.10.12 2009/01/06 15:23:50 jan Exp $
+ * $Horde: framework/XML_WBXML/WBXML/ContentHandler.php,v 1.9.10.12 2009-01-06 15:23:50 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

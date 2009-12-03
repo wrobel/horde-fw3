@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/View/lib/Horde/View/Helper/Url.php,v 1.1.2.1 2008/05/22 01:25:36 chuck Exp $
+ * $Horde: framework/View/lib/Horde/View/Helper/Url.php,v 1.1.2.1 2008-05-22 01:25:36 chuck Exp $
  *
  * @category Horde
  * @package Horde_View

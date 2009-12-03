@@ -10,7 +10,7 @@ require_once 'Horde/IMAP/Thread.php';
  * For the next (mythical) release of Horde 4.x, this code should be merged
  * into the IMAP_Thread class.
  *
- * $Horde: imp/lib/IMAP/Thread.php,v 1.5.2.8 2009/01/06 15:24:05 jan Exp $
+ * $Horde: imp/lib/IMAP/Thread.php,v 1.5.2.8 2009-01-06 15:24:05 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

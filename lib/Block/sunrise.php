@@ -3,7 +3,7 @@
 $block_name = _("Sunrise/Sunset");
 
 /**
- * $Horde: horde/lib/Block/sunrise.php,v 1.14.10.4 2007/12/20 15:01:36 jan Exp $
+ * $Horde: horde/lib/Block/sunrise.php,v 1.14.10.4 2007-12-20 15:01:36 jan Exp $
  *
  * @package Horde_Block
  */

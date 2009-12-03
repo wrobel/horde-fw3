@@ -103,7 +103,7 @@ class Horde_Mobile_card extends Horde_Mobile_element {
  *
  * $myPage->render();
  *
- * $Horde: framework/Mobile/Mobile.php,v 1.32.10.14 2009/01/06 15:23:25 jan Exp $
+ * $Horde: framework/Mobile/Mobile.php,v 1.32.10.14 2009-01-06 15:23:25 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

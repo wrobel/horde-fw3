@@ -2,7 +2,7 @@
 /**
  * Test Kolab Format MIME attributes
  *
- * $Horde: framework/Kolab_Format/test/Horde/Kolab/Format/MimeAttrTest.php,v 1.1.2.2 2009/01/06 15:23:14 jan Exp $
+ * $Horde: framework/Kolab_Format/test/Horde/Kolab/Format/MimeAttrTest.php,v 1.1.2.2 2009-01-06 15:23:14 jan Exp $
  *
  * PHP version 5
  *
@@ -25,7 +25,7 @@ require_once 'Horde/Kolab/Format.php';
 /**
  * Test Kolab Format MIME attributes
  *
- * $Horde: framework/Kolab_Format/test/Horde/Kolab/Format/MimeAttrTest.php,v 1.1.2.2 2009/01/06 15:23:14 jan Exp $
+ * $Horde: framework/Kolab_Format/test/Horde/Kolab/Format/MimeAttrTest.php,v 1.1.2.2 2009-01-06 15:23:14 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

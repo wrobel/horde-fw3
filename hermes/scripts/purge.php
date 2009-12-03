@@ -1,7 +1,7 @@
 #!/usr/bin/php
 <?php
 /**
- * $Horde: hermes/scripts/purge.php,v 1.12.2.1 2009/01/06 15:24:00 jan Exp $
+ * $Horde: hermes/scripts/purge.php,v 1.12.2.1 2009-01-06 15:24:00 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

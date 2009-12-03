@@ -7,7 +7,7 @@
  * This library allows more complex searches to be created (e.g. OR searches,
  * searching specific headers).
  *
- * $Horde: framework/IMAP/IMAP/Search.php,v 1.29.10.32 2009/01/06 15:23:11 jan Exp $
+ * $Horde: framework/IMAP/IMAP/Search.php,v 1.29.10.32 2009-01-06 15:23:11 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

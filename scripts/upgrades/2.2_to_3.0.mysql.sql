@@ -1,4 +1,4 @@
--- $Horde: horde/scripts/upgrades/2.2_to_3.0.mysql.sql,v 1.2.8.3 2007/12/20 15:03:04 jan Exp $
+-- $Horde: horde/scripts/upgrades/2.2_to_3.0.mysql.sql,v 1.2.8.3 2007-12-20 15:03:04 jan Exp $
 --
 -- You can simply execute this file in your database.
 --

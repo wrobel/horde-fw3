@@ -6,7 +6,7 @@
  * The helpers available:
  *      emoticons - for inserting emoticons strings
  *
- * $Horde: horde/templates/javascript/open_html_helper.js,v 1.12.2.9 2009/01/06 15:27:38 jan Exp $
+ * $Horde: horde/templates/javascript/open_html_helper.js,v 1.12.2.9 2009-01-06 15:27:38 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

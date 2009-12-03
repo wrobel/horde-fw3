@@ -2,7 +2,7 @@
 /**
  * Ingo_Driver:: defines an API to activate filter scripts on a server.
  *
- * $Horde: ingo/lib/Driver.php,v 1.10.10.8 2007/12/20 14:05:47 jan Exp $
+ * $Horde: ingo/lib/Driver.php,v 1.10.10.8 2007-12-20 14:05:47 jan Exp $
  *
  * See the enclosed file LICENSE for license information (ASL).  If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.

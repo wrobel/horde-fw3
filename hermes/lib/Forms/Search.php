@@ -2,7 +2,7 @@
 /**
  * @package Hermes
  *
- * $Horde: hermes/lib/Forms/Search.php,v 1.8.2.2 2009/02/09 18:04:01 jan Exp $
+ * $Horde: hermes/lib/Forms/Search.php,v 1.8.2.2 2009-02-09 18:04:01 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

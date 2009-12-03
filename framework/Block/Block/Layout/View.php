@@ -7,7 +7,7 @@ require_once 'Horde/Block/Layout.php';
 /**
  * The Horde_Block_Layout_View class represents the user defined portal layout.
  *
- * $Horde: framework/Block/Block/Layout/View.php,v 1.4.2.12 2009/01/06 15:22:53 jan Exp $
+ * $Horde: framework/Block/Block/Layout/View.php,v 1.4.2.12 2009-01-06 15:22:53 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

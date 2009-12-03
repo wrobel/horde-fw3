@@ -6,7 +6,7 @@ require_once 'Horde/Cache.php';
  * The Perms_sql:: class provides a SQL driver for the Horde
  * permissions system.
  *
- * $Horde: framework/Perms/Perms/sql.php,v 1.1.2.16 2009/10/05 21:17:23 jan Exp $
+ * $Horde: framework/Perms/Perms/sql.php,v 1.1.2.16 2009-10-05 21:17:23 jan Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

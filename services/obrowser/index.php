@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/services/obrowser/index.php,v 1.6.10.10 2009/01/06 15:27:30 jan Exp $
+ * $Horde: horde/services/obrowser/index.php,v 1.6.10.10 2009-01-06 15:27:30 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

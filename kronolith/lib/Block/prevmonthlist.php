@@ -6,7 +6,7 @@ $block_name = _("Prior Events");
  * Horde_Block_Kronolith_monthlist:: Implementation of the Horde_Block
  * API to display a list of previous calendar items grouped by month.
  *
- * $Horde: kronolith/lib/Block/prevmonthlist.php,v 1.15.2.14 2009/01/13 22:44:45 mrubinsk Exp $
+ * $Horde: kronolith/lib/Block/prevmonthlist.php,v 1.15.2.14 2009-01-13 22:44:45 mrubinsk Exp $
  *
  * @package Horde_Block
  */

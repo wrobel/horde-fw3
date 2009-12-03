@@ -6,7 +6,7 @@
  *                       the passed in mailbox value instead.
  * 'edit_query'      --  If exists, the search query to edit.
  *
- * $Horde: imp/search.php,v 2.128.2.34 2009/01/06 15:24:02 jan Exp $
+ * $Horde: imp/search.php,v 2.128.2.34 2009-01-06 15:24:02 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

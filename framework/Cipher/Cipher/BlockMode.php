@@ -3,7 +3,7 @@
  * The Horde_Cipher_BlockMode:: class provides a common abstracted
  * interface to various block mode handlers for ciphers.
  *
- * $Horde: framework/Cipher/Cipher/BlockMode.php,v 1.14.12.13 2009/01/06 15:22:57 jan Exp $
+ * $Horde: framework/Cipher/Cipher/BlockMode.php,v 1.14.12.13 2009-01-06 15:22:57 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

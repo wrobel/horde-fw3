@@ -5,7 +5,7 @@
  *
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.
- * $Horde: hermes/scripts/Sandals.wdgt/lib/open_calendar.js,v 1.2.2.1 2009/01/06 15:24:00 jan Exp $
+ * $Horde: hermes/scripts/Sandals.wdgt/lib/open_calendar.js,v 1.2.2.1 2009-01-06 15:24:00 jan Exp $
  */
 
 /**

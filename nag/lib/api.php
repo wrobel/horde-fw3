@@ -2,7 +2,7 @@
 /**
  * Nag external API interface.
  *
- * $Horde: nag/lib/api.php,v 1.100.10.46 2009/09/04 10:38:38 jan Exp $
+ * $Horde: nag/lib/api.php,v 1.100.10.46 2009-09-04 10:38:38 jan Exp $
  *
  * This file defines Nag's external API interface. Other applications can
  * interact with Nag through this API.

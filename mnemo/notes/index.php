@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: mnemo/notes/index.php,v 1.1.2.2 2009/01/06 15:25:00 jan Exp $
+ * $Horde: mnemo/notes/index.php,v 1.1.2.2 2009-01-06 15:25:00 jan Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *

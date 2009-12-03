@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: kronolith/contacts.php,v 1.16.10.8 2009/01/06 15:24:43 jan Exp $
+ * $Horde: kronolith/contacts.php,v 1.16.10.8 2009-01-06 15:24:43 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

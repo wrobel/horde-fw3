@@ -9,7 +9,7 @@
  * a SQL source (such as 'localsql') - otherwise, you will turn every user's
  * private address book into a public source!
  *
- * $Horde: turba/scripts/upgrades/public_to_horde_share.php,v 1.3.2.9 2009/01/06 15:28:03 jan Exp $
+ * $Horde: turba/scripts/upgrades/public_to_horde_share.php,v 1.3.2.9 2009-01-06 15:28:03 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

@@ -2,7 +2,7 @@
 /**
  * Null Turba directory driver.
  *
- * $Horde: turba/lib/Driver/null.php,v 1.2.2.1 2005/11/10 00:02:40 mdjukic Exp $
+ * $Horde: turba/lib/Driver/null.php,v 1.2.2.1 2005-11-10 00:02:40 mdjukic Exp $
  *
  * @author  Marko Djukic <mdjukic@horde.org>
  * @since   Turba 2.2

@@ -39,7 +39,7 @@ require_once 'DB.php';
  * The table structure for the SessionHandler can be found in
  * horde/scripts/sql/horde_sessionhandler.sql.
  *
- * $Horde: framework/SessionHandler/SessionHandler/sql.php,v 1.22.10.20 2009/09/25 08:03:56 selsky Exp $
+ * $Horde: framework/SessionHandler/SessionHandler/sql.php,v 1.22.10.20 2009-09-25 08:03:56 selsky Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

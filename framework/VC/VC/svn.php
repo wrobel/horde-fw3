@@ -4,7 +4,7 @@
  *
  * Copyright 2000-2009 The Horde Project (http://www.horde.org/)
  *
- * $Horde: framework/VC/VC/svn.php,v 1.28.4.23 2009/01/06 15:23:46 jan Exp $
+ * $Horde: framework/VC/VC/svn.php,v 1.28.4.23 2009-01-06 15:23:46 jan Exp $
  *
  * @author  Anil Madhavapeddy <anil@recoil.org>
  * @since   Horde 3.0

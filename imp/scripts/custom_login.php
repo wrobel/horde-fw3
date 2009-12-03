@@ -1,5 +1,5 @@
 <?php
-// $Horde: imp/scripts/custom_login.php,v 1.6.10.4 2007/12/20 14:00:36 jan Exp $
+// $Horde: imp/scripts/custom_login.php,v 1.6.10.4 2007-12-20 14:00:36 jan Exp $
 
 // CUSTOMIZE THIS
 define('IMP_BASE', '..');

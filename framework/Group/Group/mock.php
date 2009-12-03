@@ -2,7 +2,7 @@
 /**
  * The Group:: class provides the Horde groups system.
  *
- * $Horde: framework/Group/Group/mock.php,v 1.1.2.3 2009/01/06 15:23:08 jan Exp $
+ * $Horde: framework/Group/Group/mock.php,v 1.1.2.3 2009-01-06 15:23:08 jan Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

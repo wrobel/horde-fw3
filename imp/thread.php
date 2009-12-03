@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/thread.php,v 2.10.2.29 2009/07/23 11:33:34 jan Exp $
+ * $Horde: imp/thread.php,v 2.10.2.29 2009-07-23 11:33:34 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

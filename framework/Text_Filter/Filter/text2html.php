@@ -34,7 +34,7 @@ require_once 'Horde/String.php';
  *                              Included for completeness.
  * </pre>
  *
- * $Horde: framework/Text_Filter/Filter/text2html.php,v 1.4.2.15 2009/01/06 15:23:42 jan Exp $
+ * $Horde: framework/Text_Filter/Filter/text2html.php,v 1.4.2.15 2009-01-06 15:23:42 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

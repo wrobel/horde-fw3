@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="iso-8859-2"?>
-<!-- Horde 3.1 Admin help: hu_HU $Horde: horde/admin/locale/hu_HU/help.xml,v 1.1.2.2 2007/12/20 15:01:21 jan Exp $ -->
+<!-- Horde 3.1 Admin help: hu_HU $Horde: horde/admin/locale/hu_HU/help.xml,v 1.1.2.2 2007-12-20 15:01:21 jan Exp $ -->
 <help>
   <entry id="admin-phpshell" state="uptodate" md5="d5017591ef4a3f39d9787b581a0abba5">
     <title>Adminisztrációs eszközök: a PHP Shell</title>

@@ -7,7 +7,7 @@
  *
  * Latitude and longitude are decimals (south and west are negative).
  *
- * $Horde: framework/NLS/NLS/coordinates.php,v 1.2.12.5 2009/01/29 11:56:05 jan Exp $
+ * $Horde: framework/NLS/NLS/coordinates.php,v 1.2.12.5 2009-01-29 11:56:05 jan Exp $
  *
  * @package Horde_NLS
  */

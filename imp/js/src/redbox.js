@@ -1,7 +1,7 @@
 /**
  * Redbox.js
  *
- * $Horde: imp/js/src/redbox.js,v 1.10.2.4 2008/02/06 10:08:39 slusarz Exp $
+ * $Horde: imp/js/src/redbox.js,v 1.10.2.4 2008-02-06 10:08:39 slusarz Exp $
  *
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.

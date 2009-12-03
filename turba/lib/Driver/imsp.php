@@ -5,7 +5,7 @@ require_once 'Horde/Cache.php';
 /**
  * Turba directory driver implementation for an IMSP server.
  *
- * $Horde: turba/lib/Driver/imsp.php,v 1.21.4.23 2009/10/07 16:16:38 mrubinsk Exp $
+ * $Horde: turba/lib/Driver/imsp.php,v 1.21.4.23 2009-10-07 16:16:38 mrubinsk Exp $
  *
  * @author  Michael Rubinsky <mrubinsk@horde.org>
  * @package Turba

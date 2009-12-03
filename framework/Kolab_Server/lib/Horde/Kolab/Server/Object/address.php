@@ -2,7 +2,7 @@
 /**
  * An entry in the global addressbook.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/address.php,v 1.2.2.6 2009/04/25 08:56:33 wrobel Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/address.php,v 1.2.2.6 2009-04-25 08:56:33 wrobel Exp $
  *
  * PHP version 4
  *
@@ -17,7 +17,7 @@
  * This class provides methods to deal with global address book
  * entries for Kolab.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/address.php,v 1.2.2.6 2009/04/25 08:56:33 wrobel Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/address.php,v 1.2.2.6 2009-04-25 08:56:33 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

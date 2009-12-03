@@ -3,7 +3,7 @@
  * The Horde_Cache_xcache:: class provides an XCache implementation of
  * the Horde caching system.
  *
- * $Horde: framework/Cache/Cache/xcache.php,v 1.8.2.1 2007/12/20 13:48:51 jan Exp $
+ * $Horde: framework/Cache/Cache/xcache.php,v 1.8.2.1 2007-12-20 13:48:51 jan Exp $
  *
  * Copyright 2006-2007 Duck <duck@obala.net>
  *

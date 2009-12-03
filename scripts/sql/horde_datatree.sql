@@ -1,4 +1,4 @@
--- $Horde: horde/scripts/sql/horde_datatree.sql,v 1.1.10.2 2007/12/20 15:03:03 jan Exp $
+-- $Horde: horde/scripts/sql/horde_datatree.sql,v 1.1.10.2 2007-12-20 15:03:03 jan Exp $
 
 CREATE TABLE horde_datatree (
     datatree_id INT NOT NULL,

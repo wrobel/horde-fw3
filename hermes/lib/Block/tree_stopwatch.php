@@ -4,7 +4,7 @@ $block_name = _("Stop Watch");
 $block_type = 'tree';
 
 /**
- * $Horde: hermes/lib/Block/tree_stopwatch.php,v 1.3 2008/01/02 16:15:09 chuck Exp $
+ * $Horde: hermes/lib/Block/tree_stopwatch.php,v 1.3 2008-01-02 16:15:09 chuck Exp $
  *
  * @package Horde_Block
  */

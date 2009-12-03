@@ -2,7 +2,7 @@
 /**
  * The MIME_Viewer_images class allows images to be displayed.
  *
- * $Horde: framework/MIME/MIME/Viewer/images.php,v 1.18.8.14 2009/01/06 15:23:21 jan Exp $
+ * $Horde: framework/MIME/MIME/Viewer/images.php,v 1.18.8.14 2009-01-06 15:23:21 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

@@ -21,7 +21,7 @@
  * The table structure for the SessionHandler can be found in
  * horde/scripts/sql/horde_sessionhandler.oci8.sql.
  *
- * $Horde: framework/SessionHandler/SessionHandler/oci8.php,v 1.8.4.16 2008/09/02 21:36:43 slusarz Exp $
+ * $Horde: framework/SessionHandler/SessionHandler/oci8.php,v 1.8.4.16 2008-09-02 21:36:43 slusarz Exp $
  *
  * Copyright 2003-2007 Liam Hoekenga <liamr@umich.edu>
  *

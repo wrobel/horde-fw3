@@ -3,7 +3,7 @@
  * Read-only Turba_Driver implementation for creating a Horde_Group based
  * address book.
  *
- * $Horde: turba/lib/Driver/group.php,v 1.2.2.1 2007/12/20 14:34:30 jan Exp $
+ * $Horde: turba/lib/Driver/group.php,v 1.2.2.1 2007-12-20 14:34:30 jan Exp $
  *
  * @author  Michael J. Rubinsky <mrubinsk@horde.org>
  * @since Turba 2.2

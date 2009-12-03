@@ -3,7 +3,7 @@ require_once 'Net/IMSP.php';
 /**
  * Net_IMSP_Utils::
  *
- * $Horde: framework/Net_IMSP/IMSP/Utils.php,v 1.3.10.11 2009/01/06 15:23:27 jan Exp $
+ * $Horde: framework/Net_IMSP/IMSP/Utils.php,v 1.3.10.11 2009-01-06 15:23:27 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

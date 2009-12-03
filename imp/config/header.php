@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/config/header.php.dist,v 1.1.2.3 2007/12/20 13:59:20 jan Exp $
+ * $Horde: imp/config/header.php.dist,v 1.1.2.3 2007-12-20 13:59:20 jan Exp $
  *
  * This file will allow you to set headers to append to outgoing mail messages.
  *

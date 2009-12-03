@@ -11,7 +11,7 @@ if (!empty($GLOBALS['conf']['weatherdotcom']['partner_id']) &&
  * portal screen to display weather and forecast data from weather.com
  * for a specified location.
  *
- * $Horde: horde/lib/Block/weatherdotcom.php,v 1.37.4.17 2009/06/17 21:19:16 mrubinsk Exp $
+ * $Horde: horde/lib/Block/weatherdotcom.php,v 1.37.4.17 2009-06-17 21:19:16 mrubinsk Exp $
  *
  * @package Horde_Block
  */

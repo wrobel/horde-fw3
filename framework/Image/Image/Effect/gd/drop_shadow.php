@@ -2,7 +2,7 @@
 /**
  * Image effect for adding a drop shadow.
  *
- * $Horde: framework/Image/Image/Effect/gd/drop_shadow.php,v 1.4.2.1 2007/12/20 13:49:11 jan Exp $
+ * $Horde: framework/Image/Image/Effect/gd/drop_shadow.php,v 1.4.2.1 2007-12-20 13:49:11 jan Exp $
  *
  * This algorithm is from the phpThumb project available at
  * http://phpthumb.sourceforge.net and all credit for this script should go to

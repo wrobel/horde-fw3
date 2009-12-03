@@ -2,7 +2,7 @@
 /**
  * Test the object class.
  *
- * $Horde: framework/Kolab_Server/test/Horde/Kolab/Server/ObjectTest.php,v 1.3.2.5 2009/01/06 15:23:17 jan Exp $
+ * $Horde: framework/Kolab_Server/test/Horde/Kolab/Server/ObjectTest.php,v 1.3.2.5 2009-01-06 15:23:17 jan Exp $
  *
  * PHP version 5
  *
@@ -24,7 +24,7 @@ require_once 'Horde/Kolab/Server/Object.php';
 /**
  * The the handling of objects.
  *
- * $Horde: framework/Kolab_Server/test/Horde/Kolab/Server/ObjectTest.php,v 1.3.2.5 2009/01/06 15:23:17 jan Exp $
+ * $Horde: framework/Kolab_Server/test/Horde/Kolab/Server/ObjectTest.php,v 1.3.2.5 2009-01-06 15:23:17 jan Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *
@@ -148,7 +148,7 @@ class Horde_Kolab_Server_ObjectTest extends Horde_Kolab_Test_Server {
 /**
  * A dummy class for testing.
  *
- * $Horde: framework/Kolab_Server/test/Horde/Kolab/Server/ObjectTest.php,v 1.3.2.5 2009/01/06 15:23:17 jan Exp $
+ * $Horde: framework/Kolab_Server/test/Horde/Kolab/Server/ObjectTest.php,v 1.3.2.5 2009-01-06 15:23:17 jan Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

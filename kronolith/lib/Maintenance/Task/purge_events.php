@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: kronolith/lib/Maintenance/Task/purge_events.php,v 1.1.2.4 2009/01/06 15:24:46 jan Exp $
+ * $Horde: kronolith/lib/Maintenance/Task/purge_events.php,v 1.1.2.4 2009-01-06 15:24:46 jan Exp $
  *
  * Maintenance module that purges old events.
  *

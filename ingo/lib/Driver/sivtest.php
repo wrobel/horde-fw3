@@ -6,7 +6,7 @@ require_once 'Net/Sieve.php';
  * Ingo_Driver_sivtest:: Implements the Sieve_Driver api to allow scripts to
  * be installed and set active via the Cyrus sivtest command line utility.
  *
- * $Horde: ingo/lib/Driver/sivtest.php,v 1.6.2.3 2009/01/06 15:24:35 jan Exp $
+ * $Horde: ingo/lib/Driver/sivtest.php,v 1.6.2.3 2009-01-06 15:24:35 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  * Copyright 2004-2007 Liam Hoekenga <liamr@umich.edu>

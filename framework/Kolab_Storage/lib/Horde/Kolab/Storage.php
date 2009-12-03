@@ -2,7 +2,7 @@
 /**
  * @package Kolab_Storage
  *
- * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Storage.php,v 1.2.2.3 2009/01/06 15:23:17 jan Exp $
+ * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Storage.php,v 1.2.2.3 2009-01-06 15:23:17 jan Exp $
  */
 
 /** Load the handler for the folder list management. */
@@ -34,7 +34,7 @@ require_once 'Horde/Kolab/Storage/List.php';
  *     $folder = Kolab_Storage::getShareData(Auth::getAuth(), 'event');
  *   </code>
  *
- * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Storage.php,v 1.2.2.3 2009/01/06 15:23:17 jan Exp $
+ * $Horde: framework/Kolab_Storage/lib/Horde/Kolab/Storage.php,v 1.2.2.3 2009-01-06 15:23:17 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

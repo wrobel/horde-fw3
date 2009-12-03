@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: turba/config/menu.php.dist,v 1.4.8.1 2007/12/20 14:34:24 jan Exp $
+ * $Horde: turba/config/menu.php.dist,v 1.4.8.1 2007-12-20 14:34:24 jan Exp $
  *
  * This file lets you extend Turba's menu with your own items.
  *

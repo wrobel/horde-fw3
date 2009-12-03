@@ -1,5 +1,5 @@
 --
--- $Horde: horde/scripts/sql/horde_locks.sql,v 1.1.2.5 2008/07/20 14:25:23 chuck Exp $
+-- $Horde: horde/scripts/sql/horde_locks.sql,v 1.1.2.5 2008-07-20 14:25:23 chuck Exp $
 --
 CREATE TABLE horde_locks (
     lock_id                  VARCHAR(36) NOT NULL,

@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/lib/Maintenance/Task/purge_trash.php,v 1.23.10.13 2009/01/06 15:24:10 jan Exp $
+ * $Horde: imp/lib/Maintenance/Task/purge_trash.php,v 1.23.10.13 2009-01-06 15:24:10 jan Exp $
  *
  * Maintenance module that purges old messages in the Trash folder.
  *

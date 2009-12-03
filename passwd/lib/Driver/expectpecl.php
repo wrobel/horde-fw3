@@ -3,7 +3,7 @@
  * The Passwd_expectpecl class provides an PECL expect implementation of the
  * Passwd system.
  *
- * $Horde: passwd/lib/Driver/expectpecl.php,v 1.5.2.1 2008/10/09 17:12:04 jan Exp $
+ * $Horde: passwd/lib/Driver/expectpecl.php,v 1.5.2.1 2008-10-09 17:12:04 jan Exp $
  *
  * Copyright 2006-2007 Duck <duck@obala.net>
  *

@@ -29,7 +29,7 @@ require_once KRONOLITH_BASE . '/lib/Recurrence.php';
  *
  * Act on alarms in events and send emails/pages/etc. to users.
  *
- * $Horde: kronolith/lib/Scheduler/kronolith.php,v 1.25.6.23 2009/04/21 13:36:12 jan Exp $
+ * $Horde: kronolith/lib/Scheduler/kronolith.php,v 1.25.6.23 2009-04-21 13:36:12 jan Exp $
  *
  * @package Horde_Scheduler
  */

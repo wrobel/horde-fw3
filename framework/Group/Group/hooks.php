@@ -4,7 +4,7 @@
  * addition of adding support for hook functions to define if a user
  * is in a group.
  *
- * $Horde: framework/Group/Group/hooks.php,v 1.7.2.16 2009/01/06 15:23:08 jan Exp $
+ * $Horde: framework/Group/Group/hooks.php,v 1.7.2.16 2009-01-06 15:23:08 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

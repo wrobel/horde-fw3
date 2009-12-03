@@ -1,7 +1,7 @@
 #!@php_bin@
 <?php
 /**
- * $Horde: framework/admintools/horde-sql-shell.php,v 1.1.2.5 2009/01/06 15:23:51 jan Exp $
+ * $Horde: framework/admintools/horde-sql-shell.php,v 1.1.2.5 2009-01-06 15:23:51 jan Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

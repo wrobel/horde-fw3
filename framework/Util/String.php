@@ -6,7 +6,7 @@ $GLOBALS['_HORDE_STRING_CHARSET'] = 'iso-8859-1';
  * The String:: class provides static methods for charset and locale safe
  * string manipulation.
  *
- * $Horde: framework/Util/String.php,v 1.43.6.38 2009/09/15 16:36:14 jan Exp $
+ * $Horde: framework/Util/String.php,v 1.43.6.38 2009-09-15 16:36:14 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

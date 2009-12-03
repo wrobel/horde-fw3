@@ -2,7 +2,7 @@
 /**
  * @package Hermes
  *
- * $Horde: hermes/lib/Forms/Time.php,v 1.20.2.1 2009/01/06 15:23:59 jan Exp $
+ * $Horde: hermes/lib/Forms/Time.php,v 1.20.2.1 2009-01-06 15:23:59 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -155,7 +155,7 @@ class TimeForm extends Horde_Form {
 /**
  * TimeEntryForm Class.
  *
- * $Horde: hermes/lib/Forms/Time.php,v 1.20.2.1 2009/01/06 15:23:59 jan Exp $
+ * $Horde: hermes/lib/Forms/Time.php,v 1.20.2.1 2009-01-06 15:23:59 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -248,7 +248,7 @@ class TimeEntryForm extends TimeForm {
 /**
  * TimeReviewForm Class.
  *
- * $Horde: hermes/lib/Forms/Time.php,v 1.20.2.1 2009/01/06 15:23:59 jan Exp $
+ * $Horde: hermes/lib/Forms/Time.php,v 1.20.2.1 2009-01-06 15:23:59 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

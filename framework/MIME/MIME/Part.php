@@ -40,7 +40,7 @@ define('MIME_DEFAULT_ENCODING', '7bit');
  * The MIME_Part:: class provides a wrapper around MIME parts and methods
  * for dealing with them.
  *
- * $Horde: framework/MIME/MIME/Part.php,v 1.177.4.27 2009/06/17 19:49:13 slusarz Exp $
+ * $Horde: framework/MIME/MIME/Part.php,v 1.177.4.27 2009-06-17 19:49:13 slusarz Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

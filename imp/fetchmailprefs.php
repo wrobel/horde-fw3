@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/fetchmailprefs.php,v 1.39.4.10 2009/01/06 15:24:01 jan Exp $
+ * $Horde: imp/fetchmailprefs.php,v 1.39.4.10 2009-01-06 15:24:01 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

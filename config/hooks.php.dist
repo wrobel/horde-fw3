@@ -44,7 +44,7 @@
  *    we saved the results of the hook for them. However, if the preference is
  *    locked, the result of the hook will never be saved.
  *
- * $Horde: horde/config/hooks.php.dist,v 1.73.6.19 2009/08/13 15:43:56 jan Exp $
+ * $Horde: horde/config/hooks.php.dist,v 1.73.6.19 2009-08-13 15:43:56 jan Exp $
  */
 
 // Example theme hook function. This shows how you can access things like the

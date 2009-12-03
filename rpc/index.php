@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/rpc/index.php,v 1.1.2.2 2009/01/06 15:26:19 jan Exp $
+ * $Horde: horde/rpc/index.php,v 1.1.2.2 2009-01-06 15:26:19 jan Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

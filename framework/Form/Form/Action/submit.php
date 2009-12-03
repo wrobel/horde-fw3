@@ -4,7 +4,7 @@
  * form after the form element that the action is attached to is
  * modified.
  *
- * $Horde: framework/Form/Form/Action/submit.php,v 1.10.12.8 2009/01/06 15:23:07 jan Exp $
+ * $Horde: framework/Form/Form/Action/submit.php,v 1.10.12.8 2009-01-06 15:23:07 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/lib/prefs.php,v 1.19.4.23 2009/10/15 22:12:53 jan Exp $
+ * $Horde: horde/lib/prefs.php,v 1.19.4.23 2009-10-15 22:12:53 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

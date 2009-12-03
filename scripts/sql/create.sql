@@ -1,4 +1,4 @@
--- $Horde: horde/scripts/sql/create.sql,v 1.1.2.20 2009/06/10 16:45:28 jan Exp $
+-- $Horde: horde/scripts/sql/create.sql,v 1.1.2.20 2009-06-10 16:45:28 jan Exp $
 
 CREATE TABLE horde_users (
     user_uid                    VARCHAR(255) NOT NULL,

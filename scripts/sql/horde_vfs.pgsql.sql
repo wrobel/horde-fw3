@@ -1,4 +1,4 @@
--- $Horde: horde/scripts/sql/horde_vfs.pgsql.sql,v 1.1.10.3 2008/10/15 04:07:01 chuck Exp $
+-- $Horde: horde/scripts/sql/horde_vfs.pgsql.sql,v 1.1.10.3 2008-10-15 04:07:01 chuck Exp $
 
 CREATE TABLE horde_vfs (
     vfs_id        INT NOT NULL,

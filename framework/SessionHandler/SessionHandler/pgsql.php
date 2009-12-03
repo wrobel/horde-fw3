@@ -33,7 +33,7 @@
  *  pat@pcprogrammer.com    Perform update in a single transaction
  *  Jonathan Crompton       Lock row for life of session</pre>
  *
- * $Horde: framework/SessionHandler/SessionHandler/pgsql.php,v 1.12.10.22 2009/09/25 14:29:09 jan Exp $
+ * $Horde: framework/SessionHandler/SessionHandler/pgsql.php,v 1.12.10.22 2009-09-25 14:29:09 jan Exp $
  *
  * @author  Jon Parise <jon@csh.rit.edu>
  * @package Horde_SessionHandler

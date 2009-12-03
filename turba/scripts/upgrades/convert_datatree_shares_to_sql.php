@@ -6,7 +6,7 @@
  * 2.1_to_2.2_add_sql_share_tables SQL creation script for your RDBMS before
  * executing this script.
  *
- * $Horde: turba/scripts/upgrades/convert_datatree_shares_to_sql.php,v 1.1.2.7 2009/07/20 11:16:56 jan Exp $
+ * $Horde: turba/scripts/upgrades/convert_datatree_shares_to_sql.php,v 1.1.2.7 2009-07-20 11:16:56 jan Exp $
  */
 
 @define('AUTH_HANDLER', true);

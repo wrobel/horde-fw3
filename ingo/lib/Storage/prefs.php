@@ -3,7 +3,7 @@
  * Ingo_Storage_prefs:: implements the Ingo_Storage:: API to save Ingo data
  * via the Horde preferences system.
  *
- * $Horde: ingo/lib/Storage/prefs.php,v 1.14.12.14 2009/05/14 13:48:15 jan Exp $
+ * $Horde: ingo/lib/Storage/prefs.php,v 1.14.12.14 2009-05-14 13:48:15 jan Exp $
  *
  * See the enclosed file LICENSE for license information (ASL).  If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.

@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: imp/stationery.php,v 2.1.2.11 2009/01/06 15:24:02 jan Exp $
+ * $Horde: imp/stationery.php,v 2.1.2.11 2009-01-06 15:24:02 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

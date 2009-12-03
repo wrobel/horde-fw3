@@ -3,7 +3,7 @@
  * The Horde_Cache_eaccelerator:: class provides a eAccelerator content cache
  * (version 0.9.5+) implementation of the Horde caching system.
  *
- * $Horde: framework/Cache/Cache/eaccelerator.php,v 1.9.2.1 2007/12/20 13:48:51 jan Exp $
+ * $Horde: framework/Cache/Cache/eaccelerator.php,v 1.9.2.1 2007-12-20 13:48:51 jan Exp $
  *
  * Copyright 2006-2007 Duck <duck@obala.net>
  *

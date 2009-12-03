@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: nag/task.php,v 1.80.8.14 2009/01/06 15:25:04 jan Exp $
+ * $Horde: nag/task.php,v 1.80.8.14 2009-01-06 15:25:04 jan Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *

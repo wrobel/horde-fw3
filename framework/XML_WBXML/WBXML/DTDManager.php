@@ -8,7 +8,7 @@ include_once 'XML/WBXML/DTD/SyncMLDevInf.php';
  * From Binary XML Content Format Specification Version 1.3, 25 July 2001
  * found at http://www.wapforum.org
  *
- * $Horde: framework/XML_WBXML/WBXML/DTDManager.php,v 1.3.12.15 2009/01/06 15:23:50 jan Exp $
+ * $Horde: framework/XML_WBXML/WBXML/DTDManager.php,v 1.3.12.15 2009-01-06 15:23:50 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

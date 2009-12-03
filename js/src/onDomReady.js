@@ -5,7 +5,7 @@
  * Code from: http://agileweb.org/articles/2006/07/28/onload-final-update
  * Fixes/Improvements by: Michael Slusarz <slusarz@horde.org>
  *
- * $Horde: horde/js/src/onDomReady.js,v 1.4.2.1 2007/12/20 15:01:31 jan Exp $
+ * $Horde: horde/js/src/onDomReady.js,v 1.4.2.1 2007-12-20 15:01:31 jan Exp $
  */
 Object.extend(Event, {
     observe: function(element, name, observer, useCapture) {

@@ -3,7 +3,7 @@
  * This file contains all Horde_UI_VarRenderer extensions required for editing
  * tasks.
  *
- * $Horde: nag/lib/UI/VarRenderer/nag.php,v 1.9.2.2 2008/03/04 23:18:27 chuck Exp $
+ * $Horde: nag/lib/UI/VarRenderer/nag.php,v 1.9.2.2 2008-03-04 23:18:27 chuck Exp $
  *
  * See the enclosed file COPYING for license information (GPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/gpl.html.

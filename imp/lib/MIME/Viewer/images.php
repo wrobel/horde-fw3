@@ -6,7 +6,7 @@ require_once 'Horde/MIME/Viewer/images.php';
  * The IMP_MIME_Viewer_images class allows images to be displayed
  * inline in a message.
  *
- * $Horde: imp/lib/MIME/Viewer/images.php,v 1.43.10.26 2009/01/06 15:24:09 jan Exp $
+ * $Horde: imp/lib/MIME/Viewer/images.php,v 1.43.10.26 2009-01-06 15:24:09 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

@@ -1,5 +1,5 @@
 #
-# $Horde: mnemo/packaging/redhat/mnemo.spec,v 1.5.12.6 2009/01/06 15:25:01 jan Exp $
+# $Horde: mnemo/packaging/redhat/mnemo.spec,v 1.5.12.6 2009-01-06 15:25:01 jan Exp $
 #
 # Copyright 2003-2009 The Horde Project (http://www.horde.org/)
 #

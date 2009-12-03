@@ -7,7 +7,7 @@
  *   '-l'   List the username of active authenticated users
  *   '-ll'  List the username and login time of active authenticated users
  *
- * $Horde: framework/SessionHandler/scripts/horde-active-sessions.php,v 1.6.2.1 2007/12/20 13:49:40 jan Exp $
+ * $Horde: framework/SessionHandler/scripts/horde-active-sessions.php,v 1.6.2.1 2007-12-20 13:49:40 jan Exp $
  *
  * @package Horde_SessionHandler
  */

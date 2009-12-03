@@ -13,7 +13,7 @@
  *   $session_timeout  - What to do on session timeout?  Default is to output
  *                       the login page; also 'json' and 'none'.
  *
- * $Horde: dimp/lib/base.php,v 1.33.2.9 2009/01/06 15:22:38 jan Exp $
+ * $Horde: dimp/lib/base.php,v 1.33.2.9 2009-01-06 15:22:38 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *

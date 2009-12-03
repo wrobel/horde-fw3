@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: horde/util/barcode.php,v 1.10.10.7 2009/01/06 15:28:05 jan Exp $
+ * $Horde: horde/util/barcode.php,v 1.10.10.7 2009-01-06 15:28:05 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

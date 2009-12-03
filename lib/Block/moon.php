@@ -3,7 +3,7 @@
 $block_name = _("Moon Phases");
 
 /**
- * $Horde: horde/lib/Block/moon.php,v 1.16.10.5 2007/12/20 15:01:36 jan Exp $
+ * $Horde: horde/lib/Block/moon.php,v 1.16.10.5 2007-12-20 15:01:36 jan Exp $
  *
  * @package Horde_Block
  */

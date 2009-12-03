@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/MIME/MIME/Viewer/tgz.php,v 1.37.10.18 2009/01/06 15:23:22 jan Exp $
+ * $Horde: framework/MIME/MIME/Viewer/tgz.php,v 1.37.10.18 2009-01-06 15:23:22 jan Exp $
  *
  * @package Horde_MIME_Viewer
  */

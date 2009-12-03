@@ -6,7 +6,7 @@ require_once 'Horde/MIME/Viewer/enriched.php';
  * The IMP_MIME_Viewer_enriched class renders out plain text from
  * enriched content tags, ala RFC 1896
  *
- * $Horde: imp/lib/MIME/Viewer/enriched.php,v 1.33.10.10 2009/01/06 15:24:09 jan Exp $
+ * $Horde: imp/lib/MIME/Viewer/enriched.php,v 1.33.10.10 2009-01-06 15:24:09 jan Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *

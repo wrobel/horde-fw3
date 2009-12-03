@@ -6,7 +6,7 @@ $block_name = _("Overview");
  * Ingo_Filters_Block:: implementation of the Horde_Block API to show filter
  * information on the portal.
  *
- * $Horde: ingo/lib/Block/overview.php,v 1.1.2.6 2007/12/20 14:05:47 jan Exp $
+ * $Horde: ingo/lib/Block/overview.php,v 1.1.2.6 2007-12-20 14:05:47 jan Exp $
  *
  * See the enclosed file LICENSE for license information (ASL).  If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.

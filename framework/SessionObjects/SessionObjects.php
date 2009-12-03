@@ -4,7 +4,7 @@
  * (usually, but not necessarily, objects) in the current user's
  * session.
  *
- * $Horde: framework/SessionObjects/SessionObjects.php,v 1.6.12.12 2009/01/06 15:23:35 jan Exp $
+ * $Horde: framework/SessionObjects/SessionObjects.php,v 1.6.12.12 2009-01-06 15:23:35 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *

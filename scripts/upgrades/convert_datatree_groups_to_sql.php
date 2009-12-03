@@ -1,7 +1,7 @@
 #!/usr/bin/php -q
 <?php
 /**
- * $Horde: horde/scripts/upgrades/convert_datatree_groups_to_sql.php,v 1.1.2.2 2009/07/20 11:36:02 jan Exp $
+ * $Horde: horde/scripts/upgrades/convert_datatree_groups_to_sql.php,v 1.1.2.2 2009-07-20 11:36:02 jan Exp $
  *
  * A script to migrate groups from the DataTree backend to the new
  * (Horde 3.2+) native SQL Group backend.

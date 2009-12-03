@@ -2,7 +2,7 @@
 /**
  * A standard Kolab user.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/user.php,v 1.2.2.12 2009/04/25 12:34:52 wrobel Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/user.php,v 1.2.2.12 2009-04-25 12:34:52 wrobel Exp $
  *
  * PHP version 4
  *
@@ -17,7 +17,7 @@
  * This class provides methods to deal with Kolab users stored in
  * the Kolab db.
  *
- * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/user.php,v 1.2.2.12 2009/04/25 12:34:52 wrobel Exp $
+ * $Horde: framework/Kolab_Server/lib/Horde/Kolab/Server/Object/user.php,v 1.2.2.12 2009-04-25 12:34:52 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

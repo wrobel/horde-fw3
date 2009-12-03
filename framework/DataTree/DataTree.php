@@ -2,7 +2,7 @@
 /**
  * @package Horde_DataTree
  *
- * $Horde: framework/DataTree/DataTree.php,v 1.151.2.24 2009/01/06 15:23:01 jan Exp $
+ * $Horde: framework/DataTree/DataTree.php,v 1.151.2.24 2009-01-06 15:23:01 jan Exp $
  */
 
 /** List every object in an array, similar to PEAR/html/menu.php. */

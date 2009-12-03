@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: turba/lib/prefs.php,v 1.2.10.11 2009/01/06 15:27:47 jan Exp $
+ * $Horde: turba/lib/prefs.php,v 1.2.10.11 2009-01-06 15:27:47 jan Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *

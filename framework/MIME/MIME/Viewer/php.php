@@ -6,7 +6,7 @@ require_once dirname(__FILE__) . '/source.php';
  * The MIME_Viewer_php class renders out syntax-highlighted PHP code
  * in HTML format.
  *
- * $Horde: framework/MIME/MIME/Viewer/php.php,v 1.22.10.13 2009/01/06 15:23:21 jan Exp $
+ * $Horde: framework/MIME/MIME/Viewer/php.php,v 1.22.10.13 2009-01-06 15:23:21 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

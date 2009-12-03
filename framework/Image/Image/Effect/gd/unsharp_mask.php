@@ -2,7 +2,7 @@
 /**
  * Unsharp mask Image effect.
  *
- * $Horde: framework/Image/Image/Effect/gd/unsharp_mask.php,v 1.1.2.1 2007/12/20 13:49:11 jan Exp $
+ * $Horde: framework/Image/Image/Effect/gd/unsharp_mask.php,v 1.1.2.1 2007-12-20 13:49:11 jan Exp $
  *
  * Unsharp mask algorithm by Torstein Hønsi 2003 <thoensi_at_netcom_dot_no>
  * From: http://www.vikjavev.com/hovudsida/umtestside.php

@@ -2,7 +2,7 @@
 /**
  * Test event handling within the Kolab format implementation.
  *
- * $Horde: framework/Kolab_Format/test/Horde/Kolab/Format/EventTest.php,v 1.1.2.1 2009/04/02 20:14:52 wrobel Exp $
+ * $Horde: framework/Kolab_Format/test/Horde/Kolab/Format/EventTest.php,v 1.1.2.1 2009-04-02 20:14:52 wrobel Exp $
  *
  * @package Kolab_Format
  */
@@ -18,7 +18,7 @@ require_once 'Horde/Kolab/Format.php';
 /**
  * Test event handling.
  *
- * $Horde: framework/Kolab_Format/test/Horde/Kolab/Format/EventTest.php,v 1.1.2.1 2009/04/02 20:14:52 wrobel Exp $
+ * $Horde: framework/Kolab_Format/test/Horde/Kolab/Format/EventTest.php,v 1.1.2.1 2009-04-02 20:14:52 wrobel Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

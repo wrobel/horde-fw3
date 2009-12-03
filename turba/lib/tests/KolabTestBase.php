@@ -2,7 +2,7 @@
 /**
  * Base for PHPUnit scenarios.
  *
- * $Horde: turba/lib/tests/KolabTestBase.php,v 1.1.2.2 2009/01/06 15:27:51 jan Exp $
+ * $Horde: turba/lib/tests/KolabTestBase.php,v 1.1.2.2 2009-01-06 15:27:51 jan Exp $
  *
  * PHP version 5
  *
@@ -27,7 +27,7 @@ require_once 'Horde/Kolab.php';
 /**
  * Base for PHPUnit scenarios.
  *
- * $Horde: turba/lib/tests/KolabTestBase.php,v 1.1.2.2 2009/01/06 15:27:51 jan Exp $
+ * $Horde: turba/lib/tests/KolabTestBase.php,v 1.1.2.2 2009-01-06 15:27:51 jan Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

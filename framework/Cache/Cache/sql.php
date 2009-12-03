@@ -45,7 +45,7 @@
  * );
  * </pre>
  *
- * $Horde: framework/Cache/Cache/sql.php,v 1.12.2.13 2009/02/25 05:35:42 chuck Exp $
+ * $Horde: framework/Cache/Cache/sql.php,v 1.12.2.13 2009-02-25 05:35:42 chuck Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *

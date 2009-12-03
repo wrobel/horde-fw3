@@ -24,7 +24,7 @@
  *                    If not present, this is built from 'hostspec', 'port'
  *                    and 'protocol' parameters.</pre>
  *
- * $Horde: framework/IMAP/IMAP/Admin.php,v 1.5.6.13 2009/01/06 15:23:11 jan Exp $
+ * $Horde: framework/IMAP/IMAP/Admin.php,v 1.5.6.13 2009-01-06 15:23:11 jan Exp $
  *
  * Copyright 2004-2009 The Horde Project (http://www.horde.org/)
  *

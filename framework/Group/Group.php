@@ -11,7 +11,7 @@ define('GROUP_ROOT', -1);
 /**
  * The Group:: class provides the Horde groups system.
  *
- * $Horde: framework/Group/Group.php,v 1.67.2.22 2009/01/06 15:23:08 jan Exp $
+ * $Horde: framework/Group/Group.php,v 1.67.2.22 2009-01-06 15:23:08 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *

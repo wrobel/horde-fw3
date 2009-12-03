@@ -8,7 +8,7 @@
  * http://www.millstream.com.au/view/code/tablekit/
  * http://tablesorter.com/docs/
  *
- * $Horde: horde/js/src/tables.js-prototype.js,v 1.8.2.4 2008/04/24 07:19:22 slusarz Exp $
+ * $Horde: horde/js/src/tables.js-prototype.js,v 1.8.2.4 2008-04-24 07:19:22 slusarz Exp $
  *
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.

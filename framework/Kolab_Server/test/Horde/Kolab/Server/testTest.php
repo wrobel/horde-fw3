@@ -2,7 +2,7 @@
 /**
  * Test the test driver.
  *
- * $Horde: framework/Kolab_Server/test/Horde/Kolab/Server/testTest.php,v 1.3.2.11 2009/04/25 08:56:33 wrobel Exp $
+ * $Horde: framework/Kolab_Server/test/Horde/Kolab/Server/testTest.php,v 1.3.2.11 2009-04-25 08:56:33 wrobel Exp $
  *
  * PHP version 5
  *
@@ -21,7 +21,7 @@ require_once 'Horde/Kolab/Test/Server.php';
 /**
  * Test the test backend.
  *
- * $Horde: framework/Kolab_Server/test/Horde/Kolab/Server/testTest.php,v 1.3.2.11 2009/04/25 08:56:33 wrobel Exp $
+ * $Horde: framework/Kolab_Server/test/Horde/Kolab/Server/testTest.php,v 1.3.2.11 2009-04-25 08:56:33 wrobel Exp $
  *
  * Copyright 2008-2009 The Horde Project (http://www.horde.org/)
  *

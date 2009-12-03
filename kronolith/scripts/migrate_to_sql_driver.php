@@ -1,7 +1,7 @@
 #!/usr/local/bin/php
 <?php
 /**
- * $Horde: kronolith/scripts/migrate_to_sql_driver.php,v 1.1.10.3 2007/01/02 13:55:06 jan Exp $
+ * $Horde: kronolith/scripts/migrate_to_sql_driver.php,v 1.1.10.3 2007-01-02 13:55:06 jan Exp $
  *
  * Copyright 1999-2007 Charles J. Hagenbuch <chuck@horde.org>
  *

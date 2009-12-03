@@ -6,7 +6,7 @@ require_once 'Horde/Crypt.php';
  * Horde_Crypt_smime:: provides a framework for Horde applications to
  * interact with the OpenSSL library and implement S/MIME.
  *
- * $Horde: framework/Crypt/Crypt/smime.php,v 1.49.2.22 2009/01/22 10:49:48 jan Exp $
+ * $Horde: framework/Crypt/Crypt/smime.php,v 1.49.2.22 2009-01-22 10:49:48 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

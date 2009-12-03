@@ -3,7 +3,7 @@
  * Maintenance module that presents a TOS Agreement page to user.
  * If user does not accept terms, user is not allowed to login.
  *
- * $Horde: imp/lib/Maintenance/Task/tos_agreement.php,v 1.11.10.11 2009/01/06 15:24:10 jan Exp $
+ * $Horde: imp/lib/Maintenance/Task/tos_agreement.php,v 1.11.10.11 2009-01-06 15:24:10 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *

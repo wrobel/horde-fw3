@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/Prefs/Prefs/ldap.php,v 1.85.10.33 2009/09/23 17:02:51 mrubinsk Exp $
+ * $Horde: framework/Prefs/Prefs/ldap.php,v 1.85.10.33 2009-09-23 17:02:51 mrubinsk Exp $
  *
  * @package Horde_Prefs
  */
