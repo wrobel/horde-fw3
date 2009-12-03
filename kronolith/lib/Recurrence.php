@@ -2,7 +2,7 @@
 /**
  * This file contains the Horde_Date_Recurrence class and according constants.
  *
- * $Horde: kronolith/lib/Recurrence.php,v 1.16.2.12 2009-11-27 17:23:49 wrobel Exp $
+ * $Horde: kronolith/lib/Recurrence.php,v 1.16.2.13 2009-12-03 11:17:38 wrobel Exp $
  *
  * Copyright 2007-2009 The Horde Project (http://www.horde.org/)
  *
@@ -419,17 +419,17 @@ class Horde_Date_Recurrence {
             }
 
             $next = $start_week;
-            list($next->mday, $next->month, $next->year) = explode('/', Date_Calc::daysToDate(Date_Calc::dateToDays($next->mday, $next->month, $next->year) + $recur - 1, '%e/%m/%Y'));
+            list($next->mday, $next->month, $next->year) = explode('/', Date_Calc::daysToDate(Date_Calc::dateToDays($next->mday, $next->month, $next->year) + $recur, '%e/%m/%Y'));
             $next = new Horde_Date($next);
             while ($next->compareDateTime($after) < 0 &&
                    $next->compareDateTime($after_week_end) < 0) {
-                ++$next->mday;
-                $next->correct();
                 if ($this->hasRecurCount()
                     && $next->compareDateTime($after) < 0
                     && $this->recurOnDay((int)pow(2, $next->dayOfWeek()))) {
                     $recurrences++;
                 }
+                ++$next->mday;
+                $next->correct();
             }
             if ($this->hasRecurCount() &&
                 $recurrences >= $this->recurCount) {
