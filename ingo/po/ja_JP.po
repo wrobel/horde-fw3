@@ -5,15 +5,16 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Ingo 1.2.1\n"
+"Project-Id-Version: Ingo 1.2.3\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2009-01-30 14:23+0900\n"
-"PO-Revision-Date: 2009-02-01 18:19+0900\n"
+"POT-Creation-Date: 2009-09-12 10:09+0200\n"
+"PO-Revision-Date: 2009-12-21 16:03+0900\n"
 "Last-Translator: Hiromi Kimura <hiromi@tac.tsukuba.ac.jp>\n"
 "Language-Team: i18n@lists.horde.org\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=SHIFT_JIS\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: filters.php:223
 msgid " and"
@@ -56,7 +57,7 @@ msgstr "詳細設定"
 msgid "All of the following"
 msgstr "以下全部"
 
-#: lib/api.php:73
+#: lib/api.php:78
 msgid "Allow Rules"
 msgstr "ルールを許可"
 
@@ -102,7 +103,7 @@ msgstr "バインド失敗：(%s) %s"
 msgid "Blacklist"
 msgstr "ブラックリスト"
 
-#: blacklist.php:104
+#: blacklist.php:105
 msgid "Blacklist Edit"
 msgstr "ブラックリストを編集"
 
@@ -128,7 +129,7 @@ msgid "Cc"
 msgstr "Cc"
 
 #: spam.php:106 rule.php:141 whitelist.php:38 forward.php:56 vacation.php:81
-#: blacklist.php:70
+#: blacklist.php:71
 msgid "Changes saved."
 msgstr "変更は保存されました。"
 
@@ -145,7 +146,7 @@ msgstr "含む"
 msgid "Copy %s"
 msgstr "%s をコピー"
 
-#: lib/Storage.php:993 lib/Storage/sql.php:621
+#: lib/Storage.php:991 lib/Storage/sql.php:678
 #, php-format
 msgid "Copy of %s"
 msgstr "%s のコピー"
@@ -153,19 +154,19 @@ msgstr "%s のコピー"
 #: lib/Template.php:235
 #, php-format
 msgid "Could not save the compiled template file '%s'."
-msgstr "コンパイルした雛形ファイル '%s' が保存できません。"
+msgstr "コンパイルしたファイル '%s' が保存できません。"
 
 #: lib/Ingo.php:62
 msgid "Create new folder"
 msgstr "新規フォルダ作成"
 
-#: lib/Script/procmail.php:352 lib/Script/maildrop.php:362
+#: lib/Script/procmail.php:352 lib/Script/maildrop.php:363
 msgid "DISABLED: "
-msgstr "禁止："
+msgstr "無効："
 
 #: templates/script/activate.inc:17
 msgid "Deactivate Script"
-msgstr "スクリプトを無効にする"
+msgstr "スクリプトを休止する"
 
 #: filters.php:252 filters.php:253
 #, php-format
@@ -189,16 +190,16 @@ msgid "Deliver into my Inbox"
 msgstr "INBOX に配送する"
 
 #: lib/Storage.php:304
-msgid "Deliver into my Inbox and copy to"
-msgstr "INBOX に配送し、コピーを"
+msgid "Deliver into my Inbox and copy to..."
+msgstr "INBOX に配送し、コピー..."
 
 #: lib/Storage.php:299
-msgid "Deliver into my Inbox and redirect to"
-msgstr "INBOX に配送し、転送を"
+msgid "Deliver into my Inbox and redirect to..."
+msgstr "INBOX に配送し、転送..."
 
 #: lib/Storage.php:284
-msgid "Deliver to folder"
-msgstr "フォルダに配送"
+msgid "Deliver to folder..."
+msgstr "フォルダに配送..."
 
 #: config/fields.php.dist:83
 msgid "Destination (To,Cc,Bcc,etc)"
@@ -207,13 +208,13 @@ msgstr "受信先 (To, Cc, Bcc 等)"
 #: filters.php:277 filters.php:278
 #, php-format
 msgid "Disable %s"
-msgstr "%s を禁止にする"
+msgstr "%s を無効にする"
 
 #: spam.php:160 forward.php:99 vacation.php:153
 #: templates/whitelist/whitelist.inc:8 templates/blacklist/blacklist.inc:10
 #: templates/rule/header.inc:26
 msgid "Disabled"
-msgstr "禁止"
+msgstr "無効"
 
 #: templates/filters/settings.inc:15
 msgid "Display detailed notification when each filter is applied?"
@@ -225,7 +226,7 @@ msgstr "応答をメーリングリストに送らない？"
 
 #: templates/rule/footer.inc:10
 msgid "Do this:"
-msgstr "こうする："
+msgstr "以下を実行："
 
 #: lib/Storage.php:347
 msgid "Doesn't begin with"
@@ -285,7 +286,7 @@ msgstr "一致する"
 msgid "Error retrieving current script: (%d) %s"
 msgstr "スクリプトの取得中のエラー：(%d) %s"
 
-#: blacklist.php:68
+#: blacklist.php:69
 msgid "Error saving changes."
 msgstr "変更の保存に失敗しました。"
 
@@ -346,7 +347,7 @@ msgstr "フィルタールール"
 msgid "Filter Script Display"
 msgstr "フィルタースクリプトの表示"
 
-#: lib/Ingo.php:382
+#: lib/Ingo.php:399
 msgid "Filter _Rules"
 msgstr "_Rフィルタールール"
 
@@ -401,7 +402,7 @@ msgstr "フィルターが見付かりません。"
 
 #: templates/rule/footer.inc:32
 msgid "Flagged For Followup"
-msgstr "フォロー"
+msgstr "続報"
 
 #: spam.php:74
 msgid "Folder to receive spam:"
@@ -409,7 +410,7 @@ msgstr "SPAM 受信用フォルダ："
 
 #: templates/rule/header.inc:42
 msgid "For an incoming message that matches:"
-msgstr "受信したメールが以下の条件に一致："
+msgstr "受信したメールが以下の条件に一致したら："
 
 #: filters.php:192 forward.php:97 lib/Block/overview.php:71
 #: lib/Block/overview.php:73
@@ -437,7 +438,7 @@ msgstr "転送先の編集"
 msgid "From"
 msgstr "From"
 
-#: lib/Script/sieve.php:2948
+#: lib/Script/sieve.php:2971
 msgid "From:"
 msgstr "From:"
 
@@ -457,7 +458,7 @@ msgstr "次の値より大きいか等しい"
 msgid "Individual rules are not supported in the current filtering driver."
 msgstr "現在のフィルタードライバーでは個別のルールはサポートしていません。"
 
-#: lib/Script/sieve.php:2542
+#: lib/Script/sieve.php:2565
 msgid "Inexistant mailbox specified for message delivery."
 msgstr "メッセージの配送先に存在しないメールボックスが指定されています。"
 
@@ -508,11 +509,11 @@ msgstr "一致方法"
 msgid "Matches (with placeholders)"
 msgstr "一致する"
 
-#: lib/api.php:76
+#: lib/api.php:81
 msgid "Maximum Number of Rules"
 msgstr "ルールの最大数"
 
-#: lib/Storage.php:507
+#: lib/Storage.php:520
 #, php-format
 msgid ""
 "Maximum number of blacklisted addresses exceeded (Total addresses: %s, "
@@ -521,7 +522,7 @@ msgstr ""
 "ブラックリストのアドレス数が最大値を超過しました(合計アドレス：%s、最大アドレ"
 "ス：%s)。もうブラックリストにアドレスを追加できません。"
 
-#: lib/Storage.php:560
+#: lib/Storage.php:573
 #, php-format
 msgid ""
 "Maximum number of whitelisted addresses exceeded (Total addresses: %s, "
@@ -536,21 +537,21 @@ msgid ""
 "be treated as spam."
 msgstr "SPAM スコアがこの値と同じか上だったら、SPAM と判定する。"
 
-#: lib/Script/sieve.php:2962
+#: lib/Script/sieve.php:2985
 msgid "Missing address to notify"
-msgstr "通知アドレスが不明です"
+msgstr "通知先アドレスがありません"
 
-#: lib/Script/sieve.php:2343
+#: lib/Script/sieve.php:2366
 msgid "Missing address to redirect message to"
-msgstr "転送先アドレスが不明です"
+msgstr "転送先アドレスがありません"
 
-#: lib/Script/sieve.php:2389
+#: lib/Script/sieve.php:2412
 msgid "Missing reason for reject"
-msgstr "拒否理由が不明です"
+msgstr "拒否理由がありません"
 
-#: lib/Script/sieve.php:2692
+#: lib/Script/sieve.php:2715
 msgid "Missing reason in vacation."
-msgstr "休暇理由が不明です"
+msgstr "休暇理由がありません"
 
 #: templates/filters/header.inc:29
 msgid "Move"
@@ -569,20 +570,20 @@ msgid "My email addresses:"
 msgstr "私のメールアドレス："
 
 #: templates/filters/filter-none.inc:3 templates/filters/footer.inc:6
-#: lib/Storage.php:889
+#: lib/Storage.php:887
 msgid "New Rule"
 msgstr "新規ルール"
 
-#: lib/Ingo.php:233 lib/Ingo.php:235
+#: lib/Ingo.php:250 lib/Ingo.php:252
 #, php-format
 msgid "No \"%s\" element found in backend configuration."
 msgstr "\"%s\" 要素がバックエンドの設定にありません。"
 
-#: lib/Ingo.php:226
+#: lib/Ingo.php:243
 msgid "No backend configured for this host"
 msgstr "このホスト用のバックエンド設定がありません"
 
-#: lib/Ingo.php:202
+#: lib/Ingo.php:219
 msgid "No backends configured in backends.php"
 msgstr "backends.php にバックエンドの設定がありません"
 
@@ -593,8 +594,8 @@ msgstr ""
 "フィルターがありません。\"%s\" をクリックして新しいフィルターを作成して下さ"
 "い。"
 
-#: lib/Script/sieve.php:1692 lib/Script/sieve.php:1841
-#: lib/Script/sieve.php:2065
+#: lib/Script/sieve.php:1715 lib/Script/sieve.php:1864
+#: lib/Script/sieve.php:2088
 msgid "No headers specified"
 msgstr "ヘッダーが指定されていません"
 
@@ -602,7 +603,7 @@ msgstr "ヘッダーが指定されていません"
 msgid "No script generated."
 msgstr "スクリプトは生成されませんでした。"
 
-#: lib/Script/sieve.php:2081 lib/Script/sieve.php:2165
+#: lib/Script/sieve.php:2104 lib/Script/sieve.php:2188
 msgid "No strings specified"
 msgstr "文字列が指定されていません"
 
@@ -611,8 +612,8 @@ msgid "Not equal to"
 msgstr "同一ではない"
 
 #: lib/Storage.php:320
-msgid "Notify email address"
-msgstr "通知メールアドレス"
+msgid "Notify email address..."
+msgstr "メールアドレスに通知..."
 
 #: vacation.php:60
 msgid "Number of days between vacation replies:"
@@ -638,6 +639,10 @@ msgstr "概略"
 msgid "Participant (From,To,etc)"
 msgstr "関係者 (From, To 等)"
 
+#: lib/Storage/sql.php:410
+msgid "Permission Denied"
+msgstr "アクセスは拒否されました"
+
 #: templates/javascript/new_folder.js:7
 msgid "Please enter the name of the new folder:"
 msgstr "新規フォルダーの名前を入力して下さい："
@@ -651,16 +656,23 @@ msgid "Received"
 msgstr "Received"
 
 #: lib/Storage.php:295
-msgid "Redirect to"
-msgstr "Redirect to"
+msgid "Redirect to..."
+msgstr "転送する..."
 
 #: lib/Storage.php:352
 msgid "Regular expression"
 msgstr "正規表現"
 
 #: lib/Storage.php:310
-msgid "Reject with reason"
-msgstr "以下の理由で拒絶："
+msgid "Reject with reason..."
+msgstr "理由を示して拒否..."
+
+#: lib/Storage.php:402
+msgid ""
+"Removing user data is not supported with the current filter storage backend."
+msgstr ""
+"現在のフィルターバックエンドではユーザーデータの削除はサポートされていませ"
+"ん。"
 
 #: config/fields.php.dist:51
 msgid "Resent-From"
@@ -694,7 +706,7 @@ msgstr "ルールは削除されました"
 
 #: spam.php:122 filters.php:94 forward.php:72 vacation.php:97
 msgid "Rule Disabled"
-msgstr "ルールは禁止されました"
+msgstr "ルールは無効になりました"
 
 #: spam.php:113 filters.php:99 forward.php:63 vacation.php:88
 msgid "Rule Enabled"
@@ -704,7 +716,7 @@ msgstr "ルールは有効になりました"
 msgid "Rule Name:"
 msgstr "ルール名："
 
-#: lib/Script/sieve.php:2950
+#: lib/Script/sieve.php:2973
 msgid "Rule:"
 msgstr "ルール："
 
@@ -713,9 +725,9 @@ msgstr "ルール："
 msgid "STARTTLS failed: (%s) %s"
 msgstr "STARTTLS 失敗: (%s) %s"
 
-#: lib/Ingo.php:396
+#: lib/Ingo.php:413
 msgid "S_pam"
-msgstr "_PSPAM"
+msgstr "S_pam"
 
 #: spam.php:79 forward.php:45 vacation.php:62
 #: templates/whitelist/whitelist.inc:23 templates/blacklist/blacklist.inc:41
@@ -730,12 +742,12 @@ msgstr "設定の保存"
 #: spam.php:116 spam.php:137 forward.php:66 forward.php:84 vacation.php:91
 #: vacation.php:113
 msgid "Save and Disable"
-msgstr "保存して禁止"
+msgstr "保存して無効にする"
 
 #: spam.php:107 spam.php:139 forward.php:57 forward.php:86 vacation.php:82
 #: vacation.php:115
 msgid "Save and Enable"
-msgstr "保存して有効"
+msgstr "保存して有効にする"
 
 #: templates/script/header.inc:2
 msgid "Script"
@@ -743,17 +755,17 @@ msgstr "スクリプト"
 
 #: config/prefs.php.dist:17
 msgid "Script Updating"
-msgstr "スクリプトの更新中"
+msgstr "スクリプトの更新"
 
-#: lib/Ingo.php:178
+#: lib/Ingo.php:195
 msgid "Script not updated."
 msgstr "スクリプトは更新されません。"
 
-#: lib/Ingo.php:149
+#: lib/Ingo.php:166
 msgid "Script successfully activated."
 msgstr "スクリプトは起動されました。"
 
-#: lib/Ingo.php:148
+#: lib/Ingo.php:165
 msgid "Script successfully deactivated."
 msgstr "スクリプトは停止しました。"
 
@@ -769,9 +781,13 @@ msgstr "項目を選択"
 msgid "Select ruleset to display:"
 msgstr "表示するルールセットを選択："
 
-#: rule.php:347 templates/blacklist/blacklist.inc:23 lib/Ingo.php:59
+#: rule.php:347 templates/blacklist/blacklist.inc:23
 msgid "Select target folder"
 msgstr "目的のフォルダを選択"
+
+#: lib/Ingo.php:59
+msgid "Select target folder:"
+msgstr "目的のフォルダを選択："
 
 #: rule.php:255
 msgid "Self-Defined Header"
@@ -806,7 +822,7 @@ msgstr "サイズ"
 msgid "Source (From,Reply-to,etc)"
 msgstr "送信元 (From, Reply-to 等)"
 
-#: filters.php:198 lib/Script/sieve.php:438 lib/Script/maildrop.php:301
+#: filters.php:198 lib/Script/sieve.php:438 lib/Script/maildrop.php:302
 #: lib/Block/overview.php:105 lib/Block/overview.php:108
 msgid "Spam Filter"
 msgstr "SPAM フィルタ"
@@ -817,11 +833,11 @@ msgstr "SPAM フィルタリング"
 
 #: spam.php:71
 msgid "Spam Level:"
-msgstr "SPAM Level："
+msgstr "SPAM レベル："
 
 #: vacation.php:43
 msgid "Start of vacation:"
-msgstr "休暇中の始め："
+msgstr "休暇の始め："
 
 #: templates/rule/footer.inc:50
 msgid "Stop checking if this rule matches?"
@@ -835,29 +851,29 @@ msgstr "件名"
 msgid "Subject of vacation message:"
 msgstr "休暇中メッセージの件名："
 
-#: lib/Script/sieve.php:2949
+#: lib/Script/sieve.php:2972
 msgid "Subject:"
 msgstr "件名："
 
-#: lib/api.php:113
+#: lib/api.php:180
 #, php-format
 msgid "The address \"%s\" has been added to your blacklist."
 msgstr "アドレス \"%s\" がブラックリストに追加されました。"
 
-#: lib/api.php:141
+#: lib/api.php:208
 #, php-format
 msgid "The address \"%s\" has been added to your whitelist."
 msgstr "アドレス \"%s\" がホワイトリストに追加されました。"
 
-#: lib/Ingo.php:144
+#: lib/Ingo.php:161
 msgid "The driver said: "
 msgstr "ドライバーの応答："
 
-#: lib/Ingo.php:143
+#: lib/Ingo.php:160
 msgid "There was an error activating the script."
 msgstr "スクリプトを動作させる際にエラーが発生しました。"
 
-#: lib/Ingo.php:142
+#: lib/Ingo.php:159
 msgid "There was an error deactivating the script."
 msgstr "スクリプトを休止させる際にエラーが発生しました。"
 
@@ -879,18 +895,18 @@ msgid "User header"
 msgstr "ユーザヘッダー"
 
 #: filters.php:186 vacation.php:151 lib/Script/procmail.php:278
-#: lib/Script/sieve.php:412 lib/Script/maildrop.php:276
+#: lib/Script/sieve.php:412 lib/Script/maildrop.php:278
 #: lib/Block/overview.php:61 lib/Block/overview.php:64
 msgid "Vacation"
-msgstr "休暇（応答）"
+msgstr "休暇応答"
 
 #: vacation.php:158
 msgid "Vacation Edit"
-msgstr "休暇（応答）の編集"
+msgstr "休暇応答の編集"
 
 #: vacation.php:18
 msgid "Vacation is not supported in the current filtering driver."
-msgstr "休暇（応答）は現在のフィルタードライバーではサポートされていません。"
+msgstr "休暇応答は現在のフィルタードライバーではサポートされていません。"
 
 #: rule.php:353
 msgid "Value"
@@ -943,6 +959,10 @@ msgstr "あなたは %d 以上のルール作成が許可されていません。"
 msgid "You are not allowed to create or edit custom rules."
 msgstr "あなたはルールの作成・編集が許可されていません。"
 
+#: lib/api.php:97
+msgid "You are not allowed to remove user data."
+msgstr "あなたがユーザのデータを削除することは許可されていません。"
+
 #: rule.php:96
 #, php-format
 msgid "You cannot create empty conditions. Please fill in a value for \"%s\"."
@@ -956,19 +976,19 @@ msgstr "あなたにはルールを削除する権限がありません。"
 msgid "You do not have permission to edit filter rules."
 msgstr "あなたにはルールを編集する権限がありません。"
 
-#: lib/Script/sieve.php:2947
+#: lib/Script/sieve.php:2970
 msgid "You have received a new message"
 msgstr "新しいメッセージを受信しました"
 
 #: lib/Script/imap.php:309 lib/Script/imap.php:334 lib/Script/imap.php:352
 msgid "[No Sender]"
-msgstr "[送信者なし]"
+msgstr "[送信者名なし]"
 
 #: lib/Script/imap.php:308 lib/Script/imap.php:333 lib/Script/imap.php:351
 msgid "[No Subject]"
 msgstr "[件名なし]"
 
-#: lib/Ingo.php:387
+#: lib/Ingo.php:404
 msgid "_Blacklist"
 msgstr "_Bブラックリスト"
 
@@ -980,33 +1000,33 @@ msgstr "_Dメッセージを削除"
 msgid "_Enter each address on a new line:"
 msgstr "_E１行に１つのアドレスを入力："
 
-#: lib/Ingo.php:393
+#: lib/Ingo.php:410
 msgid "_Forward"
 msgstr "_F転送"
 
 #: templates/blacklist/blacklist.inc:22
 msgid "_Move message to folder:"
-msgstr "_Mメッセージをフォルダ?に移動："
+msgstr "_Mメッセージをフォルダに移動："
 
-#: lib/Ingo.php:404
+#: lib/Ingo.php:421
 msgid "_Permissions"
 msgstr "_Pアクセス権"
 
-#: lib/Ingo.php:401
+#: lib/Ingo.php:418
 msgid "_Script"
-msgstr "_S"
+msgstr "_Sスクリプト"
 
-#: lib/Ingo.php:390
+#: lib/Ingo.php:407
 msgid "_Vacation"
-msgstr "_V"
+msgstr "_V休暇"
 
-#: lib/Ingo.php:384
+#: lib/Ingo.php:401
 msgid "_Whitelist"
 msgstr "_Wホワイトリスト"
 
 #: lib/Block/overview.php:54
 msgid "active"
-msgstr "動作"
+msgstr "動作中"
 
 #: templates/rule/filter.inc:4
 msgid "and"
@@ -1014,11 +1034,7 @@ msgstr "かつ"
 
 #: templates/filters/filter.html:19
 msgid "disabled - click to enable"
-msgstr "禁止です - クリックで有効になります"
-
-#: filters.php:218
-msgid "field"
-msgstr "項目"
+msgstr "無効です - クリックで有効になります"
 
 #: lib/Block/overview.php:52
 msgid "inactive"
@@ -1027,10 +1043,6 @@ msgstr "休止"
 #: lib/Script/maildrop.php:134
 msgid "maildrop script generated by Ingo"
 msgstr "Ingo で生成された maildrop スクリプト"
-
-#: filters.php:218
-msgid "match"
-msgstr "一致"
 
 #: templates/rule/filter.inc:4
 msgid "or"

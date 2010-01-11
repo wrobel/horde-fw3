@@ -2,7 +2,7 @@
 /**
  * Kronolith external API interface.
  *
- * $Horde: kronolith/lib/api.php,v 1.126.2.65 2009-10-14 13:43:11 jan Exp $
+ * $Horde: kronolith/lib/api.php,v 1.126.2.66 2009/12/22 22:36:44 jan Exp $
  *
  * This file defines Kronolith's external API interface. Other applications
  * can interact with Kronolith through this API.
@@ -933,7 +933,10 @@ function _kronolith_exportCalendar($calendar, $contentType)
 
         require_once 'Horde/iCalendar.php';
         $iCal = new Horde_iCalendar($version);
-        $iCal->setAttribute('X-WR-CALNAME', String::convertCharset($share->get('name'), NLS::getCharset(), 'utf-8'));
+        $iCal->setAttribute('X-WR-CALNAME', String::convertCharset($share->get('name'), NLS::getCharset(), 'UTF-8'));
+        if (strlen($share->get('desc'))) {
+            $iCal->setAttribute('X-WR-CALDESC', String::convertCharset($share->get('desc'), NLS::getCharset(), 'UTF-8'));
+        }
 
         foreach ($events as $id) {
             $event = &$kronolith_driver->getEvent($id);

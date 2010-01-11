@@ -1,15 +1,15 @@
 # Dutch translations for Ingo package
 # Copyright 2003: Ruben van der Steenhoven, Webmeesters
 # Ruben van der Steenhoven <ingoxlate@webmeesters.net>, 2003
-# Jan Kuipers <jrkuipers@lauwerscollege.nl>, 2004-2008
+# Jan Kuipers <jrkuipers@lauwerscollege.nl>, 2004-2009
 # This file is distributed under the same license as the Ingo package.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Ingo H3 (1.2.1-cvs)\n"
+"Project-Id-Version: Ingo H3 (1.2.3-cvs)\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2008-09-14 11:50+0200\n"
-"PO-Revision-Date: 2008-09-14 13:10+0200\n"
+"POT-Creation-Date: 2009-12-14 08:18+0100\n"
+"PO-Revision-Date: 2009-12-14 20:05+0100\n"
 "Last-Translator: Jan Kuipers <jrkuipers@lauwerscollege.nl>\n"
 "Language-Team: i18n@lists.horde.org\n"
 "MIME-Version: 1.0\n"
@@ -58,7 +58,7 @@ msgstr "Geavanceerde instellingen"
 msgid "All of the following"
 msgstr "Ieder van de volgende"
 
-#: lib/api.php:73
+#: lib/api.php:78
 msgid "Allow Rules"
 msgstr "Regels toestaan"
 
@@ -104,7 +104,7 @@ msgstr "Verbinding mislukt: (%s) %s"
 msgid "Blacklist"
 msgstr "Zwarte lijst"
 
-#: blacklist.php:104
+#: blacklist.php:105
 msgid "Blacklist Edit"
 msgstr "Zwarte lijst bewerken"
 
@@ -113,8 +113,8 @@ msgid "Blacklist is not supported in the current filtering driver."
 msgstr ""
 "Zwarte lijst wordt niet ondersteund in het huidige filterstuurprogramma."
 
-#: lib/Script/maildrop.php:197 lib/Script/sieve.php:276
-#: lib/Script/procmail.php:219
+#: lib/Script/procmail.php:219 lib/Script/maildrop.php:197
+#: lib/Script/sieve.php:276
 msgid "Blacklisted Addresses"
 msgstr "Zwarte lijst adressen"
 
@@ -130,8 +130,8 @@ msgstr "Hoofdlettergevoelig"
 msgid "Cc"
 msgstr "Cc"
 
-#: blacklist.php:70 vacation.php:81 rule.php:141 forward.php:56 spam.php:106
-#: whitelist.php:38
+#: whitelist.php:38 blacklist.php:71 forward.php:56 vacation.php:81
+#: rule.php:141 spam.php:106
 msgid "Changes saved."
 msgstr "Veranderingen opgeslagen"
 
@@ -148,7 +148,7 @@ msgstr "Bevat"
 msgid "Copy %s"
 msgstr "%s kopiëren"
 
-#: lib/Storage.php:993 lib/Storage/sql.php:621
+#: lib/Storage.php:991 lib/Storage/sql.php:678
 #, php-format
 msgid "Copy of %s"
 msgstr "Kopie van %s"
@@ -162,7 +162,7 @@ msgstr "Kon het gecompileerde sjabloonbestand %s niet opslaan."
 msgid "Create new folder"
 msgstr "Nieuwe map maken"
 
-#: lib/Script/maildrop.php:362 lib/Script/procmail.php:352
+#: lib/Script/procmail.php:352 lib/Script/maildrop.php:363
 msgid "DISABLED: "
 msgstr "Uitgeschakeld: "
 
@@ -192,16 +192,16 @@ msgid "Deliver into my Inbox"
 msgstr "In mijn INBOX afleveren"
 
 #: lib/Storage.php:304
-msgid "Deliver into my Inbox and copy to"
-msgstr "Afleveren in mijn INBOX en kopiëren naar"
+msgid "Deliver into my Inbox and copy to..."
+msgstr "Afleveren in mijn INBOX en kopiëren naar..."
 
 #: lib/Storage.php:299
-msgid "Deliver into my Inbox and redirect to"
-msgstr "Afleveren in mijn INBOX en verdersturen naar"
+msgid "Deliver into my Inbox and redirect to..."
+msgstr "Afleveren in mijn INBOX en doorsturen naar..."
 
 #: lib/Storage.php:284
-msgid "Deliver to folder"
-msgstr "Afleveren in map"
+msgid "Deliver to folder..."
+msgstr "Afleveren in map..."
 
 #: config/fields.php.dist:83
 msgid "Destination (To,Cc,Bcc,etc)"
@@ -212,8 +212,9 @@ msgstr "Bestemming (Aan,Cc,Bcc,enz.)"
 msgid "Disable %s"
 msgstr "%s uitschakelen"
 
-#: vacation.php:153 forward.php:99 spam.php:160 templates/rule/header.inc:26
-#: templates/blacklist/blacklist.inc:10 templates/whitelist/whitelist.inc:8
+#: forward.php:99 vacation.php:153 spam.php:160
+#: templates/whitelist/whitelist.inc:8 templates/rule/header.inc:26
+#: templates/blacklist/blacklist.inc:10
 msgid "Disabled"
 msgstr "Uitgeschakeld"
 
@@ -287,7 +288,7 @@ msgstr "Gelijk aan"
 msgid "Error retrieving current script: (%d) %s"
 msgstr "Fout bij ophalen van het huidige script: (%d) %s"
 
-#: blacklist.php:68
+#: blacklist.php:69
 msgid "Error saving changes."
 msgstr "Fout bij opslaan van wijzigingen."
 
@@ -348,7 +349,7 @@ msgstr "Filterregels"
 msgid "Filter Script Display"
 msgstr "Filterscriptweergave"
 
-#: lib/Ingo.php:382
+#: lib/Ingo.php:399
 msgid "Filter _Rules"
 msgstr "Filter_regels"
 
@@ -426,8 +427,8 @@ msgstr "Doorsturen bewaren bewerking"
 msgid "Forward is not supported in the current filtering driver."
 msgstr "Doorsturen wordt niet ondersteund in het huidige filterstuurprogramma."
 
-#: lib/Script/maildrop.php:246 lib/Script/sieve.php:239
-#: lib/Script/procmail.php:298
+#: lib/Script/procmail.php:298 lib/Script/maildrop.php:246
+#: lib/Script/sieve.php:239
 msgid "Forwards"
 msgstr "Doorsturen"
 
@@ -439,7 +440,7 @@ msgstr "Doorsturen bewerken"
 msgid "From"
 msgstr "Van"
 
-#: lib/Script/sieve.php:2948
+#: lib/Script/sieve.php:2971
 msgid "From:"
 msgstr "Van:"
 
@@ -461,7 +462,7 @@ msgstr ""
 "Individuele regels worden niet ondersteund in het huidige "
 "filterstuurprogramma."
 
-#: lib/Script/sieve.php:2542
+#: lib/Script/sieve.php:2565
 msgid "Inexistant mailbox specified for message delivery."
 msgstr "Niet bestaande mailbox opgegeven voor berichtaflevering."
 
@@ -512,11 +513,11 @@ msgstr "Overeenkomend type"
 msgid "Matches (with placeholders)"
 msgstr "Komt overeen (met placeholders)"
 
-#: lib/api.php:76
+#: lib/api.php:81
 msgid "Maximum Number of Rules"
 msgstr "Maximum aantal regels."
 
-#: lib/Storage.php:507
+#: lib/Storage.php:520
 #, php-format
 msgid ""
 "Maximum number of blacklisted addresses exceeded (Total addresses: %s, "
@@ -526,7 +527,7 @@ msgstr ""
 "s, maximum aantal adressen: %s). Kon geen nieuwe adressen aan de zwarte "
 "lijst toevoegen."
 
-#: lib/Storage.php:560
+#: lib/Storage.php:573
 #, php-format
 msgid ""
 "Maximum number of whitelisted addresses exceeded (Total addresses: %s, "
@@ -544,19 +545,19 @@ msgstr ""
 "Berichten met een waarschijnlijke spamscore groter dan, of gelijk aan dit "
 "getal zullen als spam worden behandeld."
 
-#: lib/Script/sieve.php:2962
+#: lib/Script/sieve.php:2985
 msgid "Missing address to notify"
 msgstr "Het adres, waar de notificatie heen moet worden gezonden, ontbreekt"
 
-#: lib/Script/sieve.php:2343
+#: lib/Script/sieve.php:2366
 msgid "Missing address to redirect message to"
 msgstr "Het adres, waar dit bericht heen moet worden doorgezonden, ontbreekt"
 
-#: lib/Script/sieve.php:2389
+#: lib/Script/sieve.php:2412
 msgid "Missing reason for reject"
 msgstr "De reden voor afwijzing ontbreekt"
 
-#: lib/Script/sieve.php:2692
+#: lib/Script/sieve.php:2715
 msgid "Missing reason in vacation."
 msgstr "De reden voor het afwezigheidbericht werd niet opgegeven"
 
@@ -576,21 +577,21 @@ msgstr "Regel naar boven verschuiven"
 msgid "My email addresses:"
 msgstr "Mijn e-mailadressen:"
 
-#: lib/Storage.php:889 templates/filters/filter-none.inc:3
-#: templates/filters/footer.inc:6
+#: lib/Storage.php:887 templates/filters/footer.inc:6
+#: templates/filters/filter-none.inc:3
 msgid "New Rule"
 msgstr "Nieuwe Regel"
 
-#: lib/Ingo.php:233 lib/Ingo.php:235
+#: lib/Ingo.php:250 lib/Ingo.php:252
 #, php-format
 msgid "No \"%s\" element found in backend configuration."
 msgstr "Geen \"%s\" element in de backendconfiguratie gevonden."
 
-#: lib/Ingo.php:226
+#: lib/Ingo.php:243
 msgid "No backend configured for this host"
 msgstr "Geen Backendconfiguratie voor deze Host opgegeven"
 
-#: lib/Ingo.php:202
+#: lib/Ingo.php:219
 msgid "No backends configured in backends.php"
 msgstr "Geen backends geconfigureerd in backends.php"
 
@@ -599,8 +600,8 @@ msgstr "Geen backends geconfigureerd in backends.php"
 msgid "No filters. Click \"%s\" to create a new filter."
 msgstr "Geen filters. Klik op \"%s\", om een nieuw filter te maken."
 
-#: lib/Script/sieve.php:1692 lib/Script/sieve.php:1841
-#: lib/Script/sieve.php:2065
+#: lib/Script/sieve.php:1715 lib/Script/sieve.php:1864
+#: lib/Script/sieve.php:2088
 msgid "No headers specified"
 msgstr "Geen headers opgegeven"
 
@@ -608,7 +609,7 @@ msgstr "Geen headers opgegeven"
 msgid "No script generated."
 msgstr "Script niet gemaakt."
 
-#: lib/Script/sieve.php:2081 lib/Script/sieve.php:2165
+#: lib/Script/sieve.php:2104 lib/Script/sieve.php:2188
 msgid "No strings specified"
 msgstr "Geen tekst opgegeven"
 
@@ -617,8 +618,8 @@ msgid "Not equal to"
 msgstr "Niet gelijk aan"
 
 #: lib/Storage.php:320
-msgid "Notify email address"
-msgstr "Notificatie e-mailadres"
+msgid "Notify email address..."
+msgstr "Notificatie e-mailadres..."
 
 #: vacation.php:60
 msgid "Number of days between vacation replies:"
@@ -644,6 +645,10 @@ msgstr "Overzicht"
 msgid "Participant (From,To,etc)"
 msgstr "Deelnemer (Van,Aan,enz.)"
 
+#: lib/Storage/sql.php:410
+msgid "Permission Denied"
+msgstr "Toegang geweigerd"
+
 #: templates/javascript/new_folder.js:7
 msgid "Please enter the name of the new folder:"
 msgstr "Geef de naam van de nieuwe map, a.u.b.:"
@@ -657,16 +662,23 @@ msgid "Received"
 msgstr "Ontvangen (Received)"
 
 #: lib/Storage.php:295
-msgid "Redirect to"
-msgstr "Verder sturen naar"
+msgid "Redirect to..."
+msgstr "Doorsturen naar..."
 
 #: lib/Storage.php:352
 msgid "Regular expression"
 msgstr "Reguliere expressie"
 
 #: lib/Storage.php:310
-msgid "Reject with reason"
-msgstr "Afwijzen met reden"
+msgid "Reject with reason..."
+msgstr "Afwijzen met reden..."
+
+#: lib/Storage.php:402
+msgid ""
+"Removing user data is not supported with the current filter storage backend."
+msgstr ""
+"Verwijderen van gebruikersgegevens wordt niet ondersteund door het huidige "
+"filter opslag backend."
 
 #: config/fields.php.dist:51
 msgid "Resent-From"
@@ -680,9 +692,9 @@ msgstr "Opnieuw verzonden aan (Resent to)"
 msgid "Return to Filters List"
 msgstr "Terug naar filterlijst"
 
-#: vacation.php:34 vacation.php:117 forward.php:34 forward.php:88 spam.php:62
-#: spam.php:141 templates/blacklist/blacklist.inc:42
-#: templates/whitelist/whitelist.inc:24
+#: forward.php:34 forward.php:88 vacation.php:34 vacation.php:117 spam.php:62
+#: spam.php:141 templates/whitelist/whitelist.inc:24
+#: templates/blacklist/blacklist.inc:42
 msgid "Return to Rules List"
 msgstr "Terug naar regellijst"
 
@@ -698,11 +710,11 @@ msgstr "Regel gecopieerd"
 msgid "Rule Deleted"
 msgstr "Regel gewist"
 
-#: filters.php:94 vacation.php:97 forward.php:72 spam.php:122
+#: filters.php:94 forward.php:72 vacation.php:97 spam.php:122
 msgid "Rule Disabled"
 msgstr "Regel uitgeschakeld"
 
-#: filters.php:99 vacation.php:88 forward.php:63 spam.php:113
+#: filters.php:99 forward.php:63 vacation.php:88 spam.php:113
 msgid "Rule Enabled"
 msgstr "Regel ingeschakeld"
 
@@ -710,7 +722,7 @@ msgstr "Regel ingeschakeld"
 msgid "Rule Name:"
 msgstr "Regelnaam:"
 
-#: lib/Script/sieve.php:2950
+#: lib/Script/sieve.php:2973
 msgid "Rule:"
 msgstr "Regel:"
 
@@ -719,12 +731,13 @@ msgstr "Regel:"
 msgid "STARTTLS failed: (%s) %s"
 msgstr "STARTTLS mislukt: (%s) %s"
 
-#: lib/Ingo.php:396
+#: lib/Ingo.php:413
 msgid "S_pam"
 msgstr "S_pam"
 
-#: vacation.php:62 forward.php:45 spam.php:79 templates/rule/footer.inc:60
-#: templates/blacklist/blacklist.inc:41 templates/whitelist/whitelist.inc:23
+#: forward.php:45 vacation.php:62 spam.php:79
+#: templates/whitelist/whitelist.inc:23 templates/rule/footer.inc:60
+#: templates/blacklist/blacklist.inc:41
 msgid "Save"
 msgstr "Opslaan"
 
@@ -732,12 +745,12 @@ msgstr "Opslaan"
 msgid "Save Settings"
 msgstr "Instellingen opslaan"
 
-#: vacation.php:91 vacation.php:113 forward.php:66 forward.php:84 spam.php:116
+#: forward.php:66 forward.php:84 vacation.php:91 vacation.php:113 spam.php:116
 #: spam.php:137
 msgid "Save and Disable"
 msgstr "Opslaan en uitschakelen"
 
-#: vacation.php:82 vacation.php:115 forward.php:57 forward.php:86 spam.php:107
+#: forward.php:57 forward.php:86 vacation.php:82 vacation.php:115 spam.php:107
 #: spam.php:139
 msgid "Save and Enable"
 msgstr "Opslaan en inschakelen"
@@ -750,15 +763,15 @@ msgstr "Script"
 msgid "Script Updating"
 msgstr "Script-bijwerken"
 
-#: lib/Ingo.php:178
+#: lib/Ingo.php:195
 msgid "Script not updated."
 msgstr "Script niet bijgewerkt."
 
-#: lib/Ingo.php:149
+#: lib/Ingo.php:166
 msgid "Script successfully activated."
 msgstr "Script succesvol geactiveerd."
 
-#: lib/Ingo.php:148
+#: lib/Ingo.php:165
 msgid "Script successfully deactivated."
 msgstr "Script succesvol gedeactiveerd."
 
@@ -774,9 +787,13 @@ msgstr "Selecteer een veld"
 msgid "Select ruleset to display:"
 msgstr "Selecteer regelset voor weergave:"
 
-#: rule.php:347 lib/Ingo.php:59 templates/blacklist/blacklist.inc:23
+#: rule.php:347 templates/blacklist/blacklist.inc:23
 msgid "Select target folder"
 msgstr "Doelmap selecteren"
+
+#: lib/Ingo.php:59
+msgid "Select target folder:"
+msgstr "Doelmap selecteren:"
 
 #: rule.php:255
 msgid "Self-Defined Header"
@@ -812,8 +829,8 @@ msgstr "Grootte"
 msgid "Source (From,Reply-to,etc)"
 msgstr "Bron (Van,Antwoord-aan,enz.)"
 
-#: filters.php:198 lib/Script/maildrop.php:301 lib/Script/sieve.php:438
-#: lib/Block/overview.php:105 lib/Block/overview.php:108
+#: filters.php:198 lib/Block/overview.php:105 lib/Block/overview.php:108
+#: lib/Script/maildrop.php:302 lib/Script/sieve.php:438
 msgid "Spam Filter"
 msgstr "Spamfilter"
 
@@ -841,29 +858,29 @@ msgstr "Onderwerp"
 msgid "Subject of vacation message:"
 msgstr "Onderwerp van het vakantiebericht:"
 
-#: lib/Script/sieve.php:2949
+#: lib/Script/sieve.php:2972
 msgid "Subject:"
 msgstr "Onderwerp:"
 
-#: lib/api.php:113
+#: lib/api.php:180
 #, php-format
 msgid "The address \"%s\" has been added to your blacklist."
 msgstr "Het adres \"%s\" is aan uw zwarte lijst toegevoegd."
 
-#: lib/api.php:141
+#: lib/api.php:208
 #, php-format
 msgid "The address \"%s\" has been added to your whitelist."
 msgstr "Het adres \"%s\" is aan uw witte list toegevoegd."
 
-#: lib/Ingo.php:144
+#: lib/Ingo.php:161
 msgid "The driver said: "
 msgstr "Het stuurprogramma meldt: "
 
-#: lib/Ingo.php:143
+#: lib/Ingo.php:160
 msgid "There was an error activating the script."
 msgstr "Er was een fout bij het activeren van het script."
 
-#: lib/Ingo.php:142
+#: lib/Ingo.php:159
 msgid "There was an error deactivating the script."
 msgstr "Er was een fout bij het deactiveren van het script."
 
@@ -884,9 +901,9 @@ msgstr "Niet in staat om de definitie van %s te laden."
 msgid "User header"
 msgstr "Gebruiker kop"
 
-#: filters.php:186 vacation.php:151 lib/Script/maildrop.php:276
-#: lib/Script/sieve.php:412 lib/Script/procmail.php:278
-#: lib/Block/overview.php:61 lib/Block/overview.php:64
+#: filters.php:186 vacation.php:151 lib/Block/overview.php:61
+#: lib/Block/overview.php:64 lib/Script/procmail.php:278
+#: lib/Script/maildrop.php:278 lib/Script/sieve.php:412
 msgid "Vacation"
 msgstr "Afwezigheid"
 
@@ -920,8 +937,8 @@ msgid "Whitelist is not supported in the current filtering driver."
 msgstr ""
 "Witte lijst wordt niet ondersteund in het huidige filterstuurprogramma."
 
-#: lib/Script/maildrop.php:224 lib/Script/sieve.php:336
-#: lib/Script/procmail.php:246
+#: lib/Script/procmail.php:246 lib/Script/maildrop.php:224
+#: lib/Script/sieve.php:336
 msgid "Whitelisted Addresses"
 msgstr "Witte lijst adressen"
 
@@ -950,6 +967,10 @@ msgstr "U mag niet meer dan %d regels aanmaken."
 msgid "You are not allowed to create or edit custom rules."
 msgstr "U mag geen regels aanmaken of aangepaste regels bewerken."
 
+#: lib/api.php:97
+msgid "You are not allowed to remove user data."
+msgstr "Het is u niet toegestaan om gebruikersgegevens te verwijderen."
+
 #: rule.php:96
 #, php-format
 msgid "You cannot create empty conditions. Please fill in a value for \"%s\"."
@@ -964,7 +985,7 @@ msgstr "U heeft geen recht om filterregels te verwijderen."
 msgid "You do not have permission to edit filter rules."
 msgstr "U heeft geen recht om filterregels te bewerken."
 
-#: lib/Script/sieve.php:2947
+#: lib/Script/sieve.php:2970
 msgid "You have received a new message"
 msgstr "U heeft een nieuw bericht ontvangen"
 
@@ -976,7 +997,7 @@ msgstr "[Geen afzender]"
 msgid "[No Subject]"
 msgstr "[Geen onderwerp]"
 
-#: lib/Ingo.php:387
+#: lib/Ingo.php:404
 msgid "_Blacklist"
 msgstr "Z_warte lijst"
 
@@ -988,7 +1009,7 @@ msgstr "Bericht volledig _wissen"
 msgid "_Enter each address on a new line:"
 msgstr "Plaats _ieder adres op een nieuwe regel"
 
-#: lib/Ingo.php:393
+#: lib/Ingo.php:410
 msgid "_Forward"
 msgstr "_Doorsturen"
 
@@ -996,19 +1017,19 @@ msgstr "_Doorsturen"
 msgid "_Move message to folder:"
 msgstr "Bericht naar deze map _verplaatsen:"
 
-#: lib/Ingo.php:404
+#: lib/Ingo.php:421
 msgid "_Permissions"
 msgstr "_Rechten"
 
-#: lib/Ingo.php:401
+#: lib/Ingo.php:418
 msgid "_Script"
 msgstr "_Script"
 
-#: lib/Ingo.php:390
+#: lib/Ingo.php:407
 msgid "_Vacation"
 msgstr "_Vakantie"
 
-#: lib/Ingo.php:384
+#: lib/Ingo.php:401
 msgid "_Whitelist"
 msgstr "Witte li_jst"
 

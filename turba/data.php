@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: turba/data.php,v 1.70.4.21 2009-01-06 15:27:38 jan Exp $
+ * $Horde: turba/data.php,v 1.70.4.22 2009/12/30 01:01:40 jan Exp $
  *
  * Copyright 2001-2009 The Horde Project (http://www.horde.org/)
  *
@@ -237,8 +237,14 @@ case 'export':
         $sources[$source] = array();
     }
 
+    $exportType = Util::getFormData('exportID');
+    $vcard = $exportType == EXPORT_VCARD ||
+        $exportType == 'vcard30';
+    if ($vcard) {
+        $version = $exportType == 'vcard30' ? '3.0' : '2.1';
+    }
+
     $data = array();
-    $contacts = array();
     $all_fields = array();
     foreach ($sources as $source => $objectkeys) {
         /* Create a Turba storage instance. */
@@ -268,25 +274,27 @@ case 'export':
         $all_fields = array_merge($all_fields, $fields);
         $params = $driver->getParams();
         foreach ($results as $ob) {
-            $row = array();
-            foreach ($fields as $field) {
-                if (substr($field, 0, 2) != '__') {
-                    $attribute = $ob->getValue($field);
-                    if ($attributes[$field]['type'] == 'date') {
-                        $row[$field] = strftime('%Y-%m-%d', $attribute);
-                    } elseif ($attributes[$field]['type'] == 'time') {
-                        $row[$field] = strftime('%R', $attribute);
-                    } elseif ($attributes[$field]['type'] == 'datetime') {
-                        $row[$field] = strftime('%Y-%m-%d %R', $attribute);
-                    } else {
+            if ($vcard) {
+                $data[] = $driver->tovCard($ob, $version, null, true);
+            } else {
+                $row = array();
+                foreach ($fields as $field) {
+                    if (substr($field, 0, 2) != '__') {
+                        $attribute = $ob->getValue($field);
+                        if ($attributes[$field]['type'] == 'date') {
+                            $row[$field] = strftime('%Y-%m-%d', $attribute);
+                        } elseif ($attributes[$field]['type'] == 'time') {
+                            $row[$field] = strftime('%R', $attribute);
+                        } elseif ($attributes[$field]['type'] == 'datetime') {
+                            $row[$field] = strftime('%Y-%m-%d %R', $attribute);
+                        } else {
                         $row[$field] = String::convertCharset($attribute, NLS::getCharset(), $params['charset']);
+                        }
                     }
                 }
+                $data[] = $row;
             }
-            $data[] = $row;
         }
-
-        $contacts = array_merge($contacts, $results);
     }
     if (!count($data)) {
         $notification->push(_("There were no addresses to export."), 'horde.message');
@@ -296,7 +304,7 @@ case 'export':
 
     /* Make sure that all rows have the same columns if exporting from
      * different sources. */
-    if (count($sources) > 1) {
+    if (!$vcard && count($sources) > 1) {
         for ($i = 0; $i < count($data); $i++) {
             foreach ($all_fields as $field) {
                 if (!isset($data[$i][$field])) {
@@ -306,7 +314,7 @@ case 'export':
         }
     }
 
-    switch (Util::getFormData('exportID')) {
+    switch ($exportType) {
     case EXPORT_CSV:
         $csv = &Horde_Data::singleton('csv');
         $csv->exportFile(_("contacts.csv"), $data, true);
@@ -323,13 +331,9 @@ case 'export':
         exit;
 
     case EXPORT_VCARD:
-        $cards = array();
-        foreach ($contacts as $contact) {
-            $cards[] = Turba_Driver::tovCard($contact);
-        }
-
+    case 'vcard30':
         $vcard = &Horde_Data::singleton('vcard');
-        $vcard->exportFile(_("contacts.vcf"), $cards, true);
+        $vcard->exportFile(_("contacts.vcf"), $data, true);
         exit;
 
     case 'ldif':

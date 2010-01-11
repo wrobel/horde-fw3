@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/NLS/NLS.php,v 1.82.4.26 2009-08-28 09:01:53 jan Exp $
+ * $Horde: framework/NLS/NLS.php,v 1.82.4.27 2009/12/16 21:56:14 jan Exp $
  *
  * @package Horde_NLS
  */
@@ -453,6 +453,26 @@ class NLS {
         }
 
         return $lc_info;
+    }
+
+    /**
+     * Replacement for number_format() which doesn't work with multibyte separators.
+     *
+     * @since Horde 3.3.7
+     *
+     * @param $number         The number to format.
+     * @param $decimals       The number of decimals.
+     *
+     * @return string  The number formatted for the current locale.
+     */
+    function numberFormat($number, $decimals = 0)
+    {
+        $localeinfo = NLS::getLocaleInfo();
+        $tmp1 = round($number, $decimals);
+        while (($tmp2 = preg_replace('/(\d+)(\d\d\d)/', '\1 \2', $tmp1)) != $tmp1) {
+            $tmp1 = $tmp2;
+        }
+        return strtr($tmp1, array(' ' => $localeinfo['thousands_sep'], '.' => $localeinfo['decimal_point']));
     }
 
     /**

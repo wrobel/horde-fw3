@@ -12,7 +12,7 @@ require_once 'SyncML/Command.php';
  * information, such as state information or notifications to an application
  * on the recipient device.
  *
- * $Horde: framework/SyncML/SyncML/Command/Alert.php,v 1.18.10.17 2009-04-07 11:13:05 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Command/Alert.php,v 1.18.10.18 2009/12/30 01:15:22 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -152,6 +152,10 @@ class SyncML_Command_Alert extends SyncML_Command {
             $this->_outputHandler->outputStatus($this->_cmdID, $this->_cmdName,
                                                 RESPONSE_NOT_FOUND);
             return;
+        }
+        if ($database == 'configuration') {
+            $this->_outputHandler->outputStatus($this->_cmdID, $this->_cmdName,
+                                                RESPONSE_OK);
         }
 
         $clientAnchorNext = $this->_metaAnchorNext;

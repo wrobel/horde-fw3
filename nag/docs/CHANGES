@@ -1,6 +1,13 @@
 ----------
-v2.3.4-cvs
+v2.3.5-cvs
 ----------
+
+
+
+
+------
+v2.3.4
+------
 
 [jan] Add and fix Oracle-specific SQL scripts.
 [jan] Fix importing due date attribute from iCalendar (Bug #8644).

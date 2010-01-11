@@ -2,7 +2,7 @@
 /**
  * Effect for creating a polaroid looking image.
  *
- * $Horde: framework/Image/Image/Effect/im/polaroid_image.php,v 1.7.2.2 2009-03-23 18:15:48 mrubinsk Exp $
+ * $Horde: framework/Image/Image/Effect/im/polaroid_image.php,v 1.7.2.3 2010/01/04 14:15:21 mrubinsk Exp $
  *
  * @author  Michael J. Rubinsky <mrubinsk@horde.org>
  * @since   Horde 3.2
@@ -77,7 +77,7 @@ class Horde_Image_Effect_im_polaroid_image extends Horde_Image_Effect {
                                                               $this->_params['angle'], $this->_params['background']);
             } else {
                 $size = $this->_image->getDimensions();
-                $this->_image->_postSrcOperations[] = sprintf("-bordercolor \"#eee\" -border 8 bordercolor grey90 -border 1 -bordercolor none -background none -rotate %s \( +clone -shadow 60x1.5+1+1 -rotate 90 -wave 1x%s -rotate 90 \) +swap -rotate 90 -wave 1x%s -rotate -90 -flatten \( +clone -fill %s -draw 'color 0,0 reset ' \) +swap -flatten",
+                $this->_image->_postSrcOperations[] = sprintf("-bordercolor \"#eee\" -border 8 -bordercolor grey90 -border 1 -bordercolor none -background none -rotate %s \( +clone -shadow 60x1.5+1+1 -rotate 90 -wave 1x%s -rotate 90 \) +swap -rotate 90 -wave 1x%s -rotate -90 -flatten \( +clone -fill %s -draw 'color 0,0 reset ' \) +swap -flatten",
                                                                $this->_params['angle'], $size['height'] * 2, $size['height'] * 2, $this->_params['background']);
             }
             return true;

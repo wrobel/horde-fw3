@@ -1,6 +1,16 @@
 ----------
-v2.3.3-cvs
+v2.3.4-cvs
 ----------
+
+[jan] Only export non-empty fields if exporting manually.
+[jan] Add export to vCard 3.0.
+[jan] Only synchronize those fields that are supported by the client
+      (Request #6658, requires Horde 3.3.7).
+
+
+------
+v2.3.3
+------
 
 [jan] Fix syntax of MSSQL scripts (Bug #8664).
 [jan] Add preference for the name format to use for sorting (Request #6721).

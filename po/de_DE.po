@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Horde 3.3-cvs\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2009-11-21 13:06+0100\n"
-"PO-Revision-Date: 2009-11-21 13:10+0100\n"
+"POT-Creation-Date: 2009-12-15 12:46+0100\n"
+"PO-Revision-Date: 2009-12-15 12:54+0100\n"
 "Last-Translator: Jan Schneider <jan@horde.org>\n"
 "Language-Team: German <dev@lists.horde.org>\n"
 "MIME-Version: 1.0\n"
@@ -698,7 +698,7 @@ msgstr "Alarmende"
 msgid "Alarm methods"
 msgstr "Alarmmethoden"
 
-#: framework/Alarm/Alarm/sql.php:110
+#: framework/Alarm/Alarm/sql.php:113
 msgid "Alarm not found"
 msgstr "Alarm nicht gefunden"
 
@@ -2072,12 +2072,7 @@ msgstr "Konfiguration konnte nicht zurückgesetzt werden."
 msgid "Could not rmdir \"%s\"."
 msgstr "Verzeichnis \"%s\" konnte nicht gelöscht werden."
 
-#: admin/setup/scripts.php:74
-#, php-format
-msgid "Could not save %s configuration."
-msgstr "%s-Konfiguration konnte nicht gespeichert werden."
-
-#: admin/setup/index.php:61 admin/setup/scripts.php:60
+#: admin/setup/index.php:61
 msgid "Could not save a backup configuation."
 msgstr "Backup der Konfiguration konnte nicht gespeichert werden."
 
@@ -2086,7 +2081,7 @@ msgstr "Backup der Konfiguration konnte nicht gespeichert werden."
 msgid "Could not save a backup configuation: %s"
 msgstr "Backup der Konfiguration konnte nicht gespeichert werden: %s"
 
-#: admin/setup/scripts.php:102
+#: admin/setup/scripts.php:103
 #, php-format
 msgid "Could not save setup upgrade script to: \"%s\"."
 msgstr "Das Aktualisierungsskript konnte nicht nach \"%s\" gespeichert werden."
@@ -5325,7 +5320,7 @@ msgstr "Keine anstößigen Glückskekse"
 msgid "No or unreadable content in Kolab XML object"
 msgstr "Kein oder nicht lesbarer Inhalt im Kolab-XML-Objekt"
 
-#: framework/Crypt/Crypt/smime.php:1309
+#: framework/Crypt/Crypt/smime.php:1319
 msgid ""
 "No path to the OpenSSL binary provided. The OpenSSL binary is necessary to "
 "work with PKCS 12 data."
@@ -5844,7 +5839,7 @@ msgstr "Passwort"
 msgid "Password changed successfully."
 msgstr "Passwort erfolgreich geändert."
 
-#: framework/Crypt/Crypt/smime.php:1345
+#: framework/Crypt/Crypt/smime.php:1355
 msgid "Password incorrect"
 msgstr "Falsches Passwort"
 
@@ -6605,12 +6600,7 @@ msgstr ""
 "Erzeugte Konfiguration als PHP-Skript im temporären Verzeichnis Ihres "
 "Servers speichern."
 
-#: admin/setup/scripts.php:72
-#, php-format
-msgid "Saved %s configuration."
-msgstr "%s-Konfiguration gespeichert."
-
-#: admin/setup/scripts.php:100
+#: admin/setup/scripts.php:101
 #, php-format
 msgid "Saved setup upgrade script to: \"%s\"."
 msgstr "Das Aktualisierungsskript wurde in \"%s\" gespeichert."
@@ -6745,10 +6735,6 @@ msgstr "Wählen Sie ein Farbschema."
 #: config/prefs.php.dist:293
 msgid "Select your preferred language:"
 msgstr "Wählen Sie Ihre bevorzugte Sprache:"
-
-#: admin/setup/scripts.php:88
-msgid "Self-destructing..."
-msgstr "Selbstlöschung..."
 
 #: templates/problem/problem.inc:57
 msgid "Send Problem Report"
@@ -7273,7 +7259,7 @@ msgstr ""
 "Konfiguration erfolgreich zurückgesetzt. Seite neu laden, um die Änderungen "
 "anzuzeigen."
 
-#: admin/setup/index.php:57 admin/setup/scripts.php:58
+#: admin/setup/index.php:57
 msgid "Successfully saved backup configuration."
 msgstr "Backup der Konfiguration erfolgreich gespeichert."
 
@@ -7751,7 +7737,7 @@ msgstr ""
 msgid "The number of fields must be numeric."
 msgstr "Die Anzahl der Felder muss als Zahl angegeben werden."
 
-#: framework/Crypt/Crypt/smime.php:1235
+#: framework/Crypt/Crypt/smime.php:1245
 msgid "The openssl module is required for the Horde_Crypt_smime:: class."
 msgstr "Das OpenSSL-Modul wird für die Horde_Crypt_smime:: Klasse benötigt."
 
@@ -8166,7 +8152,7 @@ msgstr ""
 
 #: framework/Compress/Compress/gzip.php:44
 msgid "This server can't uncompress zip and gzip files."
-msgstr "Dieser Server kann ZIP- und GZIP-Datein nicht entpacken."
+msgstr "Dieser Server kann ZIP- und GZIP-Dateien nicht entpacken."
 
 #: framework/Horde/Horde/Registry.php:228
 msgid "This system is currently deactivated."
@@ -8764,8 +8750,8 @@ msgstr "Unbenannt"
 msgid "Unsupported"
 msgstr "Nicht unterstützt"
 
-#: framework/Crypt/Crypt/smime.php:690 framework/Crypt/Crypt/smime.php:930
-#: framework/Crypt/Crypt/smime.php:936
+#: framework/Crypt/Crypt/smime.php:690 framework/Crypt/Crypt/smime.php:940
+#: framework/Crypt/Crypt/smime.php:946
 msgid "Unsupported Extension"
 msgstr "Erweiterung nicht unterstützt"
 
@@ -8786,10 +8772,6 @@ msgstr "Benutzer aktualisieren"
 #, php-format
 msgid "Updated \"%s\"."
 msgstr "\"%s\" wurde aktualisiert."
-
-#: admin/setup/scripts.php:90
-msgid "Upgrade script deleted."
-msgstr "Aktualisierungsskript gelöscht."
 
 #: admin/setup/index.php:242 framework/UI/UI/VarRenderer/html.php:211
 msgid "Upload"
@@ -9030,11 +9012,6 @@ msgstr "Vodafone Italien per SMTP"
 #: framework/Notification/Notification/Listener/mobile.php:36
 msgid "WARN"
 msgstr "WARNUNG"
-
-#: admin/setup/scripts.php:92
-#, php-format
-msgid "WARNING!!! REMOVE SCRIPT MANUALLY FROM %s."
-msgstr "WARNUNG!!! LÖSCHEN SIE DAS SKRIPT MANUELL AUS %s."
 
 #: framework/Net_SMS/SMS/win_http.php:143
 msgid "WIN via HTTP"
@@ -9836,7 +9813,7 @@ msgstr "mm"
 msgid "no such option: %s"
 msgstr "keine solche Option: %s"
 
-#: framework/Crypt/Crypt/smime.php:1223
+#: framework/Crypt/Crypt/smime.php:1233
 msgid "not yet implemented"
 msgstr "Noch nicht implementiert"
 

@@ -128,7 +128,7 @@ define('IMP_IDX_SEP', "\1");
 /**
  * IMP Base Class.
  *
- * $Horde: imp/lib/IMP.php,v 1.449.4.128 2009-10-12 22:36:33 slusarz Exp $
+ * $Horde: imp/lib/IMP.php,v 1.449.4.129 2009/12/16 21:56:13 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -2338,6 +2338,24 @@ class IMP {
             header('Location: ' . $url);
         }
         exit;
+    }
+
+    /**
+     * Replacement for number_format() which doesn't work with multibyte separators.
+     *
+     * @param $number         The number to format.
+     * @param $decimals       The number of decimals.
+     *
+     * @return string  The number formatted for the current locale.
+     */
+    function numberFormat($number, $decimals = 0)
+    {
+        $localeinfo = NLS::getLocaleInfo();
+        $tmp1 = round($number, $decimals);
+        while (($tmp2 = preg_replace('/(\d+)(\d\d\d)/', '\1 \2', $tmp1)) != $tmp1) {
+            $tmp1 = $tmp2;
+        }
+        return strtr($tmp1, array(' ' => $localeinfo['thousands_sep'], '.' => $localeinfo['decimal_point']));
     }
 
 }

@@ -2,7 +2,7 @@
 /**
  * The Ingo_Script_procmail:: class represents a Procmail script generator.
  *
- * $Horde: ingo/lib/Script/procmail.php,v 1.46.10.33 2009-09-16 12:37:22 jan Exp $
+ * $Horde: ingo/lib/Script/procmail.php,v 1.46.10.34 2009/12/30 23:11:04 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -638,10 +638,10 @@ class Procmail_Recipe {
 
         default:
             // convert 'field' to PCRE pattern matching
-            if (strpos($condition['field'], ',') == false) {
+            if (!strpos($condition['field'], ',')) {
                 $string = '^' . $condition['field'] . ':';
             } else {
-                $string .= '/^(' . str_replace(',', '|', $condition['field']) . '):';
+                $string .= '^(' . str_replace(',', '|', $condition['field']) . '):';
             }
             $prefix = ' ';
         }

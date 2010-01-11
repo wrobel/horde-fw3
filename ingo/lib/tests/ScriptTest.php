@@ -2,7 +2,7 @@
 /**
  * Test cases for Ingo_Script:: and derived classes
  *
- * $Horde: ingo/lib/tests/ScriptTest.php,v 1.1.2.1 2007-12-20 14:05:49 jan Exp $
+ * $Horde: ingo/lib/tests/ScriptTest.php,v 1.1.2.3 2009/12/22 01:52:54 jan Exp $
  *
  * See the enclosed file LICENSE for license information (ASL).  If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.
@@ -157,15 +157,21 @@ class ScriptTester_imap extends ScriptTester {
         $this->api = Ingo_Script_imap_api::factory('mock', array());
 
         $result = $this->api->loadFixtures(dirname(__FILE__) . '/_data/');
-        $this->test->assertNotA($result, 'PEAR_Error');
+        $this->test->assertNotType('PEAR_Error', $result);
 
-        $params = array('api' => $this->api);
+        $GLOBALS['notification'] = new Ingo_Test_Notification;
+
+        $params = array('api' => $this->api,
+                        'charset' => 'UTF-8',
+                        'spam_compare' => 'string',
+                        'spam_header' => 'X-Spam-Level',
+                        'spam_char' => '*');
         $this->imap = Ingo_Script::factory('imap', $params);
     }
 
     function _run()
     {
-        $params = array('api' => $this->api);
+        $params = array('api' => $this->api, 'filter_seen' => 0, 'show_filter_msg' => 1);
         $this->imap->perform($params);
     }
 
@@ -259,12 +265,9 @@ class ScriptTester_sieve extends ScriptTester {
 
     function _assertOutput($want)
     {
-        $answer = $this->test->assertWantedPattern('/' .
-                                                   preg_quote($want, '/') . '/',
-                                                   $this->output);
-        if (!$answer) {
-            echo "FAILED SIEVE SCRIPT:\n\n", $this->sieve_text, "\n\n";
-        }
+        $this->test->assertRegExp('/' . preg_quote($want, '/') . '/',
+                                  $this->output,
+                                  "FAILED SIEVE SCRIPT:\n\n", $this->sieve_text, "\n\n");
     }
 
     var $mbox;
@@ -314,7 +317,12 @@ class ScriptTester_sieve extends ScriptTester {
 
     function _writeSieveScript()
     {
-        $params = array();
+        $params = array('date_format' => '%x',
+                        'time_format' => '%R',
+                        'charset' => 'UTF-8',
+                        'spam_compare' => 'string',
+                        'spam_header' => 'X-Spam-Level',
+                        'spam_char' => '*');
 
         $this->_setupStorage();
         $script = Ingo_Script::factory('sieve', $params);
@@ -331,7 +339,7 @@ class ScriptTester_sieve extends ScriptTester {
     {
         $this->output = '';
         $ph = popen("sieve -vv -n -f " . escapeshellarg($this->mbox) . " " .
-                    escapeshellarg($this->sieve), 'r');
+                    escapeshellarg($this->sieve) . ' 2>&1', 'r');
         while (!feof($ph)) {
             $data = fread($ph, 512);
             if (is_string($data)) {

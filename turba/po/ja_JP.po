@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Turba 2.3.1\n"
+"Project-Id-Version: Turba 2.3.3\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2009-01-30 14:23+0900\n"
-"PO-Revision-Date: 2009-02-10 20:36+0900\n"
+"POT-Creation-Date: 2009-11-21 13:07+0100\n"
+"PO-Revision-Date: 2009-12-21 16:11+0900\n"
 "Last-Translator: Hiromi Kimura <hiromi@tac.tsukuba.ac.jp>\n"
 "Language-Team: i18n@lists.horde.org\n"
 "MIME-Version: 1.0\n"
@@ -49,15 +49,15 @@ msgstr "\"%s\" はリストなのでコピーしませんでした。"
 msgid "\"%s\" was not moved because it is a list."
 msgstr "\"%s\" はリストなので移動しませんでした。"
 
-#: config/prefs.php.dist:127
+#: config/prefs.php.dist:127 config/prefs.php.dist:139
 msgid "\"Firstname Lastname\"  (ie. John Doe)"
 msgstr "\"姓 名\",\"Firstname Lastname\""
 
-#: config/prefs.php.dist:126
+#: config/prefs.php.dist:126 config/prefs.php.dist:138
 msgid "\"Lastname, Firstname\" (ie. Doe, John)"
 msgstr "\"名, 姓\",\"Lastname, Firstname\""
 
-#: lib/Driver.php:620
+#: lib/Driver.php:632
 #, php-format
 msgid "%d. %s of %s"
 msgstr "%d. %s of %s"
@@ -77,7 +77,7 @@ msgstr "%s ファイルがインポートされました。"
 msgid "%s to %s of %s"
 msgstr "%s から %s（%s 件中）"
 
-#: lib/Turba.php:541
+#: lib/Turba.php:551
 #, php-format
 msgid "%s's Address Book"
 msgstr "%s のアドレス帳"
@@ -111,11 +111,11 @@ msgstr "ファイルの追加"
 msgid "Add to"
 msgstr "ここに追加"
 
-#: lib/Driver.php:2115 lib/Driver/null.php:57
+#: lib/Driver.php:2156 lib/Driver/null.php:57
 msgid "Adding contacts is not available."
 msgstr "連絡先の追加はできません。"
 
-#: templates/addressbook_list.php:16
+#: templates/addressbook_list.php:16 templates/browse/search.inc:125
 msgid "Address Book"
 msgstr "アドレス帳"
 
@@ -152,7 +152,7 @@ msgstr "別名"
 msgid "All"
 msgstr "全て"
 
-#: lib/api.php:941
+#: lib/api.php:983
 msgid "Already Exists"
 msgstr "既に存在します"
 
@@ -181,7 +181,7 @@ msgstr "助手"
 msgid "Basic Search"
 msgstr "簡易検索"
 
-#: lib/Driver/ldap.php:92 lib/Driver/ldap.php:95
+#: lib/Driver/ldap.php:97 lib/Driver/ldap.php:100
 #, php-format
 msgid "Bind failed: (%s) %s"
 msgstr "バインド失敗: (%s) %s"
@@ -223,7 +223,7 @@ msgstr "グループは自分自身に追加できません。"
 msgid "Cancel"
 msgstr "取り消し"
 
-#: lib/Driver/kolab.php:624
+#: lib/Driver/kolab.php:632
 #, php-format
 msgid "Cannot delete all address book entries for %s"
 msgstr "アドレス帳 %s の全項目を削除できません"
@@ -329,7 +329,7 @@ msgstr "共通の住所番地"
 msgid "Common Video Call"
 msgstr "共通のビデオ通話"
 
-#: config/sources.php.dist:256 config/sources.php.dist:952
+#: config/sources.php.dist:286 config/sources.php.dist:1013
 msgid "Communications"
 msgstr "通信"
 
@@ -342,11 +342,11 @@ msgid "Company Address"
 msgstr "勤務先住所"
 
 #: scripts/import_squirrelmail_sql_abook.php:125
-#: scripts/import_squirrelmail_file_abook.php:114 lib/api.php:546
-#: lib/api.php:600 lib/api.php:653 lib/api.php:701 lib/api.php:756
-#: lib/api.php:815 lib/api.php:866 lib/api.php:1004 lib/api.php:1066
-#: lib/api.php:1137 lib/api.php:1204 lib/api.php:1324 lib/api.php:1563
-#: lib/api.php:1640 lib/api.php:1791
+#: scripts/import_squirrelmail_file_abook.php:114 lib/api.php:587
+#: lib/api.php:641 lib/api.php:694 lib/api.php:742 lib/api.php:797
+#: lib/api.php:857 lib/api.php:908 lib/api.php:1046 lib/api.php:1108
+#: lib/api.php:1179 lib/api.php:1246 lib/api.php:1366 lib/api.php:1610
+#: lib/api.php:1696 lib/api.php:1848
 #, php-format
 msgid "Connection failed: %s"
 msgstr "接続に失敗しました: %s"
@@ -359,7 +359,7 @@ msgstr "接続に失敗しました"
 msgid "Contact Search"
 msgstr "連絡先の検索"
 
-#: config/sources.php.dist:868
+#: config/sources.php.dist:929
 msgid "Contacts"
 msgstr "連絡先"
 
@@ -367,7 +367,7 @@ msgstr "連絡先"
 msgid "Contacts displayed:"
 msgstr "連絡先表示："
 
-#: lib/Views/Browse.php:346
+#: lib/Views/Browse.php:350
 #, php-format
 msgid "Contacts in list: %s"
 msgstr "連絡先のあるリスト：%s"
@@ -411,16 +411,16 @@ msgstr "削除"
 msgid "Delete %s"
 msgstr "削除 %s"
 
-#: lib/api.php:644
+#: lib/api.php:685
 msgid "Delete denied."
 msgstr "削除は拒否されました。"
 
-#: lib/Driver/ldap.php:321
+#: lib/Driver/ldap.php:334
 #, php-format
 msgid "Delete failed: (%s) %s"
 msgstr "削除できませんでした: (%s) %s"
 
-#: lib/Driver.php:2123 lib/Driver/null.php:62
+#: lib/Driver.php:2164 lib/Driver/null.php:62
 msgid "Deleting contacts is not available."
 msgstr "連絡先の削除はできません。"
 
@@ -436,10 +436,6 @@ msgstr "部署"
 msgid "Description"
 msgstr "説明"
 
-#: templates/browse/search.inc:125
-msgid "Directory"
-msgstr "人名簿"
-
 #: config/prefs.php.dist:24
 msgid "Display"
 msgstr "表示"
@@ -449,7 +445,7 @@ msgstr "表示"
 msgid "Display Options"
 msgstr "表示オプション"
 
-#: lib/Object.php:357
+#: lib/Object.php:364
 msgid "Download"
 msgstr "ダウンロード"
 
@@ -483,12 +479,12 @@ msgstr "メールアドレス"
 msgid "Emails"
 msgstr "メールアドレス"
 
-#: lib/Views/Browse.php:270 lib/Views/Browse.php:310
+#: lib/Views/Browse.php:274 lib/Views/Browse.php:314
 #, php-format
 msgid "Error adding %d contact(s) to list."
 msgstr "リストへの連絡先の追加（%d）がエラーになりました。"
 
-#: lib/Views/Browse.php:272 lib/Views/Browse.php:312
+#: lib/Views/Browse.php:276 lib/Views/Browse.php:316
 #, php-format
 msgid "Error adding %d of %d requested contact(s) to list."
 msgstr "リストへの連絡先の追加（%d / %d）がエラーになりました。"
@@ -513,7 +509,7 @@ msgstr "一覧から連絡先 %d を削除中にエラーがありました。"
 msgid "Error removing %d of %d requested contact(s) from list."
 msgstr "一覧から連絡先を削除中（%2$d 中の %1$d）にエラーがありました。"
 
-#: lib/api.php:707
+#: lib/api.php:748
 #, php-format
 msgid "Error searching the address book: %s"
 msgstr "アドレス帳の検索中にエラーがありました: %s"
@@ -540,20 +536,20 @@ msgstr "以下のアドレス帳の全ての内容をエクスポートする。"
 msgid "Failed to access the address book: %s"
 msgstr "アドレス帳にアクセスできませんでした: %s"
 
-#: lib/Views/Browse.php:211
+#: lib/Views/Browse.php:215
 #, php-format
 msgid "Failed to add %s to %s: %s"
 msgstr "%s を %s に追加できません: %s"
 
-#: lib/Views/Browse.php:352
+#: lib/Views/Browse.php:356
 msgid "Failed to browse list"
 msgstr "リストの閲覧に失敗しました"
 
-#: lib/Views/Browse.php:383
+#: lib/Views/Browse.php:387
 msgid "Failed to browse the directory"
 msgstr "人名簿の閲覧に失敗しました"
 
-#: lib/Driver/ldap.php:354
+#: lib/Driver/ldap.php:367
 #, php-format
 msgid "Failed to change name: (%s) %s; Old DN = %s, New DN = %s, Root = %s"
 msgstr "名前の変更に失敗しました: (%s) %s; 旧 DN = %s, 新 DN = %s, ルート = %s"
@@ -572,7 +568,7 @@ msgstr "アドレス帳の検索に失敗しました"
 msgid "Failed to search the directory: %s"
 msgstr "人名簿を検索できませんでした: %s"
 
-#: config/sources.php.dist:565
+#: config/sources.php.dist:626
 msgid "Favourite Recipients"
 msgstr "よく送る相手"
 
@@ -608,7 +604,7 @@ msgstr "From"
 msgid "Gender"
 msgstr "性別"
 
-#: config/sources.php.dist:791
+#: config/sources.php.dist:852
 msgid "Global Address Book"
 msgstr "広域アドレス帳"
 
@@ -680,7 +676,7 @@ msgstr "自宅のビデオ通話"
 msgid "Home Website URL"
 msgstr "自宅の Web URL"
 
-#: config/sources.php.dist:682
+#: config/sources.php.dist:743
 msgid "IMSP"
 msgstr "IMSP"
 
@@ -701,51 +697,41 @@ msgstr "イニシャル"
 msgid "Instant Messenger"
 msgstr "インスタント・メッセンジャー"
 
-#: lib/api.php:999 lib/api.php:1132
+#: lib/api.php:1041 lib/api.php:1174
 msgid "Invalid ID"
 msgstr "無効な ID です"
 
 #: scripts/import_squirrelmail_sql_abook.php:118
-#: scripts/import_squirrelmail_file_abook.php:107 lib/api.php:368
-#: lib/api.php:696 lib/api.php:751 lib/api.php:810 lib/api.php:859
-#: lib/api.php:995 lib/api.php:1128 lib/api.php:1194 lib/api.php:1774
+#: scripts/import_squirrelmail_file_abook.php:107 lib/api.php:373
+#: lib/api.php:737 lib/api.php:792 lib/api.php:852 lib/api.php:901
+#: lib/api.php:1037 lib/api.php:1170 lib/api.php:1236 lib/api.php:1831
 #, php-format
 msgid "Invalid address book: %s"
 msgstr "無効なアドレス帳です：%s"
 
-#: lib/api.php:1198
+#: lib/api.php:1240
 msgid "Invalid contact unique ID"
 msgstr "無効な連絡用 ID"
 
-#: lib/api.php:1778 lib/api.php:1864 lib/api.php:1925
+#: lib/api.php:1835 lib/api.php:1921 lib/api.php:1982
 msgid "Invalid email"
 msgstr "無効なメールです"
 
-#: lib/api.php:1786
+#: lib/api.php:1843
 msgid "Invalid entry"
 msgstr "無効な入力です"
 
-#: lib/Driver/ldap.php:317
+#: lib/Driver/ldap.php:330
 msgid "Invalid key specified."
 msgstr "無効なキイが指定されました。"
 
-#: lib/api.php:1782
+#: lib/api.php:1839
 msgid "Invalid name"
 msgstr "無効な名前です"
 
 #: config/attributes.php.dist:288
 msgid "Job Title"
 msgstr "肩書"
-
-#: lib/Driver/kolab.php:1119
-#, php-format
-msgid "Key for saving must be \\'uid\\' not %s!"
-msgstr "保存のキイは \\'uid\\' であって、%s でないこと！"
-
-#: lib/Driver/kolab.php:1203
-#, php-format
-msgid "Key for saving must be a UID not %s!"
-msgstr "保存のキイは UID であって、%s でないこと！"
 
 #: config/attributes.php.dist:406
 msgid "Kolab Home Server"
@@ -781,7 +767,7 @@ msgstr "緯度"
 msgid "List"
 msgstr "リスト"
 
-#: config/sources.php.dist:251 config/sources.php.dist:948
+#: config/sources.php.dist:281 config/sources.php.dist:1009
 msgid "Location"
 msgstr "場所"
 
@@ -797,7 +783,7 @@ msgstr "ロゴのMIMEタイプ"
 msgid "Longitude"
 msgstr "経度"
 
-#: lib/api.php:616
+#: lib/api.php:657
 msgid "Malformed request."
 msgstr "不正な要求"
 
@@ -817,7 +803,7 @@ msgstr "この連絡先はあなた自身のであると指定する"
 msgid "Matching"
 msgstr "が次に一致する"
 
-#: lib/api.php:329
+#: lib/api.php:334
 msgid "Maximum Number of Contacts"
 msgstr "連絡先の最大数"
 
@@ -833,7 +819,7 @@ msgstr "メニューリスト"
 msgid "Middle Names"
 msgstr "ミドルネーム"
 
-#: lib/Driver/ldap.php:347
+#: lib/Driver/ldap.php:360
 msgid "Missing DN in LDAP source configuration."
 msgstr "LDAP の設定に DN の指定が抜けています。"
 
@@ -841,7 +827,7 @@ msgstr "LDAP の設定に DN の指定が抜けています。"
 msgid "Mobile Phone"
 msgstr "携帯電話"
 
-#: lib/Driver/ldap.php:376 lib/Driver/ldap.php:392
+#: lib/Driver/ldap.php:389 lib/Driver/ldap.php:405
 #, php-format
 msgid "Modify failed: (%s) %s"
 msgstr "変更失敗: (%s) %s"
@@ -850,7 +836,7 @@ msgstr "変更失敗: (%s) %s"
 msgid "More Options..."
 msgstr "その他のオプション..."
 
-#: lib/api.php:1902
+#: lib/api.php:1959
 msgid "More than 1 entry found"
 msgstr "１つ以上あります"
 
@@ -870,13 +856,13 @@ msgstr "右に移動"
 msgid "Mulberry Address Book"
 msgstr "Mulberry 形式のアドレス帳"
 
-#: lib/api.php:1810
+#: lib/api.php:1867
 #, php-format
 msgid ""
 "Multiple persons with address [%s], but none with name [%s] already exist"
 msgstr "アドレス[%s]に複数の名前がありますが、名前 [%s]は存在しません。"
 
-#: config/sources.php.dist:167
+#: config/sources.php.dist:197
 msgid "My Address Book"
 msgstr "私のアドレス帳"
 
@@ -914,7 +900,7 @@ msgstr "次"
 msgid "Nickname"
 msgstr "ニックネーム"
 
-#: lib/api.php:1905 lib/api.php:1965
+#: lib/api.php:1962 lib/api.php:2022
 #, php-format
 msgid "No %s entry found for %s"
 msgstr "%s は %s にありません"
@@ -928,8 +914,8 @@ msgstr "アドレス帳がありません。インポートとエクスポートはできません。"
 msgid "No Address Books are currently available. Searching is disabled."
 msgstr "アドレス帳がありません。検索はできません。"
 
-#: lib/api.php:690 lib/api.php:745 lib/api.php:805 lib/api.php:990
-#: lib/api.php:1123 lib/api.php:1189
+#: lib/api.php:731 lib/api.php:786 lib/api.php:846 lib/api.php:1032
+#: lib/api.php:1165 lib/api.php:1231
 msgid "No address book specified"
 msgstr "アドレス帳が指定されていません"
 
@@ -949,7 +935,7 @@ msgstr "一致する連絡先がありません"
 msgid "No source for favourite recipients exists."
 msgstr "「お気に入りの相手」のソースがありません。"
 
-#: lib/api.php:893 lib/api.php:1235
+#: lib/api.php:935 lib/api.php:1277
 msgid "No vCard data was found."
 msgstr "vCard データが見付かりません。"
 
@@ -974,11 +960,11 @@ msgstr "注記"
 msgid "Number of items per page"
 msgstr "1ページの項目数"
 
-#: lib/api.php:1041 lib/api.php:1260
+#: lib/api.php:1083 lib/api.php:1302
 msgid "Object not found"
 msgstr "オブジェクトが見付かりません"
 
-#: lib/Driver/kolab.php:1207
+#: lib/Driver/kolab.php:1215
 #, php-format
 msgid "Object with UID %s does not exist!"
 msgstr "UID %s のオブジェクトは存在しません！"
@@ -1000,15 +986,15 @@ msgstr ""
 "このオプション画面を保存すると、そのアドレス帳は完全に削除されます。それを望"
 "まないならば、\"None\" を選択して下さい。"
 
-#: lib/api.php:1243
+#: lib/api.php:1285
 msgid "Only one vcard supported."
 msgstr "１つの vcard だけをサポートします。"
 
-#: config/sources.php.dist:258 config/sources.php.dist:954
+#: config/sources.php.dist:288 config/sources.php.dist:1015
 msgid "Organization"
 msgstr "組織"
 
-#: config/sources.php.dist:259 config/sources.php.dist:956
+#: config/sources.php.dist:289 config/sources.php.dist:1017
 msgid "Other"
 msgstr "その他"
 
@@ -1028,12 +1014,12 @@ msgstr "ポケベル"
 msgid "Permanently delete this contact?"
 msgstr "この連絡先を本当に削除しますか？"
 
-#: deletefile.php:36 lib/Driver.php:805 lib/api.php:870 lib/api.php:1795
-#: lib/Driver/sql.php:515
+#: deletefile.php:36 lib/Driver.php:832 lib/api.php:912 lib/api.php:1852
+#: lib/Driver/sql.php:529
 msgid "Permission denied"
 msgstr "アクセスが拒否されました"
 
-#: config/sources.php.dist:248 config/sources.php.dist:944
+#: config/sources.php.dist:278 config/sources.php.dist:1005
 msgid "Personal"
 msgstr "個人"
 
@@ -1058,17 +1044,17 @@ msgstr "新規連絡先リストの名前を入力して下さい："
 msgid "Previous"
 msgstr "前"
 
-#: lib/Driver/ldap.php:197
+#: lib/Driver/ldap.php:202
 #, php-format
 msgid "Query failed: (%s) %s"
 msgstr "問い合わせ失敗: (%s) %s"
 
-#: lib/Driver/ldap.php:242 lib/Driver/ldap.php:250 lib/Driver/ldap.php:486
+#: lib/Driver/ldap.php:247 lib/Driver/ldap.php:255 lib/Driver/ldap.php:500
 #, php-format
 msgid "Read failed: (%s) %s"
 msgstr "読込み失敗: (%s) %s"
 
-#: lib/Driver.php:2107 lib/Driver/null.php:52
+#: lib/Driver.php:2148 lib/Driver/null.php:52
 msgid "Reading contacts is not available."
 msgstr "連絡先の読み出しはできません。"
 
@@ -1089,7 +1075,7 @@ msgstr "アドレス帳を削除"
 msgid "Remove from this list"
 msgstr "リストから外す"
 
-#: lib/Driver.php:2145
+#: lib/Driver.php:2186
 msgid ""
 "Removing user data is not supported in the current address book storage "
 "driver."
@@ -1105,7 +1091,7 @@ msgstr ""
 "インポートで既存のアドレス帳を置き換えますか？ <strong>警告：そうすると現在の"
 "アドレス帳の内容は全て失われます。</strong>"
 
-#: lib/Driver.php:699
+#: lib/Driver.php:711
 msgid "Requested object not found."
 msgstr "要求されたオブジェクトは見付かりませんでした。"
 
@@ -1121,7 +1107,7 @@ msgstr "S/MIME 公開証明書"
 msgid "SIP"
 msgstr "SIP"
 
-#: lib/Driver/ldap.php:84
+#: lib/Driver/ldap.php:89
 #, php-format
 msgid "STARTTLS failed: (%s) %s"
 msgstr "STARTTLS 失敗: (%s) %s"
@@ -1134,7 +1120,7 @@ msgstr "保存"
 msgid "Save search as a virtual address book?"
 msgstr "検索結果を仮想アドレス帳に保存しますか？"
 
-#: lib/Driver.php:2133 lib/Driver/null.php:67
+#: lib/Driver.php:2174 lib/Driver/null.php:67
 msgid "Saving contacts is not available."
 msgstr "連絡先の保存はできません。"
 
@@ -1144,11 +1130,11 @@ msgstr "連絡先の保存はできません。"
 msgid "Search"
 msgstr "検索"
 
-#: lib/api.php:1568
+#: lib/api.php:1615
 msgid "Search failed"
 msgstr "検索失敗"
 
-#: lib/api.php:1800 lib/api.php:1806 lib/api.php:1815 lib/api.php:1828
+#: lib/api.php:1857 lib/api.php:1863 lib/api.php:1872 lib/api.php:1885
 #, php-format
 msgid "Search failed: %s"
 msgstr "検索失敗: %s"
@@ -1157,7 +1143,7 @@ msgstr "検索失敗: %s"
 msgid "Search for: "
 msgstr "検索："
 
-#: lib/Driver.php:2092 lib/Driver/null.php:47
+#: lib/Driver.php:2133 lib/Driver/null.php:47
 msgid "Searching is not available."
 msgstr "検索は使用できません。"
 
@@ -1196,8 +1182,12 @@ msgid "Select the format of the source file:"
 msgstr "元のファイルの形式を選択して下さい:"
 
 #: config/prefs.php.dist:125
-msgid "Select the format used to display names:"
-msgstr "表示の形式を選択してください:"
+msgid "Select the format used to <em>display</em> names:"
+msgstr "名前を表示する形式を選択してください:"
+
+#: config/prefs.php.dist:137
+msgid "Select the format used to <em>sort</em> names:"
+msgstr "名前を並べ替える形式を選択してください:"
 
 #: config/prefs.php.dist:25
 msgid "Select view to display by default and paging options."
@@ -1256,7 +1246,7 @@ msgstr "先ず %s で、次に %s で並べ替え"
 msgid "Source:"
 msgstr "ソース："
 
-#: lib/api.php:322
+#: lib/api.php:327
 msgid "Sources"
 msgstr "ソース"
 
@@ -1264,17 +1254,17 @@ msgstr "ソース"
 msgid "Spouse"
 msgstr "配偶者"
 
-#: lib/Views/Browse.php:268 lib/Views/Browse.php:308
+#: lib/Views/Browse.php:272 lib/Views/Browse.php:312
 #, php-format
 msgid "Successfully added %d contact(s) to list."
 msgstr "%d つの連絡先はリストに追加されました。"
 
-#: lib/Views/Browse.php:215
+#: lib/Views/Browse.php:219
 #, php-format
 msgid "Successfully added %s to %s"
 msgstr "%s は %s に追加されました"
 
-#: lib/Views/Browse.php:298
+#: lib/Views/Browse.php:302
 #, php-format
 msgid "Successfully created the contact list \"%s\"."
 msgstr "連絡先リスト \"%s\" が追加されました。"
@@ -1319,7 +1309,7 @@ msgstr "ファイル %s には連絡先が含まれていません。"
 msgid "The VFS backend needs to be configured to enable attachment uploads."
 msgstr "VFS バックエンドは添付のアップロードが許可されていることが必要です。"
 
-#: lib/Driver.php:2063
+#: lib/Driver.php:2104
 #, php-format
 msgid "The address book \"%s\" does not exist."
 msgstr "アドレス帳 \"%s\" は存在しません。"
@@ -1334,7 +1324,7 @@ msgstr "アドレス帳 \"%s\" が作成されました。"
 msgid "The address book could not be purged: %s"
 msgstr "アドレス帳をパージできませんでした: %s"
 
-#: lib/api.php:1061
+#: lib/api.php:1103
 msgid "The address book with your own contact doesn't exist anymore."
 msgstr "アドレス帳にあなた自身の連絡先は存在しません。"
 
@@ -1385,7 +1375,7 @@ msgstr ""
 "ドレス帳は用意されていません。それが間違いだと思うなら、システム管理者にお問"
 "い合わせください。"
 
-#: lib/Views/Browse.php:356
+#: lib/Views/Browse.php:360
 #, php-format
 msgid "There is %d contact in this list that is not viewable to you"
 msgid_plural "There are %d contacts in this list that are not viewable to you"
@@ -1404,11 +1394,11 @@ msgstr ""
 "連絡先の追加中にエラーが発生しました。詳細についてはシステム管理者にお問い合"
 "わせください。"
 
-#: lib/Views/Browse.php:318
+#: lib/Views/Browse.php:322
 msgid "There was an error creating a new list."
 msgstr "新規リスト作成時にエラーが発生しました。"
 
-#: lib/Views/Browse.php:221
+#: lib/Views/Browse.php:225
 #, php-format
 msgid "There was an error deleting \"%s\" from the source address book."
 msgstr "アドレス帳から \"%s\" を削除中にエラーがありました。"
@@ -1418,7 +1408,7 @@ msgstr "アドレス帳から \"%s\" を削除中にエラーがありました。"
 msgid "There was an error deleting this contact: %s"
 msgstr "この連絡先の削除中にエラーがありました: %s"
 
-#: lib/Views/Browse.php:362
+#: lib/Views/Browse.php:366
 msgid "There was an error displaying the list"
 msgstr "リスト表示中にエラーが発生しました"
 
@@ -1427,11 +1417,11 @@ msgstr "リスト表示中にエラーが発生しました"
 msgid "There was an error importing the data: %s"
 msgstr "データのインポート中にエラーが発生しました: %s"
 
-#: lib/api.php:889 lib/api.php:1230
+#: lib/api.php:931 lib/api.php:1272
 msgid "There was an error importing the iCalendar data."
 msgstr "iCalendar のインポート中にエラーが発生しました。"
 
-#: lib/api.php:258
+#: lib/api.php:263
 #, php-format
 msgid "There was an error removing an address book for %s"
 msgstr "アドレス帳 %s の削除中にエラーが発生しました"
@@ -1465,12 +1455,12 @@ msgstr "この連絡先はあなた自身のであると指定されました。"
 msgid "This file format is not supported."
 msgstr "この形式はサポートされていません。"
 
-#: lib/api.php:1819 lib/api.php:1832
+#: lib/api.php:1876 lib/api.php:1889
 #, php-format
 msgid "This person already has a %s entry in the address book"
 msgstr "この人物はすでにアドレス帳に %s として登録されています。"
 
-#: config/prefs.php.dist:138
+#: config/prefs.php.dist:150
 msgid ""
 "This will be the default address book when adding or importing contacts."
 msgstr "連絡先を追加する際デフォルトで使用されるアドレス帳です。"
@@ -1483,7 +1473,7 @@ msgstr "タイムゾーン"
 msgid "Unable to find contact owner."
 msgstr "連絡先の所有者が見つかりません。"
 
-#: lib/Driver.php:1983 lib/Turba.php:662
+#: lib/Driver.php:2024 lib/Turba.php:672
 #, php-format
 msgid "Unable to load the definition of %s."
 msgstr "%s の定義をロードできません。"
@@ -1493,7 +1483,7 @@ msgstr "%s の定義をロードできません。"
 msgid "Unable to save address book \"%s\": %s"
 msgstr "アドレス帳 \"%s\"  を保存できませんでした: %s"
 
-#: lib/Driver/kolab.php:490
+#: lib/Driver/kolab.php:498
 msgid "Unable to search."
 msgstr "検索できません。"
 
@@ -1501,7 +1491,7 @@ msgstr "検索できません。"
 msgid "Unfiled"
 msgstr "未整理"
 
-#: lib/api.php:927 lib/api.php:1038 lib/api.php:1248
+#: lib/api.php:969 lib/api.php:1080 lib/api.php:1290
 #, php-format
 msgid "Unsupported Content-Type: %s"
 msgstr "サポートしていない Content-Type：%s"
@@ -1595,7 +1585,7 @@ msgstr "勤務先の Web URL"
 msgid "You are not allowed to change this addressbook."
 msgstr "あなたはこのアドレス帳を変更できません。"
 
-#: data.php:355 add.php:48 lib/Views/Browse.php:159 lib/Views/Browse.php:281
+#: data.php:355 add.php:48 lib/Views/Browse.php:159 lib/Views/Browse.php:285
 #, php-format
 msgid "You are not allowed to create more than %d contacts in \"%s\"."
 msgstr ""
@@ -1605,23 +1595,15 @@ msgstr ""
 msgid "You are not allowed to delete this addressbook."
 msgstr "あなたはこのアドレス帳を削除できません。"
 
-#: lib/api.php:204
+#: lib/api.php:209
 msgid "You are not allowed to remove user data."
 msgstr "あなたはユーザデータを消去できません。"
-
-#: lib/Driver/vbook.php:137
-msgid "You cannot add an entry to a virtual address book."
-msgstr "仮想アドレス帳に項目の追加ができません。"
 
 #: lib/Driver/vbook.php:121
 msgid "You cannot add new contacts to a virtual address book"
 msgstr "仮想アドレス帳に新たな連絡先は追加できません"
 
-#: lib/Driver/vbook.php:129
-msgid "You cannot delete contacts from a virtual address book"
-msgstr "仮想アドレス帳から連絡先は削除できません"
-
-#: lib/api.php:1056
+#: lib/api.php:1098
 msgid "You didn't mark a contact as your own yet."
 msgstr "連絡先はあなた自身であるとは指定されていません。"
 
@@ -1638,7 +1620,7 @@ msgstr "あなたにはこのオブジェクトを見る権限がありません。"
 msgid "You do not have permissions to delete this address book."
 msgstr "あなたにはこのアドレス帳を削除する権限がありません。"
 
-#: lib/api.php:1070
+#: lib/api.php:1112
 msgid ""
 "You don't have sufficient permissions to read the address book that contains "
 "your own contact."
@@ -1646,7 +1628,7 @@ msgstr ""
 "あなたにはあなたの連絡先が含まれているアドレス帳を見る充分な権限がありませ"
 "ん。"
 
-#: lib/Driver/ldap.php:741
+#: lib/Driver/ldap.php:758
 msgid ""
 "You must have the Net_LDAP PEAR library installed to use the schema check "
 "function."
@@ -1675,7 +1657,7 @@ msgstr "最初に少なくとも１つの連絡先を選んでください。"
 msgid "You only have permission to view this contact."
 msgstr "あなたにはこの連絡先を見るだけの権利しかありません。"
 
-#: lib/Views/Browse.php:369
+#: lib/Views/Browse.php:373
 msgid "Your default address book is not browseable."
 msgstr "あなたのデフォルトのアドレス帳は閲覧が不可能です。"
 
@@ -1684,7 +1666,7 @@ msgstr "あなたのデフォルトのアドレス帳は閲覧が不可能です。"
 msgid "Your own contact"
 msgstr "あなた自身の連絡先"
 
-#: lib/api.php:1075
+#: lib/api.php:1117
 msgid "Your own contact cannot be found in the address book."
 msgstr "アドレス帳にあなた自身の連絡先がありません。"
 
@@ -1692,7 +1674,7 @@ msgstr "アドレス帳にあなた自身の連絡先がありません。"
 msgid "[no value]"
 msgstr "[値なし]"
 
-#: lib/Turba.php:604
+#: lib/Turba.php:614
 msgid "_Browse"
 msgstr "_B閲覧"
 
@@ -1708,7 +1690,7 @@ msgstr "_D削除"
 msgid "_Edit"
 msgstr "_E編集"
 
-#: lib/Turba.php:613
+#: lib/Turba.php:623
 msgid "_Import/Export"
 msgstr "_Iイン/アウト"
 
@@ -1716,15 +1698,15 @@ msgstr "_Iイン/アウト"
 msgid "_Lists"
 msgstr "_Lリスト"
 
-#: lib/Turba.php:601
+#: lib/Turba.php:611
 msgid "_My Address Books"
 msgstr "_M私のアドレス帳"
 
-#: lib/Turba.php:607
+#: lib/Turba.php:617
 msgid "_New Contact"
 msgstr "_N新規連絡先"
 
-#: lib/Turba.php:618
+#: lib/Turba.php:628
 msgid "_Print"
 msgstr "_P印刷"
 
@@ -1732,7 +1714,7 @@ msgstr "_P印刷"
 msgid "_Remove from this list"
 msgstr "_Rリストから削除"
 
-#: lib/Turba.php:609
+#: lib/Turba.php:619
 msgid "_Search"
 msgstr "_S検索"
 
@@ -1790,7 +1772,7 @@ msgstr "in %s"
 msgid "male"
 msgstr "男性"
 
-#: config/prefs.php.dist:128
+#: config/prefs.php.dist:128 config/prefs.php.dist:140
 msgid "no formatting"
 msgstr "そのまま表示"
 

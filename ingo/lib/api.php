@@ -5,7 +5,7 @@
  * This file defines Ingo's external API interface. Other applications
  * can interact with Ingo through this API.
  *
- * $Horde: ingo/lib/api.php,v 1.16.12.8 2009-07-24 08:57:03 jan Exp $
+ * $Horde: ingo/lib/api.php,v 1.16.12.9 2009/12/30 17:40:03 jan Exp $
  *
  * See the enclosed file LICENSE for license information (ASL).  If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.
@@ -243,6 +243,12 @@ function _ingo_applyFilters($params = array())
 
     $ingo_script = Ingo::loadIngoScript();
     if ($ingo_script) {
+        if (!isset($params['filter_seen'])) {
+            $params['filter_seen'] = $GLOBALS['prefs']->getValue('filter_seen');
+        }
+        if (!isset($params['show_filter_msg'])) {
+            $params['show_filter_msg'] = $GLOBALS['prefs']->getValue('show_filter_msg');
+        }
         return $ingo_script->perform($params);
     }
 }

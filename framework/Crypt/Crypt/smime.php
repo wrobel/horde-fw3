@@ -6,7 +6,7 @@ require_once 'Horde/Crypt.php';
  * Horde_Crypt_smime:: provides a framework for Horde applications to
  * interact with the OpenSSL library and implement S/MIME.
  *
- * $Horde: framework/Crypt/Crypt/smime.php,v 1.49.2.22 2009-01-22 10:49:48 jan Exp $
+ * $Horde: framework/Crypt/Crypt/smime.php,v 1.49.2.23 2009/12/14 19:40:34 slusarz Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -744,7 +744,17 @@ class Horde_Crypt_smime extends Horde_Crypt {
         }
 
         $cert_data = $this->_parseASN($raw_cert);
-        if (!is_array($cert_data) || ($cert_data[0] == 'UNKNOWN')) {
+
+        if (!is_array($cert_data) ||
+            ($cert_data[0] == 'UNKNOWN') ||
+            ($cert_data[1][0] == 'UNKNOWN') ||
+            /* Bug #8751: Check for required number of fields. The ASN
+             * parsing code doesn't seem to be able to handle v1 data - it
+             * combines the version and serial number fields.
+             * openssl_x509_parse() works, but doesn't have a stable API.
+             * Since v1 is such an old standard anyway, best just to abort
+             * here. */
+            (count($cert_data[1][0][1]) != 7)) {
             return false;
         }
 

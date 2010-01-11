@@ -31,7 +31,7 @@ define('HORDE_DATE_MASK_ALLPARTS', 63);
  * Horde Date wrapper/logic class, including some calculation
  * functions.
  *
- * $Horde: framework/Date/Date.php,v 1.8.10.18 2008-09-17 08:46:04 jan Exp $
+ * $Horde: framework/Date/Date.php,v 1.8.10.19 2009/12/10 12:19:58 jan Exp $
  *
  * @package Horde_Date
  */
@@ -574,6 +574,18 @@ class Horde_Date {
     function rfc3339DateTime()
     {
         return $this->format('Y-m-d\TH:i:s');
+    }
+
+    /**
+     * Format time in the format we use for SQL queries.
+     *
+     * @since Horde 3.3.6
+     *
+     * @return string  Date and time in SQL format.
+     */
+    function sqlDateTime()
+    {
+        return $this->format('Y-m-d H:i:s');
     }
 
     /**

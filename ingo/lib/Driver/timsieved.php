@@ -6,7 +6,7 @@ require_once('Net/Sieve.php');
  * Ingo_Driver_timsieved:: Implements the Sieve_Driver api to allow scripts to
  * be installed and set active via a Cyrus timsieved server.
  *
- * $Horde: ingo/lib/Driver/timsieved.php,v 1.15.10.12 2009-11-05 10:29:09 jan Exp $
+ * $Horde: ingo/lib/Driver/timsieved.php,v 1.15.10.13 2009/12/21 18:29:09 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -50,14 +50,12 @@ class Ingo_Driver_timsieved extends Ingo_Driver {
     }
 
     /**
-     * Connect to the sieve server.
-     *
-     * @return mixed  True on success, PEAR_Error on false.
+     * Connects to the sieve server.
      */
     function _connect()
     {
         if (!empty($this->_sieve)) {
-            return true;
+            return;
         }
 
         if (empty($this->_params['admin'])) {
@@ -79,9 +77,10 @@ class Ingo_Driver_timsieved extends Ingo_Driver {
         if (is_a($res, 'PEAR_Error')) {
             unset($this->_sieve);
             return $res;
-        } else {
+        }
+
+        if (!empty($this->_params['debug'])) {
             $this->_sieve->setDebug(true, array($this, '_debug'));
-            return true;
         }
     }
 

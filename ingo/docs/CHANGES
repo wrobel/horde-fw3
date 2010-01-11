@@ -1,6 +1,20 @@
 ----------
-v1.2.3-cvs
+v1.2.4-cvs
 ----------
+
+[jan] Fix procmail scripts when using composite headers (Bug #8804).
+[jan] Support some non-standard Date: headers in Sieve vacation rules
+      (Request #8783).
+[jan] Support composite header rules with IMAP backends (Request #7343).
+[jan] Fix unconditional debug output with Net_Sieve earlier than 1.2.0
+      (Bug #8794).
+[jan] Add Sieve configuration to use UTF-8 encoded folder names (for Dovecot)
+      (Request #7391).
+
+
+------
+v1.2.3
+------
 
 [jan] Log Sieve communication with DEBUG log level.
 [jan] Fix Oracle SQL scripts.

@@ -165,7 +165,7 @@
  *    testTearDown() to create a clean (empty) enviroment for the test user
  *    "syncmltest".  See the SyncML_Backend_Sql implementation for details.
  *
- * $Horde: framework/SyncML/SyncML/Backend.php,v 1.8.2.19 2009-09-15 13:42:53 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Backend.php,v 1.8.2.21 2009/12/30 01:15:21 jan Exp $
  *
  * Copyright 2005-2009 The Horde Project (http://www.horde.org/)
  *
@@ -453,15 +453,16 @@ class SyncML_Backend {
         $database = $this->_normalize($databaseURI);
 
         switch($database) {
-        case 'tasks';
-        case 'calendar';
-        case 'notes';
-        case 'contacts';
+        case 'tasks':
+        case 'calendar':
+        case 'notes':
+        case 'contacts':
+        case 'configuration':
             return true;
 
         default:
-            $this->logMessage('Invalid database ' . $database
-                              . '. Try tasks, calendar, notes or contacts.',
+            $this->logMessage('Invalid database "' . $database
+                              . '". Try tasks, calendar, notes or contacts.',
                               __FILE__, __LINE__, PEAR_LOG_ERR);
             return false;
         }
@@ -505,10 +506,12 @@ class SyncML_Backend {
      *                             this is the guid.
      * @param string $contentType  Content-Type: the MIME type in which the
      *                             function should return the data.
+     * @param array $fields        Hash of field names and SyncML_Property
+     *                             properties with the requested fields.
      *
      * @return mixed  A string with the data entry or a PEAR_Error object.
      */
-    function retrieveEntry($databaseURI, $suid, $contentType)
+    function retrieveEntry($databaseURI, $suid, $contentType, $fields)
     {
         die('retrieveEntry() not implemented!');
     }

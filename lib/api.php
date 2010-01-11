@@ -5,7 +5,7 @@
  * This file defines Horde's external API interface. Other
  * applications can interact with Horde through this API.
  *
- * $Horde: horde/lib/api.php,v 1.43.2.16 2009-09-12 08:14:36 jan Exp $
+ * $Horde: horde/lib/api.php,v 1.43.2.17 2009/12/07 18:30:20 mrubinsk Exp $
  *
  * @package Horde
  */
@@ -432,17 +432,17 @@ function _horde_removeUserDataFromAllApplications($user)
         return PEAR::raiseError(_("No API found."));
     }
     foreach ($apis as $api) {
-	if ($GLOBALS['registry']->hasMethod($api . '/removeUserData') === true) {
-	    $result = $GLOBALS['registry']->call($api . '/removeUserData', $user);
-	    if (is_a($result, 'PEAR_Error')) {
-		Horde::logMessage($result, __FILE__, __LINE__, PEAR_LOG_ERR);
-		$haveError = true;
-	    }
-	}
+    	if ($GLOBALS['registry']->hasMethod($api . '/removeUserData')) {
+    	    $result = $GLOBALS['registry']->call($api . '/removeUserData', $user);
+    	    if (is_a($result, 'PEAR_Error')) {
+                Horde::logMessage($result, __FILE__, __LINE__, PEAR_LOG_ERR);
+    		    $haveError = true;
+    	    }
+    	}
     }
     $result = _horde_removeUserData($user);
     if (is_a($result, 'PEAR_Error')) {
-	$haveError = true;
+	   $haveError = true;
     }
 
     if (!$haveError) {

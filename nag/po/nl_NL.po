@@ -1,13 +1,13 @@
 # Nag Dutch translation.
 # Copyright 2001 Jan Kuipers.
-# Jan Kuipers <jrkuipers@lauwerscollege.nl>, 2001-2008.
+# Jan Kuipers <jrkuipers@lauwerscollege.nl>, 2001-2009.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Nag H3 (2.2.1-cvs)\n"
+"Project-Id-Version: Nag H3 (2.3.4-cvs)\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2008-09-14 11:49+0200\n"
-"PO-Revision-Date: 2008-09-14 13:12+0200\n"
+"POT-Creation-Date: 2009-12-14 08:18+0100\n"
+"PO-Revision-Date: 2009-12-14 21:13+0100\n"
 "Last-Translator: Jan Kuipers <jrkuipers@lauwerscollege.nl>\n"
 "Language-Team: Dutch <i18n@lists.horde.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,57 +20,57 @@ msgstr ""
 msgid " (%s including sub-tasks)"
 msgstr " (%s inclusief subtaken)"
 
-#: lib/Nag.php:76
+#: lib/Nag.php:81
 #, php-format
 msgid "%d hour"
 msgstr "%d uur"
 
-#: lib/Nag.php:78
+#: lib/Nag.php:83
 #, php-format
 msgid "%d hour, %d minute"
 msgstr "%d uur, %d minuut"
 
-#: lib/Nag.php:80
+#: lib/Nag.php:85
 #, php-format
 msgid "%d hour, %d minutes"
 msgstr "%d uur, %d minuten"
 
-#: lib/Nag.php:68
+#: lib/Nag.php:73
 #, php-format
 msgid "%d hours"
 msgstr "%d uren"
 
-#: lib/Nag.php:70
+#: lib/Nag.php:75
 #, php-format
 msgid "%d hours, %d minute"
 msgstr "%d uren, %d minuut"
 
-#: lib/Nag.php:72
+#: lib/Nag.php:77
 #, php-format
 msgid "%d hours, %d minutes"
 msgstr "%d uren, %d minuten"
 
-#: lib/Nag.php:86
+#: lib/Nag.php:91
 #, php-format
 msgid "%d minute"
 msgstr "%d minuut"
 
-#: lib/Nag.php:88
+#: lib/Nag.php:93
 #, php-format
 msgid "%d minutes"
 msgstr "%d minuten"
 
-#: lib/Nag.php:398
+#: lib/Nag.php:412
 #, php-format
 msgid "%s at %s"
 msgstr "%s op %s"
 
-#: lib/Nag.php:658 lib/Block/tree_alarms.php:41 lib/Block/summary.php:124
+#: lib/Nag.php:672 lib/Block/summary.php:124 lib/Block/tree_alarms.php:41
 #, php-format
 msgid "%s is due in %s"
 msgstr "%s vervalt over %s"
 
-#: lib/Nag.php:656 lib/Block/tree_alarms.php:43 lib/Block/summary.php:121
+#: lib/Nag.php:670 lib/Block/summary.php:121 lib/Block/tree_alarms.php:43
 #, php-format
 msgid "%s is due now."
 msgstr "%s vervalt nu."
@@ -85,18 +85,23 @@ msgstr "%s is nu niet afgerond."
 msgid "%s successfully imported"
 msgstr "%s met succes geimporteerd"
 
-#: lib/Nag.php:584 lib/Forms/DeleteTaskList.php:86
+#: lib/Nag.php:598 lib/Forms/DeleteTaskList.php:86
 #, php-format
 msgid "%s's Task List"
 msgstr "%s's taaklijst"
 
-#: lib/Nag.php:349 lib/Forms/task.php:84
+#: lib/Nag.php:363 lib/Forms/task.php:84
 msgid "(highest)"
 msgstr "(hoogste)"
 
-#: lib/Nag.php:349 lib/Forms/task.php:85
+#: lib/Nag.php:363 lib/Forms/task.php:85
 msgid "(lowest)"
 msgstr "(laagste)"
+
+#: lib/Forms/task.php:186
+msgid "A due date must be set to enable alarms."
+msgstr ""
+"Een vervaldatum dient ingesteld te zijn om alarmen in te kunnen schakelen."
 
 #: task.php:206
 #, php-format
@@ -121,7 +126,7 @@ msgstr "Toegang geweigerd bij bewerken van taak: %s"
 msgid "Access denied moving the task to %s."
 msgstr "Toegang geweigerd bij het verplaatsen van taak naar %s."
 
-#: lib/Driver.php:343
+#: lib/Driver.php:330
 #, php-format
 msgid "Access denied removing task from %s."
 msgstr "Toegang geweigerd bij verwijderen van taak uit %s."
@@ -140,7 +145,7 @@ msgstr "Toegang geweigerd bij het opslaan van taak: %s"
 msgid "Alarm"
 msgstr "Alarm"
 
-#: templates/data/export.inc:34 config/prefs.php.dist:208
+#: templates/data/export.inc:34 config/prefs.php.dist:209
 msgid "All tasks"
 msgstr "Alle taken"
 
@@ -152,13 +157,13 @@ msgstr "Altijd afgeronde en toekomstige taken weergeven?"
 msgid "Always show overdue tasks?"
 msgstr "Altijd vervallen taken weergeven?"
 
-#: config/prefs.php.dist:125
+#: config/prefs.php.dist:126
 msgid "Ascending"
 msgstr "Toenemend"
 
-#: data.php:55 lib/Forms/task.php:110 templates/list/task_headers.inc:56
-#: templates/view/task.inc:12 config/prefs.php.dist:71
-#: config/prefs.php.dist:98 config/prefs.php.dist:114
+#: data.php:55 lib/Forms/task.php:110 templates/list/task_headers.inc:60
+#: templates/view/task.inc:12 config/prefs.php.dist:70
+#: config/prefs.php.dist:98 config/prefs.php.dist:115
 msgid "Assignee"
 msgstr "Toegewezen persoon"
 
@@ -178,12 +183,12 @@ msgstr "Agenda"
 msgid "Cancel"
 msgstr "Afbreken"
 
-#: templates/list/task_headers.inc:60
+#: templates/list/task_headers.inc:64
 msgid "Cat_egory"
 msgstr "_Categorie"
 
 #: data.php:54 lib/Forms/task.php:102 lib/Forms/task.php:107
-#: templates/view/task.inc:8 config/prefs.php.dist:73 config/prefs.php.dist:95
+#: templates/view/task.inc:8 config/prefs.php.dist:73 config/prefs.php.dist:94
 #: config/prefs.php.dist:111
 msgid "Category"
 msgstr "Categorie"
@@ -196,87 +201,87 @@ msgstr "Rechten wijzigen"
 msgid "Change your task sorting and display options."
 msgstr "Wijzig uw taaksorteer- en weergaveopties."
 
-#: lib/Nag.php:860
+#: lib/Nag.php:874
 #, php-format
 msgid "Changed alarm from %s to %s"
 msgstr "Alarm gewijzigd van %s naar %s"
 
-#: lib/Nag.php:839
+#: lib/Nag.php:853
 #, php-format
 msgid "Changed assignee from \"%s\" to \"%s\""
 msgstr "Toegewezen persoon gewijzigd van \"%s\" naar \"%s\""
 
-#: lib/Nag.php:823
+#: lib/Nag.php:837
 #, php-format
 msgid "Changed category from \"%s\" to \"%s\""
 msgstr "Categorie gewijzigd van \"%s\" naar \"%s\""
 
-#: lib/Nag.php:875
+#: lib/Nag.php:889
 #, php-format
 msgid "Changed completion from %s to %s"
 msgstr "Afronding gewijzigd van %s naar %s"
 
-#: lib/Nag.php:880
+#: lib/Nag.php:894
 msgid "Changed description"
 msgstr "Beschrijving gewijzigd"
 
-#: lib/Nag.php:848
+#: lib/Nag.php:862
 #, php-format
 msgid "Changed due date from %s to %s"
 msgstr "Vervaldatum gewijzigd van %s naar %s"
 
-#: lib/Nag.php:870
+#: lib/Nag.php:884
 #, php-format
 msgid "Changed estimate from %s to %s"
 msgstr "Raming gewijzigd van %s naar %s"
 
-#: lib/Nag.php:800
+#: lib/Nag.php:814
 #, php-format
 msgid "Changed name from \"%s\" to \"%s\""
 msgstr "Naam gewijzigd van \"%s\" naar \"%s\""
 
-#: lib/Nag.php:815
+#: lib/Nag.php:829
 #, php-format
 msgid "Changed parent task from \"%s\" to \"%s\""
 msgstr "Hoofdtaak taak gewijzigd van \"%s\" naar \"%s\""
 
-#: lib/Nag.php:865
+#: lib/Nag.php:879
 #, php-format
 msgid "Changed priority from %s to %s"
 msgstr "Prioriteit gewijzigd van %s naar %s"
 
-#: lib/Nag.php:854
+#: lib/Nag.php:868
 #, php-format
 msgid "Changed start date from %s to %s"
 msgstr "Startdatum gewijzigd van %s naar %s"
 
-#: lib/Nag.php:806
+#: lib/Nag.php:820
 #, php-format
 msgid "Changed task list from \"%s\" to \"%s\""
 msgstr "Taaklijst gewijzigd van \"%s\" naar \"%s\""
 
-#: lib/Nag.php:797
+#: lib/Nag.php:811
 msgid "Changes made for this task:"
 msgstr "Wijzigingen gemaakt voor deze taak:"
 
-#: config/prefs.php.dist:187
+#: config/prefs.php.dist:188
 msgid "Choose how you want to receive reminders for tasks with alarms:"
 msgstr "Kies op welke manier u reminders wilt ontvangen van taken met alarmen:"
 
-#: config/prefs.php.dist:178
+#: config/prefs.php.dist:179
 msgid ""
 "Choose if you want to be notified of new, edited, and deleted tasks by email:"
 msgstr ""
 "Kies of u van nieuwe, bewerkte, en verwijderde taken per email op de hoogte "
 "gebracht wil worden:"
 
-#: config/prefs.php.dist:43
+#: config/prefs.php.dist:42
 msgid "Choose if you want to be notified of task changes and task alarms."
 msgstr ""
 "Kies of u op de hoogte gebracht wil worden van taakwijzigingen en "
 "taakalarmen."
 
-#: config/prefs.php.dist:36
+#: config/prefs.php.dist:35
 msgid "Choose your default task list."
 msgstr "Kies uw standaard taaklijst."
 
@@ -292,7 +297,7 @@ msgstr "Sluiten"
 msgid "Close Search"
 msgstr "Zoeken afsluiten"
 
-#: view.php:114
+#: view.php:113
 msgid "Complete"
 msgstr "Afgerond"
 
@@ -305,11 +310,11 @@ msgstr "\"%s\" afgeronden"
 msgid "Complete Task"
 msgstr "Taak afronden"
 
-#: config/prefs.php.dist:210
+#: config/prefs.php.dist:211
 msgid "Complete tasks"
 msgstr "Afgeronde taken"
 
-#: lib/Nag.php:413 lib/Block/summary.php:190
+#: lib/Nag.php:427 lib/Block/summary.php:190
 msgid "Completed"
 msgstr "Afgerond"
 
@@ -331,7 +336,7 @@ msgid "Completed tasks"
 msgstr "Afgeronde taken"
 
 #: lib/Forms/task.php:121 templates/list/task_headers.inc:31
-#: templates/view/task.inc:42 config/prefs.php.dist:97
+#: templates/view/task.inc:42 config/prefs.php.dist:96
 #: config/prefs.php.dist:113
 msgid "Completed?"
 msgstr "Afgerond?"
@@ -373,15 +378,15 @@ msgstr "Dagelijks"
 msgid "Day"
 msgstr "Dag"
 
-#: lib/Nag.php:445 lib/UI/VarRenderer/nag.php:136
+#: lib/Nag.php:459 lib/UI/VarRenderer/nag.php:136
 msgid "Day(s)"
 msgstr "Dag(en)"
 
-#: config/prefs.php.dist:35
+#: config/prefs.php.dist:34
 msgid "Default Task List"
 msgstr "Standaard taaklijst"
 
-#: config/prefs.php.dist:29
+#: config/prefs.php.dist:28
 msgid "Defaults for new tasks"
 msgstr "Standaardwaarden voor nieuwe taken"
 
@@ -389,7 +394,7 @@ msgstr "Standaardwaarden voor nieuwe taken"
 msgid "Delay Start Until"
 msgstr "Uitstellen van begin totdat"
 
-#: view.php:121 lib/Forms/DeleteTaskList.php:45 tasklists/index.php:57
+#: view.php:120 tasklists/index.php:57 lib/Forms/DeleteTaskList.php:45
 #: templates/tasklist_list.php:35
 msgid "Delete"
 msgstr "Verwijderen"
@@ -399,15 +404,15 @@ msgstr "Verwijderen"
 msgid "Delete %s"
 msgstr "Verwijder %s"
 
-#: config/prefs.php.dist:21
+#: config/prefs.php.dist:20
 msgid "Delete Confirmation"
 msgstr "Verwijderbevestiging"
 
-#: config/prefs.php.dist:22
+#: config/prefs.php.dist:21
 msgid "Delete button behaviour"
 msgstr "Verwijderknopgedrag"
 
-#: task.php:112 lib/Forms/task.php:126 lib/Forms/task.php:153
+#: task.php:112 lib/Forms/task.php:127 lib/Forms/task.php:154
 msgid "Delete this task"
 msgstr "Verwijder deze taak"
 
@@ -420,7 +425,7 @@ msgstr "%s verwijderd."
 msgid "Deleting entire tasklists is not supported."
 msgstr "Verwijderen van complete taaklijsten wordt niet ondersteund."
 
-#: config/prefs.php.dist:126
+#: config/prefs.php.dist:127
 msgid "Descending"
 msgstr "Afnemend"
 
@@ -436,7 +441,7 @@ msgstr "Weergaveopties"
 msgid "Display URL"
 msgstr "URL weergeven"
 
-#: config/prefs.php.dist:136
+#: config/prefs.php.dist:137
 msgid "Do you want to confirm deleting entries?"
 msgstr "Wilt u het verwijderen van invoer bevestigen?"
 
@@ -444,7 +449,7 @@ msgstr "Wilt u het verwijderen van invoer bevestigen?"
 msgid "Due By"
 msgstr "Vervalt op"
 
-#: config/prefs.php.dist:72 config/prefs.php.dist:96 config/prefs.php.dist:112
+#: config/prefs.php.dist:71 config/prefs.php.dist:95 config/prefs.php.dist:112
 msgid "Due Date"
 msgstr "Vervaldatum"
 
@@ -452,7 +457,7 @@ msgstr "Vervaldatum"
 msgid "Due date specified."
 msgstr "Vervaldatum opgegeven."
 
-#: view.php:117 tasklists/index.php:55 templates/tasklist_list.php:31
+#: view.php:116 tasklists/index.php:55 templates/tasklist_list.php:31
 msgid "Edit"
 msgstr "Bewerken"
 
@@ -470,7 +475,7 @@ msgstr "%s bewerken"
 msgid "Edit Task"
 msgstr "Taak bewerken"
 
-#: templates/list/task_headers.inc:65
+#: templates/list/task_headers.inc:69
 msgid "Edit categories and colors"
 msgstr "Categorieën en kleuren bewerken"
 
@@ -484,7 +489,9 @@ msgstr "Bewerken: %s"
 msgid "Error deleting task: %s"
 msgstr "Fout bij verwijderen van taak: %s"
 
-#: data.php:61 lib/Forms/task.php:120 templates/view/task.inc:38
+#: data.php:61 lib/Forms/task.php:120 templates/list/task_headers.inc:56
+#: templates/view/task.inc:38 config/prefs.php.dist:72
+#: config/prefs.php.dist:97 config/prefs.php.dist:114
 msgid "Estimated Time"
 msgstr "Geschatte tijd"
 
@@ -496,7 +503,7 @@ msgstr "Exporteren"
 msgid "Export Tasks"
 msgstr "Taken exporteren"
 
-#: config/prefs.php.dist:57
+#: config/prefs.php.dist:56
 msgid "External Data"
 msgstr "Externe data"
 
@@ -504,7 +511,7 @@ msgstr "Externe data"
 msgid "Future tasks"
 msgstr "Toekomstige taken"
 
-#: config/prefs.php.dist:12 config/prefs.php.dist:20 config/prefs.php.dist:27
+#: config/prefs.php.dist:12 config/prefs.php.dist:19 config/prefs.php.dist:26
 msgid "General Options"
 msgstr "Algemene opties"
 
@@ -512,7 +519,7 @@ msgstr "Algemene opties"
 msgid "Hour"
 msgstr "Uur"
 
-#: lib/Nag.php:448 lib/UI/VarRenderer/nag.php:135
+#: lib/Nag.php:462 lib/UI/VarRenderer/nag.php:135
 msgid "Hour(s)"
 msgstr "Uur"
 
@@ -537,7 +544,7 @@ msgstr "Niet afgeronde taken"
 msgid "Incomplete sub tasks, complete them first"
 msgstr "Niet afgeronde subtaken, rond deze eerst af"
 
-#: templates/data/export.inc:35 config/prefs.php.dist:209
+#: templates/data/export.inc:35 config/prefs.php.dist:210
 msgid "Incomplete tasks"
 msgstr "Niet afgeronde taken"
 
@@ -586,7 +593,7 @@ msgstr "Menulijst"
 msgid "Minute"
 msgstr "Minuut"
 
-#: lib/Nag.php:451 lib/UI/VarRenderer/nag.php:135
+#: lib/Nag.php:465 lib/UI/VarRenderer/nag.php:135
 msgid "Minute(s)"
 msgstr "Minuten"
 
@@ -602,7 +609,7 @@ msgstr "Maandelijks"
 msgid "More Options..."
 msgstr "Meer opties..."
 
-#: lib/api.php:1213
+#: lib/api.php:1208
 msgid "Multiple iCalendar components found; only one vTodo is supported."
 msgstr ""
 "Meerdere iCalendar onderdelen gevonden; slecht één vTodo wordt ondersteund."
@@ -640,7 +647,7 @@ msgstr "Nieuwe taak"
 msgid "Next"
 msgstr "Volgende"
 
-#: config/prefs.php.dist:174
+#: config/prefs.php.dist:175
 msgid "No"
 msgstr "Nee"
 
@@ -652,7 +659,7 @@ msgstr "Geen uitstel"
 msgid "No due date."
 msgstr "Geen vervaldatum."
 
-#: lib/api.php:949 lib/api.php:1007 lib/api.php:1206
+#: lib/api.php:949 lib/api.php:1007 lib/api.php:1215
 msgid "No iCalendar data was found."
 msgstr "Geen iCalendardata gevonden."
 
@@ -664,7 +671,7 @@ msgstr "Geen hoofdtaak"
 msgid "No recurrence"
 msgstr "Geen herhaling"
 
-#: lib/Nag.php:673
+#: lib/Nag.php:687
 msgid "No task lists are available to guests."
 msgstr "Geen taaklijsten beschikbaar voor gasten."
 
@@ -676,11 +683,11 @@ msgstr "Geen taken komen overeen"
 msgid "No tasks to display"
 msgstr "Geen taken weer te geven"
 
-#: lib/Nag.php:455 lib/Forms/task.php:111 lib/UI/VarRenderer/nag.php:151
+#: lib/Nag.php:469 lib/Forms/task.php:111 lib/UI/VarRenderer/nag.php:151
 msgid "None"
 msgstr "Geen"
 
-#: lib/Nag.php:414
+#: lib/Nag.php:428
 msgid "Not Completed"
 msgstr "Niet afgerond"
 
@@ -692,19 +699,19 @@ msgstr "Niet privé"
 msgid "Not configured"
 msgstr "Niet geconfigureerd"
 
-#: config/prefs.php.dist:42
+#: config/prefs.php.dist:41
 msgid "Notifications"
 msgstr "Meldingen"
 
-#: config/prefs.php.dist:176
+#: config/prefs.php.dist:177
 msgid "On all shown task lists"
 msgstr "Op alle getoonde taaklijsten"
 
-#: config/prefs.php.dist:177
+#: config/prefs.php.dist:178
 msgid "On all task lists I have read access to"
 msgstr "Op alle taaklijsten waar ik leesrechten heb"
 
-#: config/prefs.php.dist:175
+#: config/prefs.php.dist:176
 msgid "On my task lists only"
 msgstr "Alleen op mijn taaklijsten"
 
@@ -718,7 +725,7 @@ msgstr "Hoofdtaak"
 
 #: lib/api.php:818 lib/api.php:856 lib/api.php:889 lib/api.php:924
 #: lib/api.php:1043 lib/api.php:1093 lib/api.php:1155 lib/api.php:1190
-#: lib/api.php:1301 lib/api.php:1348
+#: lib/api.php:1303 lib/api.php:1350
 msgid "Permission Denied"
 msgstr "Toegang geweigerd"
 
@@ -727,15 +734,15 @@ msgid "Permission denied"
 msgstr "Toegang geweigerd"
 
 #: data.php:59 lib/Forms/task.php:117 templates/view/task.inc:34
-#: config/prefs.php.dist:70 config/prefs.php.dist:93 config/prefs.php.dist:109
+#: config/prefs.php.dist:69 config/prefs.php.dist:92 config/prefs.php.dist:109
 msgid "Priority"
 msgstr "Prioriteit"
 
-#: lib/Driver.php:951 templates/view/task.inc:18
+#: lib/Driver.php:976 templates/view/task.inc:18
 msgid "Private"
 msgstr "Privé"
 
-#: data.php:60 lib/Driver.php:949
+#: data.php:60 lib/Driver.php:974
 msgid "Private Task"
 msgstr "Privé taak"
 
@@ -752,11 +759,11 @@ msgstr ""
 "De taaklijst \"%s\" echt verwijderen? Dit kan niet ongedaan worden gemaakt "
 "en alle data op deze taaklijst zal definitief worden verwijderd."
 
-#: view.php:121
+#: view.php:120
 msgid "Really delete this task?"
 msgstr "Echt deze taak verwijderen?"
 
-#: lib/Forms/task.php:124 lib/Forms/task.php:151 lib/Forms/EditTaskList.php:46
+#: lib/Forms/task.php:125 lib/Forms/task.php:152 lib/Forms/EditTaskList.php:46
 #: templates/panel.inc:90
 msgid "Save"
 msgstr "Opslaan"
@@ -787,7 +794,7 @@ msgstr "Zoeken naar taaklijsten:"
 msgid "Search:"
 msgstr "Zoeken:"
 
-#: list.php:73
+#: list.php:73 tasks/index.php:46
 #, php-format
 msgid "Search: Results for \"%s\""
 msgstr "Zoeken: resultaten voor \"%s\""
@@ -829,15 +836,15 @@ msgstr "Gedeelde taaklijsten:"
 msgid "Show action buttons?"
 msgstr "Bewerkingsknoppen weergeven?"
 
-#: config/prefs.php.dist:211
+#: config/prefs.php.dist:212
 msgid "Show complete, incomplete, or all tasks in the task list?"
 msgstr "Afgeronde, niet afgeronde of alle taken in de taaklijst weergeven?"
 
-#: config/prefs.php.dist:198
+#: config/prefs.php.dist:199
 msgid "Show data from any of these other applications in your task list?"
 msgstr "Data van elk van deze andere toepassingen in uw taaklijst weergeven?"
 
-#: config/prefs.php.dist:58
+#: config/prefs.php.dist:57
 msgid "Show data from other applications or sources."
 msgstr "Data van andere toepassingen of bronnen weergeven."
 
@@ -857,10 +864,6 @@ msgstr "Taakalarmen weergeven?"
 msgid "Show task category?"
 msgstr "Taakcategorie weergeven?"
 
-#: config/prefs.php.dist:84
-msgid "Show task list options panel?"
-msgstr "Taaklijstoptiespaneel weergeven?"
-
 #: lib/Block/summary.php:60
 msgid "Show tasklist name?"
 msgstr "Taaklijstnamen weergeven?"
@@ -873,11 +876,11 @@ msgstr "Taken van deze categorieen weergeven"
 msgid "Show tasks from these tasklists"
 msgstr "Taken van deze taaklijsten weergeven"
 
-#: templates/list/task_headers.inc:56
+#: templates/list/task_headers.inc:60
 msgid "Sort by Assignee"
 msgstr "Sorteren op toegewezen persoon"
 
-#: templates/list/task_headers.inc:60
+#: templates/list/task_headers.inc:64
 msgid "Sort by Category"
 msgstr "Sorteren op categorie"
 
@@ -901,7 +904,11 @@ msgstr "Sorteren op prioriteit"
 msgid "Sort by User Name"
 msgstr "Sorteren op gebruikersnaam"
 
-#: config/prefs.php.dist:127
+#: templates/list/task_headers.inc:56
+msgid "Sort by estimated time"
+msgstr "Sorteren op geraamde tijd"
+
+#: config/prefs.php.dist:128
 msgid "Sort direction:"
 msgstr "Sorteervolgorde:"
 
@@ -933,7 +940,7 @@ msgstr "Taakalarm"
 msgid "Task Alarm?"
 msgstr "Taakalarm?"
 
-#: config/prefs.php.dist:28
+#: config/prefs.php.dist:27
 msgid "Task Defaults"
 msgstr "Taak standaardinstellingen"
 
@@ -942,11 +949,11 @@ msgid "Task ID not found"
 msgstr "Taak ID niet gevonden"
 
 #: lib/Forms/task.php:94 templates/tasklist_list.php:17
-#: config/prefs.php.dist:69 config/prefs.php.dist:99 config/prefs.php.dist:115
+#: config/prefs.php.dist:68 config/prefs.php.dist:99 config/prefs.php.dist:116
 msgid "Task List"
 msgstr "Taaklijst"
 
-#: lib/Forms/CreateTaskList.php:37 lib/Forms/EditTaskList.php:44
+#: lib/Forms/EditTaskList.php:44 lib/Forms/CreateTaskList.php:37
 msgid "Task List Description"
 msgstr "Taaklijstbeschrijving"
 
@@ -958,11 +965,11 @@ msgstr "Taaklijst informatie"
 msgid "Task List List"
 msgstr "Taaklijst lijst"
 
-#: lib/Forms/CreateTaskList.php:36 lib/Forms/EditTaskList.php:43
+#: lib/Forms/EditTaskList.php:43 lib/Forms/CreateTaskList.php:36
 msgid "Task List Name"
 msgstr "Taaklijstnaam"
 
-#: config/prefs.php.dist:34 config/prefs.php.dist:41 config/prefs.php.dist:56
+#: config/prefs.php.dist:33 config/prefs.php.dist:40 config/prefs.php.dist:55
 msgid "Task List and Share Options"
 msgstr "Taaklijst en share opties"
 
@@ -975,7 +982,7 @@ msgstr "Taaklijst eigendom van %s."
 msgid "Task Lists"
 msgstr "Taaklijsten"
 
-#: config/prefs.php.dist:94 config/prefs.php.dist:110
+#: config/prefs.php.dist:93 config/prefs.php.dist:110
 msgid "Task Name"
 msgstr "Taaknaam"
 
@@ -995,23 +1002,23 @@ msgstr "Taak zoeken"
 msgid "Task UID not found"
 msgstr "Taak UID niet gevonden"
 
-#: lib/Nag.php:781
+#: lib/Nag.php:795
 msgid "Task added:"
 msgstr "Taak toegevoegd:"
 
-#: lib/Nag.php:885
+#: lib/Nag.php:899
 msgid "Task deleted:"
 msgstr "Taak verwijderd:"
 
-#: lib/Nag.php:903
+#: lib/Nag.php:917
 msgid "Task description:"
 msgstr "Taakbeschrijving:"
 
-#: lib/Nag.php:790
+#: lib/Nag.php:804
 msgid "Task modified:"
 msgstr "Taak gewijzigd:"
 
-#: task.php:95 view.php:43
+#: task.php:95 view.php:42
 msgid "Task not found."
 msgstr "Taak niet gevonden."
 
@@ -1023,7 +1030,7 @@ msgstr "Taaklijst bestaat niet of geen verwijderrechten"
 msgid "Tasklist does not exist or no permission to edit"
 msgstr "Taaklijst bestaat niet of geen wijzigingsrechten"
 
-#: lib/api.php:1270
+#: lib/api.php:1272
 msgid "Tasks"
 msgstr "Taken"
 
@@ -1050,7 +1057,7 @@ msgstr "Het taken backend is momenteel niet beschikbaar."
 msgid "The Tasks backend is not currently available: %s"
 msgstr "Het taken backend is momenteel niet beschikbaar: %s"
 
-#: lib/Forms/task.php:184
+#: lib/Forms/task.php:190
 msgid "The alarm value must not be empty."
 msgstr "De alarmwaarde mag niet leeg zijn."
 
@@ -1058,7 +1065,7 @@ msgstr "De alarmwaarde mag niet leeg zijn."
 msgid "The current hour"
 msgstr "Het huidige uur"
 
-#: lib/Nag.php:784
+#: lib/Nag.php:798
 #, php-format
 msgid ""
 "The task \"%s\" has been added to task list \"%s\", with a due date of: %s."
@@ -1066,12 +1073,12 @@ msgstr ""
 "De taak \"%s\" is toegevoegd aan de \"%s\" taaklijst, met een vervaldatum "
 "van: %s."
 
-#: lib/Nag.php:889
+#: lib/Nag.php:903
 #, php-format
 msgid "The task \"%s\" has been deleted from task list \"%s\"."
 msgstr "De taak \"%s\" is verwijderd van de \"%s\" taaklijst."
 
-#: lib/Nag.php:793
+#: lib/Nag.php:807
 #, php-format
 msgid "The task \"%s\" has been edited on task list \"%s\"."
 msgstr "De taak \"%s\" is bewerkt op de \"%s\" taaklijst."
@@ -1096,7 +1103,7 @@ msgstr "De taaklijst \"%s\" is hernoemd naar \"%s\"."
 msgid "The task list \"%s\" has been saved."
 msgstr "De taaklijst \"%s\" is opgeslagen."
 
-#: config/prefs.php.dist:116
+#: config/prefs.php.dist:117
 msgid "Then:"
 msgstr "Dan:"
 
@@ -1151,11 +1158,11 @@ msgstr ""
 "Om u in te schrijven op deze taaklijst vanuit een ander programma, gebruik "
 "deze URL:"
 
-#: lib/Nag.php:844
+#: lib/Nag.php:858
 msgid "Turned privacy off"
 msgstr "Privacy uitgeschakeld"
 
-#: lib/Nag.php:844
+#: lib/Nag.php:858
 msgid "Turned privacy on"
 msgstr "Privacy ingeschakeld"
 
@@ -1179,9 +1186,9 @@ msgstr "Niet in staat om de definitie van %s te laden."
 msgid "Unable to save task list \"%s\": %s"
 msgstr "Niet in staat om taaklijst \"%s\" op te slaan: %s"
 
-#: lib/Nag.php:1071 lib/Nag.php:1072 lib/Nag.php:1086 lib/Nag.php:1087
-#: lib/Forms/task.php:107 lib/Block/summary.php:35 lib/Block/summary.php:243
-#: templates/list/task_summaries.inc:72 templates/view/task.inc:9
+#: lib/Nag.php:1151 lib/Nag.php:1152 lib/Nag.php:1166 lib/Nag.php:1167
+#: lib/Block/summary.php:35 lib/Block/summary.php:243 lib/Forms/task.php:107
+#: templates/list/task_summaries.inc:76 templates/view/task.inc:9
 msgid "Unfiled"
 msgstr "Onbenoemd"
 
@@ -1190,12 +1197,12 @@ msgid "Unique ID"
 msgstr "Uniek ID"
 
 #: lib/api.php:701 lib/api.php:1014 lib/api.php:1068 lib/api.php:1117
-#: lib/api.php:1238
+#: lib/api.php:1240
 #, php-format
 msgid "Unsupported Content-Type: %s"
 msgstr "Niet ondersteund Content-Type: %s"
 
-#: lib/Driver.php:1128
+#: lib/Driver.php:1155
 #, php-format
 msgid ""
 "We would like to remind you of this due task.\n"
@@ -1216,7 +1223,7 @@ msgstr ""
 "\n"
 "%s"
 
-#: lib/Nag.php:442 lib/UI/VarRenderer/nag.php:136
+#: lib/Nag.php:456 lib/UI/VarRenderer/nag.php:136
 msgid "Week(s)"
 msgstr "Weken"
 
@@ -1228,7 +1235,7 @@ msgstr "Wekelijks"
 msgid "What do you want to be the default due time for tasks?"
 msgstr "Wat wilt u dat standaardvervaltijd is voor taken?"
 
-#: config/prefs.php.dist:154
+#: config/prefs.php.dist:155
 msgid ""
 "When creating a new task, how many days in the future should the default due "
 "date be (0 means today)?"
@@ -1236,7 +1243,7 @@ msgstr ""
 "Hoeveel dagen in de toekomst dient de standaard vervaldatum te zijn bij het "
 "maken van een nieuwe taak (0 betekent vandaag)?"
 
-#: config/prefs.php.dist:145
+#: config/prefs.php.dist:146
 msgid "When creating a new task, should it default to having a due date?"
 msgstr ""
 "Dient een taak een standaard vervaldatum te krijgen bij het maken van een "
@@ -1258,7 +1265,7 @@ msgstr "Jaarlijks"
 msgid "You are not allowed to change this task list."
 msgstr "Het is u niet toegestaan om deze taaklijst te wijzigen."
 
-#: task.php:68 data.php:41 data.php:168
+#: data.php:41 data.php:168 task.php:68
 #, php-format
 msgid "You are not allowed to create more than %d tasks."
 msgstr "Het is u niet toegestaan om meer dan %d taken te maken."
@@ -1271,24 +1278,24 @@ msgstr "Het is u niet toegestaan om deze taaklijst te verwijderen."
 msgid "You are not allowed to remove user data."
 msgstr "Het is u niet toegestaan om gebruikersgegevens te verwijderen."
 
-#: view.php:54
+#: view.php:53
 msgid "You do not have permission to view this tasklist."
 msgstr "U heeft geen recht om deze taaklijst te bekijken."
 
-#: lib/Nag.php:782
+#: lib/Nag.php:796
 msgid "You requested to be notified when tasks are added to your task lists."
 msgstr ""
 "U hebt gevraagd om een melding als taken aan uw taaklijsten worden "
 "toegevoegd."
 
-#: lib/Nag.php:887
+#: lib/Nag.php:901
 msgid ""
 "You requested to be notified when tasks are deleted from your task lists."
 msgstr ""
 "U hebt gevraagd om een melding als taken uit uw taaklijsten worden "
 "verwijderd."
 
-#: lib/Nag.php:791
+#: lib/Nag.php:805
 msgid "You requested to be notified when tasks are edited on your task lists."
 msgstr ""
 "U hebt gevraagd om een melding als taken in uw taaklijsten worden gewijzigd."
@@ -1318,7 +1325,7 @@ msgstr "_Alle taken"
 msgid "_Category"
 msgstr "_Categorie"
 
-#: view.php:114
+#: view.php:113
 msgid "_Complete"
 msgstr "Afgeron_d"
 
@@ -1326,7 +1333,7 @@ msgstr "Afgeron_d"
 msgid "_Completed tasks"
 msgstr "Afgeronde ta_ken"
 
-#: view.php:121
+#: view.php:120
 msgid "_Delete"
 msgstr "Ver_wijderen"
 
@@ -1338,7 +1345,7 @@ msgstr "O_mschrijving"
 msgid "_Due Date"
 msgstr "Vervaldat_um"
 
-#: view.php:117
+#: view.php:116
 msgid "_Edit"
 msgstr "_Bewerken"
 
@@ -1346,23 +1353,23 @@ msgstr "_Bewerken"
 msgid "_Future tasks"
 msgstr "Toekomstige taken"
 
-#: lib/Nag.php:621
+#: lib/Nag.php:635
 msgid "_Import/Export"
 msgstr "_Import/Export"
 
-#: lib/Nag.php:608
+#: lib/Nag.php:622
 msgid "_List Tasks"
 msgstr "Taken weergeven"
 
-#: lib/Nag.php:613
+#: lib/Nag.php:627
 msgid "_New Task"
 msgstr "Nieuwe taak"
 
-#: lib/Nag.php:626
+#: lib/Nag.php:640
 msgid "_Print"
 msgstr "A_fdrukken"
 
-#: lib/Nag.php:617
+#: lib/Nag.php:631
 msgid "_Search"
 msgstr "_Zoeken"
 
@@ -1374,16 +1381,16 @@ msgstr "Taaklijst"
 msgid "am"
 msgstr "am"
 
-#: view.php:75 view.php:84
+#: view.php:74 view.php:83
 #, php-format
 msgid "by %s"
 msgstr "door %s"
 
-#: view.php:77 view.php:86
+#: view.php:76 view.php:85
 msgid "by me"
 msgstr "door mij"
 
-#: lib/Nag.php:876 lib/Nag.php:877
+#: lib/Nag.php:890 lib/Nag.php:891
 msgid "completed"
 msgstr "Afgerond"
 
@@ -1396,23 +1403,23 @@ msgstr "iCalendar (vTodo)"
 msgid "in %s"
 msgstr "in %s"
 
-#: lib/Nag.php:849 lib/Nag.php:850 lib/Nag.php:901
+#: lib/Nag.php:863 lib/Nag.php:864 lib/Nag.php:915
 msgid "no due date"
 msgstr "Geen vervaldatum"
 
-#: lib/Nag.php:816 lib/Nag.php:817
+#: lib/Nag.php:830 lib/Nag.php:831
 msgid "no parent"
 msgstr "Geen hoofdtaak"
 
-#: lib/Nag.php:855 lib/Nag.php:856
+#: lib/Nag.php:869 lib/Nag.php:870
 msgid "no start date"
 msgstr "Geen startdatum"
 
-#: lib/Nag.php:84
+#: lib/Nag.php:89
 msgid "no time"
 msgstr "geen tijd"
 
-#: lib/Nag.php:876 lib/Nag.php:877
+#: lib/Nag.php:890 lib/Nag.php:891
 msgid "not completed"
 msgstr "Niet afgerond"
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2009-09-12 10:10+0200\n"
+"POT-Creation-Date: 2009-11-21 13:07+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,7 +70,7 @@ msgstr ""
 msgid "Confirm new password:"
 msgstr ""
 
-#: lib/Driver/ldap.php:114 lib/Driver/kolab.php:60
+#: lib/Driver/ldap.php:127 lib/Driver/kolab.php:60
 msgid "Could not bind to LDAP server"
 msgstr ""
 
@@ -82,7 +82,7 @@ msgstr ""
 msgid "Could not change password."
 msgstr ""
 
-#: lib/Driver/ldap.php:80 lib/Driver/kolab.php:46
+#: lib/Driver/ldap.php:87 lib/Driver/kolab.php:46
 msgid "Could not connect to LDAP server"
 msgstr ""
 
@@ -94,7 +94,7 @@ msgstr ""
 msgid "Could not open pipe to smbpasswd."
 msgstr ""
 
-#: lib/Driver/ldap.php:86
+#: lib/Driver/ldap.php:93
 msgid "Could not start TLS connection to LDAP server"
 msgstr ""
 
@@ -123,13 +123,13 @@ msgstr ""
 msgid "Full buffer."
 msgstr ""
 
-#: lib/Driver.php:72 lib/Driver/ldap.php:132 lib/Driver/http.php:72
+#: lib/Driver.php:72 lib/Driver/ldap.php:144 lib/Driver/http.php:72
 #: lib/Driver/vmailmgr.php:42 lib/Driver/kolab.php:84
 #: lib/Driver/poppassd.php:120
 msgid "Incorrect old password."
 msgstr ""
 
-#: lib/Driver/ldap.php:198
+#: lib/Driver/ldap.php:210
 msgid "Minimum password age has not yet expired"
 msgstr ""
 
@@ -232,6 +232,10 @@ msgstr ""
 msgid "Unable to connect to SQL server."
 msgstr ""
 
+#: lib/Driver/ldap.php:99
+msgid "Unable to disable directory referrals"
+msgstr ""
+
 #: lib/Driver/expectpecl.php:93
 msgid "Unable to open expect stream!"
 msgstr ""
@@ -241,7 +245,7 @@ msgstr ""
 msgid "User not found"
 msgstr ""
 
-#: lib/Driver/ldap.php:175 lib/Driver/ldap.php:247 lib/Driver/kolab.php:76
+#: lib/Driver/ldap.php:187 lib/Driver/ldap.php:259 lib/Driver/kolab.php:76
 #: lib/Driver/pine.php:231
 msgid "User not found."
 msgstr ""

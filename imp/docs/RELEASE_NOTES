@@ -15,26 +15,23 @@ $this->notes['fm']['focus'] = array(Horde_Release::FOCUS_MINORBUG, Horde_Release
 /* Mailing list release notes. */
 $this->notes['ml']['changes'] = <<<ML
 The Horde Team is pleased to announce the final release of the Internet
-Messaging Program (IMP) version H3 (4.3.5).
+Messaging Program (IMP) version H3 (4.3.6).
 
 IMP, the Internet Messaging Program, is one of the most popular webmail
 applications available.  It allows universal, web-based access to IMAP and
 POP3 mail servers and provides a full range of features normally found only in
 desktop email clients.
 
-The major changes compared to IMP version H3 (4.3.4) are:
-    * Highlight signed messages depending on the signature verification.
-    * Added hook examples for address book preferences.
-    * Fixed some javascript if using IE 8.
-    * Use correct charset when rendering inline PGP data.
-    * Fixed renaming shared folders contained in empty namespaces.
-    * Fixed spellcheck in text-mode for certain words in non-English locales.
+The major changes compared to IMP version H3 (4.3.5) are:
+    * Save References/In-Reply-To headers when saving a draft.
+    * Fixed viewing certain S/MIME messages from Outlook (Express).
+    * Added Croatian translation.
     * Other minor bugfixes and improvements.
 ML;
 
 /* Freshmeat release notes, not more than 600 characters. */
 $this->notes['fm']['changes'] = <<<FM
-Signed messages are highlighted now depending on the signature verification. Hook examples for the address book preferences have been added. Some javascript if using IE 8 has been fixed. The correct charset is used now when rendering inline PGP data. Spellcheck in text-mode for certain words in non-English locales has been fixed. Other minor bugfixes and improvements have been made.
+References: and In-Reply-To: headers are save now with a draft. Certain S/MIME messages from Outlook (Express) are correctly rendered now. A Croatian translation has been added. Other minor bugfixes and improvements have been made.
 FM;
 
 $this->notes['name'] = 'IMP';

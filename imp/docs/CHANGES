@@ -1,6 +1,13 @@
 ----------
-v4.3.6-cvs
+v4.3.7-cvs
 ----------
+
+[jan] Workaround broken PHP number formatting with some locales (Bug #8780).
+
+
+------
+v4.3.6
+------
 
 [cjh] Fix the default value for the nav_audio preference
       (sistemisti-posta@csi.it, Bug #8725).

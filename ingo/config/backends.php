@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ingo/config/backends.php.dist,v 1.20.8.12 2008-12-15 02:33:07 chuck Exp $
+ * $Horde: ingo/config/backends.php.dist,v 1.20.8.14 2009/12/21 18:29:08 jan Exp $
  *
  * Ingo works purely on a preferred mechanism for server selection. There are
  * a number of properties that you can set for each backend:
@@ -205,9 +205,17 @@ $backends['sieve'] = array(
         // an admin user if you want to use shared rules.
         // 'username' => 'cyrus',
         // 'password' => '*****',
+        // Enable debugging. With Net_Sieve 1.2.0 or later, the sieve protocol
+        // communication is logged with the DEBUG level. Earlier versions
+        // print the log to the screen.
+        'debug' => false,
     ),
     'script' => 'sieve',
-    'scriptparams' => array(),
+    'scriptparams' => array(
+        // If using Dovecot or any other Sieve implementation that requires
+        // folder names to be UTF-8 encoded, set this parameter to true.
+        'utf8' => false,
+     ),
     'shares' => false
 );
 

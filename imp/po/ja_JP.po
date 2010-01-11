@@ -5,38 +5,39 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: IMP 4.3.3\n"
+"Project-Id-Version: IMP 4.3.6\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2009-01-30 14:23+0900\n"
-"PO-Revision-Date: 2009-01-30 22:06+0900\n"
+"POT-Creation-Date: 2009-12-15 12:46+0100\n"
+"PO-Revision-Date: 2009-12-21 16:02+0900\n"
 "Last-Translator: Hiromi Kimura <hiromi@tac.tsukuba.ac.jp>\n"
 "Language-Team: i18n@lists.horde.org\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=SHIFT_JIS\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
-#: lib/Compose.php:1980
+#: lib/Compose.php:2009
 msgid "      Cc: "
 msgstr "      Cc: "
 
-#: lib/Compose.php:1977
+#: lib/Compose.php:2006
 msgid "      To: "
 msgstr "  宛先："
 
-#: lib/Compose.php:1965
+#: lib/Compose.php:1994
 msgid "    Date: "
 msgstr "  日付："
 
-#: lib/Compose.php:1968
+#: lib/Compose.php:1997
 msgid "    From: "
 msgstr "差出人："
 
-#: folders.php:359 mailbox.php:357
+#: folders.php:381 mailbox.php:357
 #, php-format
 msgid " (Accesskey %s)"
 msgstr "(アクセスキイ %s)"
 
-#: lib/Compose.php:1974
+#: lib/Compose.php:2003
 msgid " Subject: "
 msgstr "  件名："
 
@@ -54,12 +55,12 @@ msgstr "%.0f MB"
 msgid "%.0f%% of %.0f MB"
 msgstr "%.0f%% ／ %.0f MB"
 
-#: folders.php:300 folders.php:311 lib/Message.php:863
+#: folders.php:311 folders.php:322 lib/Message.php:863
 #, php-format
 msgid "%.2fMB"
 msgstr "%.2fMB"
 
-#: thread.php:158
+#: thread.php:162
 #, php-format
 msgid "%d Messages"
 msgstr "%d 通のメッセージ"
@@ -160,7 +161,7 @@ msgstr "%s さんが予定情報を送ってきました。"
 msgid "%s has tentatively accepted."
 msgstr "%s さんが仮受諾しました。"
 
-#: lib/Spam.php:270
+#: lib/Spam.php:272
 #, php-format
 msgid "%s report from %s"
 msgstr "%2$s さんから %1$s の報告"
@@ -201,22 +202,17 @@ msgstr "%s さんはあなたが \"%s\" を承知することを希望しています。"
 msgid "%s wishes to receive the latest information about \"%s\"."
 msgstr "%s さんが \"%s\" についての最新情報を希望しています。"
 
-#: compose.php:1229
+#: compose.php:1244
 #, php-format
 msgid "%s%% of allowed size"
 msgstr "許容サイズの %s%%"
 
-#: message.php:282 message.php:287
+#: message.php:282 message.php:287 message.php:505
 #, php-format
 msgid "%s: %s"
 msgstr "%s: %s"
 
-#: message.php:505
-#, php-format
-msgid "%s: %s (%d&nbsp;of&nbsp;%d)"
-msgstr "%s: %s (%d&nbsp;/&nbsp;%d)"
-
-#: lib/Compose.php:1909
+#: lib/Compose.php:1938
 #, php-format
 msgid "%u Forwarded Messages"
 msgstr "%u 通の転送されたメール"
@@ -225,6 +221,11 @@ msgstr "%u 通の転送されたメール"
 #, php-format
 msgid "%u of %u messages in %s unread."
 msgstr "%2$u 通中 %1$u 通未読（%3$s）"
+
+#: message.php:506
+#, php-format
+msgid "(%d&nbsp;of&nbsp;%d)"
+msgstr "(%d&nbsp;of&nbsp;%d)"
 
 #: stationery.php:129
 msgid "(HTML)"
@@ -242,19 +243,19 @@ msgstr "* OKをクリックして追加します *"
 msgid "* Please select address(es) *"
 msgstr "* アドレスを選択して下さい *"
 
-#: config/prefs.php.dist:1104
+#: config/prefs.php.dist:1109
 msgid "100 characters"
 msgstr "100 文字"
 
-#: config/prefs.php.dist:1107
+#: config/prefs.php.dist:1112
 msgid "1000 characters"
 msgstr "1000 文字"
 
-#: config/prefs.php.dist:1105
+#: config/prefs.php.dist:1110
 msgid "250 characters"
 msgstr "250 文字"
 
-#: config/prefs.php.dist:1106
+#: config/prefs.php.dist:1111
 msgid "500 characters"
 msgstr "500 文字"
 
@@ -282,11 +283,11 @@ msgstr ""
 msgid "AND"
 msgstr "かつ"
 
-#: config/prefs.php.dist:665
+#: config/prefs.php.dist:670
 msgid "About this editor"
 msgstr "このエディターについて"
 
-#: config/prefs.php.dist:973
+#: config/prefs.php.dist:978
 msgid "Above the message text"
 msgstr "本文の上"
 
@@ -319,8 +320,8 @@ msgstr "アカウント名："
 msgid "Actions"
 msgstr "処置"
 
-#: lib/MIME/Headers.php:219 lib/MIME/Headers.php:220 lib/MIME/Headers.php:242
-#: lib/MIME/Headers.php:243
+#: lib/MIME/Headers.php:216 lib/MIME/Headers.php:217 lib/MIME/Headers.php:239
+#: lib/MIME/Headers.php:240
 #, php-format
 msgid "Add %s to my Address Book"
 msgstr "%s を私のアドレス帳に追加する"
@@ -341,12 +342,12 @@ msgstr "私のタスクリストに追加する"
 msgid "Add to my calendar"
 msgstr "私の予定表に追加する"
 
-#: lib/Compose.php:2954
+#: lib/Compose.php:2983
 #, php-format
 msgid "Added \"%s\" as an attachment."
 msgstr "\"%s\" を添付しました。"
 
-#: config/prefs.php.dist:950
+#: config/prefs.php.dist:955
 msgid ""
 "Additional headers to display when viewing: <em>(optional, enter each header "
 "on a new line)</em>"
@@ -379,12 +380,12 @@ msgstr "エラーメッセージの詳細"
 msgid "Additional message error details can be viewed %s."
 msgstr "エラーメッセージの詳細は %s で表示できます。"
 
-#: compose.php:825 compose.php:1071 contacts.php:120
+#: compose.php:830 compose.php:1075 contacts.php:120
 #: templates/contacts/contacts.html:8
 msgid "Address Book"
 msgstr "アドレス帳"
 
-#: config/prefs.php.dist:168
+#: config/prefs.php.dist:170
 msgid "Address Books"
 msgstr "アドレス帳"
 
@@ -392,13 +393,13 @@ msgstr "アドレス帳"
 msgid "Address book to add addresses to"
 msgstr "アドレスの追加時に使うアドレス帳"
 
-#: config/prefs.php.dist:223
+#: config/prefs.php.dist:226
 msgid ""
 "Addresses to BCC all messages: <em>(optional, enter each address on a new "
 "line)</em>"
 msgstr "常に BCC で送るアドレス:（オプション。１行に１アドレスを指定）"
 
-#: config/prefs.php.dist:215
+#: config/prefs.php.dist:218
 msgid ""
 "Addresses to explicitly tie to this identity: <em>(optional, enter each "
 "address on a new line)</em>"
@@ -466,11 +467,11 @@ msgstr "フィルタルールをどのメールボックスでも適用できるようにしますか？"
 msgid "Alternative parts for this section:"
 msgstr "このセクションの代替パート："
 
-#: config/prefs.php.dist:730
+#: config/prefs.php.dist:735
 msgid "Always"
 msgstr "常に"
 
-#: config/prefs.php.dist:715
+#: config/prefs.php.dist:720
 msgid "Always save attachments"
 msgstr "添付は常に保存する"
 
@@ -527,7 +528,7 @@ msgstr "INBOXを表示する度にフィルタを適用しますか？"
 msgid "Apply filter rules whenever sidebar is refreshed?"
 msgstr "サイドバーを再表示する度にフィルタを適用しますか？"
 
-#: thread.php:170
+#: thread.php:174
 msgid "Are you sure you want to delete all messages in this thread?"
 msgstr "本当にこのフォルダ内のメールを全て削除していいですか？"
 
@@ -535,11 +536,11 @@ msgstr "本当にこのフォルダ内のメールを全て削除していいですか？"
 msgid "Are you sure you want to delete this Virtual Folder Definition?"
 msgstr "本当にこの仮想フォルダの定義を消去しますか？"
 
-#: smime.php:315 pgp.php:414
+#: smime.php:320 pgp.php:419
 msgid "Are you sure you want to delete this public key?"
 msgstr "本当にこの公開鍵を消去しますか？"
 
-#: smime.php:341 pgp.php:444
+#: smime.php:348 pgp.php:451
 msgid ""
 "Are you sure you want to delete your keypair? (This is NOT recommended!)"
 msgstr "本当にこの鍵ペアを消去しますか？（お勧めしません！）"
@@ -552,7 +553,7 @@ msgstr "本当に実行していいですか？"
 msgid "Are you sure you wish to PERMANENTLY delete all attachments?"
 msgstr "本当に添付を全て削除していいですか？"
 
-#: message.php:553 templates/javascript_defs.php:41
+#: message.php:554 templates/javascript_defs.php:41
 msgid "Are you sure you wish to PERMANENTLY delete these messages?"
 msgstr "本当にこれらのメッセージを完全に削除していいですか？"
 
@@ -564,11 +565,11 @@ msgstr "本当にこれらの添付を完全に削除していいですか？"
 msgid "Are you sure you wish to delete all mail in this folder?"
 msgstr "本当にこのフォルダ内のメールを全て削除していいですか？"
 
-#: lib/IMP.php:859
+#: lib/IMP.php:865
 msgid "Are you sure you wish to empty your spam folder?"
 msgstr "本当に SPAM フォルダーを空にしていいですか？"
 
-#: lib/IMP.php:851
+#: lib/IMP.php:857
 msgid "Are you sure you wish to empty your trash folder?"
 msgstr "本当にゴミ箱を空にしていいですか？"
 
@@ -584,27 +585,27 @@ msgstr "本当にこのメッセージを無害と報告してもいいですか？"
 msgid "Are you sure you wish to report this message as spam?"
 msgstr "本当にこのメッセージを SPAM と報告してもいいですか？"
 
-#: config/prefs.php.dist:1200
+#: config/prefs.php.dist:1205
 msgid "Arrival Time"
 msgstr "到着時間"
 
-#: config/prefs.php.dist:1215
+#: config/prefs.php.dist:1220
 msgid "Ascending"
 msgstr "昇順"
 
-#: config/prefs.php.dist:729
+#: config/prefs.php.dist:734
 msgid "Ask"
 msgstr "尋ねる"
 
-#: compose.php:1167
+#: compose.php:1182
 msgid "Attach Files"
 msgstr "添付ファイル"
 
-#: compose.php:1156
+#: compose.php:1171
 msgid "Attach a copy of your PGP public key to the message?"
 msgstr "あなたの PGP 公開鍵を添付しますか？"
 
-#: compose.php:1161
+#: compose.php:1176
 msgid "Attach your contact information to the message?"
 msgstr "あなたの連絡先を添付しますか？"
 
@@ -612,7 +613,7 @@ msgstr "あなたの連絡先を添付しますか？"
 msgid "Attached File:"
 msgstr "添付ファイル："
 
-#: lib/Compose.php:2013 lib/Compose.php:2119
+#: lib/Compose.php:2042 lib/Compose.php:2148
 #, php-format
 msgid ""
 "Attached file \"%s\" exceeds the attachment size limits. File NOT attached."
@@ -632,15 +633,15 @@ msgstr "添付"
 msgid "Attachment %s deleted."
 msgstr "添付 %s は削除されました。"
 
-#: lib/Compose.php:2642
+#: lib/Compose.php:2671
 msgid "Attachment Information"
 msgstr "添付の情報"
 
-#: lib/Compose.php:816
+#: lib/Compose.php:823
 msgid "Attachment stripped: Original attachment type"
 msgstr "添付を取り除きました: 添付の型"
 
-#: compose.php:1105 lib/Compose.php:2609 templates/compose/compose.html:252
+#: compose.php:1108 lib/Compose.php:2638 templates/compose/compose.html:252
 msgid "Attachments"
 msgstr "添付"
 
@@ -656,11 +657,7 @@ msgstr "注意"
 msgid "Auth_imp: Required IMAP extension not found."
 msgstr "Auth_imp: 必要な IMAP 拡張が見つかりません。"
 
-#: config/hooks.php.dist:521
-msgid "Authentication failed."
-msgstr "認証に失敗しました。"
-
-#: config/prefs.php.dist:882
+#: config/prefs.php.dist:887
 msgid ""
 "Automatically show images in HTML messages when the sender is in my address "
 "book?"
@@ -675,29 +672,29 @@ msgstr "使用可能なアドレス帳："
 msgid "Awaiting Response"
 msgstr "応答待ち"
 
-#: message.php:523 thread.php:137
+#: message.php:524 thread.php:141
 #, php-format
 msgid "Bac_k to %s"
 msgstr "_K%s に戻る"
 
-#: message.php:523 thread.php:137
+#: message.php:524 thread.php:141
 #, php-format
 msgid "Back to %s"
 msgstr "%s に戻る"
 
-#: thread.php:134
+#: thread.php:138
 msgid "Back to Multiple Message View Index"
 msgstr "メッセージ一覧に戻る"
 
-#: thread.php:132
+#: thread.php:136
 msgid "Back to Thread Display"
 msgstr "スレッド表示に戻る"
 
-#: config/prefs.php.dist:631
+#: config/prefs.php.dist:636
 msgid "Background Color"
 msgstr "背景色"
 
-#: lib/IMAP/Client.php:478
+#: lib/IMAP/Client.php:480
 #, php-format
 msgid "Bad login name or password."
 msgstr "ログイン名かパスワードが違います。"
@@ -707,7 +704,7 @@ msgstr "ログイン名かパスワードが違います。"
 msgid "Bad or malformed request. Server Responded: %s"
 msgstr "不良または不正な要求です。サーバーの応答：%s"
 
-#: lib/IMAP/Client.php:482
+#: lib/IMAP/Client.php:484
 #, php-format
 msgid "Bad request: %s"
 msgstr "不正な要求：%s"
@@ -717,7 +714,7 @@ msgstr "不正な要求：%s"
 msgid "Bcc"
 msgstr "Bcc"
 
-#: config/prefs.php.dist:685
+#: config/prefs.php.dist:690
 msgid "Before Signature"
 msgstr "シグネチャーの前"
 
@@ -725,15 +722,15 @@ msgstr "シグネチャーの前"
 msgid "Below is the raw text of the status information message."
 msgstr "以下が情報メッセージの原文です。"
 
-#: config/prefs.php.dist:974
+#: config/prefs.php.dist:979
 msgid "Below the message text"
 msgstr "本文の下"
 
-#: message.php:579 mailbox.php:526
+#: message.php:580 mailbox.php:526
 msgid "Blacklist"
 msgstr "ブラックリスト"
 
-#: config/prefs.php.dist:871
+#: config/prefs.php.dist:876
 msgid "Block images in HTML messages unless they are specifically requested?"
 msgstr "HTMLメール中の画像は指示するまで表示しないようにしますか？"
 
@@ -741,40 +738,40 @@ msgstr "HTMLメール中の画像は指示するまで表示しないようにしますか？"
 msgid "Body"
 msgstr "本文"
 
-#: message.php:569 config/prefs.php.dist:764
+#: message.php:570 config/prefs.php.dist:769
 msgid "Body Text Only"
 msgstr "本文のみ"
 
-#: message.php:570 config/prefs.php.dist:765
+#: message.php:571 config/prefs.php.dist:770
 msgid "Body Text with Attachments"
 msgstr "本文と添付"
 
-#: config/prefs.php.dist:626
+#: config/prefs.php.dist:631
 msgid "Bold"
 msgstr "太字"
 
-#: config/prefs.php.dist:939
+#: config/prefs.php.dist:944
 msgid "Both Header Listing and Body of Message"
 msgstr "ヘッダ部と本文に表示"
 
-#: config/prefs.php.dist:684
+#: config/prefs.php.dist:689
 msgid "Bottom"
 msgstr "最も下"
 
-#: config/prefs.php.dist:640
+#: config/prefs.php.dist:645
 msgid "Bulleted List"
 msgstr "記号付き箇条書き"
 
-#: lib/IMAP/Client.php:407
+#: lib/IMAP/Client.php:409
 msgid ""
 "CRAM-MD5 or DIGEST-MD5 requires PEAR's Auth_SASL package to be installed."
 msgstr "CRAM-MD5 や DIGEST-MD5 には PEAR の Auth_SASL パッケージが必要です。"
 
-#: compose.php:1025
+#: compose.php:1029
 msgid "C_harset"
 msgstr "_H文字セット"
 
-#: search.php:279 config/hooks.php.dist:455
+#: search.php:279 config/hooks.php.dist:619
 msgid "Calendar"
 msgstr "予定表"
 
@@ -803,7 +800,7 @@ msgstr "リモートのメールサーバに接続できません。"
 msgid "Cannot connect to the remote mail server: "
 msgstr "リモートのメールサーバに接続できません： "
 
-#: lib/IMAP/Tree.php:2047
+#: lib/IMAP/Tree.php:2093
 msgid "Cannot directly create mailbox in this folder."
 msgstr "このフォルダーにはメールボックスは作成できません。"
 
@@ -818,7 +815,7 @@ msgstr "表示不能 - このメールには %2$s 中の %1$s パートしかありません。"
 msgid "Cannot move messages to Trash - no Trash mailbox set in preferences."
 msgstr "ゴミ箱に移動できません - ゴミ箱が設定されていません。"
 
-#: pgp.php:277
+#: pgp.php:282
 msgid "Cannot retrieve public key from cache."
 msgstr "キャッシュから公開鍵を取得できません。"
 
@@ -860,7 +857,7 @@ msgid ""
 "reply to your email."
 msgstr "メールに表示されるあなたの名前、アドレス、署名を変更します。"
 
-#: config/prefs.php.dist:1108
+#: config/prefs.php.dist:1113
 msgid "Characters to display:"
 msgstr "表示する文字："
 
@@ -872,7 +869,7 @@ msgstr "全てチェック／解除"
 msgid "Check Spelling"
 msgstr "スペルチェック"
 
-#: folders.php:372 mailbox.php:656
+#: folders.php:394 mailbox.php:656
 msgid "Check _All/None"
 msgstr "_A全てチェック／解除"
 
@@ -880,7 +877,7 @@ msgstr "_A全てチェック／解除"
 msgid "Check for New Mail"
 msgstr "新着メールを確認"
 
-#: config/prefs.php.dist:557
+#: config/prefs.php.dist:560
 msgid "Check spelling before sending a message?"
 msgstr "送信する前にスペルチェックしますか？"
 
@@ -908,11 +905,11 @@ msgstr "アドレスの追加時に使うアドレス帳を指定してください。"
 msgid "Choose the order of address books to search when expanding addresses."
 msgstr "アドレスを展開する際に検索するアドレス帳の順序を指定してください。"
 
-#: config/prefs.php.dist:657
+#: config/prefs.php.dist:662
 msgid "Clear Inline Font Specifications"
 msgstr "インラインフォント指定をクリア"
 
-#: config/prefs.php.dist:656
+#: config/prefs.php.dist:661
 msgid "Clear MSOffice tags"
 msgstr "MSOfficeタグをクリア"
 
@@ -936,7 +933,7 @@ msgstr "%s をクリックすると画像をダウンロードします。"
 msgid "Click %s to go to %s management page."
 msgstr "%s をクリックすると %s 管理ページに移動します。"
 
-#: lib/MIME/Viewer/pkcs7.php:484
+#: lib/MIME/Viewer/pkcs7.php:491
 #, php-format
 msgid "Click %s to view the attachment in a separate window."
 msgstr "%s をクリックすると添付を別ウインドーに表示します。"
@@ -951,7 +948,7 @@ msgstr "%s をクリックするとこのパートを別ウインドーに表示します。"
 msgid "Click HERE to verify the message."
 msgstr "ここをクリックするとメッセージを検証します。"
 
-#: config/prefs.php.dist:531
+#: config/prefs.php.dist:534
 #, php-format
 msgid "Click here to open all mailto: links in %s."
 msgstr ""
@@ -965,11 +962,11 @@ msgstr ""
 "指定したアドレス帳の 1 つをクリックしてから、検索するフィールドをすべて指定し"
 "てください。"
 
-#: config/prefs.php.dist:1241
+#: config/prefs.php.dist:1246
 msgid "Clicking on the address will compose a new message to the sender"
 msgstr "アドレスをクリックすると送信者への新規メールを作成します"
 
-#: config/prefs.php.dist:1242
+#: config/prefs.php.dist:1247
 msgid "Clicking on the address will open the message to be read"
 msgstr "アドレスをクリックするとメッセージを表示します"
 
@@ -981,23 +978,23 @@ msgstr "閉じる"
 msgid "Close this window"
 msgstr "このウインドを閉じる"
 
-#: lib/IMAP/Tree.php:1992
+#: lib/IMAP/Tree.php:2038
 msgid "Closed Folder"
 msgstr "閉じているフォルダ"
 
-#: folders.php:453
+#: folders.php:475
 msgid "Collapse"
 msgstr "畳む"
 
-#: folders.php:388
+#: folders.php:410
 msgid "Collapse All"
 msgstr "全てを畳む"
 
-#: folders.php:388
+#: folders.php:410
 msgid "Collapse All Folders"
 msgstr "全てのフォルダを畳む"
 
-#: folders.php:453
+#: folders.php:475
 msgid "Collapse Folder"
 msgstr "フォルダを畳む"
 
@@ -1005,7 +1002,7 @@ msgstr "フォルダを畳む"
 msgid "Color Indicator:"
 msgstr "色表示："
 
-#: config/prefs.php.dist:1279
+#: config/prefs.php.dist:1284
 msgid "Combine all namespaces"
 msgstr "全ての名前空間を合体"
 
@@ -1017,11 +1014,11 @@ msgstr "コメント："
 msgid "Completed"
 msgstr "完了"
 
-#: config/prefs.php.dist:581
+#: config/prefs.php.dist:584
 msgid "Compose messages in a separate window?"
 msgstr "別のウィンドウで新規メールを作成しますか？"
 
-#: config/prefs.php.dist:591
+#: config/prefs.php.dist:594
 msgid ""
 "Compose messages with an HTML GUI by default (if browser supports the "
 "feature)?"
@@ -1035,20 +1032,16 @@ msgstr "メッセージをどう表示するかを設定します。"
 msgid "Configure mail preview options."
 msgstr "メールのプレビューオプションを設定します。"
 
-#: config/hooks.php.dist:517
-msgid "Connection to server failed."
-msgstr "サーバへの接続に失敗しました。"
-
-#: config/hooks.php.dist:479
+#: config/hooks.php.dist:643
 msgid "Contacts"
 msgstr "連絡先"
 
-#: config/prefs.php.dist:177
+#: config/prefs.php.dist:180
 #, php-format
 msgid "Control PGP support for %s."
 msgstr "%s の PGP サポートを設定します。"
 
-#: config/prefs.php.dist:186
+#: config/prefs.php.dist:189
 #, php-format
 msgid "Control S/MIME support for %s."
 msgstr "%s の S/MIME サポートを設定します。"
@@ -1059,23 +1052,23 @@ msgid ""
 "when it arrives."
 msgstr "新着メールを何時確認するか、新着メールを通知するかどうかを設定します。"
 
-#: config/prefs.php.dist:929
+#: config/prefs.php.dist:934
 msgid "Convert textual emoticons into graphical ones?"
 msgstr "絵文字をアイコンに変更しますか？"
 
-#: message.php:519 message.php:707 mailbox.php:486 mailbox.php:893
+#: message.php:520 message.php:707 mailbox.php:486 mailbox.php:895
 msgid "Copy"
 msgstr "コピー"
 
-#: config/prefs.php.dist:652
+#: config/prefs.php.dist:657
 msgid "Copy selection"
 msgstr "選択範囲をコピー"
 
-#: message.php:519 message.php:707 mailbox.php:486 mailbox.php:893
+#: message.php:520 message.php:707 mailbox.php:486 mailbox.php:895
 msgid "Copy to folder"
 msgstr "フォルダーにコピー"
 
-#: lib/Compose.php:2094
+#: lib/Compose.php:2123
 #, php-format
 msgid "Could not attach %s to the message."
 msgstr "%s をメッセージに添付できません。"
@@ -1095,7 +1088,7 @@ msgstr "VFS バックエンドが作成できません：%s"
 msgid "Could not delete messages from %s. The server said: %s"
 msgstr "%s のメッセージは削除できません。サーバからの応答： %s"
 
-#: lib/Session.php:330
+#: lib/Session.php:333
 msgid "Could not execute maintenance operations."
 msgstr "保守作業を実行できません。"
 
@@ -1107,7 +1100,7 @@ msgstr "MS-TNEF 添付から要求されたファイルを取り出せませんでした。"
 msgid "Could not extract the requested file from the Zip archive."
 msgstr "Zip 書庫からファイルを取り出せませんでした。"
 
-#: lib/Spam.php:237
+#: lib/Spam.php:239
 msgid ""
 "Could not move message to spam mailbox - no spam mailbox defined in "
 "preferences."
@@ -1115,11 +1108,11 @@ msgstr ""
 "SPAM メールボックスに移動できません - SPAM メールボックスが設定されていませ"
 "ん。"
 
-#: lib/IMAP/Client.php:318
+#: lib/IMAP/Client.php:320
 msgid "Could not open secure connection to the IMAP server."
 msgstr "IMAP サーバへの安全な接続ができません。"
 
-#: lib/Session.php:286
+#: lib/Session.php:284
 msgid "Could not retrieve namespace information from IMAP server."
 msgstr "IMAP サーバから名前空間の情報が取得できません。"
 
@@ -1127,7 +1120,7 @@ msgstr "IMAP サーバから名前空間の情報が取得できません。"
 msgid "Could not retrieve the message from the mail server."
 msgstr "メールサーバからメッセージが取得できません。"
 
-#: lib/Compose.php:1099
+#: lib/Compose.php:1124
 #, php-format
 msgid "Could not save recipients: %s"
 msgstr "宛先が保存できません：%s"
@@ -1199,11 +1192,11 @@ msgstr "現在の添付"
 msgid "Current access to %s"
 msgstr "%s への現在のアクセス"
 
-#: config/prefs.php.dist:1292
+#: config/prefs.php.dist:1297
 msgid "Current expanded status in the folders view"
 msgstr "現在のフォルダー一覧の表示"
 
-#: config/prefs.php.dist:632
+#: config/prefs.php.dist:637
 msgid "Current style"
 msgstr "現在のスタイル"
 
@@ -1228,7 +1221,7 @@ msgstr "メールの送信をカスタマイズします。"
 msgid "Customize tasks to run upon logon to %s."
 msgstr "%s にログオンしたときに実行する作業をカスタマイズします。"
 
-#: config/prefs.php.dist:651
+#: config/prefs.php.dist:656
 msgid "Cut selection"
 msgstr "選択範囲を切取り"
 
@@ -1268,27 +1261,27 @@ msgstr "謝絶済み"
 msgid "Declined: "
 msgstr "謝絶済み："
 
-#: config/prefs.php.dist:641
+#: config/prefs.php.dist:646
 msgid "Decrease Indent"
 msgstr "段下げを減らす"
 
-#: config/prefs.php.dist:695
+#: config/prefs.php.dist:700
 msgid "Default"
 msgstr "デフォルト"
 
-#: config/prefs.php.dist:962
+#: config/prefs.php.dist:967
 msgid "Default (US-ASCII)"
 msgstr "デフォルト (US-ASCII)"
 
-#: config/prefs.php.dist:766
+#: config/prefs.php.dist:771
 msgid "Default forwarding method:"
 msgstr "デフォルトの転送方法："
 
-#: config/prefs.php.dist:1207
+#: config/prefs.php.dist:1212
 msgid "Default sorting criteria:"
 msgstr "デフォルトのソート基準："
 
-#: config/prefs.php.dist:1217
+#: config/prefs.php.dist:1222
 msgid "Default sorting direction:"
 msgstr "デフォルトのソート方向："
 
@@ -1296,14 +1289,14 @@ msgstr "デフォルトのソート方向："
 msgid "Delegated"
 msgstr "委任済み"
 
-#: folders.php:418 message.php:553 mailbox.php:508 mailbox.php:510
+#: folders.php:440 message.php:554 mailbox.php:508 mailbox.php:510
 #: lib/IMAP/ACL/rfc4314.php:57 templates/fetchmail/fetchmailprefs.html:122
 #: templates/contacts/contacts.html:59 templates/folders/actions.html:19
 #: templates/smime/smime.html:35 templates/pgp/pgp.html:43
 msgid "Delete"
 msgstr "削除"
 
-#: smime.php:315 pgp.php:414
+#: smime.php:320 pgp.php:419
 #, php-format
 msgid "Delete %s Public Key"
 msgstr "%s 公開鍵を削除"
@@ -1324,11 +1317,11 @@ msgstr "選択したフォルダを削除"
 msgid "Delete Stationery"
 msgstr "定型句を削除"
 
-#: thread.php:170
+#: thread.php:174
 msgid "Delete Thread"
 msgstr "スレッドを削除"
 
-#: folders.php:418
+#: folders.php:440
 msgid "Delete Virtual Folder"
 msgstr "仮想フォルダを削除"
 
@@ -1345,15 +1338,15 @@ msgstr "取り込んだメッセージをリモートサーバから削除しますか？"
 msgid "Delete from my calendar"
 msgstr "私の予定表から削除"
 
-#: config/prefs.php.dist:430
+#: config/prefs.php.dist:433
 msgid "Delete old linked attachments at beginning of month?"
 msgstr "古いリンク型添付を月の初めに削除しますか？"
 
-#: config/prefs.php.dist:384
+#: config/prefs.php.dist:387
 msgid "Delete old sent-mail folders at beginning of month?"
 msgstr "既存の送信控えフォルダを月の初めに削除しますか？"
 
-#: config/prefs.php.dist:856
+#: config/prefs.php.dist:861
 msgid "Delete spam messages"
 msgstr "SPAM　メッセージを削除"
 
@@ -1391,7 +1384,7 @@ msgstr "要求を拒否する"
 msgid "Deny request for free/busy information"
 msgstr "予定情報の要求を拒否する"
 
-#: config/prefs.php.dist:1216
+#: config/prefs.php.dist:1221
 msgid "Descending"
 msgstr "降順"
 
@@ -1409,23 +1402,23 @@ msgstr "説明："
 msgid "Details"
 msgstr "詳細"
 
-#: lib/Compose.php:2936
+#: lib/Compose.php:2965
 #, php-format
 msgid "Did not attach \"%s\" as it was only partially uploaded."
 msgstr "\"%s\" は一部しかアップロードされていないので、添付しません。"
 
-#: lib/Compose.php:2945
+#: lib/Compose.php:2974
 #, php-format
 msgid "Did not attach \"%s\" as the file was empty."
 msgstr "ファイル \"%s\" は空白なので添付しません。"
 
-#: lib/Compose.php:2932
+#: lib/Compose.php:2961
 #, php-format
 msgid ""
 "Did not attach \"%s\" as the maximum allowed upload size has been exceeded."
 msgstr "ファイル \"%s\" は許容サイズを超過しているので添付しません。"
 
-#: lib/Compose.php:2940
+#: lib/Compose.php:2969
 #, php-format
 msgid ""
 "Did not attach \"%s\" as the server configuration did not allow the file to "
@@ -1433,39 +1426,39 @@ msgid ""
 msgstr ""
 "サーバーの設定でアップロードが許可されていないので \"%s\" は添付しません。"
 
-#: config/prefs.php.dist:921
+#: config/prefs.php.dist:926
 msgid "Dim signatures?"
 msgstr "署名を薄く表示しますか？"
 
-#: config/prefs.php.dist:661
+#: config/prefs.php.dist:666
 msgid "Direction left to right"
 msgstr "左から右へ"
 
-#: config/prefs.php.dist:662
+#: config/prefs.php.dist:667
 msgid "Direction right to left"
 msgstr "右から左へ"
 
-#: config/prefs.php.dist:283
+#: config/prefs.php.dist:286
 msgid "Display Virtual Inbox?"
 msgstr "仮想 INBOX を表示？"
 
-#: config/prefs.php.dist:565
+#: config/prefs.php.dist:568
 msgid "Display confirmation after sending a message?"
 msgstr "送信後に確認画面を表示しますか？"
 
-#: config/prefs.php.dist:938
+#: config/prefs.php.dist:943
 msgid "Display in Body of Message"
 msgstr "本文に表示"
 
-#: config/prefs.php.dist:1072
+#: config/prefs.php.dist:1077
 msgid "Display pop-up notification of new mail?"
 msgstr "新着メール到着時にポップアップで通知しますか？"
 
-#: config/prefs.php.dist:1037
+#: config/prefs.php.dist:1042
 msgid "Display the \"Empty Spam\" link in the menubar?"
 msgstr "メニューバーに「Spam清掃」を表示しますか？"
 
-#: config/prefs.php.dist:1029
+#: config/prefs.php.dist:1034
 msgid "Display the \"Empty Trash\" link in the menubar?"
 msgstr "メニューバーに「ゴミ箱清掃」を表示しますか？"
 
@@ -1481,7 +1474,7 @@ msgstr "一致しない"
 msgid "Do Not Check for New Mail"
 msgstr "新着メールを確認しない"
 
-#: config/prefs.php.dist:1243
+#: config/prefs.php.dist:1248
 msgid "Do not generate a link in the From: column"
 msgstr "何もリンクしない"
 
@@ -1502,7 +1495,7 @@ msgstr "ダウンロード"
 msgid "Download %s in .zip Format"
 msgstr "%s を zip 形式でダウンロード"
 
-#: message.php:679
+#: message.php:680
 msgid "Download All Attachments (in .zip file)"
 msgstr "添付を全てダウンロード（.zip ファイルで）"
 
@@ -1519,11 +1512,11 @@ msgstr "Zip 形式でダウンロード"
 msgid "Draft"
 msgstr "下書き"
 
-#: lib/IMAP/Tree.php:1947
+#: lib/IMAP/Tree.php:1993
 msgid "Draft folder"
 msgstr "下書きフォルダ"
 
-#: config/prefs.php.dist:301
+#: config/prefs.php.dist:304
 msgid "Drafts"
 msgstr "下書き"
 
@@ -1539,7 +1532,7 @@ msgstr "動的"
 msgid "E-mail Address:"
 msgstr "メールアドレス："
 
-#: mailbox.php:832
+#: mailbox.php:834
 msgid "END"
 msgstr "終了"
 
@@ -1547,7 +1540,7 @@ msgstr "終了"
 msgid "ERROR: Your message could not be delivered."
 msgstr "エラー：メールが配達されませんでした。"
 
-#: folders.php:419 templates/stationery/stationery.html:19
+#: folders.php:441 templates/stationery/stationery.html:19
 msgid "Edit"
 msgstr "編集"
 
@@ -1555,7 +1548,7 @@ msgstr "編集"
 msgid "Edit Search Query"
 msgstr "検索要求を編集"
 
-#: folders.php:419 templates/search/search.html:17
+#: folders.php:441 templates/search/search.html:17
 msgid "Edit Virtual Folder"
 msgstr "仮想フォルダを編集"
 
@@ -1576,7 +1569,7 @@ msgstr "フィルタルールを編集"
 msgid "Edit your Whitelist"
 msgstr "ホワイトリストを編集"
 
-#: config/prefs.php.dist:1145
+#: config/prefs.php.dist:1150
 msgid "Edit your preferences for accessing other mail accounts."
 msgstr "他のサーバのメールアカウントにアクセスするための設定をして下さい。"
 
@@ -1597,11 +1590,11 @@ msgstr "空にする"
 msgid "Empty Selected Folders"
 msgstr "選択したフォルダを削除する"
 
-#: lib/IMP.php:859
+#: lib/IMP.php:865
 msgid "Empty _Spam"
 msgstr "_SPAM清掃"
 
-#: lib/IMP.php:851
+#: lib/IMP.php:857
 msgid "Empty _Trash"
 msgstr "_Tゴミ箱清掃"
 
@@ -1609,41 +1602,41 @@ msgstr "_Tゴミ箱清掃"
 msgid "Empty folder"
 msgstr "フォルダを空にする"
 
-#: pgp.php:465 templates/pgp/pgp.html:2
+#: pgp.php:472 templates/pgp/pgp.html:2
 msgid "Enable PGP functionality?"
 msgstr "PGP を使用しますか？"
 
-#: smime.php:351 templates/smime/smime.html:2
+#: smime.php:358 templates/smime/smime.html:2
 msgid "Enable S/MIME functionality?"
 msgstr "S/MIME を使用しますか？"
 
-#: config/prefs.php.dist:1096
+#: config/prefs.php.dist:1101
 msgid "Enable message previews?"
 msgstr "メッセージのプレビューを使用しますか？"
 
-#: compose.php:1150
+#: compose.php:1164
 msgid "Encr_yption Options"
 msgstr "_Y暗号オプション"
 
-#: lib/MIME/Viewer/itip.php:608 lib/MIME/Viewer/itip.php:610
-#: lib/MIME/Viewer/itip.php:784 lib/MIME/Viewer/itip.php:786
-msgid "End"
-msgstr "終了"
-
-#: lib/Compose.php:1813
+#: lib/Compose.php:1840
 msgid "End forwarded message"
 msgstr "転送するメッセージは以上です"
 
-#: lib/Compose.php:1705
+#: lib/Compose.php:1730
 msgid "End message"
 msgstr "メッセージは以上です"
 
-#: lib/Compose.php:1703
+#: lib/Compose.php:1728
 #, php-format
 msgid "End message from %s"
 msgstr "%s からのメッセージは以上です"
 
-#: smime.php:339 pgp.php:440
+#: lib/MIME/Viewer/itip.php:608 lib/MIME/Viewer/itip.php:610
+#: lib/MIME/Viewer/itip.php:784 lib/MIME/Viewer/itip.php:786
+msgid "End:"
+msgstr "終了："
+
+#: smime.php:346 pgp.php:447
 msgid "Enter Passphrase"
 msgstr "パスフレーズを入力"
 
@@ -1663,21 +1656,21 @@ msgstr "新しい送信控えフォルダの名前を指定してください。"
 msgid "Enter the name for your new trash folder"
 msgstr "新しいゴミ箱フォルダの名前を指定してください。"
 
-#: message.php:568 lib/Search.php:741 config/prefs.php.dist:763
+#: message.php:569 lib/Search.php:741 config/prefs.php.dist:768
 msgid "Entire Message"
 msgstr "メッセージ全体"
 
-#: message.php:175 thread.php:71 lib/Compose.php:1139
+#: message.php:175 thread.php:71 lib/Compose.php:1164
 #, php-format
 msgid "Entry \"%s\" was successfully added to the address book"
 msgstr "\"%s\" というエントリがアドレス帳に追加されました。"
 
-#: lib/MIME/Viewer/pkcs7.php:441 lib/MIME/Viewer/pgp.php:448
+#: lib/MIME/Viewer/pkcs7.php:448 lib/MIME/Viewer/pgp.php:453
 #: lib/MIME/Viewer/status.php:71 lib/MIME/Viewer/status.php:162
 msgid "Error"
 msgstr "エラー"
 
-#: lib/IMAP/Client.php:303 lib/IMAP/Client.php:323
+#: lib/IMAP/Client.php:305 lib/IMAP/Client.php:325
 #, php-format
 msgid "Error connecting to IMAP server: [%s] %s."
 msgstr "IMAP サーバへの接続エラー：[%s] %s。"
@@ -1699,59 +1692,59 @@ msgstr "エラー："
 msgid "Event successfully deleted."
 msgstr "イベントは削除されました。"
 
-#: config/prefs.php.dist:1061
+#: config/prefs.php.dist:1066
 msgid "Every 15 minutes"
 msgstr "15 分毎"
 
-#: config/prefs.php.dist:1058
+#: config/prefs.php.dist:1063
 msgid "Every 30 seconds"
 msgstr "30 秒毎"
 
-#: config/prefs.php.dist:824 config/prefs.php.dist:1060
+#: config/prefs.php.dist:829 config/prefs.php.dist:1065
 msgid "Every 5 minutes"
 msgstr "5 分毎"
 
-#: config/prefs.php.dist:1062
+#: config/prefs.php.dist:1067
 msgid "Every half hour"
 msgstr "30 分毎"
 
-#: config/prefs.php.dist:1059
+#: config/prefs.php.dist:1064
 msgid "Every minute"
 msgstr "1 分毎"
 
-#: folders.php:464
+#: folders.php:486
 msgid "Expand"
 msgstr "展開"
 
-#: folders.php:387
+#: folders.php:409
 msgid "Expand All"
 msgstr "全て展開"
 
-#: folders.php:387
+#: folders.php:409
 msgid "Expand All Folders"
 msgstr "全フォルダを展開"
 
-#: folders.php:464
+#: folders.php:486
 msgid "Expand Folder"
 msgstr "フォルダを展開"
 
-#: compose.php:827 compose.php:1079
+#: compose.php:832 compose.php:1083
 msgid "Expand Names"
 msgstr "名前を展開"
 
-#: config/prefs.php.dist:1271
+#: config/prefs.php.dist:1276
 msgid "Expand the entire folder tree by default in the folders view?"
 msgstr "フォルダのデフォルト表示でフォルダツリー全体を展開しますか？"
 
-#: config/prefs.php.dist:1293
+#: config/prefs.php.dist:1298
 msgid "Expand the entire folder tree by default in the sidebar?"
 msgstr "サイドバーのデフォルト表示でフォルダツリー全体を展開しますか？"
 
-#: config/prefs.php.dist:601
+#: config/prefs.php.dist:604
 msgid "FCKeditor"
 msgstr "FCKeditor"
 
-#: lib/IMP.php:870 lib/IMP.php:872
+#: lib/IMP.php:876 lib/IMP.php:878
 msgid "F_etch Mail"
 msgstr "_Eメール取込"
 
@@ -1760,7 +1753,7 @@ msgstr "_Eメール取込"
 msgid "Fetch Mail"
 msgstr "メールの取り込み"
 
-#: config/prefs.php.dist:1153
+#: config/prefs.php.dist:1158
 msgid "Fetch Mail in a separate window?"
 msgstr "別ウインドーで取り込みをしますか？"
 
@@ -1786,7 +1779,7 @@ msgstr "Fetchmail: "
 msgid "Fetchmail: no new messages."
 msgstr "Fetchmail: 新着メールなし。"
 
-#: lib/IMP.php:876
+#: lib/IMP.php:882
 msgid "Fi_lters"
 msgstr "_Lフィルタ"
 
@@ -1802,7 +1795,7 @@ msgstr "ファイル"
 msgid "Filter Settings"
 msgstr "フィルタ設定"
 
-#: config/prefs.php.dist:839
+#: config/prefs.php.dist:844
 msgid "Filter message content for profanity?"
 msgstr "不適切なメッセージの内容をフィルタしますか？"
 
@@ -1823,7 +1816,7 @@ msgstr "フィルタ：%s 管理ページ"
 msgid "Find:"
 msgstr "検索："
 
-#: config/prefs.php.dist:1189
+#: config/prefs.php.dist:1194
 msgid "First Mailbox Page"
 msgstr "メールボックスの最初のページ"
 
@@ -1832,32 +1825,32 @@ msgid "First Page"
 msgstr "最初のページ"
 
 #: message.php:479 mailbox.php:774 templates/message/navbar_navigate.html:10
-#: templates/mailbox/navbar.html:32
+#: templates/mailbox/navbar.html:16 templates/mailbox/navbar.html:32
 msgid "Flagged For Followup"
-msgstr "続報の印"
+msgstr "続報"
 
 #: lib/Search.php:807
 msgid "Flagged messages"
 msgstr "印付けられたメール"
 
-#: message.php:567 mailbox.php:533
+#: message.php:568 mailbox.php:533
 msgid "Fo_rward"
 msgstr "_R転送"
 
-#: lib/IMAP/Tree.php:1992 templates/folders/folders_size.html:6
+#: lib/IMAP/Tree.php:2038 templates/folders/folders_size.html:6
 msgid "Folder"
 msgstr "フォルダ"
 
-#: folders.php:262 templates/folders/folders_confirm.html:6
+#: folders.php:273 templates/folders/folders_confirm.html:6
 msgid "Folder Actions - Confirmation"
 msgstr "フォルダ操作 - 確認"
 
-#: folders.php:325 templates/prefs/initialpageselect.inc:11
+#: folders.php:336 templates/prefs/initialpageselect.inc:11
 #: templates/folders/head.html:2
 msgid "Folder Navigator"
 msgstr "フォルダ操作"
 
-#: folders.php:282 templates/folders/folders_size.html:1
+#: folders.php:293 templates/folders/folders_size.html:1
 msgid "Folder Sizes"
 msgstr "フォルダサイズ"
 
@@ -1873,31 +1866,31 @@ msgstr "共有フォルダは使用不可です。"
 msgid "Folder use is not enabled."
 msgstr "共有フォルダ使用可能です。"
 
-#: config/prefs.php.dist:630
+#: config/prefs.php.dist:635
 msgid "Font Color"
 msgstr "文字色"
 
-#: config/prefs.php.dist:1260
+#: config/prefs.php.dist:1265
 msgid "Format of message dates in the mailbox view for messages dated today"
 msgstr "メールボックス表示での今日１日の時間表示形式"
 
-#: message.php:567 mailbox.php:533 lib/Compose.php:1796
+#: message.php:568 mailbox.php:533 lib/Compose.php:1823
 msgid "Forward"
 msgstr "転送"
 
-#: lib/Compose.php:1782
+#: lib/Compose.php:1809
 msgid "Forward:"
 msgstr "転送:"
 
-#: lib/Compose.php:1895
+#: lib/Compose.php:1924
 msgid "Forwarded Message:"
 msgstr "転送されたメッセージ："
 
-#: lib/Compose.php:1809
+#: lib/Compose.php:1836
 msgid "Forwarded message"
 msgstr "転送されたメッセージ"
 
-#: lib/Compose.php:1807
+#: lib/Compose.php:1834
 #, php-format
 msgid "Forwarded message from %s"
 msgstr "%s から転送されたメッセージ"
@@ -1915,7 +1908,7 @@ msgstr "_M差出人"
 msgid "From"
 msgstr "From"
 
-#: config/prefs.php.dist:1202
+#: config/prefs.php.dist:1207
 msgid "From Address"
 msgstr "送信元アドレス"
 
@@ -1936,12 +1929,12 @@ msgstr "一般的オプション"
 msgid "Get only new messages? (IMAP only)"
 msgstr "新着メッセージのみ取得？（IMAP のみ）"
 
-#: folders.php:374 lib/MIME/Viewer/itip.php:650 lib/MIME/Viewer/itip.php:860
+#: folders.php:396 lib/MIME/Viewer/itip.php:650 lib/MIME/Viewer/itip.php:860
 #: lib/MIME/Viewer/itip.php:991
 msgid "Go"
 msgstr "移動"
 
-#: thread.php:136
+#: thread.php:140
 msgid "Go to Message"
 msgstr "メッセージに移動"
 
@@ -1958,7 +1951,7 @@ msgstr "アドレス帳の \"%s\" に移動する"
 #: lib/MIME/Viewer/images.php:90 lib/MIME/Viewer/images.php:97
 #: lib/MIME/Viewer/images.php:99 lib/MIME/Viewer/notification.php:60
 #: lib/MIME/Viewer/notification.php:67 lib/MIME/Viewer/related.php:85
-#: lib/MIME/Viewer/pkcs7.php:484 lib/MIME/Viewer/appledouble.php:48
+#: lib/MIME/Viewer/pkcs7.php:491 lib/MIME/Viewer/appledouble.php:48
 #: lib/MIME/Viewer/status.php:119 lib/MIME/Viewer/status.php:128
 msgid "HERE"
 msgstr "ここ"
@@ -1967,15 +1960,15 @@ msgstr "ここ"
 msgid "HTML"
 msgstr "HTML"
 
-#: lib/Compose.php:477
+#: lib/Compose.php:489
 msgid "HTML Version of Message"
 msgstr "HTML 形式"
 
-#: message.php:618
+#: message.php:619
 msgid "Headers"
 msgstr "ヘッダ"
 
-#: config/prefs.php.dist:664
+#: config/prefs.php.dist:669
 msgid "Help using editor"
 msgstr "エディターの使用方法"
 
@@ -1983,19 +1976,19 @@ msgstr "エディターの使用方法"
 msgid "Here is the message you were composing:"
 msgstr "これが作成中のメールです："
 
-#: config/prefs.php.dist:912
+#: config/prefs.php.dist:917
 msgid "Hidden"
 msgstr "隠す"
 
-#: config/prefs.php.dist:910
+#: config/prefs.php.dist:915
 msgid "Hidden in List Messages"
 msgstr "メール一覧で隠す"
 
-#: config/prefs.php.dist:909
+#: config/prefs.php.dist:914
 msgid "Hidden in Thread View"
 msgstr "スレッド表示では隠す"
 
-#: config/prefs.php.dist:911
+#: config/prefs.php.dist:916
 msgid "Hidden in Thread View and List Messages"
 msgstr "スレッド表示と一覧では隠す"
 
@@ -2003,11 +1996,11 @@ msgstr "スレッド表示と一覧では隠す"
 msgid "Hide Deleted"
 msgstr "削除済みを隠す"
 
-#: folders.php:380
+#: folders.php:402
 msgid "Hide Unsubscribed"
 msgstr "非登録を隠す"
 
-#: compose.php:1041
+#: compose.php:1045
 msgid "High"
 msgstr "高"
 
@@ -2015,23 +2008,23 @@ msgstr "高"
 msgid "High Priority"
 msgstr "優先度高"
 
-#: compose.php:1040
+#: compose.php:1044
 msgid "Highest"
 msgstr "最高"
 
-#: config/prefs.php.dist:643
+#: config/prefs.php.dist:648
 msgid "Horizontal Rule"
 msgstr "水平線"
 
-#: config/prefs.php.dist:940
+#: config/prefs.php.dist:945
 msgid "How do you want to display attachments?"
 msgstr "添付をどう表示しますか？"
 
-#: config/prefs.php.dist:1281
+#: config/prefs.php.dist:1286
 msgid "How should namespaces be displayed in the folder tree view?"
 msgstr "フォルダーツリー表示では名前空間を表示しますか？"
 
-#: config/prefs.php.dist:792
+#: config/prefs.php.dist:797
 msgid "How to attribute quoted lines in a reply"
 msgstr "返信時の引用句"
 
@@ -2042,6 +2035,10 @@ msgstr "IMAP"
 #: lib/Fetchmail/imap.php:97
 msgid "IMAP (Auto Detect Protocols)"
 msgstr "IMAP（自動判別）"
+
+#: lib/IMAP.php:315
+msgid "IMAP (self-signed certificate)"
+msgstr "IMAP (自己証明)"
 
 #: lib/IMAP/Client.php:200
 #, php-format
@@ -2056,10 +2053,6 @@ msgstr "IMAP over SSL"
 msgid "IMAP over SSL (self-signed certificate)"
 msgstr "IMAP over SSL (自己証明)"
 
-#: lib/IMAP.php:315
-msgid "IMAP, (self-signed certificate)"
-msgstr "IMAP, (自己証明)"
-
 #: lib/IMAP.php:321
 msgid "IMAP, no TLS"
 msgstr "IMAP, no TLS"
@@ -2068,7 +2061,7 @@ msgstr "IMAP, no TLS"
 msgid "IMAP/POP3 Mail Servers"
 msgstr "IMAP/POP3 メールサーバ"
 
-#: lib/IMAP/Client.php:283
+#: lib/IMAP/Client.php:285
 msgid "If using SSL or TLS, you must have the PHP openssl extension loaded."
 msgstr ""
 "SSL/TLS を使用するなら、PHP の openssl 拡張をロードしなければなりません。"
@@ -2153,16 +2146,12 @@ msgstr "MBOX 形式のファイルをインポート"
 msgid "Import mbox file"
 msgstr "MBOX 形式のファイルをインポート"
 
-#: templates/mailbox/navbar.html:16
-msgid "Important"
-msgstr "重要"
-
 #: folders.php:150
 #, php-format
 msgid "Imported %d messages from %s."
 msgstr "%d 通のメールを %s からインポートしました。"
 
-#: pgp.php:174
+#: pgp.php:179
 msgid ""
 "Imported key contains your PGP private key. Only add your public key in the "
 "first step!"
@@ -2175,25 +2164,25 @@ msgid "In Process"
 msgstr "処理中"
 
 #: templates/prefs/initialpageselect.inc:4 lib/Folder.php:68 lib/api.php:293
-#: lib/IMP.php:732 lib/IMP.php:742 lib/IMAP/Tree.php:404
-#: lib/IMAP/Tree.php:1930
+#: lib/IMP.php:733 lib/IMP.php:744 lib/IMAP/Tree.php:410
+#: lib/IMAP/Tree.php:1976
 msgid "Inbox"
 msgstr "INBOX"
 
 # courier-imap を使っている場合
-#: config/prefs.php.dist:780
+#: config/prefs.php.dist:785
 msgid "Include a brief summary of the header in a reply?"
 msgstr "返信時にヘッダの一部を付加しますか？"
 
-#: config/prefs.php.dist:775
+#: config/prefs.php.dist:780
 msgid "Include body text in forward message by default?"
 msgstr "転送の際にデフォルトで本文を含めますか？"
 
-#: config/prefs.php.dist:746
+#: config/prefs.php.dist:751
 msgid "Include original message in a reply?"
 msgstr "返信時に元のメッセージを引用しますか？"
 
-#: config/prefs.php.dist:642
+#: config/prefs.php.dist:647
 msgid "Increase Indent"
 msgstr "段下げを増やす"
 
@@ -2201,16 +2190,16 @@ msgstr "段下げを増やす"
 msgid "Info"
 msgstr "情報"
 
-#: smime.php:314 pgp.php:413
+#: smime.php:319 pgp.php:418
 #, php-format
 msgid "Information on %s Public Key"
 msgstr "%s 公開鍵の情報"
 
-#: pgp.php:442
+#: pgp.php:449
 msgid "Information on Personal Private Key"
 msgstr "個人の秘密鍵の情報"
 
-#: smime.php:337 pgp.php:436
+#: smime.php:344 pgp.php:443
 msgid "Information on Personal Public Key"
 msgstr "個人の公開鍵の情報"
 
@@ -2227,19 +2216,19 @@ msgstr "挿入"
 msgid "Insert Certificate Here:"
 msgstr "証明書をここに挿入："
 
-#: config/prefs.php.dist:646
+#: config/prefs.php.dist:651
 msgid "Insert Table"
 msgstr "表の挿入"
 
-#: config/prefs.php.dist:644
+#: config/prefs.php.dist:649
 msgid "Insert Web Link"
 msgstr "リンクの挿入"
 
-#: config/prefs.php.dist:645
+#: config/prefs.php.dist:650
 msgid "Insert/Modify Image"
 msgstr "画像の挿入／修正"
 
-#: config/prefs.php.dist:654
+#: config/prefs.php.dist:659
 msgid "Insert/Overwrite"
 msgstr "挿入／上書き"
 
@@ -2255,34 +2244,34 @@ msgstr "無効なアドレス"
 msgid "Invalid Remote Mailbox"
 msgstr "無効なリモートメールボックス"
 
-#: lib/Compose.php:1189 lib/Compose.php:1204 lib/Compose.php:1216
-#: lib/Compose.php:1231
+#: lib/Compose.php:1214 lib/Compose.php:1229 lib/Compose.php:1241
+#: lib/Compose.php:1256
 #, php-format
 msgid "Invalid character in e-mail address: %s."
 msgstr "メールアドレスに無効な文字が含まれています：%s"
 
-#: lib/Compose.php:1181
+#: lib/Compose.php:1206
 #, php-format
 msgid "Invalid e-mail address: %s."
 msgstr "無効なメールアドレス：%s"
 
-#: lib/Compose.php:1200 lib/Compose.php:1227
+#: lib/Compose.php:1225 lib/Compose.php:1252
 msgid "Invalid hostname."
 msgstr "無効なホスト名です。"
 
-#: smime.php:96 pgp.php:18
+#: smime.php:101 pgp.php:18
 msgid "Invalid key"
 msgstr "無効な鍵"
 
-#: lib/Compose.php:296
+#: lib/Compose.php:300
 msgid "Invalid message, cannot resume draft."
 msgstr "無効なメッセージなので、再開できません。"
 
-#: pgp.php:210
+#: pgp.php:215
 msgid "Invalid personal PGP private key."
 msgstr "無効な PGP 秘密鍵です。"
 
-#: pgp.php:186
+#: pgp.php:191
 msgid "Invalid personal PGP public key."
 msgstr "無効な PGP 公開鍵です。"
 
@@ -2290,23 +2279,23 @@ msgstr "無効な PGP 公開鍵です。"
 msgid "Invert"
 msgstr "反転"
 
-#: config/prefs.php.dist:627
+#: config/prefs.php.dist:632
 msgid "Italic"
 msgstr "斜体"
 
-#: config/prefs.php.dist:636
+#: config/prefs.php.dist:641
 msgid "Justify Center"
 msgstr "中央寄せ"
 
-#: config/prefs.php.dist:638
+#: config/prefs.php.dist:643
 msgid "Justify Full"
 msgstr "均等割付"
 
-#: config/prefs.php.dist:635
+#: config/prefs.php.dist:640
 msgid "Justify Left"
 msgstr "左寄せ"
 
-#: config/prefs.php.dist:637
+#: config/prefs.php.dist:642
 msgid "Justify Right"
 msgstr "右寄せ"
 
@@ -2318,7 +2307,7 @@ msgstr "KB"
 msgid "Key Length:"
 msgstr "鍵の長さ："
 
-#: pgp.php:456
+#: pgp.php:463
 msgid ""
 "Key generation may take a long time to complete.  Continue with key "
 "generation?"
@@ -2336,7 +2325,7 @@ msgid ""
 "contacts."
 msgstr "鍵のインポートはできません。あなたはアドレス帳を定義していません。"
 
-#: pgp.php:350
+#: pgp.php:355
 msgid "Key successfully sent to the public keyserver."
 msgstr "鍵は公開鍵サーバに送られました。"
 
@@ -2348,7 +2337,7 @@ msgstr "言語"
 msgid "Language:"
 msgstr "言語："
 
-#: config/prefs.php.dist:1190
+#: config/prefs.php.dist:1195
 msgid "Last Mailbox Page"
 msgstr "メールボックスの最後のページ"
 
@@ -2356,15 +2345,15 @@ msgstr "メールボックスの最後のページ"
 msgid "Last Page"
 msgstr "最後のページ"
 
-#: compose.php:1193
+#: compose.php:1208
 msgid "Link Attachments?"
 msgstr "添付はリンクだけを送信しますか？"
 
-#: attachment.php:35 lib/Compose.php:2600
+#: attachment.php:35 lib/Compose.php:2629
 msgid "Linked attachments are forbidden."
 msgstr "リンク型添付は使用できません。"
 
-#: lib/Compose.php:2616
+#: lib/Compose.php:2645
 #, php-format
 msgid "Links will expire on %s"
 msgstr "リンクは %s で期限切れになります"
@@ -2373,7 +2362,7 @@ msgstr "リンクは %s で期限切れになります"
 msgid "List"
 msgstr "リスト"
 
-#: config/prefs.php.dist:1379
+#: config/prefs.php.dist:1384
 msgid ""
 "List all contacts when loading the contacts screen? (if disabled, you will "
 "only see contacts that you search for explicitly)"
@@ -2381,11 +2370,11 @@ msgstr ""
 "アドレス帳の画面を表示した時、全エントリを表示しますか？（これがオフなら、検"
 "索したエントリだけ表示されます）"
 
-#: config/prefs.php.dist:937
+#: config/prefs.php.dist:942
 msgid "Listing in the Header"
 msgstr "ヘッダ部に一覧表示"
 
-#: compose.php:812
+#: compose.php:817
 msgid "Loading..."
 msgstr "ロード中..."
 
@@ -2414,7 +2403,7 @@ msgstr "ログイン"
 msgid "Login Tasks"
 msgstr "ログインタスク"
 
-#: compose.php:1043
+#: compose.php:1047
 msgid "Low"
 msgstr "低"
 
@@ -2422,7 +2411,7 @@ msgstr "低"
 msgid "Low Priority"
 msgstr "優先度低"
 
-#: compose.php:1044
+#: compose.php:1048
 msgid "Lowest"
 msgstr "最低"
 
@@ -2438,7 +2427,7 @@ msgstr "メール プレビュー"
 msgid "Mail server type to connect to:"
 msgstr "接続するメールサーバの種類："
 
-#: lib/IMAP/Tree.php:1937 lib/IMAP/Tree.php:1964
+#: lib/IMAP/Tree.php:1983 lib/IMAP/Tree.php:2010
 msgid "Mailbox"
 msgstr "メールボックス"
 
@@ -2468,7 +2457,7 @@ msgstr "全メッセージを未読とする"
 msgid "Mark as:"
 msgstr "印を付ける："
 
-#: config/prefs.php.dist:892
+#: config/prefs.php.dist:897
 msgid "Mark different levels of quoting with different colors?"
 msgstr "引用部分を別の色で表示しますか？"
 
@@ -2476,7 +2465,7 @@ msgstr "引用部分を別の色で表示しますか？"
 msgid "Mark messages as seen? (IMAP only)"
 msgstr "メッセージを既読とする？（IMAP のみ）"
 
-#: config/prefs.php.dist:900
+#: config/prefs.php.dist:905
 msgid "Mark simple markup?"
 msgstr "太字、下線、斜体を単純に表示しますか？"
 
@@ -2488,7 +2477,7 @@ msgstr "全てが一致する"
 msgid "Match Any Query"
 msgstr "どれかが一致する"
 
-#: config/prefs.php.dist:622
+#: config/prefs.php.dist:627
 msgid "Maximize/Minimize Editor"
 msgstr "エディターの最大化／最小化"
 
@@ -2520,7 +2509,7 @@ msgstr "添付サイズの上限に達しました。"
 msgid "Menu Folder List"
 msgstr "メニューフォルダ一覧"
 
-#: lib/Compose.php:1696
+#: lib/Compose.php:1721
 msgid "Message"
 msgstr "メッセージ"
 
@@ -2528,7 +2517,7 @@ msgstr "メッセージ"
 msgid "Message Composition"
 msgstr "メッセージ作成"
 
-#: config/prefs.php.dist:1201
+#: config/prefs.php.dist:1206
 msgid "Message Date"
 msgstr "メッセージの日付"
 
@@ -2551,11 +2540,11 @@ msgstr "返信／転送"
 msgid "Message Search"
 msgstr "メッセージの検索"
 
-#: config/prefs.php.dist:1205
+#: config/prefs.php.dist:1210
 msgid "Message Size"
 msgstr "メッセージサイズ"
 
-#: message.php:588
+#: message.php:589
 msgid "Message Source"
 msgstr "メッセージ原文"
 
@@ -2563,7 +2552,7 @@ msgstr "メッセージ原文"
 msgid "Message Viewing"
 msgstr "メッセージ表示"
 
-#: lib/Compose.php:1694
+#: lib/Compose.php:1719
 #, php-format
 msgid "Message from %s"
 msgstr "%s からのメッセージ"
@@ -2580,20 +2569,20 @@ msgstr "メッセージは暗号化されています"
 msgid "Message is signed"
 msgstr "メッセージは署名されています"
 
-#: compose.php:390 compose.php:397
+#: compose.php:394 compose.php:401
 msgid "Message redirected successfully."
 msgstr "メッセージは転送されました。"
 
-#: lib/Compose.php:834
+#: lib/Compose.php:841
 #, php-format
 msgid "Message sent successfully, but not saved to %s"
 msgstr "メッセージは送信されましたが、%s に保存されていません"
 
-#: compose.php:461 compose.php:469
+#: compose.php:465 compose.php:473
 msgid "Message sent successfully."
 msgstr "メッセージの送信成功"
 
-#: config/prefs.php.dist:1232
+#: config/prefs.php.dist:1237
 msgid "Messages per page in the mailbox view."
 msgstr "メールボックス表示の各ページに表示されるメール数"
 
@@ -2617,7 +2606,7 @@ msgstr "モード："
 msgid "Month"
 msgstr "月"
 
-#: message.php:518 message.php:706 mailbox.php:485 mailbox.php:892
+#: message.php:519 message.php:706 mailbox.php:485 mailbox.php:894
 msgid "Move"
 msgstr "移動"
 
@@ -2625,11 +2614,11 @@ msgstr "移動"
 msgid "Move down"
 msgstr "下へ移動"
 
-#: config/prefs.php.dist:862
+#: config/prefs.php.dist:867
 msgid "Move spam messages to spam folder and innocent messages to INBOX"
 msgstr "SPAM メッセージを SPAM フォルダーに移動し無害なメッセージを INBOX へ"
 
-#: message.php:518 message.php:706 mailbox.php:485 mailbox.php:892
+#: message.php:519 message.php:706 mailbox.php:485 mailbox.php:894
 msgid "Move to folder"
 msgstr "フォルダに移動"
 
@@ -2641,7 +2630,7 @@ msgstr "上へ移動"
 msgid "Multipart/alternative"
 msgstr "マルチパート／代替"
 
-#: thread.php:177
+#: thread.php:181
 msgid "Multiple Message View"
 msgstr "メール一覧表示"
 
@@ -2658,7 +2647,7 @@ msgstr "ノート："
 msgid "Name"
 msgstr "名前"
 
-#: pgp.php:115
+#: pgp.php:120
 msgid "Name and/or email cannot be empty"
 msgstr "名前かメールは必須です"
 
@@ -2666,11 +2655,11 @@ msgstr "名前かメールは必須です"
 msgid "Needs Action"
 msgstr "処置が必要です"
 
-#: config/prefs.php.dist:728 config/prefs.php.dist:1057
+#: config/prefs.php.dist:733 config/prefs.php.dist:1062
 msgid "Never"
 msgstr "なし"
 
-#: config/prefs.php.dist:718
+#: config/prefs.php.dist:723
 msgid "Never save attachments"
 msgstr "添付は保存しない"
 
@@ -2682,16 +2671,16 @@ msgstr "新規フォルダ"
 msgid "New Mail"
 msgstr "新着メール"
 
-#: compose.php:33 compose.php:252 lib/Block/tree_folders.php:35
+#: compose.php:33 compose.php:253 lib/Block/tree_folders.php:35
 msgid "New Message"
 msgstr "新規メール"
 
-#: mailbox.php:852 lib/MIME/Headers.php:212 lib/MIME/Headers.php:235
+#: mailbox.php:854 lib/MIME/Headers.php:209 lib/MIME/Headers.php:232
 #, php-format
 msgid "New Message to %s"
 msgstr "%s への新規メール"
 
-#: message.php:534
+#: message.php:535
 msgid "Next Message"
 msgstr "次のメール"
 
@@ -2699,17 +2688,17 @@ msgstr "次のメール"
 msgid "Next Page"
 msgstr "次のページ"
 
-#: templates/javascript_defs.php:44 config/prefs.php.dist:823
-#: config/prefs.php.dist:1268 config/prefs.php.dist:1290
+#: templates/javascript_defs.php:44 config/prefs.php.dist:828
+#: config/prefs.php.dist:1273 config/prefs.php.dist:1295
 #: templates/compose/compose.html:303
 msgid "No"
 msgstr "いいえ"
 
-#: smime.php:241
+#: smime.php:246
 msgid "No Certificate found"
 msgstr "証明書が見付かりません"
 
-#: lib/IMP.php:1447
+#: lib/IMP.php:1455
 msgid "No Encryption"
 msgstr "暗号化しない"
 
@@ -2722,15 +2711,15 @@ msgstr "鍵リングは空です"
 msgid "No Messages"
 msgstr "メールはありません"
 
-#: pgp.php:142
+#: pgp.php:147
 msgid "No PGP public key imported."
 msgstr "PGP 公開鍵はインポートされませんでした。"
 
-#: mailbox.php:813
+#: mailbox.php:815
 msgid "No Preview Text"
 msgstr "プレビューなし"
 
-#: smime.php:166
+#: smime.php:171
 msgid "No S/MIME public key imported."
 msgstr "S/MIME 公開鍵はインポートされませんでした。"
 
@@ -2754,7 +2743,7 @@ msgstr "フォルダが選択されていません。"
 msgid "No folders are being checked for new mail."
 msgstr "新着メールをチェックするフォルダが指定されていません。"
 
-#: folders.php:199 lib/Folder.php:423 lib/Folder.php:471
+#: folders.php:210 lib/Folder.php:423 lib/Folder.php:471
 msgid "No folders were specified"
 msgstr "フォルダが指定されていません。"
 
@@ -2766,15 +2755,15 @@ msgstr "どのフォルダにも新着メールはありません"
 msgid "No folders with unseen messages"
 msgstr "どのフォルダにも未読メールはありません"
 
-#: lib/IMP.php:1048
+#: lib/IMP.php:1054
 msgid "No limit"
 msgstr "無制限"
 
-#: lib/Compose.php:1732
+#: lib/Compose.php:1757
 msgid "No message body text"
 msgstr "本文なし"
 
-#: lib/IMAP/Client.php:474
+#: lib/IMAP/Client.php:476
 msgid "No message returned."
 msgstr "返信なし"
 
@@ -2782,24 +2771,24 @@ msgstr "返信なし"
 msgid "No messages matched your search."
 msgstr "検索条件に一致するメッセージは見つかりませんでした。"
 
-#: pgp.php:215
+#: pgp.php:220
 msgid "No personal PGP private key imported."
 msgstr "個人の PGP 秘密鍵はインポートされませんでした。"
 
-#: pgp.php:191
+#: pgp.php:196
 msgid "No personal PGP public key imported."
 msgstr "個人の PGP 公開鍵はインポートされませんでした。"
 
-#: smime.php:216
+#: smime.php:221
 msgid "No personal S/MIME certificates imported."
 msgstr "個人の S/MIME 証明書はインポートされませんでした。"
 
-#: lib/MIME/Viewer/pkcs7.php:302
+#: lib/MIME/Viewer/pkcs7.php:305
 msgid ""
 "No personal private key exists so the message is unable to be decrypted."
 msgstr "秘密鍵が無いので、メッセージの復号はできません。"
 
-#: lib/IMAP/Client.php:374
+#: lib/IMAP/Client.php:376
 msgid "No supported IMAP authentication method could be found."
 msgstr "サポートする IMAP 認証がありません。"
 
@@ -2818,7 +2807,7 @@ msgstr "参加者以外"
 msgid "None"
 msgstr "なし"
 
-#: compose.php:1042
+#: compose.php:1046
 msgid "Normal"
 msgstr "通常"
 
@@ -2831,13 +2820,10 @@ msgstr "削除されていない"
 msgid "Not Draft"
 msgstr "下書きでない"
 
-#: templates/message/navbar_navigate.html:11 templates/mailbox/navbar.html:33
+#: templates/message/navbar_navigate.html:11 templates/mailbox/navbar.html:17
+#: templates/mailbox/navbar.html:33
 msgid "Not Flagged"
 msgstr "印なし"
-
-#: templates/mailbox/navbar.html:17
-msgid "Not Important"
-msgstr "重要でない"
 
 #: templates/mailbox/navbar.html:25
 msgid "Not Personal"
@@ -2847,7 +2833,7 @@ msgstr "自分宛でない"
 msgid "Not a valid public key."
 msgstr "正しい公開鍵ではありません。"
 
-#: config/prefs.php.dist:975
+#: config/prefs.php.dist:980
 msgid "Not at all"
 msgstr "どこにも"
 
@@ -2859,11 +2845,11 @@ msgstr "少し時間がかかります"
 msgid "Notepads"
 msgstr "メモ帳"
 
-#: config/hooks.php.dist:471
+#: config/hooks.php.dist:635
 msgid "Notes"
 msgstr "メモ"
 
-#: config/prefs.php.dist:855
+#: config/prefs.php.dist:860
 msgid "Nothing"
 msgstr "何もしない"
 
@@ -2871,11 +2857,11 @@ msgstr "何もしない"
 msgid "Notification: Linked attachment downloaded"
 msgstr "通知：リンクされた添付がダウンロードされました"
 
-#: config/prefs.php.dist:439
+#: config/prefs.php.dist:442
 msgid "Number of months to keep old linked attachments if deleting monthly."
 msgstr "古いリンク型添付を削除する場合、保存する月数"
 
-#: config/prefs.php.dist:393
+#: config/prefs.php.dist:396
 msgid "Number of old sent-mail folders to keep if deleting monthly."
 msgstr "毎月削除する場合に保存しておきたい既存の［送信控え］フォルダの数"
 
@@ -2900,15 +2886,15 @@ msgstr "未読メールがあるフォルダだけを表示しますか？"
 msgid "Only one folder should be selected for this action."
 msgstr "フォルダは１つだけ指定して下さい。"
 
-#: lib/IMP.php:927 lib/IMP.php:932
+#: lib/IMP.php:933 lib/IMP.php:938
 msgid "Open Fo_lder"
 msgstr "_Lフォルダを開く"
 
-#: lib/IMP.php:932
+#: lib/IMP.php:938
 msgid "Open Folder"
 msgstr "フォルダを開く"
 
-#: lib/IMAP/Tree.php:1988
+#: lib/IMAP/Tree.php:2034
 msgid "Opened Folder"
 msgstr "フォルダを開く"
 
@@ -2916,7 +2902,7 @@ msgstr "フォルダを開く"
 msgid "Optional Participant"
 msgstr "任意の参加者"
 
-#: config/prefs.php.dist:639
+#: config/prefs.php.dist:644
 msgid "Ordered List"
 msgstr "番号付き箇条書き"
 
@@ -2925,12 +2911,12 @@ msgid "Other Mail Accounts"
 msgstr "他のメールアカウント"
 
 #: config/prefs.php.dist:147 config/prefs.php.dist:160
-#: config/prefs.php.dist:167 config/prefs.php.dist:175
-#: config/prefs.php.dist:184
+#: config/prefs.php.dist:169 config/prefs.php.dist:178
+#: config/prefs.php.dist:187
 msgid "Other Options"
 msgstr "その他のオプション"
 
-#: lib/IMAP/Tree.php:71
+#: lib/IMAP/Tree.php:72
 msgid "Other Users' Folders"
 msgstr "他人のフォルダ"
 
@@ -2939,23 +2925,23 @@ msgid "Outbound Server"
 msgstr "送信用サーバ"
 
 #: pgp.php:44 lib/MIME/Viewer/pgp.php:165 lib/MIME/Viewer/pgp.php:213
-#: lib/MIME/Viewer/pgp.php:309
+#: lib/MIME/Viewer/pgp.php:314
 msgid "PGP"
 msgstr "PGP"
 
-#: lib/IMP.php:1450
+#: lib/IMP.php:1458
 msgid "PGP Encrypt Message"
 msgstr "PGP 暗号メッセージ"
 
-#: lib/IMP.php:1455
+#: lib/IMP.php:1463
 msgid "PGP Encrypt Message with passphrase"
 msgstr "PGP 暗号メッセージ（パスフレーズ使用）"
 
-#: lib/Compose.php:1406
+#: lib/Compose.php:1431
 msgid "PGP Error: "
 msgstr "PGP エラー: "
 
-#: config/prefs.php.dist:176
+#: config/prefs.php.dist:179
 msgid "PGP Options"
 msgstr "PGP オプション"
 
@@ -2967,12 +2953,12 @@ msgstr "PGP パスフレーズの入力"
 msgid "PGP Personal Keypair support requires a secure web connection."
 msgstr "PGP 個人鍵の使用には安全な web 接続（SSL 接続）が必要です。"
 
-#: pgp.php:154
+#: pgp.php:159
 #, php-format
 msgid "PGP Public Key for \"%s (%s)\" was successfully added."
 msgstr "\"%s (%s)\" の PGP 公開鍵が追加されました。"
 
-#: pgp.php:257
+#: pgp.php:262
 #, php-format
 msgid "PGP Public Key for \"%s\" was successfully deleted."
 msgstr "\"%s\" の PGP 公開鍵は削除されました。"
@@ -2981,29 +2967,29 @@ msgstr "\"%s\" の PGP 公開鍵は削除されました。"
 msgid "PGP Public Keyring"
 msgstr "PGP 公開鍵リング"
 
-#: lib/IMP.php:1451
+#: lib/IMP.php:1459
 msgid "PGP Sign Message"
 msgstr "PGP 署名"
 
-#: lib/IMP.php:1452
+#: lib/IMP.php:1460
 msgid "PGP Sign/Encrypt Message"
 msgstr "PGP 署名／暗号メッセージ"
 
-#: lib/IMP.php:1456
+#: lib/IMP.php:1464
 msgid "PGP Sign/Encrypt Message with passphrase"
 msgstr "PGP 署名／暗号メッセージ（パスフレーズ使用）"
 
-#: compose.php:732
+#: compose.php:737
 msgid ""
 "PGP encryption cannot be used by default as public keys cannot be found for "
 "all recipients."
 msgstr "全ての受信者の公開鍵が無いと、デフォルトで PGP 暗号化はできません。"
 
-#: pgp.php:205
+#: pgp.php:210
 msgid "PGP private key successfully added."
 msgstr "PGP 秘密鍵が追加されました。"
 
-#: pgp.php:180
+#: pgp.php:185
 msgid "PGP public key successfully added."
 msgstr "PGP 公開鍵が追加されました。"
 
@@ -3020,11 +3006,11 @@ msgstr ""
 "PGP のサポートにはポップアップ・ウインドーが必要です。お使いのブラウザがポッ"
 "プアップを禁止にしてあるなら、PGP 機能は正しく動作しません。"
 
-#: lib/Compose.php:1366
+#: lib/Compose.php:1391
 msgid "PGP: Need passphrase for personal private key."
 msgstr "PGP: 秘密鍵のパスフレーズが必要です。"
 
-#: lib/Compose.php:1375
+#: lib/Compose.php:1400
 msgid "PGP: Need passphrase to encrypt your message with."
 msgstr "PGP: 秘密鍵のパスフレーズが必要です。"
 
@@ -3036,6 +3022,10 @@ msgstr "POP3"
 msgid "POP3 (Auto Detect Protocols)"
 msgstr "POP3（自動判別）"
 
+#: lib/IMAP.php:285
+msgid "POP3 (self-signed certificate)"
+msgstr "POP3 (自己証明)"
+
 #: lib/IMAP.php:297
 msgid "POP3 over SSL"
 msgstr "POP3 over SSL"
@@ -3043,10 +3033,6 @@ msgstr "POP3 over SSL"
 #: lib/IMAP.php:303
 msgid "POP3 over SSL (self-signed certificate)"
 msgstr "POP3 over SSL (self-signed certificate)"
-
-#: lib/IMAP.php:285
-msgid "POP3, (self-signed certificate)"
-msgstr "POP3, (self-signed certificate)"
 
 #: lib/IMAP.php:291
 msgid "POP3, no TLS"
@@ -3057,11 +3043,11 @@ msgstr "POP3, no TLS"
 msgid "Page %d of %d"
 msgstr "%d ／ %d ページ"
 
-#: config/prefs.php.dist:1187
+#: config/prefs.php.dist:1192
 msgid "Page with the First Unseen Message"
 msgstr "最初の未読メッセージを含むページ"
 
-#: config/prefs.php.dist:1188
+#: config/prefs.php.dist:1193
 msgid "Page with the Last Unseen Message"
 msgstr "最後の未読メッセージを含むページ"
 
@@ -3077,7 +3063,7 @@ msgstr "パート"
 msgid "Passphrase (Again):"
 msgstr "パスフレーズ（再度）："
 
-#: smime.php:250 pgp.php:342
+#: smime.php:255 pgp.php:347
 msgid "Passphrase successfully unloaded."
 msgstr "パスフレーズはアンロードされました。"
 
@@ -3086,11 +3072,11 @@ msgstr "パスフレーズはアンロードされました。"
 msgid "Passphrase:"
 msgstr "パスフレーズ："
 
-#: pgp.php:117
+#: pgp.php:122
 msgid "Passphrases cannot be empty"
 msgstr "パスフレーズは空ではいけません"
 
-#: pgp.php:119
+#: pgp.php:124
 msgid "Passphrases do not match"
 msgstr "パスフレーズが一致しません"
 
@@ -3107,7 +3093,7 @@ msgstr "パスワード："
 msgid "Password: "
 msgstr "パスワード："
 
-#: config/prefs.php.dist:653
+#: config/prefs.php.dist:658
 msgid "Paste from clipboard"
 msgstr "クリップボードから貼り付け"
 
@@ -3119,27 +3105,27 @@ msgstr "自分宛"
 msgid "Personal Information"
 msgstr "個人情報"
 
-#: pgp.php:125
+#: pgp.php:130
 msgid "Personal PGP keypair generated successfully."
 msgstr "個人用 PGP 鍵を生成しました。"
 
-#: pgp.php:132
+#: pgp.php:137
 msgid "Personal PGP keys deleted successfully."
 msgstr "個人用 PGP 鍵を削除しました。"
 
-#: smime.php:222
+#: smime.php:227
 msgid "Personal S/MIME certificates NOT imported: "
 msgstr "個人用 S/MIME 証明書がインポートされませんでした："
 
-#: smime.php:147
+#: smime.php:152
 msgid "Personal S/MIME keys deleted successfully."
 msgstr "個人用 S/MIME 鍵は削除されました。"
 
-#: config/prefs.php.dist:247
+#: config/prefs.php.dist:250
 msgid "Place your signature before replies and forwards?"
 msgstr "返信または転送する本文の前に署名を追加しますか？"
 
-#: lib/Compose.php:474
+#: lib/Compose.php:486
 msgid "Plaintext Version of Message"
 msgstr "テキスト版のメッセージ"
 
@@ -3205,7 +3191,7 @@ msgstr "パスワードを記入してください。"
 msgid "Please provide your username."
 msgstr "ユーザ名を記入してください。"
 
-#: lib/Compose.php:2790 lib/UI/Compose.php:26
+#: lib/Compose.php:2819 lib/UI/Compose.php:26
 msgid "Please resolve ambiguous or invalid addresses."
 msgstr "曖昧なまたは無効なアドレスを修正してください。"
 
@@ -3221,7 +3207,7 @@ msgstr "検索するフォルダを 1 つ以上選んでください。"
 msgid "Please select or edit in the box to the right:"
 msgstr "右から選択するか編集して下さい："
 
-#: config/prefs.php.dist:1301
+#: config/prefs.php.dist:1306
 msgid "Poll all folders for new mail?"
 msgstr "新着メールを確認するために全フォルダを調べますか？"
 
@@ -3237,23 +3223,23 @@ msgstr "投稿"
 msgid "Powered by Horde"
 msgstr "Powered by Horde"
 
-#: config/prefs.php.dist:239
+#: config/prefs.php.dist:242
 msgid "Precede your signature with dashes ('-- ')?"
 msgstr "署名の前にはダッシュ（'-- '）を付けますか？"
 
-#: config/hooks.php.dist:487
+#: config/hooks.php.dist:651
 msgid "Preferences"
 msgstr "プレファレンス"
 
-#: smime.php:257 pgp.php:266 filterprefs.php:53
+#: smime.php:262 pgp.php:271 filterprefs.php:53
 msgid "Preferences successfully updated."
 msgstr "設定は正常に更新されました。"
 
-#: compose.php:1213
+#: compose.php:1228
 msgid "Preview"
 msgstr "プレビュー"
 
-#: message.php:527
+#: message.php:528
 msgid "Previous Message"
 msgstr "前のメール"
 
@@ -3261,11 +3247,11 @@ msgstr "前のメール"
 msgid "Previous Page"
 msgstr "前のページ"
 
-#: message.php:602
+#: message.php:603
 msgid "Print"
 msgstr "印刷"
 
-#: config/prefs.php.dist:650
+#: config/prefs.php.dist:655
 msgid "Print document"
 msgstr "印刷物"
 
@@ -3273,7 +3259,7 @@ msgstr "印刷物"
 msgid "Printed By"
 msgstr "印刷："
 
-#: message.php:670 lib/MIME/Viewer/itip.php:918
+#: message.php:671 lib/MIME/Viewer/itip.php:918
 msgid "Priority"
 msgstr "優先度"
 
@@ -3281,15 +3267,15 @@ msgstr "優先度"
 msgid "Private Key Password:"
 msgstr "秘密鍵パスワード："
 
-#: config/prefs.php.dist:717
+#: config/prefs.php.dist:722
 msgid "Prompt every time an attachment is sent; default to NO"
 msgstr "添付を送信した時は尋ねる；デフォルトNO"
 
-#: config/prefs.php.dist:716
+#: config/prefs.php.dist:721
 msgid "Prompt every time an attachment is sent; default to YES"
 msgstr "添付を送信した時は尋ねる；デフォルトYES"
 
-#: config/prefs.php.dist:983
+#: config/prefs.php.dist:988
 msgid "Prompt to send read receipt when requested by the sender?"
 msgstr "開封確認の返信を送信する前に確認しますか？"
 
@@ -3301,7 +3287,7 @@ msgstr "プロトコル"
 msgid "Protocol:"
 msgstr "プロトコル："
 
-#: lib/Crypt/PGP.php:489
+#: lib/Crypt/PGP.php:491
 msgid "Public PGP keyserver support has been disabled."
 msgstr "公開 PGP 鍵サーバのサポートは無効になっています。"
 
@@ -3317,39 +3303,39 @@ msgstr "パージ"
 msgid "Purge Deleted"
 msgstr "ゴミ箱を空にする"
 
-#: config/prefs.php.dist:458
+#: config/prefs.php.dist:461
 msgid "Purge Spam how often:"
 msgstr "SPAM をパージする頻度："
 
-#: config/prefs.php.dist:486
+#: config/prefs.php.dist:489
 msgid "Purge Trash how often:"
 msgstr "ゴミ箱をパージする頻度："
 
-#: config/prefs.php.dist:467
+#: config/prefs.php.dist:470
 msgid "Purge messages in Spam folder older than this amount of days."
 msgstr "SPAM フォルダ内の何日以上古いメールを消去するか"
 
-#: config/prefs.php.dist:495
+#: config/prefs.php.dist:498
 msgid "Purge messages in Trash folder older than this amount of days."
 msgstr "ゴミ箱フォルダ内の何日以上古いメールを消去するか"
 
-#: config/prefs.php.dist:421
+#: config/prefs.php.dist:424
 msgid "Purge messages in sent-mail folder(s) older than this amount of days."
 msgstr "送信控えフォルダ内の何日以上古いメールを消去するか"
 
-#: config/prefs.php.dist:448
+#: config/prefs.php.dist:451
 msgid "Purge old messages in the Spam folder?"
 msgstr "SPAM フォルダ内の古いメールを消去しますか？"
 
-#: config/prefs.php.dist:476
+#: config/prefs.php.dist:479
 msgid "Purge old messages in the Trash folder?"
 msgstr "ゴミ箱内の古いメールを消去しますか？"
 
-#: config/prefs.php.dist:402
+#: config/prefs.php.dist:405
 msgid "Purge old messages in the sent-mail folder(s)?"
 msgstr "送信控えフォルダ内の古いメールを消去しますか？"
 
-#: config/prefs.php.dist:412
+#: config/prefs.php.dist:415
 msgid "Purge sent-mail how often:"
 msgstr "送信控えをパージする頻度："
 
@@ -3391,12 +3377,12 @@ msgstr "クォータの状況： %.2f MB / %.2f MB  (%.2f%%)"
 msgid "Quota status: %.2f MB / NO LIMIT"
 msgstr "クォータの状況： %.2f MB /無制限"
 
-#: lib/IMP.php:1046
+#: lib/IMP.php:1052
 #, php-format
 msgid "Quota status: NO LIMIT"
 msgstr "クォータの状況： 無制限"
 
-#: config/prefs.php.dist:788
+#: config/prefs.php.dist:793
 #, php-format
 msgid "Quoting %f:"
 msgstr "引用 %f："
@@ -3417,11 +3403,11 @@ msgstr "最後の検索"
 msgid "Recent Searches:"
 msgstr "最後の検索："
 
-#: message.php:572 message.php:616
+#: message.php:573 message.php:617
 msgid "Redirec_t"
 msgstr "_Tそのまま転送"
 
-#: message.php:572 message.php:616
+#: message.php:573 message.php:617
 msgid "Redirect"
 msgstr "そのまま転送"
 
@@ -3429,19 +3415,19 @@ msgstr "そのまま転送"
 msgid "Redirect Message"
 msgstr "メールをそのまま転送する"
 
-#: compose.php:376
+#: compose.php:380
 msgid "Redirect this message"
 msgstr "このメールをそのまま転送する"
 
-#: config/prefs.php.dist:648
+#: config/prefs.php.dist:653
 msgid "Redoes your last action"
 msgstr "最後の操作をやり直す"
 
-#: folders.php:361
+#: folders.php:383
 msgid "Refresh"
 msgstr "再表示"
 
-#: config/prefs.php.dist:1063
+#: config/prefs.php.dist:1068
 msgid "Refresh Folder Views:"
 msgstr "フォルダ表示のリフレッシュ:"
 
@@ -3449,7 +3435,7 @@ msgstr "フォルダ表示のリフレッシュ:"
 msgid "Reload"
 msgstr "リロード"
 
-#: folders.php:351
+#: folders.php:373
 msgid "Reload View"
 msgstr "表示をリロード"
 
@@ -3457,7 +3443,7 @@ msgstr "表示をリロード"
 msgid "Remember the free/busy information."
 msgstr "予定情報を記憶する。"
 
-#: config/prefs.php.dist:1270
+#: config/prefs.php.dist:1275
 msgid "Remember the last view"
 msgstr "最後の表示を記憶"
 
@@ -3469,7 +3455,7 @@ msgstr "リモートメールボックス："
 msgid "Remove Field From Search"
 msgstr "検索から除外する"
 
-#: config/prefs.php.dist:658
+#: config/prefs.php.dist:663
 msgid "Remove formatting"
 msgstr "書式を削除"
 
@@ -3481,7 +3467,7 @@ msgstr "ソースを削除"
 msgid "Rename"
 msgstr "名前変更"
 
-#: config/prefs.php.dist:375
+#: config/prefs.php.dist:378
 msgid "Rename sent-mail folder at beginning of month?"
 msgstr "送信控えフォルダの名前を毎月の初めに変更しますか？"
 
@@ -3490,7 +3476,7 @@ msgstr "送信控えフォルダの名前を毎月の初めに変更しますか？"
 msgid "Renaming \"%s\" to \"%s\" failed. This is what the server said"
 msgstr "\"%s\" を \"%s\" に変更できませんでした。サーバのエラー:"
 
-#: message.php:556
+#: message.php:557
 msgid "Reply"
 msgstr "返信"
 
@@ -3498,11 +3484,11 @@ msgstr "返信"
 msgid "Reply Sent."
 msgstr "返信完了。"
 
-#: compose.php:345
+#: compose.php:349
 msgid "Reply to All:"
 msgstr "全員に返信："
 
-#: compose.php:347
+#: compose.php:351
 msgid "Reply to List:"
 msgstr "リストに返信："
 
@@ -3523,27 +3509,27 @@ msgstr "要求された予定情報で返信"
 msgid "Reply-To"
 msgstr "Reply-To"
 
-#: lib/Compose.php:1971
+#: lib/Compose.php:2000
 msgid "Reply-To: "
 msgstr "  返信："
 
-#: compose.php:343
+#: compose.php:347
 msgid "Reply:"
 msgstr "返信:"
 
-#: message.php:613 mailbox.php:544
+#: message.php:614 mailbox.php:544
 msgid "Report as Innocent"
 msgstr "無害と報告"
 
-#: message.php:607 mailbox.php:538
+#: message.php:608 mailbox.php:538
 msgid "Report as Spam"
 msgstr "SPAMと報告"
 
-#: compose.php:1134
+#: compose.php:1145
 msgid "Request a _Read Receipt"
 msgstr "_R開封確認を要求"
 
-#: config/prefs.php.dist:731
+#: config/prefs.php.dist:736
 msgid "Request read receipts?"
 msgstr "開封確認を要求しますか？"
 
@@ -3564,7 +3550,7 @@ msgstr "リセット"
 msgid "Respondent Status Updated."
 msgstr "回答者の状況を更新しました。"
 
-#: message.php:595
+#: message.php:596
 msgid "Resume"
 msgstr "再開"
 
@@ -3595,7 +3581,7 @@ msgstr "メール作成に戻る"
 msgid "Return to Options"
 msgstr "オプションに戻る"
 
-#: config/prefs.php.dist:998
+#: config/prefs.php.dist:1003
 msgid ""
 "Return to the mailbox listing after deleting, moving, or copying a message?"
 msgstr ""
@@ -3610,24 +3596,24 @@ msgstr "ユーザ \"%s\" のアクセス権を変更できませんでした。"
 msgid "Role"
 msgstr "役割"
 
-#: smime.php:67 lib/MIME/Viewer/pkcs7.php:173 lib/MIME/Viewer/pkcs7.php:293
-#: lib/MIME/Viewer/pkcs7.php:485
+#: smime.php:67 lib/MIME/Viewer/pkcs7.php:173 lib/MIME/Viewer/pkcs7.php:296
+#: lib/MIME/Viewer/pkcs7.php:492
 msgid "S/MIME"
 msgstr "S/MIME"
 
-#: lib/IMP.php:1460
+#: lib/IMP.php:1468
 msgid "S/MIME Encrypt Message"
 msgstr "S/MIME 暗号化"
 
-#: lib/Compose.php:1438
+#: lib/Compose.php:1463
 msgid "S/MIME Error: "
 msgstr "S/MIME エラー: "
 
-#: lib/Compose.php:1417
+#: lib/Compose.php:1442
 msgid "S/MIME Error: Need passphrase for personal private key."
 msgstr "S/MIME エラー: 秘密鍵のパスフレーズが必要です。"
 
-#: config/prefs.php.dist:185
+#: config/prefs.php.dist:188
 msgid "S/MIME Options"
 msgstr "S/MIME オプション"
 
@@ -3639,12 +3625,12 @@ msgstr "S/MIME のパスフレーズを入力"
 msgid "S/MIME Personal Keypair support requires a secure web connection."
 msgstr "S/MIME 個人鍵の使用には安全な web 接続（SSL 接続）が必要です。"
 
-#: smime.php:155
+#: smime.php:160
 #, php-format
 msgid "S/MIME Public Key for \"%s\" was successfully deleted."
 msgstr "\"%s\" の S/MIME 公開鍵は削除されました。"
 
-#: smime.php:177
+#: smime.php:182
 msgid "S/MIME Public Key successfully added."
 msgstr "S/MIME 公開鍵は追加されました。"
 
@@ -3652,15 +3638,15 @@ msgstr "S/MIME 公開鍵は追加されました。"
 msgid "S/MIME Public Keyring"
 msgstr "S/MIME 公開鍵リング"
 
-#: smime.php:226
+#: smime.php:231
 msgid "S/MIME Public/Private Keypair successfully added."
 msgstr "S/MIME の公開鍵／秘密鍵のペアは追加されました。"
 
-#: lib/IMP.php:1461
+#: lib/IMP.php:1469
 msgid "S/MIME Sign Message"
 msgstr "S/MIME 署名"
 
-#: lib/IMP.php:1462
+#: lib/IMP.php:1470
 msgid "S/MIME Sign/Encrypt Message"
 msgstr "S/MIME 署名／暗号化"
 
@@ -3668,7 +3654,7 @@ msgstr "S/MIME 署名／暗号化"
 msgid "S/MIME support is disabled on this system."
 msgstr "このシステムでは S/MIME はサポートされていません。"
 
-#: lib/MIME/Viewer/pkcs7.php:297
+#: lib/MIME/Viewer/pkcs7.php:300
 msgid ""
 "S/MIME support is not currently enabled so the message is unable to be "
 "decrypted."
@@ -3709,15 +3695,15 @@ msgstr "SMTP"
 msgid "SMTP Port"
 msgstr "SMTP ポート"
 
-#: compose.php:1017
+#: compose.php:1021
 msgid "S_ubject"
 msgstr "_U件名"
 
-#: compose.php:1113
+#: compose.php:1116
 msgid "Sa_ve a copy in "
 msgstr "_V次の場所にコピーを保存 "
 
-#: message.php:599
+#: message.php:600
 msgid "Sa_ve as"
 msgstr "_V保存"
 
@@ -3726,7 +3712,7 @@ msgstr "_V保存"
 msgid "Save"
 msgstr "保存"
 
-#: compose.php:1189
+#: compose.php:1204
 msgid "Save Attachments with message in sent-mail folder?"
 msgstr "添付もメッセージと共に送信控えフォルダに保存しますか？"
 
@@ -3752,19 +3738,19 @@ msgstr "オプションを保存"
 msgid "Save Stationery"
 msgstr "定型句を保存"
 
-#: compose.php:930
+#: compose.php:934
 msgid "Save _Draft"
 msgstr "_D下書きを保存"
 
-#: message.php:599 config/prefs.php.dist:655
+#: message.php:600 config/prefs.php.dist:660
 msgid "Save as"
 msgstr "名前を付けて保存"
 
-#: config/prefs.php.dist:814
+#: config/prefs.php.dist:819
 msgid "Save drafts as unseen?"
 msgstr "下書きを未読として保存しますか？"
 
-#: config/prefs.php.dist:825
+#: config/prefs.php.dist:830
 msgid "Save drafts automatically while composing?"
 msgstr "メール作成中に下書きを自動的に保存しますか？"
 
@@ -3772,7 +3758,7 @@ msgstr "メール作成中に下書きを自動的に保存しますか？"
 msgid "Save in your Address Book"
 msgstr "アドレス帳保存に"
 
-#: config/prefs.php.dist:1369
+#: config/prefs.php.dist:1374
 msgid "Save recipients automatically to the default address book?"
 msgstr "受信者を自動的にデフォルトのアドレス帳に追加しますか？"
 
@@ -3780,11 +3766,11 @@ msgstr "受信者を自動的にデフォルトのアドレス帳に追加しますか？"
 msgid "Save search as a virtual folder?"
 msgstr "検索結果を仮想フォルダに保存しますか？"
 
-#: config/prefs.php.dist:255
+#: config/prefs.php.dist:258
 msgid "Save sent mail?"
 msgstr "送信メールの控えを保存しますか？"
 
-#: lib/Compose.php:247
+#: lib/Compose.php:251
 msgid "Saving the draft failed. Could not create a drafts folder."
 msgstr "下書きが保存できません。下書きフォルダが作成できません。"
 
@@ -3801,7 +3787,7 @@ msgstr ""
 "下書きを保存できませんでした。ヘッダー %s に無効なメールアドレスが含まれてい"
 "ます：%s"
 
-#: lib/Compose.php:254
+#: lib/Compose.php:258
 #, php-format
 msgid "Saving the draft failed. This is what the server said: %s"
 msgstr "下書きを保存できませんでした。サーバからの応答：%s"
@@ -3856,11 +3842,11 @@ msgstr "フィールドを選択"
 msgid "Select accounts to fetch mail from:"
 msgstr "メールを取得するアカウントを選択："
 
-#: config/prefs.php.dist:169
+#: config/prefs.php.dist:171
 msgid "Select address book sources for adding and searching for addresses."
 msgstr "アドレスの追加や検索を行うアドレス帳のソースを選んでください。"
 
-#: config/prefs.php.dist:649 templates/search/search.html:141
+#: config/prefs.php.dist:654 templates/search/search.html:141
 msgid "Select all"
 msgstr "すべてを選択"
 
@@ -3904,7 +3890,7 @@ msgstr "選ばれているアドレス帳："
 msgid "Selected Addresses"
 msgstr "選択されたアドレス"
 
-#: pgp.php:437 templates/pgp/pgp.html:75
+#: pgp.php:444 templates/pgp/pgp.html:75
 msgid "Send Key to Public Keyserver"
 msgstr "鍵を公開鍵サーバに送る"
 
@@ -3920,11 +3906,11 @@ msgstr "メールの送信"
 msgid "Send message without a Subject?"
 msgstr "件名なしで送信しますか？"
 
-#: config/prefs.php.dist:263
+#: config/prefs.php.dist:266
 msgid "Sent"
 msgstr "送信控え"
 
-#: lib/IMAP/Tree.php:1960
+#: lib/IMAP/Tree.php:2006
 msgid "Sent mail folder"
 msgstr "送信控えフォルダ"
 
@@ -3949,7 +3935,7 @@ msgstr "サーバ："
 msgid "Set preferences for what happens when you move and delete messages."
 msgstr "メールを移動、削除した場合の処置に関する設定を指定してください。"
 
-#: config/prefs.php.dist:573
+#: config/prefs.php.dist:576
 msgid "Set the X-Priority header when composing messages?"
 msgstr "新規作成時ヘッダに X-Priority を付けますか？"
 
@@ -3965,7 +3951,7 @@ msgstr "共有メールフォルダ"
 msgid "Share your mail folders with other users."
 msgstr "あなたのメールフォルダを他のユーザと共有します。"
 
-#: lib/IMAP/Tree.php:69
+#: lib/IMAP/Tree.php:70
 msgid "Shared Folders"
 msgstr "共有フォルダ"
 
@@ -3977,7 +3963,7 @@ msgstr "PGP で署名されたメッセージを表示する時、自動的に検証しますか？"
 msgid "Should S/MIME signed messages automatically be verified when viewed?"
 msgstr "S/MIME で署名されたメッセージを表示する時、自動的に検証しますか？"
 
-#: config/prefs.php.dist:913
+#: config/prefs.php.dist:918
 msgid ""
 "Should large blocks of quoted text be shown or hidden by default? It can be "
 "toggled easily whichever you choose."
@@ -3987,7 +3973,7 @@ msgstr "長い引用を表示しますか？隠しますか？ 何時でも簡単に変更できます。"
 msgid "Should the body of text/plain messages be scanned for PGP data?"
 msgstr "メールの本文を PGP で検証しますか？"
 
-#: config/prefs.php.dist:806
+#: config/prefs.php.dist:811
 msgid "Should the compose window be closed after saving a draft?"
 msgstr "下書きの保存後、メール作成ウィンドウを閉じますか？"
 
@@ -3999,11 +3985,11 @@ msgstr "デフォルトで PGP 公開鍵をメールに添付しますか？"
 msgid "Show All Folders"
 msgstr "全フォルダ表示"
 
-#: message.php:623
+#: message.php:624
 msgid "Show All Headers"
 msgstr "ヘッダを全て表示"
 
-#: message.php:620
+#: message.php:621
 msgid "Show Common Headers"
 msgstr "主なヘッダを表示"
 
@@ -4013,9 +3999,9 @@ msgstr "削除済みを表示"
 
 #: lib/MIME/Viewer/html.php:160
 msgid "Show Images?"
-msgstr "画像を表示？"
+msgstr "画像を表示しますか？"
 
-#: message.php:626
+#: message.php:627
 msgid "Show Mailing List Information"
 msgstr "メイリングリストの情報を表示"
 
@@ -4027,35 +4013,35 @@ msgstr "登録済みのフォルダーだけを表示"
 msgid "Show Size"
 msgstr "サイズ表示"
 
-#: folders.php:380
+#: folders.php:402
 msgid "Show Unsubscribed"
 msgstr "未登録なものを表示"
 
-#: config/prefs.php.dist:847
+#: config/prefs.php.dist:852
 msgid "Show an icon to allow stripping of attachments from messages?"
 msgstr "メールから添付を削除するためのアイコンを表示しますか？"
 
-#: config/prefs.php.dist:1280
+#: config/prefs.php.dist:1285
 msgid "Show non-private mailboxes in separate folders"
 msgstr "個人用でないメールボックスは分けて表示"
 
-#: config/prefs.php.dist:1124
+#: config/prefs.php.dist:1129
 msgid "Show previews for unread messages only?"
 msgstr "未読メールだけプレビューしますか？"
 
-#: config/prefs.php.dist:1132
+#: config/prefs.php.dist:1137
 msgid "Show previews in tooltips?"
 msgstr "プレビューをツールチップスに表示しますか？"
 
-#: config/prefs.php.dist:548
+#: config/prefs.php.dist:551
 msgid "Show the Bcc: header field when composing mail?"
 msgstr "新規作成時に Bcc: を表示しますか？"
 
-#: config/prefs.php.dist:539
+#: config/prefs.php.dist:542
 msgid "Show the Cc: header field when composing mail?"
 msgstr "新規作成時に Cc: を表示しますか？"
 
-#: config/prefs.php.dist:1161
+#: config/prefs.php.dist:1166
 msgid "Show the Fetch Mail icon on the menubar?"
 msgstr "メニューバーにメール取り込みのアイコンを表示しますか？"
 
@@ -4071,7 +4057,7 @@ msgstr "HTML を別ウインドーで表示しますか？"
 msgid "Show total number of mails in folder?"
 msgstr "フォルダー内のメールの合計数を表示しますか？"
 
-#: config/prefs.php.dist:908
+#: config/prefs.php.dist:913
 msgid "Shown"
 msgstr "表示"
 
@@ -4123,11 +4109,11 @@ msgstr "スレッド順"
 msgid "Sort by To Address"
 msgstr "アドレス順"
 
-#: config/prefs.php.dist:329
+#: config/prefs.php.dist:332
 msgid "Spam"
 msgstr "Spam"
 
-#: lib/IMAP/Tree.php:1953
+#: lib/IMAP/Tree.php:1999
 msgid "Spam folder"
 msgstr "SPAM用フォルダ"
 
@@ -4135,7 +4121,7 @@ msgstr "SPAM用フォルダ"
 msgid "Spam folder:"
 msgstr "SPAMメール用フォルダ"
 
-#: compose.php:1098
+#: compose.php:1102
 msgid "Special Characters"
 msgstr "特殊文字"
 
@@ -4147,16 +4133,16 @@ msgstr "特殊な仮想フォルダーは編集できません。"
 msgid "Spell Check Failed"
 msgstr "スペルチェック失敗"
 
-#: config/prefs.php.dist:660
+#: config/prefs.php.dist:665
 msgid "Split Block"
 msgstr "ブロック分割"
 
 #: lib/MIME/Viewer/itip.php:599 lib/MIME/Viewer/itip.php:601
 #: lib/MIME/Viewer/itip.php:775 lib/MIME/Viewer/itip.php:777
-msgid "Start"
-msgstr "開始"
+msgid "Start:"
+msgstr "開始："
 
-#: compose.php:1056 templates/stationery/stationery.html:8
+#: compose.php:1060 templates/stationery/stationery.html:8
 #: templates/stationery/stationery.html:12
 msgid "Stationery"
 msgstr "定型句"
@@ -4177,7 +4163,7 @@ msgstr "定型句："
 msgid "Status"
 msgstr "状態"
 
-#: config/prefs.php.dist:629
+#: config/prefs.php.dist:634
 msgid "Strikethrough"
 msgstr "打ち消し線"
 
@@ -4193,7 +4179,7 @@ msgstr "添付を除去"
 msgid "Strip Attachments"
 msgstr "添付を除去"
 
-#: config/prefs.php.dist:1116
+#: config/prefs.php.dist:1121
 msgid "Strip linebreaks?"
 msgstr "改行を除去しますか？"
 
@@ -4205,7 +4191,7 @@ msgstr "_J件名"
 msgid "Subject"
 msgstr "件名"
 
-#: config/prefs.php.dist:1204
+#: config/prefs.php.dist:1209
 msgid "Subject Field"
 msgstr "件名欄"
 
@@ -4223,11 +4209,11 @@ msgstr "実行"
 msgid "Subscribe"
 msgstr "登録"
 
-#: config/prefs.php.dist:633
+#: config/prefs.php.dist:638
 msgid "Subscript"
 msgstr "下付き"
 
-#: lib/MIME/Viewer/pkcs7.php:445 lib/MIME/Viewer/pgp.php:451
+#: lib/MIME/Viewer/pkcs7.php:452 lib/MIME/Viewer/pgp.php:456
 #: lib/MIME/Viewer/status.php:86
 msgid "Success"
 msgstr "成功"
@@ -4241,11 +4227,11 @@ msgstr "合計"
 msgid "Summary"
 msgstr "概要"
 
-#: config/prefs.php.dist:634
+#: config/prefs.php.dist:639
 msgid "Superscript"
 msgstr "上付き"
 
-#: compose.php:1139 compose.php:1140
+#: compose.php:1150 compose.php:1151
 msgid "Switch Composition Method"
 msgstr "編集モードの切替え"
 
@@ -4269,11 +4255,11 @@ msgstr "目的のメールボックス"
 msgid "Task Lists"
 msgstr "タスク一覧"
 
-#: config/hooks.php.dist:463
+#: config/hooks.php.dist:627
 msgid "Tasks"
 msgstr "タスク"
 
-#: compose.php:1144
+#: compose.php:1155
 msgid "Te_xt"
 msgstr "_X本文"
 
@@ -4298,23 +4284,23 @@ msgstr "サービス条件を記入したファイルが conf.php で指定されていません"
 msgid "Text"
 msgstr "テキスト"
 
-#: config/prefs.php.dist:624
+#: config/prefs.php.dist:629
 msgid "Text Font"
 msgstr "文字フォント"
 
-#: config/prefs.php.dist:623
+#: config/prefs.php.dist:628
 msgid "Text Format"
 msgstr "文字書式"
 
-#: config/prefs.php.dist:625
+#: config/prefs.php.dist:630
 msgid "Text Size"
 msgstr "文字サイズ"
 
-#: config/prefs.php.dist:1245
+#: config/prefs.php.dist:1250
 msgid "The From: column of the message should be linked:"
 msgstr "メッセージの From: 欄とリンクするのは:"
 
-#: lib/IMAP/Client.php:432
+#: lib/IMAP/Client.php:434
 msgid ""
 "The IMAP server does not appear to support the authentication method "
 "selected. Please contact your system administrator."
@@ -4350,11 +4336,11 @@ msgstr "アカウント '%s' は保存されました。"
 msgid "The attachment was not found."
 msgstr "添付がありません。"
 
-#: config/prefs.php.dist:666
+#: config/prefs.php.dist:671
 msgid "The buttons NOT to show when using Xinha."
 msgstr "以下のボタンは Xinha 使用時には表示されません。"
 
-#: config/prefs.php.dist:612
+#: config/prefs.php.dist:617
 msgid "The buttons to show when using FCKeditor."
 msgstr "以下のボタンは FCKeditor 使用時に表示されます。"
 
@@ -4377,24 +4363,24 @@ msgid ""
 msgstr ""
 "現在このフォルダーにアクセスしているユーザの一覧は取得できませんでした。"
 
-#: config/prefs.php.dist:964
+#: config/prefs.php.dist:969
 msgid "The default charset for messages with no charset information:"
 msgstr "文字セット情報の無いメッセージのデフォルトの文字セット："
 
-#: lib/Compose.php:264
+#: lib/Compose.php:268
 #, php-format
 msgid "The draft has been saved to the \"%s\" folder."
 msgstr "下書きは \"%s\" フォルダーに保存されました。"
 
-#: lib/MIME/Viewer/itip.php:160
+#: lib/MIME/Viewer/itip.php:161
 msgid "The event was added to your calendar."
 msgstr "イベントは予定表に追加されました。"
 
-#: lib/MIME/Viewer/itip.php:147
+#: lib/MIME/Viewer/itip.php:148
 msgid "The event was updated in your calendar."
 msgstr "イベントは予定表で更新されました。"
 
-#: lib/Compose.php:2047
+#: lib/Compose.php:2076
 #, php-format
 msgid "The file %s could not be attached."
 msgstr "ファイル %s を添付できませんでした。"
@@ -4404,7 +4390,7 @@ msgstr "ファイル %s を添付できませんでした。"
 msgid "The folder \"%s\" already exists"
 msgstr "フォルダ \"%s\" は既に存在しています。"
 
-#: folders.php:248 lib/Folder.php:190
+#: folders.php:259 lib/Folder.php:190
 #, php-format
 msgid "The folder \"%s\" may not be deleted."
 msgstr "フォルダ \"%s\" は削除されていないかもしてれません。"
@@ -4456,7 +4442,7 @@ msgstr ""
 "画像保存ウインドーが開けません。ブラウザでポップアップウインドーをブロックし"
 "ていませんか？"
 
-#: config/prefs.php.dist:603
+#: config/prefs.php.dist:606
 msgid "The javascript editor to use on the compose page."
 msgstr "この Javascript エディターはメール作成画面で使用されます。"
 
@@ -4488,19 +4474,19 @@ msgstr ""
 msgid "The message being composed has been closed. Exiting."
 msgstr "作成中のメッセージは閉じられました。終了します。"
 
-#: lib/MIME/Viewer/pgp.php:376
+#: lib/MIME/Viewer/pgp.php:381
 msgid ""
 "The message below does not appear to be a valid PGP encrypted message. "
 "Error: "
 msgstr "以下のメッセージは正しい PGP 暗号文ではないようです。エラー："
 
-#: lib/MIME/Viewer/pgp.php:252 lib/MIME/Viewer/pgp.php:411
+#: lib/MIME/Viewer/pgp.php:252 lib/MIME/Viewer/pgp.php:416
 msgid ""
 "The message below does not appear to be in the correct PGP format (according "
 "to RFC 2015)."
 msgstr "以下のメッセージは正しい PGP 形式ではないようです（RFC2015）。"
 
-#: lib/MIME/Viewer/pgp.php:371
+#: lib/MIME/Viewer/pgp.php:376
 msgid "The message below has been compressed with PGP."
 msgstr "以下のメッセージは PGP で圧縮されています。"
 
@@ -4527,7 +4513,7 @@ msgstr ""
 msgid "The message below has been digitally signed with PGP."
 msgstr "以下のメッセージは PGP で署名されています。"
 
-#: lib/MIME/Viewer/pgp.php:313
+#: lib/MIME/Viewer/pgp.php:318
 msgid ""
 "The message below has been encrypted with PGP, however, PGP support is "
 "disabled so the message cannot be decrypted."
@@ -4535,7 +4521,7 @@ msgstr ""
 "以下のメッセージは PGP で暗号化されていますが、現在 PGP が無効になっています"
 "ので、メッセージの復号はできません。"
 
-#: lib/MIME/Viewer/pgp.php:355
+#: lib/MIME/Viewer/pgp.php:360
 msgid ""
 "The message below has been encrypted with PGP, however, no personal private "
 "key exists so the message cannot be decrypted."
@@ -4543,11 +4529,11 @@ msgstr ""
 "以下のメッセージは PGP で暗号化されていますが、秘密鍵が無いので、メッセージの"
 "復号はできません。"
 
-#: lib/MIME/Viewer/pgp.php:371
+#: lib/MIME/Viewer/pgp.php:376
 msgid "The message below has been encrypted with PGP."
 msgstr "以下のメッセージは PGP で暗号化されています。"
 
-#: lib/MIME/Viewer/pgp.php:365
+#: lib/MIME/Viewer/pgp.php:370
 msgid ""
 "The message below has been encrypted with PGP. You must enter the passphrase "
 "for your PGP private key before it can be decrypted."
@@ -4555,7 +4541,7 @@ msgstr ""
 "以下のメッセージは PGP で暗号化されています。メッセージを表示するには、あなた"
 "の PGP 秘密鍵のパスフレーズを入力する必要があります。"
 
-#: lib/MIME/Viewer/pgp.php:348
+#: lib/MIME/Viewer/pgp.php:353
 msgid ""
 "The message below has been encrypted with PGP. You must enter the passphrase "
 "that was used to encrypt this message."
@@ -4563,11 +4549,11 @@ msgstr ""
 "以下のメッセージは PGP で暗号化されています。暗号化の際に使用したパスフレーズ"
 "を入力する必要があります。"
 
-#: lib/MIME/Viewer/pgp.php:455
+#: lib/MIME/Viewer/pgp.php:460
 msgid "The message below has been verified."
 msgstr "以下のメッセージは検証されました。"
 
-#: lib/Crypt/PGP.php:380
+#: lib/Crypt/PGP.php:382
 msgid "The message below has not been digitally signed or encrypted with PGP."
 msgstr "以下のメッセージは PGP で署名または暗号化されていません。"
 
@@ -4595,7 +4581,7 @@ msgstr "メッセージは SPAM としてシステム管理者に報告されました。"
 msgid "The message has been reported as spam."
 msgstr "メッセージは SPAM として報告されました。"
 
-#: lib/MIME/Viewer/pkcs7.php:450
+#: lib/MIME/Viewer/pkcs7.php:457
 #, php-format
 msgid "The message has been verified. Sender: %s."
 msgstr "メッセージは検証されました。送信者：%s"
@@ -4655,7 +4641,7 @@ msgstr "定型句 \"%s\" は削除されました。"
 msgid "The stationery \"%s\" has been updated."
 msgstr "定型句 \"%s\" は更新されました。"
 
-#: lib/Compose.php:972
+#: lib/Compose.php:997
 msgid ""
 "The system is not properly configured. A detailed error description has been "
 "logged for the administrator."
@@ -4705,7 +4691,7 @@ msgstr "表示可能な代替パートはありません。"
 msgid "There are no messages in this mailbox."
 msgstr "このメールボックスにはメールはありません。"
 
-#: thread.php:104
+#: thread.php:108
 msgid "There is no text that can be displayed inline."
 msgstr "インライン表示用文字列はありません。"
 
@@ -4745,7 +4731,7 @@ msgstr "フォルダ %s でエラーが発生しました。サーバからの応答： "
 msgid "There was an error importing %s."
 msgstr "%s をインポート中にエラーが発生しました。"
 
-#: lib/MIME/Viewer/itip.php:157
+#: lib/MIME/Viewer/itip.php:158
 msgid "There was an error importing the event:"
 msgstr "イベントをインポート中にエラーが発生しました："
 
@@ -4764,7 +4750,7 @@ msgid ""
 "server said"
 msgstr "\"%s\" を \"%s\" に移動中にエラーが発生しました。サーバからの応答： "
 
-#: lib/Compose.php:748
+#: lib/Compose.php:755
 #, php-format
 msgid "There was an error sending your message: %s"
 msgstr "メールの送信中にエラーが発生しました: %s"
@@ -4799,13 +4785,13 @@ msgstr "この操作には時間がかかります。操作を続けますか？"
 msgid "This message contains a Macintosh file."
 msgstr "このメールには Macintosh のファイルが含まれています。"
 
-#: lib/MIME/Viewer/pkcs7.php:476
+#: lib/MIME/Viewer/pkcs7.php:483
 msgid ""
 "This message contains an attachment that has been digitally signed via S/"
 "MIME."
 msgstr "このメッセージには S/MIME の電子署名が含まれています。"
 
-#: lib/MIME/Viewer/pkcs7.php:480
+#: lib/MIME/Viewer/pkcs7.php:487
 msgid "This message contains an attachment that has been encrypted via S/MIME."
 msgstr "このメッセージには S/MIME の暗号文が含まれています。"
 
@@ -4823,7 +4809,7 @@ msgstr "このメッセージは正しい S/MIME 形式ではありません。"
 msgid "This message has been digitally signed via S/MIME."
 msgstr "このメッセージは S/MIME で署名されています。"
 
-#: lib/MIME/Viewer/pkcs7.php:170 lib/MIME/Viewer/pkcs7.php:294
+#: lib/MIME/Viewer/pkcs7.php:170 lib/MIME/Viewer/pkcs7.php:297
 msgid "This message has been encrypted via S/MIME."
 msgstr "このメッセージは S/MIME で暗号化されています。"
 
@@ -4831,7 +4817,7 @@ msgstr "このメッセージは S/MIME で暗号化されています。"
 msgid "This message part cannot be viewed because it is too large."
 msgstr "本文は大きすぎるので表示できません。"
 
-#: message.php:520
+#: message.php:521
 msgid "This message to"
 msgstr "メールの行先"
 
@@ -4856,7 +4842,7 @@ msgstr "このウインドーはメール作成画面から呼ばれなければなりません。"
 msgid "Thread Display:"
 msgstr "スレッド表示："
 
-#: thread.php:177 config/prefs.php.dist:1206
+#: thread.php:181 config/prefs.php.dist:1211
 msgid "Thread View"
 msgstr "スレッド表示"
 
@@ -4868,33 +4854,33 @@ msgstr "添付された PDF ファイルのサムネイル"
 msgid "Thumbnail of attached image"
 msgstr "添付された画像のサムネイル"
 
-#: compose.php:831 mailbox.php:587 lib/Search.php:716 lib/UI/Mailbox.php:90
+#: compose.php:836 mailbox.php:587 lib/Search.php:716 lib/UI/Mailbox.php:90
 #: lib/UI/Message.php:26 templates/contacts/contacts.html:40
 #: templates/login/recompose.html:14
 msgid "To"
 msgstr "To"
 
-#: config/prefs.php.dist:1203
+#: config/prefs.php.dist:1208
 msgid "To Address"
 msgstr "宛先"
 
-#: message.php:564
+#: message.php:565
 msgid "To All"
 msgstr "全員へ"
 
-#: message.php:560
+#: message.php:561
 msgid "To List"
 msgstr "リストへ"
 
-#: message.php:557
+#: message.php:558
 msgid "To Sender"
 msgstr "送信者へ"
 
-#: message.php:564
+#: message.php:565
 msgid "To _All"
 msgstr "_A全員へ"
 
-#: message.php:560
+#: message.php:561
 msgid "To _List"
 msgstr "_Lリストへ"
 
@@ -4910,7 +4896,7 @@ msgstr ""
 "複数の項目を選択するには、PCではControlキイ、MacならCommandキイを押しながらク"
 "リックします。"
 
-#: config/prefs.php.dist:514
+#: config/prefs.php.dist:517
 msgid "To the stationery and form responses."
 msgstr "定型句の作成・編集画面に移動します。"
 
@@ -4920,19 +4906,19 @@ msgid ""
 "higher."
 msgstr "TLS 接続を使用するには、PHP 5.1.0 以上のバージョンが必要です。"
 
-#: thread.php:117 templates/thread/thread.html:31
+#: thread.php:121 templates/thread/thread.html:31
 msgid "To:"
 msgstr "To:"
 
-#: config/prefs.php.dist:659
+#: config/prefs.php.dist:664
 msgid "Toggle Borders"
 msgstr "境界線の切替"
 
-#: config/prefs.php.dist:663
+#: config/prefs.php.dist:668
 msgid "Toggle HTML Source"
 msgstr "HTMLソース切り替え"
 
-#: config/prefs.php.dist:683
+#: config/prefs.php.dist:688
 msgid "Top"
 msgstr "最も上"
 
@@ -4944,11 +4930,11 @@ msgstr "合計サイズ:"
 msgid "Traditional"
 msgstr "通常"
 
-#: config/prefs.php.dist:316
+#: config/prefs.php.dist:319
 msgid "Trash"
 msgstr "ゴミ箱"
 
-#: lib/IMAP/Tree.php:1940
+#: lib/IMAP/Tree.php:1986
 msgid "Trash folder"
 msgstr "ゴミ箱フォルダ"
 
@@ -4956,7 +4942,11 @@ msgstr "ゴミ箱フォルダ"
 msgid "Trash folder:"
 msgstr "ゴミ箱フォルダ："
 
-#: lib/Quota/sql.php:71
+#: lib/MIME/Viewer/itip.php:144
+msgid "Trying to import the event instead."
+msgstr "代わりにイベントを読み込んでみます。"
+
+#: lib/Quota/sql.php:73
 msgid "Unable to connect to SQL server."
 msgstr "SQL サーバに接続できません。"
 
@@ -4975,7 +4965,7 @@ msgstr "未返信"
 msgid "Unanswered messages"
 msgstr "未返信メール"
 
-#: message.php:551 mailbox.php:514
+#: message.php:552 mailbox.php:514
 msgid "Undelete"
 msgstr "削除取り消し"
 
@@ -4983,23 +4973,23 @@ msgstr "削除取り消し"
 msgid "Undeleted messages"
 msgstr "削除されていないメール"
 
-#: config/prefs.php.dist:628
+#: config/prefs.php.dist:633
 msgid "Underline"
 msgstr "下線"
 
-#: lib/MIME/Headers.php:254 lib/UI/Mailbox.php:67 lib/UI/Mailbox.php:86
+#: lib/MIME/Headers.php:251 lib/UI/Mailbox.php:67 lib/UI/Mailbox.php:86
 msgid "Undisclosed Recipients"
 msgstr "未公開の宛先"
 
-#: config/prefs.php.dist:647
+#: config/prefs.php.dist:652
 msgid "Undoes your last action"
 msgstr "最後の操作を取り消す"
 
-#: lib/IMAP/Client.php:462
+#: lib/IMAP/Client.php:464
 msgid "Unexpected response from server to AUTHENTICATE command."
 msgstr "AUTHENTICATE コマンドで、サーバから予期しない応答がありました。"
 
-#: lib/IMAP/Client.php:428
+#: lib/IMAP/Client.php:430
 msgid "Unexpected response from server to Digest-MD5 response."
 msgstr "Digest-MD5 応答で、サーバから予期しない応答がありました。"
 
@@ -5037,7 +5027,7 @@ msgstr "不明な受信者"
 msgid "Unknown Task"
 msgstr "不明なタスク"
 
-#: smime.php:339 pgp.php:440
+#: smime.php:346 pgp.php:447
 msgid "Unload Passphrase"
 msgstr "パスフレーズを解除"
 
@@ -5082,7 +5072,7 @@ msgstr "アップロード："
 msgid "Use Default Value"
 msgstr "デフォルトを使用"
 
-#: config/prefs.php.dist:291
+#: config/prefs.php.dist:294
 msgid "Use IMAP folder subscriptions?"
 msgstr "IMAP フォルダを登録（購読）／未登録（非購読）で選択しますか？"
 
@@ -5124,7 +5114,7 @@ msgstr "表示"
 msgid "View %s"
 msgstr "%s を表示"
 
-#: smime.php:313 pgp.php:412
+#: smime.php:318 pgp.php:417
 #, php-format
 msgid "View %s Public Key"
 msgstr "%s の公開鍵を表示"
@@ -5138,19 +5128,19 @@ msgstr "添付を表示"
 msgid "View Messages"
 msgstr "メール表示"
 
-#: smime.php:340 pgp.php:441
+#: smime.php:347 pgp.php:448
 msgid "View Personal Private Key"
 msgstr "個人の秘密鍵を表示"
 
-#: smime.php:336 pgp.php:435
+#: smime.php:343 pgp.php:442
 msgid "View Personal Public Key"
 msgstr "個人の公開鍵を表示"
 
-#: message.php:575
+#: message.php:576
 msgid "View Thread"
 msgstr "スレッド表示"
 
-#: lib/MIME/Viewer/pkcs7.php:484
+#: lib/MIME/Viewer/pkcs7.php:491
 msgid "View attachment in a separate window"
 msgstr "添付を別ウインドーで表示"
 
@@ -5158,11 +5148,11 @@ msgstr "添付を別ウインドーで表示"
 msgid "View content in a separate window"
 msgstr "内容を別ウインドーで表示"
 
-#: lib/MIME/Viewer/itip.php:148 lib/MIME/Viewer/itip.php:161
+#: lib/MIME/Viewer/itip.php:149 lib/MIME/Viewer/itip.php:162
 msgid "View event"
 msgstr "イベントを表示"
 
-#: folders.php:436 mailbox.php:695
+#: folders.php:458 mailbox.php:695
 #, php-format
 msgid "View messages in %s"
 msgstr "%s 中のメッセージを表示"
@@ -5184,7 +5174,7 @@ msgstr "仮想フォルダ"
 msgid "Virtual Folder \"%s\" created succesfully."
 msgstr "仮想フォルダ \"%s\" が作成されました。"
 
-#: lib/IMAP/Tree.php:65 templates/search/search.html:166
+#: lib/IMAP/Tree.php:66 templates/search/search.html:166
 msgid "Virtual Folders"
 msgstr "仮想フォルダ"
 
@@ -5199,7 +5189,7 @@ msgstr "仮想フォルダにはラベルが必要です。"
 msgid "Virtual INBOX"
 msgstr "仮想 INBOX"
 
-#: lib/IMAP/Tree.php:1980
+#: lib/IMAP/Tree.php:2026
 msgid "Virtual INBOX Folder"
 msgstr "仮想 INBOX フォルダ"
 
@@ -5207,7 +5197,7 @@ msgstr "仮想 INBOX フォルダ"
 msgid "Virtual Trash"
 msgstr "仮想ゴミ箱"
 
-#: lib/IMAP/Tree.php:1976
+#: lib/IMAP/Tree.php:2022
 msgid "Virtual Trash Folder"
 msgstr "仮想ゴミ箱フォルダ"
 
@@ -5215,7 +5205,7 @@ msgstr "仮想ゴミ箱フォルダ"
 msgid "Virtual folder label:"
 msgstr "仮想フォルダのラベル："
 
-#: lib/Crypt/PGP.php:380 lib/MIME/Viewer/pkcs7.php:439
+#: lib/Crypt/PGP.php:382 lib/MIME/Viewer/pkcs7.php:446
 msgid "Warning"
 msgstr "警告"
 
@@ -5233,13 +5223,13 @@ msgstr ""
 msgid "Welcome to %s"
 msgstr "%s へようこそ"
 
-#: config/prefs.php.dist:857
+#: config/prefs.php.dist:862
 msgid ""
 "What should we do with spam messages after they have been reported as spam "
 "or innocent?"
 msgstr "SPAM あるいは無害と報告した後でメッセージをどうしますか？"
 
-#: config/prefs.php.dist:1007
+#: config/prefs.php.dist:1012
 msgid ""
 "When deleting messages, move them to your Trash folder instead of marking "
 "them as deleted?"
@@ -5247,23 +5237,23 @@ msgstr ""
 "メッセージの削除は、削除という印を付けるのではなく、ゴミ箱フォルダに移動しま"
 "すか？"
 
-#: config/prefs.php.dist:1191
+#: config/prefs.php.dist:1196
 msgid ""
 "When opening a new mailbox for the first time, which page do you want to "
 "start on?"
 msgstr "新しいメールボックスを開いた時、どのページから表示しますか？"
 
-#: config/prefs.php.dist:755
+#: config/prefs.php.dist:760
 msgid ""
 "When replying/forwarding to a message, should we use the same format as the "
 "original message?"
 msgstr "返信、転送する時、元の形式と同じ形式にしますか？"
 
-#: config/prefs.php.dist:719
+#: config/prefs.php.dist:724
 msgid "When saving sent-mail, should we save attachment data?"
 msgstr "送信控えを保存する際、添付も保存しますか？"
 
-#: config/prefs.php.dist:675
+#: config/prefs.php.dist:680
 msgid ""
 "When sending mail or expanding addresses, what domain should we append to "
 "unqualified addresses (email addresses without \"@\")?"
@@ -5271,19 +5261,19 @@ msgstr ""
 "メール送信時やアドレス展開時にドメインが省略されていた場合に補完するドメイン"
 "名は？"
 
-#: config/prefs.php.dist:976
+#: config/prefs.php.dist:981
 msgid "Where do you want to display links to alternative formats of a message?"
 msgstr "メッセージの代替形式へのリンクをどの位置に表示しますか？"
 
-#: config/prefs.php.dist:686
+#: config/prefs.php.dist:691
 msgid "Where should the cursor be located in the compose text area by default?"
 msgstr "メール作成画面でカーソルを本文のどの位置におきますか？"
 
-#: message.php:583 mailbox.php:530
+#: message.php:584 mailbox.php:530
 msgid "Whitelist"
 msgstr "ホワイトリスト"
 
-#: lib/prefs.php:241 config/prefs.php.dist:602
+#: lib/prefs.php:241 config/prefs.php.dist:605
 msgid "Xinha"
 msgstr "Xinha"
 
@@ -5291,8 +5281,8 @@ msgstr "Xinha"
 msgid "Year"
 msgstr "年"
 
-#: templates/javascript_defs.php:43 config/prefs.php.dist:1269
-#: config/prefs.php.dist:1291 templates/compose/compose.html:302
+#: templates/javascript_defs.php:43 config/prefs.php.dist:1274
+#: config/prefs.php.dist:1296 templates/compose/compose.html:302
 msgid "Yes"
 msgstr "はい"
 
@@ -5331,14 +5321,14 @@ msgstr "あなたはフォルダを作成できません。"
 msgid "You are not allowed to create more than %d folders."
 msgstr "あなたは %d 個以上のフォルダーを作成できません。"
 
-#: lib/Compose.php:985
+#: lib/Compose.php:1010
 #, php-format
 msgid ""
 "You are not allowed to send messages to more than %d recipients within %d "
 "hours."
 msgstr "あなたは %2$d 時間内に %1$d 人以上にメールを送信できません。"
 
-#: lib/Compose.php:1257
+#: lib/Compose.php:1282
 #, php-format
 msgid "You are not allowed to send messages to more than %d recipients."
 msgstr "あなたは %d 人以上にメールを送信できません。"
@@ -5374,12 +5364,12 @@ msgstr "あなたにはこのフォルダのアクセス権を変更する権限がありません。"
 msgid "You forwarded this message on %%s to the following recipients: %s."
 msgstr "%%s にメールを次の人に転送しました：%s"
 
-#: lib/IMP.php:1092
+#: lib/IMP.php:1098
 #, php-format
 msgid "You have %s new messages."
 msgstr "新着メールが %s 通あります。"
 
-#: lib/IMP.php:1092
+#: lib/IMP.php:1098
 msgid "You have 1 new message."
 msgstr "新着メールが 1 通あります。"
 
@@ -5403,18 +5393,18 @@ msgstr "新着メールがあります："
 msgid "You have not configured any external mail accounts."
 msgstr "外部のメールアカウントは設定されていません。"
 
-#: lib/Compose.php:1244
+#: lib/Compose.php:1269
 msgid "You must enter at least one recipient."
 msgstr "1 人以上の宛先を指定してください。"
 
-#: lib/MIME/Viewer/pgp.php:365
+#: lib/MIME/Viewer/pgp.php:370
 msgid ""
 "You must enter the passphrase for your PGP private key to view this message."
 msgstr ""
 "このメッセージを表示するには、あなたの PGP 秘密鍵のパスフレーズを入力する必要"
 "があります。"
 
-#: lib/MIME/Viewer/pkcs7.php:313
+#: lib/MIME/Viewer/pkcs7.php:316
 msgid ""
 "You must enter the passphrase for your S/MIME private key to view this "
 "message"
@@ -5422,7 +5412,7 @@ msgstr ""
 "このメッセージを表示するには、あなたの S/MIME 秘密鍵のパスフレーズを入力する"
 "必要があります。"
 
-#: lib/MIME/Viewer/pgp.php:348
+#: lib/MIME/Viewer/pgp.php:353
 msgid "You must enter the passphrase that was used to encrypt this message."
 msgstr ""
 "このメッセージを暗号化する際に使用されたパスフレーズを入力する必要がありま"
@@ -5510,7 +5500,7 @@ msgstr "あなたの秘密鍵："
 msgid "Your Public Key:"
 msgstr "あなたの公開鍵："
 
-#: config/prefs.php.dist:199
+#: config/prefs.php.dist:202
 msgid "Your Reply-to: address: <em>(optional)</em>"
 msgstr "返信先として表示されるアドレス：<em>（オプション）</em>"
 
@@ -5526,7 +5516,7 @@ msgstr "あなたは外部からのメール取り込みはできません。"
 msgid "Your accounts:"
 msgstr "あなたのアカウント："
 
-#: config/prefs.php.dist:207
+#: config/prefs.php.dist:210
 msgid ""
 "Your alias addresses: <em>(optional, enter each address on a new line)</em>"
 msgstr "あなたの別名アドレス:<em>（オプション。１行に１アドレスを指定）</em>"
@@ -5536,11 +5526,11 @@ msgid "Your browser does not support inline display of this image type."
 msgstr ""
 "お使いのブラウザではこの種類の画像のインライン表示をサポートしていません"
 
-#: config/prefs.php.dist:526
+#: config/prefs.php.dist:529
 msgid "Your browser does not support this feature."
 msgstr "お使いのブラウザではこの機能をサポートしていません"
 
-#: config/prefs.php.dist:697
+#: config/prefs.php.dist:702
 msgid "Your default charset for sending messages:"
 msgstr "送信時のデフォルト文字セット:"
 
@@ -5571,7 +5561,7 @@ msgstr ""
 msgid "Your message was successfully delivered."
 msgstr "あなたのメールは配達されました。"
 
-#: config/prefs.php.dist:231
+#: config/prefs.php.dist:234
 msgid "Your signature:"
 msgstr "署名:"
 
@@ -5580,12 +5570,12 @@ msgstr "署名:"
 msgid "[Attachment stripped: Original attachment type: %s, name: %s]"
 msgstr "[添付を取り除きました: 元の添付の型：%s、名前 %s]"
 
-#: templates/javascript/addressesBlocks.js:7 lib/MIME/Headers.php:264
+#: templates/javascript/addressesBlocks.js:7 lib/MIME/Headers.php:261
 msgid "[Hide Addresses]"
 msgstr "[アドレスを隠す]"
 
-#: message.php:285 rss.php:75 mailbox.php:719 lib/Compose.php:1891
-#: lib/Compose.php:2369
+#: message.php:285 rss.php:75 mailbox.php:719 lib/Compose.php:1920
+#: lib/Compose.php:2398
 msgid "[No Subject]"
 msgstr "[件名なし]"
 
@@ -5597,12 +5587,12 @@ msgstr "[鍵をアドレス帳に保存]"
 msgid "[Show Addresses -"
 msgstr "[アドレスを表示 -"
 
-#: lib/MIME/Headers.php:263
+#: lib/MIME/Headers.php:260
 #, php-format
 msgid "[Show Addresses - %d recipients]"
 msgstr "[アドレスを表示 - %d 受信者]"
 
-#: lib/Compose.php:3015
+#: lib/Compose.php:3044
 msgid "[Truncated Text]"
 msgstr "[省略した文]"
 
@@ -5610,51 +5600,51 @@ msgstr "[省略した文]"
 msgid "[View the raw key]"
 msgstr "[鍵を表示]"
 
-#: compose.php:966
+#: compose.php:970
 msgid "_Bcc"
 msgstr "_Bcc"
 
-#: message.php:579 mailbox.php:526
+#: message.php:580 mailbox.php:526
 msgid "_Blacklist"
 msgstr "_Bブラックリスト"
 
-#: compose.php:963
+#: compose.php:967
 msgid "_Cc"
 msgstr "_Cc"
 
-#: message.php:553 mailbox.php:508 mailbox.php:510
+#: message.php:554 mailbox.php:508 mailbox.php:510
 msgid "_Delete"
 msgstr "_D削除"
 
-#: lib/IMP.php:865
+#: lib/IMP.php:871
 msgid "_Folders"
 msgstr "_Fフォルダ"
 
-#: compose.php:943
+#: compose.php:947
 msgid "_Identity"
 msgstr "_ID"
 
-#: lib/IMP.php:834
+#: lib/IMP.php:840
 msgid "_Inbox"
 msgstr "_INBOX"
 
-#: lib/IMP.php:902
+#: lib/IMP.php:908
 msgid "_Log out"
 msgstr "_Lログアウト"
 
-#: message.php:588
+#: message.php:589
 msgid "_Message Source"
 msgstr "_Mメール原文"
 
-#: lib/IMP.php:862
+#: lib/IMP.php:868
 msgid "_New Message"
 msgstr "_N新規メール"
 
-#: message.php:602
+#: message.php:603
 msgid "_Print"
 msgstr "_P印刷"
 
-#: compose.php:1035
+#: compose.php:1039
 msgid "_Priority"
 msgstr "_P優先度"
 
@@ -5663,15 +5653,15 @@ msgstr "_P優先度"
 msgid "_Refresh %s"
 msgstr "_R再表示%s"
 
-#: message.php:556
+#: message.php:557
 msgid "_Reply"
 msgstr "_R返信"
 
-#: lib/IMP.php:867
+#: lib/IMP.php:873
 msgid "_Search"
 msgstr "_S検索"
 
-#: compose.php:928
+#: compose.php:932
 msgid "_Send Message"
 msgstr "_S送信"
 
@@ -5679,7 +5669,7 @@ msgstr "_S送信"
 msgid "_Thread"
 msgstr "_Tスレッド"
 
-#: compose.php:959 compose.php:961
+#: compose.php:963 compose.php:965
 msgid "_To"
 msgstr "_To"
 
@@ -5687,15 +5677,15 @@ msgstr "_To"
 msgid "_Undelete"
 msgstr "_U削除取消"
 
-#: message.php:575
+#: message.php:576
 msgid "_View Thread"
 msgstr "_Vスレッド表示"
 
-#: message.php:583 mailbox.php:530
+#: message.php:584 mailbox.php:530
 msgid "_Whitelist"
 msgstr "_Wホワイトリスト"
 
-#: lib/Compose.php:1012
+#: lib/Compose.php:1037
 msgid "addressee unknown"
 msgstr "アドレス不明"
 
@@ -5703,7 +5693,7 @@ msgstr "アドレス不明"
 msgid "and"
 msgstr "かつ"
 
-#: lib/Compose.php:2002
+#: lib/Compose.php:2031
 msgid "attachment"
 msgstr "添付"
 
@@ -5715,31 +5705,31 @@ msgstr "attachments.zip"
 msgid "bytes"
 msgstr "バイト"
 
-#: lib/Compose.php:1036
+#: lib/Compose.php:1061
 msgid "cannot create output file"
 msgstr "出力ファイルが作成できません"
 
-#: lib/Compose.php:1008
+#: lib/Compose.php:1033
 msgid "cannot open input"
 msgstr "入力ファイルが開けません"
 
-#: lib/Compose.php:1000
+#: lib/Compose.php:1025
 msgid "command line usage error"
 msgstr "コマンド行使用のエラー"
 
-#: lib/Compose.php:1056
+#: lib/Compose.php:1081
 msgid "configuration error"
 msgstr "設定エラー"
 
-#: lib/Compose.php:1032
+#: lib/Compose.php:1057
 msgid "critical system file missing"
 msgstr "重要なシステムファイルの欠落"
 
-#: lib/Compose.php:1004
+#: lib/Compose.php:1029
 msgid "data format error"
 msgstr "データ形式エラー"
 
-#: lib/Compose.php:1060
+#: lib/Compose.php:1085
 msgid "entry not found"
 msgstr "項目がありません"
 
@@ -5747,7 +5737,7 @@ msgstr "項目がありません"
 msgid "from"
 msgstr "from"
 
-#: lib/Compose.php:1016
+#: lib/Compose.php:1041
 msgid "host name unknown"
 msgstr "ホスト名不明"
 
@@ -5755,11 +5745,11 @@ msgstr "ホスト名不明"
 msgid "in"
 msgstr "in"
 
-#: lib/Compose.php:1040
+#: lib/Compose.php:1065
 msgid "input/output error"
 msgstr "入出力エラー"
 
-#: lib/Compose.php:1024
+#: lib/Compose.php:1049
 msgid "internal software error"
 msgstr "ソフトウェア内部のエラー"
 
@@ -5767,7 +5757,7 @@ msgstr "ソフトウェア内部のエラー"
 msgid "into folder"
 msgstr "フォルダーに"
 
-#: smime.php:39 pgp.php:79
+#: smime.php:39 pgp.php:84
 msgid "key"
 msgstr "キイ"
 
@@ -5775,7 +5765,7 @@ msgstr "キイ"
 msgid "mailbox file"
 msgstr "メールボックス・ファイル"
 
-#: lib/Compose.php:816
+#: lib/Compose.php:823
 msgid "name"
 msgstr "名前"
 
@@ -5787,7 +5777,7 @@ msgstr "not"
 msgid "or"
 msgstr "または"
 
-#: lib/Compose.php:1052
+#: lib/Compose.php:1077
 msgid "permission denied"
 msgstr "アクセスは拒否されました"
 
@@ -5795,19 +5785,19 @@ msgstr "アクセスは拒否されました"
 msgid "recipients]"
 msgstr "[受信者]"
 
-#: lib/Compose.php:1048
+#: lib/Compose.php:1073
 msgid "remote error in protocol"
 msgstr "リモートでのプロトコルエラー"
 
-#: lib/Compose.php:1020
+#: lib/Compose.php:1045
 msgid "service unavailable"
 msgstr "サービス不能"
 
-#: lib/Compose.php:1028
+#: lib/Compose.php:1053
 msgid "system error"
 msgstr "システムエラー"
 
-#: lib/Compose.php:1044
+#: lib/Compose.php:1069
 msgid "temporary failure"
 msgstr "一時的なエラー"
 

@@ -3,7 +3,7 @@
  * The IMP_UI_Mailbox:: class is designed to provide a place to dump common
  * code shared among IMP's various UI views for the mailbox page.
  *
- * $Horde: imp/lib/UI/Mailbox.php,v 1.9.2.7 2009-01-06 15:24:12 jan Exp $
+ * $Horde: imp/lib/UI/Mailbox.php,v 1.9.2.8 2009/12/16 21:56:14 jan Exp $
  *
  * Copyright 2006-2009 The Horde Project (http://www.horde.org/)
  *
@@ -127,14 +127,11 @@ class IMP_UI_Mailbox {
     function getSize($size)
     {
         if ($size > 1024) {
-            if (!isset($this->_c['localeinfo'])) {
-                $this->_c['localeinfo'] = NLS::getLocaleInfo();
-            }
             $size = $size / 1024;
             if ($size > 1024) {
-                return sprintf(_("%s MB"), number_format($size / 1024, 1, $this->_c['localeinfo']['decimal_point'], $this->_c['localeinfo']['thousands_sep']));
+                return sprintf(_("%s MB"), IMP::numberFormat($size / 1024, 1));
             } else {
-                return sprintf(_("%s KB"), number_format($size, 0, $this->_c['localeinfo']['decimal_point'], $this->_c['localeinfo']['thousands_sep']));
+                return sprintf(_("%s KB"), IMP::numberFormat($size, 0));
             }
         } else {
             return $size;

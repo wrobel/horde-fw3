@@ -7,7 +7,7 @@
  * See the enclosed file COPYING for license information (LGPL). If you did not
  * receive this file, see http://www.fsf.org/copyleft/lgpl.html.
  *
- * $Horde: framework/SyncML/SyncML/Backend/Horde.php,v 1.8.2.18 2009-07-20 15:42:26 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Backend/Horde.php,v 1.8.2.19 2009/12/29 17:28:23 jan Exp $
  *
  * @author  Karsten Fourmont <karsten@horde.org>
  * @package SyncML
@@ -344,14 +344,16 @@ class SyncML_Backend_Horde extends SyncML_Backend {
      *                             this is the guid.
      * @param string $contentType  Content-Type: the MIME type in which the
      *                             function should return the data.
+     * @param array $fields        Hash of field names and SyncML_Property
+     *                             properties with the requested fields.
      *
      * @return mixed  A string with the data entry or a PEAR_Error object.
      */
-    function retrieveEntry($databaseURI, $suid, $contentType)
+    function retrieveEntry($databaseURI, $suid, $contentType, $fields)
     {
         return $GLOBALS['registry']->call(
             $this->_normalize($databaseURI) . '/export',
-            array('guid' => $suid, 'contentType' => $contentType));
+            array('guid' => $suid, 'contentType' => $contentType, 'dummy' => null, 'fields' => $fields));
     }
 
     /**

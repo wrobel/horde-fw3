@@ -7,7 +7,7 @@
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.
  *
- * $Horde: framework/Alarm/Alarm/sql.php,v 1.11.2.6 2009-02-25 05:35:41 chuck Exp $
+ * $Horde: framework/Alarm/Alarm/sql.php,v 1.11.2.11 2009/12/10 13:30:48 jan Exp $
  */
 
 /**
@@ -99,11 +99,14 @@ class Horde_Alarm_sql extends Horde_Alarm {
      */
     function _get($id, $user)
     {
-        $query = sprintf('SELECT alarm_id, alarm_uid, alarm_start, alarm_end, alarm_methods, alarm_params, alarm_title, alarm_text, alarm_snooze, alarm_internal FROM %s WHERE alarm_id = ? AND alarm_uid = ?', $this->_params['table']);
+        $query = sprintf('SELECT alarm_id, alarm_uid, alarm_start, alarm_end, alarm_methods, alarm_params, alarm_title, alarm_text, alarm_snooze, alarm_internal FROM %s WHERE alarm_id = ? AND %s',
+                         $this->_params['table'],
+                         !empty($user) ? 'alarm_uid = ?' : '(alarm_uid = ? OR alarm_uid IS NULL)');
         Horde::logMessage('SQL query by Horde_Alarm_sql::_get(): ' . $query,
                           __FILE__, __LINE__, PEAR_LOG_DEBUG);
         $alarm = $this->_db->getRow($query, array($id, $user), DB_FETCHMODE_ASSOC);
         if (is_a($alarm, 'PEAR_Error')) {
+            Horde::logMessage($alarm, __FILE__, __LINE__);
             return $alarm;
         }
         if (empty($alarm)) {
@@ -136,10 +139,10 @@ class Horde_Alarm_sql extends Horde_Alarm {
     {
         $query = sprintf('SELECT alarm_id, alarm_uid, alarm_start, alarm_end, alarm_methods, alarm_params, alarm_title, alarm_text, alarm_snooze, alarm_internal FROM %s WHERE alarm_dismissed = 0 AND ((alarm_snooze IS NULL AND alarm_start <= ?) OR alarm_snooze <= ?) AND (alarm_end IS NULL OR alarm_end >= ?)%s ORDER BY alarm_start, alarm_end',
                          $this->_params['table'],
-                         is_null($user) ? '' : ' AND (alarm_uid = ? OR alarm_uid = ?)');
-        $values = array($time->rfc3339DateTime(),
-                        $time->rfc3339DateTime(),
-                        $time->rfc3339DateTime());
+                         is_null($user) ? '' : ' AND (alarm_uid IS NULL OR alarm_uid = ? OR alarm_uid = ?)');
+        $values = array($time->sqlDateTime(),
+                        $time->sqlDateTime(),
+                        $time->sqlDateTime());
         if (!is_null($user)) {
             $values[] = '';
             $values[] = (string)$user;
@@ -150,10 +153,12 @@ class Horde_Alarm_sql extends Horde_Alarm {
         $alarms = array();
         $result = $this->_db->query($query, $values);
         if (is_a($result, 'PEAR_Error')) {
+            Horde::logMessage($result, __FILE__, __LINE__);
             return $result;
         }
         while ($alarm = $result->fetchRow(DB_FETCHMODE_ASSOC)) {
             if (is_a($alarm, 'PEAR_Error')) {
+                Horde::logMessage($alarm, __FILE__, __LINE__);
                 return $alarm;
             }
             $alarms[$alarm['alarm_id']] = array(
@@ -182,8 +187,8 @@ class Horde_Alarm_sql extends Horde_Alarm {
         $query = sprintf('INSERT INTO %s (alarm_id, alarm_uid, alarm_start, alarm_end, alarm_methods, alarm_params, alarm_title, alarm_text, alarm_snooze) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)', $this->_params['table']);
         $values = array($alarm['id'],
                         isset($alarm['user']) ? $alarm['user'] : '',
-                        $alarm['start']->rfc3339DateTime(),
-                        empty($alarm['end']) ? null : $alarm['end']->rfc3339DateTime(),
+                        $alarm['start']->sqlDateTime(),
+                        empty($alarm['end']) ? null : $alarm['end']->sqlDateTime(),
                         serialize($alarm['methods']),
                         serialize($alarm['params']),
                         $this->_toDriver($alarm['title']),
@@ -191,7 +196,11 @@ class Horde_Alarm_sql extends Horde_Alarm {
                         null);
         Horde::logMessage('SQL query by Horde_Alarm_sql::_add(): ' . $query,
                           __FILE__, __LINE__, PEAR_LOG_DEBUG);
-        return $this->_write_db->query($query, $values);
+        $result = $this->_write_db->query($query, $values);
+        if (is_a($result, 'PEAR_Error')) {
+            Horde::logMessage($result, __FILE__, __LINE__);
+        }
+        return $result;
     }
 
     /**
@@ -201,9 +210,11 @@ class Horde_Alarm_sql extends Horde_Alarm {
      */
     function _update($alarm)
     {
-        $query = sprintf('UPDATE %s set alarm_start = ?, alarm_end = ?, alarm_methods = ?, alarm_params = ?, alarm_title = ?, alarm_text = ? WHERE alarm_id = ? AND alarm_uid = ?', $this->_params['table']);
-        $values = array($alarm['start']->rfc3339DateTime(),
-                        empty($alarm['end']) ? null : $alarm['end']->rfc3339DateTime(),
+        $query = sprintf('UPDATE %s set alarm_start = ?, alarm_end = ?, alarm_methods = ?, alarm_params = ?, alarm_title = ?, alarm_text = ? WHERE alarm_id = ? AND %s',
+                         $this->_params['table'],
+                         isset($alarm['user']) ? 'alarm_uid = ?' : '(alarm_uid = ? OR alarm_uid IS NULL)');
+        $values = array($alarm['start']->sqlDateTime(),
+                        empty($alarm['end']) ? null : $alarm['end']->sqlDateTime(),
                         serialize($alarm['methods']),
                         serialize($alarm['params']),
                         $this->_toDriver($alarm['title']),
@@ -214,7 +225,11 @@ class Horde_Alarm_sql extends Horde_Alarm {
                         isset($alarm['user']) ? $alarm['user'] : '');
         Horde::logMessage('SQL query by Horde_Alarm_sql::_update(): ' . $query,
                           __FILE__, __LINE__, PEAR_LOG_DEBUG);
-        return $this->_write_db->query($query, $values);
+        $result = $this->_write_db->query($query, $values);
+        if (is_a($result, 'PEAR_Error')) {
+            Horde::logMessage($result, __FILE__, __LINE__);
+        }
+        return $result;
     }
 
     /**
@@ -227,11 +242,17 @@ class Horde_Alarm_sql extends Horde_Alarm {
      */
     function _internal($id, $user, $internal)
     {
-        $query = sprintf('UPDATE %s set alarm_internal = ? WHERE alarm_id = ? AND alarm_uid = ?', $this->_params['table']);
+        $query = sprintf('UPDATE %s set alarm_internal = ? WHERE alarm_id = ? AND %s',
+                         $this->_params['table'],
+                         !empty($user) ? 'alarm_uid = ?' : '(alarm_uid = ? OR alarm_uid IS NULL)');
         $values = array(serialize($internal), $id, $user);
         Horde::logMessage('SQL query by Horde_Alarm_sql::_internal(): ' . $query,
                           __FILE__, __LINE__, PEAR_LOG_DEBUG);
-        return $this->_write_db->query($query, $values);
+        $result = $this->_write_db->query($query, $values);
+        if (is_a($result, 'PEAR_Error')) {
+            Horde::logMessage($result, __FILE__, __LINE__);
+        }
+        return $result;
     }
 
     /**
@@ -244,10 +265,16 @@ class Horde_Alarm_sql extends Horde_Alarm {
      */
     function _exists($id, $user)
     {
-        $query = sprintf('SELECT 1 FROM %s WHERE alarm_id = ? AND alarm_uid = ?', $this->_params['table']);
+        $query = sprintf('SELECT 1 FROM %s WHERE alarm_id = ? AND %s',
+                         $this->_params['table'],
+                         !empty($user) ? 'alarm_uid = ?' : '(alarm_uid = ? OR alarm_uid IS NULL)');
         Horde::logMessage('SQL query by Horde_Alarm_sql::_exists(): ' . $query,
                           __FILE__, __LINE__, PEAR_LOG_DEBUG);
-        return $this->_db->getOne($query, array($id, $user));
+        $result = $this->_db->getOne($query, array($id, $user));
+        if (is_a($result, 'PEAR_Error')) {
+            Horde::logMessage($result, __FILE__, __LINE__);
+        }
+        return $result;
     }
 
     /**
@@ -259,11 +286,17 @@ class Horde_Alarm_sql extends Horde_Alarm {
      */
     function _snooze($id, $user, $snooze)
     {
-        $query = sprintf('UPDATE %s set alarm_snooze = ? WHERE alarm_id = ? AND alarm_uid = ?', $this->_params['table']);
-        $values = array($snooze->rfc3339DateTime(), $id, $user);
+        $query = sprintf('UPDATE %s set alarm_snooze = ? WHERE alarm_id = ? AND %s',
+                         $this->_params['table'],
+                         !empty($user) ? 'alarm_uid = ?' : '(alarm_uid = ? OR alarm_uid IS NULL)');
+        $values = array($snooze->sqlDateTime(), $id, $user);
         Horde::logMessage('SQL query by Horde_Alarm_sql::_snooze(): ' . $query,
                           __FILE__, __LINE__, PEAR_LOG_DEBUG);
-        return $this->_write_db->query($query, $values);
+        $result = $this->_write_db->query($query, $values);
+        if (is_a($result, 'PEAR_Error')) {
+            Horde::logMessage($result, __FILE__, __LINE__);
+        }
+        return $result;
     }
 
     /**
@@ -274,11 +307,17 @@ class Horde_Alarm_sql extends Horde_Alarm {
      */
     function _dismiss($id, $user)
     {
-        $query = sprintf('UPDATE %s set alarm_dismissed = 1 WHERE alarm_id = ? AND alarm_uid = ?', $this->_params['table']);
+        $query = sprintf('UPDATE %s set alarm_dismissed = 1 WHERE alarm_id = ? AND %s',
+                         $this->_params['table'],
+                         !empty($user) ? 'alarm_uid = ?' : '(alarm_uid = ? OR alarm_uid IS NULL)');
         $values = array($id, $user);
         Horde::logMessage('SQL query by Horde_Alarm_sql::_dismiss(): ' . $query,
                           __FILE__, __LINE__, PEAR_LOG_DEBUG);
-        return $this->_write_db->query($query, $values);
+        $result = $this->_write_db->query($query, $values);
+        if (is_a($result, 'PEAR_Error')) {
+            Horde::logMessage($result, __FILE__, __LINE__);
+        }
+        return $result;
     }
 
     /**
@@ -292,10 +331,16 @@ class Horde_Alarm_sql extends Horde_Alarm {
      */
     function _isSnoozed($id, $user, $time)
     {
-        $query = sprintf('SELECT 1 FROM %s WHERE alarm_id = ? AND alarm_uid = ? AND (alarm_dismissed = 1 OR (alarm_snooze IS NOT NULL AND alarm_snooze >= ?))', $this->_params['table']);
+        $query = sprintf('SELECT 1 FROM %s WHERE alarm_id = ? AND %s AND (alarm_dismissed = 1 OR (alarm_snooze IS NOT NULL AND alarm_snooze >= ?))',
+                         $this->_params['table'],
+                         !empty($user) ? 'alarm_uid = ?' : '(alarm_uid = ? OR alarm_uid IS NULL)');
         Horde::logMessage('SQL query by Horde_Alarm_sql::_isSnoozed(): ' . $query,
                           __FILE__, __LINE__, PEAR_LOG_DEBUG);
-        return $this->_db->getOne($query, array($id, $user, $time->rfc3339DateTime()));
+        $result = $this->_db->getOne($query, array($id, $user, $time->sqlDateTime()));
+        if (is_a($result, 'PEAR_Error')) {
+            Horde::logMessage($result, __FILE__, __LINE__);
+        }
+        return $result;
     }
 
     /**
@@ -309,12 +354,18 @@ class Horde_Alarm_sql extends Horde_Alarm {
         $query = sprintf('DELETE FROM %s WHERE alarm_id = ?', $this->_params['table']);
         $values = array($id);
         if (!is_null($user)) {
-            $query .= ' AND alarm_uid = ?';
+            $query .= empty($user)
+                ? ' AND (alarm_uid IS NULL OR alarm_uid = ?)'
+                : ' AND alarm_uid = ?';
             $values[] = $user;
         }
         Horde::logMessage('SQL query by Horde_Alarm_sql::_delete(): ' . $query,
                           __FILE__, __LINE__, PEAR_LOG_DEBUG);
-        return $this->_write_db->query($query, $values);
+        $result = $this->_write_db->query($query, $values);
+        if (is_a($result, 'PEAR_Error')) {
+            Horde::logMessage($result, __FILE__, __LINE__);
+        }
+        return $result;
     }
 
     /**
@@ -326,7 +377,11 @@ class Horde_Alarm_sql extends Horde_Alarm {
         Horde::logMessage('SQL query by Horde_Alarm_sql::_gc(): ' . $query,
                           __FILE__, __LINE__, PEAR_LOG_DEBUG);
         $end = new Horde_Date(time());
-        return $this->_write_db->query($query, $end->rfc3339DateTime());
+        $result = $this->_write_db->query($query, $end->sqlDateTime());
+        if (is_a($result, 'PEAR_Error')) {
+            Horde::logMessage($result, __FILE__, __LINE__);
+        }
+        return $result;
     }
 
     /**
@@ -358,6 +413,7 @@ class Horde_Alarm_sql extends Horde_Alarm {
                                         array('persistent' => !empty($this->_params['persistent']),
                                               'ssl' => !empty($this->_params['ssl'])));
         if (is_a($this->_write_db, 'PEAR_Error')) {
+            Horde::logMessage($this->_write_db, __FILE__, __LINE__);
             return $this->_write_db;
         }
         $this->_initConn($this->_write_db);
@@ -369,6 +425,7 @@ class Horde_Alarm_sql extends Horde_Alarm {
                                       array('persistent' => !empty($params['persistent']),
                                             'ssl' => !empty($params['ssl'])));
             if (is_a($this->_db, 'PEAR_Error')) {
+                Horde::logMessage($this->_db, __FILE__, __LINE__);
                 return $this->_db;
             }
             $this->_initConn($this->_db);

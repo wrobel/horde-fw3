@@ -4,7 +4,7 @@
  * of PHP upgrade scripts for conf.php files either as download or saved to the
  * server's temporary directory.
  *
- * $Horde: horde/admin/setup/scripts.php,v 1.9.10.12 2009-01-06 15:22:11 jan Exp $
+ * $Horde: horde/admin/setup/scripts.php,v 1.9.10.13 2009/12/07 12:31:33 jan Exp $
  *
  * Copyright 1999-2009 The Horde Project (http://www.horde.org/)
  *
@@ -55,9 +55,9 @@ if ($setup == 'conf' && $type == 'php') {
         /* Add code to save backup. */
         $data .= 'if (file_exists(\'' . $path . '/conf.php\')) {' . "\n";
         $data .= '    if (@copy(\'' . $path . '/conf.php\', \'' . $path . '/conf.bak.php\')) {' . "\n";
-        $data .= '        echo \'' . _("Successfully saved backup configuration.") . '\' . "\n";' . "\n";
+        $data .= '        echo \'Successfully saved backup configuration.\' . "\n";' . "\n";
         $data .= '    } else {' . "\n";
-        $data .= '        echo \'' . _("Could not save a backup configuation.") . '\' . "\n";' . "\n";
+        $data .= '        echo \'Could NOT save a backup configuation.\' . "\n";' . "\n";
         $data .= '    }' . "\n";
         $data .= '}' . "\n";
 
@@ -69,9 +69,10 @@ if ($setup == 'conf' && $type == 'php') {
                                         NLS::getCharset(), 'iso-8859-1');
         $data .= '\');' . "\n";
         $data .= '    fclose($fp);' . "\n";
-        $data .= '    echo \'' . sprintf(_("Saved %s configuration."), $app) . '\' . "\n";' . "\n";
+        $data .= '    echo \'' . sprintf('Saved %s configuration.', $app) . '\' . "\n";' . "\n";
         $data .= '} else {' . "\n";
-        $data .= '    echo \'' . sprintf(_("Could not save %s configuration."), $app) . '\' . "\n";' . "\n";
+        $data .= '    echo \'' . sprintf('Could NOT save %s configuration.', $app) . '\' . "\n";' . "\n";
+        $data .= '    exit;' . "\n";
         $data .= '}' . "\n\n";
     }
 }
@@ -85,11 +86,11 @@ if ($save != 'tmp') {
 
 $tmp_dir = Horde::getTempDir();
 /* Add self-destruct code. */
-$data .= 'echo \'' . addslashes(_("Self-destructing...")) . '\' . "\n";' . "\n";
+$data .= 'echo \'Self-destructing...\' . "\n";' . "\n";
 $data .= 'if (unlink(__FILE__)) {' . "\n";
-$data .= '    echo \'' . _("Upgrade script deleted.") . '\' . "\n";' . "\n";
+$data .= '    echo \'Upgrade script deleted.\' . "\n";' . "\n";
 $data .= '} else {' . "\n";
-$data .= '    echo \'' . sprintf(_("WARNING!!! REMOVE SCRIPT MANUALLY FROM %s."), $tmp_dir) . '\' . "\n";' . "\n";
+$data .= '    echo \'WARNING!!! REMOVE SCRIPT MANUALLY FROM ' . $tmp_dir . '\' . "\n";' . "\n";
 $data .= '}' . "\n";
 /* The script should be saved to server's temporary directory. */
 $path = Util::realPath($tmp_dir . '/' . $filename);

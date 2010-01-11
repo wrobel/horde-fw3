@@ -2,7 +2,7 @@
 /**
  * Horde_Form for creating address books.
  *
- * $Horde: turba/lib/Forms/CreateAddressBook.php,v 1.1.2.2 2008-04-24 02:03:39 chuck Exp $
+ * $Horde: turba/lib/Forms/CreateAddressBook.php,v 1.1.2.3 2009/12/15 11:12:33 jan Exp $
  *
  * See the enclosed file LICENSE for license information (ASL). If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.
@@ -41,6 +41,10 @@ class Turba_CreateAddressBookForm extends Horde_Form {
 
     function execute()
     {
+        // This global is necessary for BC with old groupware configuration
+        // files that don't use $GLOBALS['conf'] yet.
+        global $conf;
+
         // Need a clean cfgSources array
         include TURBA_BASE . '/config/sources.php';
 

@@ -3,7 +3,7 @@
  * Ingo_Storage_mock:: is used for testing purposes.  It just keeps the
  * data local and doesn't put it anywhere.
  *
- * $Horde: ingo/lib/Storage/mock.php,v 1.2.2.1 2007-12-20 14:05:49 jan Exp $
+ * $Horde: ingo/lib/Storage/mock.php,v 1.2.2.2 2009/12/21 23:19:05 jan Exp $
  *
  * See the enclosed file LICENSE for license information (ASL).  If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.
@@ -16,7 +16,7 @@ class Ingo_Storage_mock extends Ingo_Storage {
 
     var $_data = array();
 
-    function &_retrieve($field)
+    function _retrieve($field)
     {
         if (empty($this->_data[$field])) {
             switch ($field) {
@@ -24,7 +24,7 @@ class Ingo_Storage_mock extends Ingo_Storage {
                 return new Ingo_Storage_blacklist();
 
             case INGO_STORAGE_ACTION_FILTERS:
-                $ob = &new Ingo_Storage_filters();
+                $ob = new Ingo_Storage_filters();
                 include INGO_BASE . '/config/prefs.php.dist';
                 $ob->setFilterList(unserialize($_prefs['rules']['value']));
                 return $ob;

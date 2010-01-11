@@ -1,8 +1,13 @@
 <?php
+
+define('INGO_BASE', dirname(__FILE__) . '/../..');
+define('HORDE_BASE', dirname(__FILE__) . '/../../..');
+require_once HORDE_BASE . '/lib/core.php';
+
 /**
  * Common library for Ingo test cases
  *
- * $Horde: ingo/lib/tests/TestBase.php,v 1.1.2.1 2007-12-20 14:05:49 jan Exp $
+ * $Horde: ingo/lib/tests/TestBase.php,v 1.1.2.2 2009/12/21 23:19:05 jan Exp $
  *
  * See the enclosed file LICENSE for license information (ASL).  If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.
@@ -47,7 +52,15 @@ class Ingo_TestBase extends PHPUnit_Framework_TestCase {
         }
 
         $new_script = join("\n", $new);
-        $this->assertEqual($expect, $new_script);
+        $this->assertEquals($expect, $new_script);
+    }
+
+}
+
+class Ingo_Test_Notification {
+
+    function push()
+    {
     }
 
 }

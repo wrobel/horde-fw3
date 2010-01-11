@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ingo/lib/Script/maildrop.php,v 1.7.2.15 2009-09-15 21:09:26 jan Exp $
+ * $Horde: ingo/lib/Script/maildrop.php,v 1.7.2.16 2009/12/21 23:19:05 jan Exp $
  *
  * Copyright 2005-2007 Matt Weyland <mathias@weyland.ch>
  *
@@ -305,14 +305,14 @@ class Ingo_Script_maildrop extends Ingo_Script {
                         'action' => $spam_action,
                         'disable' => $disable);
         $recipe = new Maildrop_Recipe($params, $this->_params);
-        if ($GLOBALS['conf']['spam']['compare'] == 'numeric') {
+        if ($this->_params['spam_compare'] == 'numeric') {
             $recipe->addCondition(array('match' => 'greater than or equal to',
-                                        'field' => $GLOBALS['conf']['spam']['header'],
+                                        'field' => $this->_params['spam_header'],
                                         'value' => $spam->getSpamLevel()));
-        } elseif ($GLOBALS['conf']['spam']['compare'] == 'string') {
+        } elseif ($this->_params['spam_compare'] == 'string') {
             $recipe->addCondition(array('match' => 'contains',
-                                        'field' => $GLOBALS['conf']['spam']['header'],
-                                        'value' => str_repeat($GLOBALS['conf']['spam']['char'], $spam->getSpamLevel())));
+                                        'field' => $this->_params['spam_header'],
+                                        'value' => str_repeat($this->_params['spam_char'], $spam->getSpamLevel())));
         }
 
         $this->addItem($recipe);

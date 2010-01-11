@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: framework/SyncML/SyncML/Sync.php,v 1.8.4.23 2009-08-26 11:02:53 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Sync.php,v 1.8.4.25 2009/12/30 01:15:21 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -377,6 +377,12 @@ class SyncML_Sync {
             $this->_targetLocURI, $this->_sourceLocURI);
         $contentTypeTasks = $device->getPreferredContentTypeClient(
             'tasks', $this->_sourceLocURI);
+        if ($state->deviceInfo && $state->deviceInfo->CTCaps) {
+            $fields = array($contentType => isset($state->deviceInfo->CTCaps[$contentType]) ? $state->deviceInfo->CTCaps[$contentType] : null,
+                            $contentTypeTasks => isset($state->deviceInfo->CTCaps[$contentTypeTasks]) ? $state->deviceInfo->CTCaps[$contentTypeTasks] : null);
+        } else {
+            $fields = array($contentType => null, $contentTypeTasks => null);
+        }
 
         /* If server modifications are not retrieved yet (first Sync element),
          * do it now. */
@@ -481,7 +487,7 @@ class SyncML_Sync {
             $syncDB = isset($this->_server_task_adds[$suid]) ? 'tasks' : $this->_targetLocURI;
             $ct = isset($this->_server_task_adds[$suid]) ? $contentTypeTasks : $contentType;
 
-            $c = $backend->retrieveEntry($syncDB, $suid, $ct);
+            $c = $backend->retrieveEntry($syncDB, $suid, $ct, $fields[$ct]);
             /* Item in history but not in database. Strange, but can
              * happen. */
             if (is_a($c, 'PEAR_Error')) {
@@ -535,7 +541,7 @@ class SyncML_Sync {
         foreach ($replaces as $suid => $cuid) {
             $syncDB = isset($replaces2[$suid]) ? 'tasks' : $this->_targetLocURI;
             $ct = isset($replaces2[$suid]) ? $contentTypeTasks : $contentType;
-            $c = $backend->retrieveEntry($syncDB, $suid, $ct);
+            $c = $backend->retrieveEntry($syncDB, $suid, $ct, $fields[$ct]);
             if (is_a($c, 'PEAR_Error')) {
                 /* Item in history but not in database. */
                 unset($this->_server_replaces[$suid]);
@@ -597,6 +603,9 @@ class SyncML_Sync {
     function _retrieveChanges($syncDB, &$adds, &$replaces, &$deletes)
     {
         $adds = $replaces = $deletes = array();
+        if ($syncDB == 'configuration') {
+            return;
+        }
         $result = $GLOBALS['backend']->getServerChanges($syncDB,
                                                         $this->_serverAnchorLast,
                                                         $this->_serverAnchorNext,

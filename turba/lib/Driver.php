@@ -4,7 +4,7 @@
  * various directory search drivers.  It includes functions for searching,
  * adding, removing, and modifying directory entries.
  *
- * $Horde: turba/lib/Driver.php,v 1.57.2.93 2009-11-18 13:29:28 jan Exp $
+ * $Horde: turba/lib/Driver.php,v 1.57.2.95 2009/12/30 01:01:40 jan Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Jon Parise <jon@csh.rit.edu>
@@ -959,14 +959,15 @@ class Turba_Driver {
     /**
      * Exports a given Turba_Object as an iCalendar vCard.
      *
-     * @param Turba_Object $object    A Turba_Object.
-     * @param string       $version   The vcard version to produce.
-     *
-     * @static
+     * @param Turba_Object $object  Turba_Object.
+     * @param string $version       The vcard version to produce.
+     * @param array $fields         Hash of field names and SyncML_Property
+     *                              properties with the requested fields.
+     * @param boolean $skipEmpty    Whether to skip empty fields.
      *
      * @return Horde_iCalendar_vcard  A Horde_iCalendar_vcard object.
      */
-    function tovCard($object, $version = '2.1')
+    function tovCard($object, $version = '2.1', $fields = null, $skipEmpty = false)
     {
         require_once 'Horde/iCalendar/vcard.php';
         require_once 'Horde/MIME.php';
@@ -978,22 +979,38 @@ class Turba_Driver {
         $geo = null;
 
         foreach ($hash as $key => $val) {
+            if ($skipEmpty && !strlen($val)) {
+                continue;
+            }
+
             if ($version != '2.1') {
                 $val = String::convertCharset($val, NLS::getCharset(), 'utf-8');
             }
 
             switch ($key) {
             case 'name':
+                if ($fields && !isset($fields['FN'])) {
+                    break;
+                }
                 $vcard->setAttribute('FN', $val, MIME::is8bit($val) ? $charset : array());
                 $formattedname = true;
                 break;
             case 'nickname':
             case 'alias':
+                if ($fields && !isset($fields['NICKNAME'])) {
+                    break;
+                }
                 $vcard->setAttribute('NICKNAME', $val,
                                      MIME::is8bit($val) ? $charset : array());
                 break;
 
             case 'homeAddress':
+                if ($fields &&
+                    (!isset($fields['LABEL']) ||
+                     (isset($fields['LABEL']->Params['TYPE']) &&
+                      !isset($fields['LABEL']->Params['TYPE']->ValEnum['HOME'])))) {
+                    break;
+                }
                 if ($version == '2.1') {
                     $vcard->setAttribute('LABEL', $val, array('HOME' => null));
                 } else {
@@ -1001,13 +1018,22 @@ class Turba_Driver {
                 }
                 break;
             case 'workAddress':
+                if ($fields &&
+                    (!isset($fields['LABEL']) ||
+                     (isset($fields['LABEL']->Params['TYPE']) &&
+                      !isset($fields['LABEL']->Params['TYPE']->ValEnum['WORK'])))) {
+                    break;
+                }
                 if ($version == '2.1') {
-                    $vcard->setAttribute('LABEL', $val, array('HOME' => null));
+                    $vcard->setAttribute('LABEL', $val, array('WORK' => null));
                 } else {
                     $vcard->setAttribute('LABEL', $val, array('TYPE' => 'WORK'));
                 }
                 break;
             case 'otherAddress':
+                if ($fields && !isset($fields['LABEL'])) {
+                    break;
+                }
                 if ($version == '2.1') {
                     $vcard->setAttribute('LABEL', $val);
                 } else {
@@ -1016,6 +1042,9 @@ class Turba_Driver {
                 break;
 
             case 'phone':
+                if ($fields && !isset($fields['TEL'])) {
+                    break;
+                }
                 if ($version == '2.1') {
                     $vcard->setAttribute('TEL', $val);
                 } else {
@@ -1023,6 +1052,12 @@ class Turba_Driver {
                 }
                 break;
             case 'homePhone':
+                if ($fields &&
+                    (!isset($fields['TEL']) ||
+                     (isset($fields['TEL']->Params['TYPE']) &&
+                      !isset($fields['TEL']->Params['TYPE']->ValEnum['HOME'])))) {
+                    break;
+                }
                 if ($version == '2.1') {
                     $vcard->setAttribute('TEL', $val, array('HOME' => null));
                 } else {
@@ -1030,6 +1065,12 @@ class Turba_Driver {
                 }
                 break;
             case 'workPhone':
+                if ($fields &&
+                    (!isset($fields['TEL']) ||
+                     (isset($fields['TEL']->Params['TYPE']) &&
+                      !isset($fields['TEL']->Params['TYPE']->ValEnum['WORK'])))) {
+                    break;
+                }
                 if ($version == '2.1') {
                     $vcard->setAttribute('TEL', $val, array('WORK' => null));
                 } else {
@@ -1037,6 +1078,12 @@ class Turba_Driver {
                 }
                 break;
             case 'cellPhone':
+                if ($fields &&
+                    (!isset($fields['TEL']) ||
+                     (isset($fields['TEL']->Params['TYPE']) &&
+                      !isset($fields['TEL']->Params['TYPE']->ValEnum['CELL'])))) {
+                    break;
+                }
                 if ($version == '2.1') {
                     $vcard->setAttribute('TEL', $val, array('CELL' => null));
                 } else {
@@ -1044,21 +1091,81 @@ class Turba_Driver {
                 }
                 break;
             case 'homeCellPhone':
-                if ($version == '2.1') {
-                    $vcard->setAttribute('TEL', $val, array('CELL' => null, 'HOME' => null));
+                $parameters = array();
+                if ($fields) {
+                    if (!isset($fields['TEL'])) {
+                        break;
+                    }
+                    if (!isset($fields['TEL']->Params['TYPE']) ||
+                        isset($fields['TEL']->Params['TYPE']->ValEnum['CELL'])) {
+                        if ($version == '2.1') {
+                            $parameters['CELL'] = null;
+                        } else {
+                            $parameters['TYPE'] = 'CELL';
+                        }
+                    }
+                    if (!isset($fields['TEL']->Params['TYPE']) ||
+                        isset($fields['TEL']->Params['TYPE']->ValEnum['HOME'])) {
+                        if ($version == '2.1') {
+                            $parameters['HOME'] = null;
+                        } else {
+                            $parameters['TYPE'] = 'HOME';
+                        }
+                    }
+                    if (empty($parameters)) {
+                        break;
+                    }
                 } else {
-                    $vcard->setAttribute('TEL', $val, array('TYPE' => 'CELL', 'TYPE' => 'HOME'));
+                    if ($version == '2.1') {
+                        $parameters = array('CELL' => null, 'HOME' => null);
+                    } else {
+                        $parameters = array('TYPE' => 'CELL', 'TYPE' => 'HOME');
+                    }
                 }
+                $vcard->setAttribute('TEL', $val, $parameters);
                 break;
             case 'workCellPhone':
-                if ($version == '2.1') {
-                    $vcard->setAttribute('TEL', $val, array('CELL' => null, 'WORK' => null));
+                $parameters = array();
+                if ($fields) {
+                    if (!isset($fields['TEL'])) {
+                        break;
+                    }
+                    if (!isset($fields['TEL']->Params['TYPE']) ||
+                        isset($fields['TEL']->Params['TYPE']->ValEnum['CELL'])) {
+                        if ($version == '2.1') {
+                            $parameters['CELL'] = null;
+                        } else {
+                            $parameters['TYPE'] = 'CELL';
+                        }
+                    }
+                    if (!isset($fields['TEL']->Params['TYPE']) ||
+                        isset($fields['TEL']->Params['TYPE']->ValEnum['WORK'])) {
+                        if ($version == '2.1') {
+                            $parameters['WORK'] = null;
+                        } else {
+                            $parameters['TYPE'] = 'WORK';
+                        }
+                    }
+                    if (empty($parameters)) {
+                        break;
+                    }
                 } else {
-                    $vcard->setAttribute('TEL', $val, array('TYPE' => 'CELL', 'TYPE' => 'WORK'));
+                    if ($version == '2.1') {
+                        $parameters = array('CELL' => null, 'WORK' => null);
+                    } else {
+                        $parameters = array('TYPE' => 'CELL', 'TYPE' => 'WORK');
+                    }
                 }
+                $vcard->setAttribute('TEL', $val, $parameters);
                 break;
 
             case 'videoCall':
+                if ($fields &&
+                    (!isset($fields['TEL']) ||
+                     (isset($fields['TEL']->Params['TYPE']) &&
+                      !isset($fields['TEL']->Params['TYPE']->ValEnum['VIDEO'])))) {
+                    break;
+                }
                 if ($version == '2.1') {
                     $vcard->setAttribute('TEL', $val, array('VIDEO' => null));
                 } else {
@@ -1066,24 +1173,87 @@ class Turba_Driver {
                 }
                 break;
             case 'homeVideoCall':
-                if ($version == '2.1') {
-                    $vcard->setAttribute('TEL', $val, array('VIDEO' => null, 'HOME' => null));
+                $parameters = array();
+                if ($fields) {
+                    if (!isset($fields['TEL'])) {
+                        break;
+                    }
+                    if (!isset($fields['TEL']->Params['TYPE']) ||
+                        isset($fields['TEL']->Params['TYPE']->ValEnum['VIDEO'])) {
+                        if ($version == '2.1') {
+                            $parameters['VIDEO'] = null;
+                        } else {
+                            $parameters['TYPE'] = 'VIDEO';
+                        }
+                    }
+                    if (!isset($fields['TEL']->Params['TYPE']) ||
+                        isset($fields['TEL']->Params['TYPE']->ValEnum['HOME'])) {
+                        if ($version == '2.1') {
+                            $parameters['HOME'] = null;
+                        } else {
+                            $parameters['TYPE'] = 'HOME';
+                        }
+                    }
+                    if (empty($parameters)) {
+                        break;
+                    }
                 } else {
-                    $vcard->setAttribute('TEL', $val, array('TYPE' => 'VIDEO', 'TYPE' => 'HOME'));
+                    if ($version == '2.1') {
+                        $parameters = array('VIDEO' => null, 'HOME' => null);
+                    } else {
+                        $parameters = array('TYPE' => 'VIDEO', 'TYPE' => 'HOME');
+                    }
                 }
+                $vcard->setAttribute('TEL', $val, $parameters);
                 break;
             case 'workVideoCall':
-                if ($version == '2.1') {
-                    $vcard->setAttribute('TEL', $val, array('VIDEO' => null, 'WORK' => null));
+                $parameters = array();
+                if ($fields) {
+                    if (!isset($fields['TEL'])) {
+                        break;
+                    }
+                    if (!isset($fields['TEL']->Params['TYPE']) ||
+                        isset($fields['TEL']->Params['TYPE']->ValEnum['VIDEO'])) {
+                        if ($version == '2.1') {
+                            $parameters['VIDEO'] = null;
+                        } else {
+                            $parameters['TYPE'] = 'VIDEO';
+                        }
+                    }
+                    if (!isset($fields['TEL']->Params['TYPE']) ||
+                        isset($fields['TEL']->Params['TYPE']->ValEnum['WORK'])) {
+                        if ($version == '2.1') {
+                            $parameters['WORK'] = null;
+                        } else {
+                            $parameters['TYPE'] = 'WORK';
+                        }
+                    }
+                    if (empty($parameters)) {
+                        break;
+                    }
                 } else {
-                    $vcard->setAttribute('TEL', $val, array('TYPE' => 'VIDEO', 'TYPE' => 'WORK'));
+                    if ($version == '2.1') {
+                        $parameters = array('VIDEO' => null, 'WORK' => null);
+                    } else {
+                        $parameters = array('TYPE' => 'VIDEO', 'TYPE' => 'WORK');
+                    }
                 }
+                $vcard->setAttribute('TEL', $val, $parameters);
                 break;
 
             case 'sip':
+                if ($fields && !isset($fields['X-SIP'])) {
+                    break;
+                }
                 $vcard->setAttribute('X-SIP', $val);
                 break;
             case 'ptt':
+                if ($fields &&
+                    (!isset($fields['X-SIP']) ||
+                     (isset($fields['X-SIP']->Params['TYPE']) &&
+                      !isset($fields['X-SIP']->Params['TYPE']->ValEnum['POC'])))) {
+                    break;
+                }
                 if ($version == '2.1') {
                     $vcard->setAttribute('X-SIP', $val, array('POC' => null));
                 } else {
@@ -1091,6 +1261,12 @@ class Turba_Driver {
                 }
                 break;
             case 'voip':
+                if ($fields &&
+                    (!isset($fields['X-SIP']) ||
+                     (isset($fields['X-SIP']->Params['TYPE']) &&
+                      !isset($fields['X-SIP']->Params['TYPE']->ValEnum['VOIP'])))) {
+                    break;
+                }
                 if ($version == '2.1') {
                     $vcard->setAttribute('X-SIP', $val, array('VOIP' => null));
                 } else {
@@ -1098,6 +1274,12 @@ class Turba_Driver {
                 }
                 break;
             case 'shareView':
+                if ($fields &&
+                    (!isset($fields['X-SIP']) ||
+                     (isset($fields['X-SIP']->Params['TYPE']) &&
+                      !isset($fields['X-SIP']->Params['TYPE']->ValEnum['SWIS'])))) {
+                    break;
+                }
                 if ($version == '2.1') {
                     $vcard->setAttribute('X-SIP', $val, array('SWIS' => null));
                 } else {
@@ -1106,10 +1288,19 @@ class Turba_Driver {
                 break;
 
             case 'instantMessenger':
+                if ($fields && !isset($fields['X-WV-ID'])) {
+                    break;
+                }
                 $vcard->setAttribute('X-WV-ID', $val);
                 break;
 
             case 'fax':
+                if ($fields &&
+                    (!isset($fields['TEL']) ||
+                     (isset($fields['TEL']->Params['TYPE']) &&
+                      !isset($fields['TEL']->Params['TYPE']->ValEnum['FAX'])))) {
+                    break;
+                }
                 if ($version == '2.1') {
                     $vcard->setAttribute('TEL', $val, array('FAX' => null));
                 } else {
@@ -1117,13 +1308,72 @@ class Turba_Driver {
                 }
                 break;
             case 'homeFax':
-                if ($version == '2.1') {
-                    $vcard->setAttribute('TEL', $val, array('FAX' => null, 'HOME' => null));
+                $parameters = array();
+                if ($fields) {
+                    if (!isset($fields['TEL'])) {
+                        break;
+                    }
+                    if (!isset($fields['TEL']->Params['TYPE']) ||
+                        isset($fields['TEL']->Params['TYPE']->ValEnum['FAX'])) {
+                        if ($version == '2.1') {
+                            $parameters['FAX'] = null;
+                        } else {
+                            $parameters['TYPE'] = 'FAX';
+                        }
+                    }
+                    if (!isset($fields['TEL']->Params['TYPE']) ||
+                        isset($fields['TEL']->Params['TYPE']->ValEnum['HOME'])) {
+                        if ($version == '2.1') {
+                            $parameters['HOME'] = null;
+                        } else {
+                            $parameters['TYPE'] = 'HOME';
+                        }
+                    }
+                    if (empty($parameters)) {
+                        break;
+                    }
                 } else {
-                    $vcard->setAttribute('TEL', $val, array('TYPE' => 'FAX', 'TYPE' => 'HOME'));
+                    if ($version == '2.1') {
+                        $parameters = array('FAX' => null, 'HOME' => null);
+                    } else {
+                        $parameters = array('TYPE' => 'FAX', 'TYPE' => 'HOME');
+                    }
                 }
+                $vcard->setAttribute('TEL', $val, $parameters);
                 break;
             case 'workFax':
+                $parameters = array();
+                if ($fields) {
+                    if (!isset($fields['TEL'])) {
+                        break;
+                    }
+                    if (!isset($fields['TEL']->Params['TYPE']) ||
+                        isset($fields['TEL']->Params['TYPE']->ValEnum['FAX'])) {
+                        if ($version == '2.1') {
+                            $parameters['FAX'] = null;
+                        } else {
+                            $parameters['TYPE'] = 'FAX';
+                        }
+                    }
+                    if (!isset($fields['TEL']->Params['TYPE']) ||
+                        isset($fields['TEL']->Params['TYPE']->ValEnum['WORK'])) {
+                        if ($version == '2.1') {
+                            $parameters['WORK'] = null;
+                        } else {
+                            $parameters['TYPE'] = 'WORK';
+                        }
+                    }
+                    if (empty($parameters)) {
+                        break;
+                    }
+                } else {
+                    if ($version == '2.1') {
+                        $parameters = array('FAX' => null, 'WORK' => null);
+                    } else {
+                        $parameters = array('TYPE' => 'FAX', 'TYPE' => 'WORK');
+                    }
+                }
+                $vcard->setAttribute('TEL', $val, $parameters);
                 if ($version == '2.1') {
                     $vcard->setAttribute('TEL', $val, array('FAX' => null, 'WORK' => null));
                 } else {
@@ -1132,6 +1382,12 @@ class Turba_Driver {
                 break;
 
             case 'pager':
+                if ($fields &&
+                    (!isset($fields['TEL']) ||
+                     (isset($fields['TEL']->Params['TYPE']) &&
+                      !isset($fields['TEL']->Params['TYPE']->ValEnum['PAGER'])))) {
+                    break;
+                }
                 if ($version == '2.1') {
                     $vcard->setAttribute('TEL', $val, array('PAGER' => null));
                 } else {
@@ -1140,10 +1396,19 @@ class Turba_Driver {
                 break;
 
             case 'email':
+                if ($fields && !isset($fields['EMAIL'])) {
+                    break;
+                }
                 $vcard->setAttribute('EMAIL',
                                      Horde_iCalendar_vcard::getBareEmail($val));
                 break;
             case 'homeEmail':
+                if ($fields &&
+                    (!isset($fields['EMAIL']) ||
+                     (isset($fields['EMAIL']->Params['TYPE']) &&
+                      !isset($fields['EMAIL']->Params['TYPE']->ValEnum['HOME'])))) {
+                    break;
+                }
                 if ($version == '2.1') {
                     $vcard->setAttribute('EMAIL',
                                          Horde_iCalendar_vcard::getBareEmail($val),
@@ -1155,6 +1420,12 @@ class Turba_Driver {
                 }
                 break;
             case 'workEmail':
+                if ($fields &&
+                    (!isset($fields['EMAIL']) ||
+                     (isset($fields['EMAIL']->Params['TYPE']) &&
+                      !isset($fields['EMAIL']->Params['TYPE']->ValEnum['WORK'])))) {
+                    break;
+                }
                 if ($version == '2.1') {
                     $vcard->setAttribute('EMAIL',
                                          Horde_iCalendar_vcard::getBareEmail($val),
@@ -1166,6 +1437,9 @@ class Turba_Driver {
                 }
                 break;
             case 'emails':
+                if ($fields && !isset($fields['EMAIL'])) {
+                    break;
+                }
                 $emails = explode(',', $val);
                 foreach ($emails as $email) {
                     $vcard->setAttribute('EMAIL',
@@ -1174,43 +1448,76 @@ class Turba_Driver {
                 break;
 
             case 'title':
+                if ($fields && !isset($fields['TITLE'])) {
+                    break;
+                }
                 $vcard->setAttribute('TITLE', $val,
                                      MIME::is8bit($val) ? $charset : array());
                 break;
             case 'role':
+                if ($fields && !isset($fields['ROLE'])) {
+                    break;
+                }
                 $vcard->setAttribute('ROLE', $val,
                                      MIME::is8bit($val) ? $charset : array());
                 break;
 
             case 'notes':
+                if ($fields && !isset($fields['NOTE'])) {
+                    break;
+                }
                 $vcard->setAttribute('NOTE', $val,
                                      MIME::is8bit($val) ? $charset : array());
                 break;
 
             case 'businessCategory':
             case 'category':
+                if ($fields && !isset($fields['CATEGORIES'])) {
+                    break;
+                }
                 $vcard->setAttribute('CATEGORIES', $val);
                 break;
 
             case 'anniversary':
-                $vcard->setAttribute('X-SYNCJE-ANNIVERSARY', $val);
-                $vcard->setAttribute('X-ANNIVERSARY', $val);
+                if (!$fields || isset($fields['X-SYNCJE-ANNIVERSARY'])) {
+                    $vcard->setAttribute('X-SYNCJE-ANNIVERSARY', $val);
+                }
+                if (!$fields || isset($fields['X-ANNIVERSARY'])) {
+                    $vcard->setAttribute('X-ANNIVERSARY', $val);
+                }
                 break;
 
             case 'spouse':
-                $vcard->setAttribute('X-SYNCJE-SPOUSE', $val);
-                $vcard->setAttribute('X-SPOUSE', $val);
+                if (!$fields || isset($fields['X-SYNCJE-SPOUSE'])) {
+                    $vcard->setAttribute('X-SYNCJE-SPOUSE', $val);
+                }
+                if (!$fields || isset($fields['X-SPOUSE'])) {
+                    $vcard->setAttribute('X-SPOUSE', $val);
+                }
                 break;
 
             case 'children':
-                $vcard->setAttribute('X-SYNCJE-CHILD', $val);
-                $vcard->setAttribute('X-CHILD', $val);
+                if (!$fields || isset($fields['X-SYNCJE-CHILD'])) {
+                    $vcard->setAttribute('X-SYNCJE-CHILD', $val);
+                }
+                if (!$fields || isset($fields['X-CHILD'])) {
+                    $vcard->setAttribute('X-CHILD', $val);
+                }
                 break;
 
             case 'website':
+                if ($fields && !isset($fields['URL'])) {
+                    break;
+                }
                 $vcard->setAttribute('URL', $val);
                 break;
             case 'homeWebsite':
+                if ($fields &&
+                    (!isset($fields['URL']) ||
+                     (isset($fields['URL']->Params['TYPE']) &&
+                      !isset($fields['URL']->Params['TYPE']->ValEnum['HOME'])))) {
+                    break;
+                }
                 if ($version == '2.1') {
                     $vcard->setAttribute('URL', $val, array('HOME' => null));
                 } else {
@@ -1218,6 +1525,12 @@ class Turba_Driver {
                 }
                 break;
             case 'workWebsite':
+                if ($fields &&
+                    (!isset($fields['URL']) ||
+                     (isset($fields['URL']->Params['TYPE']) &&
+                      !isset($fields['URL']->Params['TYPE']->ValEnum['WORK'])))) {
+                    break;
+                }
                 if ($version == '2.1') {
                     $vcard->setAttribute('URL', $val, array('WORK' => null));
                 } else {
@@ -1226,14 +1539,23 @@ class Turba_Driver {
                 break;
 
             case 'birthday':
+                if ($fields && !isset($fields['BDAY'])) {
+                    break;
+                }
                 $vcard->setAttribute('BDAY', $val);
                 break;
 
             case 'timezone':
+                if ($fields && !isset($fields['TZ'])) {
+                    break;
+                }
                 $vcard->setAttribute('TZ', $val, array('VALUE' => 'text'));
                 break;
 
             case 'latitude':
+                if ($fields && !isset($fields['GEO'])) {
+                    break;
+                }
                 if (isset($hash['longitude'])) {
                     $vcard->setAttribute('GEO',
                                          array('latitude' => $val,
@@ -1241,6 +1563,12 @@ class Turba_Driver {
                 }
                 break;
             case 'homeLatitude':
+                if ($fields &&
+                    (!isset($fields['GEO']) ||
+                     (isset($fields['GEO']->Params['TYPE']) &&
+                      !isset($fields['GEO']->Params['TYPE']->ValEnum['HOME'])))) {
+                    break;
+                }
                 if (isset($hash['homeLongitude'])) {
                     if ($version == '2.1') {
                         $vcard->setAttribute('GEO',
@@ -1256,6 +1584,12 @@ class Turba_Driver {
                 }
                 break;
             case 'workLatitude':
+                if ($fields &&
+                    (!isset($fields['GEO']) ||
+                     (isset($fields['GEO']->Params['TYPE']) &&
+                      !isset($fields['GEO']->Params['TYPE']->ValEnum['HOME'])))) {
+                    break;
+                }
                 if (isset($hash['workLongitude'])) {
                     if ($version == '2.1') {
                         $vcard->setAttribute('GEO',
@@ -1273,11 +1607,19 @@ class Turba_Driver {
 
             case 'photo':
             case 'logo':
+                $name = String::upper($key);
                 $params = array('ENCODING' => 'b');
                 if (isset($hash[$key . 'type'])) {
                     $params['TYPE'] = $hash[$key . 'type'];
                 }
-                $vcard->setAttribute(String::upper($key),
+                if ($fields &&
+                    (!isset($fields[$name]) ||
+                     !isset($params['TYPE'])) ||
+                     (isset($fields[$name]->Params['TYPE']) &&
+                      !isset($fields[$name]->Params['TYPE']->ValEnum[$params['TYPE']]))) {
+                    break;
+                }
+                $vcard->setAttribute($name,
                                      base64_encode($val),
                                      $params);
                 break;
@@ -1314,21 +1656,32 @@ class Turba_Driver {
             $val = String::convertCharset($val, NLS::getCharset(), 'utf-8');
             $a = String::convertCharset($a, NLS::getCharset(), 'utf-8');
         }
-        $vcard->setAttribute('N', $val, MIME::is8bit($val) ? $charset : array(), false, $a);
+        if (!$fields || isset($fields['N'])) {
+            $vcard->setAttribute('N', $val, MIME::is8bit($val) ? $charset : array(), false, $a);
+        }
 
-        if (!$formattedname) {
-            $val = empty($hash['firstname']) ? $hash['lastname'] : $hash['firstname'] . ' ' . $hash['lastname'];
+        if (!$formattedname && (!$fields || isset($fields['FN']))) {
+            if (!empty($this->alternativeName) &&
+                isset($hash[$this->alternativeName])) {
+                $val = $hash[$this->alternativeName];
+            } elseif (isset($hash['lastname'])) {
+                $val = empty($hash['firstname']) ? $hash['lastname'] : $hash['firstname'] . ' ' . $hash['lastname'];
+            } else {
+                $val = '';
+            }
             $vcard->setAttribute('FN', $val, MIME::is8bit($val) ? $charset : array());
         }
 
         $org = array();
-        if (array_key_exists('company', $hash)) {
+        if (!empty($hash['company']) ||
+            (!$skipEmpty && array_key_exists('company', $hash))) {
             $org[] = $hash['company'];
         }
-        if (array_key_exists('department', $hash)) {
+        if (!empty($hash['department']) ||
+            (!$skipEmpty && array_key_exists('department', $hash))) {
             $org[] = $hash['department'];
         }
-        if (count($org)) {
+        if (count($org) && (!$fields || isset($fields['ORG']))) {
             $val = implode(';', $org);
             if ($version != '2.1') {
                 $val = String::convertCharset($val, NLS::getCharset(), 'utf-8');
@@ -1337,14 +1690,24 @@ class Turba_Driver {
             $vcard->setAttribute('ORG', $val, MIME::is8bit($val) ? $charset : array(), false, $org);
         }
 
-        if (array_key_exists('commonAddress', $hash) ||
-            array_key_exists('commonStreet', $hash) ||
-            array_key_exists('commonPOBox', $hash) ||
-            array_key_exists('commonExtended', $hash) ||
-            array_key_exists('commonCity', $hash) ||
-            array_key_exists('commonProvince', $hash) ||
-            array_key_exists('commonPostalCode', $hash) ||
-            array_key_exists('commonCountry', $hash)) {
+        if ((!$fields || isset($fields['ADR'])) &&
+            (!empty($hash['commonAddress']) ||
+             !empty($hash['commonStreet']) ||
+             !empty($hash['commonPOBox']) ||
+             !empty($hash['commonExtended']) ||
+             !empty($hash['commonCity']) ||
+             !empty($hash['commonProvince']) ||
+             !empty($hash['commonPostalCode']) ||
+             !empty($hash['commonCountry']) ||
+             (!$skipEmpty &&
+              (array_key_exists('commonAddress', $hash) ||
+               array_key_exists('commonStreet', $hash) ||
+               array_key_exists('commonPOBox', $hash) ||
+               array_key_exists('commonExtended', $hash) ||
+               array_key_exists('commonCity', $hash) ||
+               array_key_exists('commonProvince', $hash) ||
+               array_key_exists('commonPostalCode', $hash) ||
+               array_key_exists('commonCountry', $hash))))) {
             /* We can't know if this particular Turba source uses a single
              * address field or multiple for
              * street/city/province/postcode/country. Try to deal with
@@ -1384,14 +1747,27 @@ class Turba_Driver {
             $vcard->setAttribute('ADR', $val, $params, true, $a);
         }
 
-        if (array_key_exists('homeAddress', $hash) ||
-            array_key_exists('homeStreet', $hash) ||
-            array_key_exists('homePOBox', $hash) ||
-            array_key_exists('homeExtended', $hash) ||
-            array_key_exists('homeCity', $hash) ||
-            array_key_exists('homeProvince', $hash) ||
-            array_key_exists('homePostalCode', $hash) ||
-            array_key_exists('homeCountry', $hash)) {
+        if ((!$fields ||
+             (isset($fields['ADR']) &&
+              (!isset($fields['ADR']->Params['TYPE']) ||
+               isset($fields['ADR']->Params['TYPE']->ValEnum['HOME'])))) &&
+            (!empty($hash['homeAddress']) ||
+             !empty($hash['homeStreet']) ||
+             !empty($hash['homePOBox']) ||
+             !empty($hash['homeExtended']) ||
+             !empty($hash['homeCity']) ||
+             !empty($hash['homeProvince']) ||
+             !empty($hash['homePostalCode']) ||
+             !empty($hash['homeCountry']) ||
+             (!$skipEmpty &&
+              (array_key_exists('homeAddress', $hash) ||
+               array_key_exists('homeStreet', $hash) ||
+               array_key_exists('homePOBox', $hash) ||
+               array_key_exists('homeExtended', $hash) ||
+               array_key_exists('homeCity', $hash) ||
+               array_key_exists('homeProvince', $hash) ||
+               array_key_exists('homePostalCode', $hash) ||
+               array_key_exists('homeCountry', $hash))))) {
             if (isset($hash['homeAddress']) && !isset($hash['homeStreet'])) {
                 $hash['homeStreet'] = $hash['homeAddress'];
             }
@@ -1426,14 +1802,27 @@ class Turba_Driver {
             $vcard->setAttribute('ADR', $val, $params, true, $a);
         }
 
-        if (array_key_exists('workAddress', $hash) ||
-            array_key_exists('workStreet', $hash) ||
-            array_key_exists('workPOBox', $hash) ||
-            array_key_exists('workExtended', $hash) ||
-            array_key_exists('workCity', $hash) ||
-            array_key_exists('workProvince', $hash) ||
-            array_key_exists('workPostalCode', $hash) ||
-            array_key_exists('workCountry', $hash)) {
+        if ((!$fields ||
+             (isset($fields['ADR']) &&
+              (!isset($fields['ADR']->Params['TYPE']) ||
+               isset($fields['ADR']->Params['TYPE']->ValEnum['WORK'])))) &&
+            (!empty($hash['workAddress']) ||
+             !empty($hash['workStreet']) ||
+             !empty($hash['workPOBox']) ||
+             !empty($hash['workExtended']) ||
+             !empty($hash['workCity']) ||
+             !empty($hash['workProvince']) ||
+             !empty($hash['workPostalCode']) ||
+             !empty($hash['workCountry']) ||
+             (!$skipEmpty &&
+              (array_key_exists('workAddress', $hash) ||
+               array_key_exists('workStreet', $hash) ||
+               array_key_exists('workPOBox', $hash) ||
+               array_key_exists('workExtended', $hash) ||
+               array_key_exists('workCity', $hash) ||
+               array_key_exists('workProvince', $hash) ||
+               array_key_exists('workPostalCode', $hash) ||
+               array_key_exists('workCountry', $hash))))) {
             if (isset($hash['workAddress']) && !isset($hash['workStreet'])) {
                 $hash['workStreet'] = $hash['workAddress'];
             }

@@ -2,7 +2,7 @@
 /**
  * Turba external API interface.
  *
- * $Horde: turba/lib/api.php,v 1.120.2.68 2009-09-04 10:38:38 jan Exp $
+ * $Horde: turba/lib/api.php,v 1.120.2.69 2009/12/29 17:28:24 jan Exp $
  *
  * This file defines Turba's external API interface. Other applications can
  * interact with Turba through this API.
@@ -1011,10 +1011,12 @@ function _turba_import($content, $contentType = 'array', $import_source = null)
  *                               defined by imc.org
  * @param string|array $sources  The source(s) from which the contact will be
  *                               exported.
+ * @param array $fields          Hash of field names and SyncML_Property
+ *                               properties with the requested fields.
  *
  * @return mixed  The requested data | PEAR_Error
  */
-function _turba_export($uid, $contentType, $sources = null)
+function _turba_export($uid, $contentType, $sources = null, $fields = null)
 {
     require_once dirname(__FILE__) . '/base.php';
     global $cfgSources, $prefs;
@@ -1069,7 +1071,7 @@ function _turba_export($uid, $contentType, $sources = null)
             require_once 'Horde/iCalendar.php';
             $export = '';
             foreach ($result->objects as $obj) {
-                $vcard = $driver->tovCard($obj, $version);
+                $vcard = $driver->tovCard($obj, $version, $fields);
                 /* vCards are not enclosed in BEGIN:VCALENDAR..END:VCALENDAR.
                  * Export the individual cards instead. */
                 $export .= $vcard->exportvCalendar();

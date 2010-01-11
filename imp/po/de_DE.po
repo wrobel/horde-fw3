@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IMP 4.2-cvs\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2009-11-21 13:07+0100\n"
+"POT-Creation-Date: 2009-12-15 12:46+0100\n"
 "PO-Revision-Date: 2009-11-20 14:49+0100\n"
 "Last-Translator: Jan Schneider <jan@horde.org>\n"
 "Language-Team: German <dev@lists.horde.org>\n"
@@ -207,7 +207,7 @@ msgstr "%s möchte Sie auf \"%s\" aufmerksam machen."
 msgid "%s wishes to receive the latest information about \"%s\"."
 msgstr "%s möchte die neuesten Informationen über \"%s\" erhalten."
 
-#: compose.php:1243
+#: compose.php:1244
 #, php-format
 msgid "%s%% of allowed size"
 msgstr "%s%% der erlaubten Größe"
@@ -628,15 +628,15 @@ msgstr "Aufsteigend"
 msgid "Ask"
 msgstr "Nachfragen"
 
-#: compose.php:1181
+#: compose.php:1182
 msgid "Attach Files"
 msgstr "Dateien anhängen"
 
-#: compose.php:1170
+#: compose.php:1171
 msgid "Attach a copy of your PGP public key to the message?"
 msgstr "Ihren öffentlichen PGP-Schlüssels an die Nachricht anhängen?"
 
-#: compose.php:1175
+#: compose.php:1176
 msgid "Attach your contact information to the message?"
 msgstr "Ihre Visitenkarte an die Nachricht anhängen?"
 
@@ -1687,7 +1687,7 @@ msgstr "S/MIME-Funktionen aktivieren?"
 msgid "Enable message previews?"
 msgstr "Nachrichtenvorschau aktivieren?"
 
-#: compose.php:1163
+#: compose.php:1164
 msgid "Encr_yption Options"
 msgstr "_Verschlüsselungs-Einstellungen"
 
@@ -2427,7 +2427,7 @@ msgstr "Letzte Ordnerseite"
 msgid "Last Page"
 msgstr "Letzte Seite"
 
-#: compose.php:1207
+#: compose.php:1208
 msgid "Link Attachments?"
 msgstr "Anhänge verlinken?"
 
@@ -3338,7 +3338,7 @@ msgstr "Benutzereinstellungen"
 msgid "Preferences successfully updated."
 msgstr "Die Einstellungen wurden erfolgreich gespeichert."
 
-#: compose.php:1227
+#: compose.php:1228
 msgid "Preview"
 msgstr "Vorschau"
 
@@ -3636,7 +3636,7 @@ msgstr "Als kein Spam melden"
 msgid "Report as Spam"
 msgstr "Als Spam _melden"
 
-#: compose.php:1144
+#: compose.php:1145
 msgid "Request a _Read Receipt"
 msgstr "_Lesebestätigung anfordern"
 
@@ -3835,7 +3835,7 @@ msgstr "Speichern unter"
 msgid "Save"
 msgstr "Speichern"
 
-#: compose.php:1203
+#: compose.php:1204
 msgid "Save Attachments with message in sent-mail folder?"
 msgstr ""
 "Anhänge zusammen mit Nachrichten im Ordner für gesendete Nachrichten "
@@ -4377,7 +4377,7 @@ msgstr "Zusammenfassung"
 msgid "Superscript"
 msgstr "Hochgestellt"
 
-#: compose.php:1149 compose.php:1150
+#: compose.php:1150 compose.php:1151
 msgid "Switch Composition Method"
 msgstr "Editiermodus umschalten"
 
@@ -4405,7 +4405,7 @@ msgstr "Aufgabenlisten"
 msgid "Tasks"
 msgstr "Aufgaben"
 
-#: compose.php:1154
+#: compose.php:1155
 msgid "Te_xt"
 msgstr "_Text"
 

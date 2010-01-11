@@ -4,7 +4,7 @@
  *
  * This can be used as a starting point for a custom backend implementation.
  *
- * $Horde: framework/SyncML/SyncML/Backend/Sql.php,v 1.6.2.7 2009-04-05 20:24:43 jan Exp $
+ * $Horde: framework/SyncML/SyncML/Backend/Sql.php,v 1.6.2.8 2009/12/29 17:28:23 jan Exp $
  *
  * Copyright 2006-2009 The Horde Project (http://www.horde.org/)
  *
@@ -273,10 +273,12 @@ class SyncML_Backend_Sql extends SyncML_Backend {
      *                             this is the guid.
      * @param string $contentType  Content-Type: the MIME type in which the
      *                             function should return the data.
+     * @param array $fields        Hash of field names and SyncML_Property
+     *                             properties with the requested fields.
      *
      * @return mixed  A string with the data entry or a PEAR_Error object.
      */
-    function retrieveEntry($databaseURI, $suid, $contentType)
+    function retrieveEntry($databaseURI, $suid, $contentType, $fields)
     {
         $database = $this->_normalize($databaseURI);
 

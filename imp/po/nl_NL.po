@@ -1,15 +1,15 @@
 # Dutch translations for Imp package.
 # Copyright 2006-2009 The Horde Project
 # This file is distributed under the same license as the Imp package.
-# Jan Kuipers <jrkuipers@lauwerscollege.nl>, 2001-2008.
+# Jan Kuipers <jrkuipers@lauwerscollege.nl>, 2001-2009.
 # Updated Han Spruyt, 2005
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Imp H3 (4.2.1-cvs)\n"
+"Project-Id-Version: Imp H3 (4.3.6-cvs)\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2008-09-14 11:49+0200\n"
-"PO-Revision-Date: 2008-09-14 12:43+0200\n"
+"POT-Creation-Date: 2009-12-14 08:18+0100\n"
+"PO-Revision-Date: 2009-12-14 19:58+0100\n"
 "Last-Translator: Jan Kuipers <jrkuipers@lauwerscollege.nl>\n"
 "Language-Team: Dutch <i18n@lists.horde.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,28 +17,28 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: lib/Compose.php:1977
+#: lib/Compose.php:2009
 msgid "      Cc: "
 msgstr "      Cc: "
 
-#: lib/Compose.php:1974
+#: lib/Compose.php:2006
 msgid "      To: "
 msgstr "      Aan: "
 
-#: lib/Compose.php:1962
+#: lib/Compose.php:1994
 msgid "    Date: "
 msgstr "    Datum: "
 
-#: lib/Compose.php:1965
+#: lib/Compose.php:1997
 msgid "    From: "
 msgstr "      Van: "
 
-#: folders.php:359 mailbox.php:357
+#: mailbox.php:357 folders.php:381
 #, php-format
 msgid " (Accesskey %s)"
 msgstr " (Sneltoets %s)"
 
-#: lib/Compose.php:1971
+#: lib/Compose.php:2003
 msgid " Subject: "
 msgstr " Onderwerp: "
 
@@ -56,12 +56,12 @@ msgstr "%.0f MB"
 msgid "%.0f%% of %.0f MB"
 msgstr "%.0f%% van %.0f MB"
 
-#: folders.php:300 folders.php:311 lib/Message.php:864
+#: folders.php:311 folders.php:322 lib/Message.php:863
 #, php-format
 msgid "%.2fMB"
 msgstr "%.2fMB"
 
-#: thread.php:158
+#: thread.php:162
 #, php-format
 msgid "%d Messages"
 msgstr "%d Berichten"
@@ -117,7 +117,7 @@ msgstr "%s bestaat reeds. Uw %s map is niet hernoemd."
 msgid "%s folder being renamed at the start of the month."
 msgstr "%s map zal worden hernoemd aan het begin van de maand."
 
-#: lib/api.php:180 lib/api.php:183 lib/api.php:188
+#: lib/api.php:188 lib/api.php:191 lib/api.php:196
 #, php-format
 msgid "%s for %s"
 msgstr "%s voor %s"
@@ -127,12 +127,12 @@ msgstr "%s voor %s"
 msgid "%s has accepted."
 msgstr "%s heeft geaccepteerd."
 
-#: lib/MIME/Viewer/itip.php:692
+#: lib/MIME/Viewer/itip.php:744
 #, php-format
 msgid "%s has cancelled \"%s\"."
 msgstr "%s heeft \"%s\" afgezegd."
 
-#: lib/MIME/Viewer/itip.php:697
+#: lib/MIME/Viewer/itip.php:749
 #, php-format
 msgid "%s has cancelled an instance of the recurring \"%s\"."
 msgstr "%s heeft een afspraak van de herhalende afspraak \"%s\" afgezegd."
@@ -142,17 +142,17 @@ msgstr "%s heeft een afspraak van de herhalende afspraak \"%s\" afgezegd."
 msgid "%s has declined."
 msgstr "%s is afgenomen."
 
-#: lib/MIME/Viewer/itip.php:532
+#: lib/MIME/Viewer/itip.php:584
 #, php-format
 msgid "%s has replied to a free/busy request."
 msgstr "%s heeft geantwoord op een vrij/bezet verzoek."
 
-#: lib/MIME/Viewer/itip.php:683
+#: lib/MIME/Viewer/itip.php:735
 #, php-format
 msgid "%s has replied to the invitation to \"%s\"."
 msgstr "%s heeft geantwoord op de uitnodiging voor \"%s\"."
 
-#: lib/MIME/Viewer/itip.php:523
+#: lib/MIME/Viewer/itip.php:575
 #, php-format
 msgid "%s has sent you free/busy information."
 msgstr "%s heeft u vrij/bezet informatie gezonden."
@@ -162,22 +162,22 @@ msgstr "%s heeft u vrij/bezet informatie gezonden."
 msgid "%s has tentatively accepted."
 msgstr "%s is voorlopig geaccepteerd."
 
-#: lib/Spam.php:270
+#: lib/Spam.php:272
 #, php-format
 msgid "%s report from %s"
 msgstr "%s rapport van %s"
 
-#: lib/MIME/Viewer/itip.php:528
+#: lib/MIME/Viewer/itip.php:580
 #, php-format
 msgid "%s requests your free/busy information."
 msgstr "%s vraagt uw vrij/bezet informatie."
 
-#: lib/MIME/Viewer/itip.php:654
+#: lib/MIME/Viewer/itip.php:706
 #, php-format
 msgid "%s requests your presence at \"%s\"."
 msgstr "%s vraagt uw aanwezigheid bij \"%s\"."
 
-#: lib/MIME/Viewer/itip.php:634
+#: lib/MIME/Viewer/itip.php:686
 #, php-format
 msgid "%s wants to notify you about changes of \"%s\"."
 msgstr "%s wenst u op de hoogte te brengen van wijzigingen van \"%s\"."
@@ -187,38 +187,33 @@ msgstr "%s wenst u op de hoogte te brengen van wijzigingen van \"%s\"."
 msgid "%s was successfully added to \"%s\"."
 msgstr "%s met succes toegevoegd aan \"%s\"."
 
-#: lib/MIME/Viewer/itip.php:671
+#: lib/MIME/Viewer/itip.php:723
 #, php-format
 msgid "%s wishes to ammend \"%s\"."
 msgstr "%s wenst \"%s\" in te brengen."
 
-#: lib/MIME/Viewer/itip.php:623 lib/MIME/Viewer/itip.php:655
-#: lib/MIME/Viewer/itip.php:842
+#: lib/MIME/Viewer/itip.php:675 lib/MIME/Viewer/itip.php:707
+#: lib/MIME/Viewer/itip.php:894
 #, php-format
 msgid "%s wishes to make you aware of \"%s\"."
 msgstr "%s wenst u op de hoogte te brengen van \"%s\"."
 
-#: lib/MIME/Viewer/itip.php:678
+#: lib/MIME/Viewer/itip.php:730
 #, php-format
 msgid "%s wishes to receive the latest information about \"%s\"."
 msgstr "%s wenst de laatste informatie te ontvangen over \"%s\"."
 
-#: compose.php:1231
+#: compose.php:1244
 #, php-format
 msgid "%s%% of allowed size"
 msgstr "%s%% van toegestane grootte"
 
-#: message.php:282 message.php:287
+#: message.php:282 message.php:287 message.php:505
 #, php-format
 msgid "%s: %s"
 msgstr "%s: %s"
 
-#: message.php:505
-#, php-format
-msgid "%s: %s (%d&nbsp;of&nbsp;%d)"
-msgstr "%s: %s (%d&nbsp;van&nbsp;%d)"
-
-#: lib/Compose.php:1906
+#: lib/Compose.php:1938
 #, php-format
 msgid "%u Forwarded Messages"
 msgstr "%u doorgestuurde berichten"
@@ -227,6 +222,11 @@ msgstr "%u doorgestuurde berichten"
 #, php-format
 msgid "%u of %u messages in %s unread."
 msgstr "%u van %u berichten in %s ongelezen."
+
+#: message.php:506
+#, php-format
+msgid "(%d&nbsp;of&nbsp;%d)"
+msgstr "(%d&nbsp;van&nbsp;%d)"
 
 #: stationery.php:129
 msgid "(HTML)"
@@ -244,19 +244,19 @@ msgstr "* Toevoegen, klik op OK *"
 msgid "* Please select address(es) *"
 msgstr "* Selecteer adres(sen), a.u.b. *"
 
-#: config/prefs.php.dist:1104
+#: config/prefs.php.dist:1109
 msgid "100 characters"
 msgstr "100 tekens"
 
-#: config/prefs.php.dist:1107
+#: config/prefs.php.dist:1112
 msgid "1000 characters"
 msgstr "1000 tekens"
 
-#: config/prefs.php.dist:1105
+#: config/prefs.php.dist:1110
 msgid "250 characters"
 msgstr "250 tekens"
 
-#: config/prefs.php.dist:1106
+#: config/prefs.php.dist:1111
 msgid "500 characters"
 msgstr "500 tekens"
 
@@ -287,27 +287,27 @@ msgstr ""
 msgid "AND"
 msgstr "EN"
 
-#: config/prefs.php.dist:665
+#: config/prefs.php.dist:670
 msgid "About this editor"
 msgstr "Over deze editor"
 
-#: config/prefs.php.dist:973
+#: config/prefs.php.dist:978
 msgid "Above the message text"
 msgstr "Boven de berichttekst"
 
-#: lib/MIME/Viewer/itip.php:661
+#: lib/MIME/Viewer/itip.php:713
 msgid "Accept and add to my calendar"
 msgstr "Accepteren en toevoegen aan mijn agenda"
 
-#: lib/MIME/Viewer/itip.php:658
+#: lib/MIME/Viewer/itip.php:710
 msgid "Accept and update in my calendar"
 msgstr "Accepteren en mijn agenda bijwerken"
 
-#: lib/MIME/Viewer/itip.php:664
+#: lib/MIME/Viewer/itip.php:716
 msgid "Accept request"
 msgstr "Verzoek accepteren"
 
-#: lib/MIME/Viewer/itip.php:957
+#: lib/MIME/Viewer/itip.php:1009
 msgid "Accepted"
 msgstr "Geaccepteerd"
 
@@ -319,13 +319,13 @@ msgstr "Geaccepteerd: "
 msgid "Account's name:"
 msgstr "Account's naam:"
 
-#: lib/MIME/Viewer/itip.php:566 lib/MIME/Viewer/itip.php:804
-#: lib/MIME/Viewer/itip.php:805 lib/MIME/Viewer/itip.php:936
+#: lib/MIME/Viewer/itip.php:618 lib/MIME/Viewer/itip.php:856
+#: lib/MIME/Viewer/itip.php:857 lib/MIME/Viewer/itip.php:988
 msgid "Actions"
 msgstr "Bewerkingen"
 
-#: lib/MIME/Headers.php:219 lib/MIME/Headers.php:220 lib/MIME/Headers.php:242
-#: lib/MIME/Headers.php:243
+#: lib/MIME/Headers.php:216 lib/MIME/Headers.php:217 lib/MIME/Headers.php:239
+#: lib/MIME/Headers.php:240
 #, php-format
 msgid "Add %s to my Address Book"
 msgstr "Voeg %s toe aan mijn adresboek"
@@ -334,24 +334,24 @@ msgstr "Voeg %s toe aan mijn adresboek"
 msgid "Add source"
 msgstr "Bron toevoegen"
 
-#: lib/MIME/Viewer/itip.php:625
+#: lib/MIME/Viewer/itip.php:677
 msgid "Add this to my calendar"
 msgstr "Voeg dit toe aan mijn agenda"
 
-#: lib/MIME/Viewer/itip.php:844
+#: lib/MIME/Viewer/itip.php:896
 msgid "Add this to my tasklist"
 msgstr "Voeg dit toe aan mijn taaklijst"
 
-#: lib/MIME/Viewer/itip.php:662
+#: lib/MIME/Viewer/itip.php:714
 msgid "Add to my calendar"
 msgstr "Aan mijn agenda toevoegen"
 
-#: lib/Compose.php:2951
+#: lib/Compose.php:2983
 #, php-format
 msgid "Added \"%s\" as an attachment."
 msgstr "\"%s\" als bijlage toegevoegd."
 
-#: config/prefs.php.dist:950
+#: config/prefs.php.dist:955
 msgid ""
 "Additional headers to display when viewing: <em>(optional, enter each header "
 "on a new line)</em>"
@@ -386,12 +386,12 @@ msgstr "Extra berichtfoutdetails"
 msgid "Additional message error details can be viewed %s."
 msgstr "Extra berichtfoutdetails kunnen bekeken worden %s."
 
-#: compose.php:827 compose.php:1073 contacts.php:120
+#: compose.php:830 compose.php:1075 contacts.php:120
 #: templates/contacts/contacts.html:8
 msgid "Address Book"
 msgstr "Adresboek"
 
-#: config/prefs.php.dist:168
+#: config/prefs.php.dist:170
 msgid "Address Books"
 msgstr "Adresboeken"
 
@@ -399,7 +399,7 @@ msgstr "Adresboeken"
 msgid "Address book to add addresses to"
 msgstr "Adresboek om adressen aan toe te voegen"
 
-#: config/prefs.php.dist:223
+#: config/prefs.php.dist:226
 msgid ""
 "Addresses to BCC all messages: <em>(optional, enter each address on a new "
 "line)</em>"
@@ -407,7 +407,7 @@ msgstr ""
 "Adressen naar BCC alle berichten: <i>(optioneel, elk adres op een nieuwe "
 "regel invoeren)</i>"
 
-#: config/prefs.php.dist:215
+#: config/prefs.php.dist:218
 msgid ""
 "Addresses to explicitly tie to this identity: <em>(optional, enter each "
 "address on a new line)</em>"
@@ -440,8 +440,8 @@ msgstr ""
 "Alle berichten in de volgende map(pen) worden gedownload naar één MBOX "
 "bestand:"
 
-#: lib/Maintenance/Task/purge_trash.php:78
 #: lib/Maintenance/Task/purge_spam.php:79
+#: lib/Maintenance/Task/purge_trash.php:78
 #, php-format
 msgid ""
 "All messages in your \"%s\" folder older than %s days will be permanently "
@@ -482,15 +482,15 @@ msgstr "Toepassen van filterregels op elke mailbox toestaan?"
 msgid "Alternative parts for this section:"
 msgstr "Alternatieve onderdelen voor deze sectie:"
 
-#: config/prefs.php.dist:730
+#: config/prefs.php.dist:735
 msgid "Always"
 msgstr "Altijd"
 
-#: config/prefs.php.dist:715
+#: config/prefs.php.dist:720
 msgid "Always save attachments"
 msgstr "Altijd bijlagen opslaan"
 
-#: lib/Message.php:582
+#: lib/Message.php:581
 msgid ""
 "An error occured while attempting to strip the attachment. The IMAP server "
 "said: "
@@ -511,16 +511,16 @@ msgstr "Een onbekende fout opgetreden bij het maken van de nieuwe notitie."
 msgid "An unknown error occured while creating the new task."
 msgstr "Een onbekende fout opgetreden bij het maken van de nieuwe taak."
 
-#: lib/MIME/Viewer/itip.php:830
+#: lib/MIME/Viewer/itip.php:882
 msgid "An unknown person"
 msgstr "onbekende persoon"
 
-#: mailbox.php:764 message.php:477 templates/mailbox/navbar.html:18
-#: templates/mailbox/navbar.html:34 templates/message/navbar_navigate.html:12
+#: message.php:477 mailbox.php:764 templates/message/navbar_navigate.html:12
+#: templates/mailbox/navbar.html:18 templates/mailbox/navbar.html:34
 msgid "Answered"
 msgstr "Beantwoord"
 
-#: lib/Search.php:792
+#: lib/Search.php:797
 msgid "Answered messages"
 msgstr "Beantwoorde berichten"
 
@@ -545,7 +545,7 @@ msgstr "Filterregels toepassen wanneer INBOX wordt weergegeven?"
 msgid "Apply filter rules whenever sidebar is refreshed?"
 msgstr "Filterregels toepassen wanneer de zijbalk wordt ververst?"
 
-#: thread.php:170
+#: thread.php:174
 msgid "Are you sure you want to delete all messages in this thread?"
 msgstr "Weet u zeker dat u alle berichten in deze thread wilt verwijderen?"
 
@@ -553,11 +553,11 @@ msgstr "Weet u zeker dat u alle berichten in deze thread wilt verwijderen?"
 msgid "Are you sure you want to delete this Virtual Folder Definition?"
 msgstr "Weet u zeker dat u deze Virtuele Map Definitie wilt verwijderen?"
 
-#: smime.php:315 pgp.php:414
+#: smime.php:320 pgp.php:419
 msgid "Are you sure you want to delete this public key?"
 msgstr "Weet u zeker dat u deze openbare sleutel wilt verwijderen?"
 
-#: smime.php:341 pgp.php:444
+#: smime.php:348 pgp.php:451
 msgid ""
 "Are you sure you want to delete your keypair? (This is NOT recommended!)"
 msgstr ""
@@ -572,7 +572,7 @@ msgstr "Weet u zeker dat u dit wilt doen?"
 msgid "Are you sure you wish to PERMANENTLY delete all attachments?"
 msgstr "Weet u zeker dat u alle bijlagen DEFINITIEF wilt verwijderen?"
 
-#: message.php:553 templates/javascript_defs.php:41
+#: message.php:554 templates/javascript_defs.php:41
 msgid "Are you sure you wish to PERMANENTLY delete these messages?"
 msgstr "Weet u zeker dat u deze berichten DEFINITIEF wilt verwijderen?"
 
@@ -584,11 +584,11 @@ msgstr "Weet u zeker dat u deze bijlage DEFINITIEF wilt verwijderen?"
 msgid "Are you sure you wish to delete all mail in this folder?"
 msgstr "Weet u zeker dat u alle mail in deze map wilt verwijderen?"
 
-#: lib/IMP.php:856
+#: lib/IMP.php:865
 msgid "Are you sure you wish to empty your spam folder?"
 msgstr "Weet u zeker dat u uw spam map wilt legen?"
 
-#: lib/IMP.php:848
+#: lib/IMP.php:857
 msgid "Are you sure you wish to empty your trash folder?"
 msgstr "Weet u zeker dat u uw prullenbak wilt legen?"
 
@@ -604,27 +604,27 @@ msgstr "Weet u zeker dat u dit bericht als onschuldig wilt rapporteren?"
 msgid "Are you sure you wish to report this message as spam?"
 msgstr "Weet u zeker dat u dit bericht als spam wilt rapporteren?"
 
-#: config/prefs.php.dist:1200
+#: config/prefs.php.dist:1205
 msgid "Arrival Time"
 msgstr "Aankomsttijd"
 
-#: config/prefs.php.dist:1215
+#: config/prefs.php.dist:1220
 msgid "Ascending"
 msgstr "Toenemend"
 
-#: config/prefs.php.dist:729
+#: config/prefs.php.dist:734
 msgid "Ask"
 msgstr "Vragen"
 
-#: compose.php:1169
+#: compose.php:1182
 msgid "Attach Files"
 msgstr "Toegevoegde bestanden:"
 
-#: compose.php:1158
+#: compose.php:1171
 msgid "Attach a copy of your PGP public key to the message?"
 msgstr "Een kopie van uw openbare PGP sleutel aan het bericht toevoegen?"
 
-#: compose.php:1163
+#: compose.php:1176
 msgid "Attach your contact information to the message?"
 msgstr "Uw contactinformatie aan het bericht toevoegen?"
 
@@ -632,7 +632,7 @@ msgstr "Uw contactinformatie aan het bericht toevoegen?"
 msgid "Attached File:"
 msgstr "Toegevoegd bestand:"
 
-#: lib/Compose.php:2010 lib/Compose.php:2116
+#: lib/Compose.php:2042 lib/Compose.php:2148
 #, php-format
 msgid ""
 "Attached file \"%s\" exceeds the attachment size limits. File NOT attached."
@@ -640,7 +640,7 @@ msgstr ""
 "Toegevoegd bestand \"%s\" overschrijdt de maximum bijlagegrootte. Bestand is "
 "NIET toegevoegd."
 
-#: lib/MIME/Viewer/itip.php:408
+#: lib/MIME/Viewer/itip.php:411
 msgid "Attached is a reply to a calendar request you sent."
 msgstr "Een antwoord op een, door u gezonden agendaverzoek, is toegevoegd."
 
@@ -649,24 +649,24 @@ msgstr "Een antwoord op een, door u gezonden agendaverzoek, is toegevoegd."
 msgid "Attachment"
 msgstr "Bijlage"
 
-#: attachment.php:72
+#: attachment.php:73
 #, php-format
 msgid "Attachment %s deleted."
 msgstr "Bijlage %s is verwijderd."
 
-#: lib/Compose.php:2639
+#: lib/Compose.php:2671
 msgid "Attachment Information"
 msgstr "Bijlageinformatie"
 
-#: lib/Compose.php:817
+#: lib/Compose.php:823
 msgid "Attachment stripped: Original attachment type"
 msgstr "Bijlage gestript: origineel bijlagetype"
 
-#: compose.php:1107 lib/Compose.php:2606 templates/compose/compose.html:252
+#: compose.php:1108 lib/Compose.php:2638 templates/compose/compose.html:252
 msgid "Attachments"
 msgstr "Bijlagen"
 
-#: lib/MIME/Viewer/itip.php:756 lib/MIME/Viewer/itip.php:885
+#: lib/MIME/Viewer/itip.php:808 lib/MIME/Viewer/itip.php:937
 msgid "Attendees"
 msgstr "Aanwezigen"
 
@@ -678,11 +678,7 @@ msgstr "Aandacht"
 msgid "Auth_imp: Required IMAP extension not found."
 msgstr "Auth_imp: Vereiste IMAP extensie niet gevonden."
 
-#: config/hooks.php.dist:521
-msgid "Authentication failed."
-msgstr "Authenticatie mislukt."
-
-#: config/prefs.php.dist:882
+#: config/prefs.php.dist:887
 msgid ""
 "Automatically show images in HTML messages when the sender is in my address "
 "book?"
@@ -694,33 +690,33 @@ msgstr ""
 msgid "Available Address books:"
 msgstr "Beschikbare adresboeken:"
 
-#: lib/MIME/Viewer/itip.php:789 lib/MIME/Viewer/itip.php:921
+#: lib/MIME/Viewer/itip.php:841 lib/MIME/Viewer/itip.php:973
 msgid "Awaiting Response"
 msgstr "In afwachting van antwoord"
 
-#: thread.php:137 message.php:523
+#: thread.php:141 message.php:524
 #, php-format
 msgid "Bac_k to %s"
 msgstr "_Terug naar %s"
 
-#: thread.php:137 message.php:523
+#: thread.php:141 message.php:524
 #, php-format
 msgid "Back to %s"
 msgstr "Terug naar %s"
 
-#: thread.php:134
+#: thread.php:138
 msgid "Back to Multiple Message View Index"
 msgstr "Terug naar index Meerdere Berichten"
 
-#: thread.php:132
+#: thread.php:136
 msgid "Back to Thread Display"
 msgstr "Terug naar Thread overzicht"
 
-#: config/prefs.php.dist:631
+#: config/prefs.php.dist:636
 msgid "Background Color"
 msgstr "Achtergrondkleur"
 
-#: lib/IMAP/Client.php:478
+#: lib/IMAP/Client.php:480
 #, php-format
 msgid "Bad login name or password."
 msgstr "Verkeerde gebruikersnaam of wachtwoord."
@@ -730,17 +726,17 @@ msgstr "Verkeerde gebruikersnaam of wachtwoord."
 msgid "Bad or malformed request. Server Responded: %s"
 msgstr "Verkeerd of misvormd verzoek. De server meldt: %s"
 
-#: lib/IMAP/Client.php:482
+#: lib/IMAP/Client.php:484
 #, php-format
 msgid "Bad request: %s"
 msgstr "Verkeerd verzoek: %s"
 
-#: lib/Search.php:721 lib/UI/Message.php:28 templates/login/recompose.html:32
-#: templates/contacts/contacts.html:43
+#: lib/Search.php:726 lib/UI/Message.php:28
+#: templates/contacts/contacts.html:43 templates/login/recompose.html:32
 msgid "Bcc"
 msgstr "Bcc"
 
-#: config/prefs.php.dist:685
+#: config/prefs.php.dist:690
 msgid "Before Signature"
 msgstr "Voor handtekening"
 
@@ -748,72 +744,72 @@ msgstr "Voor handtekening"
 msgid "Below is the raw text of the status information message."
 msgstr "Hieronder staat de ruwe tekst van het statusinformatiebericht."
 
-#: config/prefs.php.dist:974
+#: config/prefs.php.dist:979
 msgid "Below the message text"
 msgstr "Onder de berichttekst"
 
-#: mailbox.php:526 message.php:579
+#: message.php:580 mailbox.php:526
 msgid "Blacklist"
 msgstr "Zwarte lijst"
 
-#: config/prefs.php.dist:871
+#: config/prefs.php.dist:876
 msgid "Block images in HTML messages unless they are specifically requested?"
 msgstr ""
 "Blokkeer afbeeldingen in HTML berichten, tenzij deze specifiek aangevraagd "
 "worden?"
 
-#: lib/Search.php:731
+#: lib/Search.php:736
 msgid "Body"
 msgstr "Body"
 
-#: message.php:569 config/prefs.php.dist:764
+#: message.php:570 config/prefs.php.dist:769
 msgid "Body Text Only"
 msgstr "Alleen bodytekst"
 
-#: message.php:570 config/prefs.php.dist:765
+#: message.php:571 config/prefs.php.dist:770
 msgid "Body Text with Attachments"
 msgstr "Bodytekst met bijlagen"
 
-#: config/prefs.php.dist:626
+#: config/prefs.php.dist:631
 msgid "Bold"
 msgstr "Vet"
 
-#: config/prefs.php.dist:939
+#: config/prefs.php.dist:944
 msgid "Both Header Listing and Body of Message"
 msgstr "Zowel in header als in body van bericht weergeven"
 
-#: config/prefs.php.dist:684
+#: config/prefs.php.dist:689
 msgid "Bottom"
 msgstr "Onderkant"
 
-#: config/prefs.php.dist:640
+#: config/prefs.php.dist:645
 msgid "Bulleted List"
 msgstr "Ongeordende lijst"
 
-#: lib/IMAP/Client.php:407
+#: lib/IMAP/Client.php:409
 msgid ""
 "CRAM-MD5 or DIGEST-MD5 requires PEAR's Auth_SASL package to be installed."
 msgstr ""
 "CRAM-MD5 of DIGEST-MD5 vereist dat het PEAR Auth_SASL pakket is "
 "geinstalleerd."
 
-#: compose.php:1027
+#: compose.php:1029
 msgid "C_harset"
 msgstr "Tek_enset"
 
-#: search.php:278 config/hooks.php.dist:455
+#: search.php:279 config/hooks.php.dist:619
 msgid "Calendar"
 msgstr "Agenda"
 
-#: templates/folders/import.html:18 templates/folders/folders_confirm.html:24
+#: templates/folders/folders_confirm.html:24 templates/folders/import.html:18
+#: templates/contacts/contacts.html:69 templates/saveimage/saveimage.html:20
 #: templates/smime/passphrase.html:24 templates/smime/import_key.html:70
 #: templates/pgp/passphrase.html:22 templates/pgp/import_key.html:49
-#: templates/saveimage/saveimage.html:20 templates/contacts/contacts.html:69
 msgid "Cancel"
 msgstr "Afbreken"
 
-#: templates/compose/redirect.html:83 templates/compose/compose.html:21
-#: templates/compose/compose.html:208
+#: templates/compose/compose.html:21 templates/compose/compose.html:208
+#: templates/compose/redirect.html:84
 msgid "Cancel Message"
 msgstr "Bericht afbreken"
 
@@ -829,7 +825,7 @@ msgstr "Kan niet verbinden met de mailserver op afstand."
 msgid "Cannot connect to the remote mail server: "
 msgstr "Kan niet verbinden met de mailserver op afstand: "
 
-#: lib/IMAP/Tree.php:2013
+#: lib/IMAP/Tree.php:2093
 msgid "Cannot directly create mailbox in this folder."
 msgstr "Kan niet direct een mailbox in deze map maken."
 
@@ -848,12 +844,12 @@ msgstr ""
 "Kan geen berichten naar de prullenbak verplaatsen - geen prullenbak "
 "opgegeven in de voorkeursinstellingen."
 
-#: pgp.php:277
+#: pgp.php:282
 msgid "Cannot retrieve public key from cache."
 msgstr "Kon de openbare sleutel niet ophalen uit de cache."
 
-#: lib/Search.php:716 lib/UI/Message.php:27 templates/login/recompose.html:23
-#: templates/contacts/contacts.html:42
+#: lib/Search.php:721 lib/UI/Message.php:27
+#: templates/contacts/contacts.html:42 templates/login/recompose.html:23
 msgid "Cc"
 msgstr "Cc"
 
@@ -865,7 +861,7 @@ msgstr ""
 "Importeren certificaat niet beschikbaar. Bestandsupload is niet beschikbaar "
 "op deze server."
 
-#: lib/MIME/Viewer/itip.php:771 lib/MIME/Viewer/itip.php:903
+#: lib/MIME/Viewer/itip.php:823 lib/MIME/Viewer/itip.php:955
 msgid "Chair Person"
 msgstr "Voorzitter"
 
@@ -893,11 +889,11 @@ msgstr ""
 "Wijzig de naam, adres en ondertekening die men ziet bij het lezen en "
 "beantwoorden van uw e-mail."
 
-#: config/prefs.php.dist:1108
+#: config/prefs.php.dist:1113
 msgid "Characters to display:"
 msgstr "Weer te geven tekens:"
 
-#: templates/mailbox/message_headers.html:13 templates/folders/actions.html:6
+#: templates/folders/actions.html:6 templates/mailbox/message_headers.html:13
 msgid "Check All/None"
 msgstr "Controleer Alles/Geen"
 
@@ -905,7 +901,7 @@ msgstr "Controleer Alles/Geen"
 msgid "Check Spelling"
 msgstr "Controleer spelling"
 
-#: folders.php:372 mailbox.php:656
+#: mailbox.php:656 folders.php:394
 msgid "Check _All/None"
 msgstr "Controleer _Alles/Geen"
 
@@ -913,7 +909,7 @@ msgstr "Controleer _Alles/Geen"
 msgid "Check for New Mail"
 msgstr "Controleer op nieuwe mail"
 
-#: config/prefs.php.dist:557
+#: config/prefs.php.dist:560
 msgid "Check spelling before sending a message?"
 msgstr "Spellingscontrole voor versturen van een bericht?"
 
@@ -942,11 +938,11 @@ msgid "Choose the order of address books to search when expanding addresses."
 msgstr ""
 "Kies de volgorde van adresboeken om te doorzoeken t.b.v. naamsuitbreiding."
 
-#: config/prefs.php.dist:657
+#: config/prefs.php.dist:662
 msgid "Clear Inline Font Specifications"
 msgstr "Inline fontspecificaties wissen"
 
-#: config/prefs.php.dist:656
+#: config/prefs.php.dist:661
 msgid "Clear MSOffice tags"
 msgstr "MS-Office tags wissen"
 
@@ -972,7 +968,7 @@ msgstr "Klik %s om de afbeelding te downloaden."
 msgid "Click %s to go to %s management page."
 msgstr "Klik %s om naar de %s beheerpagina te gaan."
 
-#: lib/MIME/Viewer/pkcs7.php:484
+#: lib/MIME/Viewer/pkcs7.php:491
 #, php-format
 msgid "Click %s to view the attachment in a separate window."
 msgstr "Klik %s om de bijlage in een apart scherm te bekijken."
@@ -988,7 +984,7 @@ msgstr ""
 msgid "Click HERE to verify the message."
 msgstr "Klik HIER om het bericht te verifiëren."
 
-#: config/prefs.php.dist:531
+#: config/prefs.php.dist:534
 #, php-format
 msgid "Click here to open all mailto: links in %s."
 msgstr "Klik hier om alle mailto: links te openen in %s."
@@ -1001,15 +997,15 @@ msgstr ""
 "Klik op één van uw geselecteerde adresboeken en selecteer daarna alle velden "
 "welke doorzocht dienen te worden."
 
-#: config/prefs.php.dist:1241
+#: config/prefs.php.dist:1246
 msgid "Clicking on the address will compose a new message to the sender"
 msgstr "Klikken op het adres zal een nieuw bericht maken voor de afzender"
 
-#: config/prefs.php.dist:1242
+#: config/prefs.php.dist:1247
 msgid "Clicking on the address will open the message to be read"
 msgstr "Klikken op het adres zal het bericht openen om te lezen"
 
-#: templates/newmsg/alert.html:17 templates/fetchmail/fetchmail.html:33
+#: templates/fetchmail/fetchmail.html:33 templates/newmsg/alert.html:17
 msgid "Close"
 msgstr "Sluiten"
 
@@ -1017,23 +1013,23 @@ msgstr "Sluiten"
 msgid "Close this window"
 msgstr "Sluit dit venster"
 
-#: lib/IMAP/Tree.php:1958
+#: lib/IMAP/Tree.php:2038
 msgid "Closed Folder"
 msgstr "Gesloten map"
 
-#: folders.php:453
+#: folders.php:475
 msgid "Collapse"
 msgstr "Inklappen"
 
-#: folders.php:388
+#: folders.php:410
 msgid "Collapse All"
 msgstr "Alles inklappen"
 
-#: folders.php:388
+#: folders.php:410
 msgid "Collapse All Folders"
 msgstr "Alle mappen inklappen"
 
-#: folders.php:453
+#: folders.php:475
 msgid "Collapse Folder"
 msgstr "Map inklappen"
 
@@ -1041,7 +1037,7 @@ msgstr "Map inklappen"
 msgid "Color Indicator:"
 msgstr "Kleurenindentificator:"
 
-#: config/prefs.php.dist:1279
+#: config/prefs.php.dist:1284
 msgid "Combine all namespaces"
 msgstr "Combineer alle namespaces"
 
@@ -1049,15 +1045,15 @@ msgstr "Combineer alle namespaces"
 msgid "Comment:"
 msgstr "Opmerking:"
 
-#: lib/MIME/Viewer/itip.php:973
+#: lib/MIME/Viewer/itip.php:1025
 msgid "Completed"
 msgstr "Afgerond"
 
-#: config/prefs.php.dist:581
+#: config/prefs.php.dist:584
 msgid "Compose messages in a separate window?"
 msgstr "Maak een nieuw bericht in een apart scherm?"
 
-#: config/prefs.php.dist:591
+#: config/prefs.php.dist:594
 msgid ""
 "Compose messages with an HTML GUI by default (if browser supports the "
 "feature)?"
@@ -1073,20 +1069,16 @@ msgstr "Instellen hoe berichten worden weergegeven."
 msgid "Configure mail preview options."
 msgstr "Mailpreviewopties instellen."
 
-#: config/hooks.php.dist:517
-msgid "Connection to server failed."
-msgstr "Verbinding met server mislukt."
-
-#: config/hooks.php.dist:479
+#: config/hooks.php.dist:643
 msgid "Contacts"
 msgstr "Contactpersonen"
 
-#: config/prefs.php.dist:177
+#: config/prefs.php.dist:180
 #, php-format
 msgid "Control PGP support for %s."
 msgstr "Beheer PGP ondersteuning van %s."
 
-#: config/prefs.php.dist:186
+#: config/prefs.php.dist:189
 #, php-format
 msgid "Control S/MIME support for %s."
 msgstr "Beheer S/MIME ondersteuning van %s."
@@ -1099,23 +1091,23 @@ msgstr ""
 "Bepaal wanneer gecontroleerd wordt op nieuwe mail en of u van de aankomst "
 "hiervan, wel of niet van op de hoogte gebracht wil worden."
 
-#: config/prefs.php.dist:929
+#: config/prefs.php.dist:934
 msgid "Convert textual emoticons into graphical ones?"
 msgstr "Converteer tekst emoticons naar grafische emoticons?"
 
-#: mailbox.php:486 mailbox.php:893 message.php:519 message.php:707
+#: message.php:520 message.php:707 mailbox.php:486 mailbox.php:895
 msgid "Copy"
 msgstr "Kopiëren"
 
-#: config/prefs.php.dist:652
+#: config/prefs.php.dist:657
 msgid "Copy selection"
 msgstr "Selectie kopiëren"
 
-#: mailbox.php:486 mailbox.php:893 message.php:519 message.php:707
+#: message.php:520 message.php:707 mailbox.php:486 mailbox.php:895
 msgid "Copy to folder"
 msgstr "Kopieer naar map"
 
-#: lib/Compose.php:2091
+#: lib/Compose.php:2123
 #, php-format
 msgid "Could not attach %s to the message."
 msgstr "Kon %s niet aan het bericht koppelen."
@@ -1125,17 +1117,17 @@ msgstr "Kon %s niet aan het bericht koppelen."
 msgid "Could not complete request. Reason Given: %s"
 msgstr "Kon verzoek niet afronden. Reden gegeven: %s"
 
-#: attachment.php:50
+#: attachment.php:51
 #, php-format
 msgid "Could not create the VFS backend: %s"
 msgstr "Kon het VFS backend %s niet maken"
 
-#: lib/Message.php:791
+#: lib/Message.php:790
 #, php-format
 msgid "Could not delete messages from %s. The server said: %s"
 msgstr "Kon berichten in %s niet verwijderen. De server meldt: %s"
 
-#: lib/Session.php:330
+#: lib/Session.php:333
 msgid "Could not execute maintenance operations."
 msgstr "Kon onderhoudswerkzaamheden niet uitvoeren."
 
@@ -1147,7 +1139,7 @@ msgstr "Kon het gewenste bestand niet uit de MS-TNEF bijlage halen."
 msgid "Could not extract the requested file from the Zip archive."
 msgstr "Kon het gewenste bestand niet uit het zip-bestand halen."
 
-#: lib/Spam.php:237
+#: lib/Spam.php:239
 msgid ""
 "Could not move message to spam mailbox - no spam mailbox defined in "
 "preferences."
@@ -1155,11 +1147,11 @@ msgstr ""
 "Kon bericht niet verplaatsen naar spam mailbox - geen spam mailbox "
 "gedefinieerd in voorkeursinstellingen."
 
-#: lib/IMAP/Client.php:318
+#: lib/IMAP/Client.php:320
 msgid "Could not open secure connection to the IMAP server."
 msgstr "Kon geen beveiligde verbinding met de IMAP server maken."
 
-#: lib/Session.php:286
+#: lib/Session.php:284
 msgid "Could not retrieve namespace information from IMAP server."
 msgstr "Kon geen namespace informatie ophalen van IMAP server."
 
@@ -1167,7 +1159,7 @@ msgstr "Kon geen namespace informatie ophalen van IMAP server."
 msgid "Could not retrieve the message from the mail server."
 msgstr "Kon bericht niet ophalen van de mailserver."
 
-#: lib/Compose.php:1096
+#: lib/Compose.php:1124
 #, php-format
 msgid "Could not save recipients: %s"
 msgstr "Kon ontvangers niet opslaan: %s"
@@ -1239,11 +1231,11 @@ msgstr "Huidige bijlagen"
 msgid "Current access to %s"
 msgstr "Huidige toegang tot %s"
 
-#: config/prefs.php.dist:1292
+#: config/prefs.php.dist:1297
 msgid "Current expanded status in the folders view"
 msgstr "Huidige uitgeklapte status in de mapweergave"
 
-#: config/prefs.php.dist:632
+#: config/prefs.php.dist:637
 msgid "Current style"
 msgstr "Huidige stijl"
 
@@ -1268,7 +1260,7 @@ msgstr "Aanpassen hoe uw mail wordt verzonden."
 msgid "Customize tasks to run upon logon to %s."
 msgstr "Aanpassen van taken tijdens aanmelding bij %s."
 
-#: config/prefs.php.dist:651
+#: config/prefs.php.dist:656
 msgid "Cut selection"
 msgstr "Selectie knippen"
 
@@ -1280,15 +1272,15 @@ msgstr "_Datum"
 msgid "Date"
 msgstr "Datum"
 
-#: lib/Search.php:746
+#: lib/Search.php:751
 msgid "Date <"
 msgstr "Datum <"
 
-#: lib/Search.php:741
+#: lib/Search.php:746
 msgid "Date ="
 msgstr "Datum ="
 
-#: lib/Search.php:751
+#: lib/Search.php:756
 msgid "Date >="
 msgstr "Datum >="
 
@@ -1300,7 +1292,7 @@ msgstr "Datum:"
 msgid "Day"
 msgstr "Dag"
 
-#: lib/MIME/Viewer/itip.php:961
+#: lib/MIME/Viewer/itip.php:1013
 msgid "Declined"
 msgstr "Afgewezen"
 
@@ -1308,43 +1300,43 @@ msgstr "Afgewezen"
 msgid "Declined: "
 msgstr "Afgewezen"
 
-#: config/prefs.php.dist:641
+#: config/prefs.php.dist:646
 msgid "Decrease Indent"
 msgstr "Inspringen verkleinen"
 
-#: config/prefs.php.dist:695
+#: config/prefs.php.dist:700
 msgid "Default"
 msgstr "Standaard"
 
-#: config/prefs.php.dist:962
+#: config/prefs.php.dist:967
 msgid "Default (US-ASCII)"
 msgstr "Standaard (US-ASCII)"
 
-#: config/prefs.php.dist:766
+#: config/prefs.php.dist:771
 msgid "Default forwarding method:"
 msgstr "Standaard forwardingmethode:"
 
-#: config/prefs.php.dist:1207
+#: config/prefs.php.dist:1212
 msgid "Default sorting criteria:"
 msgstr "Standaard sorteercriteria:"
 
-#: config/prefs.php.dist:1217
+#: config/prefs.php.dist:1222
 msgid "Default sorting direction:"
 msgstr "Standaard sorteervolgorde:"
 
-#: lib/MIME/Viewer/itip.php:969
+#: lib/MIME/Viewer/itip.php:1021
 msgid "Delegated"
 msgstr "Overgedragen"
 
-#: folders.php:418 mailbox.php:508 mailbox.php:510 message.php:553
+#: message.php:554 mailbox.php:508 mailbox.php:510 folders.php:440
 #: lib/IMAP/ACL/rfc4314.php:57 templates/folders/actions.html:19
-#: templates/smime/smime.html:35 templates/pgp/pgp.html:43
 #: templates/fetchmail/fetchmailprefs.html:122
-#: templates/contacts/contacts.html:59
+#: templates/contacts/contacts.html:59 templates/smime/smime.html:35
+#: templates/pgp/pgp.html:43
 msgid "Delete"
 msgstr "Verwijderen"
 
-#: smime.php:315 pgp.php:414
+#: smime.php:320 pgp.php:419
 #, php-format
 msgid "Delete %s Public Key"
 msgstr "Openbare sleutel %s verwijderen"
@@ -1365,11 +1357,11 @@ msgstr "Geselecteerde mappen verwijderen"
 msgid "Delete Stationery"
 msgstr "Verwijder Sjabloon"
 
-#: thread.php:170
+#: thread.php:174
 msgid "Delete Thread"
 msgstr "Thread verwijderen"
 
-#: folders.php:418
+#: folders.php:440
 msgid "Delete Virtual Folder"
 msgstr "Verwijder virtuele map"
 
@@ -1382,19 +1374,19 @@ msgstr "Verwijder Virtuele Map Definitie voor %s"
 msgid "Delete fetched messages from remote server?"
 msgstr "Verwijder opgehaalde berichten van de server op afstand?"
 
-#: lib/MIME/Viewer/itip.php:694
+#: lib/MIME/Viewer/itip.php:746
 msgid "Delete from my calendar"
 msgstr "Verwijder uit mijn agenda"
 
-#: config/prefs.php.dist:430
+#: config/prefs.php.dist:433
 msgid "Delete old linked attachments at beginning of month?"
 msgstr "Verwijder oude gekoppelde bijlagen aan het begin van de maand?"
 
-#: config/prefs.php.dist:384
+#: config/prefs.php.dist:387
 msgid "Delete old sent-mail folders at beginning of month?"
 msgstr "Verwijder oude \"OUTBOX\" mappen aan het begin van de maand?"
 
-#: config/prefs.php.dist:856
+#: config/prefs.php.dist:861
 msgid "Delete spam messages"
 msgstr "Verwijder spamberichten"
 
@@ -1406,16 +1398,16 @@ msgstr "Verwijderen/wissen"
 msgid "Delete?"
 msgstr "Verwijderen?"
 
-#: mailbox.php:779 message.php:480 templates/mailbox/navbar.html:20
+#: message.php:480 mailbox.php:779 templates/mailbox/navbar.html:20
 #: templates/mailbox/navbar.html:37
 msgid "Deleted"
 msgstr "Verwijderd"
 
-#: lib/Search.php:812
+#: lib/Search.php:817
 msgid "Deleted messages"
 msgstr "Verwijderde berichten"
 
-#: compose.php:243
+#: compose.php:240
 #, php-format
 msgid "Deleted the attachment \"%s\"."
 msgstr "Bijlage \"%s\" is verwijderd."
@@ -1424,19 +1416,19 @@ msgstr "Bijlage \"%s\" is verwijderd."
 msgid "Deleting and Moving Messages"
 msgstr "Verwijderen en verplaatsen van berichten"
 
-#: lib/MIME/Viewer/itip.php:666
+#: lib/MIME/Viewer/itip.php:718
 msgid "Deny request"
 msgstr "Weiger verzoek"
 
-#: lib/MIME/Viewer/itip.php:586
+#: lib/MIME/Viewer/itip.php:638
 msgid "Deny request for free/busy information"
 msgstr "Weiger verzoek voor vrij/bezet informatie"
 
-#: config/prefs.php.dist:1216
+#: config/prefs.php.dist:1221
 msgid "Descending"
 msgstr "Afnemend"
 
-#: lib/MIME/Viewer/itip.php:747 lib/MIME/Viewer/itip.php:878
+#: lib/MIME/Viewer/itip.php:799 lib/MIME/Viewer/itip.php:930
 msgid "Description"
 msgstr "Beschrijving"
 
@@ -1450,17 +1442,17 @@ msgstr "Beschrijving:"
 msgid "Details"
 msgstr "Details"
 
-#: lib/Compose.php:2933
+#: lib/Compose.php:2965
 #, php-format
 msgid "Did not attach \"%s\" as it was only partially uploaded."
 msgstr "\"%s\" is niet gekoppeld omdat het slechts gedeeltelijk is geupload."
 
-#: lib/Compose.php:2942
+#: lib/Compose.php:2974
 #, php-format
 msgid "Did not attach \"%s\" as the file was empty."
 msgstr "\"%s\" is niet gekoppeld omdat het bestand leeg was."
 
-#: lib/Compose.php:2929
+#: lib/Compose.php:2961
 #, php-format
 msgid ""
 "Did not attach \"%s\" as the maximum allowed upload size has been exceeded."
@@ -1468,7 +1460,7 @@ msgstr ""
 "\"%s\" is niet gekoppeld omdat de maximum toegestane uploadgrootte "
 "overschreden is."
 
-#: lib/Compose.php:2937
+#: lib/Compose.php:2969
 #, php-format
 msgid ""
 "Did not attach \"%s\" as the server configuration did not allow the file to "
@@ -1477,39 +1469,39 @@ msgstr ""
 "\"%s\" is niet gekoppeld omdat de serverconfiguratie niet toestaat dat het "
 "bestand wordt geupload."
 
-#: config/prefs.php.dist:921
+#: config/prefs.php.dist:926
 msgid "Dim signatures?"
 msgstr "Dim ondertekeningen?"
 
-#: config/prefs.php.dist:661
+#: config/prefs.php.dist:666
 msgid "Direction left to right"
 msgstr "Richting links naar rechts"
 
-#: config/prefs.php.dist:662
+#: config/prefs.php.dist:667
 msgid "Direction right to left"
 msgstr "Richting rechts naar links"
 
-#: config/prefs.php.dist:283
+#: config/prefs.php.dist:286
 msgid "Display Virtual Inbox?"
 msgstr "Virtuele inbox weergeven?"
 
-#: config/prefs.php.dist:565
+#: config/prefs.php.dist:568
 msgid "Display confirmation after sending a message?"
 msgstr "Bevestiging weergeven na versturen van een bericht?"
 
-#: config/prefs.php.dist:938
+#: config/prefs.php.dist:943
 msgid "Display in Body of Message"
 msgstr "Weergeven in body van bericht"
 
-#: config/prefs.php.dist:1072
+#: config/prefs.php.dist:1077
 msgid "Display pop-up notification of new mail?"
 msgstr "Weergeven van pop-up notificatie van nieuwe mail?"
 
-#: config/prefs.php.dist:1037
+#: config/prefs.php.dist:1042
 msgid "Display the \"Empty Spam\" link in the menubar?"
 msgstr "Weergeven van \"Spam legen\" in de menubalk?"
 
-#: config/prefs.php.dist:1029
+#: config/prefs.php.dist:1034
 msgid "Display the \"Empty Trash\" link in the menubar?"
 msgstr "Weergeven van \"Prullenbak legen\" in de menubalk?"
 
@@ -1525,7 +1517,7 @@ msgstr "Komt NIET overeen"
 msgid "Do Not Check for New Mail"
 msgstr "Controleer niet op nieuwe mail"
 
-#: config/prefs.php.dist:1243
+#: config/prefs.php.dist:1248
 msgid "Do not generate a link in the From: column"
 msgstr "Maak geen link in Van: kolom"
 
@@ -1546,7 +1538,7 @@ msgstr "Downloaden"
 msgid "Download %s in .zip Format"
 msgstr "Download %s in .zip formaat"
 
-#: message.php:679
+#: message.php:680
 msgid "Download All Attachments (in .zip file)"
 msgstr "Download alle bijlagen (in .zip bestand)"
 
@@ -1558,16 +1550,16 @@ msgstr "Download [.zip formaat]"
 msgid "Download in .zip Format"
 msgstr "Download in .zip formaat"
 
-#: mailbox.php:769 message.php:478 templates/mailbox/navbar.html:22
-#: templates/mailbox/navbar.html:40 templates/message/navbar_navigate.html:14
+#: message.php:478 mailbox.php:769 templates/message/navbar_navigate.html:14
+#: templates/mailbox/navbar.html:22 templates/mailbox/navbar.html:40
 msgid "Draft"
 msgstr "Klad"
 
-#: lib/IMAP/Tree.php:1913
+#: lib/IMAP/Tree.php:1993
 msgid "Draft folder"
 msgstr "Kladmap"
 
-#: config/prefs.php.dist:301
+#: config/prefs.php.dist:304
 msgid "Drafts"
 msgstr "Klad"
 
@@ -1583,7 +1575,7 @@ msgstr "Dynamisch"
 msgid "E-mail Address:"
 msgstr "E-mailadres:"
 
-#: mailbox.php:832
+#: mailbox.php:834
 msgid "END"
 msgstr "EIND"
 
@@ -1591,7 +1583,7 @@ msgstr "EIND"
 msgid "ERROR: Your message could not be delivered."
 msgstr "FOUT: Uw bericht kon niet worden afgeleverd."
 
-#: folders.php:419 templates/stationery/stationery.html:19
+#: folders.php:441 templates/stationery/stationery.html:19
 msgid "Edit"
 msgstr "Bewerken"
 
@@ -1599,7 +1591,7 @@ msgstr "Bewerken"
 msgid "Edit Search Query"
 msgstr "Bewerk zoekterm"
 
-#: folders.php:419 templates/search/search.html:17
+#: folders.php:441 templates/search/search.html:17
 msgid "Edit Virtual Folder"
 msgstr "Bewerk virtuele map"
 
@@ -1620,16 +1612,16 @@ msgstr "Uw filterregels bewerken"
 msgid "Edit your Whitelist"
 msgstr "Uw witte lijst bewerken"
 
-#: config/prefs.php.dist:1145
+#: config/prefs.php.dist:1150
 msgid "Edit your preferences for accessing other mail accounts."
 msgstr "Uw voorkeursinstellingen voor andere mailaccounts instellen."
 
-#: lib/Message.php:808
+#: lib/Message.php:807
 #, php-format
 msgid "Emptied all messages from %s."
 msgstr "Alle berichten uit %s zijn verwijderd."
 
-#: lib/Message.php:784
+#: lib/Message.php:783
 msgid "Emptied all messages from Virtual Trash Folder."
 msgstr "Alle berichten uit de virtuele prullenbak verwijderd."
 
@@ -1641,11 +1633,11 @@ msgstr "Legen"
 msgid "Empty Selected Folders"
 msgstr "Geselecteerde map(pen) legen"
 
-#: lib/IMP.php:856
+#: lib/IMP.php:865
 msgid "Empty _Spam"
 msgstr "_Spam legen"
 
-#: lib/IMP.php:848
+#: lib/IMP.php:857
 msgid "Empty _Trash"
 msgstr "Prullen_bak legen"
 
@@ -1653,41 +1645,41 @@ msgstr "Prullen_bak legen"
 msgid "Empty folder"
 msgstr "Map legen"
 
-#: pgp.php:465 templates/pgp/pgp.html:2
+#: pgp.php:472 templates/pgp/pgp.html:2
 msgid "Enable PGP functionality?"
 msgstr "PGP functionaliteit inschakelen?"
 
-#: smime.php:351 templates/smime/smime.html:2
+#: smime.php:358 templates/smime/smime.html:2
 msgid "Enable S/MIME functionality?"
 msgstr "S/MIME functionaliteit inschakelen?"
 
-#: config/prefs.php.dist:1096
+#: config/prefs.php.dist:1101
 msgid "Enable message previews?"
 msgstr "Berichtpreviews activeren?"
 
-#: compose.php:1152
+#: compose.php:1164
 msgid "Encr_yption Options"
 msgstr "Coder_ingsopties"
 
-#: lib/MIME/Viewer/itip.php:556 lib/MIME/Viewer/itip.php:558
-#: lib/MIME/Viewer/itip.php:732 lib/MIME/Viewer/itip.php:734
-msgid "End"
-msgstr "Einde"
-
-#: lib/Compose.php:1810
+#: lib/Compose.php:1840
 msgid "End forwarded message"
 msgstr "Einde doorgestuurd bericht"
 
-#: lib/Compose.php:1702
+#: lib/Compose.php:1730
 msgid "End message"
 msgstr "Einde bericht"
 
-#: lib/Compose.php:1700
+#: lib/Compose.php:1728
 #, php-format
 msgid "End message from %s"
 msgstr "Einde bericht van %s"
 
-#: smime.php:339 pgp.php:440
+#: lib/MIME/Viewer/itip.php:608 lib/MIME/Viewer/itip.php:610
+#: lib/MIME/Viewer/itip.php:784 lib/MIME/Viewer/itip.php:786
+msgid "End:"
+msgstr "Einde:"
+
+#: smime.php:346 pgp.php:447
 msgid "Enter Passphrase"
 msgstr "Wachtwoord invoeren"
 
@@ -1707,21 +1699,21 @@ msgstr "Geef de naam van uw nieuwe OUTBOX"
 msgid "Enter the name for your new trash folder"
 msgstr "Geef de naam van uw nieuwe prullenbak"
 
-#: message.php:568 lib/Search.php:736 config/prefs.php.dist:763
+#: message.php:569 lib/Search.php:741 config/prefs.php.dist:768
 msgid "Entire Message"
 msgstr "Gehele bericht"
 
-#: thread.php:71 message.php:175 lib/Compose.php:1136
+#: thread.php:71 message.php:175 lib/Compose.php:1164
 #, php-format
 msgid "Entry \"%s\" was successfully added to the address book"
 msgstr "Invoer \"%s\" met succes aan het adresboek toegevoegd"
 
-#: lib/MIME/Viewer/status.php:71 lib/MIME/Viewer/status.php:162
-#: lib/MIME/Viewer/pkcs7.php:441 lib/MIME/Viewer/pgp.php:448
+#: lib/MIME/Viewer/pkcs7.php:448 lib/MIME/Viewer/status.php:71
+#: lib/MIME/Viewer/status.php:162 lib/MIME/Viewer/pgp.php:453
 msgid "Error"
 msgstr "Fout"
 
-#: lib/IMAP/Client.php:303 lib/IMAP/Client.php:323
+#: lib/IMAP/Client.php:305 lib/IMAP/Client.php:325
 #, php-format
 msgid "Error connecting to IMAP server: [%s] %s."
 msgstr "Fout bij verbinden met IMAP server: [%s] %s."
@@ -1730,7 +1722,7 @@ msgstr "Fout bij verbinden met IMAP server: [%s] %s."
 msgid "Error displaying message."
 msgstr "Fout bij weergeven bericht."
 
-#: lib/MIME/Viewer/itip.php:337 lib/MIME/Viewer/itip.php:440
+#: lib/MIME/Viewer/itip.php:340 lib/MIME/Viewer/itip.php:446
 #, php-format
 msgid "Error sending reply: %s."
 msgstr "Fout bij verzenden van antwoord: %s."
@@ -1743,59 +1735,59 @@ msgstr "Fout:"
 msgid "Event successfully deleted."
 msgstr "Gebeurtenis met succes verwijderd."
 
-#: config/prefs.php.dist:1061
+#: config/prefs.php.dist:1066
 msgid "Every 15 minutes"
 msgstr "Elke 15 minuten"
 
-#: config/prefs.php.dist:1058
+#: config/prefs.php.dist:1063
 msgid "Every 30 seconds"
 msgstr "Elke 30 seconden"
 
-#: config/prefs.php.dist:824 config/prefs.php.dist:1060
+#: config/prefs.php.dist:829 config/prefs.php.dist:1065
 msgid "Every 5 minutes"
 msgstr "Elke 5 minuten"
 
-#: config/prefs.php.dist:1062
+#: config/prefs.php.dist:1067
 msgid "Every half hour"
 msgstr "Elk half uur"
 
-#: config/prefs.php.dist:1059
+#: config/prefs.php.dist:1064
 msgid "Every minute"
 msgstr "Elke minuut"
 
-#: folders.php:464
+#: folders.php:486
 msgid "Expand"
 msgstr "Uitklappen"
 
-#: folders.php:387
+#: folders.php:409
 msgid "Expand All"
 msgstr "Alles uitklappen"
 
-#: folders.php:387
+#: folders.php:409
 msgid "Expand All Folders"
 msgstr "Alle mappen uitklappen"
 
-#: folders.php:464
+#: folders.php:486
 msgid "Expand Folder"
 msgstr "Map uitklappen"
 
-#: compose.php:829 compose.php:1081
+#: compose.php:832 compose.php:1083
 msgid "Expand Names"
 msgstr "Naamsuitbreiding"
 
-#: config/prefs.php.dist:1271
+#: config/prefs.php.dist:1276
 msgid "Expand the entire folder tree by default in the folders view?"
 msgstr "Standaard de complete tree uitklappen in de mapweergave?"
 
-#: config/prefs.php.dist:1293
+#: config/prefs.php.dist:1298
 msgid "Expand the entire folder tree by default in the sidebar?"
 msgstr "Standaard de complete tree uitklappen in de zijbalk?"
 
-#: config/prefs.php.dist:601
+#: config/prefs.php.dist:604
 msgid "FCKeditor"
 msgstr "FCKeditor"
 
-#: lib/IMP.php:867 lib/IMP.php:869
+#: lib/IMP.php:876 lib/IMP.php:878
 msgid "F_etch Mail"
 msgstr "Mail _ophalen"
 
@@ -1804,7 +1796,7 @@ msgstr "Mail _ophalen"
 msgid "Fetch Mail"
 msgstr "Mail ophalen"
 
-#: config/prefs.php.dist:1153
+#: config/prefs.php.dist:1158
 msgid "Fetch Mail in a separate window?"
 msgstr "Mail ophalen in een apart scherm?"
 
@@ -1830,7 +1822,7 @@ msgstr "Andere POP3/IMAP accounts: "
 msgid "Fetchmail: no new messages."
 msgstr "Fetchmail: geen nieuwe berichten."
 
-#: lib/IMP.php:873
+#: lib/IMP.php:882
 msgid "Fi_lters"
 msgstr "Fi_lters"
 
@@ -1846,7 +1838,7 @@ msgstr "Bestand"
 msgid "Filter Settings"
 msgstr "Filterinstellingen"
 
-#: config/prefs.php.dist:839
+#: config/prefs.php.dist:844
 msgid "Filter message content for profanity?"
 msgstr "Bericht filteren op aanstootgevende inhoud?"
 
@@ -1867,7 +1859,7 @@ msgstr "Filters: %s beheerpagina"
 msgid "Find:"
 msgstr "Vinden:"
 
-#: config/prefs.php.dist:1189
+#: config/prefs.php.dist:1194
 msgid "First Mailbox Page"
 msgstr "Eerste mailboxpagina"
 
@@ -1875,33 +1867,33 @@ msgstr "Eerste mailboxpagina"
 msgid "First Page"
 msgstr "Eerste pagina"
 
-#: mailbox.php:774 message.php:479 templates/mailbox/navbar.html:32
-#: templates/message/navbar_navigate.html:10
+#: message.php:479 mailbox.php:774 templates/message/navbar_navigate.html:10
+#: templates/mailbox/navbar.html:16 templates/mailbox/navbar.html:32
 msgid "Flagged For Followup"
 msgstr "Gemarkeerd voor opvolging"
 
-#: lib/Search.php:802
+#: lib/Search.php:807
 msgid "Flagged messages"
 msgstr "Gemarkeerde berichten"
 
-#: mailbox.php:533 message.php:567
+#: message.php:568 mailbox.php:533
 msgid "Fo_rward"
 msgstr "Door_sturen"
 
-#: lib/IMAP/Tree.php:1958 templates/folders/folders_size.html:6
+#: lib/IMAP/Tree.php:2038 templates/folders/folders_size.html:6
 msgid "Folder"
 msgstr "Map"
 
-#: folders.php:262 templates/folders/folders_confirm.html:6
+#: folders.php:273 templates/folders/folders_confirm.html:6
 msgid "Folder Actions - Confirmation"
 msgstr "Mapbewerking -  Bevestiging"
 
-#: folders.php:325 templates/prefs/initialpageselect.inc:11
+#: folders.php:336 templates/prefs/initialpageselect.inc:11
 #: templates/folders/head.html:2
 msgid "Folder Navigator"
 msgstr "Mapnavigator"
 
-#: folders.php:282 templates/folders/folders_size.html:1
+#: folders.php:293 templates/folders/folders_size.html:1
 msgid "Folder Sizes"
 msgstr "Mapgroottes"
 
@@ -1917,36 +1909,36 @@ msgstr "Delen van mappen is niet ingeschakeld."
 msgid "Folder use is not enabled."
 msgstr "Gebruik van mappen is niet ingeschakeld."
 
-#: config/prefs.php.dist:630
+#: config/prefs.php.dist:635
 msgid "Font Color"
 msgstr "Fontkleur"
 
-#: config/prefs.php.dist:1260
+#: config/prefs.php.dist:1265
 msgid "Format of message dates in the mailbox view for messages dated today"
 msgstr "Datumformaat in de mailboxweergave voor berichten van vandaag "
 
-#: mailbox.php:533 message.php:567 lib/Compose.php:1793
+#: message.php:568 mailbox.php:533 lib/Compose.php:1823
 msgid "Forward"
 msgstr "Doorsturen"
 
-#: lib/Compose.php:1779
+#: lib/Compose.php:1809
 msgid "Forward:"
 msgstr "Doorsturen:"
 
-#: lib/Compose.php:1892
+#: lib/Compose.php:1924
 msgid "Forwarded Message:"
 msgstr "Doorgestuurd bericht:"
 
-#: lib/Compose.php:1806
+#: lib/Compose.php:1836
 msgid "Forwarded message"
 msgstr "Doorgestuurd bericht"
 
-#: lib/Compose.php:1804
+#: lib/Compose.php:1834
 #, php-format
 msgid "Forwarded message from %s"
 msgstr "Doorgestuurd bericht van %s"
 
-#: lib/MIME/Viewer/itip.php:434
+#: lib/MIME/Viewer/itip.php:437
 msgid "Free/Busy Request Response"
 msgstr "Vrij/Bezet verzoek antwoord"
 
@@ -1954,12 +1946,12 @@ msgstr "Vrij/Bezet verzoek antwoord"
 msgid "Fro_m"
 msgstr "_Van"
 
-#: lib/Search.php:706 lib/UI/Mailbox.php:99 lib/UI/Message.php:25
+#: lib/Search.php:711 lib/UI/Message.php:25 lib/UI/Mailbox.php:99
 #: templates/compose/compose.html:27
 msgid "From"
 msgstr "Van"
 
-#: config/prefs.php.dist:1202
+#: config/prefs.php.dist:1207
 msgid "From Address"
 msgstr "Afzender"
 
@@ -1980,12 +1972,12 @@ msgstr "Algemene opties"
 msgid "Get only new messages? (IMAP only)"
 msgstr "Alleen nieuwe berichten ophalen? (alleen IMAP)"
 
-#: folders.php:374 lib/MIME/Viewer/itip.php:598 lib/MIME/Viewer/itip.php:808
-#: lib/MIME/Viewer/itip.php:939
+#: folders.php:396 lib/MIME/Viewer/itip.php:650 lib/MIME/Viewer/itip.php:860
+#: lib/MIME/Viewer/itip.php:991
 msgid "Go"
 msgstr "Ga"
 
-#: thread.php:136
+#: thread.php:140
 msgid "Go to Message"
 msgstr "Ga naar bericht"
 
@@ -2000,10 +1992,10 @@ msgstr "Gan naar \"%s\" in adresboek"
 
 #: message.php:447 lib/Filter.php:130 lib/MIME/Contents.php:449
 #: lib/MIME/Viewer/images.php:90 lib/MIME/Viewer/images.php:97
-#: lib/MIME/Viewer/images.php:99 lib/MIME/Viewer/appledouble.php:40
+#: lib/MIME/Viewer/images.php:99 lib/MIME/Viewer/pkcs7.php:491
 #: lib/MIME/Viewer/status.php:119 lib/MIME/Viewer/status.php:128
-#: lib/MIME/Viewer/pkcs7.php:484 lib/MIME/Viewer/notification.php:60
-#: lib/MIME/Viewer/notification.php:67 lib/MIME/Viewer/related.php:85
+#: lib/MIME/Viewer/related.php:85 lib/MIME/Viewer/appledouble.php:48
+#: lib/MIME/Viewer/notification.php:60 lib/MIME/Viewer/notification.php:67
 msgid "HERE"
 msgstr "HIER"
 
@@ -2011,15 +2003,15 @@ msgstr "HIER"
 msgid "HTML"
 msgstr "HTML"
 
-#: lib/Compose.php:477
+#: lib/Compose.php:489
 msgid "HTML Version of Message"
 msgstr "HTML versie van bericht"
 
-#: message.php:618
+#: message.php:619
 msgid "Headers"
 msgstr "Headers"
 
-#: config/prefs.php.dist:664
+#: config/prefs.php.dist:669
 msgid "Help using editor"
 msgstr "Help bij gebruik van editor"
 
@@ -2027,19 +2019,19 @@ msgstr "Help bij gebruik van editor"
 msgid "Here is the message you were composing:"
 msgstr "Hier is het bericht dat u aan het maken was:"
 
-#: config/prefs.php.dist:912
+#: config/prefs.php.dist:917
 msgid "Hidden"
 msgstr "Verborgen"
 
-#: config/prefs.php.dist:910
+#: config/prefs.php.dist:915
 msgid "Hidden in List Messages"
 msgstr "Verborgen in mailinglist berichten"
 
-#: config/prefs.php.dist:909
+#: config/prefs.php.dist:914
 msgid "Hidden in Thread View"
 msgstr "Verborgen in threadweergave"
 
-#: config/prefs.php.dist:911
+#: config/prefs.php.dist:916
 msgid "Hidden in Thread View and List Messages"
 msgstr "Verborgen in threadweergave en mailinglist berichten"
 
@@ -2047,11 +2039,11 @@ msgstr "Verborgen in threadweergave en mailinglist berichten"
 msgid "Hide Deleted"
 msgstr "Verberg verwijderd"
 
-#: folders.php:380
+#: folders.php:402
 msgid "Hide Unsubscribed"
 msgstr "Verberg uitgeschreven"
 
-#: compose.php:1043
+#: compose.php:1045
 msgid "High"
 msgstr "Hoog"
 
@@ -2059,28 +2051,28 @@ msgstr "Hoog"
 msgid "High Priority"
 msgstr "Hoge prioriteit"
 
-#: compose.php:1042
+#: compose.php:1044
 msgid "Highest"
 msgstr "Hoogste"
 
-#: config/prefs.php.dist:643
+#: config/prefs.php.dist:648
 msgid "Horizontal Rule"
 msgstr "Horizontale lijn"
 
-#: config/prefs.php.dist:940
+#: config/prefs.php.dist:945
 msgid "How do you want to display attachments?"
 msgstr "Hoe wilt u bijlagen weergeven?"
 
-#: config/prefs.php.dist:1281
+#: config/prefs.php.dist:1286
 msgid "How should namespaces be displayed in the folder tree view?"
 msgstr ""
 "Op welke manier dienen namespaces weergegeven te worden de mappenweergave?"
 
-#: config/prefs.php.dist:792
+#: config/prefs.php.dist:797
 msgid "How to attribute quoted lines in a reply"
 msgstr "Attribuut voor citaten in een antwoord"
 
-#: lib/IMAP.php:303
+#: lib/IMAP.php:309
 msgid "IMAP"
 msgstr "IMAP"
 
@@ -2088,20 +2080,24 @@ msgstr "IMAP"
 msgid "IMAP (Auto Detect Protocols)"
 msgstr "IMAP (Auto Detect Protocols)"
 
+#: lib/IMAP.php:315
+msgid "IMAP (self-signed certificate)"
+msgstr "IMAP (zelf ondertekend certificaat)"
+
 #: lib/IMAP/Client.php:200
 #, php-format
 msgid "IMAP Server closed the connection. Server Responded: %s"
 msgstr "De IMAP server heeft de verbinding verbroken. De server meldt: %s"
 
-#: lib/IMAP.php:315
+#: lib/IMAP.php:327
 msgid "IMAP over SSL"
 msgstr "IMAP via SSL"
 
-#: lib/IMAP.php:321
+#: lib/IMAP.php:333
 msgid "IMAP over SSL (self-signed certificate)"
-msgstr "IMAP via SSL (zelf ondertekend)"
+msgstr "IMAP via SSL (zelf ondertekend certificaat)"
 
-#: lib/IMAP.php:309
+#: lib/IMAP.php:321
 msgid "IMAP, no TLS"
 msgstr "IMAP, geen TLS"
 
@@ -2109,7 +2105,7 @@ msgstr "IMAP, geen TLS"
 msgid "IMAP/POP3 Mail Servers"
 msgstr "IMAP/POP3 mailservers"
 
-#: lib/IMAP/Client.php:283
+#: lib/IMAP/Client.php:285
 msgid "If using SSL or TLS, you must have the PHP openssl extension loaded."
 msgstr ""
 "Bij gebruik van SSL of TLS, dient u de PHP openssl extensie geladen tee "
@@ -2123,7 +2119,7 @@ msgstr "Als je doorgaat, zullen alle berichten in de map(pen) verloren gaan!"
 msgid "Image"
 msgstr "Afbeelding"
 
-#: lib/MIME/Viewer/html.php:153
+#: lib/MIME/Viewer/html.php:160
 msgid "Images have been blocked to protect your privacy."
 msgstr "Afbeeldingen zijn geblokkeerd om uw privacy te beschermen."
 
@@ -2195,16 +2191,12 @@ msgstr "Mbox bestand importeren"
 msgid "Import mbox file"
 msgstr "Mbox bestand importeren"
 
-#: templates/mailbox/navbar.html:16
-msgid "Important"
-msgstr "Belangrijk"
-
 #: folders.php:150
 #, php-format
 msgid "Imported %d messages from %s."
 msgstr "%d berichten uit %s geimporteerd."
 
-#: pgp.php:174
+#: pgp.php:179
 msgid ""
 "Imported key contains your PGP private key. Only add your public key in the "
 "first step!"
@@ -2212,28 +2204,29 @@ msgstr ""
 "Geimporteerde sleutel bevat uw PGP privé sleutel. In eerste instantie alleen "
 "uw openbare sleutel toevoegen!"
 
-#: lib/MIME/Viewer/itip.php:977
+#: lib/MIME/Viewer/itip.php:1029
 msgid "In Process"
 msgstr "In behandeling"
 
-#: lib/Folder.php:68 lib/api.php:285 lib/IMP.php:732 lib/IMAP/Tree.php:396
-#: lib/IMAP/Tree.php:1896 templates/prefs/initialpageselect.inc:4
+#: lib/Folder.php:68 lib/api.php:293 lib/IMP.php:733 lib/IMP.php:744
+#: lib/IMAP/Tree.php:410 lib/IMAP/Tree.php:1976
+#: templates/prefs/initialpageselect.inc:4
 msgid "Inbox"
 msgstr "Inbox"
 
-#: config/prefs.php.dist:780
+#: config/prefs.php.dist:785
 msgid "Include a brief summary of the header in a reply?"
 msgstr "Korte samenvatting van de header bijvoegen in een antwoord?"
 
-#: config/prefs.php.dist:775
+#: config/prefs.php.dist:780
 msgid "Include body text in forward message by default?"
 msgstr "Bodytekt standaard in doorgestuurd bericht bijvoegen?"
 
-#: config/prefs.php.dist:746
+#: config/prefs.php.dist:751
 msgid "Include original message in a reply?"
 msgstr "Origineel bericht bijvoegen in een antwoord?"
 
-#: config/prefs.php.dist:642
+#: config/prefs.php.dist:647
 msgid "Increase Indent"
 msgstr "Inspringen vergroten"
 
@@ -2241,16 +2234,16 @@ msgstr "Inspringen vergroten"
 msgid "Info"
 msgstr "Info"
 
-#: smime.php:314 pgp.php:413
+#: smime.php:319 pgp.php:418
 #, php-format
 msgid "Information on %s Public Key"
 msgstr "Informatie over openbare sleutel %s"
 
-#: pgp.php:442
+#: pgp.php:449
 msgid "Information on Personal Private Key"
 msgstr "Informatie over persoonlijke prive sleutel"
 
-#: smime.php:337 pgp.php:436
+#: smime.php:344 pgp.php:443
 msgid "Information on Personal Public Key"
 msgstr "Informatie over persoonlijke openbare sleutel"
 
@@ -2267,23 +2260,23 @@ msgstr "Invoegen"
 msgid "Insert Certificate Here:"
 msgstr "Certificaat hier invoegen:"
 
-#: config/prefs.php.dist:646
+#: config/prefs.php.dist:651
 msgid "Insert Table"
 msgstr "Tabel invoegen"
 
-#: config/prefs.php.dist:644
+#: config/prefs.php.dist:649
 msgid "Insert Web Link"
 msgstr "Weblink invoegen"
 
-#: config/prefs.php.dist:645
+#: config/prefs.php.dist:650
 msgid "Insert/Modify Image"
 msgstr "Afbeelding invoegen/wijzigen"
 
-#: config/prefs.php.dist:654
+#: config/prefs.php.dist:659
 msgid "Insert/Overwrite"
 msgstr "Invoegen/overschrijven"
 
-#: lib/MIME/Viewer/itip.php:445
+#: lib/MIME/Viewer/itip.php:451
 msgid "Invalid Action selected for this component."
 msgstr "Ongeldige bewerking geselecteerd voor dit onderdeel."
 
@@ -2295,34 +2288,34 @@ msgstr "Ongeldig adres"
 msgid "Invalid Remote Mailbox"
 msgstr "Ongeldige mailbox op afstand"
 
-#: lib/Compose.php:1186 lib/Compose.php:1201 lib/Compose.php:1213
-#: lib/Compose.php:1228
+#: lib/Compose.php:1214 lib/Compose.php:1229 lib/Compose.php:1241
+#: lib/Compose.php:1256
 #, php-format
 msgid "Invalid character in e-mail address: %s."
 msgstr "Ongeldig teken in e-mailadres: %s."
 
-#: lib/Compose.php:1178
+#: lib/Compose.php:1206
 #, php-format
 msgid "Invalid e-mail address: %s."
 msgstr "Ongeldig e-mailadres: %s."
 
-#: lib/Compose.php:1197 lib/Compose.php:1224
+#: lib/Compose.php:1225 lib/Compose.php:1252
 msgid "Invalid hostname."
 msgstr "Ongeldige hostnaam."
 
-#: smime.php:96 pgp.php:18
+#: smime.php:101 pgp.php:18
 msgid "Invalid key"
 msgstr "Ongeldige sleutel"
 
-#: lib/Compose.php:296
+#: lib/Compose.php:300
 msgid "Invalid message, cannot resume draft."
 msgstr "Ongeldig bericht, kan klad niet hervatten."
 
-#: pgp.php:210
+#: pgp.php:215
 msgid "Invalid personal PGP private key."
 msgstr "Ongeldige persoonlijke prive PGP sleutel."
 
-#: pgp.php:186
+#: pgp.php:191
 msgid "Invalid personal PGP public key."
 msgstr "Ongeldige persoonlijke openbare PGP sleutel."
 
@@ -2330,23 +2323,23 @@ msgstr "Ongeldige persoonlijke openbare PGP sleutel."
 msgid "Invert"
 msgstr "Inverteren"
 
-#: config/prefs.php.dist:627
+#: config/prefs.php.dist:632
 msgid "Italic"
 msgstr "Cursief"
 
-#: config/prefs.php.dist:636
+#: config/prefs.php.dist:641
 msgid "Justify Center"
 msgstr "Midden uitlijnen"
 
-#: config/prefs.php.dist:638
+#: config/prefs.php.dist:643
 msgid "Justify Full"
 msgstr "Volledig uitlijnen"
 
-#: config/prefs.php.dist:635
+#: config/prefs.php.dist:640
 msgid "Justify Left"
 msgstr "Links uitlijnen"
 
-#: config/prefs.php.dist:637
+#: config/prefs.php.dist:642
 msgid "Justify Right"
 msgstr "Recht uitlijnen"
 
@@ -2358,7 +2351,7 @@ msgstr "KB"
 msgid "Key Length:"
 msgstr "Sleutellengte:"
 
-#: pgp.php:456
+#: pgp.php:463
 msgid ""
 "Key generation may take a long time to complete.  Continue with key "
 "generation?"
@@ -2380,7 +2373,7 @@ msgstr ""
 "Import sleutel is niet beschikbaar. Je hebt geen adresboek voor hettoevoegen "
 "van een contactpersoon"
 
-#: pgp.php:350
+#: pgp.php:355
 msgid "Key successfully sent to the public keyserver."
 msgstr "Sleutel met succes naar de openbare sleutelseerver verstuurd."
 
@@ -2392,7 +2385,7 @@ msgstr "Taal"
 msgid "Language:"
 msgstr "Taal:"
 
-#: config/prefs.php.dist:1190
+#: config/prefs.php.dist:1195
 msgid "Last Mailbox Page"
 msgstr "Laatste mailboxpagina"
 
@@ -2400,15 +2393,15 @@ msgstr "Laatste mailboxpagina"
 msgid "Last Page"
 msgstr "Laatste pagina"
 
-#: compose.php:1195
+#: compose.php:1208
 msgid "Link Attachments?"
 msgstr "Koppel bijlagen?"
 
-#: attachment.php:34 lib/Compose.php:2597
+#: attachment.php:35 lib/Compose.php:2629
 msgid "Linked attachments are forbidden."
 msgstr "Gekoppelde bijlagen zijn niet toegestaan."
 
-#: lib/Compose.php:2613
+#: lib/Compose.php:2645
 #, php-format
 msgid "Links will expire on %s"
 msgstr "Links verlopen op %s"
@@ -2417,7 +2410,7 @@ msgstr "Links verlopen op %s"
 msgid "List"
 msgstr "Groepen"
 
-#: config/prefs.php.dist:1379
+#: config/prefs.php.dist:1384
 msgid ""
 "List all contacts when loading the contacts screen? (if disabled, you will "
 "only see contacts that you search for explicitly)"
@@ -2425,11 +2418,11 @@ msgstr ""
 "Alle adressen weergeven bij het laden van het adresscherm? (Wanneer dit is "
 "uitgeschakeld, zie u alleen het adres waar u speciaal naar zoekt)"
 
-#: config/prefs.php.dist:937
+#: config/prefs.php.dist:942
 msgid "Listing in the Header"
 msgstr "Weergeven in de header"
 
-#: compose.php:815
+#: compose.php:817
 msgid "Loading..."
 msgstr "Laden..."
 
@@ -2437,7 +2430,7 @@ msgstr "Laden..."
 msgid "Local Mailbox:"
 msgstr "Lokale mailbox:"
 
-#: lib/MIME/Viewer/itip.php:752
+#: lib/MIME/Viewer/itip.php:804
 msgid "Location"
 msgstr "Locatie"
 
@@ -2458,7 +2451,7 @@ msgstr "Aanmelden"
 msgid "Login Tasks"
 msgstr "Aanmeldtaken"
 
-#: compose.php:1045
+#: compose.php:1047
 msgid "Low"
 msgstr "Laag"
 
@@ -2466,11 +2459,11 @@ msgstr "Laag"
 msgid "Low Priority"
 msgstr "Lage prioriteit"
 
-#: compose.php:1046
+#: compose.php:1048
 msgid "Lowest"
 msgstr "Laagste"
 
-#: lib/MIME/Viewer/appledouble.php:43
+#: lib/MIME/Viewer/appledouble.php:51
 msgid "Macintosh File"
 msgstr "Macintoshbestand"
 
@@ -2482,7 +2475,7 @@ msgstr "Mailpreviews"
 msgid "Mail server type to connect to:"
 msgstr "Mailservertype om mee te verbinden:"
 
-#: lib/IMAP/Tree.php:1903 lib/IMAP/Tree.php:1930
+#: lib/IMAP/Tree.php:1983 lib/IMAP/Tree.php:2010
 msgid "Mailbox"
 msgstr "Mailbox"
 
@@ -2506,13 +2499,13 @@ msgstr "Markeer alle berichten als Gezien"
 msgid "Mark All Messages as Unseen"
 msgstr "Markeer alle berichten als Ongezien"
 
-#: templates/mailbox/navbar.html:27 templates/mailbox/navbar.html:29
 #: templates/message/navbar_navigate.html:6
-#: templates/message/navbar_navigate.html:8
+#: templates/message/navbar_navigate.html:8 templates/mailbox/navbar.html:27
+#: templates/mailbox/navbar.html:29
 msgid "Mark as:"
 msgstr "Markeer als:"
 
-#: config/prefs.php.dist:892
+#: config/prefs.php.dist:897
 msgid "Mark different levels of quoting with different colors?"
 msgstr "Markeer verschillende citaatniveaus met verschillende kleuren?"
 
@@ -2520,19 +2513,19 @@ msgstr "Markeer verschillende citaatniveaus met verschillende kleuren?"
 msgid "Mark messages as seen? (IMAP only)"
 msgstr "Markeer alle berichten als gezien? (alleen IMAP)"
 
-#: config/prefs.php.dist:900
+#: config/prefs.php.dist:905
 msgid "Mark simple markup?"
 msgstr "Eenvoudige opmaak markeren?"
 
-#: search.php:164
+#: search.php:165
 msgid "Match All Queries"
 msgstr "Overeenkomend met alle queries"
 
-#: search.php:162
+#: search.php:163
 msgid "Match Any Query"
 msgstr "Overeenkomend met elke query"
 
-#: config/prefs.php.dist:622
+#: config/prefs.php.dist:627
 msgid "Maximize/Minimize Editor"
 msgstr "Editor maximaliseren/minimaliseren"
 
@@ -2564,7 +2557,7 @@ msgstr "Maximum totale bijlagegrootte bereikt."
 msgid "Menu Folder List"
 msgstr "Menu mappenlijst"
 
-#: lib/Compose.php:1693
+#: lib/Compose.php:1721
 msgid "Message"
 msgstr "Bericht"
 
@@ -2572,7 +2565,7 @@ msgstr "Bericht"
 msgid "Message Composition"
 msgstr "Berichtsamenstelling"
 
-#: config/prefs.php.dist:1201
+#: config/prefs.php.dist:1206
 msgid "Message Date"
 msgstr "Berichtdatum"
 
@@ -2591,15 +2584,15 @@ msgstr "Berichtopties"
 msgid "Message Replies/Forwards"
 msgstr "Beantwoorde/doorgestuurde berichten"
 
-#: search.php:337
+#: search.php:338
 msgid "Message Search"
 msgstr "Bericht zoeken"
 
-#: config/prefs.php.dist:1205
+#: config/prefs.php.dist:1210
 msgid "Message Size"
 msgstr "Berichtgrootte"
 
-#: message.php:588
+#: message.php:589
 msgid "Message Source"
 msgstr "Berichtbron"
 
@@ -2607,7 +2600,7 @@ msgstr "Berichtbron"
 msgid "Message Viewing"
 msgstr "Bericht bekijken"
 
-#: lib/Compose.php:1691
+#: lib/Compose.php:1719
 #, php-format
 msgid "Message from %s"
 msgstr "Bericht van %s"
@@ -2624,20 +2617,20 @@ msgstr "Bericht is versleuteld"
 msgid "Message is signed"
 msgstr "Bericht is ondertekend"
 
-#: compose.php:393 compose.php:400
+#: compose.php:394 compose.php:401
 msgid "Message redirected successfully."
 msgstr "Bericht met succes omgeleid."
 
-#: lib/Compose.php:835
+#: lib/Compose.php:841
 #, php-format
 msgid "Message sent successfully, but not saved to %s"
 msgstr "Bericht met succes verstuurd, maar niet opgeslagen in %s"
 
-#: compose.php:464 compose.php:472
+#: compose.php:465 compose.php:473
 msgid "Message sent successfully."
 msgstr "Bericht met succes verstuurd."
 
-#: config/prefs.php.dist:1232
+#: config/prefs.php.dist:1237
 msgid "Messages per page in the mailbox view."
 msgstr "Berichten per pagina in de mailboxweergave."
 
@@ -2661,7 +2654,7 @@ msgstr "Mode:"
 msgid "Month"
 msgstr "Maand"
 
-#: mailbox.php:485 mailbox.php:892 message.php:518 message.php:706
+#: message.php:519 message.php:706 mailbox.php:485 mailbox.php:894
 msgid "Move"
 msgstr "Verplaatsen"
 
@@ -2669,12 +2662,12 @@ msgstr "Verplaatsen"
 msgid "Move down"
 msgstr "Naar beneden"
 
-#: config/prefs.php.dist:862
+#: config/prefs.php.dist:867
 msgid "Move spam messages to spam folder and innocent messages to INBOX"
 msgstr ""
 "Verplaats spam berichten naar spam map en onschuldige berichten naar INBOX"
 
-#: mailbox.php:485 mailbox.php:892 message.php:518 message.php:706
+#: message.php:519 message.php:706 mailbox.php:485 mailbox.php:894
 msgid "Move to folder"
 msgstr "Verplaats naar map"
 
@@ -2686,7 +2679,7 @@ msgstr "Naar boven"
 msgid "Multipart/alternative"
 msgstr "Multipart/alternative"
 
-#: thread.php:177
+#: thread.php:181
 msgid "Multiple Message View"
 msgstr "Berichtoverzicht"
 
@@ -2694,28 +2687,28 @@ msgstr "Berichtoverzicht"
 msgid "Multiple Message View:"
 msgstr "Veelvoudig berichtoverzicht:"
 
-#: templates/smime/smime.html:4 templates/pgp/pgp.html:4
-#: templates/fetchmail/fetchmailprefs.html:91
+#: templates/fetchmail/fetchmailprefs.html:91 templates/smime/smime.html:4
+#: templates/pgp/pgp.html:4
 msgid "NOTE:"
 msgstr "OPMERKING:"
 
-#: lib/MIME/Viewer/itip.php:758 lib/MIME/Viewer/itip.php:890
+#: lib/MIME/Viewer/itip.php:810 lib/MIME/Viewer/itip.php:942
 msgid "Name"
 msgstr "Naam"
 
-#: pgp.php:115
+#: pgp.php:120
 msgid "Name and/or email cannot be empty"
 msgstr "Naam en/of e-mailadres kan niet leeg zijn"
 
-#: lib/MIME/Viewer/itip.php:982
+#: lib/MIME/Viewer/itip.php:1034
 msgid "Needs Action"
 msgstr "Handeling nodig"
 
-#: config/prefs.php.dist:728 config/prefs.php.dist:1057
+#: config/prefs.php.dist:733 config/prefs.php.dist:1062
 msgid "Never"
 msgstr "Nooit"
 
-#: config/prefs.php.dist:718
+#: config/prefs.php.dist:723
 msgid "Never save attachments"
 msgstr "Bijlagen nooit opslaan"
 
@@ -2727,16 +2720,16 @@ msgstr "Nieuwe map"
 msgid "New Mail"
 msgstr "Nieuwe mail"
 
-#: compose.php:33 compose.php:255 lib/Block/tree_folders.php:35
+#: compose.php:33 compose.php:253 lib/Block/tree_folders.php:35
 msgid "New Message"
 msgstr "Nieuw bericht"
 
-#: mailbox.php:852 lib/MIME/Headers.php:212 lib/MIME/Headers.php:235
+#: mailbox.php:854 lib/MIME/Headers.php:209 lib/MIME/Headers.php:232
 #, php-format
 msgid "New Message to %s"
 msgstr "Nieuw bericht aan %s"
 
-#: message.php:534
+#: message.php:535
 msgid "Next Message"
 msgstr "Volgend bericht"
 
@@ -2744,17 +2737,17 @@ msgstr "Volgend bericht"
 msgid "Next Page"
 msgstr "Volgende pagina"
 
-#: templates/javascript_defs.php:44 config/prefs.php.dist:823
-#: config/prefs.php.dist:1268 config/prefs.php.dist:1290
+#: templates/javascript_defs.php:44 config/prefs.php.dist:828
+#: config/prefs.php.dist:1273 config/prefs.php.dist:1295
 #: templates/compose/compose.html:303
 msgid "No"
 msgstr "Nee"
 
-#: smime.php:241
+#: smime.php:246
 msgid "No Certificate found"
 msgstr "Geen certificaat gevonden"
 
-#: lib/IMP.php:1444
+#: lib/IMP.php:1455
 msgid "No Encryption"
 msgstr "Geen codering"
 
@@ -2762,20 +2755,20 @@ msgstr "Geen codering"
 msgid "No Keys in Keyring"
 msgstr "Geen sleutels in sleutelring"
 
-#: mailbox.php:267 rss.php:86
+#: rss.php:86 mailbox.php:267
 #, php-format
 msgid "No Messages"
 msgstr "Geen berichten"
 
-#: pgp.php:142
+#: pgp.php:147
 msgid "No PGP public key imported."
 msgstr "Geen openbare sleutels geimporteerd."
 
-#: mailbox.php:813
+#: mailbox.php:815
 msgid "No Preview Text"
 msgstr "Geen tekst in preview"
 
-#: smime.php:166
+#: smime.php:171
 msgid "No S/MIME public key imported."
 msgstr "Geen openbare S/MIME sleutel geimporteerd."
 
@@ -2799,7 +2792,7 @@ msgstr "Geen map geselecteerd."
 msgid "No folders are being checked for new mail."
 msgstr "Er worden geen mappen gecontroleerd op nieuwe mail."
 
-#: folders.php:199 lib/Folder.php:423 lib/Folder.php:471
+#: folders.php:210 lib/Folder.php:423 lib/Folder.php:471
 msgid "No folders were specified"
 msgstr "Geen mappen opgegeven"
 
@@ -2811,15 +2804,15 @@ msgstr "Geen mappen met nieuwe berichten"
 msgid "No folders with unseen messages"
 msgstr "Geen mappen met ongeziene berichten"
 
-#: lib/IMP.php:1045
+#: lib/IMP.php:1054
 msgid "No limit"
 msgstr "Geen limiet"
 
-#: lib/Compose.php:1729
+#: lib/Compose.php:1757
 msgid "No message body text"
 msgstr "Geen berichtbodytekst"
 
-#: lib/IMAP/Client.php:474
+#: lib/IMAP/Client.php:476
 msgid "No message returned."
 msgstr "Geen bericht teruggestuurd."
 
@@ -2827,26 +2820,26 @@ msgstr "Geen bericht teruggestuurd."
 msgid "No messages matched your search."
 msgstr "Geen berichten die aan uw zoekcriteria voldoen."
 
-#: pgp.php:215
+#: pgp.php:220
 msgid "No personal PGP private key imported."
 msgstr "Geen persoonlijke prive PGP sleutel geimporteerd."
 
-#: pgp.php:191
+#: pgp.php:196
 msgid "No personal PGP public key imported."
 msgstr "Geen persoonlijke openbare PGP sleutel geimporteerd."
 
-#: smime.php:216
+#: smime.php:221
 msgid "No personal S/MIME certificates imported."
 msgstr "Geen persoonlijk S/MIME certificaat geimporteerd."
 
-#: lib/MIME/Viewer/pkcs7.php:302
+#: lib/MIME/Viewer/pkcs7.php:305
 msgid ""
 "No personal private key exists so the message is unable to be decrypted."
 msgstr ""
 "Er bestaat geen persoonlijke privésleutel, het bericht kan dus niet "
 "gedecodeerd worden."
 
-#: lib/IMAP/Client.php:374
+#: lib/IMAP/Client.php:376
 msgid "No supported IMAP authentication method could be found."
 msgstr "Geen ondersteunde IMAP authentificatie methode gevonden."
 
@@ -2854,18 +2847,18 @@ msgstr "Geen ondersteunde IMAP authentificatie methode gevonden."
 msgid "No user specified."
 msgstr "Geen gebruiker opgegeven"
 
-#: lib/MIME/Viewer/itip.php:779 lib/MIME/Viewer/itip.php:911
+#: lib/MIME/Viewer/itip.php:831 lib/MIME/Viewer/itip.php:963
 msgid "Non Participant"
 msgstr "Geen deelnemer"
 
-#: lib/MIME/Viewer/itip.php:742 lib/MIME/Viewer/itip.php:873
-#: templates/prefs/trashselect.inc:23 templates/prefs/sentmailselect.inc:38
-#: templates/prefs/spamselect.inc:20 templates/prefs/folderselect.inc:21
-#: templates/prefs/sourceselect.inc:35 templates/mailbox/navbar.html:11
+#: lib/MIME/Viewer/itip.php:794 lib/MIME/Viewer/itip.php:925
+#: templates/prefs/trashselect.inc:23 templates/prefs/sourceselect.inc:35
+#: templates/prefs/sentmailselect.inc:38 templates/prefs/spamselect.inc:20
+#: templates/prefs/folderselect.inc:21 templates/mailbox/navbar.html:11
 msgid "None"
 msgstr "Geen"
 
-#: compose.php:1044
+#: compose.php:1046
 msgid "Normal"
 msgstr "Normaal"
 
@@ -2873,28 +2866,25 @@ msgstr "Normaal"
 msgid "Not Deleted"
 msgstr "Niet verwijderd"
 
-#: templates/mailbox/navbar.html:23 templates/mailbox/navbar.html:41
-#: templates/message/navbar_navigate.html:15
+#: templates/message/navbar_navigate.html:15 templates/mailbox/navbar.html:23
+#: templates/mailbox/navbar.html:41
 msgid "Not Draft"
 msgstr "Geen Klad"
 
-#: templates/mailbox/navbar.html:33 templates/message/navbar_navigate.html:11
+#: templates/message/navbar_navigate.html:11 templates/mailbox/navbar.html:17
+#: templates/mailbox/navbar.html:33
 msgid "Not Flagged"
 msgstr "Niet gemarkeerd"
-
-#: templates/mailbox/navbar.html:17
-msgid "Not Important"
-msgstr "Niet belangrijk"
 
 #: templates/mailbox/navbar.html:25
 msgid "Not Personal"
 msgstr "Niet persoonlijk"
 
-#: lib/Crypt/SMIME.php:125 lib/Crypt/SMIME.php:140 lib/Crypt/PGP.php:136
+#: lib/Crypt/PGP.php:136 lib/Crypt/SMIME.php:125 lib/Crypt/SMIME.php:140
 msgid "Not a valid public key."
 msgstr "Ongeldige openbare sleutel."
 
-#: config/prefs.php.dist:975
+#: config/prefs.php.dist:980
 msgid "Not at all"
 msgstr "Helemaal niet"
 
@@ -2906,25 +2896,25 @@ msgstr "Dit kan enige tijd kosten"
 msgid "Notepads"
 msgstr "Notitieboeken"
 
-#: config/hooks.php.dist:471
+#: config/hooks.php.dist:635
 msgid "Notes"
 msgstr "Notities"
 
-#: config/prefs.php.dist:855
+#: config/prefs.php.dist:860
 msgid "Nothing"
 msgstr "Niets"
 
-#: attachment.php:108
+#: attachment.php:109
 msgid "Notification: Linked attachment downloaded"
 msgstr "Notificatie: gelinkte bijlage gedownload"
 
-#: config/prefs.php.dist:439
+#: config/prefs.php.dist:442
 msgid "Number of months to keep old linked attachments if deleting monthly."
 msgstr ""
 "Aantal maanden, welke oude gekoppelde bijlagen bewaard moeten worden bij "
 "maandelijkse opruiming."
 
-#: config/prefs.php.dist:393
+#: config/prefs.php.dist:396
 msgid "Number of old sent-mail folders to keep if deleting monthly."
 msgstr ""
 "Aantal oude \"OUTBOX\" mappen, welke bewaard worden bij maandelijkse "
@@ -2951,23 +2941,23 @@ msgstr "Alleen mappen met ongelezen berichten weergeven?"
 msgid "Only one folder should be selected for this action."
 msgstr "Voor deze bewerking mag slechts één map geselecteerd worden."
 
-#: lib/IMP.php:924 lib/IMP.php:929
+#: lib/IMP.php:933 lib/IMP.php:938
 msgid "Open Fo_lder"
 msgstr "Ma_p openen"
 
-#: lib/IMP.php:929
+#: lib/IMP.php:938
 msgid "Open Folder"
 msgstr "Map openen"
 
-#: lib/IMAP/Tree.php:1954
+#: lib/IMAP/Tree.php:2034
 msgid "Opened Folder"
 msgstr "Geopende map"
 
-#: lib/MIME/Viewer/itip.php:775 lib/MIME/Viewer/itip.php:907
+#: lib/MIME/Viewer/itip.php:827 lib/MIME/Viewer/itip.php:959
 msgid "Optional Participant"
 msgstr "Extra deelnemer"
 
-#: config/prefs.php.dist:639
+#: config/prefs.php.dist:644
 msgid "Ordered List"
 msgstr "Geordende lijst"
 
@@ -2976,37 +2966,37 @@ msgid "Other Mail Accounts"
 msgstr "Andere mailaccounts"
 
 #: config/prefs.php.dist:147 config/prefs.php.dist:160
-#: config/prefs.php.dist:167 config/prefs.php.dist:175
-#: config/prefs.php.dist:184
+#: config/prefs.php.dist:169 config/prefs.php.dist:178
+#: config/prefs.php.dist:187
 msgid "Other Options"
 msgstr "Andere opties"
 
-#: lib/IMAP/Tree.php:71
+#: lib/IMAP/Tree.php:72
 msgid "Other Users' Folders"
 msgstr "Mappen van 'andere gebruikers'"
 
-#: lib/api.php:170 templates/login/login.html:103
+#: lib/api.php:178 templates/login/login.html:103
 msgid "Outbound Server"
 msgstr "Uitgaande server"
 
 #: pgp.php:44 lib/MIME/Viewer/pgp.php:165 lib/MIME/Viewer/pgp.php:213
-#: lib/MIME/Viewer/pgp.php:309
+#: lib/MIME/Viewer/pgp.php:314
 msgid "PGP"
 msgstr "PGP"
 
-#: lib/IMP.php:1447
+#: lib/IMP.php:1458
 msgid "PGP Encrypt Message"
 msgstr "Bericht PGP coderen"
 
-#: lib/IMP.php:1452
+#: lib/IMP.php:1463
 msgid "PGP Encrypt Message with passphrase"
 msgstr "Bericht PGP coderen met wachtwoord"
 
-#: lib/Compose.php:1403
+#: lib/Compose.php:1431
 msgid "PGP Error: "
 msgstr "PGP fout: "
 
-#: config/prefs.php.dist:176
+#: config/prefs.php.dist:179
 msgid "PGP Options"
 msgstr "PGP opties"
 
@@ -3020,12 +3010,12 @@ msgstr ""
 "Persoonlijke PGP sleutelpaar ondersteuning vereist een beveiligde "
 "webverbinding."
 
-#: pgp.php:154
+#: pgp.php:159
 #, php-format
 msgid "PGP Public Key for \"%s (%s)\" was successfully added."
 msgstr "Openbare PGP sleutel voor \"%s (%s)\" werd met succes toegevoegd."
 
-#: pgp.php:257
+#: pgp.php:262
 #, php-format
 msgid "PGP Public Key for \"%s\" was successfully deleted."
 msgstr "Openbare PGP sleutel voor \"%s\" werd met succes verwijderd."
@@ -3034,19 +3024,19 @@ msgstr "Openbare PGP sleutel voor \"%s\" werd met succes verwijderd."
 msgid "PGP Public Keyring"
 msgstr "Openbare PGP sleutelring"
 
-#: lib/IMP.php:1448
+#: lib/IMP.php:1459
 msgid "PGP Sign Message"
 msgstr "Bericht PGP ondertekenen"
 
-#: lib/IMP.php:1449
+#: lib/IMP.php:1460
 msgid "PGP Sign/Encrypt Message"
 msgstr "Bericht PGP ondertekenen/coderen"
 
-#: lib/IMP.php:1453
+#: lib/IMP.php:1464
 msgid "PGP Sign/Encrypt Message with passphrase"
 msgstr "Bericht PGP ondertekenen/coderen met wachtwoord"
 
-#: compose.php:735
+#: compose.php:737
 msgid ""
 "PGP encryption cannot be used by default as public keys cannot be found for "
 "all recipients."
@@ -3054,11 +3044,11 @@ msgstr ""
 "PGP codering kan niet standaard worden gebruikt als er geen openbare "
 "sleutels voor alle ontvangers kunnen worden gevonden."
 
-#: pgp.php:205
+#: pgp.php:210
 msgid "PGP private key successfully added."
 msgstr "Prive PGP sleutel met succes toegevoegd."
 
-#: pgp.php:180
+#: pgp.php:185
 msgid "PGP public key successfully added."
 msgstr "Openbare PGP sleutel met succes toegevoegd."
 
@@ -3076,11 +3066,11 @@ msgstr ""
 "momenteel is ingesteld op het niet toestaan van popup schermen, dient u dit "
 "te wijzigen, omdat anders de PGP mogelijkheden niet goed zullen werken."
 
-#: lib/Compose.php:1363
+#: lib/Compose.php:1391
 msgid "PGP: Need passphrase for personal private key."
 msgstr "PGP: Wachtwoord vereist voor persoonlijke privésleutel."
 
-#: lib/Compose.php:1372
+#: lib/Compose.php:1400
 msgid "PGP: Need passphrase to encrypt your message with."
 msgstr "PGP: Wachtwoord vereist om bericht mee te coderen."
 
@@ -3092,15 +3082,19 @@ msgstr "POP3"
 msgid "POP3 (Auto Detect Protocols)"
 msgstr "POP3 (Auto Detect Protocols)"
 
-#: lib/IMAP.php:291
+#: lib/IMAP.php:285
+msgid "POP3 (self-signed certificate)"
+msgstr "POP3 (zelf ondertekend certificaat)"
+
+#: lib/IMAP.php:297
 msgid "POP3 over SSL"
 msgstr "POP3 via SSL"
 
-#: lib/IMAP.php:297
+#: lib/IMAP.php:303
 msgid "POP3 over SSL (self-signed certificate)"
 msgstr "POP3 via SSL (zelf ondertekend certificaat)"
 
-#: lib/IMAP.php:285
+#: lib/IMAP.php:291
 msgid "POP3, no TLS"
 msgstr "POP3, geen TLS"
 
@@ -3109,11 +3103,11 @@ msgstr "POP3, geen TLS"
 msgid "Page %d of %d"
 msgstr "Pagina %d van %d"
 
-#: config/prefs.php.dist:1187
+#: config/prefs.php.dist:1192
 msgid "Page with the First Unseen Message"
 msgstr "Pagina met eerste ongezien bericht"
 
-#: config/prefs.php.dist:1188
+#: config/prefs.php.dist:1193
 msgid "Page with the Last Unseen Message"
 msgstr "Pagina met laatste ongezien bericht"
 
@@ -3129,7 +3123,7 @@ msgstr "Onderdelen"
 msgid "Passphrase (Again):"
 msgstr "Wachtwoord (opnieuw):"
 
-#: smime.php:250 pgp.php:342
+#: smime.php:255 pgp.php:347
 msgid "Passphrase successfully unloaded."
 msgstr "Wachtwoord met succes gelost."
 
@@ -3138,20 +3132,20 @@ msgstr "Wachtwoord met succes gelost."
 msgid "Passphrase:"
 msgstr "Wachtwoord:"
 
-#: pgp.php:117
+#: pgp.php:122
 msgid "Passphrases cannot be empty"
 msgstr "Wachtwoorden kunnen niet leeg zijn"
 
-#: pgp.php:119
+#: pgp.php:124
 msgid "Passphrases do not match"
 msgstr "Wachtwoorden komen niet overeen"
 
-#: lib/api.php:183 templates/login/login.html:92
+#: lib/api.php:191 templates/login/login.html:92
 msgid "Password"
 msgstr "Wachtwoord"
 
-#: templates/smime/import_key.html:54
 #: templates/fetchmail/fetchmailprefs.html:59
+#: templates/smime/import_key.html:54
 msgid "Password:"
 msgstr "Wachtwoord:"
 
@@ -3159,11 +3153,11 @@ msgstr "Wachtwoord:"
 msgid "Password: "
 msgstr "Wachtwoord: "
 
-#: config/prefs.php.dist:653
+#: config/prefs.php.dist:658
 msgid "Paste from clipboard"
 msgstr "Plakken van klembord"
 
-#: mailbox.php:752 message.php:465 templates/mailbox/navbar.html:24
+#: message.php:465 mailbox.php:752 templates/mailbox/navbar.html:24
 msgid "Personal"
 msgstr "Persoonlijk"
 
@@ -3171,27 +3165,27 @@ msgstr "Persoonlijk"
 msgid "Personal Information"
 msgstr "Persoonlijke informatie"
 
-#: pgp.php:125
+#: pgp.php:130
 msgid "Personal PGP keypair generated successfully."
 msgstr "Persoonlijk PGP sleutelpaar met succes gegenereerd."
 
-#: pgp.php:132
+#: pgp.php:137
 msgid "Personal PGP keys deleted successfully."
 msgstr "Persoonlijke PGP sleutels met succes verwijderd."
 
-#: smime.php:222
+#: smime.php:227
 msgid "Personal S/MIME certificates NOT imported: "
 msgstr "Persoonlijk S/MIME certificaat NIET geimporteerd: "
 
-#: smime.php:147
+#: smime.php:152
 msgid "Personal S/MIME keys deleted successfully."
 msgstr "Persoonlijke S/MIME sleutels met succes verwijderd."
 
-#: config/prefs.php.dist:247
+#: config/prefs.php.dist:250
 msgid "Place your signature before replies and forwards?"
 msgstr "Plaats uw ondertekening voor antwoorden en doorgestuurde berichten?"
 
-#: lib/Compose.php:474
+#: lib/Compose.php:486
 msgid "Plaintext Version of Message"
 msgstr "Platte-tekstversie van bericht"
 
@@ -3257,7 +3251,7 @@ msgstr "Geef uw wachtwoord, a.u.b."
 msgid "Please provide your username."
 msgstr "Geef uw gebruikersnaam, a.u.b."
 
-#: lib/Compose.php:2787 lib/UI/Compose.php:26
+#: lib/Compose.php:2819 lib/UI/Compose.php:26
 msgid "Please resolve ambiguous or invalid addresses."
 msgstr "Herstel dubbelzinnige of ongeldige adressen, a.u.b."
 
@@ -3269,15 +3263,15 @@ msgstr "Selecteer een map voordat u deze bewerking uitvoert, a.u.b."
 msgid "Please select at least one folder to search."
 msgstr "Selecteer tenminste één map om te doorzoeken, a.u.b."
 
-#: templates/compose/redirect.html:39
+#: templates/compose/redirect.html:40
 msgid "Please select or edit in the box to the right:"
 msgstr "Selecteer of bewerk in het vak aan de rechterkant:"
 
-#: config/prefs.php.dist:1301
+#: config/prefs.php.dist:1306
 msgid "Poll all folders for new mail?"
 msgstr "Controleer mappen op nieuwe mail?"
 
-#: lib/api.php:161 templates/login/login.html:67
+#: lib/api.php:169 templates/login/login.html:67
 msgid "Port"
 msgstr "Poort"
 
@@ -3289,23 +3283,23 @@ msgstr "Versturen"
 msgid "Powered by Horde"
 msgstr "Powered by Horde"
 
-#: config/prefs.php.dist:239
+#: config/prefs.php.dist:242
 msgid "Precede your signature with dashes ('-- ')?"
 msgstr "Ondertekening voorafgaan met streepjes ('-- ')?"
 
-#: config/hooks.php.dist:487
+#: config/hooks.php.dist:651
 msgid "Preferences"
 msgstr "Voorkeursinstellingen"
 
-#: filterprefs.php:53 smime.php:257 pgp.php:266
+#: filterprefs.php:53 smime.php:262 pgp.php:271
 msgid "Preferences successfully updated."
 msgstr "Voorkeursinstellingen met succes bijgewerkt."
 
-#: compose.php:1215
+#: compose.php:1228
 msgid "Preview"
 msgstr "Beoordelen"
 
-#: message.php:527
+#: message.php:528
 msgid "Previous Message"
 msgstr "Vorig bericht"
 
@@ -3313,11 +3307,11 @@ msgstr "Vorig bericht"
 msgid "Previous Page"
 msgstr "Vorige pagina"
 
-#: message.php:602
+#: message.php:603
 msgid "Print"
 msgstr "Afdrukken"
 
-#: config/prefs.php.dist:650
+#: config/prefs.php.dist:655
 msgid "Print document"
 msgstr "Document afdrukken"
 
@@ -3325,7 +3319,7 @@ msgstr "Document afdrukken"
 msgid "Printed By"
 msgstr "Afgedrukt door"
 
-#: message.php:670 lib/MIME/Viewer/itip.php:866
+#: message.php:671 lib/MIME/Viewer/itip.php:918
 msgid "Priority"
 msgstr "Prioriteit"
 
@@ -3333,19 +3327,19 @@ msgstr "Prioriteit"
 msgid "Private Key Password:"
 msgstr "Privé sleutel wachtwoord:"
 
-#: config/prefs.php.dist:717
+#: config/prefs.php.dist:722
 msgid "Prompt every time an attachment is sent; default to NO"
 msgstr "Elke keer vragen wanneer een bijlage wordt verzonden; standaard op NEE"
 
-#: config/prefs.php.dist:716
+#: config/prefs.php.dist:721
 msgid "Prompt every time an attachment is sent; default to YES"
 msgstr "Elke keer vragen wanneer een bijlage wordt verzonden; standaard op JA"
 
-#: config/prefs.php.dist:983
+#: config/prefs.php.dist:988
 msgid "Prompt to send read receipt when requested by the sender?"
 msgstr "Vraag om verzend leesbevestiging als de afzender hierom vraagt?"
 
-#: lib/api.php:165 templates/login/login.html:72
+#: lib/api.php:173 templates/login/login.html:72
 msgid "Protocol"
 msgstr "Protocol"
 
@@ -3353,7 +3347,7 @@ msgstr "Protocol"
 msgid "Protocol:"
 msgstr "Protocol:"
 
-#: lib/Crypt/PGP.php:489
+#: lib/Crypt/PGP.php:491
 msgid "Public PGP keyserver support has been disabled."
 msgstr "Openbare PGP sleutelserver is uitgeschakeld."
 
@@ -3369,39 +3363,39 @@ msgstr "Wissen"
 msgid "Purge Deleted"
 msgstr "Wis verwijderd"
 
-#: config/prefs.php.dist:458
+#: config/prefs.php.dist:461
 msgid "Purge Spam how often:"
 msgstr "Hoe vaak spam legen:"
 
-#: config/prefs.php.dist:486
+#: config/prefs.php.dist:489
 msgid "Purge Trash how often:"
 msgstr "Hoe vaak prullenbak legen:"
 
-#: config/prefs.php.dist:467
+#: config/prefs.php.dist:470
 msgid "Purge messages in Spam folder older than this amount of days."
 msgstr "Verwijder berichten in de spam map ouder dan dit aantal dagen."
 
-#: config/prefs.php.dist:495
+#: config/prefs.php.dist:498
 msgid "Purge messages in Trash folder older than this amount of days."
 msgstr "Verwijder berichten in de prullenbak ouder dan dit aantal dagen."
 
-#: config/prefs.php.dist:421
+#: config/prefs.php.dist:424
 msgid "Purge messages in sent-mail folder(s) older than this amount of days."
 msgstr "Verwijder berichten in de outbox map(pen) ouder dan dit aantal dagen."
 
-#: config/prefs.php.dist:448
+#: config/prefs.php.dist:451
 msgid "Purge old messages in the Spam folder?"
 msgstr "Verwijder oude berichten uit de spam map?"
 
-#: config/prefs.php.dist:476
+#: config/prefs.php.dist:479
 msgid "Purge old messages in the Trash folder?"
 msgstr "Verwijder oude berichten uit de prullenbak?"
 
-#: config/prefs.php.dist:402
+#: config/prefs.php.dist:405
 msgid "Purge old messages in the sent-mail folder(s)?"
 msgstr "Verwijder oude berichten uit de outbox map(pen)?"
 
-#: config/prefs.php.dist:412
+#: config/prefs.php.dist:415
 msgid "Purge sent-mail how often:"
 msgstr "Hoe vaak outbox legen:"
 
@@ -3443,12 +3437,12 @@ msgstr "Quota status: %.2f MB / %.2f MB  (%.2f%%)"
 msgid "Quota status: %.2f MB / NO LIMIT"
 msgstr "Quota status: %.2f MB / GEEN LIMIET"
 
-#: lib/IMP.php:1043
+#: lib/IMP.php:1052
 #, php-format
 msgid "Quota status: NO LIMIT"
 msgstr "Quota status: GEEN LIMIET"
 
-#: config/prefs.php.dist:788
+#: config/prefs.php.dist:793
 #, php-format
 msgid "Quoting %f:"
 msgstr "Citeren %f:"
@@ -3469,31 +3463,31 @@ msgstr "Recente zoekopdrachten"
 msgid "Recent Searches:"
 msgstr "Recente zoekopdrachten:"
 
-#: message.php:572 message.php:616
+#: message.php:573 message.php:617
 msgid "Redirec_t"
 msgstr "Om_leiden"
 
-#: message.php:572 message.php:616
+#: message.php:573 message.php:617
 msgid "Redirect"
 msgstr "Omleiden"
 
-#: templates/compose/redirect.html:82
+#: templates/compose/redirect.html:83
 msgid "Redirect Message"
 msgstr "Bericht omleiden"
 
-#: compose.php:379
+#: compose.php:380
 msgid "Redirect this message"
 msgstr "Dit bericht omleiden"
 
-#: config/prefs.php.dist:648
+#: config/prefs.php.dist:653
 msgid "Redoes your last action"
 msgstr "Herhaalt uw laatste aktie"
 
-#: folders.php:361
+#: folders.php:383
 msgid "Refresh"
 msgstr "Verversen"
 
-#: config/prefs.php.dist:1063
+#: config/prefs.php.dist:1068
 msgid "Refresh Folder Views:"
 msgstr "Ververs mapweergaves:"
 
@@ -3501,15 +3495,15 @@ msgstr "Ververs mapweergaves:"
 msgid "Reload"
 msgstr "Vernieuwen"
 
-#: folders.php:351
+#: folders.php:373
 msgid "Reload View"
 msgstr "Weergave vernieuwen"
 
-#: lib/MIME/Viewer/itip.php:572 lib/MIME/Viewer/itip.php:591
+#: lib/MIME/Viewer/itip.php:624 lib/MIME/Viewer/itip.php:643
 msgid "Remember the free/busy information."
 msgstr "Onthoudt de vrij/bezet informatie."
 
-#: config/prefs.php.dist:1270
+#: config/prefs.php.dist:1275
 msgid "Remember the last view"
 msgstr "Onthoudt de laatste weergave"
 
@@ -3517,11 +3511,11 @@ msgstr "Onthoudt de laatste weergave"
 msgid "Remote Mailbox:"
 msgstr "Mailbox op afstand:"
 
-#: search.php:286
+#: search.php:287
 msgid "Remove Field From Search"
 msgstr "Verwijder veld uit zoeken"
 
-#: config/prefs.php.dist:658
+#: config/prefs.php.dist:663
 msgid "Remove formatting"
 msgstr "Opmaak verwijderen"
 
@@ -3533,7 +3527,7 @@ msgstr "Bron verwijderen"
 msgid "Rename"
 msgstr "Hernoemen"
 
-#: config/prefs.php.dist:375
+#: config/prefs.php.dist:378
 msgid "Rename sent-mail folder at beginning of month?"
 msgstr "Hernoem OUTBOX map aan het begin van de maand?"
 
@@ -3542,32 +3536,32 @@ msgstr "Hernoem OUTBOX map aan het begin van de maand?"
 msgid "Renaming \"%s\" to \"%s\" failed. This is what the server said"
 msgstr "Hernoemen van \"%s\" tot \"%s\" mislukt. Dit is wat de server meldt"
 
-#: message.php:556
+#: message.php:557
 msgid "Reply"
 msgstr "Beantwoorden"
 
-#: lib/MIME/Viewer/itip.php:339 lib/MIME/Viewer/itip.php:442
+#: lib/MIME/Viewer/itip.php:342 lib/MIME/Viewer/itip.php:448
 msgid "Reply Sent."
 msgstr "Antwoord verzonden."
 
-#: compose.php:348
+#: compose.php:349
 msgid "Reply to All:"
 msgstr "Beantwoord allen:"
 
-#: compose.php:350
+#: compose.php:351
 msgid "Reply to List:"
 msgstr "Beantwoord mailinglist:"
 
-#: lib/MIME/Viewer/itip.php:574 lib/MIME/Viewer/itip.php:583
-#: lib/MIME/Viewer/itip.php:593
+#: lib/MIME/Viewer/itip.php:626 lib/MIME/Viewer/itip.php:635
+#: lib/MIME/Viewer/itip.php:645
 msgid "Reply with Not Supported Message"
 msgstr "Antwoord met Niet Ondersteund Bericht"
 
-#: lib/MIME/Viewer/itip.php:581
+#: lib/MIME/Viewer/itip.php:633
 msgid "Reply with free/busy for next 2 months."
 msgstr "Antwoord met vrij/bezet voor de volgende 2 maanden."
 
-#: lib/MIME/Viewer/itip.php:580
+#: lib/MIME/Viewer/itip.php:632
 msgid "Reply with requested free/busy information."
 msgstr "Antwoord met gevraagde vrij/bezet informatie."
 
@@ -3575,27 +3569,27 @@ msgstr "Antwoord met gevraagde vrij/bezet informatie."
 msgid "Reply-To"
 msgstr "Antwoorden aan"
 
-#: lib/Compose.php:1968
+#: lib/Compose.php:2000
 msgid "Reply-To: "
 msgstr "Antwoorden aan:"
 
-#: compose.php:346
+#: compose.php:347
 msgid "Reply:"
 msgstr "Beantwoorden:"
 
-#: mailbox.php:544 message.php:613
+#: message.php:614 mailbox.php:544
 msgid "Report as Innocent"
 msgstr "Rapporteer als onschuldig"
 
-#: mailbox.php:538 message.php:607
+#: message.php:608 mailbox.php:538
 msgid "Report as Spam"
 msgstr "Rapporteer als spam"
 
-#: compose.php:1136
+#: compose.php:1145
 msgid "Request a _Read Receipt"
 msgstr "Verzoek een lees _ontvangstbevestiging"
 
-#: config/prefs.php.dist:731
+#: config/prefs.php.dist:736
 msgid "Request read receipts?"
 msgstr "Verzoek lees ontvangstbevestingen?"
 
@@ -3603,12 +3597,12 @@ msgstr "Verzoek lees ontvangstbevestingen?"
 msgid "Requested message not found."
 msgstr "Gevraagde bericht niet gevonden."
 
-#: lib/MIME/Viewer/itip.php:767 lib/MIME/Viewer/itip.php:899
+#: lib/MIME/Viewer/itip.php:819 lib/MIME/Viewer/itip.php:951
 msgid "Required Participant"
 msgstr "Vereiste deelnemer"
 
-#: templates/acl/acl.html:80 templates/search/search.html:26
-#: templates/search/search.html:183
+#: templates/search/search.html:26 templates/search/search.html:183
+#: templates/acl/acl.html:80
 msgid "Reset"
 msgstr "Herstellen"
 
@@ -3616,7 +3610,7 @@ msgstr "Herstellen"
 msgid "Respondent Status Updated."
 msgstr "Status van beantwoorder geupdate."
 
-#: message.php:595
+#: message.php:596
 msgid "Resume"
 msgstr "Vervolgen"
 
@@ -3640,14 +3634,14 @@ msgstr "Terug naar mappen"
 msgid "Return to Message Composition"
 msgstr "Terug naar \"Berichtsamenstelling\""
 
-#: filterprefs.php:66 templates/acl/acl.html:35 templates/acl/acl.html:81
-#: templates/acl/acl.html:95 templates/smime/smime.html:13
-#: templates/smime/smime.html:93 templates/pgp/pgp.html:21
-#: templates/pgp/pgp.html:145
+#: filterprefs.php:66 templates/smime/smime.html:13
+#: templates/smime/smime.html:93 templates/acl/acl.html:35
+#: templates/acl/acl.html:81 templates/acl/acl.html:95
+#: templates/pgp/pgp.html:21 templates/pgp/pgp.html:145
 msgid "Return to Options"
 msgstr "Terug naar opties"
 
-#: config/prefs.php.dist:998
+#: config/prefs.php.dist:1003
 msgid ""
 "Return to the mailbox listing after deleting, moving, or copying a message?"
 msgstr ""
@@ -3659,28 +3653,28 @@ msgstr ""
 msgid "Rights for user \"%s\" cannot be modified."
 msgstr "De rechten van gebruiker \"%s\" konden niet worden gewijzigd."
 
-#: lib/MIME/Viewer/itip.php:758 lib/MIME/Viewer/itip.php:890
+#: lib/MIME/Viewer/itip.php:810 lib/MIME/Viewer/itip.php:942
 msgid "Role"
 msgstr "Rol"
 
-#: smime.php:67 lib/MIME/Viewer/pkcs7.php:173 lib/MIME/Viewer/pkcs7.php:293
-#: lib/MIME/Viewer/pkcs7.php:485
+#: smime.php:67 lib/MIME/Viewer/pkcs7.php:173 lib/MIME/Viewer/pkcs7.php:296
+#: lib/MIME/Viewer/pkcs7.php:492
 msgid "S/MIME"
 msgstr "S/MIME"
 
-#: lib/IMP.php:1457
+#: lib/IMP.php:1468
 msgid "S/MIME Encrypt Message"
 msgstr "Bericht S/MIME coderen"
 
-#: lib/Compose.php:1435
+#: lib/Compose.php:1463
 msgid "S/MIME Error: "
 msgstr "S/MIME Fout: "
 
-#: lib/Compose.php:1414
+#: lib/Compose.php:1442
 msgid "S/MIME Error: Need passphrase for personal private key."
 msgstr "S/MIME fout: Wachtwoord vereist voor persoonlijke prive sleutel."
 
-#: config/prefs.php.dist:185
+#: config/prefs.php.dist:188
 msgid "S/MIME Options"
 msgstr "S/MIME opties"
 
@@ -3694,12 +3688,12 @@ msgstr ""
 "Persoonlijke S/MIME sleutelpaar ondersteuning vereist een beveiligde "
 "webverbinding."
 
-#: smime.php:155
+#: smime.php:160
 #, php-format
 msgid "S/MIME Public Key for \"%s\" was successfully deleted."
 msgstr "Openbare S/MIME sleutel voor \"%s\" werd met succes verwijderd."
 
-#: smime.php:177
+#: smime.php:182
 msgid "S/MIME Public Key successfully added."
 msgstr "Openbare S/MIME sleutel met succes toegevoegd."
 
@@ -3707,15 +3701,15 @@ msgstr "Openbare S/MIME sleutel met succes toegevoegd."
 msgid "S/MIME Public Keyring"
 msgstr "Openbare S/MIME sleutelring"
 
-#: smime.php:226
+#: smime.php:231
 msgid "S/MIME Public/Private Keypair successfully added."
 msgstr "Openbaar/prive S/MIME sleutelpaar met succes toegevoegd."
 
-#: lib/IMP.php:1458
+#: lib/IMP.php:1469
 msgid "S/MIME Sign Message"
 msgstr "Bericht S/MIME ondertekenen"
 
-#: lib/IMP.php:1459
+#: lib/IMP.php:1470
 msgid "S/MIME Sign/Encrypt Message"
 msgstr "Bericht S/MIME ondertekenen/coderen"
 
@@ -3723,7 +3717,7 @@ msgstr "Bericht S/MIME ondertekenen/coderen"
 msgid "S/MIME support is disabled on this system."
 msgstr "S/MIME ondersteuning is niet ingeschakeld op dit systeem."
 
-#: lib/MIME/Viewer/pkcs7.php:297
+#: lib/MIME/Viewer/pkcs7.php:300
 msgid ""
 "S/MIME support is not currently enabled so the message is unable to be "
 "decrypted."
@@ -3766,29 +3760,28 @@ msgstr ""
 msgid "SMTP"
 msgstr "SMTP"
 
-#: lib/api.php:173 templates/login/login.html:107
+#: lib/api.php:181 templates/login/login.html:107
 msgid "SMTP Port"
 msgstr "SMTP poort"
 
-#: compose.php:1019
+#: compose.php:1021
 msgid "S_ubject"
 msgstr "Onderwe_rp"
 
-#: compose.php:1115
+#: compose.php:1116
 msgid "Sa_ve a copy in "
 msgstr "Be_waar een kopie in "
 
-#: message.php:599
+#: message.php:600
 msgid "Sa_ve as"
 msgstr "Op_slaan als"
 
-#: templates/acl/acl.html:79 templates/search/search.html:25
-#: templates/search/search.html:182
-#: templates/fetchmail/fetchmailprefs.html:121
+#: templates/search/search.html:25 templates/search/search.html:182
+#: templates/fetchmail/fetchmailprefs.html:121 templates/acl/acl.html:79
 msgid "Save"
 msgstr "Opslaan"
 
-#: compose.php:1191
+#: compose.php:1204
 msgid "Save Attachments with message in sent-mail folder?"
 msgstr "Bijlagen samen met bericht opslaan in outbox map?"
 
@@ -3814,19 +3807,19 @@ msgstr "Opties opslaan"
 msgid "Save Stationery"
 msgstr "Sjabloon opslaan"
 
-#: compose.php:932
+#: compose.php:934
 msgid "Save _Draft"
 msgstr "Opslaan als _klad"
 
-#: message.php:599 config/prefs.php.dist:655
+#: message.php:600 config/prefs.php.dist:660
 msgid "Save as"
 msgstr "Opslaan als"
 
-#: config/prefs.php.dist:814
+#: config/prefs.php.dist:819
 msgid "Save drafts as unseen?"
 msgstr "Klad opslaan als ongezien?"
 
-#: config/prefs.php.dist:825
+#: config/prefs.php.dist:830
 msgid "Save drafts automatically while composing?"
 msgstr "Automatisch klad opslaan bij maken van nieuw bericht?"
 
@@ -3834,7 +3827,7 @@ msgstr "Automatisch klad opslaan bij maken van nieuw bericht?"
 msgid "Save in your Address Book"
 msgstr "Opslaan in uw adresboek"
 
-#: config/prefs.php.dist:1369
+#: config/prefs.php.dist:1374
 msgid "Save recipients automatically to the default address book?"
 msgstr "Ontvangers automatisch in standaard adresboek opslaan?"
 
@@ -3842,11 +3835,11 @@ msgstr "Ontvangers automatisch in standaard adresboek opslaan?"
 msgid "Save search as a virtual folder?"
 msgstr "Zoekopdracht bewaren als virtuele map?"
 
-#: config/prefs.php.dist:255
+#: config/prefs.php.dist:258
 msgid "Save sent mail?"
 msgstr "Bewaar verzonden mail?"
 
-#: lib/Compose.php:247
+#: lib/Compose.php:251
 msgid "Saving the draft failed. Could not create a drafts folder."
 msgstr "Opslaan van klad mislukt. Kon geen klad map maken."
 
@@ -3862,17 +3855,17 @@ msgid ""
 msgstr ""
 "Bewaren van klad mislukt. De %s header bevat een ongeldig e-mailadres: %s"
 
-#: lib/Compose.php:254
+#: lib/Compose.php:258
 #, php-format
 msgid "Saving the draft failed. This is what the server said: %s"
 msgstr "Bewaren van klad mislukt. De server meldt: %s"
 
-#: mailbox.php:423 search.php:146 lib/Search.php:569
+#: search.php:147 mailbox.php:423 lib/Search.php:574
 #: lib/Block/tree_folders.php:43 templates/contacts/contacts.html:25
 msgid "Search"
 msgstr "Zoeken"
 
-#: mailbox.php:423 search.php:150
+#: search.php:151 mailbox.php:423
 #, php-format
 msgid "Search %s"
 msgstr "%s doorzoeken"
@@ -3885,7 +3878,7 @@ msgstr "Zoekcriteria"
 msgid "Search Folders"
 msgstr "Mappen zoeken"
 
-#: search.php:92 templates/contacts/contacts.html:31
+#: search.php:93 templates/contacts/contacts.html:31
 msgid "Search Results"
 msgstr "Zoekresultaten"
 
@@ -3897,7 +3890,7 @@ msgstr "Tekst zoeken"
 msgid "Seen"
 msgstr "Gezien"
 
-#: lib/Search.php:782
+#: lib/Search.php:787
 msgid "Seen messages"
 msgstr "Gelezen berichten"
 
@@ -3905,7 +3898,7 @@ msgstr "Gelezen berichten"
 msgid "Select Another Account"
 msgstr "Selecteer een ander account"
 
-#: search.php:277
+#: search.php:278
 msgid "Select a date"
 msgstr "Selecteer een datum"
 
@@ -3917,11 +3910,11 @@ msgstr "Selecteer een veld"
 msgid "Select accounts to fetch mail from:"
 msgstr "Selecteer accounts voor ophalen van mail:"
 
-#: config/prefs.php.dist:169
+#: config/prefs.php.dist:171
 msgid "Select address book sources for adding and searching for addresses."
 msgstr "Selecteer adresboekbronnen voor toevoegen en zoeken van adressen."
 
-#: config/prefs.php.dist:649 templates/search/search.html:141
+#: config/prefs.php.dist:654 templates/search/search.html:141
 msgid "Select all"
 msgstr "Selecteer alles"
 
@@ -3965,11 +3958,11 @@ msgstr "Geselecteerde adresboeken:"
 msgid "Selected Addresses"
 msgstr "Geselecteerde adressen"
 
-#: pgp.php:437 templates/pgp/pgp.html:75
+#: pgp.php:444 templates/pgp/pgp.html:75
 msgid "Send Key to Public Keyserver"
 msgstr "Verzend sleutel naar openbare sleutelserver"
 
-#: lib/MIME/Viewer/itip.php:679
+#: lib/MIME/Viewer/itip.php:731
 msgid "Send Latest Information"
 msgstr "Verzend laatste informatie"
 
@@ -3981,11 +3974,11 @@ msgstr "Verzend bericht"
 msgid "Send message without a Subject?"
 msgstr "Verzend bericht zonder onderwerp?"
 
-#: config/prefs.php.dist:263
+#: config/prefs.php.dist:266
 msgid "Sent"
 msgstr "Versturen"
 
-#: lib/IMAP/Tree.php:1926
+#: lib/IMAP/Tree.php:2006
 msgid "Sent mail folder"
 msgstr "OUTBOX"
 
@@ -3993,7 +3986,7 @@ msgstr "OUTBOX"
 msgid "Sent mail folder:"
 msgstr "OUTBOX:"
 
-#: lib/api.php:158 templates/login/login.html:36 templates/login/login.html:50
+#: lib/api.php:166 templates/login/login.html:36 templates/login/login.html:50
 #: templates/login/login.html:62
 msgid "Server"
 msgstr "Server"
@@ -4011,7 +4004,7 @@ msgid "Set preferences for what happens when you move and delete messages."
 msgstr ""
 "Voorkeursinstellingen voor het verplaatsen en verwijderen van berichten."
 
-#: config/prefs.php.dist:573
+#: config/prefs.php.dist:576
 msgid "Set the X-Priority header when composing messages?"
 msgstr "Instellen van de X-Priority header bij het maken van berichten?"
 
@@ -4027,7 +4020,7 @@ msgstr "Mailmappen delen"
 msgid "Share your mail folders with other users."
 msgstr "Deel uw mailmappen met andere gebruikers."
 
-#: lib/IMAP/Tree.php:69
+#: lib/IMAP/Tree.php:70
 msgid "Shared Folders"
 msgstr "Gedeelde mappen"
 
@@ -4043,7 +4036,7 @@ msgstr ""
 "Dienen S/MIME ondertekende berichten, bij bekijken, automatisch geverifieerd "
 "te worden?"
 
-#: config/prefs.php.dist:913
+#: config/prefs.php.dist:918
 msgid ""
 "Should large blocks of quoted text be shown or hidden by default? It can be "
 "toggled easily whichever you choose."
@@ -4055,7 +4048,7 @@ msgstr ""
 msgid "Should the body of text/plain messages be scanned for PGP data?"
 msgstr "Wilt u de body van text/plain berichten scannen op PGP data?"
 
-#: config/prefs.php.dist:806
+#: config/prefs.php.dist:811
 msgid "Should the compose window be closed after saving a draft?"
 msgstr ""
 "Dient het \"Nieuw bericht\" scherm gesloten te worden na opslaan van klad?"
@@ -4070,11 +4063,11 @@ msgstr ""
 msgid "Show All Folders"
 msgstr "Alle mappen weergeven"
 
-#: message.php:623
+#: message.php:624
 msgid "Show All Headers"
 msgstr "Alle headers weergeven"
 
-#: message.php:620
+#: message.php:621
 msgid "Show Common Headers"
 msgstr "Algemene headers weergeven"
 
@@ -4082,11 +4075,11 @@ msgstr "Algemene headers weergeven"
 msgid "Show Deleted"
 msgstr "Toon verwijderd"
 
-#: lib/MIME/Viewer/html.php:153
+#: lib/MIME/Viewer/html.php:160
 msgid "Show Images?"
 msgstr "Afbeeldingen weergeven?"
 
-#: message.php:626
+#: message.php:627
 msgid "Show Mailing List Information"
 msgstr "Mailinglist informatie weergeven"
 
@@ -4098,35 +4091,35 @@ msgstr "Alleen ingeschreven mappen weergeven"
 msgid "Show Size"
 msgstr "Grootte weergeven"
 
-#: folders.php:380
+#: folders.php:402
 msgid "Show Unsubscribed"
 msgstr "Toon uitgeschreven"
 
-#: config/prefs.php.dist:847
+#: config/prefs.php.dist:852
 msgid "Show an icon to allow stripping of attachments from messages?"
 msgstr "Pictogram voor het verwijderen van berichtbijlagen weergeven?"
 
-#: config/prefs.php.dist:1280
+#: config/prefs.php.dist:1285
 msgid "Show non-private mailboxes in separate folders"
 msgstr "Niet-privé mailboxen weergeven in afzonderlijke mappen"
 
-#: config/prefs.php.dist:1124
+#: config/prefs.php.dist:1129
 msgid "Show previews for unread messages only?"
 msgstr "Alleen previews weergeven van ongelezen berichten?"
 
-#: config/prefs.php.dist:1132
+#: config/prefs.php.dist:1137
 msgid "Show previews in tooltips?"
 msgstr "Previews in tooltips weergeven?"
 
-#: config/prefs.php.dist:548
+#: config/prefs.php.dist:551
 msgid "Show the Bcc: header field when composing mail?"
 msgstr "De Bcc: header weergeven bij het maken van berichten?"
 
-#: config/prefs.php.dist:539
+#: config/prefs.php.dist:542
 msgid "Show the Cc: header field when composing mail?"
 msgstr "De Cc: header weergeven bij het maken van berichten?"
 
-#: config/prefs.php.dist:1161
+#: config/prefs.php.dist:1166
 msgid "Show the Fetch Mail icon on the menubar?"
 msgstr "Mail ophalen pictogram weergeven op de menubalk?"
 
@@ -4134,7 +4127,7 @@ msgstr "Mail ophalen pictogram weergeven op de menubalk?"
 msgid "Show the filter icon on the menubar?"
 msgstr "Filter pictogram weergeven op de menubalk?"
 
-#: lib/MIME/Viewer/html.php:168
+#: lib/MIME/Viewer/html.php:175
 msgid "Show this HTML in a new window?"
 msgstr "Deze HTML in een nieuw scherm weergeven?"
 
@@ -4142,7 +4135,7 @@ msgstr "Deze HTML in een nieuw scherm weergeven?"
 msgid "Show total number of mails in folder?"
 msgstr "Totaal aantal mails in map weergeven?"
 
-#: config/prefs.php.dist:908
+#: config/prefs.php.dist:913
 msgid "Shown"
 msgstr "Weergegeven"
 
@@ -4154,11 +4147,11 @@ msgstr "_Grootte"
 msgid "Size"
 msgstr "Grootte"
 
-#: lib/Search.php:757
+#: lib/Search.php:762
 msgid "Size (KB) <"
 msgstr "Grootte (KB) <"
 
-#: lib/Search.php:763
+#: lib/Search.php:768
 msgid "Size (KB) >"
 msgstr "Grootte (KB) >"
 
@@ -4194,11 +4187,11 @@ msgstr "Sorteren op thread"
 msgid "Sort by To Address"
 msgstr "Sorteren op geadresseerde"
 
-#: config/prefs.php.dist:329
+#: config/prefs.php.dist:332
 msgid "Spam"
 msgstr "Spam"
 
-#: lib/IMAP/Tree.php:1919
+#: lib/IMAP/Tree.php:1999
 msgid "Spam folder"
 msgstr "Spam map"
 
@@ -4206,7 +4199,7 @@ msgstr "Spam map"
 msgid "Spam folder:"
 msgstr "Spam map:"
 
-#: compose.php:1100
+#: compose.php:1102
 msgid "Special Characters"
 msgstr "Speciale tekens"
 
@@ -4218,16 +4211,16 @@ msgstr "Speciale virtuele maken kunnen niet bewerkt worden."
 msgid "Spell Check Failed"
 msgstr "Spellingscontrole mislukt"
 
-#: config/prefs.php.dist:660
+#: config/prefs.php.dist:665
 msgid "Split Block"
 msgstr "Blok splitsen"
 
-#: lib/MIME/Viewer/itip.php:547 lib/MIME/Viewer/itip.php:549
-#: lib/MIME/Viewer/itip.php:723 lib/MIME/Viewer/itip.php:725
-msgid "Start"
-msgstr "Start"
+#: lib/MIME/Viewer/itip.php:599 lib/MIME/Viewer/itip.php:601
+#: lib/MIME/Viewer/itip.php:775 lib/MIME/Viewer/itip.php:777
+msgid "Start:"
+msgstr "Start:"
 
-#: compose.php:1058 templates/stationery/stationery.html:8
+#: compose.php:1060 templates/stationery/stationery.html:8
 #: templates/stationery/stationery.html:12
 msgid "Stationery"
 msgstr "Sjabloon"
@@ -4244,11 +4237,11 @@ msgstr "Sjabloontype"
 msgid "Stationery:"
 msgstr "Sjabloon:"
 
-#: lib/MIME/Viewer/itip.php:758 lib/MIME/Viewer/itip.php:890
+#: lib/MIME/Viewer/itip.php:810 lib/MIME/Viewer/itip.php:942
 msgid "Status"
 msgstr "Status"
 
-#: config/prefs.php.dist:629
+#: config/prefs.php.dist:634
 msgid "Strikethrough"
 msgstr "Doorhalen"
 
@@ -4264,7 +4257,7 @@ msgstr "Bijlage verwijderen"
 msgid "Strip Attachments"
 msgstr "Bijlagen verwijderen"
 
-#: config/prefs.php.dist:1116
+#: config/prefs.php.dist:1121
 msgid "Strip linebreaks?"
 msgstr "Regeleinden verwijderen?"
 
@@ -4272,11 +4265,11 @@ msgstr "Regeleinden verwijderen?"
 msgid "Sub_ject"
 msgstr "Onde_rwerp"
 
-#: lib/Search.php:726 lib/UI/Message.php:30 templates/login/recompose.html:41
+#: lib/Search.php:731 lib/UI/Message.php:30 templates/login/recompose.html:41
 msgid "Subject"
 msgstr "Onderwerp"
 
-#: config/prefs.php.dist:1204
+#: config/prefs.php.dist:1209
 msgid "Subject Field"
 msgstr "Onderwerpveld"
 
@@ -4285,8 +4278,8 @@ msgid "Subject:"
 msgstr "Onderwerp:"
 
 #: templates/search/search.html:25 templates/search/search.html:182
-#: templates/smime/passphrase.html:23 templates/pgp/passphrase.html:21
-#: templates/saveimage/saveimage.html:19
+#: templates/saveimage/saveimage.html:19 templates/smime/passphrase.html:23
+#: templates/pgp/passphrase.html:21
 msgid "Submit"
 msgstr "Bevestigen"
 
@@ -4294,12 +4287,12 @@ msgstr "Bevestigen"
 msgid "Subscribe"
 msgstr "Inschrijven"
 
-#: config/prefs.php.dist:633
+#: config/prefs.php.dist:638
 msgid "Subscript"
 msgstr "Subscript"
 
-#: lib/MIME/Viewer/status.php:86 lib/MIME/Viewer/pkcs7.php:445
-#: lib/MIME/Viewer/pgp.php:451
+#: lib/MIME/Viewer/pkcs7.php:452 lib/MIME/Viewer/status.php:86
+#: lib/MIME/Viewer/pgp.php:456
 msgid "Success"
 msgstr "Succes"
 
@@ -4307,16 +4300,16 @@ msgstr "Succes"
 msgid "Sum"
 msgstr "Som"
 
-#: lib/MIME/Viewer/itip.php:740 lib/MIME/Viewer/itip.php:742
-#: lib/MIME/Viewer/itip.php:871 lib/MIME/Viewer/itip.php:873
+#: lib/MIME/Viewer/itip.php:792 lib/MIME/Viewer/itip.php:794
+#: lib/MIME/Viewer/itip.php:923 lib/MIME/Viewer/itip.php:925
 msgid "Summary"
 msgstr "Samenvatting"
 
-#: config/prefs.php.dist:634
+#: config/prefs.php.dist:639
 msgid "Superscript"
 msgstr "Superscript"
 
-#: compose.php:1141 compose.php:1142
+#: compose.php:1150 compose.php:1151
 msgid "Switch Composition Method"
 msgstr "Omschakelen van compositiemethode"
 
@@ -4340,11 +4333,11 @@ msgstr "Doelmailbox:"
 msgid "Task Lists"
 msgstr "Taaklijsten"
 
-#: config/hooks.php.dist:463
+#: config/hooks.php.dist:627
 msgid "Tasks"
 msgstr "Taken"
 
-#: compose.php:1146
+#: compose.php:1155
 msgid "Te_xt"
 msgstr "T_ekst"
 
@@ -4352,11 +4345,11 @@ msgstr "T_ekst"
 msgid "Tentative: "
 msgstr "Voorlopig"
 
-#: lib/MIME/Viewer/itip.php:665
+#: lib/MIME/Viewer/itip.php:717
 msgid "Tentatively Accept request"
 msgstr "Verzoek voorlopig accepteren"
 
-#: lib/MIME/Viewer/itip.php:965
+#: lib/MIME/Viewer/itip.php:1017
 msgid "Tentatively Accepted"
 msgstr "Voorlopig geaccepteerd"
 
@@ -4369,23 +4362,23 @@ msgstr "Gebruikersovereenkomst niet opgegeven in conf.php"
 msgid "Text"
 msgstr "Tekst"
 
-#: config/prefs.php.dist:624
+#: config/prefs.php.dist:629
 msgid "Text Font"
 msgstr "Tekstfont"
 
-#: config/prefs.php.dist:623
+#: config/prefs.php.dist:628
 msgid "Text Format"
 msgstr "Tekstformaat"
 
-#: config/prefs.php.dist:625
+#: config/prefs.php.dist:630
 msgid "Text Size"
 msgstr "Tekstgrootte"
 
-#: config/prefs.php.dist:1245
+#: config/prefs.php.dist:1250
 msgid "The From: column of the message should be linked:"
 msgstr "De Van: kolom van het bericht dient gelinkt te worden:"
 
-#: lib/IMAP/Client.php:432
+#: lib/IMAP/Client.php:434
 msgid ""
 "The IMAP server does not appear to support the authentication method "
 "selected. Please contact your system administrator."
@@ -4393,11 +4386,11 @@ msgstr ""
 "De IMAP server lijkt de geselecteerde authenticatiemethode niet te "
 "ondersteunen. Neem contact op met uw systeembeheerder."
 
-#: lib/MIME/Viewer/appledouble.php:40
+#: lib/MIME/Viewer/appledouble.php:48
 msgid "The Macintosh resource fork"
 msgstr "Het Macintosh bronproces"
 
-#: lib/MIME/Viewer/appledouble.php:40
+#: lib/MIME/Viewer/appledouble.php:48
 #, php-format
 msgid "The Macintosh resource fork can be downloaded %s."
 msgstr "Het Macintosh bronproces kan worden gedownload %s."
@@ -4417,15 +4410,15 @@ msgstr "De account \"%s\" is verwijderd."
 msgid "The account \"%s\" has been saved."
 msgstr "De account \"%s\" is opgeslagen."
 
-#: attachment.php:43
+#: attachment.php:44
 msgid "The attachment was not found."
 msgstr "De bijlage is niet gevonden."
 
-#: config/prefs.php.dist:666
+#: config/prefs.php.dist:671
 msgid "The buttons NOT to show when using Xinha."
 msgstr "De knoppen welke NIET weergegeven worden bij gebruik van Xinha."
 
-#: config/prefs.php.dist:612
+#: config/prefs.php.dist:617
 msgid "The buttons to show when using FCKeditor."
 msgstr "De knoppen welke weergegeven worden bij gebruik van FCKeditor."
 
@@ -4433,7 +4426,7 @@ msgstr "De knoppen welke weergegeven worden bij gebruik van FCKeditor."
 msgid "The calendar data is invalid"
 msgstr "De agendadata is ongeldig"
 
-#: lib/MIME/Viewer/appledouble.php:41
+#: lib/MIME/Viewer/appledouble.php:49
 msgid "The contents of the Macintosh file are below."
 msgstr "De inhoud van het Macintoshbestand staat hieronder."
 
@@ -4449,24 +4442,24 @@ msgstr ""
 "De huidige lijst met gebruikers met toegang op deze map kon niet worden "
 "opgehaald."
 
-#: config/prefs.php.dist:964
+#: config/prefs.php.dist:969
 msgid "The default charset for messages with no charset information:"
 msgstr "De standaard karakterset voor berichten zonder karaktersetinformatie:"
 
-#: lib/Compose.php:264
+#: lib/Compose.php:268
 #, php-format
 msgid "The draft has been saved to the \"%s\" folder."
 msgstr "Het klad is opgeslagen in de \"%s\" map."
 
-#: lib/MIME/Viewer/itip.php:160
+#: lib/MIME/Viewer/itip.php:161
 msgid "The event was added to your calendar."
 msgstr "De gebeurtenis is aan uw agenda toegevoegd."
 
-#: lib/MIME/Viewer/itip.php:147
+#: lib/MIME/Viewer/itip.php:148
 msgid "The event was updated in your calendar."
 msgstr "De gebeurtenis is in uw agenda bijgewerkt."
 
-#: lib/Compose.php:2044
+#: lib/Compose.php:2076
 #, php-format
 msgid "The file %s could not be attached."
 msgstr "Het bestand %s kon niet worden toegevoegd."
@@ -4476,7 +4469,7 @@ msgstr "Het bestand %s kon niet worden toegevoegd."
 msgid "The folder \"%s\" already exists"
 msgstr "De map \"%s\" bestaat al"
 
-#: folders.php:248 lib/Folder.php:190
+#: folders.php:259 lib/Folder.php:190
 #, php-format
 msgid "The folder \"%s\" may not be deleted."
 msgstr "De map \"%s\" mag niet worden verwijderd."
@@ -4528,7 +4521,7 @@ msgstr ""
 "Het afbeelding opslaan scherm kan niet worden geopend. Misschien heeft u uw "
 "browser ingesteld om popup schermen te blokkeren?"
 
-#: config/prefs.php.dist:603
+#: config/prefs.php.dist:606
 msgid "The javascript editor to use on the compose page."
 msgstr "De javascript editor die gebruikt wordt op de nieuw bericht pagina."
 
@@ -4544,7 +4537,7 @@ msgstr "De mailserver genereerde het volgende informatiebericht:"
 msgid "The mail server generated the following message:"
 msgstr "De mailserver genereerde het volgende bericht:"
 
-#: lib/Message.php:798
+#: lib/Message.php:797
 #, php-format
 msgid "The mailbox %s is already empty."
 msgstr "De mailbox %s is al leeg."
@@ -4560,7 +4553,7 @@ msgstr ""
 msgid "The message being composed has been closed. Exiting."
 msgstr "Het bewerkte bericht is afgesloten. Afsluiten."
 
-#: lib/MIME/Viewer/pgp.php:376
+#: lib/MIME/Viewer/pgp.php:381
 msgid ""
 "The message below does not appear to be a valid PGP encrypted message. "
 "Error: "
@@ -4568,7 +4561,7 @@ msgstr ""
 "Onderstaand bericht lijkt niet een geldig PGP gecodeerd bericht te zijn. "
 "Fout: "
 
-#: lib/MIME/Viewer/pgp.php:252 lib/MIME/Viewer/pgp.php:411
+#: lib/MIME/Viewer/pgp.php:252 lib/MIME/Viewer/pgp.php:416
 msgid ""
 "The message below does not appear to be in the correct PGP format (according "
 "to RFC 2015)."
@@ -4576,7 +4569,7 @@ msgstr ""
 "Onderstaand bericht lijkt niet het juiste PGP formaat te hebben (volgens RFC "
 "2015)."
 
-#: lib/MIME/Viewer/pgp.php:371
+#: lib/MIME/Viewer/pgp.php:376
 msgid "The message below has been compressed with PGP."
 msgstr "Onderstaand bericht is gecodeerd met PGP."
 
@@ -4604,7 +4597,7 @@ msgstr ""
 msgid "The message below has been digitally signed with PGP."
 msgstr "Onderstaand bericht is digitaal ondertekend via PGP."
 
-#: lib/MIME/Viewer/pgp.php:313
+#: lib/MIME/Viewer/pgp.php:318
 msgid ""
 "The message below has been encrypted with PGP, however, PGP support is "
 "disabled so the message cannot be decrypted."
@@ -4612,7 +4605,7 @@ msgstr ""
 "Onderstaand bericht is gecodeerd met PGP, echter, PGP ondersteuning is "
 "uitgeschakeld dus kan het bericht niet gedecodeerd worden."
 
-#: lib/MIME/Viewer/pgp.php:355
+#: lib/MIME/Viewer/pgp.php:360
 msgid ""
 "The message below has been encrypted with PGP, however, no personal private "
 "key exists so the message cannot be decrypted."
@@ -4620,11 +4613,11 @@ msgstr ""
 "Onderstaand bericht is gecodeerd met PGP, echter, er bestaat geen "
 "persoonlijke privé sleutel dus kan het bericht niet gedecodeerd worden."
 
-#: lib/MIME/Viewer/pgp.php:371
+#: lib/MIME/Viewer/pgp.php:376
 msgid "The message below has been encrypted with PGP."
 msgstr "Onderstaand bericht is gecodeerd met PGP."
 
-#: lib/MIME/Viewer/pgp.php:365
+#: lib/MIME/Viewer/pgp.php:370
 msgid ""
 "The message below has been encrypted with PGP. You must enter the passphrase "
 "for your PGP private key before it can be decrypted."
@@ -4632,7 +4625,7 @@ msgstr ""
 "Onderstaand bericht is gecodeerd met PGP. U dient het wachtwoord van uw PGP "
 "privé sleutel in te voeren voordat het bericht kan worden gedecodeerd."
 
-#: lib/MIME/Viewer/pgp.php:348
+#: lib/MIME/Viewer/pgp.php:353
 msgid ""
 "The message below has been encrypted with PGP. You must enter the passphrase "
 "that was used to encrypt this message."
@@ -4640,11 +4633,11 @@ msgstr ""
 "Onderstaand bericht is gecodeerd met PGP. U dient het wachtwoord in te "
 "voeren dat is gebruikt om het bericht te coderen."
 
-#: lib/MIME/Viewer/pgp.php:455
+#: lib/MIME/Viewer/pgp.php:460
 msgid "The message below has been verified."
 msgstr "Onderstaand bericht is geverifieerd."
 
-#: lib/Crypt/PGP.php:380
+#: lib/Crypt/PGP.php:382
 msgid "The message below has not been digitally signed or encrypted with PGP."
 msgstr "Onderstaand bericht is niet digitaal ondertekend of gecodeerd met PGP."
 
@@ -4672,7 +4665,7 @@ msgstr "Het bericht is aan uw systeembeheerder gerapporteerd als spam."
 msgid "The message has been reported as spam."
 msgstr "Het bericht is gerapporteerd als spam."
 
-#: lib/MIME/Viewer/pkcs7.php:450
+#: lib/MIME/Viewer/pkcs7.php:457
 #, php-format
 msgid "The message has been verified. Sender: %s."
 msgstr "Het bericht is geverifieerd. Afzender: %s."
@@ -4708,7 +4701,7 @@ msgstr "De ondertekening kon niet worden vervangen."
 msgid "The signature was successfully replaced."
 msgstr "De ondertekening is met succes vervangen."
 
-#: attachment.php:59
+#: attachment.php:60
 msgid ""
 "The specified attachment does not exist. It may have been deleted by the "
 "original sender."
@@ -4716,7 +4709,7 @@ msgstr ""
 "De opgegeven bijlage bestaat niet. Deze kan zijn verwijderd door de "
 "oorspronkelijke afzender."
 
-#: attachment.php:128
+#: attachment.php:129
 msgid "The specified file cannot be read."
 msgstr "Het opgegeven bestand kan niet worden gelezen."
 
@@ -4734,6 +4727,14 @@ msgstr "De sjabloon \"%s\" is verwijderd."
 #, php-format
 msgid "The stationery \"%s\" has been updated."
 msgstr "De sjabloon \"%s\" is gewijzigd."
+
+#: lib/Compose.php:997
+msgid ""
+"The system is not properly configured. A detailed error description has been "
+"logged for the administrator."
+msgstr ""
+"Het systeem is onjuist geconfigureerd. Een gedetailleerde foutmelding is "
+"gelogd voor de systeembeheerder."
 
 #: lib/MIME/Viewer/itip.php:192
 msgid "The task has been added to your tasklist."
@@ -4778,7 +4779,7 @@ msgstr "Er zijn geen alternatieve onderdelen die weergegeven kunnen worden."
 msgid "There are no messages in this mailbox."
 msgstr "Er zijn geen berichten in deze mailbox."
 
-#: thread.php:104
+#: thread.php:108
 msgid "There is no text that can be displayed inline."
 msgstr "Er is geen tekst, welke inline weergegeven kan worden."
 
@@ -4803,11 +4804,11 @@ msgstr ""
 msgid "There was an error deleting the event:"
 msgstr "Een fout bij het verwijderen van de gebeurtenis:"
 
-#: lib/MIME/Viewer/enriched.php:36 lib/MIME/Viewer/plain.php:50
+#: lib/MIME/Viewer/plain.php:50 lib/MIME/Viewer/enriched.php:36
 msgid "There was an error displaying this message part"
 msgstr "Een fout bij het bekijken van dit berichtonderdeel"
 
-#: lib/Message.php:635
+#: lib/Message.php:634
 #, php-format
 msgid ""
 "There was an error flagging messages in the folder \"%s\". This is what the "
@@ -4820,7 +4821,7 @@ msgstr ""
 msgid "There was an error importing %s."
 msgstr "Een fout bij het importeren van %s."
 
-#: lib/MIME/Viewer/itip.php:157
+#: lib/MIME/Viewer/itip.php:158
 msgid "There was an error importing the event:"
 msgstr "Een fout bij het importeren van de gebeurtenis:"
 
@@ -4842,7 +4843,7 @@ msgstr ""
 "Een fout bij het verplaatsen van berichten van \"%s\" naar \"%s\". De server "
 "meldt"
 
-#: lib/Compose.php:749
+#: lib/Compose.php:755
 #, php-format
 msgid "There was an error sending your message: %s"
 msgstr "Een fout bij het verzenden van uw bericht: %s"
@@ -4857,11 +4858,11 @@ msgstr "Deze openbare PGP sleutel is gekoppeld met het bericht."
 
 #: lib/MIME/Viewer/itip.php:106 lib/MIME/Viewer/itip.php:120
 #: lib/MIME/Viewer/itip.php:166 lib/MIME/Viewer/itip.php:180
-#: lib/MIME/Viewer/itip.php:196 lib/MIME/Viewer/itip.php:342
+#: lib/MIME/Viewer/itip.php:196 lib/MIME/Viewer/itip.php:345
 msgid "This action is not supported."
 msgstr "Deze bewerking wordt niet ondersteund."
 
-#: lib/MIME/Viewer/itip.php:202 lib/MIME/Viewer/itip.php:452
+#: lib/MIME/Viewer/itip.php:202 lib/MIME/Viewer/itip.php:458
 msgid "This action is not yet implemented."
 msgstr "Deze bewerking is nog niet van toepassing."
 
@@ -4873,17 +4874,17 @@ msgstr "Deze map mag niet worden hernoemd:"
 msgid "This may take some time. Are you sure you want to continue?"
 msgstr "Dit kan enige tijd duren. Weet u zeker dat u verder wilt gaan?"
 
-#: lib/MIME/Viewer/appledouble.php:39
+#: lib/MIME/Viewer/appledouble.php:47
 msgid "This message contains a Macintosh file."
 msgstr "Dit bericht bevat een Macintoshbestand."
 
-#: lib/MIME/Viewer/pkcs7.php:476
+#: lib/MIME/Viewer/pkcs7.php:483
 msgid ""
 "This message contains an attachment that has been digitally signed via S/"
 "MIME."
 msgstr "Dit bericht bevat een bijlage die digitaal via S/MIME is ondertekend."
 
-#: lib/MIME/Viewer/pkcs7.php:480
+#: lib/MIME/Viewer/pkcs7.php:487
 msgid "This message contains an attachment that has been encrypted via S/MIME."
 msgstr "Dit bericht bevat een bijlage die via S/MIME is gecodeerd."
 
@@ -4903,7 +4904,7 @@ msgstr "Dit bericht lijkt niet het juiste S/MIME formaat te hebben."
 msgid "This message has been digitally signed via S/MIME."
 msgstr "Het volgende bericht is digitaal ondertekend via S/MIME."
 
-#: lib/MIME/Viewer/pkcs7.php:170 lib/MIME/Viewer/pkcs7.php:294
+#: lib/MIME/Viewer/pkcs7.php:170 lib/MIME/Viewer/pkcs7.php:297
 msgid "This message has been encrypted via S/MIME."
 msgstr "Dit bericht is gecodeerd met S/MIME."
 
@@ -4912,7 +4913,7 @@ msgid "This message part cannot be viewed because it is too large."
 msgstr ""
 "Dit berichtonderdeel kan niet worden weergegeven omdat het te groot is."
 
-#: message.php:520
+#: message.php:521
 msgid "This message to"
 msgstr "Dit bericht naar"
 
@@ -4920,10 +4921,11 @@ msgstr "Dit bericht naar"
 #, php-format
 msgid ""
 "This request cannot be completed because the link you followed or the form "
-"you submitted was only valid for %s minutes"
+"you submitted was only valid for %d minutes. Please try again now."
 msgstr ""
 "Dit verzoek kan niet worden uitgevoerd omdat de link die u volgde of het "
-"formulier dat u bevestigde slechts %s minuten geldig was"
+"formulier dat u bevestigde slechts %d minuten geldig was. Probeer het nu "
+"opnieuw, a.u.b."
 
 #: acl.php:47
 msgid "This server does not support sharing folders."
@@ -4938,7 +4940,7 @@ msgstr ""
 msgid "Thread Display:"
 msgstr "Threadweergave:"
 
-#: thread.php:177 config/prefs.php.dist:1206
+#: thread.php:181 config/prefs.php.dist:1211
 msgid "Thread View"
 msgstr "Threadweergave"
 
@@ -4950,37 +4952,37 @@ msgstr "Thumbnail van bijgevoegd PDF bestand"
 msgid "Thumbnail of attached image"
 msgstr "Thumbnail van bijgevoegde afbeelding"
 
-#: mailbox.php:587 compose.php:833 lib/Search.php:711 lib/UI/Mailbox.php:90
-#: lib/UI/Message.php:26 templates/login/recompose.html:14
-#: templates/contacts/contacts.html:40
+#: compose.php:836 mailbox.php:587 lib/Search.php:716 lib/UI/Message.php:26
+#: lib/UI/Mailbox.php:90 templates/contacts/contacts.html:40
+#: templates/login/recompose.html:14
 msgid "To"
 msgstr "Aan"
 
-#: config/prefs.php.dist:1203
+#: config/prefs.php.dist:1208
 msgid "To Address"
 msgstr "Geadresseerde"
 
-#: message.php:564
+#: message.php:565
 msgid "To All"
 msgstr "Aan alle"
 
-#: message.php:560
+#: message.php:561
 msgid "To List"
 msgstr "Aan mailinglist"
 
-#: message.php:557
+#: message.php:558
 msgid "To Sender"
 msgstr "Aan afzender"
 
-#: message.php:564
+#: message.php:565
 msgid "To _All"
 msgstr "Aan _alle"
 
-#: message.php:560
+#: message.php:561
 msgid "To _List"
 msgstr "Aan _mailinglist"
 
-#: templates/compose/redirect.html:46
+#: templates/compose/redirect.html:47
 msgid "To field"
 msgstr "Aan veld"
 
@@ -4992,7 +4994,7 @@ msgstr ""
 "Om meerdere velden te selecteren, houd de Control (PC) of Command (Mac) "
 "toets ingedrukt tijdens klikken."
 
-#: config/prefs.php.dist:514
+#: config/prefs.php.dist:517
 msgid "To the stationery and form responses."
 msgstr "Naar de stationaire en formulierantwoorden."
 
@@ -5004,19 +5006,19 @@ msgstr ""
 "Om een TLS verbinding te kunnen gebruiken, dient u een werkende versie van "
 "PHP 5.1.0 of hoger te hebben."
 
-#: thread.php:117 templates/thread/thread.html:31
+#: thread.php:121 templates/thread/thread.html:31
 msgid "To:"
 msgstr "Aan:"
 
-#: config/prefs.php.dist:659
+#: config/prefs.php.dist:664
 msgid "Toggle Borders"
 msgstr "Randen aan/uit"
 
-#: config/prefs.php.dist:663
+#: config/prefs.php.dist:668
 msgid "Toggle HTML Source"
 msgstr "HTML bron aan/uit"
 
-#: config/prefs.php.dist:683
+#: config/prefs.php.dist:688
 msgid "Top"
 msgstr "Bovenkant"
 
@@ -5028,11 +5030,11 @@ msgstr "Totale grootte:"
 msgid "Traditional"
 msgstr "Traditioneel"
 
-#: config/prefs.php.dist:316
+#: config/prefs.php.dist:319
 msgid "Trash"
 msgstr "Prullenbak"
 
-#: lib/IMAP/Tree.php:1906
+#: lib/IMAP/Tree.php:1986
 msgid "Trash folder"
 msgstr "Prullenbak"
 
@@ -5040,67 +5042,71 @@ msgstr "Prullenbak"
 msgid "Trash folder:"
 msgstr "Prullenbak:"
 
-#: lib/Quota/sql.php:71
+#: lib/MIME/Viewer/itip.php:144
+msgid "Trying to import the event instead."
+msgstr "Proberen, in plaats van, de gebeurtenis te importeren."
+
+#: lib/Quota/sql.php:73
 msgid "Unable to connect to SQL server."
 msgstr "Niet in staat met de SQL server te verbinden."
 
-#: lib/Quota/maildir.php:111 lib/Quota/hook.php:42 lib/Quota/imap.php:42
-#: lib/Quota/mdaemon.php:45 lib/Quota/command.php:91 lib/Quota/logfile.php:85
-#: lib/Quota/mercury32.php:68
+#: lib/Quota/mercury32.php:68 lib/Quota/logfile.php:85 lib/Quota/imap.php:42
+#: lib/Quota/mdaemon.php:45 lib/Quota/maildir.php:111 lib/Quota/command.php:91
+#: lib/Quota/hook.php:42
 msgid "Unable to retrieve quota"
 msgstr "Niet in staat om quota op te halen"
 
-#: templates/mailbox/navbar.html:19 templates/mailbox/navbar.html:35
-#: templates/message/navbar_navigate.html:13
+#: templates/message/navbar_navigate.html:13 templates/mailbox/navbar.html:19
+#: templates/mailbox/navbar.html:35
 msgid "Unanswered"
 msgstr "Onbeantwoord"
 
-#: lib/Search.php:797
+#: lib/Search.php:802
 msgid "Unanswered messages"
 msgstr "Onbeantwoorde berichten"
 
-#: mailbox.php:514 message.php:551
+#: message.php:552 mailbox.php:514
 msgid "Undelete"
 msgstr "Terughalen"
 
-#: lib/Search.php:817
+#: lib/Search.php:822
 msgid "Undeleted messages"
 msgstr "Niet verwijderde berichten"
 
-#: config/prefs.php.dist:628
+#: config/prefs.php.dist:633
 msgid "Underline"
 msgstr "Onderstrepen"
 
-#: lib/MIME/Headers.php:254 lib/UI/Mailbox.php:67 lib/UI/Mailbox.php:86
+#: lib/MIME/Headers.php:251 lib/UI/Mailbox.php:67 lib/UI/Mailbox.php:86
 msgid "Undisclosed Recipients"
 msgstr "Onbekende ontvangers"
 
-#: config/prefs.php.dist:647
+#: config/prefs.php.dist:652
 msgid "Undoes your last action"
 msgstr "Uw laatste aktie ongedaan maken"
 
-#: lib/IMAP/Client.php:462
+#: lib/IMAP/Client.php:464
 msgid "Unexpected response from server to AUTHENTICATE command."
 msgstr "Onverwacht antwoord van server aan AUTHENTICATE commando."
 
-#: lib/IMAP/Client.php:428
+#: lib/IMAP/Client.php:430
 msgid "Unexpected response from server to Digest-MD5 response."
 msgstr "Onverwacht antwoord van server aan Digest-MD5 antwoord."
 
-#: lib/Search.php:807
+#: lib/Search.php:812
 msgid "Unflagged messages"
 msgstr "Niet gemarkeerde berichten"
 
-#: lib/MIME/Viewer/itip.php:486
+#: lib/MIME/Viewer/itip.php:492
 #, php-format
 msgid "Unhandled component of type: %s"
 msgstr "Niet verwerkt onderdeel van type: %s"
 
-#: lib/MIME/Viewer/itip.php:761
+#: lib/MIME/Viewer/itip.php:813
 msgid "Unknown"
 msgstr "Onbekend"
 
-#: lib/UI/Mailbox.php:206
+#: lib/UI/Mailbox.php:206 lib/UI/Mailbox.php:209 lib/UI/Mailbox.php:213
 msgid "Unknown Date"
 msgstr "Onbekende datum"
 
@@ -5109,7 +5115,7 @@ msgstr "Onbekende datum"
 msgid "Unknown IMAP response from the server. Server Responded: %s"
 msgstr "Onbekend IMAP antwoord van de server. De server meldt: %s"
 
-#: lib/MIME/Viewer/itip.php:707
+#: lib/MIME/Viewer/itip.php:759
 msgid "Unknown Meeting"
 msgstr "Onbekende vergadering"
 
@@ -5117,11 +5123,11 @@ msgstr "Onbekende vergadering"
 msgid "Unknown Recipient"
 msgstr "Onbekende ontvanger"
 
-#: lib/MIME/Viewer/itip.php:851
+#: lib/MIME/Viewer/itip.php:903
 msgid "Unknown Task"
 msgstr "Onbekende taak"
 
-#: smime.php:339 pgp.php:440
+#: smime.php:346 pgp.php:447
 msgid "Unload Passphrase"
 msgstr "Wachtwoord lossen"
 
@@ -5129,12 +5135,12 @@ msgstr "Wachtwoord lossen"
 msgid "Unnamed"
 msgstr "Onbenoemd"
 
-#: mailbox.php:757 message.php:474 templates/mailbox/navbar.html:15
-#: templates/mailbox/navbar.html:31 templates/message/navbar_navigate.html:9
+#: message.php:474 mailbox.php:757 templates/message/navbar_navigate.html:9
+#: templates/mailbox/navbar.html:15 templates/mailbox/navbar.html:31
 msgid "Unseen"
 msgstr "Ongezien"
 
-#: lib/Search.php:787
+#: lib/Search.php:792
 msgid "Unseen messages"
 msgstr "Ongelezen berichten"
 
@@ -5146,15 +5152,15 @@ msgstr "Uitschrijven"
 msgid "Update"
 msgstr "Bijwerken"
 
-#: lib/MIME/Viewer/itip.php:659 lib/MIME/Viewer/itip.php:699
+#: lib/MIME/Viewer/itip.php:711 lib/MIME/Viewer/itip.php:751
 msgid "Update in my calendar"
 msgstr "In mijn agenda bijwerken"
 
-#: lib/MIME/Viewer/itip.php:686
+#: lib/MIME/Viewer/itip.php:738
 msgid "Update respondent status"
 msgstr "Beantwoorderstatus bijwerken"
 
-#: lib/MIME/Viewer/itip.php:673
+#: lib/MIME/Viewer/itip.php:725
 msgid "Update this event on my calendar"
 msgstr "Werk deze gebeurtenis bij in mijn agenda"
 
@@ -5166,7 +5172,7 @@ msgstr "Upload:"
 msgid "Use Default Value"
 msgstr "Gebruik standaardwaarde"
 
-#: config/prefs.php.dist:291
+#: config/prefs.php.dist:294
 msgid "Use IMAP folder subscriptions?"
 msgstr "IMAP mapinschrijvingen gebruiken?"
 
@@ -5186,7 +5192,7 @@ msgstr ""
 "Gebruiker \"%s\" met succes de opgegeven rechten toegekend voor de map \"%s"
 "\"."
 
-#: lib/api.php:180 templates/login/login.html:85
+#: lib/api.php:188 templates/login/login.html:85
 msgid "Username"
 msgstr "Gebruikersnaam"
 
@@ -5210,7 +5216,7 @@ msgstr "Bekijken"
 msgid "View %s"
 msgstr "%s bekijken"
 
-#: smime.php:313 pgp.php:412
+#: smime.php:318 pgp.php:417
 #, php-format
 msgid "View %s Public Key"
 msgstr "%s openbare sleutel bekijken"
@@ -5224,19 +5230,19 @@ msgstr "Bijlage tonen"
 msgid "View Messages"
 msgstr "Berichten tonen"
 
-#: smime.php:340 pgp.php:441
+#: smime.php:347 pgp.php:448
 msgid "View Personal Private Key"
 msgstr "Persoonlijke prive sleutel bekijken"
 
-#: smime.php:336 pgp.php:435
+#: smime.php:343 pgp.php:442
 msgid "View Personal Public Key"
 msgstr "Persoonlijke openbare sleutel bekijken"
 
-#: message.php:575
+#: message.php:576
 msgid "View Thread"
 msgstr "Thread bekijken"
 
-#: lib/MIME/Viewer/pkcs7.php:484
+#: lib/MIME/Viewer/pkcs7.php:491
 msgid "View attachment in a separate window"
 msgstr "Bijlage in een apart scherm bekijken"
 
@@ -5244,11 +5250,11 @@ msgstr "Bijlage in een apart scherm bekijken"
 msgid "View content in a separate window"
 msgstr "Inhoud in een apart scherm bekijken"
 
-#: lib/MIME/Viewer/itip.php:148 lib/MIME/Viewer/itip.php:161
+#: lib/MIME/Viewer/itip.php:149 lib/MIME/Viewer/itip.php:162
 msgid "View event"
 msgstr "Bekijk gebeurtenis"
 
-#: folders.php:436 mailbox.php:695
+#: mailbox.php:695 folders.php:458
 #, php-format
 msgid "View messages in %s"
 msgstr "Bekijk berichten in %s"
@@ -5265,32 +5271,32 @@ msgstr "Bekijk taak"
 msgid "Virtual Folder"
 msgstr "Virtuele map"
 
-#: search.php:89
+#: search.php:90
 #, php-format
 msgid "Virtual Folder \"%s\" created succesfully."
 msgstr "De virtuele map \"%s\" werd met succes aangemaakt."
 
-#: lib/IMAP/Tree.php:65 templates/search/search.html:166
+#: lib/IMAP/Tree.php:66 templates/search/search.html:166
 msgid "Virtual Folders"
 msgstr "Virtuele mappen"
 
-#: search.php:84
+#: search.php:85
 msgid "Virtual Folders require a label."
 msgstr "Label vereist voor virtuele map"
 
-#: lib/Search.php:436
+#: lib/Search.php:441
 msgid "Virtual INBOX"
 msgstr "Virtuele INBOX"
 
-#: lib/IMAP/Tree.php:1946
+#: lib/IMAP/Tree.php:2026
 msgid "Virtual INBOX Folder"
 msgstr "Virtuele INBOX map"
 
-#: lib/Search.php:380
+#: lib/Search.php:385
 msgid "Virtual Trash"
 msgstr "Virtuele prullenbak"
 
-#: lib/IMAP/Tree.php:1942
+#: lib/IMAP/Tree.php:2022
 msgid "Virtual Trash Folder"
 msgstr "Virtuele Prullenbak"
 
@@ -5298,24 +5304,26 @@ msgstr "Virtuele Prullenbak"
 msgid "Virtual folder label:"
 msgstr "Virtuele map label:"
 
-#: lib/MIME/Viewer/pkcs7.php:439 lib/Crypt/PGP.php:380
+#: lib/MIME/Viewer/pkcs7.php:446 lib/Crypt/PGP.php:382
 msgid "Warning"
 msgstr "Waarschuwing"
 
 #: lib/IMP.php:334
 msgid ""
 "We cannot verify that this request was really sent by you. It could be a "
-"malicious request."
+"malicious request. If you intended to perform this action, you can retry it "
+"now."
 msgstr ""
 "Wij kunnen niet verifiëren dat dit verzoek echt door u is verzonden. Het is "
-"mogelijk een kwaadaardig verzoek."
+"mogelijk een kwaadaardig verzoek. Als u van plan was deze bewerking uit te "
+"voeren, probeer het dan nu opnieuw."
 
 #: login.php:196 login.php:355 templates/login/mobile.inc:11
 #, php-format
 msgid "Welcome to %s"
 msgstr "Welkom bij %s"
 
-#: config/prefs.php.dist:857
+#: config/prefs.php.dist:862
 msgid ""
 "What should we do with spam messages after they have been reported as spam "
 "or innocent?"
@@ -5323,7 +5331,7 @@ msgstr ""
 "Wat dienen we te doen met spamberichten nadat deze als spam of onschuldig "
 "zijn gerapporteerd?"
 
-#: config/prefs.php.dist:1007
+#: config/prefs.php.dist:1012
 msgid ""
 "When deleting messages, move them to your Trash folder instead of marking "
 "them as deleted?"
@@ -5331,7 +5339,7 @@ msgstr ""
 "Verplaats verwijderde berichten naar de prullenbak, i.p.v. deze als "
 "verwijderd te markeren?"
 
-#: config/prefs.php.dist:1191
+#: config/prefs.php.dist:1196
 msgid ""
 "When opening a new mailbox for the first time, which page do you want to "
 "start on?"
@@ -5339,7 +5347,7 @@ msgstr ""
 "Op welke pagina, bij het voor de eerste keer openen van een nieuwe mailbox, "
 "wilt u beginnen?"
 
-#: config/prefs.php.dist:755
+#: config/prefs.php.dist:760
 msgid ""
 "When replying/forwarding to a message, should we use the same format as the "
 "original message?"
@@ -5347,12 +5355,12 @@ msgstr ""
 "Dienen wij, bij antwoorden/doorsturen van een bericht, hetzelfde formaat als "
 "het originele bericht te gebruiken?"
 
-#: config/prefs.php.dist:719
+#: config/prefs.php.dist:724
 msgid "When saving sent-mail, should we save attachment data?"
 msgstr ""
 "Dienen bij het opslaan van verzonden mail, bijlagen ook opgeslagen te worden?"
 
-#: config/prefs.php.dist:675
+#: config/prefs.php.dist:680
 msgid ""
 "When sending mail or expanding addresses, what domain should we append to "
 "unqualified addresses (email addresses without \"@\")?"
@@ -5360,22 +5368,22 @@ msgstr ""
 "Welk domein moet toegevoegd worden aan onvolledige adressen (adressen zonder "
 "\"@\") bij verzenden van mail of adresuitbreiding?"
 
-#: config/prefs.php.dist:976
+#: config/prefs.php.dist:981
 msgid "Where do you want to display links to alternative formats of a message?"
 msgstr ""
 "Waar wilt u links naar alternatieve formaten van een bericht weergeven?"
 
-#: config/prefs.php.dist:686
+#: config/prefs.php.dist:691
 msgid "Where should the cursor be located in the compose text area by default?"
 msgstr ""
 "Waar wordt de cursor standaard geplaatst in het \"nieuw bericht\" "
 "tekstgebied?"
 
-#: mailbox.php:530 message.php:583
+#: message.php:584 mailbox.php:530
 msgid "Whitelist"
 msgstr "Witte lijst"
 
-#: lib/prefs.php:237 config/prefs.php.dist:602
+#: lib/prefs.php:241 config/prefs.php.dist:605
 msgid "Xinha"
 msgstr "Xinha"
 
@@ -5383,8 +5391,8 @@ msgstr "Xinha"
 msgid "Year"
 msgstr "Jaar"
 
-#: templates/javascript_defs.php:43 config/prefs.php.dist:1269
-#: config/prefs.php.dist:1291 templates/compose/compose.html:302
+#: templates/javascript_defs.php:43 config/prefs.php.dist:1274
+#: config/prefs.php.dist:1296 templates/compose/compose.html:302
 msgid "Yes"
 msgstr "Ja"
 
@@ -5423,7 +5431,7 @@ msgstr "Je mag geen mappen aanmaken."
 msgid "You are not allowed to create more than %d folders."
 msgstr "Maximum aantal mappen is: %d"
 
-#: lib/Compose.php:982
+#: lib/Compose.php:1010
 #, php-format
 msgid ""
 "You are not allowed to send messages to more than %d recipients within %d "
@@ -5432,7 +5440,7 @@ msgstr ""
 "Het is u niet toegestaan om berichten te verzenden aan meer dan %d "
 "ontvangers binnen %d uur."
 
-#: lib/Compose.php:1254
+#: lib/Compose.php:1282
 #, php-format
 msgid "You are not allowed to send messages to more than %d recipients."
 msgstr ""
@@ -5474,12 +5482,12 @@ msgid "You forwarded this message on %%s to the following recipients: %s."
 msgstr ""
 "U heeft dit bericht doorgestuurd op %%s, naar de volgende ontvangers: %s."
 
-#: lib/IMP.php:1089
+#: lib/IMP.php:1098
 #, php-format
 msgid "You have %s new messages."
 msgstr "U heeft %s nieuwe berichten."
 
-#: lib/IMP.php:1089
+#: lib/IMP.php:1098
 msgid "You have 1 new message."
 msgstr "U heeft 1 nieuw bericht."
 
@@ -5492,7 +5500,7 @@ msgstr ""
 "gedefinieerd. U kunt geen berichten verwijderen totdat u een Prullenbak "
 "heeft ingesteld in de voorkeursinstellingen."
 
-#: compose.php:153
+#: compose.php:150
 msgid "You have already submitted this page."
 msgstr "U heeft deze pagina reeds bevestigd."
 
@@ -5504,18 +5512,18 @@ msgstr "U heeft nieuwe mail in:"
 msgid "You have not configured any external mail accounts."
 msgstr "U heeft geen externe mailaccounts geconfigureerd."
 
-#: lib/Compose.php:1241
+#: lib/Compose.php:1269
 msgid "You must enter at least one recipient."
 msgstr "U dient tenminste één ontvanger op te geven."
 
-#: lib/MIME/Viewer/pgp.php:365
+#: lib/MIME/Viewer/pgp.php:370
 msgid ""
 "You must enter the passphrase for your PGP private key to view this message."
 msgstr ""
 "U dient het wachtwoord van uw prive PGP sleutel in te voeren, om dit bericht "
 "te kunnen bekijken."
 
-#: lib/MIME/Viewer/pkcs7.php:313
+#: lib/MIME/Viewer/pkcs7.php:316
 msgid ""
 "You must enter the passphrase for your S/MIME private key to view this "
 "message"
@@ -5523,7 +5531,7 @@ msgstr ""
 "U dient het wachtwoord van uw prive S/MIME sleutel in te voeren, om dit "
 "bericht te kunnen bekijken"
 
-#: lib/MIME/Viewer/pgp.php:348
+#: lib/MIME/Viewer/pgp.php:353
 msgid "You must enter the passphrase that was used to encrypt this message."
 msgstr ""
 "U dient het wachtwoord in te voeren dat is gebruikt om dit bericht te "
@@ -5611,7 +5619,7 @@ msgstr "Uw privé sleutel:"
 msgid "Your Public Key:"
 msgstr "Uw openbare sleutel:"
 
-#: config/prefs.php.dist:199
+#: config/prefs.php.dist:202
 msgid "Your Reply-to: address: <em>(optional)</em>"
 msgstr "Uw Antwoord aan: adres: <em>(optional)</em>"
 
@@ -5627,7 +5635,7 @@ msgstr "Uw browser ondersteunt niet het ophalen van externe mail."
 msgid "Your accounts:"
 msgstr "Uw accounts:"
 
-#: config/prefs.php.dist:207
+#: config/prefs.php.dist:210
 msgid ""
 "Your alias addresses: <em>(optional, enter each address on a new line)</em>"
 msgstr ""
@@ -5638,11 +5646,11 @@ msgstr ""
 msgid "Your browser does not support inline display of this image type."
 msgstr "Uw browser ondersteunt geen inline weergave van dit afbeeldingstype."
 
-#: config/prefs.php.dist:526
+#: config/prefs.php.dist:529
 msgid "Your browser does not support this feature."
 msgstr "Uw browser ondersteunt deze mogelijkheid niet."
 
-#: config/prefs.php.dist:697
+#: config/prefs.php.dist:702
 msgid "Your default charset for sending messages:"
 msgstr "Uw standaard tekenset voor het verzenden van berichten:"
 
@@ -5650,7 +5658,7 @@ msgstr "Uw standaard tekenset voor het verzenden van berichten:"
 msgid "Your default encryption method for sending messages:"
 msgstr "Uw standaard versleutelingsmethode voor het verzenden van berichten:"
 
-#: attachment.php:114
+#: attachment.php:115
 #, php-format
 msgid ""
 "Your linked attachment has been downloaded by at least one user.\n"
@@ -5673,7 +5681,7 @@ msgstr ""
 msgid "Your message was successfully delivered."
 msgstr "Uw bericht werd met succes afgeleverd."
 
-#: config/prefs.php.dist:231
+#: config/prefs.php.dist:234
 msgid "Your signature:"
 msgstr "Uw ondertekening:"
 
@@ -5682,12 +5690,12 @@ msgstr "Uw ondertekening:"
 msgid "[Attachment stripped: Original attachment type: %s, name: %s]"
 msgstr "[Bijlage gestript: origineel bijlagetype: %s, naam: %s]"
 
-#: lib/MIME/Headers.php:264 templates/javascript/addressesBlocks.js:7
+#: lib/MIME/Headers.php:261 templates/javascript/addressesBlocks.js:7
 msgid "[Hide Addresses]"
 msgstr "[Verberg adressen]"
 
-#: mailbox.php:719 message.php:285 rss.php:75 lib/Compose.php:1888
-#: lib/Compose.php:2366
+#: rss.php:75 message.php:285 mailbox.php:719 lib/Compose.php:1920
+#: lib/Compose.php:2398
 msgid "[No Subject]"
 msgstr "[Geen onderwerp]"
 
@@ -5699,7 +5707,12 @@ msgstr "[De sleutel in uw adresboek opslaan]"
 msgid "[Show Addresses -"
 msgstr "[Toon adressen -"
 
-#: lib/Compose.php:3012
+#: lib/MIME/Headers.php:260
+#, php-format
+msgid "[Show Addresses - %d recipients]"
+msgstr "[Toon adressen - %d ontvangers]"
+
+#: lib/Compose.php:3044
 msgid "[Truncated Text]"
 msgstr "[Verminkte tekst]"
 
@@ -5707,51 +5720,51 @@ msgstr "[Verminkte tekst]"
 msgid "[View the raw key]"
 msgstr "[Bekijk ruwe sleutel]"
 
-#: compose.php:968
+#: compose.php:970
 msgid "_Bcc"
 msgstr "_Bcc"
 
-#: mailbox.php:526 message.php:579
+#: message.php:580 mailbox.php:526
 msgid "_Blacklist"
 msgstr "Z_warte lijst"
 
-#: compose.php:965
+#: compose.php:967
 msgid "_Cc"
 msgstr "_Cc"
 
-#: mailbox.php:508 mailbox.php:510 message.php:553
+#: message.php:554 mailbox.php:508 mailbox.php:510
 msgid "_Delete"
 msgstr "Ver_wijderen"
 
-#: lib/IMP.php:862
+#: lib/IMP.php:871
 msgid "_Folders"
 msgstr "_Mappen"
 
-#: compose.php:945
+#: compose.php:947
 msgid "_Identity"
 msgstr "_Identiteit"
 
-#: lib/IMP.php:831
+#: lib/IMP.php:840
 msgid "_Inbox"
 msgstr "_Inbox"
 
-#: lib/IMP.php:899
+#: lib/IMP.php:908
 msgid "_Log out"
 msgstr "_Afmelden"
 
-#: message.php:588
+#: message.php:589
 msgid "_Message Source"
 msgstr "_Berichtsource"
 
-#: lib/IMP.php:859
+#: lib/IMP.php:868
 msgid "_New Message"
 msgstr "_Nieuw bericht"
 
-#: message.php:602
+#: message.php:603
 msgid "_Print"
 msgstr "A_fdrukken"
 
-#: compose.php:1037
+#: compose.php:1039
 msgid "_Priority"
 msgstr "_Prioriteit"
 
@@ -5760,15 +5773,15 @@ msgstr "_Prioriteit"
 msgid "_Refresh %s"
 msgstr "_Ververs %s"
 
-#: message.php:556
+#: message.php:557
 msgid "_Reply"
 msgstr "_Beantwoorden"
 
-#: lib/IMP.php:864
+#: lib/IMP.php:873
 msgid "_Search"
 msgstr "_Zoeken"
 
-#: compose.php:930
+#: compose.php:932
 msgid "_Send Message"
 msgstr "_Verzend bericht"
 
@@ -5776,7 +5789,7 @@ msgstr "_Verzend bericht"
 msgid "_Thread"
 msgstr "_Thread"
 
-#: compose.php:961 compose.php:963
+#: compose.php:963 compose.php:965
 msgid "_To"
 msgstr "_Aan"
 
@@ -5784,23 +5797,23 @@ msgstr "_Aan"
 msgid "_Undelete"
 msgstr "_Terughalen"
 
-#: message.php:575
+#: message.php:576
 msgid "_View Thread"
 msgstr "_Thread bekijken"
 
-#: mailbox.php:530 message.php:583
+#: message.php:584 mailbox.php:530
 msgid "_Whitelist"
 msgstr "Witte li_jst"
 
-#: lib/Compose.php:1009
+#: lib/Compose.php:1037
 msgid "addressee unknown"
 msgstr "Onbekende geadresseerde"
 
-#: lib/Search.php:590
+#: lib/Search.php:595
 msgid "and"
 msgstr "en"
 
-#: lib/Compose.php:1999
+#: lib/Compose.php:2031
 msgid "attachment"
 msgstr "bijlage"
 
@@ -5812,31 +5825,31 @@ msgstr "bijlagen.zip"
 msgid "bytes"
 msgstr "bytes"
 
-#: lib/Compose.php:1033
+#: lib/Compose.php:1061
 msgid "cannot create output file"
 msgstr "kan geen outputbestand maken"
 
-#: lib/Compose.php:1005
+#: lib/Compose.php:1033
 msgid "cannot open input"
 msgstr "Kan input niet openen"
 
-#: lib/Compose.php:997
+#: lib/Compose.php:1025
 msgid "command line usage error"
 msgstr "commandoregel gebruiksfout"
 
-#: lib/Compose.php:1053
+#: lib/Compose.php:1081
 msgid "configuration error"
 msgstr "Configuratiefout"
 
-#: lib/Compose.php:1029
+#: lib/Compose.php:1057
 msgid "critical system file missing"
 msgstr "kritiek systeembestand ontbreekt"
 
-#: lib/Compose.php:1001
+#: lib/Compose.php:1029
 msgid "data format error"
 msgstr "dataformaatfout"
 
-#: lib/Compose.php:1057
+#: lib/Compose.php:1085
 msgid "entry not found"
 msgstr "invoer niet gevonden"
 
@@ -5844,19 +5857,19 @@ msgstr "invoer niet gevonden"
 msgid "from"
 msgstr "in"
 
-#: lib/Compose.php:1013
+#: lib/Compose.php:1041
 msgid "host name unknown"
 msgstr "hostnaam onbekend"
 
-#: lib/Search.php:593
+#: lib/Search.php:598
 msgid "in"
 msgstr "in"
 
-#: lib/Compose.php:1037
+#: lib/Compose.php:1065
 msgid "input/output error"
 msgstr "input/output fout"
 
-#: lib/Compose.php:1021
+#: lib/Compose.php:1049
 msgid "internal software error"
 msgstr "interne softwarefout"
 
@@ -5864,7 +5877,7 @@ msgstr "interne softwarefout"
 msgid "into folder"
 msgstr "in map"
 
-#: smime.php:39 pgp.php:79
+#: smime.php:39 pgp.php:84
 msgid "key"
 msgstr "sleutel"
 
@@ -5872,19 +5885,19 @@ msgstr "sleutel"
 msgid "mailbox file"
 msgstr "Mailboxbestand"
 
-#: lib/Compose.php:817
+#: lib/Compose.php:823
 msgid "name"
 msgstr "naam"
 
-#: lib/Search.php:585
+#: lib/Search.php:590
 msgid "not"
 msgstr "niet"
 
-#: lib/Search.php:590 templates/fetchmail/fetchmailprefs.html:26
+#: lib/Search.php:595 templates/fetchmail/fetchmailprefs.html:26
 msgid "or"
 msgstr "of"
 
-#: lib/Compose.php:1049
+#: lib/Compose.php:1077
 msgid "permission denied"
 msgstr "toegang geweigerd"
 
@@ -5892,19 +5905,19 @@ msgstr "toegang geweigerd"
 msgid "recipients]"
 msgstr "ontvangers]"
 
-#: lib/Compose.php:1045
+#: lib/Compose.php:1073
 msgid "remote error in protocol"
 msgstr "remote fout in protocol"
 
-#: lib/Compose.php:1017
+#: lib/Compose.php:1045
 msgid "service unavailable"
 msgstr "service niet beschikbaar"
 
-#: lib/Compose.php:1025
+#: lib/Compose.php:1053
 msgid "system error"
 msgstr "systeemfout"
 
-#: lib/Compose.php:1041
+#: lib/Compose.php:1069
 msgid "temporary failure"
 msgstr "tijdelijke fout"
 

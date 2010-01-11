@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: ingo/lib/Storage.php,v 1.43.8.22 2009-07-24 08:57:03 jan Exp $
+ * $Horde: ingo/lib/Storage.php,v 1.43.8.24 2009/12/22 01:53:26 jan Exp $
  *
  * See the enclosed file LICENSE for license information (ASL).  If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.
@@ -132,16 +132,16 @@ class Ingo_Storage {
                     $cacheSess = &Horde_SessionObjects::singleton();
                     $this->_cache[$field]['ob'] = $cacheSess->query($_SESSION['ingo']['storage'][$field]);
                 } else {
-                    $this->_cache[$field]['ob'] = &$this->_retrieve($field, $readonly);
+                    $this->_cache[$field]['ob'] = $this->_retrieve($field, $readonly);
                 }
                 if (!$this->_shutdownCache) {
                     register_shutdown_function(array(&$this, '_addCacheShutdown'));
                     $this->_shutdownCache = true;
                 }
             }
-            $ob = &$this->_cache[$field]['ob'];
+            $ob = $this->_cache[$field]['ob'];
         } else {
-            $ob = &$this->_retrieve($field, $readonly);
+            $ob = $this->_retrieve($field, $readonly);
         }
 
         return $ob;

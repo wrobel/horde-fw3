@@ -2,7 +2,7 @@
 /**
  * Test cases for Ingo_Script_procmail:: class
  *
- * $Horde: ingo/lib/tests/ProcmailTest.php,v 1.1.2.1 2007-12-20 14:05:49 jan Exp $
+ * $Horde: ingo/lib/tests/ProcmailTest.php,v 1.1.2.2 2009/12/21 23:19:05 jan Exp $
  *
  * See the enclosed file LICENSE for license information (ASL).  If you
  * did not receive this file, see http://www.horde.org/licenses/asl.php.
@@ -31,16 +31,21 @@ class Ingo_ProcmailTest extends Ingo_TestBase {
         $GLOBALS['conf']['spam'] = array('enabled' => true,
                                          'char' => '*',
                                          'header' => 'X-Spam-Level');
-        $GLOBALS['ingo_storage'] = &Ingo_Storage::factory('mock',
-                                                 array('maxblacklist' => 3,
-                                                       'maxwhitelist' => 3));
-        $GLOBALS['ingo_script'] = &Ingo_Script::factory('procmail',
-                                                        array('path_style' => 'mbox'));
+        $GLOBALS['ingo_storage'] = Ingo_Storage::factory(
+            'mock',
+            array('maxblacklist' => 3,
+                  'maxwhitelist' => 3));
+        $GLOBALS['ingo_script'] = Ingo_Script::factory(
+            'procmail',
+            array('path_style' => 'mbox',
+                  'spam_compare' => 'string',
+                  'spam_header' => 'X-Spam-Level',
+                  'spam_char' => '*'));
     }
 
     function testForwardKeep()
     {
-        $forward = &new Ingo_Storage_forward();
+        $forward = new Ingo_Storage_forward();
         $forward->setForwardAddresses('joefabetes@example.com');
         $forward->setForwardKeep(true);
 
@@ -72,7 +77,7 @@ $DEFAULT
 
     function testForwardNoKeep()
     {
-        $forward = &new Ingo_Storage_forward();
+        $forward = new Ingo_Storage_forward();
         $forward->setForwardAddresses('joefabetes@example.com');
         $forward->setForwardKeep(false);
 
@@ -104,7 +109,7 @@ $DEFAULT
 
     function testBlacklistWithFolder()
     {
-        $bl = &new Ingo_Storage_blacklist(3);
+        $bl = new Ingo_Storage_blacklist(3);
         $bl->setBlacklist(array('spammer@example.com'));
         $bl->setBlacklistFolder('Junk');
 
@@ -116,7 +121,7 @@ Junk');
 
     function testBlacklistMarker()
     {
-        $bl = &new Ingo_Storage_blacklist(3);
+        $bl = new Ingo_Storage_blacklist(3);
         $bl->setBlacklist(array('spammer@example.com'));
         $bl->setBlacklistFolder(INGO_BLACKLIST_MARKER);
 
@@ -128,7 +133,7 @@ Junk');
 
     function testBlacklistDiscard()
     {
-        $bl = &new Ingo_Storage_blacklist(3);
+        $bl = new Ingo_Storage_blacklist(3);
         $bl->setBlacklist(array('spammer@example.com'));
         $bl->setBlacklistFolder(null);
 
@@ -140,7 +145,7 @@ Junk');
 
     function testWhitelist()
     {
-        $wl = &new Ingo_Storage_whitelist(3);
+        $wl = new Ingo_Storage_whitelist(3);
         $wl->setWhitelist(array('spammer@example.com'));
 
         $this->store($wl);
@@ -151,7 +156,7 @@ $DEFAULT');
 
     function testVacationDisabled()
     {
-        $vacation = &new Ingo_Storage_vacation();
+        $vacation = new Ingo_Storage_vacation();
         $vacation->setVacationAddresses(array('from@example.com'));
         $vacation->setVacationSubject('Subject');
         $vacation->setVacationReason("Because I don't like working!");
@@ -162,7 +167,7 @@ $DEFAULT');
 
     function testVacationEnabled()
     {
-        $vacation = &new Ingo_Storage_vacation();
+        $vacation = new Ingo_Storage_vacation();
         $vacation->setVacationAddresses(array('from@example.com'));
         $vacation->setVacationSubject('Subject');
         $vacation->setVacationReason("Because I don't like working!");
@@ -172,21 +177,28 @@ $DEFAULT');
 
         $this->assertScript(':0
 {
-FILEDATE=`test -f \'.vacation.from@example.com\' && ls -lcn --time-style=+%s \'.vacation.from@example.com\' | awk \'{ print $6 + (604800) }\'`
+:0
+* ^TO_from@example.com
+{
+FILEDATE=`test -f ${VACATION_DIR:-.}/\'.vacation.from@example.com\' && ls -lcn --time-style=+%s ${VACATION_DIR:-.}/\'.vacation.from@example.com\' | awk \'{ print $6 + (604800) }\'`
 DATE=`date +%s`
-DUMMY=`test -f \'.vacation.from@example.com\' && test $FILEDATE -le $DATE && rm \'.vacation.from@example.com\'`
-:0 Whc: vacation.lock
-* $^To:(.*\<)?from@example.com
+DUMMY=`test -f ${VACATION_DIR:-.}/\'.vacation.from@example.com\' && test $FILEDATE -le $DATE && rm ${VACATION_DIR:-.}/\'.vacation.from@example.com\'`
+:0 h
+SUBJECT=| formail -xSubject:
+:0 Whc: ${VACATION_DIR:-.}/vacation.lock
+* ^TO_from@example.com
 * !^X-Loop: from@example.com
+* !^X-Spam-Flag: YES
 * !^FROM_DAEMON
-| formail -rD 8192 .vacation.from@example.com
-:0 ehc
+| formail -rD 8192 ${VACATION_DIR:-.}/.vacation.from@example.com
+:0 eh
 | (formail -rI"Precedence: junk" \
 -a"From: <from@example.com>" \
 -A"X-Loop: from@example.com" \
--i"Subject: Subject" ; \
-echo "Because I don\'t like working!" \
+-i"Subject: Subject (Re: $SUBJECT)" ; \
+echo -e "Because I don\'t like working!" \
 ) | $SENDMAIL -ffrom@example.com -oi -t
+}
 }');
     }
 

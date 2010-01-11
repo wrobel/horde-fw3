@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: DIMP 1.1\n"
+"Project-Id-Version: DIMP 1.1.4\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2008-09-25 12:32+0200\n"
-"PO-Revision-Date: 2009-02-04 20:59+0900\n"
+"POT-Creation-Date: 2009-09-12 10:09+0200\n"
+"PO-Revision-Date: 2009-12-21 16:02+0900\n"
 "Last-Translator: Hiromi Kimura <hiromi@tac.tsukuba.ac.jp>\n"
 "Language-Team: i18n@lists.horde.org\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgid "%d Attachment"
 msgid_plural "%d Attachments"
 msgstr[0] "%d 添付"
 
-#: imp.php:661
+#: imp.php:674
 #, php-format
 msgid "%s messages were purged from \"%s\"."
 msgstr "%s 通のメッセージを \"%s\" から削除しました。"
@@ -32,7 +32,7 @@ msgstr "%s 通のメッセージを \"%s\" から削除しました。"
 msgid "%s more unseen messages..."
 msgstr "更に %s 通の未読メッセージ..."
 
-#: imp.php:447
+#: imp.php:460
 #, php-format
 msgid "%s was successfully added to your address book."
 msgstr "%s があなたのアドレス帳に追加されました。"
@@ -46,7 +46,7 @@ msgstr ""
 "%s は、メッセージが１つだけ選択されているなら、削除して次のメッセージに移動し"
 "ます。"
 
-#: imp.php:659
+#: imp.php:672
 #, php-format
 msgid "1 message was purged from \"%s\"."
 msgstr "１通のメッセージを \"%s\" から削除しました。"
@@ -55,14 +55,14 @@ msgstr "１通のメッセージを \"%s\" から削除しました。"
 msgid "1 more unseen message..."
 msgstr "１通の未読メッセージ..."
 
-#: lib/DIMP.php:210
+#: lib/DIMP.php:227
 msgid ""
 "A popup window could not be opened. Your browser may be blocking popups."
 msgstr ""
 "ポップアップウインドーが開けません。ブラウザがポップアップウインドーをブロッ"
 "クしているようです。"
 
-#: templates/chunks/message.php:127 templates/index/index.inc:421
+#: templates/chunks/message.php:127 templates/index/index.inc:422
 msgid "Add to Address Book"
 msgstr "アドレス帳に追加"
 
@@ -94,11 +94,11 @@ msgstr "ブラックリスト"
 msgid "Body Text Only"
 msgstr "本文のみ"
 
-#: lib/DIMP.php:202
+#: lib/DIMP.php:219
 msgid "Cancel"
 msgstr "予定表"
 
-#: lib/DIMP.php:238
+#: lib/DIMP.php:255
 msgid ""
 "Cancelling this message will permanently discard its contents and will "
 "delete auto-saved drafts.\n"
@@ -123,7 +123,7 @@ msgstr "スペルチェック"
 msgid "Check for New Mail"
 msgstr "新着メールを確認"
 
-#: lib/DIMP.php:204
+#: lib/DIMP.php:221
 msgid "Checking..."
 msgstr "チェック中..."
 
@@ -148,7 +148,7 @@ msgstr ""
 msgid "Collapse Headers"
 msgstr "ヘッダーを畳む"
 
-#: templates/index/index.inc:62 templates/index/index.inc:183
+#: templates/index/index.inc:183
 msgid "Compose"
 msgstr "メール作成"
 
@@ -156,7 +156,7 @@ msgstr "メール作成"
 msgid "Could not get message list from server"
 msgstr "メッセージ一覧をサーバから取得できません"
 
-#: lib/DIMP.php:214
+#: lib/DIMP.php:231
 msgid "Create folder:"
 msgstr "フォルダー作成："
 
@@ -164,7 +164,7 @@ msgstr "フォルダー作成："
 msgid "Create subfolder"
 msgstr "サブフォルダー作成"
 
-#: lib/DIMP.php:215
+#: lib/DIMP.php:232
 msgid "Create subfolder:"
 msgstr "サブフォルダー作成："
 
@@ -187,8 +187,7 @@ msgid "Del"
 msgstr "Del"
 
 #: templates/chunks/message.php:49 templates/index/index.inc:185
-#: templates/index/index.inc:247 templates/index/index.inc:365
-#: templates/index/index.inc:377
+#: templates/index/index.inc:365 templates/index/index.inc:377
 msgid "Delete"
 msgstr "削除"
 
@@ -266,7 +265,7 @@ msgstr "From: "
 msgid "General Options"
 msgstr "一般オプション"
 
-#: templates/index/index.inc:63 templates/index/index.inc:184 lib/DIMP.php:205
+#: templates/index/index.inc:63 templates/index/index.inc:184 lib/DIMP.php:222
 msgid "Get Mail"
 msgstr "メール取得"
 
@@ -282,19 +281,19 @@ msgstr "ここ"
 msgid "HTML composition"
 msgstr "HTML メール作成"
 
-#: templates/index/index.inc:396 lib/DIMP.php:211
+#: templates/index/index.inc:396 lib/DIMP.php:228
 msgid "Hide Preview"
 msgstr "プレビューを隠す"
 
-#: lib/DIMP.php:196
+#: lib/DIMP.php:213
 msgid "Hide Quoted Text"
 msgstr "引用した文章を隠す"
 
-#: templates/index/index.inc:426
+#: templates/index/index.inc:427
 msgid "High Priority"
 msgstr "優先度高"
 
-#: templates/index/index.inc:141 templates/index/index.inc:246
+#: templates/index/index.inc:246
 msgid "Home"
 msgstr "Home"
 
@@ -311,7 +310,7 @@ msgid "Innocent"
 msgstr "無害"
 
 #: templates/chunks/compose.php:20 templates/index/index.inc:34
-#: lib/DIMP.php:203
+#: lib/DIMP.php:220
 msgid "Loading..."
 msgstr "ロード中..."
 
@@ -323,11 +322,11 @@ msgstr "ログアウト"
 msgid "Login Tasks"
 msgstr "ログイン処理"
 
-#: templates/index/index.inc:427
+#: templates/index/index.inc:428
 msgid "Low Priority"
 msgstr "優先度低"
 
-#: lib/Views/ListMessages.php:161
+#: lib/Views/ListMessages.php:160
 #, php-format
 msgid "Mailbox %s does not exist."
 msgstr "メールボックス %s がありません。"
@@ -356,7 +355,7 @@ msgstr "既読とする"
 msgid "Mark as Spam"
 msgstr "SPAM とする"
 
-#: lib/DIMP.php:192
+#: lib/DIMP.php:209
 msgid "Message"
 msgstr "メッセージ"
 
@@ -376,11 +375,11 @@ msgstr "メッセージ："
 msgid "Message: "
 msgstr "メッセージ："
 
-#: lib/DIMP.php:193
+#: lib/DIMP.php:210
 msgid "Messages"
 msgstr "メッセージ"
 
-#: lib/DIMP.php:200
+#: lib/DIMP.php:217
 #, php-format
 msgid "Move %s to %s"
 msgstr "%s を %s に移動"
@@ -399,18 +398,18 @@ msgstr "メッセージ一覧中で上下に移動"
 
 #: templates/index/index.inc:118
 msgid "My Folders"
-msgstr "私のフォルダー"
+msgstr "私のフォルダ"
 
 #: templates/index/index.inc:122
 msgid "New Folder"
 msgstr "新規フォルダ"
 
 #: compose.php:204 templates/chunks/message.php:126
-#: templates/index/index.inc:420
+#: templates/index/index.inc:62 templates/index/index.inc:421
 msgid "New Message"
 msgstr "新規メッセージ"
 
-#: lib/DIMP.php:195
+#: lib/DIMP.php:212
 msgid "No Messages"
 msgstr "メッセージ無し"
 
@@ -434,7 +433,7 @@ msgstr "表示するメッセージ無し"
 msgid "No unread messages"
 msgstr "未読メッセージ無し"
 
-#: lib/DIMP.php:199
+#: lib/DIMP.php:216
 msgid "Ok"
 msgstr "Ok"
 
@@ -454,11 +453,11 @@ msgstr "オプション"
 msgid "Other Actions"
 msgstr "その他の操作"
 
-#: lib/DIMP.php:216
+#: lib/DIMP.php:233
 msgid "Permanently delete all messages?"
 msgstr "全てのメッセージを削除しますか？"
 
-#: lib/DIMP.php:217
+#: lib/DIMP.php:234
 msgid "Permanently delete this folder?"
 msgstr "このフォルダを削除しますか？"
 
@@ -470,7 +469,8 @@ msgstr "PageDown"
 msgid "PgUp"
 msgstr "PageUp"
 
-#: templates/index/index.inc:69 lib/DIMP.php:188 config/prefs.php.dist:21
+#: templates/index/index.inc:69 templates/index/index.inc:141 lib/DIMP.php:205
+#: config/prefs.php.dist:21
 msgid "Portal"
 msgstr "ポータル"
 
@@ -486,7 +486,7 @@ msgstr "削除"
 msgid "Read Receipt"
 msgstr "開封確認"
 
-#: lib/DIMP.php:245
+#: lib/DIMP.php:263
 msgid ""
 "Really discard all formatting information? This operation cannot be undone."
 msgstr "書式情報を本当に廃棄しますか？この操作は取り消せません。"
@@ -495,7 +495,7 @@ msgstr "書式情報を本当に廃棄しますか？この操作は取り消せません。"
 msgid "Rename Folder"
 msgstr "フォルダ名変更"
 
-#: lib/DIMP.php:213
+#: lib/DIMP.php:230
 msgid "Rename folder to:"
 msgstr "フォルダ名変更："
 
@@ -559,11 +559,11 @@ msgstr "下書きとして保存"
 msgid "Save in "
 msgstr "保存"
 
-#: lib/DIMP.php:244
+#: lib/DIMP.php:262
 msgid "Saving..."
 msgstr "保存中..."
 
-#: lib/DIMP.php:190
+#: lib/DIMP.php:207
 msgid "Search"
 msgstr "検索"
 
@@ -583,7 +583,11 @@ msgstr "現在のメールボックス内の全メッセージを選択"
 msgid "Send"
 msgstr "送信"
 
-#: lib/DIMP.php:243
+#: lib/DIMP.php:256
+msgid "Send message without a Subject?"
+msgstr "件名なしで送信しますか？"
+
+#: lib/DIMP.php:261
 msgid "Sending..."
 msgstr "送信中..."
 
@@ -599,11 +603,11 @@ msgstr "Bcc 表示"
 msgid "Show Cc"
 msgstr "Cc 表示"
 
-#: templates/index/index.inc:396 lib/DIMP.php:212
+#: templates/index/index.inc:396 lib/DIMP.php:229
 msgid "Show Preview"
 msgstr "プレビュー表示"
 
-#: lib/DIMP.php:197
+#: lib/DIMP.php:214
 msgid "Show Quoted Text"
 msgstr "引用文を表示"
 
@@ -629,17 +633,21 @@ msgstr "件名"
 msgid "Subject: "
 msgstr "件名："
 
-#: lib/DIMP.php:242
+#: lib/DIMP.php:260
 msgid "The attachment limit has been reached."
 msgstr "添付の上限に達しています。"
 
-#: lib/DIMP.php:207
+#: lib/DIMP.php:224
 msgid "The connection to the remote server has been restored."
 msgstr "リモートサーバへの接続は再開されました。"
 
 #: templates/index/index.inc:243
 msgid "The following keyboard shortcuts are available:"
 msgstr "以下のようなショートカットキイが使用できます："
+
+#: lib/DIMP.php:256
+msgid "The message does not have a Subject entered."
+msgstr "メッセージの件名が入力されていません。"
 
 #: config/prefs.php.dist:23
 msgid "The page to view immediately after login."
@@ -655,16 +663,16 @@ msgstr ""
 "このメッセージの送り主は、あなたがこれを読んだ事の開封通知を要求しています。%"
 "s をクリックして通知を送信して下さい。"
 
-#: lib/DIMP.php:208
+#: lib/DIMP.php:225
 msgid "The server is still generating the message list."
-msgstr "サーバはメッセージ一覧の作成中です。"
+msgstr "サーバはメッセージ一覧を作成中です。"
 
-#: lib/DIMP.php:209
+#: lib/DIMP.php:226
 msgid ""
 "The server was unable to generate the message list. Please try again later."
 msgstr "サーバはメッセージ一覧が作成できませんでした。後で再度試して下さい。"
 
-#: lib/DIMP.php:206
+#: lib/DIMP.php:223
 msgid ""
 "There has been no contact with the remote server for several minutes. The "
 "server may be temporarily unavailable or network problems may be "
@@ -709,6 +717,7 @@ msgid "To: "
 msgstr "To: "
 
 #: templates/index/index.inc:367 templates/index/index.inc:379
+#: templates/index/index.inc:416
 msgid "Undelete"
 msgstr "削除取り消し"
 
@@ -720,11 +729,11 @@ msgstr "未公開の宛先"
 msgid "Unknown Date"
 msgstr "不明な日付"
 
-#: lib/DIMP.php:241
+#: lib/DIMP.php:259
 msgid "Uploading..."
 msgstr "更新中..."
 
-#: lib/DIMP.php:189
+#: lib/DIMP.php:206
 msgid "User Options"
 msgstr "ユーザオプション"
 
@@ -736,7 +745,7 @@ msgstr "原文を表示"
 msgid "Whitelist"
 msgstr "ホワイトリスト"
 
-#: lib/DIMP.php:239
+#: lib/DIMP.php:257
 msgid ""
 "You have already changed the message body, are you sure you want to drop the "
 "changes?"
@@ -746,12 +755,12 @@ msgstr "あなたは本文を編集しています。本当に変更部分を破棄して良いですか？"
 msgid "[Hide Addresses]"
 msgstr "[アドレスを隠す]"
 
-#: lib/Views/ShowMessage.php:281 lib/Views/ListMessages.php:297
+#: lib/Views/ShowMessage.php:281 lib/Views/ListMessages.php:296
 #: lib/Block/newmail.php:58
 msgid "[No Subject]"
 msgstr "[件名なし]"
 
-#: lib/DIMP.php:201
+#: lib/DIMP.php:218
 msgid "base level of the folder tree"
 msgstr "フォルダーツリーのベースレベル"
 
@@ -759,18 +768,18 @@ msgstr "フォルダーツリーのベースレベル"
 msgid "from"
 msgstr "from"
 
-#: lib/DIMP.php:198
+#: lib/DIMP.php:215
 msgid "lines"
 msgstr "行"
 
-#: lib/DIMP.php:194
+#: lib/DIMP.php:211
 msgid "of"
 msgstr "of"
 
-#: lib/DIMP.php:240
+#: lib/DIMP.php:258
 msgid "remove"
 msgstr "削除"
 
-#: lib/DIMP.php:191
+#: lib/DIMP.php:208
 msgid "results found"
 msgstr "結果あり"

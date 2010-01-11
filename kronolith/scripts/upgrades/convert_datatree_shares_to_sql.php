@@ -5,7 +5,7 @@
  * driver to the new SQL Horde_Share driver. You should run the appropriate
  * 2.1_to_2.2.sql upgrade script for your RDBMS before executing this script.
  *
- * $Horde: kronolith/scripts/upgrades/convert_datatree_shares_to_sql.php,v 1.1.2.7 2009-07-20 11:16:56 jan Exp $
+ * $Horde: kronolith/scripts/upgrades/convert_datatree_shares_to_sql.php,v 1.1.2.8 2009/12/16 22:41:21 jan Exp $
  */
 
 @define('AUTH_HANDLER', true);
@@ -26,7 +26,8 @@ require_once 'MDB2.php';
 
 $config = $GLOBALS['conf']['sql'];
 unset($config['charset']);
-$db = MDB2::factory($config);
+/* MUST use a reference here. */
+$db = &MDB2::factory($config);
 $db->setOption('seqcol_name', 'id');
 
 $error_cnt = 0;

@@ -3,7 +3,7 @@
  * The Ingo_Script_imap:: class represents an IMAP client-side script
  * generator.
  *
- * $Horde: ingo/lib/Script/imap.php,v 1.49.10.18 2009-01-06 15:24:37 jan Exp $
+ * $Horde: ingo/lib/Script/imap.php,v 1.49.10.21 2009/12/30 17:58:52 jan Exp $
  *
  * Copyright 2003-2009 The Horde Project (http://www.horde.org/)
  *
@@ -90,10 +90,11 @@ class Ingo_Script_imap extends Ingo_Script {
      * Perform the filtering specified in the rules.
      *
      * @param array $params  The parameter array. It MUST contain:
-     * <pre>
-     * 'imap'     --  An open IMAP stream.
-     * 'mailbox'  --  The name of the mailbox to filter.
-     * </pre>
+     *                       - 'imap': An open IMAP stream.
+     *                       - 'mailbox': The name of the mailbox to filter.
+     *                       - 'show_filter_msg': Show detailed filter status
+     *                          messages?
+     *                       - 'filter_seen': Only filter seen messages?
      *
      * @return boolean  True if filtering performed, false if not.
      */
@@ -124,12 +125,6 @@ class Ingo_Script_imap extends Ingo_Script {
         /* Grab the rules list. */
         $filters = &$ingo_storage->retrieve(INGO_STORAGE_ACTION_FILTERS);
 
-        /* Should we filter only [un]seen messages? */
-        $seen_flag = $prefs->getValue('filter_seen');
-
-        /* Should we use detailed notification messages? */
-        $detailmsg = $prefs->getValue('show_filter_msg');
-
         /* Parse through the rules, one-by-one. */
         foreach ($filters->getFilterlist() as $rule) {
             /* Check to make sure this is a valid rule and that the rule is
@@ -147,11 +142,11 @@ class Ingo_Script_imap extends Ingo_Script {
                 $bl_folder = null;
 
                 if ($rule['action'] == INGO_STORAGE_ACTION_BLACKLIST) {
-                    $blacklist = &$ingo_storage->retrieve(INGO_STORAGE_ACTION_BLACKLIST);
+                    $blacklist = $ingo_storage->retrieve(INGO_STORAGE_ACTION_BLACKLIST);
                     $addr = $blacklist->getBlacklist();
                     $bl_folder = $blacklist->getBlacklistFolder();
                 } else {
-                    $whitelist = &$ingo_storage->retrieve(INGO_STORAGE_ACTION_WHITELIST);
+                    $whitelist = $ingo_storage->retrieve(INGO_STORAGE_ACTION_WHITELIST);
                     $addr = $whitelist->getWhitelist();
                 }
 
@@ -163,13 +158,7 @@ class Ingo_Script_imap extends Ingo_Script {
                 require_once INGO_BASE . '/lib/IMAP/Search.php';
                 $query = new Ingo_IMAP_Search_Query();
                 foreach ($addr as $val) {
-                    $ob = new Ingo_IMAP_Search_Query();
-                    $ob->deleted(false);
-                    if ($seen_flag == INGO_SCRIPT_FILTER_UNSEEN) {
-                        $ob->seen(false);
-                    } elseif ($seen_flag == INGO_SCRIPT_FILTER_SEEN) {
-                        $ob->seen(true);
-                    }
+                    $ob = $this->_getQuery($params);
                     $ob->header('from', $val);
                     $search_array[] = $ob;
                 }
@@ -216,13 +205,7 @@ class Ingo_Script_imap extends Ingo_Script {
                 require_once INGO_BASE . '/lib/IMAP/Search.php';
                 $query = new Ingo_IMAP_Search_Query();
                 foreach ($rule['conditions'] as $val) {
-                    $ob = new Ingo_IMAP_Search_Query();
-                    $ob->deleted(false);
-                    if ($seen_flag == INGO_SCRIPT_FILTER_UNSEEN) {
-                        $ob->seen(false);
-                    } elseif ($seen_flag == INGO_SCRIPT_FILTER_SEEN) {
-                        $ob->seen(true);
-                    }
+                    $ob = $this->_getQuery($params);
                     if (!empty($val['type']) &&
                         ($val['type'] == INGO_STORAGE_TYPE_SIZE)) {
                         if ($val['match'] == 'greater than') {
@@ -239,10 +222,28 @@ class Ingo_Script_imap extends Ingo_Script {
                             $ob->body($val['value'], true);
                         }
                     } else {
-                        if ($val['match'] == 'contains') {
-                            $ob->header($val['field'], $val['value'], false);
-                        } elseif ($val['match'] == 'not contain') {
-                            $ob->header($val['field'], $val['value'], true);
+                        if (strpos($val['field'], ',') == false) {
+                            if ($val['match'] == 'contains') {
+                                $ob->header($val['field'], $val['value'], false);
+                            } elseif ($val['match'] == 'not contain') {
+                                $ob->header($val['field'], $val['value'], true);
+                            }
+                        } else {
+                            $headers = array();
+                            foreach (explode(',', $val['field']) as $header) {
+                                $headerOb = $this->_getQuery($params);
+                                if ($val['match'] == 'contains') {
+                                    $headerOb->header($header, $val['value'], false);
+                                } elseif ($val['match'] == 'not contain') {
+                                    $headerOb->header($header, $val['value'], true);
+                                }
+                                $headers[] = $headerOb;
+                            }
+                            if ($val['match'] == 'contains') {
+                                $ob->imapOr($headers);
+                            } elseif ($val['match'] == 'not contain') {
+                                $ob->imapAnd($headers);
+                            }
                         }
                     }
                     $search_array[] = $ob;
@@ -291,7 +292,7 @@ class Ingo_Script_imap extends Ingo_Script {
                         $ignore_ids = array_unique($indices + $ignore_ids);
                     } elseif ($rule['action'] == INGO_STORAGE_ACTION_MOVE) {
                         /* We need to grab the overview first. */
-                        if ($detailmsg) {
+                        if ($params['show_filter_msg']) {
                             $overview = $this->_api->fetchMessageOverviews($sequence);
                         }
 
@@ -301,7 +302,7 @@ class Ingo_Script_imap extends Ingo_Script {
                         $this->_api->expunge($indices);
 
                         /* Display notification message(s). */
-                        if ($detailmsg) {
+                        if ($params['show_filter_msg']) {
                             foreach ($overview as $msg) {
                                 $notification->push(
                                     sprintf(_("Filter activity: The message \"%s\" from \"%s\" has been moved to the folder \"%s\"."),
@@ -317,7 +318,7 @@ class Ingo_Script_imap extends Ingo_Script {
                         }
                     } elseif ($rule['action'] == INGO_STORAGE_ACTION_DISCARD) {
                         /* We need to grab the overview first. */
-                        if ($detailmsg) {
+                        if ($params['show_filter_msg']) {
                             $overview = $this->_api->fetchMessageOverviews($sequence);
                         }
 
@@ -326,7 +327,7 @@ class Ingo_Script_imap extends Ingo_Script {
                         $this->_api->expunge($indices);
 
                         /* Display notification message(s). */
-                        if ($detailmsg) {
+                        if ($params['show_filter_msg']) {
                             foreach ($overview as $msg) {
                                 $notification->push(
                                     sprintf(_("Filter activity: The message \"%s\" from \"%s\" has been deleted."),
@@ -343,7 +344,7 @@ class Ingo_Script_imap extends Ingo_Script {
                                                  $rule['action-value']);
 
                         /* Display notification message(s). */
-                        if ($detailmsg) {
+                        if ($params['show_filter_msg']) {
                             $overview = $this->_api->fetchMessageOverviews($sequence);
                             foreach ($overview as $msg) {
                                 $notification->push(
@@ -387,17 +388,32 @@ class Ingo_Script_imap extends Ingo_Script {
      */
     function apply()
     {
-        global $registry;
+        global $registry, $prefs;
 
         if ($this->canApply()) {
             $res = $registry->call('mail/getStream', array('INBOX'));
             if ($res !== false) {
                 $ob = @imap_check($res);
-                return $this->perform(array('imap' => $res, 'mailbox' => $ob->Mailbox));
+                return $this->perform(array('imap' => $res, 'mailbox' => $ob->Mailbox, 'filter_seen' => $prefs->getValue('filter_seen'), 'show_filter_msg' => $prefs->getValue('show_filter_msg')));
             }
         }
 
         return false;
+    }
+
+    /**
+     * Returns a query object prepared for adding further criteria.
+     *
+     * @param $params
+     *
+     * @return Ingo_IMAP_Search_Query  A query object.
+     */
+    function _getQuery($params)
+    {
+        $ob = new Ingo_IMAP_Search_Query();
+        $ob->deleted(false);
+        $ob->seen($params['filter_seen'] == INGO_SCRIPT_FILTER_SEEN);
+        return $ob;
     }
 
 }

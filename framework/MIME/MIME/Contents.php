@@ -29,7 +29,7 @@ define('MIME_CONTENTS_DISPLAY_TYPE_BOTH', 2);
  * The MIME_Contents:: class contains functions related to handling the output
  * of MIME content.
  *
- * $Horde: framework/MIME/MIME/Contents.php,v 1.129.4.45 2009-01-06 15:23:20 jan Exp $
+ * $Horde: framework/MIME/MIME/Contents.php,v 1.129.4.46 2009/12/16 21:56:14 jan Exp $
  *
  * Copyright 2002-2009 The Horde Project (http://www.horde.org/)
  *
@@ -994,17 +994,17 @@ class MIME_Contents {
             ($mime_part->getCurrentEncoding() == 'base64')) {
             /* From RFC 2045 [6.8]: "...the encoded data are consistently
                only about 33 percent larger than the unencoded data." */
-            $size = number_format(max((($bytes * 0.75) / 1024), 1));
+            $size = max((($bytes * 0.75) / 1024), 1);
             if ($size > 1024) {
-                $size = sprintf(_("%s MB"), number_format(max(($size / 1024), 1)));
+                $size = sprintf(_("%s MB"), NLS::numberFormat(max(($size / 1024), 1)));
             } else {
-                $size = sprintf(_("%s KB"), $size);
+                $size = sprintf(_("%s KB"), NLS::numberFormat($size));
             }
         } else {
             if ($size > 1024) {
-                $size = sprintf(_("%s MB"), number_format(max(($size / 1024), 1)));
+                $size = sprintf(_("%s MB"), NLS::numberFormat(max(($size / 1024), 1)));
             } else {
-                $size = sprintf(_("%s KB"), $size);
+                $size = sprintf(_("%s KB"), NLS::numberFormat($size));
             }
         }
 
