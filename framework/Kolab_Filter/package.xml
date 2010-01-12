@@ -28,7 +28,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
   <email>jan@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2009-11-16</date>
+ <date>2001-01-11</date>
  <version>
   <release>0.1.8</release>
   <api>0.1.0</api>
@@ -39,6 +39,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
  </stability>
  <license uri="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">LGPL</license>
  <notes>
+  * Fix quoting when delivering to Dovecot.
   * kolab/issue973 (Rewritten from shown inconveniently in kontact)
   * kolab/issue3594 (Mail containing NUL byte not delivered, Kolab
     Filter does not report lmtp error)
