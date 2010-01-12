@@ -1,0 +1,10 @@
+From: math.parent@gmail.com
+Subject: [PATCH] t/horde/HK_MP/ConfdStyleConfigurationOverride
+
+Allow conf.d style directory configuration overriding of the horde
+configuration.
+
+STATUS: ACCEPTED
+HORDE_REF: http://bugs.horde.org/ticket/8172
+
+Signed-off-by: Gunnar Wrobel <p@rdus.de>
