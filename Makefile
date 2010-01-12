@@ -9,6 +9,7 @@ TEST_APPS = turba kronolith
 
 .PHONY: update
 update:
+	git checkout master
 	cvs update -A -r FRAMEWORK_3
 	for PKG in $(UPDATE);        \
 	  do                         \
